@@ -202,6 +202,12 @@ document.getElementById("oui").addEventListener("click", function(){
     firstq=true
   }
 
+  if(compteur==38){
+    setTimeout(function(){
+      document.getElementById("oui").innerHTML = "oui"
+    },1000)
+  }
+
   document.getElementById("bouttons").style.opacity = "0"
   setTimeout(function() {
     compteur +=1;
