@@ -145,9 +145,10 @@ if(compteur==33){
 document.getElementById("srt").style.top = "10%"
 }
 
-if(compteur==35 | compteur ==38){
-  document.getElementById("bouttons").style.opacity = "1"
-  toggle = true;
+if(compteur==35 | compteur ==38 | compteur ==40){
+// tout les moments où il faut que les boutons apparaissent
+document.getElementById("bouttons").style.opacity = "1"
+toggle = true;
 }
 
 if(compteur==37){
@@ -191,19 +192,14 @@ function salut(){
 }
 
 document.getElementById("oui").addEventListener("click", function(){
-  if(relou==false){
-    document.getElementById("bouttons").style.opacity = "0"
-    setTimeout(function() {
-      compteur +=1;
-      next()
-    }, 1000)
-  }else{
-    document.getElementById("bouttons").style.opacity = "0"
-    setTimeout(function() {
-     compteur = 93
-     next()
-   })
-  }})
+
+  document.getElementById("bouttons").style.opacity = "0"
+  setTimeout(function() {
+    compteur +=1;
+    next()
+  }, 1000)
+}
+)
 
 
 document.getElementById("non").addEventListener("click", function(){
@@ -212,20 +208,13 @@ document.getElementById("non").addEventListener("click", function(){
 // on pourrait aussi modifier les datas du tableau quand t'appuies sur non à des moments donnés
 // genre data[compteur+1] = "ah bon? dommage. on va continuer avec les questions"
 
-if(relou && compteur <87){
+document.getElementById("bouttons").style.opacity = "0"
+setTimeout(function() {
   compteur +=1;
-  document.getElementById("oui").innerHTML = "si"
-  document.getElementById("non").innerHTML = "ben non"
-  document.getElementById("euh").innerHTML = "niet"
   next()
-}else{
-  document.getElementById("bouttons").style.opacity = "0"
-  setTimeout(function() {
-    compteur +=1;
-    next()
-  }, 1000)
+}, 1000)
 }
-});
+)
 
 
 
