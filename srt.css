@@ -35,9 +35,10 @@
 		}
 
 		#checklist{
+			font-size:16px;
 			top:60%;
-			width:50%;
-			left:25%; 
+			width:80%;
+			left:10%; 
 			position:absolute;
 		}
 
