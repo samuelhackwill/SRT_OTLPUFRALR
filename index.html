@@ -12,14 +12,11 @@
       Bonjour
     </div>
     <div id="checklist">
-      <li>yo</li>
-      <li>yo</li>
-      <li>yo</li>
+      <li>vous avez trois minutes là maintenant</li>
     </div>
     <div id="bouttons">
       <button id="oui">oui</button>
       <button id="non">non</button>
-      <button id="euh">euh</button>
     </div>
   </div>
 
@@ -85,7 +82,7 @@ var data = {
   "23":"et là présentement je suis sûrement en train de {en fonction de l’heure, au restau, etc}.",
   "24":"il reste que je vous souhaite la bienvenue sur ce site",
   "25":"bienvenue",
-  "26":"…",
+  "26":"",
   "27":"Bon alors en fait je suis venu pour vous poser quelques questions",
   "28":"ça va prendre quoi, 3 minutes",
   "29":"le temps de préparer ensemble le terrain",
@@ -140,17 +137,18 @@ if(compteur==4){
   toggle = false;
 }
 
-/*
-if(compteur==5){
+if(compteur==33){
 // test de truc qui se range sur le côté pour faire de la place à la checklist
 document.getElementById("srt").style.top = "10%"
-document.getElementById("checklist").style.opacity = "1"
 }
-*/
 
-if(compteur==76){
+if(compteur==35){
   document.getElementById("bouttons").style.opacity = "1"
   toggle = true;
+}
+
+if(compteur==37){
+document.getElementById("checklist").style.opacity = "1"
 }
 
 if(compteur==78){
@@ -220,22 +218,6 @@ if(relou && compteur <87){
     next()
   }, 1000)
 }
-});
-
-document.getElementById("euh").addEventListener("click", function(){
-  if(relou && compteur <87){
-    compteur +=1;
-    document.getElementById("oui").innerHTML = "si en fait"
-    document.getElementById("non").innerHTML = "ben non"
-    document.getElementById("euh").innerHTML = "niet"
-    next()
-  }else{
-    document.getElementById("bouttons").style.opacity = "0"
-    setTimeout(function() {
-      compteur +=1;
-      next()
-    }, 1000)
-  }
 });
 
 
