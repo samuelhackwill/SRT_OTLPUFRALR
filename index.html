@@ -16,7 +16,7 @@
       <li>yo</li>
       <li>yo</li>
     </div>
-    <div id="bouttonshidden">
+    <div id="bouttons">
       <button id="oui">oui</button>
       <button id="non">non</button>
       <button id="euh">euh</button>
@@ -209,18 +209,17 @@ document.getElementById("checklist").style.opacity = "1"
 }
 
 if(compteur==76){
-  buttonstoggle();
+  document.getElementById("bouttons").style.opacity = "1"
 }
 
 if(compteur==85){
   delay = 4000
   relou = true
-  buttonstoggle()
+  document.getElementById("bouttons").style.opacity = "1"
   salut();
 }
 
 if(compteur==92){
-  relou=false;
   fin=true;
 }
 
@@ -237,13 +236,13 @@ function salut(){
 
 document.getElementById("oui").addEventListener("click", function(){
   if(relou==false){
-    document.getElementById("bouttonstoggle").id = "bouttonshidden"
+  document.getElementById("bouttons").style.opacity = "0"
     setTimeout(function() {
       compteur +=1;
       next()
     }, 1000)
   }else{
-    document.getElementById("bouttonstoggle").id = "bouttonshidden"
+  document.getElementById("bouttons").style.opacity = "0"
     setTimeout(function() {
      compteur = 93
      next()
@@ -259,7 +258,7 @@ document.getElementById("non").addEventListener("click", function(){
     document.getElementById("euh").innerHTML = "niet"
     next()
   }else{
-    document.getElementById("bouttonstoggle").id = "bouttonshidden"
+  document.getElementById("bouttons").style.opacity = "0"
     setTimeout(function() {
       compteur +=1;
       next()
@@ -275,7 +274,7 @@ document.getElementById("euh").addEventListener("click", function(){
     document.getElementById("euh").innerHTML = "niet"
     next()
   }else{
-    document.getElementById("bouttonstoggle").id = "bouttonshidden"
+  document.getElementById("bouttons").style.opacity = "0"
     setTimeout(function() {
       compteur +=1;
       next()
@@ -283,9 +282,7 @@ document.getElementById("euh").addEventListener("click", function(){
   }
 });
 
-function buttonstoggle(){
-  document.getElementById("bouttonshidden").id = "bouttonstoggle"
-}
+
 
 </script>
 

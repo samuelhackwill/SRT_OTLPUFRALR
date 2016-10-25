@@ -61,24 +61,12 @@
 
 		}
 
-		#bouttonshidden{
+		#bouttons{
 			-webkit-transition: opacity 1s ease-in-out;
 			-moz-transition: opacity 1s ease-in-out;
 			-o-transition: opacity 1s ease-in-out;
 			transition: opacity 1s ease-in-out;
 			opacity:0;
-			position:relative;
-			width:65%;
-			top :60%;
-			left:45.5%;
-		}
-
-		#bouttonstoggle{
-			-webkit-transition: opacity 3s ease-in-out;
-			-moz-transition: opacity 3s ease-in-out;
-			-o-transition: opacity 3s ease-in-out;
-			transition: opacity 3s ease-in-out;
-			opacity:1;
 			position:relative;
 			width:65%;
 			top :60%;
