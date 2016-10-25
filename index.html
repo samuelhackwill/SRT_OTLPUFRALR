@@ -12,7 +12,10 @@
       Bonjour
     </div>
     <div id="checklist">
-      <li>vous avez trois minutes là maintenant</li>
+      <li id="q1">vous avez trois minutes là maintenant</li>
+      <li id="q2">il y a des chances que cette situation se reproduise</li>
+      <li id="q3">vous êtes vraiment disponible {samedi} à 20h</li>
+      <li id="q4">vous êtes un spectateur à la maison (S.À.L.M.)</li>
     </div>
     <div id="bouttons">
       <button id="oui">oui</button>
@@ -117,7 +120,7 @@ pour revenir en arrière
 
 //  KEYCODE 32 IS SPACEBAR
 
-if(e.keyCode =='78' && fin == false && compteur < 102 && compteur > 0 && compteur != 2 && compteur != 76 && compteur !=85 && compteur !=86){
+if(e.keyCode =='78' && fin == false && compteur < 40 && compteur > 0 && compteur != 2 && compteur != 35 && compteur !=38){
   compteur +=1
   next();
 }
@@ -142,13 +145,17 @@ if(compteur==33){
 document.getElementById("srt").style.top = "10%"
 }
 
-if(compteur==35){
+if(compteur==35 | compteur ==38){
   document.getElementById("bouttons").style.opacity = "1"
   toggle = true;
 }
 
 if(compteur==37){
-document.getElementById("checklist").style.opacity = "1"
+  document.getElementById("q1").style.opacity = "1"
+}
+
+if(compteur==40){
+  document.getElementById("q2").style.opacity = "1"
 }
 
 if(compteur==78){
