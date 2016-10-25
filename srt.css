@@ -18,18 +18,22 @@
 		}
 
 		#checklist{
-			width:40%;
+			top:60%;
+			width:50%;
+			left:25%; 
 			position:absolute;	
-			top:40%;
-			right:20%;
+		}
+
+		li {
+			list-style-image: url('nope.ico');
 		}
 
 
 		#srt{
-			width:80%;			
+			top :10%;
 			position:relative;
-			top : 40%;
-			left: 10%;
+			width:50%;			
+			margin: 0 auto; 
 
 			-webkit-touch-callout: none; /* iOS Safari */
 			-webkit-user-select: none;   /* Chrome/Safari/Opera */
