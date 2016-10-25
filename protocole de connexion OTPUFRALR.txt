@@ -70,11 +70,22 @@ bon alors déjà
 
 est ce que vous avez trois minutes?
 
+ok, super
 
+voila voila
 
+et est ce que ça vous arrivera à nouveau d’avoir trois minutes dans l’avenir?
+(en fonction du résultat, change la data de [+2]
+ok
+/ah bon
 
+est ce que vous aurez carrément une heure et demie bien tranquille devant vous ce {samedi} à 20h?
+/ donc j’imagine que ce {samedi} à 20h vous serez pas dispo.
+/ « si » à la place de « oui »
 
-
+/et là bim série de questions auxquelles il faut répondre oui à chaque fois
+/a la fin si t’as dit oui partout c’est ok
+/sinon c’est pas ok.
 
 
 

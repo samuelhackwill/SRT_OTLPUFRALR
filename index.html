@@ -264,6 +264,11 @@ document.getElementById("oui").addEventListener("click", function(){
 
 
 document.getElementById("non").addEventListener("click", function(){
+
+// IDEE a essayer : au lieu de se faire chier avec un cheminement complexe dans le tableau
+// on pourrait aussi modifier les datas du tableau quand t'appuies sur non à des moments donnés
+// genre data[compteur+1] = "ah bon? dommage. on va continuer avec les questions"
+
   if(relou && compteur <87){
     compteur +=1;
     document.getElementById("oui").innerHTML = "si"
