@@ -189,6 +189,7 @@ if(e.keyCode =='78' && fin == false && compteur < 102 && compteur > 0 && compteu
 }
 
 console.log(compteur)
+console.log("toggle " + toggle)
 
 //CUES
 
@@ -202,6 +203,10 @@ if(compteur==2 && toggle==false){
   // aaaah le gros truc de gogole
 }  
 
+if(compteur==4){
+  toggle = false;
+}
+
 if(compteur==5){
 // test de truc qui se range sur le côté pour faire de la place à la checklist
 document.getElementById("srt").style.top = "10%"
@@ -210,9 +215,15 @@ document.getElementById("checklist").style.opacity = "1"
 
 if(compteur==76){
   document.getElementById("bouttons").style.opacity = "1"
+  toggle = true;
 }
 
-if(compteur==85){
+if(compteur==92){
+  toggle = false;
+}
+
+if(compteur==85 && toggle==false){
+  toggle = true
   delay = 4000
   relou = true
   document.getElementById("bouttons").style.opacity = "1"
@@ -223,6 +234,7 @@ if(compteur==92){
   fin=true;
 }
 
+// fin keydown
 }
 
 function salut(){
