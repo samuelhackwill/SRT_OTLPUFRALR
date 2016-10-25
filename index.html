@@ -1,0 +1,292 @@
+<head>
+  <title>subs</title>
+  <meta charset="utf-8">
+</head>
+
+<link rel="stylesheet" type="text/css" href="srt.css">
+<link rel="script" type="text/css" href="">
+
+<body onload="salut()">
+  <div id="container">
+    <div id="srt">
+      Bonjour
+    </div>
+    <div id="checklist">
+      <li>yo</li>
+      <li>yo</li>
+      <li>yo</li>
+    </div>
+    <div id="bouttonshidden">
+      <button id="oui">oui</button>
+      <button id="non">non</button>
+      <button id="euh">euh</button>
+    </div>
+  </div>
+
+  <script>
+
+// TO DO
+// disponibilité de 1h30 = cliquer sur un bouton ou faire quelque chose pour signer le contrat
+// peut être quand les gens reviennent tu leur parle en direct
+// elle était bien la blague de "fermer des fenetres pendant une heure"
+// mathilde elle dit qu'il faut qu'on puisse revenir en arrière
+
+// ptin alors si ils ferment la fenetre et reviennent
+// faudrait gérer un truc avec des cookies pour qu'ils repartent du même endroit dans les SRT
+// quand ils reviennent sur le zonz
+// GENRE y'a des parties et quand tu reviens dans la partie 0-15 ou 16-28
+// les srt ça soit genre
+// "ah salut où on en était déjà la dernière fois"
+// "ah oui la partie où je parlais de la barre espace"
+// ou "ah oui la partie où je faisais une digression où je parlais de base de donnée"
+
+// julien dit : "c'est cool de maitriser le temps"
+
+var toggle=false
+// ce toggle a la con sert juste à bloquer la progression du compteur le temps de la fonction
+// salut() qui sert à display un message 2 seconde puis incrémenter le compteur de 1.
+// sinon le bordel s'emballe tout de suite après (la fonction delay semble juste mettre en pause
+// tous les inputs du clavier
+
+var fin=false
+//pour séparer le tableau non du tableau oui
+
+var relou=false
+// lui il sert juste à changer ce que font les boutons quand la seconde question est posée
+var compteur = 0
+
+var delay = 3000
+// le premier delay de defilement auto entre data[0] et data[1]
+
+var data = {
+  "0":"Bonjour",
+  "1":"Vous pouvez appuyer une fois sur la touche \"n\" de votre clavier s’il vous plaît?",
+  "2":"Merci",
+  "3":"Euh en fait vous pouvez encore appuyer sur la touche \"n\"?",
+  "4":"on a qu’à dire que dès que vous avez lu ce qui est écrit",
+  "5":"vous pouvez appuyer sur la touche \"n\" quoi",
+  "6":"à votre rythme",
+  "7":"c’est vous qui décidez",
+  "8":"par contre prenez garde",
+  "9":"il est impossible de revenir en arrière",
+  "10":"c’est un peu comme si nous étions vraiment en train d’avoir une conversation",
+  "11":"on fait un bout de chemin ensemble, et si vous partez",
+  "12":"on reprendra simplement là où on s’est arrêté.",
+  "13":"vous pouvez d’ailleurs partir maintenant si vous voulez faire une pause,",
+  "14":"vous pouvez fermer votre navigateur et tout.",
+  "15":"à votre guise.",
+  "16":"bon je me présente quand même",
+  "17":"c’est samuel je travaille pour l’amicale de production",
+  "18":"je m’occupe de trucs en rapport avec internet ",
+  "19":"en rapport avec le reste de l’équipe,",
+  "20":"et étienne et guillaume les développeurs.",
+  "21":"là je suis pas vraiment en train de vous parler pour de vrai d’ailleurs",
+  "22":"en fait j’ai écrit ce texte il y a {quelques mois}",
+  "23":"et là présentement je suis sûrement en train de {en fonction de l’heure, au restau, etc}.",
+  "24":"il reste que je vous souhaite la bienvenue sur ce site",
+  "25":"bienvenue",
+  "26":"",
+  "27":"je sais pas trop comment vous mettre à l’aise",
+  "28":"dans la vie, tout commence par un début",
+  "29":"et quand on va sur un site web aussi",
+  "30":"il y a des couleurs, des images",
+  "31":"des boutons sur lesquels on peut cliquer",
+  "32":"et sur le site où vous êtes maintenant,",
+  "33":"surtout du texte hein",
+  "34":"tout à l’heure, il y aura d’autres éléments",
+  "35":"avec lesquels vous pourrez interagir",
+  "36":"mais rien de bien compliqué",
+  "37":"on va surtout essayer d’établir une connexion",
+  "38":"entre vous et la salle de spectacle",
+  "39":"que vous pourrez goûter, bien à votre aise à la maison.",
+  "40":"et pour que vous puissiez participer dans de bonnes conditions, ",
+  "41":"on a juste besoin de s’assurer de quelques éléments ensemble",
+  "42":"ça serait bien que",
+  "43":"vous ayez 1h30 de libre jeudi soir.",
+  "44":"que vous n’ayez rien de prévu",
+  "45":"pas de cinéma",
+  "46":"pas de rendez-vous dans un bar pour boire des coups avec les copains",
+  "47":"pas de cours de kung-fu",
+  "48":"rien quoi. une soirée ressourçante à la maison.",
+  "49":"tiens d’ailleurs ça serait bien aussi si votre environnement était assez calme",
+  "50":"pas trop de passage ou d’agitation",
+  "51":"que vous puissiez vous concentrer sur vos pensées, sur des choses ténues",
+  "52":"éventuellement à deux",
+  "53":"enfin après l’idée c’est que vous puissiez vous mettre à l’aise",
+  "54":"que vous puissiez aller aux toilettes quand vous avez envie",
+  "55":"que vous puissiez tousser quand vous avez envie",
+  "56":"vous êtes pas au théâtre quoi justement",
+  "57":"ah oui au fait est ce que vous avez une souris?",
+  "58":"hum ça serait bien que vous puissiez nous répondre",
+  "59":"autrement qu’en disant « oui » à voix haute",
+  "60":"parce que pour l’instant on vous entend pas",
+  "61":"hum alors attendez on va mettre en place un dispositif",
+  "62":"comme par exemple des boutons",
+  "63":"quand vous allez cliquer sur un des boutons",
+  "64":"ça ajoutera une entrée dans une base de données, sur un serveur de l’amicale de production",
+  "65":"hébergé par OVH, une entreprise française qui a plein d’ordinateurs.",
+  "66":"et ben comme ça on saura lesquels de nos spectateurs ont des souris et lesquels n’en ont pas.",
+  "67":"ça peut être intéressant de savoir ça.",
+  "68":"si jamais on a besoin de faire un gros « dessiner c’est gagné » collectif par exemple",
+  "69":"c’est pas dit hein, je donne juste un exemple.",
+  "70":"bien sûr, si vous considérez que c’est une intrusion inacceptable dans votre vie privée",
+  "71":"genre, que ça révèle des choses sur votre niveau de vie",
+  "72":"hé bien dans ce cas-là",
+  "73":"on vous propose aussi de ne pas répondre en cliquant sur le personnage avec les bras croisés en bas de l’écran",
+  "74":"bon c’est vous qui voyez.",
+  "75":"alors du coup",
+  "76":"vous avez une souris ou pas? ",
+  "77":"bon alors c’est chouette, maintenant on sait qui a des souris ou pas",
+  "78":"enfin presque ",
+  "79":"on sait combien de personnes ont des souris ou pas",
+  "80":"on ne sait pas encore qui",
+  "81":"mais c’est pas grave, parce qu’on connaît votre adresse ip",
+  "82":"donc bon vous êtes en quelque sorte anonymes",
+  "83":"mais bon on peut vous retrouver quand même",
+  "84":"bonne ambiance.",
+  "85":"ah et du coup, est ce que vous aurez 1h30 de libre jeudi soir également?",
+  "86":"c’est important",
+  "87":"ah oui, vraiment vous serez pas dispo?",
+  "88":"bon ben ça fait rien",
+  "89":"merci quand même d’être venus jusqu’ici ",
+  "90":"c’était sympa de parler avec vous",
+  "91":"de vous imaginer derrière votre écran d’ordinateur",
+  "92":"à une prochaine fois!",
+  "93":"bon ben super",
+  "94":"on se retrouve le jour du spectacle!",
+  "95":"c’est {demain}",
+  "96":"si vous voulez vous pouvez aussi nous laisser votre numéro de téléphone mobile",
+  "97":"comme ça on vous envoie un rappel SMS une heure avant le début du spectacle",
+  "98":"ça vous dit? (oui non euh -> envoi vers un formulaire)",
+  "99":"super, alors ben merci et pis à plus tard.",
+  "100":"on se donne rendez-vous ici.",
+  "101":"{demain} donc, à {20h00}.",
+  "102":"bisous"
+}
+
+function next(){
+  var currentSub = data[compteur]
+  document.getElementById("srt").innerHTML = currentSub
+  console.log(compteur)
+}
+
+document.onkeydown = function(e) {
+
+  e = e || window.event
+/*
+pour revenir en arrière
+  if(e.keyCode =='37' && compteur > 0){
+    compteur -=1
+    next();
+  }
+  */
+
+//  KEYCODE 32 IS SPACEBAR
+
+if(e.keyCode =='78' && fin == false && compteur < 102 && compteur > 0 && compteur != 2 && compteur != 76 && compteur !=85 && compteur !=86){
+  compteur +=1
+  next();
+}
+
+console.log(compteur)
+
+//CUES
+
+if(compteur==0){
+  console.log("s'affiche trois secondes et disparaît tout seul")
+}
+
+if(compteur==2 && toggle==false){
+  salut()
+  toggle = true;
+  // aaaah le gros truc de gogole
+}  
+
+if(compteur==5){
+// test de truc qui se range sur le côté pour faire de la place à la checklist
+document.getElementById("srt").style.width = "40%"
+}
+
+if(compteur==76){
+  buttonstoggle();
+}
+
+if(compteur==85){
+  delay = 4000
+  relou = true
+  buttonstoggle()
+  salut();
+}
+
+if(compteur==92){
+  relou=false;
+  fin=true;
+}
+
+}
+
+function salut(){
+
+  setTimeout(function() {
+    compteur +=1;
+    next();
+  }, delay);
+
+}
+
+document.getElementById("oui").addEventListener("click", function(){
+  if(relou==false){
+    document.getElementById("bouttonstoggle").id = "bouttonshidden"
+    setTimeout(function() {
+      compteur +=1;
+      next()
+    }, 1000)
+  }else{
+    document.getElementById("bouttonstoggle").id = "bouttonshidden"
+    setTimeout(function() {
+     compteur = 93
+     next()
+   })
+  }})
+
+
+document.getElementById("non").addEventListener("click", function(){
+  if(relou && compteur <87){
+    compteur +=1;
+    document.getElementById("oui").innerHTML = "si"
+    document.getElementById("non").innerHTML = "ben non"
+    document.getElementById("euh").innerHTML = "niet"
+    next()
+  }else{
+    document.getElementById("bouttonstoggle").id = "bouttonshidden"
+    setTimeout(function() {
+      compteur +=1;
+      next()
+    }, 1000)
+  }
+});
+
+document.getElementById("euh").addEventListener("click", function(){
+  if(relou && compteur <87){
+    compteur +=1;
+    document.getElementById("oui").innerHTML = "si en fait"
+    document.getElementById("non").innerHTML = "ben non"
+    document.getElementById("euh").innerHTML = "niet"
+    next()
+  }else{
+    document.getElementById("bouttonstoggle").id = "bouttonshidden"
+    setTimeout(function() {
+      compteur +=1;
+      next()
+    }, 1000)
+  }
+});
+
+function buttonstoggle(){
+  document.getElementById("bouttonshidden").id = "bouttonstoggle"
+}
+
+</script>
+
+</body>
+

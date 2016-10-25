@@ -1,0 +1,69 @@
+		@font-face {
+			font-family: "typo";
+			src: url('OfficeCodePro-Regular.ttf') format('truetype');
+		}
+
+		body{
+			background-color:black;
+			font-family: "typo", sans-serif;
+			color: white;
+			font-size:20px;
+			text-align: center;
+		}
+
+		#container{
+			width:100%;
+			height:100%;
+			background-color: black;
+		}
+
+		#checklist{
+			width:40%;
+			position:absolute;	
+			top:40%;
+			right:20%;
+		}
+
+
+		#srt{
+			width:80%;			
+			position:relative;
+			top : 40%;
+			left: 10%;
+
+			-webkit-touch-callout: none; /* iOS Safari */
+			-webkit-user-select: none;   /* Chrome/Safari/Opera */
+			-khtml-user-select: none;    /* Konqueror */
+			-moz-user-select: none;      /* Firefox */
+			-ms-user-select: none;       /* Internet Explorer/Edge */
+
+			-webkit-transition: all 1s ease-in-out;
+			-moz-transition: all 1s ease-in-out;
+			-o-transition: all 1s ease-in-out;
+			transition: all 1s ease-in-out;
+
+		}
+
+		#bouttonshidden{
+			-webkit-transition: opacity 1s ease-in-out;
+			-moz-transition: opacity 1s ease-in-out;
+			-o-transition: opacity 1s ease-in-out;
+			transition: opacity 1s ease-in-out;
+			opacity:0;
+			position:relative;
+			width:65%;
+			top :60%;
+			left:45.5%;
+		}
+
+		#bouttonstoggle{
+			-webkit-transition: opacity 3s ease-in-out;
+			-moz-transition: opacity 3s ease-in-out;
+			-o-transition: opacity 3s ease-in-out;
+			transition: opacity 3s ease-in-out;
+			opacity:1;
+			position:relative;
+			width:65%;
+			top :60%;
+			left:45.5%;
+		}
