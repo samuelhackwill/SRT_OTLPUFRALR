@@ -62,9 +62,9 @@ var delay = 3000
 
 var data = {
   "0":"Bonjour",
-  "1":"Vous pouvez appuyer sur la touche \"n\" de votre clavier s’il vous plaît?",
+  "1":"Vous pouvez appuyer sur la barre espace de votre clavier s’il vous plaît?",
   "2":"Merci ",
-  "3":"Euh en fait vous pouvez encore appuyer sur la touche \"n\"",
+  "3":"Euh en fait vous pouvez encore appuyer sur la barre espace",
   "4":"on a qu’a dire que dès que vous avez lu ce qui est écrit",
   "5":"vous pouvez appuyer sur la barre espace quoi",
   "6":"à votre rythme",
@@ -87,7 +87,7 @@ var data = {
   "23":"et là présentement je suis sûrement en train de {en fonction de l’heure, au restau, etc}.",
   "24":"il reste que je vous souhaite la bienvenue sur ce site",
   "25":"bienvenue",
-  "26":"",
+  "26":"...",
   "27":"Bon alors en fait je suis venu pour vous poser quelques questions",
   "28":"ça va prendre quoi, 3 minutes",
   "29":"le temps de préparer ensemble le terrain",
@@ -101,7 +101,37 @@ var data = {
   "37":"voila voila",
   "38":"et est ce que ça vous arrivera à nouveau d’avoir trois minutes dans l’avenir?",
   "39":"ok",
-  "40":"est ce que vous aurez carrément une heure et demie bien tranquille devant vous ce {samedi} à 20h?"
+  "40":"et est ce que vous aurez carrément une heure et demie bien tranquille devant vous ce samedi à 20h?",
+  "41":"ça marche",
+  "42":"beh alors",
+  "43":"pourquoi elle se met pas à jour la liste en bas?",
+  "44":"hmmm",
+  "45":"peut-être qu'on a pas vraiment bien répondu à la dernière question",
+  "46":"c'est ça Étienne non?",
+  "47":"...",
+  "48":"bon il répond pas.",
+  "49":"c'est sûrement ça",
+  "50":"euh alors c'est quoi avoir une heure et demie tranquille",
+  "51":"ben déjà, est ce que vous serez chez vous?",
+  "52":"est ce que vous pourrez faire en sorte d'être dans un espace calme, intime?",
+  "53":"est ce que vous pourrez faire en sorte d'être plus ou moins seul dans ledit espace?",
+  "54":"est ce que vous pourrez vous placer devant votre ordinateur un peu avant le début du spectacle, metteons à 19h50?",
+  "55":"et puis on se dirait que, sans forcément éteindre votre portable, vous vous engagiez à ne pas y répondre?",
+  "56":"à ne pas regarder un film en même temps?",
+  "57":"bref à être vraiment là quoi?",
+  "58":"bon, c'est super.",
+  "59":"ah ben voila la checklist s'est mise à jour",
+  "60":"vous êtes maintenant vraiment inscrit au spectacle",
+  "61":"vous êtes un S.À.L.M.",
+  "62":"un Spectateur À La Maison.",
+  "63":"vous n'avez qu'a revenir sur ce site web",
+  "64":"à 19H50 donc, ce samedi.",
+  "65":"j'ai hâte de vous y retrouver.",
+  "66":"tout bien",
+  "67":"bisous",
+  "68":"samuel",
+  "69":"...",
+  "70":"revenez dans (décompte)"
 }
 
 function next(){
@@ -122,13 +152,12 @@ pour revenir en arrière
 
 //  KEYCODE 32 IS SPACEBAR
 
-if(e.keyCode =='78' && fin == false && compteur < 40 && compteur > 0 && compteur != 2 && compteur != 35 && compteur !=38){
+if(e.keyCode =='78' && fin == false && compteur < Object.keys(data).length-1 && compteur > 0 && compteur != 2 && compteur != 35 && compteur !=38 && compteur !=40 && (compteur <51 || compteur>57)){
   compteur +=1
   next();
 }
 
 console.log(compteur)
-console.log("firstq " + firstq)
 
 //CUES
 
@@ -147,7 +176,7 @@ if(compteur==33){
 document.getElementById("srt").style.top = "18%"
 }
 
-if(compteur==35 | compteur ==38 | compteur ==40){
+if(compteur==35 | compteur ==38 | compteur ==40 | compteur ==51){
 // tout les moments où il faut que les boutons apparaissent
 document.getElementById("bouttons").style.opacity = "1"
 toggle = true;
@@ -188,11 +217,17 @@ document.getElementById("oui").addEventListener("click", function(){
     },1000)
   }
 
-  document.getElementById("bouttons").style.opacity = "0"
-  setTimeout(function() {
-    compteur +=1;
+  if(compteur>50 && compteur <57){
+    compteur +=1 
     next()
-  }, 1000)
+  }else{
+
+    document.getElementById("bouttons").style.opacity = "0"
+    setTimeout(function() {
+      compteur +=1;
+      next()
+    }, 1000)
+  }
 }
 )
 
