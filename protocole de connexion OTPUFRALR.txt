@@ -24,7 +24,7 @@ en fait j’ai écrit ce texte il y a {quelques mois}
 et là présentement je suis sûrement en train de {en fonction de l’heure, au restau, etc}.
 il reste que je vous souhaite la bienvenue sur ce site
 bienvenue
-…
+...
 Bon alors en fait je suis venu pour vous poser quelques questions
 ça va prendre quoi, 3 minutes
 le temps de préparer ensemble le terrain
