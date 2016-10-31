@@ -14,8 +14,7 @@
     <div id="checklist">
       <li id="q1">vous avez un peu de temps</li>
       <li id="q2">il y a des chances que cette situation se reproduise</li>
-      <li id="q3">vous êtes vraiment disponible {samedi} à 20h</li>
-      <li id="q4">vous êtes inscrit, vous êtes un Spectateur à la maison (S.À.L.M.)</li>
+      <li id="q3">all good</li>
     </div>
     <div id="bouttons">
       <button id="oui">oui</button>
@@ -137,6 +136,9 @@ var data = {
 function next(){
   var currentSub = data[compteur]
   document.getElementById("srt").innerHTML = currentSub
+  document.getElementById("oui").blur();
+  document.getElementById("non").blur();
+  // ça c'est pour virer le focus des boutons oui et non histoire de pas les activer en appuyant sur espace
 }
 
 document.onkeydown = function(e) {
@@ -151,8 +153,9 @@ pour revenir en arrière
   */
 
 //  KEYCODE 32 IS SPACEBAR
+// KEYCIODE 78 IS "n"
 
-if(e.keyCode =='78' && fin == false && compteur < Object.keys(data).length-1 && compteur > 0 && compteur != 2 && compteur != 35 && compteur !=38 && compteur !=40 && (compteur <51 || compteur>57)){
+if(e.keyCode =='32' && fin == false && compteur < Object.keys(data).length-1 && compteur > 0 && compteur != 2 && compteur != 35 && compteur !=38 && compteur !=40 && (compteur <51 || compteur>57)){
   compteur +=1
   next();
 }
@@ -191,6 +194,12 @@ if(compteur==40){
     document.getElementById("q2").innerHTML = "mais c'est temporaire"
   }
   document.getElementById("q2").style.opacity = "1"
+}
+
+if(compteur==59){
+  document.getElementById("q3").style.opacity = "1"
+  document.getElementById("container").style.backgroundColor = "white"
+  document.body.style.color = "black"
 }
 
 // fin keydown

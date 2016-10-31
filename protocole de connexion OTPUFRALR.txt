@@ -1,7 +1,8 @@
-Bonjour
-Vous pouvez appuyer sur la barre espace de votre clavier s’il vous plaît?
-Merci 
-Euh en fait vous pouvez encore appuyer sur la barre espace
+Bienvenue sur la page d'accueil
+vous êtes bien sur la page d'accueil du pont
+bon ben voila vous pouvez appuyer sur la barre espace
+Merci!
+Euh en fait vous pouvez encore appuyer sur la barre espace s'il vous plaît?
 on a qu’a dire que dès que vous avez lu ce qui est écrit
 vous pouvez appuyer sur la barre espace quoi
 à votre rythme
@@ -15,10 +16,9 @@ vous pouvez d’ailleurs partir maintenant si vous voulez faire une pause,
 vous pouvez fermer votre navigateur et tout.
 à votre guise.
 bon je me présente quand même
-c’est samuel je travaille pour l’amicale de production
-je m’occupe de trucs en rapport avec internet 
-en rapport avec le reste de l’équipe,
-et étienne et guillaume les développeurs.
+c’est samuel je travaille au sein de l'équipe du projet
+sur les trucs en rapport avec internet 
+avec étienne et guillaume les développeurs.
 là je suis pas vraiment en train de vous parler pour de vrai d’ailleurs
 en fait j’ai écrit ce texte il y a {quelques mois}
 et là présentement je suis sûrement en train de {en fonction de l’heure, au restau, etc}.
@@ -28,41 +28,60 @@ bienvenue
 Bon alors en fait je suis venu pour vous poser quelques questions
 ça va prendre quoi, 3 minutes
 le temps de préparer ensemble le terrain
-histoire que vous soyez dans les bonnes conditions le jour du spectacle.
+l'idée c'est de garantir que vous soyez dans les bonnes conditions le jour J
+pour apprécier pleinement l'experience.
+normalement quand on va au théâtre,
+ce sont des règles implicites de politesse mais également d'autre moyens,
+comme par exemple la voix enregistrée qui demande de ne pas prendre de photos
+qui garantissent que les spectateurs vont pouvoir bien recevoir le spectacle.
+mais là comme vous êtes chez vous
+on ne peut pas embaucher un ouvreur par personne
+et donc à la place on vous propose de signer une sorte de contrat amiable
+qui prévoit que vous serez dans un cadre spectacle-à-la-maison-friendly
+ok
 on va faire un truc là
 pour que vous puissiez me répondre
-hop
+zoup
 bon alors déjà
 est ce que vous avez trois minutes?
 ok, super
 voila voila
 et est ce que ça vous arrivera à nouveau d’avoir trois minutes dans l’avenir?
 ok
-et est ce que vous aurez carrément une heure et demie bien tranquille devant vous ce samedi à 20h?
+et est ce que vous aurez carrément une heure bien tranquille devant vous ce mercredi à 19?
 ça marche
 beh alors
 pourquoi elle se met pas à jour la liste en bas?
 hmmm
 peut-être qu'on a pas vraiment bien répondu à la dernière question
-c'est ça Antoine non?
+c'est ça Étienne non?
 ...
 bon il répond pas.
 c'est sûrement ça
-euh alors c'est quoi avoir une heure et demie tranquille
-ben déjà, est ce que vous serez chez vous?
-est ce que vous pourrez faire en sorte d'être dans un espace calme, intime?
-est ce que vous pourrez faire en sorte d'être plus ou moins seul dans ledit espace?
-est ce que vous pourrez vous placer devant votre ordinateur un peu avant le début du spectacle, metteons à 19h50?
+euh alors on va essayer de fournir un peu notre réponse
+parce que c'est ça la question essentielle hein
+celle de la disponibilité 
+ben déjà, est ce que :
+vous serez chez vous?
+vous pourrez faire en sorte d'être dans un espace calme, intime?
+vous serez seul?
+vous pourriez vous placer devant votre ordinateur un peu avant le début du spectacle, metteons à 19h30?
 et puis on se dirait que, sans forcément éteindre votre portable, vous vous engagiez à ne pas y répondre?
 à ne pas regarder un film en même temps?
 bref à être vraiment là quoi?
 bon, c'est super.
 ah ben voila la checklist s'est mise à jour
+on a besoin d'une dernière information et puis c'est bon
+est ce que vous pourriez nous donner l'adresse de la maison dans laquelle vous serez pour regarder le spectacle?
+comme par exemple, 6 rue Michelet, Saint-Étienne
+c'est avec cette adresse que vous pourrez vous connecter
+mercredi soir.
+super, merci beaucoup!
 vous êtes maintenant vraiment inscrit au spectacle
 vous êtes un S.À.L.M.
 un Spectateur À La Maison.
 vous n'avez qu'a revenir sur ce site web
-à 19H50 donc, ce samedi.
+à 19H30 donc, ce mercredi.
 j'ai hâte de vous y retrouver.
 tout bien
 bisous
