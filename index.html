@@ -4,7 +4,7 @@
 </head>
 
 <link rel="stylesheet" type="text/css" href="srt.css">
-<link rel="script" type="text/css" href="">
+<script src="/modernizr_rtc.js"></script>
 
 <body onload="salut()">
   <div id="container">
@@ -26,20 +26,10 @@
 
 // TO DO
 
-// peut être quand les gens reviennent tu leur parle en direct
-// elle était bien la blague de "fermer des fenetres pendant une heure"
-// mathilde elle dit qu'il faut qu'on puisse revenir en arrière
+// javascript qui calcule date & heure
+// cookie quand quelqu'un arrive au bout
+// javascript qui ouvre des onglets
 
-// ptin alors si ils ferment la fenetre et reviennent
-// faudrait gérer un truc avec des cookies pour qu'ils repartent du même endroit dans les SRT
-// quand ils reviennent sur le zonz
-// GENRE y'a des parties et quand tu reviens dans la partie 0-15 ou 16-28
-// les srt ça soit genre
-// "ah salut où on en était déjà la dernière fois"
-// "ah oui la partie où je parlais de la touche n"
-// ou "ah oui la partie où je faisais une digression où je parlais de base de donnée"
-
-// julien dit : "c'est cool de maitriser le temps"
 
 var toggle=false
 // ce toggle a la con sert juste à bloquer la progression du compteur le temps de la fonction
@@ -132,6 +122,14 @@ var data = {
   "69":"...",
   "70":"revenez dans (décompte)"
 }
+
+if (Modernizr.datachannel) {
+  data[5] = "<a href='www.google.fr'> RTC a la bien </a>"
+}else{
+  data[5] = "<a href='www.google.fr'> pas RTC bouh sniff </a>"
+}
+//feature testing pour le web RTC
+
 
 function next(){
   var currentSub = data[compteur]
