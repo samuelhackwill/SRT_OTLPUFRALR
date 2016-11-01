@@ -5,20 +5,24 @@
 
 		body{
 			font-family: "typo", sans-serif;
-			font-size:20px;
+			font-size:26px;
 			text-align: center;
 			margin: 0px;
 
-			color: white;
+			color: black;
 
 			-webkit-transition: color 1s ease-in-out;
 			-webkit-transition: background-color 1s ease-in-out;
 
 		}
 
+		button{
+			font-size:12px;
+		}
+
 		button:active {
 			position:relative;
-			top:1px;
+			top:2px;
 		}
 
 		li {
@@ -34,7 +38,7 @@
 
 
 		#container{
-			background-color:black;
+			background-color:white;
 
 			-webkit-transition: color 1s ease-in-out;
 			-webkit-transition: background-color 1s ease-in-out;
@@ -70,11 +74,12 @@
 			width:50%;			
 			margin: 0 auto; 
 
-			-webkit-touch-callout: none; /* iOS Safari */
-			-webkit-user-select: none;   /* Chrome/Safari/Opera */
-			-khtml-user-select: none;    /* Konqueror */
-			-moz-user-select: none;      /* Firefox */
-			-ms-user-select: none;       /* Internet Explorer/Edge */
+			-webkit-touch-callout: none; 
+			-webkit-user-select: none;   
+			-khtml-user-select: none;    
+			-moz-user-select: none;      
+			-ms-user-select: none;      
+
 
 			-webkit-transition: all 1s ease-in-out;
 			-moz-transition: all 1s ease-in-out;
@@ -82,5 +87,4 @@
 			transition: all 1s ease-in-out;
 
 		}
-
 		
