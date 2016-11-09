@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="srt.css">
 <script src="/modernizr_rtc.js"></script>
 
-<body onload="salutinit()">
+<body onload="zoupage()">
   <div id="container">
     <div id="srt">
       Bonjour
@@ -53,124 +53,47 @@ var somethingfalse = false
 var delay = 3000
 // le premier delay de defilement auto entre data[0] et data[1]
 
-var data = {
-"0":"bonjour!",
-"1":"euhm",
-"2":"alors tenez, vous pouvez appuyer un coup sur la barre espace s'il vous plaît ?",
-"3":"ah ouais ça marche. ",
-"4":"euh et alors tenez, encore une fois s'il vous plaît ?",
-"5":"ah ouais ça marche hyper bien, super, merci. ",
-"6":"on a qu’a dire que dès que vous avez lu ce qui est écrit",
-"7":"vous pouvez appuyer sur la barre espace ",
-"8":"à votre rythme",
-"9":"c’est vous qui décidez",
-"10":"par contre prenez garde",
-"11":"il est impossible de revenir en arrière",
-"12":"c’est un peu comme si nous étions vraiment en train d’avoir une conversation",
-"13":"comme si on faisait un bout de chemin ensemble",
-"14":"bon je me présente quand même",
-"15":"c’est samuel je travaille au sein de l'équipe du projet",
-"16":"sur les trucs en rapport avec internet ",
-"17":"là je suis pas vraiment en train de vous parler pour de vrai d’ailleurs",
-"18":"en fait j’ai préparé ce texte il y a quelques jours ",
-"19":"et là présentement je suis sûrement en train de {en fonction de l’heure, au restau, etc}.",
-"20":"enfin voilà en tout cas je vous souhaite la bienvenue ici ",
-"21":"bienvenue",
-"22":"...",
-"23":"du coup si vous êtes ici c'est certainement pour assister la présentation publique de ",
-"24":"on Traversera Le Pont Une Fois Rendus À La Rivière",
-"25":"tout en restant tranquillou à la maison.",
-"26":"franchement vous avez bien fait",
-"27":"alors maintenant, il y a sûrement deux choses à savoir :",
-"28":"premièrement, ",
-"29":"bon, on est pas complètement prêts",
-"30":"le spectacle sera vraiment 'fini' en Janvier 2017 prochain",
-"31":"donc ce qu'on fait ensemble là,",
-"32":"c'est un test, un échauffement",
-"33":"et on est honorés que vous soyez là à nos côtés",
-"34":"cependant cela implique que l'expérience que vous allez vivre",
-"35":"ne sera peut-être pas tout à fait maîtrisée de bout en bout.",
-"36":"si vous êtes ok avec ça, c'est bien, ",
-"37":"sinon vous pouvez toujours décider de nous laisser ici en chemin",
-"38":"et de revenir pour les premières en janvier ou février au  Phénix de Valenciennes",
-"39":"la deuxième chose que je voulais vous dire,",
-"40":"c'est qu'il faut que nous prenions un petit temps ensemble,",
-"41":"bon, allez, quoi, trois minutes",
-"42":"c’est pour garantir que vous serez dans un cadre propice le jour du spectacle",
-"43":"c'est un peu comme avant d’aller au hammam ",
-"44":"on vous demande de préparer votre maillot de bain, votre serviette,",
-"45":"dans votre cas cependant, c’est plus compliqué car",
-"46":"vous n’allez pas au hammam,",
-"47":"vous êtes en fait seul-e à gérer le cadre d'écoute dans lequel vous vous placez.",
-"48":"c'est plutôt chouette, ",
-"49":"et je propose à cet égard que nous réfléchissons ensemble à ce qui pourrait constituer ",
-"50":"le cadre dans lequel le spectacle-à-la-maison fonctionnera au mieux.",
-"51":"tiens ben déjà on va mettre un truc en place pour que vous puissiez me répondre",
-"52":"hop",
-"53":"déjà le premier truc qu'on pourrait se demander, c'est",
-"54":"est ce que vous avez encore un crédit de une minute sur les trois annoncées toute à l'heure ?",
-"55":"ok, super",
-"56":"est ce que vous êtes libre ce soir à 18h30 ?",
-"57":"est ce que vous serez chez vous, ou chez un-e ami-e, enfin dans un espace intime à ce moment ?",
-"58":"est ce que vous pourrez faire en sorte d'être seul-e ?",
-"59":"est ce que vous disposerez d'un moyen pour écouter du son à ce moment ? (hauts-parleurs, casque, etc.)",
-"60":"est ce qu'on peut se dire que vous ferez en sorte de ne pas utiliser votre téléphone portable?",
-"61":"et de vous concentrer uniquement sur le spectacle, pendant l'heure que dure la représentation?",
-"62":"bon sauf si il y a le feu chez vous hein bien entendu",
-"63":"bon super bien",
-"64":"si vous arrivez à réunir tous ces éléments mercredi ça devrait bien se passer.",
-"65":"disponibilité, à la maison, intimité, son, focus.",
-"66":"vous êtes officiellement inscrit-e au spectacle",
-"67":"vous êtes, pour ainsi dire, un-e Spectateur-trice À La Maison, un-e S.À.L.M.",
-"68":"bien, maintenant vous n'avez qu'à revenir sur ce site web",
-"69":"à 18h30 donc.",
-"70":"j'ai hâte de vous y retrouver.",
-"71":"tout bien",
-"72":"bises",
-"73":"samuel",
-"74":"...",
-"75":"revenez à 18h30"
+var data = []
+var questions = []
+
+ function loadJSON(callback) {   
+
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'zob.json', true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+          }
+    };
+    xobj.send(null);  
+ }
+
+//usage:
+function zoupage() {
+ loadJSON(function(response) {
+  // Parse JSON string into object
+    var actual_JSON = JSON.parse(response);
+
+    for(i=0; i<actual_JSON["Textes ecran"].length; i++){
+      if(typeof actual_JSON["Textes ecran"][i] != "object" ){
+        data.push(actual_JSON["Textes ecran"][i])
+      }else{
+        console.log(actual_JSON["Textes ecran"].indexOf(actual_JSON["Textes ecran"][i])-1)
+        // tiens ben alors avec cette fonction on peut récupérer les moments où y'a un array dans l'array, par exemple
+        // contenant les réponses possibles à une question. Du coup au lieu de le console.log on pourrait le pusher
+        // dans un array contenant toutes les questions, et leur position dans le dialogue.
+      }
+    }
+
+
+
+ });
 }
 
 //tous les trucs en rapport avec le temps ci-dessous
-var deadline = 'November 2 2016 18:59:59 GMT+0100';
 
-
-var date = new Date()
-var heure = date.getHours()
-var jour = date.getDate()
-var presentement = "et là présentement je suis sûrement en train de "
-
-if(heure<7){
-  data[19] = presentement + "dormir dans ma chambre, à Valenciennes quoi, c'est la nuit." 
-}
-if(heure>=7 && heure <12){
-  data[19] = presentement + "fignoler l'un ou l'autre truc dans le studio du Phénix, Valenciennes en vue de la présentation."  
-}
-if(heure>=12 && heure <14){
-  data[19] = presentement + "déguster un bon repas de l'avant-scène avec mes collègues."  
-}
-if(heure>14 && heure<20){
-  data[19] = presentement + "bosser comme un gros dingue dans le studio du Phénix à Valenciennes."
-}
-if(heure>20 && heure<22){
-  data[19] = presentement + "diner avec Marion et Lieven rue d'Askièvre."
-}
-if(heure>22){
-  data[19] = presentement + "dormir paisiblement dans ma chambre à Valenciennes."
-}
-if(heure>14 && heure <17 && jour==2){
-  data[19] = presentement + "finir les ultimes préparatifs en régie."  
-}
-if(heure>18 && heure <20 && jour==2){
-  data[19] = presentement + "stresser en régie, le spectacle va commencer!"  
-}
-if(heure=20 && jour==2){
-  data[19] = presentement + "stresser en régie, le spectacle a commencé!"
-}
-if(heure>20 && jour==2){
-  data[19] = presentement + "boire des coups, le spectacle était super et tout le monde est bien content."
-}
 
 //feature testing pour le web RTC
 /*
@@ -182,6 +105,7 @@ if (Modernizr.datachannel) {
 */
 
 function next(){
+  console.log(data)
   var currentSub = data[compteur]
   document.getElementById("srt").innerHTML = currentSub
   // ça c'est pour virer le focus des boutons oui et non histoire de pas les activer en appuyant sur espace
@@ -201,7 +125,7 @@ pour revenir en arrière
 //  KEYCODE 32 IS SPACEBAR
 // KEYCIODE 78 IS "n"
 
-if(e.keyCode =='32' && fin == false && compteur < Object.keys(data).length-1 && compteur > 0 && compteur != 54 && compteur !=56 && compteur !=57 && compteur !=58 && compteur !=59 && compteur !=60 && compteur !=61 && compteur !=62){
+if(e.keyCode =='32'){
   compteur +=1
   next();
 }
@@ -341,7 +265,7 @@ document.getElementById("non").addEventListener("click", function(){
     next()
   }, 1000)
 }
-data[63]="bon alors on voit que toutes les conditions ne seront pas focrément réunies"
+data[63]="bon alors on voit que toutes les conditions ne seront pas forcément réunies"
 data[64]="allez, vous pouvez venir quand même hein mais assurez-vous au moins d'avoir du son,"
 data[65]="sinon il ne va pas se passer grand chose chez vous."
 document.getElementById("non").blur();
