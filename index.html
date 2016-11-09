@@ -43,11 +43,13 @@ var delay = 3000
 
 var data = []
 
+// etienne regarde je veux te montrer un truc ici
+
  function loadJSON(callback) {   
 
     var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'zob.json', true); // Replace 'my_data' with the path to your file
+    xobj.open('GET', 'test.json', true); // Replace 'my_data' with the path to your file
     xobj.onreadystatechange = function () {
           if (xobj.readyState == 4 && xobj.status == "200") {
             // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
@@ -70,7 +72,7 @@ function zoupage() {
         console.log(actual_JSON["Textes ecran"].indexOf(actual_JSON["Textes ecran"][i])-1)
         // tiens ben alors avec cette fonction on peut récupérer les moments où y'a un array dans l'array, par exemple
         // contenant les réponses possibles à une question. Du coup au lieu de le console.log on pourrait le pusher
-        // dans un array contenant toutes les questions, et leur position dans le dialogue.
+        // dans un array contenant toutes les questions, et leur position dans le dialogue ET BIM
       }
     }
 
