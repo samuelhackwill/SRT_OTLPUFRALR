@@ -84,6 +84,7 @@ function action(type, commande){
 
   switch(type){
     case "b":
+    // trigger pour faire apparaître ou disparaître les boutons
     var buttonsname = commande.match(/[^\s\d]\w+/g)
     var howmuch = buttonsname.length
 
@@ -93,7 +94,10 @@ function action(type, commande){
       button.id = buttonsname[i]
       button.value = buttonsname[i];
       button.onclick = clicboutton;
-      container.appendChild(button);
+      sacbouttons.appendChild(button);
+
+      document.getElementById("sacbouttons").style.opacity = "1";
+
     }
 
 

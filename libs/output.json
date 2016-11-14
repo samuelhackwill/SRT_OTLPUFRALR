@@ -29,6 +29,39 @@
     },
     {
         "type": "text",
+        "text": "bon pardon j'ai été vulgaire d'abord"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "et pis c'est une blague nulle ensuite"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "enfin bon laisse béton quoi la honte"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "text": "oui non euh",
+        "type": "balise",
+        "balise": "b"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
         "text": "bon j’aimerais revenir sur cette histoire de barre espace"
     },
     {
@@ -127,7 +160,7 @@
     {
         "text": "vous avez le temps",
         "type": "balise",
-        "balise": "e"
+        "balise": "b"
     },
     {
         "text": "",

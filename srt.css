@@ -60,7 +60,7 @@
 			transition: opacity 1s ease-in-out;
 		}
 
-		#bouttons{
+		#sacbouttons{
 			-webkit-transition: opacity 1s ease-in-out;
 			-moz-transition: opacity 1s ease-in-out;
 			-o-transition: opacity 1s ease-in-out;
@@ -74,7 +74,7 @@
 
 
 		#srt{
-			top :40%;
+			top :15%;
 			position:relative;
 			width:50%;			
 			margin: 0 auto; 
