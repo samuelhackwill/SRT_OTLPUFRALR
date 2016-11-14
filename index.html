@@ -13,13 +13,11 @@
     <div id="checklist">
      <!--   <li id="q1"></li> -->
    </div>
-   <div id="bouttons">
-    <button id="oui">oui</button>
-    <button id="non">non</button>
-  </div>
-</div>
+   <div id="sacbouttons">
+   </div>
+ </div>
 
-<script>
+ <script>
 
   var compteur = 0
 
@@ -92,20 +90,22 @@ function action(type, commande){
     for(i=0; i<howmuch; i++){
       var button = document.createElement("input");
       button.type = "button";
+      button.id = buttonsname[i]
       button.value = buttonsname[i];
-     // button.onclick = func;
-     container.appendChild(button);
+      button.onclick = clicboutton;
+      container.appendChild(button);
+    }
 
-   }
-    /*
-    regex premier chiffre
-    regex prochains mots innerhtml
-    tout ça au sein d'une boucle définie par le premier regex, tu m'étonnes
-    */
+
+
     break;
 
     case "e":
     console.log("case "+ type)
+  }
+
+  function clicboutton(){
+    console.log(this.id)
   }
 
 
