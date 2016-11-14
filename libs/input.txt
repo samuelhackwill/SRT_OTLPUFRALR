@@ -1,0 +1,85 @@
+
+salut les spectateurs à la maison, alors, ça va bien?
+vous vous faites pas trop chier
+haha
+bon j’aimerais revenir sur cette histoire de barre espace
+je suis désolé pour la blague de toute à l’heure
+je vous ai demandé d’appuyer sur la barre espace 
+alors que ça ne servait plus à rien
+et que c’était en fait moi qui contrôlait le défilement du texte
+c’était un peu cruel, je le ferai plus
+d’un autre côté je crois que c’était un peu nécéssaire
+il fallait qu’on en passe par là
+que l’on sente l’absence de la barre espace
+pour percevoir sa matérialité
+#b APPARITION DU BOUTTON
+parce que la barre espace en fait
+au delà de ce qu’elle est, au premier degré du terme, c’est à dire 
+un petit rectangle de plastique monté sur un mécanisme ressort,
+c’est tout un protocole d’interaction imaginé par nous
+mis en branle d’un seul coup
+il faudrait qu’on puisse imaginer toute l’épaisseur de ce protocole
+écrasée sous votre doigt quand vous pressez sur le bouton
+donc qu’est ce qui se passe quand vous appuyez sur la barre espace
+en fait c’est simple
+quelque part dans le code informatique de cette page 
+il y a une fonction javascript qui tend l’oreille
+on appelle ça un « event listener »
+donc assez littéralement c’est un truc qui écoute si jamais il se passerait pas quelque chose
+à l’endroit du clavier de votre ordinateur
+fait que, quand vous appuyez sur la barre espace, inévitablement
+la fonction javascript sort de sa torpeur et appelle une autre fonction
+qui va chercher le prochain morceau de texte et l’affiche sur votre navigateur.
+je passe évidemment plein de trucs sous silence
+mais voila
+c’est ça qu’il se passe
+et disons que ce qui est intéressant avec l’informatique
+c’est qu’il faut tout expliquer à l’ordinateur
+ce qui nécessite d’hyper intellectualiser des trucs simples
+je veux dire,
+tout ce protocole peut sembler très simple quoi
+par exemple quand on parle avec quelqu’un on a pas besoin d’une barre espace
+sur laquelle appuyer pour signifier à son interlocuteur qu’on a bien écouté toute sa dernière phrase
+et qu’il peut passer à la suite
+enfin quoi
+%%% ceci est un gros com likez moi
+%%% wesh pareil
+vous imaginez une conversation à trois?
+hyper relou
+enfin bon voila on y est 
+vous aurez reconnu le dispositif du spectacle puisque
+c’est précisément cela qu’on essaye de faire maintenant
+on est un petit groupe
+on dispose d’un certain nombre d’outils
+conçus par mes collègues et moi
+pis on essaye de les utiliser tout en sentant ce qui se passe
+bon du coup pour me faire excuser de ma blague nulle de toute à l’heure
+j’aimerais vous confier une nouvelle barre espace
+un peu améliorée
+voila c’est fait, vous pouvez à nouveau appuyer sur la barre espace
+je n’ai plus aucun contrôle
+c’est bien flippant
+je vous laisse gérer
+c’est un peu étrange, je me retrouve un peu dans votre situation toute à l’heure
+je suis un peu spectateur de ce que vous, vous faites
+bon, certes, c’est toujours mon texte qui s’affiche
+et puis ma barre espace que vous utilisez
+mais c’est vous qui collectivement décidez du rythme auquel on progresse.
+ceci dit vous ne vous rendez peut être pas trop compte de ce qui se passe
+genre si là vous avez appuyé sur la barre espace
+et puis qu’il ne s’est rien passé de prime abord.
+on va clarifier un peu comment fonctionne la nouvelle barre espace
+avec un truc un peu visuel pour changer
+à chaque fois que l’un d’entre vous appuie sur la barre espace
+on va faire en sorte qu’il se passe quelque chose
+à partir de maintenant hop
+vous voyez ce qu’il se passe?
+les couleurs de votre écran changent
+à chaque fois que quelqu’un appuie sur la barre espace,
+la couleur de l’écran s’éclaircit d’un ton
+et passé un certain seul, 
+on avance.
+on pourrait dire que la nouvelle barre espace
+est une grande et massive touche de clavier
+qui ne s’enfonce que si on se place dessus à plusieurs.
+est ce que ce mode vous convient? sinon on peut en explorer d’autres.

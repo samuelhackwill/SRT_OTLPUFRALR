@@ -1,0 +1,260 @@
+<head>
+<title>Le pont</title>
+  <meta charset="utf-8">
+</head>
+
+<link rel="stylesheet" type="text/css" href="srt.css">
+<script src="/modernizr_rtc.js"></script>
+
+<body onload="zoupage()">
+  <div id="container">
+    <div id="srt">
+      Bonjour
+    </div>
+    <div id="checklist">
+      <li id="q1">vous avez le temps</li>
+      <li id="q2">disponibilité</li>
+      <li id="q3">à la maison</li>
+      <li id="q4">intimité</li>
+      <li id="q5">son</li>
+      <li id="q6">focus</li>
+      <li id="q7">focus renforcé</li>
+      <li id="q8">inscription</li>
+    </div>
+    <div id="bouttons">
+      <button id="oui">oui</button>
+      <button id="non">non</button>
+    </div>
+  </div>
+
+  <script>
+
+
+var toggle=false
+// ce toggle a la con sert juste à bloquer la progression du compteur le temps de la fonction
+// salut() qui sert à display un message 2 seconde puis incrémenter le compteur de 1.
+// sinon le bordel s'emballe tout de suite après (la fonction delay semble juste mettre en pause
+// tous les inputs du clavier
+
+var compteur = 0
+
+var delay = 3000
+// le premier delay de defilement auto entre data[0] et data[1]
+
+var data = []
+
+// etienne regarde je veux te montrer un truc ici
+
+ function loadJSON(callback) {   
+
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'test2.json', true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+          }
+    };
+    xobj.send(null);  
+ }
+
+//usage:
+function zoupage() {
+ loadJSON(function(response) {
+  // Parse JSON string into object
+    var actual_JSON = JSON.parse(response);
+
+    for(i=0; i<actual_JSON["Textes ecran"].length; i++){
+      if(typeof actual_JSON["Textes ecran"][i] != "object" ){
+        data.push(actual_JSON["Textes ecran"][i])
+      }else{
+        console.log(actual_JSON["Textes ecran"].indexOf(actual_JSON["Textes ecran"][i])-1)
+        // tiens ben alors avec cette fonction on peut récupérer les moments où y'a un array dans l'array, par exemple
+        // contenant les réponses possibles à une question. Du coup au lieu de le console.log on pourrait le pusher
+        // dans un array contenant toutes les questions, et leur position dans le dialogue ET BIM
+      }
+    }
+
+
+
+ });
+}
+
+//tous les trucs en rapport avec le temps ci-dessous
+
+
+//feature testing pour le web RTC
+/*
+if (Modernizr.datachannel) {
+  data[5] = "<a id='pagu' href='www.google.fr'> RTC a la bien </a>"
+}else{
+  data[5] = "<a href='www.google.fr'> pas RTC bouh sniff </a>"
+}
+*/
+
+function next(){
+  console.log(data)
+  var currentSub = data[compteur]
+  document.getElementById("srt").innerHTML = currentSub
+  // ça c'est pour virer le focus des boutons oui et non histoire de pas les activer en appuyant sur espace
+}
+
+document.onkeydown = function(e) {
+
+  e = e || window.event
+
+
+  //  KEYCODE 32 IS SPACEBAR
+  // KEYCIODE 78 IS "n"
+
+  if(e.keyCode =='32'){
+    compteur +=1
+    next();
+  }
+
+  //CUES
+
+  // ptin on pourrait faire comment pour override les fonctions avec du délai si le client appuie une première fois sur espace 
+  // genre neuneu = false
+
+  if(compteur==52){
+  // test de truc qui se range sur le côté pour faire de la place à la checklist
+  document.getElementById("srt").style.top = "15%"
+  }
+
+  if(compteur==54 | compteur >=56 && compteur <= 61){
+  // tout les moments où il faut que les boutons apparaissent
+  document.getElementById("bouttons").style.opacity = "1"
+  toggle = true;
+  }
+
+  if(compteur==66){
+    document.getElementById("q8").style.opacity = "1"
+    document.getElementById("container").style.backgroundColor = "black"
+    document.body.style.color = "white"
+  }
+
+  if(compteur==64){
+    document.getElementById("srt").style.top = "40%"
+    document.getElementById("checklist").style.opacity = "0"
+  }
+}
+
+// chtite fonction qui s'auto active avec un délai
+// un peu pourri, faudrait trouver mieux genre surtout qu'on puisse sortir du délai on keydown
+
+function salutinit(){
+  setTimeout(function(){
+    setTimeout(function(){
+      compteur+=1;
+      next();
+    },delay);
+    compteur +=1;
+    next();
+  }, delay);
+}
+
+// CUES CHECKLIST
+
+document.getElementById("oui").addEventListener("click", function(){
+
+  if(compteur>=56 && compteur <=61){
+    if(compteur==56){
+      document.getElementById("q2").style.opacity = "1"
+    }
+    if(compteur==57){
+      document.getElementById("q3").style.opacity = "1"
+    }
+    if(compteur==58){
+      document.getElementById("q4").style.opacity = "1"
+    }
+    if(compteur==59){
+      document.getElementById("q5").style.opacity = "1"
+    }
+    if(compteur==60){
+      document.getElementById("q6").style.opacity = "1"
+    }
+    if(compteur==61){
+      document.getElementById("q7").style.opacity = "1"    
+    }
+    compteur +=1 
+    next()
+
+
+  }else{
+
+    document.getElementById("bouttons").style.opacity = "0"
+    setTimeout(function() {
+      if(compteur==54){
+        document.getElementById("q1").style.opacity = "1"
+      }
+      compteur +=1;
+      next()
+    }, 1000)
+  }
+  document.getElementById("oui").blur();
+}
+)
+
+
+// EVENT LISTENERS OUI NON
+
+document.getElementById("non").addEventListener("click", function(){
+
+ if(compteur>=56 && compteur <=61){
+  if(compteur==56){
+    document.getElementById("q2").style.listStyleImage = "url('nope.ico')";
+    document.getElementById("q2").style.opacity = "1"
+  }
+  if(compteur==57){
+    document.getElementById("q3").style.listStyleImage = "url('nope.ico')";    
+    document.getElementById("q3").style.opacity = "1"
+  }
+  if(compteur==58){
+    document.getElementById("q4").style.listStyleImage = "url('nope.ico')";
+    document.getElementById("q4").style.opacity = "1"
+  }
+  if(compteur==59){
+    document.getElementById("q5").style.listStyleImage = "url('nope.ico')";
+    document.getElementById("q5").style.opacity = "1"
+  }
+  if(compteur==60){
+    document.getElementById("q6").style.listStyleImage = "url('nope.ico')";
+    document.getElementById("q6").style.opacity = "1"
+  }
+  if(compteur==61){
+    document.getElementById("q7").style.listStyleImage = "url('nope.ico')";
+    document.getElementById("q7").style.opacity = "1"   
+
+  }
+  compteur +=1 
+  next()
+
+
+}else{
+
+  document.getElementById("bouttons").style.opacity = "0"
+  setTimeout(function() {
+    if(compteur==54){
+      document.getElementById("q1").style.listStyleImage = "url('nope.ico')";
+      document.getElementById("q1").style.opacity = "1"
+      data[55]="ah ben zut, mais vous pouvez revenir plus tard aussi hein."
+      document.getElementById("q1").innerHTML = "vous êtes pressé"
+    }
+    compteur +=1;
+    next()
+  }, 1000)
+}
+data[63]="bon alors on voit que toutes les conditions ne seront pas forcément réunies"
+data[64]="allez, vous pouvez venir quand même hein mais assurez-vous au moins d'avoir du son,"
+data[65]="sinon il ne va pas se passer grand chose chez vous."
+document.getElementById("non").blur();
+}
+)
+
+
+</script>
+
+</body>
+

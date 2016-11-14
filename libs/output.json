@@ -1,0 +1,670 @@
+[
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "salut les spectateurs à la maison, alors, ça va bien?"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "vous vous faites pas trop chier"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "haha"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "bon j’aimerais revenir sur cette histoire de barre espace"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "je suis désolé pour la blague de toute à l’heure"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "je vous ai demandé d’appuyer sur la barre espace "
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "alors que ça ne servait plus à rien"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "et que c’était en fait moi qui contrôlait le défilement du texte"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "c’était un peu cruel, je le ferai plus"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "d’un autre côté je crois que c’était un peu nécéssaire"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "il fallait qu’on en passe par là"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "que l’on sente l’absence de la barre espace"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "pour percevoir sa matérialité"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "text": "APPARITION DU BOUTTON",
+        "type": "baliseb"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "parce que la barre espace en fait"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "au delà de ce qu’elle est, au premier degré du terme, c’est à dire "
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "un petit rectangle de plastique monté sur un mécanisme ressort,"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "c’est tout un protocole d’interaction imaginé par nous"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "mis en branle d’un seul coup"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "il faudrait qu’on puisse imaginer toute l’épaisseur de ce protocole"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "écrasée sous votre doigt quand vous pressez sur le bouton"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "donc qu’est ce qui se passe quand vous appuyez sur la barre espace"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "en fait c’est simple"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "quelque part dans le code informatique de cette page "
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "il y a une fonction javascript qui tend l’oreille"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "on appelle ça un « event listener »"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "donc assez littéralement c’est un truc qui écoute si jamais il se passerait pas quelque chose"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "à l’endroit du clavier de votre ordinateur"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "fait que, quand vous appuyez sur la barre espace, inévitablement"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "la fonction javascript sort de sa torpeur et appelle une autre fonction"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "qui va chercher le prochain morceau de texte et l’affiche sur votre navigateur."
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "je passe évidemment plein de trucs sous silence"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "mais voila"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "c’est ça qu’il se passe"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "et disons que ce qui est intéressant avec l’informatique"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "c’est qu’il faut tout expliquer à l’ordinateur"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "ce qui nécessite d’hyper intellectualiser des trucs simples"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "je veux dire,"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "tout ce protocole peut sembler très simple quoi"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "par exemple quand on parle avec quelqu’un on a pas besoin d’une barre espace"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "sur laquelle appuyer pour signifier à son interlocuteur qu’on a bien écouté toute sa dernière phrase"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "et qu’il peut passer à la suite"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "enfin quoi"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "text": "ceci est un gros com likez moi",
+        "type": "comment"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "text": "wesh pareil",
+        "type": "comment"
+    },
+    {
+        "type": "text",
+        "text": "\nvous imaginez une conversation à trois?"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "hyper relou"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "enfin bon voila on y est "
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "vous aurez reconnu le dispositif du spectacle puisque"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "c’est précisément cela qu’on essaye de faire maintenant"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "on est un petit groupe"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "on dispose d’un certain nombre d’outils"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "conçus par mes collègues et moi"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "pis on essaye de les utiliser tout en sentant ce qui se passe"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "bon du coup pour me faire excuser de ma blague nulle de toute à l’heure"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "j’aimerais vous confier une nouvelle barre espace"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "un peu améliorée"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "voila c’est fait, vous pouvez à nouveau appuyer sur la barre espace"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "je n’ai plus aucun contrôle"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "c’est bien flippant"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "je vous laisse gérer"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "c’est un peu étrange, je me retrouve un peu dans votre situation toute à l’heure"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "je suis un peu spectateur de ce que vous, vous faites"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "bon, certes, c’est toujours mon texte qui s’affiche"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "et puis ma barre espace que vous utilisez"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "mais c’est vous qui collectivement décidez du rythme auquel on progresse."
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "ceci dit vous ne vous rendez peut être pas trop compte de ce qui se passe"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "genre si là vous avez appuyé sur la barre espace"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "et puis qu’il ne s’est rien passé de prime abord."
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "on va clarifier un peu comment fonctionne la nouvelle barre espace"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "avec un truc un peu visuel pour changer"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "à chaque fois que l’un d’entre vous appuie sur la barre espace"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "on va faire en sorte qu’il se passe quelque chose"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "à partir de maintenant hop"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "vous voyez ce qu’il se passe?"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "les couleurs de votre écran changent"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "à chaque fois que quelqu’un appuie sur la barre espace,"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "la couleur de l’écran s’éclaircit d’un ton"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "et passé un certain seul, "
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "on avance."
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "on pourrait dire que la nouvelle barre espace"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "est une grande et massive touche de clavier"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "qui ne s’enfonce que si on se place dessus à plusieurs."
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "type": "text",
+        "text": "est ce que ce mode vous convient? sinon on peut en explorer d’autres."
+    }
+]
