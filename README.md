@@ -1,5 +1,5 @@
 <h1> Generateur de texte interactif </h1>
-<e> On traversera le code une fois rendus au fichier json </e>
+* On traversera le code une fois rendus au fichier json *
 
 trousse à outils pour transformer des textes (/libs/input.txt) 
 en tableaux JSON (/libs/output.json)
