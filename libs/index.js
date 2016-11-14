@@ -24,9 +24,9 @@ parser.addRule(/\n/g, function(videur){
 
 parser.addRule(/\#.+/g, function(content){
 
-	cleantext = content.substr(3)
-	balise = content.substr(1,1)
-	return { text:cleantext, type:"balise"+balise}
+	cleaninstruct = content.substr(3)
+	cleanbalise = content.substr(1,1)
+	return { text:cleaninstruct, type:"balise", balise:cleanbalise}
 	// le plan c'est qu'on mette en place une codification des balises
 	// genre b=apparition des boutons
 	// mais bon euh est ce que ça va bien scale tout ça? hmmm

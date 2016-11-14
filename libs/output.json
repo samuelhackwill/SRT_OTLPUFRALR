@@ -108,8 +108,9 @@
         "type": "blanc"
     },
     {
-        "text": "APPARITION DU BOUTTON",
-        "type": "baliseb"
+        "text": "mouais oui non peut-etre surement-pas je-suis-sauce",
+        "type": "balise",
+        "balise": "b"
     },
     {
         "text": "",
@@ -118,6 +119,15 @@
     {
         "type": "text",
         "text": "parce que la barre espace en fait"
+    },
+    {
+        "text": "",
+        "type": "blanc"
+    },
+    {
+        "text": "vous avez le temps",
+        "type": "balise",
+        "balise": "b"
     },
     {
         "text": "",

@@ -11,24 +11,27 @@
       Bonjour
     </div>
     <div id="checklist">
-   <!--   <li id="q1"></li> -->
-    </div>
-    <div id="bouttons">
-      <button id="oui">oui</button>
-      <button id="non">non</button>
-    </div>
+     <!--   <li id="q1"></li> -->
+   </div>
+   <div id="bouttons">
+    <button id="oui">oui</button>
+    <button id="non">non</button>
   </div>
+</div>
 
-  <script>
+<script>
 
-var compteur = 0
+  var compteur = 0
 
-var data = []
+  var balise
+  var _balise
 
-function loadJSON(callback) {   
+  var data = []
 
-  var xobj = new XMLHttpRequest();
-  xobj.overrideMimeType("application/json");
+  function loadJSON(callback) {   
+
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
     xobj.open('GET', '/libs/output.json', true); // Replace 'my_data' with the path to your file
     xobj.onreadystatechange = function () {
       if (xobj.readyState == 4 && xobj.status == "200") {
@@ -48,8 +51,10 @@ function zoupage() {
   for(i=0; i<actual_JSON.length; i++){
     if(actual_JSON[i]["type"] == "text" ){
       data.push(actual_JSON[i]["text"])
-    }else{
-    }        
+    }
+    if(actual_JSON[i]["type"] == "balise"){
+      data.push(actual_JSON[i])
+    }       
 
   }
 
@@ -59,9 +64,51 @@ function zoupage() {
 function next(){
   console.log(compteur)
   var currentSub = data[compteur]
-  var currentBalise = data[compteur]["type"]
   document.getElementById("srt").innerHTML = currentSub
-  // ça c'est pour virer le focus des boutons oui et non histoire de pas les activer en appuyant sur espace
+
+  balise = data[compteur]["balise"]
+
+  if(_balise != balise){
+
+// quand tu tombes sur une balise crac passe des arguments
+// à action qui décide quoi faire du coup.
+
+action(data[compteur]["balise"], data[compteur]["text"])
+
+balise = _balise
+compteur+=1
+next()
+}
+
+}
+
+function action(type, commande){
+
+  switch(type){
+    case "b":
+    var buttonsname = commande.match(/[^\s\d]\w+/g)
+    var howmuch = buttonsname.length
+
+    for(i=0; i<howmuch; i++){
+      var button = document.createElement("input");
+      button.type = "button";
+      button.value = buttonsname[i];
+     // button.onclick = func;
+     container.appendChild(button);
+
+   }
+    /*
+    regex premier chiffre
+    regex prochains mots innerhtml
+    tout ça au sein d'une boucle définie par le premier regex, tu m'étonnes
+    */
+    break;
+
+    case "e":
+    console.log("case "+ type)
+  }
+
+
 }
 
 document.onkeydown = function(e) {
