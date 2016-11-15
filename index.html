@@ -5,31 +5,43 @@
 
 <link rel="stylesheet" type="text/css" href="srt.css">
 
-<body onload="zoupage()">
-  <div id="container">
-    <div id="srt">
-      Bonjour
+<body id="body" onload="zoupage()">
+  <div id="container3">
+    <div id="container2">
+      <div id="container1">
+        <div id="srt">
+          Bonjour
+        </div>
+        <div id="checklist">
+        </div>
+        <div id="sacbouttons">
+        </div>
+        <div id="fiction">
+        </div>
+      </div>
     </div>
-    <div id="checklist">
-     <!--   <li id="q1"></li> -->
-   </div>
-   <div id="sacbouttons">
-   </div>
- </div>
+    <script>
 
- <script>
+    // TO DO
+    // balises pour afficher du texte ailleurs que dans SRT (checklist, rubrique fiction)
+    /* il se passe un truc bien chelou avec le parseur, genre soit il regex les balises correctement et 
+    et rajoute des \n parfois en début de ligne, soit il fait nimp avec les balises quand elles sont à la suite
+    les unes des autres mais parse les autres lignes correctement. Quand on change l'ordre de chaque regex
+    dans index.js ça change le type de bug GNEIRK
+    */
+    // doublon balise / type
 
-  var compteur = 0
+    var compteur = 0
 
-  var balise
-  var _balise
+    var balise
+    var _balise
 
-  var data = []
+    var data = []
 
-  function loadJSON(callback) {   
+    function loadJSON(callback) {   
 
-    var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
+      var xobj = new XMLHttpRequest();
+      xobj.overrideMimeType("application/json");
     xobj.open('GET', '/libs/output.json', true); // Replace 'my_data' with the path to your file
     xobj.onreadystatechange = function () {
       if (xobj.readyState == 4 && xobj.status == "200") {
@@ -42,6 +54,7 @@
 
 //usage:
 function zoupage() {
+
  loadJSON(function(response) {
   // Parse JSON string into object
   var actual_JSON = JSON.parse(response);
@@ -68,15 +81,14 @@ function next(){
 
   if(_balise != balise){
 
-// quand tu tombes sur une balise crac passe des arguments
-// à action qui décide quoi faire du coup.
+    // quand tu tombes sur une balise crac passe des arguments
+    // à action qui décide quoi faire du coup.
+    action(data[compteur]["balise"], data[compteur]["text"])
 
-action(data[compteur]["balise"], data[compteur]["text"])
-
-balise = _balise
-compteur+=1
-next()
-}
+    balise = _balise
+    compteur+=1
+    next()
+  }
 
 }
 
@@ -84,34 +96,60 @@ function action(type, commande){
 
   switch(type){
     case "b":
-    // trigger pour faire apparaître ou disparaître les boutons
+    // BOUTTON
+    // trigger pour faire apparaître les boutons
+
+    // supprime les anciens bouttons
+    var sacbouttons = document.getElementById("sacbouttons");
+    while (sacbouttons.firstChild) {
+      sacbouttons.removeChild(sacbouttons.firstChild);
+    }
+
+    // récupère le texte en provenance du tableau JSON et lui regex la gueule
     var buttonsname = commande.match(/[^\s\d]\w+/g)
     var howmuch = buttonsname.length
 
-    for(i=0; i<howmuch; i++){
-      var button = document.createElement("input");
-      button.type = "button";
+
+    // créé un boutton par mot (mais euh ben du coup on peu pas faire des bouttons avec des mots en deux parties)
+    for(i=0; i<howmuch; i+=2){
+      var button = document.createElement("input")
+      button.type = "button"
       button.id = buttonsname[i]
-      button.value = buttonsname[i];
-      button.onclick = clicboutton;
-      sacbouttons.appendChild(button);
-
-      document.getElementById("sacbouttons").style.opacity = "1";
-
+      button.value = buttonsname[i]
+      button.onclick = clicboutton
+      sacbouttons.appendChild(button)
+      document.getElementById("sacbouttons").style.opacity = "1"
     }
-
-
-
     break;
 
-    case "e":
-    console.log("case "+ type)
+    case "c":
+    // CHECKLIST
+    // trigger pour renseigner la bd de checklist (!!!!WIP!!!!)
+    var checklistname = commande.match(/([^\,]+)/g)
+    var howmuch = checklistname.length
+
+    for(i=0; i<howmuch; i++){
+      console.log(checklistname)
+    }
+
+    case "f":
+    // FICTION
+    // trigger pour afficher un string dans la rubrique fiction
+    var content = commande
+    document.getElementById("fiction").innerHTML = content
+
   }
 
-  function clicboutton(){
-    console.log(this.id)
-  }
+}
 
+function clicboutton(){
+  newchecklist(this.id)
+  document.getElementById("sacbouttons").style.opacity = "0";
+  compteur +=1
+  next()
+}
+
+function newchecklist(){
 
 }
 
@@ -120,13 +158,15 @@ document.onkeydown = function(e) {
   e = e || window.event
 
 
-  //  KEYCODE 32 IS SPACEBAR
+  // KEYCODE 32 IS SPACEBAR
   // KEYCIODE 78 IS "n"
 
   if(e.keyCode =='32' && compteur <= data.length){
     compteur +=1
-    next();
-  }
+    document.getElementById("container"+compteur).style.opacity = "0";
+    document.getElementById("container3").webkitRequestFullscreen();
+  next();
+}
 
 }
 

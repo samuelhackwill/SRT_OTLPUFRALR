@@ -8,29 +8,30 @@ require.extensions['.txt'] = function (module, filename) {
 
 var words = require("./input.txt");
 
-parser.addRule(/\%{3}.+/g, function(content){
-	cleantext = content.substr(4)
-	return{text:cleantext, type:"comment"}
-})
+parser.addRule(/\#.+\n/g, function(content){
+	// ah ptin l'angoisse ça marche plus quand y'a deux lignes de balises l'une après l'autre
 
+	cleaninstruct = content.substr(3)
+	cleanbalise = content.substr(1,1)
+	return { text:cleaninstruct, type:"balise "+cleanbalise}
+	// le plan c'est qu'on mette en place une codification des balises
+	// genre b=apparition des boutons
+	// mais bon euh est ce que ça va bien scale tout ça? hmmm
+});
 
-parser.addRule(/\n/g, function(videur){
-	videur = ""
-	return {text:videur, type:"blanc"}
+parser.addRule(/\n+?/g, function(videur){
+//	videur = ""
+//	return {text:videur, type:"blanc"}
+	return false
 	// ben lui tu vois il sert à la fois à splitter et a caler des blancs.
 	// bon mais euh là il y a des incohérences
 	// genre par exemple quand il y a un commentaire, ça fait qu'il y a des doublancs
 });
 
-parser.addRule(/\#.+/g, function(content){
-
-	cleaninstruct = content.substr(3)
-	cleanbalise = content.substr(1,1)
-	return { text:cleaninstruct, type:"balise", balise:cleanbalise}
-	// le plan c'est qu'on mette en place une codification des balises
-	// genre b=apparition des boutons
-	// mais bon euh est ce que ça va bien scale tout ça? hmmm
-});
+parser.addRule(/\%{3}.+/g, function(content){
+	cleantext = content.substr(4)
+	return{text:cleantext, type:"comment"}
+})
 
 var parsed = parser.toTree(words);
 
