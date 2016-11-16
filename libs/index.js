@@ -7,25 +7,29 @@ require.extensions['.txt'] = function (module, filename) {
 };
 
 var words = require("./input.txt");
+var wordsz = words.replace(/^\n/gm, '');
+// vire toutes les lignes vides
 
-parser.addRule(/\#.+\n/g, function(content){
-	// ah ptin l'angoisse ça marche plus quand y'a deux lignes de balises l'une après l'autre
+parser.addRule(/\#.+/gm, function(content){
 
-	cleaninstruct = content.substr(3)
-	cleanbalise = content.substr(1,1)
-	return { text:cleaninstruct, type:"balise "+cleanbalise}
+	var contentz = content.replace(/\n/gm, '');
+	// pour virer les incohérences avec les newlines de mairde
+	var contentzarray = contentz.match(/[^#\s][a-z0-9\u00E0-\u00FC]{0,}/gm)
+	var cleanbalise = contentzarray[0]
+	contentzarray.shift()
+
+	return { text:contentzarray, type:cleanbalise}
 	// le plan c'est qu'on mette en place une codification des balises
 	// genre b=apparition des boutons
 	// mais bon euh est ce que ça va bien scale tout ça? hmmm
 });
 
-parser.addRule(/\n+?/g, function(videur){
+parser.addRule(/\n/gm, function(videur){
 //	videur = ""
 //	return {text:videur, type:"blanc"}
+	// ça c'est pour si tu veux mettre des blancs entre chaque ligne tu connais?
 	return false
 	// ben lui tu vois il sert à la fois à splitter et a caler des blancs.
-	// bon mais euh là il y a des incohérences
-	// genre par exemple quand il y a un commentaire, ça fait qu'il y a des doublancs
 });
 
 parser.addRule(/\%{3}.+/g, function(content){
@@ -33,7 +37,7 @@ parser.addRule(/\%{3}.+/g, function(content){
 	return{text:cleantext, type:"comment"}
 })
 
-var parsed = parser.toTree(words);
+var parsed = parser.toTree(wordsz);
 
 var outputFilename = 'output.json';
 

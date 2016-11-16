@@ -8,20 +8,48 @@
         "text": "bon j’aimerais revenir sur cette histoire de barre espace"
     },
     {
-        "text": "balise b\n",
-        "type": "balise b"
+        "text": [
+            "salut",
+            "je",
+            "suis",
+            "un",
+            "béguin"
+        ],
+        "type": "égouts"
     },
     {
-        "text": "balise c\n",
-        "type": "balise c"
+        "text": [
+            "je",
+            "suis",
+            "un",
+            "c"
+        ],
+        "type": "salut"
     },
     {
         "type": "text",
-        "text": "#a balise a"
+        "text": ""
     },
     {
-        "text": "balise a\n",
-        "type": "balise a"
+        "text": [
+            "salut",
+            "je",
+            "suis",
+            "un",
+            "a"
+        ],
+        "type": "amadou"
+    },
+    {
+        "text": [
+            "salut",
+            "je",
+            "suis",
+            "également",
+            "un",
+            "a"
+        ],
+        "type": "ambiou"
     },
     {
         "type": "text",
@@ -44,24 +72,55 @@
         "text": "c’était un peu cruel, je le ferai plus"
     },
     {
-        "text": "oundfsoundfsqoundfsoundfqoudfsoun\n",
-        "type": "balise n"
+        "text": [
+            "oundfsoundfsqoundfsoundfqoudfsoun"
+        ],
+        "type": "ntr"
     },
     {
-        "text": "qfoundounfdounfdsq dfsq ds\n",
-        "type": "balise o"
+        "text": [
+            "qfoundounfdounfdsq",
+            "dfsq",
+            "ds"
+        ],
+        "type": "ofgh"
     },
     {
         "type": "text",
         "text": "d’un autre côté je crois que c’était un peu nécéssaire"
     },
     {
-        "text": "qsdf ounsqdf sdnof qsdonu qfdsonu\n",
-        "type": "balise n"
+        "text": [
+            "qsdf",
+            "ounsqdf",
+            "sdnof",
+            "qsdonu",
+            "qfdsonu"
+        ],
+        "type": "nfgh"
     },
     {
-        "text": "ousdqffouqdnsd fsqd finqdsf qsonuf d\n",
-        "type": "balise o"
+        "text": [
+            "ousdqffouqdnsd",
+            "fsqd",
+            "finqdsf",
+            "qsonuf",
+            "d"
+        ],
+        "type": "o"
+    },
+    {
+        "type": "text",
+        "text": ""
+    },
+    {
+        "text": [
+            "trébuche",
+            "ici",
+            "petit",
+            "robot"
+        ],
+        "type": "pouet"
     },
     {
         "type": "text",
@@ -69,31 +128,39 @@
     },
     {
         "type": "text",
-        "text": "\n"
-    },
-    {
-        "type": "text",
-        "text": "\n"
-    },
-    {
-        "type": "text",
-        "text": "\nque l’on sente l’absence de la barre espace"
+        "text": "que l’on sente l’absence de la barre espace"
     },
     {
         "type": "text",
         "text": "pour percevoir sa matérialité"
     },
     {
-        "text": "mouais oui non peut-etre surement-pas je-suis-sauce\n",
-        "type": "balise b"
+        "text": [
+            "mouais",
+            "oui",
+            "non",
+            "peut",
+            "-etre",
+            "surement",
+            "-pas",
+            "je",
+            "-suis",
+            "-sauce"
+        ],
+        "type": "b"
     },
     {
         "type": "text",
         "text": "parce que la barre espace en fait"
     },
     {
-        "text": "vous avez le temps\n",
-        "type": "balise b"
+        "text": [
+            "vous",
+            "avez",
+            "le",
+            "temps"
+        ],
+        "type": "b"
     },
     {
         "type": "text",
@@ -210,10 +277,6 @@
     {
         "text": "ceci est un gros com likez moi",
         "type": "comment"
-    },
-    {
-        "type": "text",
-        "text": "%%% wesh pareil"
     },
     {
         "type": "text",
