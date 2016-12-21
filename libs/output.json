@@ -8,6 +8,12 @@
         "text": "ça va bien?"
     },
     {
+        "text": [
+            "rain2.jpg"
+        ],
+        "type": "img"
+    },
+    {
         "type": "text",
         "text": "et donc"
     },
@@ -38,6 +44,13 @@
         "text": "Super bien"
     },
     {
+        "text": [
+            "srtcontainer",
+            "posbot"
+        ],
+        "type": "addclass"
+    },
+    {
         "type": "text",
         "text": "C'est chouette d'être bien assis"
     },
@@ -66,19 +79,6 @@
     {
         "type": "text",
         "text": "je vous ai demandé d’appuyer sur la barre espace "
-    },
-    {
-        "text": [
-            "srtcontainer",
-            "posbot"
-        ],
-        "type": "addclass"
-    },
-    {
-        "text": [
-            "rain2.jpg"
-        ],
-        "type": "img"
     },
     {
         "type": "text",

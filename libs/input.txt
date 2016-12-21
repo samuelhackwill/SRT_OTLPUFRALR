@@ -1,5 +1,6 @@
 yo
 ça va bien?
+#img rain2.jpg
 et donc
 
 #btn add Non >gotobookmark('1pasbienassis') >destroy(id)
@@ -7,6 +8,9 @@ et donc
 
 Est-ce que vous êtes bien assis?
 Super bien
+
+#addclass srtcontainer posbot
+
 C'est chouette d'être bien assis
 C'est super de se reposer la nuque
 
@@ -16,9 +20,6 @@ Bon revenons à nos moutons
 euh pardon nos boutons
 je suis désolé pour la blague de toute à l’heure
 je vous ai demandé d’appuyer sur la barre espace 
-
-#addclass srtcontainer posbot
-#img rain2.jpg
 
 alors que ça ne servait plus à rien
 et que c’était en fait moi qui contrôlait le défilement du texte
