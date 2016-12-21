@@ -10,15 +10,7 @@
 <body id="body" onload="zoupage()">
 
   <div id="gcontainer">
-    <div id="imgcontainerBACK">
-      <div id="imgcontainerFRONT">
-      </div>
-    </div>
-    
-    <div id="fiction">
-      <ul id="elemfiction"></ul>
-    </div>
-    <div id="srtcontainer">
+    <div id="srtcontainer" class="posmid">
       <div id="srt">
         Bonjour
       </div>
@@ -26,6 +18,10 @@
       </div>
     </div>
 
+    <div id="imgcontainerBACK">
+      <div id="imgcontainerFRONT">
+      </div>
+    </div>
   </div>
 </body>
 </html>
@@ -104,6 +100,10 @@ function next(){
 
     switch(type){
 
+      case "addclass":
+      addclass(params)
+      break
+
       case "goto":
       gotobookmark(params[0])
       break
@@ -178,6 +178,11 @@ function changeImg(params){
   }
   console.log(alternance)
   console.log(params[0])
+}
+
+function addclass(params){
+  console.log("addclass, ", params[0], params[1])
+  $("#"+params[0]).addClass(params[1])
 }
 
 function newBoutton(params){

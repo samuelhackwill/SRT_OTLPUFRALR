@@ -26,8 +26,6 @@
 	button{
 		font-size:14px;
 	}
-
-
 	button:active {
 		position:relative;
 		top:2px;
@@ -41,7 +39,6 @@
 		-moz-transition: all 1s ease-in-out;
 		-o-transition: all 1s ease-in-out;
 		transition: all 1s ease-in-out;
-
 	}
 
 	#gcontainer{
@@ -68,14 +65,35 @@
 	}
 
 	#srtcontainer{
+		/*c'est moi le plus foreground*/
+		z-index:10;
+		-webkit-transition: all 4s ease-in-out;
+		width: 100%;
+		height: 10%;
+		position: absolute;
+	}
 
-		-webkit-transition: all 10s ease-in-out;
+	.posmid{
+		height : inherit;
+		width : inherit;
+		background-color: rgba(245, 245, 245, 0);
+		/*hum hum transparance*/
+		top:45%;
+	}
 
-		width:100%;
-		height:100%;
+	.posbot{
+		height : inherit;
+		width : inherit;
+		background-color: white;
+		top: 90%;
+	}
 
-		position:absolute;
-		top:0px;
+	.postop{
+		height : inherit;
+		width : inherit;
+		background-color: rgba(245, 245, 245, 0);
+		/*hum hum transparance*/
+		top : 15%;
 	}
 
 	#checklist{
@@ -94,23 +112,22 @@
 	}
 
 	#sacbouttons{
+		z-index:11;
+
 		-webkit-transition: opacity 1s ease-in-out;
 		-moz-transition: opacity 1s ease-in-out;
 		-o-transition: opacity 1s ease-in-out;
 		transition: opacity 1s ease-in-out;
-		position:absolute;
-		width:65%;
-		top :50%;
-		left:17.5%;
+		position:relative;
+		top :100%;
 	}
 
 
 	#srt{
-
-		top :15%;
-		position:relative;
-		width:50%;
-		margin: 0 auto; 
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
 
 		-webkit-touch-callout: none; 
 		-webkit-user-select: none;   

@@ -1,5 +1,4 @@
 yo
-#img rain1.jpg
 ça va bien?
 et donc
 
@@ -18,6 +17,7 @@ euh pardon nos boutons
 je suis désolé pour la blague de toute à l’heure
 je vous ai demandé d’appuyer sur la barre espace 
 
+#addclass srtcontainer posbot
 #img rain2.jpg
 
 alors que ça ne servait plus à rien

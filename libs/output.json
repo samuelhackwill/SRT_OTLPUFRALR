@@ -4,12 +4,6 @@
         "text": "yo"
     },
     {
-        "text": [
-            "rain1.jpg"
-        ],
-        "type": "img"
-    },
-    {
         "type": "text",
         "text": "ça va bien?"
     },
@@ -72,6 +66,13 @@
     {
         "type": "text",
         "text": "je vous ai demandé d’appuyer sur la barre espace "
+    },
+    {
+        "text": [
+            "srtcontainer",
+            "posbot"
+        ],
+        "type": "addclass"
     },
     {
         "text": [
