@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <head>
   <title>Le pont</title>
   <meta charset="utf-8">
@@ -6,50 +8,56 @@
 <link rel="stylesheet" type="text/css" href="srt.css">
 
 <body id="body" onload="zoupage()">
-  <div id="container3">
-    <div id="container2">
-      <div id="container1">
-        <div id="srt">
-          Bonjour
-        </div>
-        <div id="checklist">
-        </div>
-        <div id="sacbouttons">
-        </div>
-        <div id="fiction">
-        </div>
+
+  <div id="gcontainer">
+    <div id="imgcontainerBACK">
+      <div id="imgcontainerFRONT">
       </div>
     </div>
-    <script>
-
-    // TO DO
-    // balises pour afficher du texte ailleurs que dans SRT (checklist, rubrique fiction)
-    /* il se passe un truc bien chelou avec le parseur, genre soit il regex les balises correctement et 
-    et rajoute des \n parfois en début de ligne, soit il fait nimp avec les balises quand elles sont à la suite
-    les unes des autres mais parse les autres lignes correctement. Quand on change l'ordre de chaque regex
-    dans index.js ça change le type de bug GNEIRK
-    */
     
-    var compteur = 0
+    <div id="fiction">
+      <ul id="elemfiction"></ul>
+    </div>
+    <div id="srtcontainer">
+      <div id="srt">
+        Bonjour
+      </div>
+      <div id="sacbouttons">
+      </div>
+    </div>
 
-    var balise
-    var _balise
+  </div>
+</body>
+</html>
 
-    var data = []
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 
-    function loadJSON(callback) {   
+<script>
 
-      var xobj = new XMLHttpRequest();
-      xobj.overrideMimeType("application/json");
-    xobj.open('GET', '/libs/output.json', true); // Replace 'my_data' with the path to your file
-    xobj.onreadystatechange = function () {
-      if (xobj.readyState == 4 && xobj.status == "200") {
-            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-            callback(xobj.responseText);
-          }
-        };
-        xobj.send(null);  
-      }
+// TO DO
+// balises pour afficher du texte ailleurs que dans SRT (checklist, rubrique fiction)
+// implémenter vraiment le truc du plein écran
+
+var compteur = 0
+var interupt = false
+var indeximg = 0
+var alternance = false
+
+var data = []
+
+function loadJSON(callback) {   
+
+  var xobj = new XMLHttpRequest();
+  xobj.overrideMimeType("application/json");
+  xobj.open('GET', 'libs/output.json', true); // Replace 'my_data' with the path to your file
+  xobj.onreadystatechange = function () {
+    if (xobj.readyState == 4 && xobj.status == "200") {
+    // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+    callback(xobj.responseText);
+  }
+};
+xobj.send(null);  
+}
 
 //usage:
 function zoupage() {
@@ -59,117 +67,210 @@ function zoupage() {
   var actual_JSON = JSON.parse(response);
 
   for(i=0; i<actual_JSON.length; i++){
-    if(actual_JSON[i]["type"] == "text" ){
-      data.push(actual_JSON[i]["text"])
-    }
-    if(actual_JSON[i]["type"] == "balise"){
-      data.push(actual_JSON[i])
-    }       
-
+    data.push(actual_JSON[i])
   }
-
 });
 }
 
 function next(){
-  console.log(compteur)
-  var currentSub = data[compteur]
-  document.getElementById("srt").innerHTML = currentSub
+  //TODO
+  //attention dans le cas actuel il est impossible d'avoir la div de texte vide. il faudrait avoir une balise
+  //action spécifique pour vider la div
+  //solution envisagée :
+  //au moment de parser data, il rajoute une balise #clear une ligne sur deux par exemple
 
-  balise = data[compteur]["balise"]
+  var currentData = data[compteur]
+  var type = currentData["type"]
+  var params = currentData["text"]
 
-  if(_balise != balise){
-
-    // quand tu tombes sur une balise crac passe des arguments
-    // à action qui décide quoi faire du coup.
-    action(data[compteur]["balise"], data[compteur]["text"])
-
-    balise = _balise
-    compteur+=1
-    next()
+  while((data[compteur]["type"]!="text")||((data[compteur]["type"]=="text")&&(data[compteur]["text"]==""))){
+      // tant que data[compteur] est une balise, ben continue à executer les instructions s'il te plaît
+      action(type, params)
+      if((data[compteur]["type"]!="text")||(data[compteur]["text"]=="")){
+        // euh alors ça je sais pas pourquoi ça marche mais ça permet d'éviter des situations où, arrivé à un bookmark
+        // il sautait deux lignes au lieu d'une
+        compteur+=1;
+        next();
+      }
+    }
+    if((type=="text")&&(params!="")){
+      document.getElementById("srt").innerHTML = params
+      // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
+    }
   }
 
-}
 
-function action(type, commande){
+  function action(type, params){
 
-  switch(type){
-    case "b":
+    switch(type){
+
+      case "goto":
+      gotobookmark(params[0])
+      break
+
+      case "btn":
     // BOUTTON
     // trigger pour faire apparaître les boutons
-
     // supprime les anciens bouttons
-    var sacbouttons = document.getElementById("sacbouttons");
-    while (sacbouttons.firstChild) {
-      sacbouttons.removeChild(sacbouttons.firstChild);
-    }
+    commande = (params[0])
 
-    // récupère le texte en provenance du tableau JSON et lui regex la gueule
-    var buttonsname = commande.match(/[^\s\d]\w+/g)
-    var howmuch = buttonsname.length
+    params.shift()
 
+    switch(commande){
+      case "add":
+      newBoutton(params)
+      break;
 
-    // créé un boutton par mot (mais euh ben du coup on peu pas faire des bouttons avec des mots en deux parties)
-    for(i=0; i<howmuch; i+=2){
-      var button = document.createElement("input")
-      button.type = "button"
-      button.id = buttonsname[i]
-      button.value = buttonsname[i]
-      button.onclick = clicboutton
-      sacbouttons.appendChild(button)
-      document.getElementById("sacbouttons").style.opacity = "1"
+      case "rm":
+      removeBoutton(params)
+      break;
+
+      default:
+      console.log("ERR invalid params '"+commande+"' must use rm or add for first params")
+      break;
     }
     break;
 
-    case "c":
-    // CHECKLIST
-    // trigger pour renseigner la bd de checklist (!!!!WIP!!!!)
-    var checklistname = commande.match(/([^\,]+)/g)
-    var howmuch = checklistname.length
 
-    for(i=0; i<howmuch; i++){
-      console.log(checklistname)
+    case "img":
+    // IMAGE
+    // trigger pour enclencher un fadeout styled
+    if(alternance){
+      changeImg(params)    
+    }else{
+      changeImg(params)
     }
+    alternance =! alternance
+    break;
 
-    case "f":
-    // FICTION
-    // trigger pour afficher un string dans la rubrique fiction
-    var content = commande
-    document.getElementById("fiction").innerHTML = content
+    case "fullscreen":
+    fullscreen();
+    break;
 
   }
 
 }
-
-function clicboutton(){
-  newchecklist(this.id)
-  document.getElementById("sacbouttons").style.opacity = "0";
-  compteur +=1
-  next()
+function addFiction(params){
+  var ul = document.getElementById("elemfiction")
+  var li = document.createElement("li")
+  li.setAttribute("id", phrase)
+  li.appendChild(document.createTextNode(phrase))
+  ul.appendChild(li)
 }
 
-function newchecklist(){
+function removeFiction(params){
+  var li = document.getElementById(phrase);
+  if(li!=null){
+    li.parentNode.removeChild(li);
+  }else{
+    console.log("ERR cannot find element '"+ phrase + "'")
+  }
+}
 
+function changeImg(params){
+  //bon being ça marche par contre pas de contrôle que les animations sont finies pour passer à la suite
+  if (alternance) {
+    $("#imgcontainerFRONT").css("background-image", "url(/img/"+params[0]);  
+    $("#imgcontainerFRONT").css("opacity", "1");  
+  }else{
+    $("#imgcontainerBACK").css("background-image", "url(/img/"+params[0]);  
+    $("#imgcontainerFRONT").css("opacity", "0");  
+  }
+  console.log(alternance)
+  console.log(params[0])
+}
+
+function newBoutton(params){
+  /* var buttonsname = params.match(/[^\s\d]\w+/g)
+  var howmuch = buttonsname.length
+  var anciensBouttons = $("#sacbouttons").empty();
+  for(i=0; i<howmuch; i+=1){
+    var newBoutton = $('<input type="button" value="'+ buttonsname[i] +'" onclick = "clicboutton(this)"/>');
+    newBoutton.appendTo($("#sacbouttons"));
+  }
+  // ça c'était pour créer les bouttons en masse d'un coup pim un bouton / mot. 
+  // c'était intéressant hein
+  */
+  interupt=true
+
+  var nom = params[0]
+  params.shift()
+  console.log("heheheoho",params)
+  var fonctions = []
+
+  var howmany = params.length
+  for(i=0; i<howmany; i++){
+    var fonction = params[i]
+    fonctionpropre = fonction.substr(1)
+    fonctions.push(fonctionpropre)
+    fonctionsconcat = fonctions.join(";")
+  }
+
+  var newBoutton = $('<input type="button" value="'+ nom +'" id="'+ nom +'" onclick = "' + fonctionsconcat + '">')
+  newBoutton.appendTo($("#sacbouttons"))
+}
+
+function fullscreen(){
+  var i = document.getElementById("gcontainer");
+  if (i.requestFullscreen) {
+    i.requestFullscreen();
+  } else if (i.webkitRequestFullscreen) {
+    i.webkitRequestFullscreen();
+  } else if (i.mozRequestFullScreen) {
+    i.mozRequestFullScreen();
+  } else if (i.msRequestFullscreen) {
+    i.msRequestFullscreen();
+  }
+}
+
+function stop(onoff){
+  if(onoff=="on") interupt=true
+    if(onoff=="off") interupt=false
+      console.log(interupt)
+  // bon alors c'est bien sympa tout ça mais le problème
+  // c'est que ça fire onclick (et c'est pas ça qu'on veut faire hein.)
+}
+
+function destroy(self){
+  var element = document.getElementById(self)
+  var parentid = element.parentNode.id
+  $("#"+parentid).empty();
+}
+
+function gotobookmark(where){
+  if(interupt==true) interupt=false
+    howmuch = data.length
+  for(i=0; i<howmuch; i++){
+    if((data[i]["type"]=="bookmark")&&(data[i]["text"]==where)){
+      //ça c'est la valeur de ton compteur mon ptit gars
+      compteur = i
+      next()
+      console.log("gotobookmark, ", compteur)
+      return
+    }
+  }
+}
+
+function gotonext(){
+  compteur +=1
+  next()
+  interupt=false
+  console.log("gotonext, ", compteur)
 }
 
 document.onkeydown = function(e) {
 
   e = e || window.event
 
-
   // KEYCODE 32 IS SPACEBAR
   // KEYCIODE 78 IS "n"
 
-  if(e.keyCode =='32' && compteur <= data.length){
+  if(e.keyCode =='32' && compteur <= data.length && interupt==false){
     compteur +=1
-    document.getElementById("container"+compteur).style.opacity = "0";
-    document.getElementById("container3").webkitRequestFullscreen();
-  next();
-}
+    next();
+    console.log("keydown, ", compteur)
+  }
 
 }
 
 </script>
-
-</body>
-

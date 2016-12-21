@@ -1,55 +1,69 @@
 [
     {
         "type": "text",
-        "text": "salut les spectateurs à la maison, alors, ça va bien?"
+        "text": "yo"
+    },
+    {
+        "text": [
+            "rain1.jpg"
+        ],
+        "type": "img"
     },
     {
         "type": "text",
-        "text": "bon j’aimerais revenir sur cette histoire de barre espace"
-    },
-    {
-        "text": [
-            "salut",
-            "je",
-            "suis",
-            "un",
-            "béguin"
-        ],
-        "type": "égouts"
-    },
-    {
-        "text": [
-            "je",
-            "suis",
-            "un",
-            "c"
-        ],
-        "type": "salut"
+        "text": "ça va bien?"
     },
     {
         "type": "text",
-        "text": ""
+        "text": "et donc"
     },
     {
         "text": [
-            "salut",
-            "je",
-            "suis",
-            "un",
-            "a"
+            "add",
+            "Non",
+            ">gotobookmark('1pasbienassis')",
+            ">destroy(id)"
         ],
-        "type": "amadou"
+        "type": "btn"
     },
     {
         "text": [
-            "salut",
-            "je",
-            "suis",
-            "également",
-            "un",
-            "a"
+            "add",
+            "Oui",
+            ">gotonext()",
+            ">destroy(id)"
         ],
-        "type": "ambiou"
+        "type": "btn"
+    },
+    {
+        "type": "text",
+        "text": "Est-ce que vous êtes bien assis?"
+    },
+    {
+        "type": "text",
+        "text": "Super bien"
+    },
+    {
+        "type": "text",
+        "text": "C'est chouette d'être bien assis"
+    },
+    {
+        "type": "text",
+        "text": "C'est super de se reposer la nuque"
+    },
+    {
+        "text": [
+            "fin1pasbienassis"
+        ],
+        "type": "bookmark"
+    },
+    {
+        "type": "text",
+        "text": "Bon revenons à nos moutons"
+    },
+    {
+        "type": "text",
+        "text": "euh pardon nos boutons"
     },
     {
         "type": "text",
@@ -60,6 +74,12 @@
         "text": "je vous ai demandé d’appuyer sur la barre espace "
     },
     {
+        "text": [
+            "rain2.jpg"
+        ],
+        "type": "img"
+    },
+    {
         "type": "text",
         "text": "alors que ça ne servait plus à rien"
     },
@@ -68,22 +88,14 @@
         "text": "et que c’était en fait moi qui contrôlait le défilement du texte"
     },
     {
+        "text": [
+            "rain3.jpg"
+        ],
+        "type": "img"
+    },
+    {
         "type": "text",
         "text": "c’était un peu cruel, je le ferai plus"
-    },
-    {
-        "text": [
-            "oundfsoundfsqoundfsoundfqoudfsoun"
-        ],
-        "type": "ntr"
-    },
-    {
-        "text": [
-            "qfoundounfdounfdsq",
-            "dfsq",
-            "ds"
-        ],
-        "type": "ofgh"
     },
     {
         "type": "text",
@@ -91,23 +103,23 @@
     },
     {
         "text": [
-            "qsdf",
-            "ounsqdf",
-            "sdnof",
-            "qsdonu",
-            "qfdsonu"
+            "1pasbienassis"
         ],
-        "type": "nfgh"
+        "type": "bookmark"
+    },
+    {
+        "type": "text",
+        "text": "ah ouais vous êtes mal assis? bon dommage"
     },
     {
         "text": [
-            "ousdqffouqdnsd",
-            "fsqd",
-            "finqdsf",
-            "qsonuf",
-            "d"
+            "fin1pasbienassis"
         ],
-        "type": "o"
+        "type": "goto"
+    },
+    {
+        "text": [],
+        "type": "fullscreen"
     },
     {
         "type": "text",
@@ -115,16 +127,9 @@
     },
     {
         "text": [
-            "trébuche",
-            "ici",
-            "petit",
-            "robot"
+            "client"
         ],
-        "type": "pouet"
-    },
-    {
-        "type": "text",
-        "text": "il fallait qu’on en passe par là"
+        "type": "nmode"
     },
     {
         "type": "text",

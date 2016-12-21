@@ -1,27 +1,38 @@
+yo
+#img rain1.jpg
+ça va bien?
+et donc
 
-salut les spectateurs à la maison, alors, ça va bien?
-bon j’aimerais revenir sur cette histoire de barre espace
-#égouts salut je suis un béguin
+#btn add Non >gotobookmark('1pasbienassis') >destroy(id)
+#btn add Oui >gotonext() >destroy(id)
 
-#salut je suis un c
-#amadou salut je suis un a
-#ambiou salut je suis également un a
+Est-ce que vous êtes bien assis?
+Super bien
+C'est chouette d'être bien assis
+C'est super de se reposer la nuque
 
+#bookmark fin1pasbienassis
+
+Bon revenons à nos moutons
+euh pardon nos boutons
 je suis désolé pour la blague de toute à l’heure
-
-
 je vous ai demandé d’appuyer sur la barre espace 
+
+#img rain2.jpg
+
 alors que ça ne servait plus à rien
 et que c’était en fait moi qui contrôlait le défilement du texte
+
+#img rain3.jpg
+
 c’était un peu cruel, je le ferai plus
-#ntr oundfsoundfsqoundfsoundfqoudfsoun
-#ofgh qfoundounfdounfdsq dfsq ds
 d’un autre côté je crois que c’était un peu nécéssaire
 
-#nfgh qsdf ounsqdf sdnof qsdonu qfdsonu
-#o ousdqffouqdnsd fsqd finqdsf qsonuf d
-#pouet trébuche ici petit robot
-il fallait qu’on en passe par là
+#bookmark 1pasbienassis
+
+ah ouais vous êtes mal assis? bon dommage
+
+#goto fin1pasbienassis
 
 
 
@@ -55,7 +66,8 @@ il fallait qu’on en passe par là
 
 
 
-
+#fullscreen
+#nmode client
 que l’on sente l’absence de la barre espace
 pour percevoir sa matérialité
 #b mouais oui non peut-etre surement-pas je-suis-sauce

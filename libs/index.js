@@ -14,7 +14,7 @@ parser.addRule(/\#.+/gm, function(content){
 
 	var contentz = content.replace(/\n/gm, '');
 	// pour virer les incohérences avec les newlines de mairde
-	var contentzarray = contentz.match(/[^#\s][a-z0-9\u00E0-\u00FC]{0,}/gm)
+	var contentzarray = contentz.match(/[^#\s][a-z0-9\u00E0-\u00FC().']{0,}/gm)
 	var cleanbalise = contentzarray[0]
 	contentzarray.shift()
 
