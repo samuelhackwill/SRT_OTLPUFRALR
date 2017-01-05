@@ -35,7 +35,7 @@ yo
 
 donc ça c'est le texte de base. On peut aussi utiliser des balises : ce sont des lignes d'instructions qui commencent par un dièse #
 
-``
+```
 #img orage.jpg
 ```
 
