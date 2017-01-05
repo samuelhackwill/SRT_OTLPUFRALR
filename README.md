@@ -41,44 +41,46 @@ les trois premières lettres suivant la balise (ici "img") désignent le type d'
 les autres choses écrites à la suite sont les instructions associées à l'action, ici "orage.jpg", qui est tout simplement le chemin de l'image à charger.
 
 ## Toutes les balises
-[IMG](https://github.com/samuelhackwill/SRT_OTLPUFRALR#IMG)
-[BTN](https://github.com/samuelhackwill/SRT_OTLPUFRALR#BTN)
-[BOOKMARK](https://github.com/samuelhackwill/SRT_OTLPUFRALR#BOOKMARK)
-[GOTO](https://github.com/samuelhackwill/SRT_OTLPUFRALR#GOTO)
-[FULLSCREEN](https://github.com/samuelhackwill/SRT_OTLPUFRALR#FULLSCREEN)
-[ADDCLASS](https://github.com/samuelhackwill/SRT_OTLPUFRALR#ADDCLASS)
+[IMG : Changer l'image de background](#IMG)
+[BTN : Ajouter un bouton](#BTN)
+[GOTO : Sauter à un endroit du texte](#GOTO)
+[BOOKMARK : Un endroit vers lesquel GOTO renvoie](#BOOKMARK)
+[FULLSCREEN : Passer en mode plein écran](#FULLSCREEN)
+[ADDCLASS : Changer l'aspect d'un truc](#ADDCLASS)
 
+<a name="IMG"/>
 ## IMG
 
 ```
 #img orage.jpg
 ```
 
+<a name="BTN"/>
 ## BTN
 
 ```
 #btn assisnon Non,_youpi_tralalou gotobookmark('1pasbienassis') destroy(id)
 ```
-
+<a name="BOOKMARK"/>
 ## BOOKMARK
 
 ```
 #bookmark fin1pasbienassis
 ```
 
-
+<a name="GOTO"/>
 ## GOTO
 
 ```
 #goto fin1pasbienassis
 ```
-
+<a name="FULLSCREEN"/>
 ## FULLSCREEN
 
 ```
 #fullscreen
 ```
-
+<a name="ADDCLASS"/>
 ## ADDCLASS
 
 ```
