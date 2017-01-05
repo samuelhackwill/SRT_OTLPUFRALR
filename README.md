@@ -52,4 +52,3 @@ les autres choses écrites à la suite sont les instructions associées à l'act
 ### FULLSCREEN
 
 
-
