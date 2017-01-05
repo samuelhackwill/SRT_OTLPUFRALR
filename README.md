@@ -1,5 +1,4 @@
-## Generateur de texte interactif ##
-*On traversera le code une fois rendus au fichier json*
+# On traversera le code une fois rendus au fichier json
 
 trousse à outils pour transformer des textes (/libs/input.txt) 
 en tableaux JSON (/libs/output.json)
@@ -20,9 +19,12 @@ puis y'a des fonctions javascript qui vont afficher le texte
 et faire des trucs intéressants genre faire apparaître des boutons à un moment
 x ou alors faire apparaître des items d'une checklist, etc.
 
-*Syntaxe à utiliser dans le fichier input.txt*
+## Table of contents
+[Syntaxe](https://github.com/samuelhackwill/SRT_OTLPUFRALR#Syntaxe)
 
-on se sert des retours à la ligne pour séparer les blocs de texte.
+##Syntaxe
+
+dans le fichier input.txt, on se sert des retours à la ligne pour séparer les blocs de texte.
 
 ```
 yo
@@ -33,12 +35,21 @@ yo
 
 donc ça c'est le texte de base. On peut aussi utiliser des balises : ce sont des lignes d'instructions qui commencent par un dièse #
 
-```
+``
 #img orage.jpg
 ```
 
 les trois premières lettres suivant la balise (ici "img") désignent le type d'action à effectuer : ici, changer l'image de fond du navigateur web. Il existe un certain nombre d'autres types de balises, comme les balises #goto, #addclass, etc.
 
 les autres choses écrites à la suite sont les instructions associées à l'action, ici "orage.jpg", qui est tout simplement le chemin de l'image à charger.
+
+## Toutes les balises
+### IMG
+### BTN
+### BOOKMARK
+### GOTO
+### ADDCLASS
+### FULLSCREEN
+
 
 
