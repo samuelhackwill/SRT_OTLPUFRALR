@@ -54,7 +54,7 @@ les autres choses écrites à la suite sont les instructions associées à l'act
 ```
 #img orage.jpg
 ```
-IMG reçoit *un seul argument* : le chemin de l'image à aller chercher. 
+IMG reçoit **un seul argument** : le chemin de l'image à aller chercher. 
 /!\ à l'heure actuelle, il faut placer toutes les images dans le dossier /img, ce qui est pris en compte par le script qui reçoit les instructions que vous entrez dans input.txt. Donc là par exemple le script va aller chercher l'image dans /img/orage.jpg. Pas de possibilité de rentrer un chemin absolu dans l'état actuel des choses.
 
 <a name="BTN"/>
@@ -64,9 +64,9 @@ IMG reçoit *un seul argument* : le chemin de l'image à aller chercher.
 #btn assisnon Non,_youpi_tralalou gotobookmark('1pasbienassis') destroy(id)
 ```
 
-BTN reçoit *entre 2 et x arguments* : le premier est le numéro d'identification (id) du boutton ("assisnon"). Trouvez un nom bien parlant et unique. 
+BTN reçoit **entre 2 et x arguments** : le premier est le numéro d'identification (id) du boutton ("assisnon"). Trouvez un nom bien parlant et unique. 
 
-Le second est son libellé, c'est à dire ce qui va s'afficher à l'écran ("Non,_youpi_tralalou") /!\ attention, si vous voulez écrire une phrase, comme dans le cas présent, il ne faut pas utiliser d'espaces mais des underscores ("_") qui seront remplacés par des espaces par le script. Ben oui parce que en fait on se sert des espaces pour séparer les instructions tu vois alors si on met un espace au milieu d'une instruction ça pète tout
+Le second est son libellé, c'est à dire ce qui va s'afficher à l'écran ("Non,_youpi_tralalou") /!\ attention, si vous voulez écrire une phrase, comme dans le cas présent, il ne faut pas utiliser d'espaces mais des underscores (aka le tiret du bas) qui seront remplacés par des espaces par le script. Ben oui parce que en fait on se sert des espaces pour séparer les instructions tu vois alors si on met un espace au milieu d'une instruction ça pète tout
 
 Et ensuite, tous les autres trucs écrits à la suite ce sont les fonctions lancées quant on clique sur le bouton. ici ("gotobookmark('1pasbienassis')" et "destroy(id)") On peut mettre autant de fonctions que l'on veut.
 
@@ -76,7 +76,7 @@ Et ensuite, tous les autres trucs écrits à la suite ce sont les fonctions lanc
 ```
 #bookmark fin1pasbienassis
 ```
-Bookmark c'est simple, c'est une sorte d'emplacement invisible vers lequel on peut sauter quand on veut. Il prend *un seul argument*, son nom (ici "fin1pasbienassis").
+Bookmark c'est simple, c'est une sorte d'emplacement invisible vers lequel on peut sauter quand on veut. Il prend **un seul argument**, son nom (ici "fin1pasbienassis").
 
 <a name="GOTO"/>
 #### GOTO
@@ -84,7 +84,7 @@ Bookmark c'est simple, c'est une sorte d'emplacement invisible vers lequel on pe
 ```
 #goto fin1pasbienassis
 ```
-Goto renvoie vers un bookmark. Il prend *un seul argument*, la cible du bookmark vers lequel il renvoie (ici, "fin1pasbienassis").
+Goto renvoie vers un bookmark. Il prend **un seul argument**, la cible du bookmark vers lequel il renvoie (ici, "fin1pasbienassis").
 
 <a name="FULLSCREEN"/>
 #### FULLSCREEN
@@ -100,4 +100,4 @@ Fullscreen active le mode plein écran du navigateur. Il ne prend pas d'argument
 ```
 #addclass srtcontainer posbot
 ```
-Addclass prend *deux arguments*. Le premier (ici "srtcontainer"), c'est le nom de l'élément auquel on va associer une classe CSS. Le second, (ici "posbot") c'est le nom de cette classe CSS.
+Addclass prend **deux arguments**. Le premier (ici "srtcontainer"), c'est le nom de l'élément auquel on va associer une classe CSS. Le second, (ici "posbot") c'est le nom de cette classe CSS.
