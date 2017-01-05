@@ -41,17 +41,12 @@ les trois premières lettres suivant la balise (ici "img") désignent le type d'
 les autres choses écrites à la suite sont les instructions associées à l'action, ici "orage.jpg", qui est tout simplement le chemin de l'image à charger.
 
 ## Toutes les balises
-[IMG : Changer l'image de background](#IMG)
-
-[BTN : Ajouter un bouton](#BTN)
-
-[GOTO : Sauter à un endroit du texte](#GOTO)
-
-[BOOKMARK : Un endroit vers lesquel GOTO renvoie](#BOOKMARK)
-
-[FULLSCREEN : Passer en mode plein écran](#FULLSCREEN)
-
-[ADDCLASS : Changer l'aspect d'un truc](#ADDCLASS)
+[IMG : Changer l'image de background](#IMG)<br>
+[BTN : Ajouter un bouton](#BTN)<br>
+[GOTO : Sauter à un endroit du texte](#GOTO)<br>
+[BOOKMARK : Un endroit vers lesquel GOTO renvoie](#BOOKMARK)<br>
+[FULLSCREEN : Passer en mode plein écran](#FULLSCREEN)<br>
+[ADDCLASS : Changer l'aspect d'un truc](#ADDCLASS)<br>
 
 <a name="IMG"/>
 #### IMG
