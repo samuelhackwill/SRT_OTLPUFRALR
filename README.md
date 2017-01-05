@@ -42,10 +42,15 @@ les autres choses écrites à la suite sont les instructions associées à l'act
 
 ## Toutes les balises
 [IMG : Changer l'image de background](#IMG)
+
 [BTN : Ajouter un bouton](#BTN)
+
 [GOTO : Sauter à un endroit du texte](#GOTO)
+
 [BOOKMARK : Un endroit vers lesquel GOTO renvoie](#BOOKMARK)
+
 [FULLSCREEN : Passer en mode plein écran](#FULLSCREEN)
+
 [ADDCLASS : Changer l'aspect d'un truc](#ADDCLASS)
 
 <a name="IMG"/>
