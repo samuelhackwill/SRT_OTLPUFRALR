@@ -19,9 +19,6 @@ puis y'a des fonctions javascript qui vont afficher le texte
 et faire des trucs intéressants genre faire apparaître des boutons à un moment
 x ou alors faire apparaître des items d'une checklist, etc.
 
-## Table of contents
-[Syntaxe](https://github.com/samuelhackwill/SRT_OTLPUFRALR#Syntaxe)
-
 ##Syntaxe
 
 dans le fichier input.txt, on se sert des retours à la ligne pour séparer les blocs de texte.
@@ -44,11 +41,46 @@ les trois premières lettres suivant la balise (ici "img") désignent le type d'
 les autres choses écrites à la suite sont les instructions associées à l'action, ici "orage.jpg", qui est tout simplement le chemin de l'image à charger.
 
 ## Toutes les balises
-### IMG
-### BTN
-### BOOKMARK
-### GOTO
-### ADDCLASS
-### FULLSCREEN
+[IMG](https://github.com/samuelhackwill/SRT_OTLPUFRALR#IMG)
+[BTN](https://github.com/samuelhackwill/SRT_OTLPUFRALR#BTN)
+[BOOKMARK](https://github.com/samuelhackwill/SRT_OTLPUFRALR#BOOKMARK)
+[GOTO](https://github.com/samuelhackwill/SRT_OTLPUFRALR#GOTO)
+[FULLSCREEN](https://github.com/samuelhackwill/SRT_OTLPUFRALR#FULLSCREEN)
+[ADDCLASS](https://github.com/samuelhackwill/SRT_OTLPUFRALR#ADDCLASS)
+
+## IMG
+
+```
+#img orage.jpg
+```
+
+## BTN
+
+```
+#btn assisnon Non,_youpi_tralalou gotobookmark('1pasbienassis') destroy(id)
+```
+
+## BOOKMARK
+
+```
+#bookmark fin1pasbienassis
+```
 
 
+## GOTO
+
+```
+#goto fin1pasbienassis
+```
+
+## FULLSCREEN
+
+```
+#fullscreen
+```
+
+## ADDCLASS
+
+```
+#addclass srtcontainer posbot
+```
