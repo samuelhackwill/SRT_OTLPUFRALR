@@ -49,39 +49,39 @@ les autres choses écrites à la suite sont les instructions associées à l'act
 [ADDCLASS : Changer l'aspect d'un truc](#ADDCLASS)
 
 <a name="IMG"/>
-## IMG
+#### IMG
 
 ```
 #img orage.jpg
 ```
 
 <a name="BTN"/>
-## BTN
+#### BTN
 
 ```
 #btn assisnon Non,_youpi_tralalou gotobookmark('1pasbienassis') destroy(id)
 ```
 <a name="BOOKMARK"/>
-## BOOKMARK
+#### BOOKMARK
 
 ```
 #bookmark fin1pasbienassis
 ```
 
 <a name="GOTO"/>
-## GOTO
+#### GOTO
 
 ```
 #goto fin1pasbienassis
 ```
 <a name="FULLSCREEN"/>
-## FULLSCREEN
+#### FULLSCREEN
 
 ```
 #fullscreen
 ```
 <a name="ADDCLASS"/>
-## ADDCLASS
+#### ADDCLASS
 
 ```
 #addclass srtcontainer posbot
