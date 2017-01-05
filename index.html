@@ -89,6 +89,7 @@ function next(){
         next();
       }
     }
+
     if((type=="text")&&(params!="")){
       document.getElementById("srt").innerHTML = params
       // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
@@ -97,9 +98,7 @@ function next(){
 
 
   function action(type, params){
-
     switch(type){
-
       case "addclass":
       addclass(params)
       break
@@ -109,65 +108,44 @@ function next(){
       break
 
       case "btn":
-    // BOUTTON
-    // trigger pour faire apparaître les boutons
-    // supprime les anciens bouttons
-    commande = (params[0])
-
-    params.shift()
-
-    switch(commande){
-      case "add":
       newBoutton(params)
+      break
+
+      case "img":
+      // IMAGE
+      // trigger pour enclencher un fadeout styled
+      if(alternance){
+        changeImg(params)
+      }else{
+        changeImg(params)
+      }
+      alternance =! alternance
       break;
 
-      case "rm":
-      removeBoutton(params)
-      break;
-
-      default:
-      console.log("ERR invalid params '"+commande+"' must use rm or add for first params")
+      case "fullscreen":
+      fullscreen();
       break;
     }
-    break;
 
+  }
+  function addFiction(params){
+    var ul = document.getElementById("elemfiction")
+    var li = document.createElement("li")
+    li.setAttribute("id", phrase)
+    li.appendChild(document.createTextNode(phrase))
+    ul.appendChild(li)
+  }
 
-    case "img":
-    // IMAGE
-    // trigger pour enclencher un fadeout styled
-    if(alternance){
-      changeImg(params)    
+  function removeFiction(params){
+    var li = document.getElementById(phrase);
+    if(li!=null){
+      li.parentNode.removeChild(li);
     }else{
-      changeImg(params)
+      console.log("ERR cannot find element '"+ phrase + "'")
     }
-    alternance =! alternance
-    break;
-
-    case "fullscreen":
-    fullscreen();
-    break;
-
   }
 
-}
-function addFiction(params){
-  var ul = document.getElementById("elemfiction")
-  var li = document.createElement("li")
-  li.setAttribute("id", phrase)
-  li.appendChild(document.createTextNode(phrase))
-  ul.appendChild(li)
-}
-
-function removeFiction(params){
-  var li = document.getElementById(phrase);
-  if(li!=null){
-    li.parentNode.removeChild(li);
-  }else{
-    console.log("ERR cannot find element '"+ phrase + "'")
-  }
-}
-
-function changeImg(params){
+  function changeImg(params){
   //bon being ça marche par contre pas de contrôle que les animations sont finies pour passer à la suite
   if (alternance) {
     $("#imgcontainerFRONT").css("background-image", "url(/img/"+params[0]);  
@@ -186,32 +164,24 @@ function addclass(params){
 }
 
 function newBoutton(params){
-  /* var buttonsname = params.match(/[^\s\d]\w+/g)
-  var howmuch = buttonsname.length
-  var anciensBouttons = $("#sacbouttons").empty();
-  for(i=0; i<howmuch; i+=1){
-    var newBoutton = $('<input type="button" value="'+ buttonsname[i] +'" onclick = "clicboutton(this)"/>');
-    newBoutton.appendTo($("#sacbouttons"));
-  }
-  // ça c'était pour créer les bouttons en masse d'un coup pim un bouton / mot. 
-  // c'était intéressant hein
-  */
   interupt=true
+  console.log("new boutton : ",params)
 
+  var fonctions = []
   var nom = params[0]
   params.shift()
-  console.log("heheheoho",params)
-  var fonctions = []
+  var label = params[0]
+  var labelpropre = label.replace(/\_/g, ' ');
+
+  params.shift()
 
   var howmany = params.length
   for(i=0; i<howmany; i++){
-    var fonction = params[i]
-    fonctionpropre = fonction.substr(1)
-    fonctions.push(fonctionpropre)
+    fonctions.push(params[i])
     fonctionsconcat = fonctions.join(";")
   }
 
-  var newBoutton = $('<input type="button" value="'+ nom +'" id="'+ nom +'" onclick = "' + fonctionsconcat + '">')
+  var newBoutton = $('<input type="button" value="'+ labelpropre +'" id="'+ nom +'" onclick = "' + fonctionsconcat + '">')
   newBoutton.appendTo($("#sacbouttons"))
 }
 
@@ -237,9 +207,16 @@ function stop(onoff){
 }
 
 function destroy(self){
+  var delay = 333
+  // dans l'idéal faudrait qu'on lui passe un délai aussi
   var element = document.getElementById(self)
   var parentid = element.parentNode.id
-  $("#"+parentid).empty();
+
+  $("#"+parentid).addClass("ciao")
+
+  setTimeout(function(){
+    $("#"+parentid).empty()
+  },delay)
 }
 
 function gotobookmark(where){

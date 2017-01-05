@@ -19,21 +19,31 @@
     },
     {
         "text": [
-            "add",
-            "Non",
-            ">gotobookmark('1pasbienassis')",
-            ">destroy(id)"
+            "assisnon",
+            "Non,_youpi_tralalou",
+            "gotobookmark('1pasbienassis')",
+            "destroy(id)"
         ],
         "type": "btn"
     },
     {
         "text": [
-            "add",
+            "assisoui",
             "Oui",
-            ">gotonext()",
-            ">destroy(id)"
+            "gotonext()",
+            "destroy(id)"
         ],
         "type": "btn"
+    },
+    {
+        "type": "text",
+        "text": ""
+    },
+    {
+        "text": [
+            "rain3.jpg"
+        ],
+        "type": "img"
     },
     {
         "type": "text",
@@ -117,327 +127,5 @@
             "fin1pasbienassis"
         ],
         "type": "goto"
-    },
-    {
-        "text": [],
-        "type": "fullscreen"
-    },
-    {
-        "type": "text",
-        "text": ""
-    },
-    {
-        "text": [
-            "client"
-        ],
-        "type": "nmode"
-    },
-    {
-        "type": "text",
-        "text": "que l’on sente l’absence de la barre espace"
-    },
-    {
-        "type": "text",
-        "text": "pour percevoir sa matérialité"
-    },
-    {
-        "text": [
-            "mouais",
-            "oui",
-            "non",
-            "peut",
-            "-etre",
-            "surement",
-            "-pas",
-            "je",
-            "-suis",
-            "-sauce"
-        ],
-        "type": "b"
-    },
-    {
-        "type": "text",
-        "text": "parce que la barre espace en fait"
-    },
-    {
-        "text": [
-            "vous",
-            "avez",
-            "le",
-            "temps"
-        ],
-        "type": "b"
-    },
-    {
-        "type": "text",
-        "text": "au delà de ce qu’elle est, au premier degré du terme, c’est à dire "
-    },
-    {
-        "type": "text",
-        "text": "un petit rectangle de plastique monté sur un mécanisme ressort,"
-    },
-    {
-        "type": "text",
-        "text": "c’est tout un protocole d’interaction imaginé par nous"
-    },
-    {
-        "type": "text",
-        "text": "mis en branle d’un seul coup"
-    },
-    {
-        "type": "text",
-        "text": "il faudrait qu’on puisse imaginer toute l’épaisseur de ce protocole"
-    },
-    {
-        "type": "text",
-        "text": "écrasée sous votre doigt quand vous pressez sur le bouton"
-    },
-    {
-        "type": "text",
-        "text": "donc qu’est ce qui se passe quand vous appuyez sur la barre espace"
-    },
-    {
-        "type": "text",
-        "text": "en fait c’est simple"
-    },
-    {
-        "type": "text",
-        "text": "quelque part dans le code informatique de cette page "
-    },
-    {
-        "type": "text",
-        "text": "il y a une fonction javascript qui tend l’oreille"
-    },
-    {
-        "type": "text",
-        "text": "on appelle ça un « event listener »"
-    },
-    {
-        "type": "text",
-        "text": "donc assez littéralement c’est un truc qui écoute si jamais il se passerait pas quelque chose"
-    },
-    {
-        "type": "text",
-        "text": "à l’endroit du clavier de votre ordinateur"
-    },
-    {
-        "type": "text",
-        "text": "fait que, quand vous appuyez sur la barre espace, inévitablement"
-    },
-    {
-        "type": "text",
-        "text": "la fonction javascript sort de sa torpeur et appelle une autre fonction"
-    },
-    {
-        "type": "text",
-        "text": "qui va chercher le prochain morceau de texte et l’affiche sur votre navigateur."
-    },
-    {
-        "type": "text",
-        "text": "je passe évidemment plein de trucs sous silence"
-    },
-    {
-        "type": "text",
-        "text": "mais voila"
-    },
-    {
-        "type": "text",
-        "text": "c’est ça qu’il se passe"
-    },
-    {
-        "type": "text",
-        "text": "et disons que ce qui est intéressant avec l’informatique"
-    },
-    {
-        "type": "text",
-        "text": "c’est qu’il faut tout expliquer à l’ordinateur"
-    },
-    {
-        "type": "text",
-        "text": "ce qui nécessite d’hyper intellectualiser des trucs simples"
-    },
-    {
-        "type": "text",
-        "text": "je veux dire,"
-    },
-    {
-        "type": "text",
-        "text": "tout ce protocole peut sembler très simple quoi"
-    },
-    {
-        "type": "text",
-        "text": "par exemple quand on parle avec quelqu’un on a pas besoin d’une barre espace"
-    },
-    {
-        "type": "text",
-        "text": "sur laquelle appuyer pour signifier à son interlocuteur qu’on a bien écouté toute sa dernière phrase"
-    },
-    {
-        "type": "text",
-        "text": "et qu’il peut passer à la suite"
-    },
-    {
-        "type": "text",
-        "text": "enfin quoi"
-    },
-    {
-        "text": "ceci est un gros com likez moi",
-        "type": "comment"
-    },
-    {
-        "type": "text",
-        "text": "vous imaginez une conversation à trois?"
-    },
-    {
-        "type": "text",
-        "text": "hyper relou"
-    },
-    {
-        "type": "text",
-        "text": "enfin bon voila on y est "
-    },
-    {
-        "type": "text",
-        "text": "vous aurez reconnu le dispositif du spectacle puisque"
-    },
-    {
-        "type": "text",
-        "text": "c’est précisément cela qu’on essaye de faire maintenant"
-    },
-    {
-        "type": "text",
-        "text": "on est un petit groupe"
-    },
-    {
-        "type": "text",
-        "text": "on dispose d’un certain nombre d’outils"
-    },
-    {
-        "type": "text",
-        "text": "conçus par mes collègues et moi"
-    },
-    {
-        "type": "text",
-        "text": "pis on essaye de les utiliser tout en sentant ce qui se passe"
-    },
-    {
-        "type": "text",
-        "text": "bon du coup pour me faire excuser de ma blague nulle de toute à l’heure"
-    },
-    {
-        "type": "text",
-        "text": "j’aimerais vous confier une nouvelle barre espace"
-    },
-    {
-        "type": "text",
-        "text": "un peu améliorée"
-    },
-    {
-        "type": "text",
-        "text": "voila c’est fait, vous pouvez à nouveau appuyer sur la barre espace"
-    },
-    {
-        "type": "text",
-        "text": "je n’ai plus aucun contrôle"
-    },
-    {
-        "type": "text",
-        "text": "c’est bien flippant"
-    },
-    {
-        "type": "text",
-        "text": "je vous laisse gérer"
-    },
-    {
-        "type": "text",
-        "text": "c’est un peu étrange, je me retrouve un peu dans votre situation toute à l’heure"
-    },
-    {
-        "type": "text",
-        "text": "je suis un peu spectateur de ce que vous, vous faites"
-    },
-    {
-        "type": "text",
-        "text": "bon, certes, c’est toujours mon texte qui s’affiche"
-    },
-    {
-        "type": "text",
-        "text": "et puis ma barre espace que vous utilisez"
-    },
-    {
-        "type": "text",
-        "text": "mais c’est vous qui collectivement décidez du rythme auquel on progresse."
-    },
-    {
-        "type": "text",
-        "text": "ceci dit vous ne vous rendez peut être pas trop compte de ce qui se passe"
-    },
-    {
-        "type": "text",
-        "text": "genre si là vous avez appuyé sur la barre espace"
-    },
-    {
-        "type": "text",
-        "text": "et puis qu’il ne s’est rien passé de prime abord."
-    },
-    {
-        "type": "text",
-        "text": "on va clarifier un peu comment fonctionne la nouvelle barre espace"
-    },
-    {
-        "type": "text",
-        "text": "avec un truc un peu visuel pour changer"
-    },
-    {
-        "type": "text",
-        "text": "à chaque fois que l’un d’entre vous appuie sur la barre espace"
-    },
-    {
-        "type": "text",
-        "text": "on va faire en sorte qu’il se passe quelque chose"
-    },
-    {
-        "type": "text",
-        "text": "à partir de maintenant hop"
-    },
-    {
-        "type": "text",
-        "text": "vous voyez ce qu’il se passe?"
-    },
-    {
-        "type": "text",
-        "text": "les couleurs de votre écran changent"
-    },
-    {
-        "type": "text",
-        "text": "à chaque fois que quelqu’un appuie sur la barre espace,"
-    },
-    {
-        "type": "text",
-        "text": "la couleur de l’écran s’éclaircit d’un ton"
-    },
-    {
-        "type": "text",
-        "text": "et passé un certain seul, "
-    },
-    {
-        "type": "text",
-        "text": "on avance."
-    },
-    {
-        "type": "text",
-        "text": "on pourrait dire que la nouvelle barre espace"
-    },
-    {
-        "type": "text",
-        "text": "est une grande et massive touche de clavier"
-    },
-    {
-        "type": "text",
-        "text": "qui ne s’enfonce que si on se place dessus à plusieurs."
-    },
-    {
-        "type": "text",
-        "text": "est ce que ce mode vous convient? sinon on peut en explorer d’autres."
     }
 ]
