@@ -1,4 +1,5 @@
 # On traversera le code une fois rendus au fichier json
+# (WIP)
 
 trousse à outils pour transformer des textes (/libs/input.txt) 
 en tableaux JSON (/libs/output.json)
@@ -55,7 +56,7 @@ les autres choses écrites à la suite sont les instructions associées à l'act
 #img orage.jpg
 ```
 IMG reçoit **un seul argument** : le chemin de l'image à aller chercher. 
-/!\ à l'heure actuelle, il faut placer toutes les images dans le dossier /img, ce qui est pris en compte par le script qui reçoit les instructions que vous entrez dans input.txt. Donc là par exemple le script va aller chercher l'image dans /img/orage.jpg. Pas de possibilité de rentrer un chemin absolu dans l'état actuel des choses.
+/!\ à l'heure actuelle, il faut placer toutes les images dans le dossier /img (c'est là où le script va les chercher). Donc là par exemple le script va tenter de charger /img/orage.jpg. Pas de possibilité de rentrer un chemin absolu dans cette version du truc.
 
 <a name="BTN"/>
 #### BTN
@@ -64,11 +65,13 @@ IMG reçoit **un seul argument** : le chemin de l'image à aller chercher.
 #btn assisnon Non,_youpi_tralalou gotobookmark('1pasbienassis') destroy(id)
 ```
 
-BTN reçoit **entre 2 et x arguments** : le premier est le numéro d'identification (id) du boutton ("assisnon"). Trouvez un nom bien parlant et unique. 
+BTN reçoit **au moins 3 arguments** : le premier est le numéro d'identification (id) du boutton ("assisnon"). Trouvez un nom bien parlant et unique. 
 
 Le second est son libellé, c'est à dire ce qui va s'afficher à l'écran ("Non,_youpi_tralalou") /!\ attention, si vous voulez écrire une phrase, comme dans le cas présent, il ne faut pas utiliser d'espaces mais des underscores (aka le tiret du bas) qui seront remplacés par des espaces par le script. Ben oui parce que en fait on se sert des espaces pour séparer les instructions tu vois alors si on met un espace au milieu d'une instruction ça pète tout
 
-Et ensuite, tous les autres trucs écrits à la suite ce sont les fonctions lancées quant on clique sur le bouton. ici ("gotobookmark('1pasbienassis')" et "destroy(id)") On peut mettre autant de fonctions que l'on veut.
+Et ensuite, tous les autres trucs écrits à la suite ce sont les fonctions lancées quant on clique sur le bouton. ici ("gotobookmark('1pasbienassis')" et "destroy(id)") On peut mettre autant de fonctions que l'on veut. 
+
+euh alors tiens destroy(id), c'est une fonction qui fait disparaître tous les boutons quand on clique sur un d'entre eux. Pas mal utile
 
 <a name="BOOKMARK"/>
 #### BOOKMARK
