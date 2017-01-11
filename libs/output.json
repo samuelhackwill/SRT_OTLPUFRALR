@@ -1,131 +1,261 @@
 [
     {
         "type": "text",
-        "text": "yo"
+        "text": "vous êtes bien arrivés sur le site du spectacle"
     },
     {
         "type": "text",
-        "text": "ça va bien?"
+        "text": "\"On traversera le pont une fois rendus à la rivière\""
+    },
+    {
+        "type": "text",
+        "text": "c'est ici que tout va se dérouler"
+    },
+    {
+        "type": "text",
+        "text": "enfin non, c'est-à-dire que des choses vont se dérouler dans des salles de théâtres ici et là"
+    },
+    {
+        "type": "text",
+        "text": "et elles vont se dérouler ici-même également"
+    },
+    {
+        "type": "text",
+        "text": "c'est-à-dire"
+    },
+    {
+        "type": "text",
+        "text": "chez vous"
+    },
+    {
+        "type": "text",
+        "text": "par l'intermédiaire de cette page web."
+    },
+    {
+        "type": "text",
+        "text": "Je vous propose un truc pour commencer,"
+    },
+    {
+        "type": "text",
+        "text": "c'est de vous donner le contrôle sur le défilement du texte"
+    },
+    {
+        "type": "text",
+        "text": "comme ça vous pourrez avancer à votre rythme"
+    },
+    {
+        "type": "text",
+        "text": "alors on essaie,"
+    },
+    {
+        "type": "text",
+        "text": "vous pouvez appuyer sur la barre espace de votre clavier s'il vous plaît?"
+    },
+    {
+        "type": "text",
+        "text": "super, merci"
+    },
+    {
+        "type": "text",
+        "text": "..."
+    },
+    {
+        "type": "text",
+        "text": "et encore un coup s'il vous plaît?"
+    },
+    {
+        "type": "text",
+        "text": "allez ben on dirait que ça marche hyper bien"
     },
     {
         "text": [
-            "rain2.jpg"
+            "introducemyself"
         ],
-        "type": "img"
+        "type": "bookmark"
     },
     {
         "type": "text",
-        "text": "et donc"
-    },
-    {
-        "text": [
-            "assisnon",
-            "Non,_youpi_tralalou",
-            "gotobookmark('1pasbienassis')",
-            "destroy(id)"
-        ],
-        "type": "btn"
-    },
-    {
-        "text": [
-            "assisoui",
-            "Oui",
-            "gotonext()",
-            "destroy(id)"
-        ],
-        "type": "btn"
+        "text": "super, ben je me présente :"
     },
     {
         "type": "text",
-        "text": ""
-    },
-    {
-        "text": [
-            "rain3.jpg"
-        ],
-        "type": "img"
+        "text": "c’est samuel, je travaille au sein de l'équipe du projet"
     },
     {
         "type": "text",
-        "text": "Est-ce que vous êtes bien assis?"
+        "text": "sur les trucs en rapport avec internet"
     },
     {
         "type": "text",
-        "text": "Super bien"
+        "text": "là je suis pas vraiment en train de vous parler pour de vrai d’ailleurs"
+    },
+    {
+        "type": "text",
+        "text": "en fait j’ai préparé ce texte il y a quelques jours "
+    },
+    {
+        "type": "text",
+        "text": "et là présentement je suis sûrement en train de {en fonction de l’heure, au restau, etc}."
+    },
+    {
+        "type": "text",
+        "text": "pis je suis ici pour vous parler un peu du spectacle en fait"
+    },
+    {
+        "type": "text",
+        "text": "pour vous donner un petit aperçu de ce qui va se passer"
+    },
+    {
+        "type": "text",
+        "text": "et pour qu'on prépare ensemble le cadre dans lequel vous allez évoluer à ce moment-là."
     },
     {
         "text": [
             "srtcontainer",
-            "posbot"
+            "postop"
         ],
         "type": "addclass"
     },
     {
-        "type": "text",
-        "text": "C'est chouette d'être bien assis"
+        "text": [],
+        "type": "flipbook"
     },
     {
         "type": "text",
-        "text": "C'est super de se reposer la nuque"
+        "text": "hop"
+    },
+    {
+        "type": "text",
+        "text": "donc"
+    },
+    {
+        "type": "text",
+        "text": "ça c'est vous"
+    },
+    {
+        "type": "text",
+        "text": "vous êtes devant votre ordinateur donc"
+    },
+    {
+        "type": "text",
+        "text": "et pis vous cliquez sur des trucs quoi,"
+    },
+    {
+        "type": "text",
+        "text": "ou vous tapez sur votre clavier,"
+    },
+    {
+        "type": "text",
+        "text": "un peu comme maintenant."
+    },
+    {
+        "type": "text",
+        "text": "vous allez aussi entendre des sons"
+    },
+    {
+        "type": "text",
+        "text": "pendant quasiment tout le spectacle en fait"
+    },
+    {
+        "type": "text",
+        "text": "du coup, il faudra que le son de votre ordinateur soit activé"
+    },
+    {
+        "type": "text",
+        "text": "vous pouvez aussi vous brancher sur des enceintes si vous êtes un peu audiophile."
+    },
+    {
+        "type": "text",
+        "text": "voila"
+    },
+    {
+        "type": "text",
+        "text": "à part ça vous allez peut être aussi un peu vous déplacer"
+    },
+    {
+        "type": "text",
+        "text": "dans l'espace immédiat de l'ordinateur"
+    },
+    {
+        "type": "text",
+        "text": "donc ça serait bien d'avoir un peu de place pour bouger"
+    },
+    {
+        "type": "text",
+        "text": "et puis aussi que vous soyez tranquille"
+    },
+    {
+        "type": "text",
+        "text": "voire complètement seul"
+    },
+    {
+        "type": "text",
+        "text": "pour en profiter au maximum."
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "text": [],
+        "type": "flipbook"
+    },
+    {
+        "type": "text",
+        "text": "ok"
+    },
+    {
+        "type": "text",
+        "text": "alors alors alors"
+    },
+    {
+        "type": "text",
+        "text": "ça vous dit du coup?"
+    },
+    {
+        "type": "text",
+        "text": "hum en fait je vous entend pas"
+    },
+    {
+        "type": "text",
+        "text": "on va mettre en place un truc pour remédier à ça"
     },
     {
         "text": [
-            "fin1pasbienassis"
+            "voirbtnY",
+            "oui",
+            "destroy(id)",
+            "gotonext()"
         ],
-        "type": "bookmark"
-    },
-    {
-        "type": "text",
-        "text": "Bon revenons à nos moutons"
-    },
-    {
-        "type": "text",
-        "text": "euh pardon nos boutons"
-    },
-    {
-        "type": "text",
-        "text": "je suis désolé pour la blague de toute à l’heure"
-    },
-    {
-        "type": "text",
-        "text": "je vous ai demandé d’appuyer sur la barre espace "
-    },
-    {
-        "type": "text",
-        "text": "alors que ça ne servait plus à rien"
-    },
-    {
-        "type": "text",
-        "text": "et que c’était en fait moi qui contrôlait le défilement du texte"
+        "type": "btn"
     },
     {
         "text": [
-            "rain3.jpg"
+            "voirbtnN",
+            "non",
+            "destroy(id)",
+            "gotonext()"
         ],
-        "type": "img"
+        "type": "btn"
     },
     {
         "type": "text",
-        "text": "c’était un peu cruel, je le ferai plus"
+        "text": "vous voyez les bouttons là?"
     },
     {
         "type": "text",
-        "text": "d’un autre côté je crois que c’était un peu nécéssaire"
-    },
-    {
-        "text": [
-            "1pasbienassis"
-        ],
-        "type": "bookmark"
-    },
-    {
-        "type": "text",
-        "text": "ah ouais vous êtes mal assis? bon dommage"
-    },
-    {
-        "text": [
-            "fin1pasbienassis"
-        ],
-        "type": "goto"
+        "text": "SU PER"
     }
 ]

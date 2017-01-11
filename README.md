@@ -16,9 +16,7 @@ node index.js
 
 il va lire input.txt et le zoupper dans un joli tableau un peu chelou.
 
-puis y'a des fonctions javascript qui vont afficher le texte
-et faire des trucs intéressants genre faire apparaître des boutons à un moment
-x ou alors faire apparaître des items d'une checklist, etc.
+Ce tableau JSON sera ensuite lu par notre application meteor pour qu'elle sache quand faire apparaître tel ou tel texte, faire bouger une div vers le bas de l'écran, changer l'image de fond, etc. Donc tu vois on scripte tout à l'avance comme des guedins dans le fichier input.txt, on zouppe et c'est réglé.
 
 ##Syntaxe
 
@@ -48,6 +46,7 @@ les autres choses écrites à la suite sont les instructions associées à l'act
 [BOOKMARK : Un endroit vers lesquel GOTO renvoie](#BOOKMARK)<br>
 [FULLSCREEN : Passer en mode plein écran](#FULLSCREEN)<br>
 [ADDCLASS : Changer l'aspect d'un truc](#ADDCLASS)<br>
+[AUTONEXT : Passer au texte suivant après un délai](#AUTONEXT)<br>
 
 <a name="IMG"/>
 #### IMG
@@ -104,3 +103,12 @@ Fullscreen active le mode plein écran du navigateur. Il ne prend pas d'argument
 #addclass srtcontainer posbot
 ```
 Addclass prend **deux arguments**. Le premier (ici "srtcontainer"), c'est le nom de l'élément auquel on va associer une classe CSS. Le second, (ici "posbot") c'est le nom de cette classe CSS.
+
+
+<a name="AUTONEXT"/>
+#### AUTONEXT
+
+```
+#autonext 2500
+```
+Autonext prend **un argument**, c'est le nombre de milisecondes de délai avant de passer au prochain texte (fonction gotonext()).

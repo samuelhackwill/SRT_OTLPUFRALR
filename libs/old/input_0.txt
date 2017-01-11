@@ -1,0 +1,38 @@
+yo
+ça va bien?
+#img rain2.jpg
+et donc
+
+#btn assisnon Non,_youpi_tralalou gotobookmark('1pasbienassis') destroy(id)
+#btn assisoui Oui gotonext() destroy(id)
+
+#img rain3.jpg
+Est-ce que vous êtes bien assis?
+
+Super bien
+
+#addclass srtcontainer posbot
+
+C'est chouette d'être bien assis
+C'est super de se reposer la nuque
+
+#bookmark fin1pasbienassis
+
+Bon revenons à nos moutons
+euh pardon nos boutons
+je suis désolé pour la blague de toute à l’heure
+je vous ai demandé d’appuyer sur la barre espace 
+
+alors que ça ne servait plus à rien
+et que c’était en fait moi qui contrôlait le défilement du texte
+
+#img rain3.jpg
+
+c’était un peu cruel, je le ferai plus
+d’un autre côté je crois que c’était un peu nécéssaire
+
+#bookmark 1pasbienassis
+
+ah ouais vous êtes mal assis? bon dommage
+
+#goto fin1pasbienassis

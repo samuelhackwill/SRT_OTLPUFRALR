@@ -14,14 +14,11 @@ parser.addRule(/\#.+/gm, function(content){
 
 	var contentz = content.replace(/\n/gm, '');
 	// pour virer les incohérences avec les newlines de mairde
-	var contentzarray = contentz.match(/[^# ][a-z0-9\u00E0-\u00FC().',_]{0,}/gm)
+	var contentzarray = contentz.match(/[^# ][a-zA-Z0-9\u00E0-\u00FC().',_!?]{0,}/gm)
 	var cleanbalise = contentzarray[0]
 	contentzarray.shift()
 
 	return { text:contentzarray, type:cleanbalise}
-	// le plan c'est qu'on mette en place une codification des balises
-	// genre b=apparition des boutons
-	// mais bon euh est ce que ça va bien scale tout ça? hmmm
 });
 
 parser.addRule(/\n/gm, function(videur){

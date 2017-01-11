@@ -7,37 +7,41 @@
 
 <link rel="stylesheet" type="text/css" href="srt.css">
 
-<body id="body" onload="zoupage()">
+<body id="body" onload="zoupage();autonext(2000)">
 
   <div id="gcontainer">
     <div id="srtcontainer" class="posmid">
       <div id="srt">
-        Bonjour
+        Bonjour.
       </div>
       <div id="sacbouttons">
       </div>
     </div>
+    <div id="flipbookcontainer">
 
-    <div id="imgcontainerBACK">
-      <div id="imgcontainerFRONT">
+      <div id="imgcontainerBACK">
+        <div id="imgcontainerFRONT">
+        </div>
       </div>
     </div>
-  </div>
-</body>
-</html>
+  </body>
+  </html>
 
-<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 
-<script>
+  <script>
 
 // TO DO
 // balises pour afficher du texte ailleurs que dans SRT (checklist, rubrique fiction)
-// implémenter vraiment le truc du plein écran
 
-var compteur = 0
+var compteur = -1
+// ça c'est pour commencer au 0 du tableau.
 var interupt = false
 var indeximg = 0
 var alternance = false
+var delaiencours = false
+var autonextcontainer
+var flipbookstatus = false
 
 var data = []
 
@@ -79,7 +83,7 @@ function next(){
   var type = currentData["type"]
   var params = currentData["text"]
 
-  while((data[compteur]["type"]!="text")||((data[compteur]["type"]=="text")&&(data[compteur]["text"]==""))){
+  while(data[compteur]["type"]!="text"){
       // tant que data[compteur] est une balise, ben continue à executer les instructions s'il te plaît
       action(type, params)
       if((data[compteur]["type"]!="text")||(data[compteur]["text"]=="")){
@@ -93,9 +97,12 @@ function next(){
     if((type=="text")&&(params!="")){
       document.getElementById("srt").innerHTML = params
       // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
+      // bon ben c'est ici qu'il faudrait faire un truc
+      if(params=="***"){
+        document.getElementById("srt").innerHTML = ""
+      }
     }
   }
-
 
   function action(type, params){
     switch(type){
@@ -103,11 +110,31 @@ function next(){
       addclass(params)
       break
 
+      case "flipbook":
+      console.log(flipbookstatus)
+      flipbook()
+      break
+
+      case "autonext":
+      autonext(params)
+      break
+
+      case "stop":
+      interupt=true
+      console.log("stoooooop!")
+      break
+
       case "goto":
       gotobookmark(params[0])
       break
 
+      case "do":
+      params[0]
+      console.log(params[0])
+      break
+
       case "btn":
+      $("#sacbouttons").removeClass("ciao")
       newBoutton(params)
       break
 
@@ -125,108 +152,178 @@ function next(){
       case "fullscreen":
       fullscreen();
       break;
+
+      case "timer":
+      timer()
+      break;
     }
 
-  }
-  function addFiction(params){
-    var ul = document.getElementById("elemfiction")
-    var li = document.createElement("li")
-    li.setAttribute("id", phrase)
-    li.appendChild(document.createTextNode(phrase))
-    ul.appendChild(li)
-  }
-
-  function removeFiction(params){
-    var li = document.getElementById(phrase);
-    if(li!=null){
-      li.parentNode.removeChild(li);
-    }else{
-      console.log("ERR cannot find element '"+ phrase + "'")
+    function flipbook(){
+      if(flipbookstatus==true){
+        $("#flipbookcontainer").css("opacity", "0")
+        var zoupla = setTimeout(function(){
+          $("#flipbookcontainer").css("display", "none")},1000)
+      }else{
+        flipbookstatus = true
+        $("#flipbookcontainer").css("display", "inline-block")
+        var zoupla = setTimeout(function(){
+          $("#flipbookcontainer").css("opacity", "1")},1000)
+      }
     }
-  }
 
-  function changeImg(params){
-  //bon being ça marche par contre pas de contrôle que les animations sont finies pour passer à la suite
-  if (alternance) {
-    $("#imgcontainerFRONT").css("background-image", "url(/img/"+params[0]);  
-    $("#imgcontainerFRONT").css("opacity", "1");  
-  }else{
-    $("#imgcontainerBACK").css("background-image", "url(/img/"+params[0]);  
-    $("#imgcontainerFRONT").css("opacity", "0");  
-  }
-  console.log(alternance)
-  console.log(params[0])
-}
+    function timer(){
+      // le timer ci-dessous
+      var clock = setInterval(get_time_diff, 1000)
+      function get_time_diff( datetime )
+      {
+        var datetime = typeof datetime !== 'undefined' ? datetime : "2017-01-21 19:00:00.000000"
+        var datetime = new Date( datetime ).getTime();
+        var now = new Date().getTime();
 
-function addclass(params){
-  console.log("addclass, ", params[0], params[1])
-  $("#"+params[0]).addClass(params[1])
-}
+        if( isNaN(datetime) )
+        {
+          return ""
+        }
 
-function newBoutton(params){
-  interupt=true
-  console.log("new boutton : ",params)
+        if (datetime < now) {
+          var milisec_diff = now - datetime
+        }else{
+          var milisec_diff = datetime - now
+        }
 
-  var fonctions = []
-  var nom = params[0]
-  params.shift()
-  var label = params[0]
-  var labelpropre = label.replace(/\_/g, ' ');
+        var date_diff = new Date( milisec_diff )
 
-  params.shift()
+        var days = Math.floor(milisec_diff / 1000 / 60 / (60 * 24))
+        var hours = date_diff.getHours()
+        var minutes = date_diff.getMinutes()
+        var secondes = date_diff.getSeconds()
 
-  var howmany = params.length
-  for(i=0; i<howmany; i++){
-    fonctions.push(params[i])
-    fonctionsconcat = fonctions.join(";")
-  }
+        var difdif = ""
+        if(days>1) var difdif = difdif.concat(days.toString(), " jours et ")
+          if(days==1) var difdif = difdif.concat(days.toString(), " jour et ")
+            if(hours!=0) var difdif = difdif.concat(hours.toString(), ":")
+              if(minutes!=0) var difdif = difdif.concat(minutes.toString(), ":")
 
-  var newBoutton = $('<input type="button" value="'+ labelpropre +'" id="'+ nom +'" onclick = "' + fonctionsconcat + '">')
-  newBoutton.appendTo($("#sacbouttons"))
-}
+                var difdif = difdif.concat(secondes.toString(), " <br> avant le début du spectacle à la maison.")
 
-function fullscreen(){
-  var i = document.getElementById("gcontainer");
-  if (i.requestFullscreen) {
-    i.requestFullscreen();
-  } else if (i.webkitRequestFullscreen) {
-    i.webkitRequestFullscreen();
-  } else if (i.mozRequestFullScreen) {
-    i.mozRequestFullScreen();
-  } else if (i.msRequestFullscreen) {
-    i.msRequestFullscreen();
-  }
-}
+              document.getElementById("srt").innerHTML = (difdif)
 
-function stop(onoff){
-  if(onoff=="on") interupt=true
-    if(onoff=="off") interupt=false
-      console.log(interupt)
-  // bon alors c'est bien sympa tout ça mais le problème
-  // c'est que ça fire onclick (et c'est pas ça qu'on veut faire hein.)
-}
+              if (datetime-now < 0) {
+               console.log("TOOT TOOT TOOT c'est l'heure du spectacle")
+               gotonext()
+             }
+           }
+         }
 
-function destroy(self){
-  var delay = 333
-  // dans l'idéal faudrait qu'on lui passe un délai aussi
-  var element = document.getElementById(self)
-  var parentid = element.parentNode.id
 
-  $("#"+parentid).addClass("ciao")
+       }
+       function addFiction(params){
+        var ul = document.getElementById("elemfiction")
+        var li = document.createElement("li")
+        li.setAttribute("id", phrase)
+        li.appendChild(document.createTextNode(phrase))
+        ul.appendChild(li)
+      }
 
-  setTimeout(function(){
-    $("#"+parentid).empty()
-  },delay)
-}
+      function removeFiction(params){
+        var li = document.getElementById(phrase);
+        if(li!=null){
+          li.parentNode.removeChild(li);
+        }else{
+          console.log("ERR cannot find element '"+ phrase + "'")
+        }
+      }
 
-function gotobookmark(where){
-  if(interupt==true) interupt=false
-    howmuch = data.length
-  for(i=0; i<howmuch; i++){
-    if((data[i]["type"]=="bookmark")&&(data[i]["text"]==where)){
+      function changeImg(params){
+
+        if (alternance) {
+          $("#imgcontainerFRONT").css("background-image", "url(/img/"+params[0]);  
+          $("#imgcontainerFRONT").css("opacity", "1");  
+        }else{
+          $("#imgcontainerBACK").css("background-image", "url(/img/"+params[0]);  
+          $("#imgcontainerFRONT").css("opacity", "0");  
+        }
+        console.log(alternance)
+        console.log(params[0])
+      }
+
+      function autonext(params){
+
+        delaiencours = true
+
+        var wait = params
+
+        console.log("plonk")
+        autonextcontainer = setTimeout(function(){
+          gotonext()
+          console.log("plonk plonk")
+          delaiencours = false
+        },wait)}
+
+        function addclass(params){
+          console.log("addclass, ", params[0], params[1])
+          $("#"+params[0]).addClass(params[1])
+        }
+
+        function newBoutton(params){
+          interupt=true
+          console.log("new boutton : ",params)
+
+          var fonctions = []
+          var nom = params[0]
+          params.shift()
+          var label = params[0]
+          var labelpropre = label.replace(/\_/g, ' ');
+
+          params.shift()
+
+          var howmany = params.length
+          for(i=0; i<howmany; i++){
+            fonctions.push(params[i])
+            fonctionsconcat = fonctions.join(";")
+          }
+
+          var newBoutton = $('<input type="button" value="'+ labelpropre +'" id="'+ nom +'" onclick = "' + fonctionsconcat + '">')
+          newBoutton.appendTo($("#sacbouttons"))
+        }
+
+        function fullscreen(){
+          var i = document.getElementById("gcontainer");
+          if (i.requestFullscreen) {
+            i.requestFullscreen();
+          } else if (i.webkitRequestFullscreen) {
+            i.webkitRequestFullscreen();
+          } else if (i.mozRequestFullScreen) {
+            i.mozRequestFullScreen();
+          } else if (i.msRequestFullscreen) {
+            i.msRequestFullscreen();
+          }
+        }
+
+// FUNCTION DESTROY
+// dans l'idéal faudrait lui passer un délai également
+        function destroy(self){
+          var delay = 333
+          var element = document.getElementById(self)
+          var parentid = element.parentNode.id
+
+          $("#"+parentid).addClass("ciao")
+
+          setTimeout(function(){
+            $("#"+parentid).empty()
+          },delay)
+        }
+
+        function gotobookmark(where){
+          if(interupt==true) interupt=false
+            howmuch = data.length
+          for(i=0; i<howmuch; i++){
+            if((data[i]["type"]=="bookmark")&&(data[i]["text"]==where)){
       //ça c'est la valeur de ton compteur mon ptit gars
       compteur = i
-      next()
+      setTimeout(function(){
+        next()
+      },333)
       console.log("gotobookmark, ", compteur)
       return
     }
@@ -248,10 +345,17 @@ document.onkeydown = function(e) {
   // KEYCIODE 78 IS "n"
 
   if(e.keyCode =='32' && compteur <= data.length && interupt==false){
-    compteur +=1
-    next();
-    console.log("keydown, ", compteur)
+
+    if(delaiencours){
+      window.clearTimeout(autonextcontainer)
+    // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
+    // ça avance tout seul avec un délai)
   }
+
+  compteur +=1
+  next();
+  console.log("keydown, ", compteur)
+}
 
 }
 

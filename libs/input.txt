@@ -1,38 +1,65 @@
-yo
-ça va bien?
-#img rain2.jpg
-et donc
+vous êtes bien arrivés sur le site du spectacle
+"On traversera le pont une fois rendus à la rivière"
+c'est ici que tout va se dérouler
+enfin non, c'est-à-dire que des choses vont se dérouler dans des salles de théâtres ici et là
+et elles vont se dérouler ici-même également
+c'est-à-dire
+chez vous
+par l'intermédiaire de cette page web.
 
-#btn assisnon Non,_youpi_tralalou gotobookmark('1pasbienassis') destroy(id)
-#btn assisoui Oui gotonext() destroy(id)
+Je vous propose un truc pour commencer,
+c'est de vous donner le contrôle sur le défilement du texte
+comme ça vous pourrez avancer à votre rythme
+alors on essaie,
+vous pouvez appuyer sur la barre espace de votre clavier s'il vous plaît?
+super, merci
+...
+et encore un coup s'il vous plaît?
+allez ben on dirait que ça marche hyper bien
 
-#img rain3.jpg
-Est-ce que vous êtes bien assis?
+#bookmark introducemyself
+super, ben je me présente :
+c’est samuel, je travaille au sein de l'équipe du projet
+sur les trucs en rapport avec internet
+là je suis pas vraiment en train de vous parler pour de vrai d’ailleurs
+en fait j’ai préparé ce texte il y a quelques jours 
+et là présentement je suis sûrement en train de {en fonction de l’heure, au restau, etc}.
+pis je suis ici pour vous parler un peu du spectacle en fait
+pour vous donner un petit aperçu de ce qui va se passer
+et pour qu'on prépare ensemble le cadre dans lequel vous allez évoluer à ce moment-là.
+#addclass srtcontainer postop
+#flipbook
+hop
+donc
+ça c'est vous
+vous êtes devant votre ordinateur donc
+et pis vous cliquez sur des trucs quoi,
+ou vous tapez sur votre clavier,
+un peu comme maintenant.
+vous allez aussi entendre des sons
+pendant quasiment tout le spectacle en fait
+du coup, il faudra que le son de votre ordinateur soit activé
+vous pouvez aussi vous brancher sur des enceintes si vous êtes un peu audiophile.
+voila
+à part ça vous allez peut être aussi un peu vous déplacer
+dans l'espace immédiat de l'ordinateur
+donc ça serait bien d'avoir un peu de place pour bouger
+et puis aussi que vous soyez tranquille
+voire complètement seul
+pour en profiter au maximum.
 
-Super bien
+***
+***
+***
+***
 
-#addclass srtcontainer posbot
-
-C'est chouette d'être bien assis
-C'est super de se reposer la nuque
-
-#bookmark fin1pasbienassis
-
-Bon revenons à nos moutons
-euh pardon nos boutons
-je suis désolé pour la blague de toute à l’heure
-je vous ai demandé d’appuyer sur la barre espace 
-
-alors que ça ne servait plus à rien
-et que c’était en fait moi qui contrôlait le défilement du texte
-
-#img rain3.jpg
-
-c’était un peu cruel, je le ferai plus
-d’un autre côté je crois que c’était un peu nécéssaire
-
-#bookmark 1pasbienassis
-
-ah ouais vous êtes mal assis? bon dommage
-
-#goto fin1pasbienassis
+#flipbook
+ok
+alors alors alors
+ça vous dit du coup?
+hum en fait je vous entend pas
+on va mettre en place un truc pour remédier à ça
+#btn voirbtnY oui destroy(id) gotonext()
+#btn voirbtnN non destroy(id) gotonext()
+vous voyez les bouttons là?
+SU PER

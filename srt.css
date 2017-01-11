@@ -46,13 +46,36 @@
 		height:100%;
 	}
 
+	#flipbookcontainer{
+		position:absolute;
+		top:25%;
+		left:10%;
+		background-image : url("/img/jeanmich.png");
+		background-repeat : no-repeat;
+		background-position: center;
+		background-size: contain;
+		width:80%;
+		height:70%;
+		z-index:3;
+		display:none;
+		opacity: 0;
+		-webkit-transition: all 1s ease-in-out;
+		-moz-transition: all 1s ease-in-out;
+		-o-transition: all 1s ease-in-out;
+		transition: all 1s ease-in-out;
+	}
+
 	#imgcontainerBACK{
 		background : no-repeat center center fixed; 
 		-webkit-background-size: cover;
 		-webkit-transition: all 10s ease-in-out;
 		background-color: white;
+		position:absolute;
 		width:100%;
 		height:100%;
+		z-index:1;
+
+		display:none;
 	}
 
 	#imgcontainerFRONT{
@@ -60,13 +83,14 @@
 		-webkit-background-size: cover;
 		-webkit-transition: all 10s ease-in-out;
 		background-color: white;
+		position:absolute;
 		width:100%;
 		height:100%;
+		z-index:2;
 	}
 
 	#srtcontainer{
 		/*c'est moi le plus foreground*/
-		z-index:10;
 		-webkit-transition: all 2s ease-in-out;
 		width: 100%;
 		height: 10%;

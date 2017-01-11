@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<vxml version="2.0" xmlns="http://www.w3.org/2001/vxml" xml:lang="fr-FR">
+        <menu>
+                <audio src="zoubla.wav"> <!-- Lien du fichier son a lire -->
+                        Bienvenue. <!-- Texte alternatif joue par la synthese vocale si le fichier son ne peut etre lu -->
+                </audio>
+                <choice dtmf="1" next="#technique"> technique </choice> <!-- Definition des choix et association des DTMF -->
+                <choice dtmf="2" next="#commercial"> commercial </choice>
+                <choice dtmf="3" next="#legal"> legal </choice>
+        </menu>
+
+        <form id="technique"> <!-- Definition de l action du choix -->
+                <audio>
+                        mes couilles en ski
+                </audio>
+        </form>
+
+        <form id="commercial">
+                <audio>
+                        bon anniversaire camille
+                </audio>
+        </form>
+
+        <form id="legal">
+                <audio>
+                        je slamme comme un gros guedin
+                </audio>
+        </form>
+</vxml>
