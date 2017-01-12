@@ -14,36 +14,45 @@
       <div id="srt">
         Bonjour.
       </div>
-      <div id="sacbouttons">
+      <div id="sacbouttons" class="invisible">
       </div>
     </div>
-    <div id="flipbookcontainer">
+    <div id="flipbookcontainer" class="invisible">
+    </div>
 
-      <div id="imgcontainerBACK">
-        <div id="imgcontainerFRONT">
-        </div>
+    <div id="imgcontainerBACK">
+      <div id="imgcontainerFRONT">
       </div>
     </div>
-  </body>
-  </html>
 
-  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <div id="listcontainer" class="visible">
+      <ul id="checklist">
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
 
-  <script>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+<script>
 
 // TO DO
 // balises pour afficher du texte ailleurs que dans SRT (checklist, rubrique fiction)
 
+var compteurquest = -1
 var compteur = -1
 // ça c'est pour commencer au 0 du tableau.
 var interupt = false
 var indeximg = 0
 var alternance = false
-var delaiencours = false
 var autonextcontainer
 var flipbookstatus = false
 
 var data = []
+
+var posanswers =["disponible", "à la maison", "tranquille", "son ok", "concentré"]
+var neganswers =["occupé","en ville","pas seul", "mute", "distrait"]
 
 function loadJSON(callback) {   
 
@@ -99,6 +108,7 @@ function next(){
       // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
       // bon ben c'est ici qu'il faudrait faire un truc
       if(params=="***"){
+        // ça c'est pour caler des blancs
         document.getElementById("srt").innerHTML = ""
       }
     }
@@ -108,6 +118,14 @@ function next(){
     switch(type){
       case "addclass":
       addclass(params)
+      break
+
+      case "removeclass":
+      removeclass(params)
+      break
+
+      case "addlistelement":
+      addlistelement(params)
       break
 
       case "flipbook":
@@ -125,16 +143,15 @@ function next(){
       break
 
       case "goto":
-      gotobookmark(params[0])
+      gotobookmark(params)
       break
 
-      case "do":
-      params[0]
-      console.log(params[0])
+      case "gotonext":
+      gotonext(params)
       break
 
       case "btn":
-      $("#sacbouttons").removeClass("ciao")
+      $("#sacbouttons").removeClass("invisible")
       newBoutton(params)
       break
 
@@ -160,14 +177,16 @@ function next(){
 
     function flipbook(){
       if(flipbookstatus==true){
-        $("#flipbookcontainer").css("opacity", "0")
+        $("#flipbookcontainer").removeClass("visible")
+        $("#flipbookcontainer").addClass("invisible")
         var zoupla = setTimeout(function(){
           $("#flipbookcontainer").css("display", "none")},1000)
       }else{
         flipbookstatus = true
         $("#flipbookcontainer").css("display", "inline-block")
         var zoupla = setTimeout(function(){
-          $("#flipbookcontainer").css("opacity", "1")},1000)
+          $("#flipbookcontainer").removeClass("invisible")
+          $("#flipbookcontainer").addClass("visible")},1000)
       }
     }
 
@@ -210,7 +229,7 @@ function next(){
 
               if (datetime-now < 0) {
                console.log("TOOT TOOT TOOT c'est l'heure du spectacle")
-               gotonext()
+               gotonext(1)
              }
            }
          }
@@ -248,16 +267,12 @@ function next(){
       }
 
       function autonext(params){
-
-        delaiencours = true
-
         var wait = params
 
-        console.log("plonk")
+        console.log("plonk "+wait)
         autonextcontainer = setTimeout(function(){
-          gotonext()
+          gotonext(1)
           console.log("plonk plonk")
-          delaiencours = false
         },wait)}
 
         function addclass(params){
@@ -265,60 +280,88 @@ function next(){
           $("#"+params[0]).addClass(params[1])
         }
 
-        function newBoutton(params){
-          interupt=true
-          console.log("new boutton : ",params)
-
-          var fonctions = []
-          var nom = params[0]
-          params.shift()
-          var label = params[0]
-          var labelpropre = label.replace(/\_/g, ' ');
-
-          params.shift()
-
-          var howmany = params.length
-          for(i=0; i<howmany; i++){
-            fonctions.push(params[i])
-            fonctionsconcat = fonctions.join(";")
-          }
-
-          var newBoutton = $('<input type="button" value="'+ labelpropre +'" id="'+ nom +'" onclick = "' + fonctionsconcat + '">')
-          newBoutton.appendTo($("#sacbouttons"))
+        function removeclass(params){
+          console.log("removeclass, ", params[0], params[1])
+          $("#"+params[0]).removeClass(params[1])
         }
 
-        function fullscreen(){
-          var i = document.getElementById("gcontainer");
-          if (i.requestFullscreen) {
-            i.requestFullscreen();
-          } else if (i.webkitRequestFullscreen) {
-            i.webkitRequestFullscreen();
-          } else if (i.mozRequestFullScreen) {
-            i.mozRequestFullScreen();
-          } else if (i.msRequestFullscreen) {
-            i.msRequestFullscreen();
+        function answernext(params){
+          compteurquest += 1
+          console.log("answernext, "+params+ "compteurq ="+compteurquest)
+          if(params=="ok") addlistelement(['checklist',posanswers[compteurquest], params])
+            if(params=="nope") addlistelement(['checklist',neganswers[compteurquest], params])
+
+              if(compteurquest>=4) destroy("seqoui")
+            }
+
+
+          function addlistelement(params){
+
+            console.log("les params chelous ", params)
+            var where = params[0]
+            var label = params[1]
+            var status = params[2]
+
+            var labelpropre = label.replace(/\_/g, ' ');
+
+            var newListel = $('<li class='+ status +'>'+ labelpropre +'</li>')
+            newListel.appendTo($("#"+where))
+
           }
-        }
+
+          function newBoutton(params){
+            interupt=true
+
+            var fonctions = []
+            var nom = params[0]
+            params.shift()
+            var label = params[0]
+            var labelpropre = label.replace(/\_/g, ' ');
+
+            params.shift()
+
+            var howmany = params.length
+            for(i=0; i<howmany; i++){
+              fonctions.push(params[i])
+              fonctionsconcat = fonctions.join(";")
+            }
+
+            var newBoutton = $('<input type="button" value="'+ labelpropre +'" id="'+ nom +'" onclick = "' + fonctionsconcat + '">')
+            newBoutton.appendTo($("#sacbouttons"))
+          }
+
+          function fullscreen(){
+            var i = document.getElementById("gcontainer");
+            if (i.requestFullscreen) {
+              i.requestFullscreen();
+            } else if (i.webkitRequestFullscreen) {
+              i.webkitRequestFullscreen();
+            } else if (i.mozRequestFullScreen) {
+              i.mozRequestFullScreen();
+            } else if (i.msRequestFullscreen) {
+              i.msRequestFullscreen();
+            }
+          }
 
 // FUNCTION DESTROY
 // dans l'idéal faudrait lui passer un délai également
-        function destroy(self){
-          var delay = 333
-          var element = document.getElementById(self)
-          var parentid = element.parentNode.id
+function destroy(self){
+  var delay = 333
+  var element = document.getElementById(self)
+  var parentid = element.parentNode.id
 
-          $("#"+parentid).addClass("ciao")
+  $("#"+parentid).addClass("invisible")
 
-          setTimeout(function(){
-            $("#"+parentid).empty()
-          },delay)
-        }
+  setTimeout(function(){
+    $("#"+parentid).empty()
+  },delay)
+}
 
-        function gotobookmark(where){
-          if(interupt==true) interupt=false
-            howmuch = data.length
-          for(i=0; i<howmuch; i++){
-            if((data[i]["type"]=="bookmark")&&(data[i]["text"]==where)){
+function gotobookmark(where){
+  if(interupt==true) interupt=false
+    howmuch = data.length
+  for(i=0; i<howmuch; i++){
+    if((data[i]["type"]=="bookmark")&&(data[i]["text"]==where)){
       //ça c'est la valeur de ton compteur mon ptit gars
       compteur = i
       setTimeout(function(){
@@ -330,11 +373,12 @@ function next(){
   }
 }
 
-function gotonext(){
-  compteur +=1
+function gotonext(params){
+  var bonus = parseInt(params)
+  compteur += bonus
   next()
   interupt=false
-  console.log("gotonext, ", compteur)
+  console.log("gotonext, ", params)
 }
 
 document.onkeydown = function(e) {
@@ -344,19 +388,14 @@ document.onkeydown = function(e) {
   // KEYCODE 32 IS SPACEBAR
   // KEYCIODE 78 IS "n"
 
-  if(e.keyCode =='32' && compteur <= data.length && interupt==false){
-
-    if(delaiencours){
-      window.clearTimeout(autonextcontainer)
+  if(e.keyCode =='32' && compteur < data.length-1 && interupt==false){
+    window.clearTimeout(autonextcontainer)
+    compteur +=1
+    next();
+    console.log("keydown, ", compteur)
     // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
     // ça avance tout seul avec un délai)
   }
-
-  compteur +=1
-  next();
-  console.log("keydown, ", compteur)
-}
-
 }
 
 </script>

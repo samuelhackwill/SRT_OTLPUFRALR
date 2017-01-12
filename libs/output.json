@@ -1,47 +1,129 @@
 [
     {
+        "text": [
+            "3500"
+        ],
+        "type": "autonext"
+    },
+    {
         "type": "text",
-        "text": "vous êtes bien arrivés sur le site du spectacle"
+        "text": "vous êtes bien arrivé-e sur le site du spectacle"
+    },
+    {
+        "text": [
+            "3500"
+        ],
+        "type": "autonext"
     },
     {
         "type": "text",
         "text": "\"On traversera le pont une fois rendus à la rivière\""
     },
     {
+        "text": [
+            "3000"
+        ],
+        "type": "autonext"
+    },
+    {
         "type": "text",
         "text": "c'est ici que tout va se dérouler"
+    },
+    {
+        "text": [
+            "5000"
+        ],
+        "type": "autonext"
     },
     {
         "type": "text",
         "text": "enfin non, c'est-à-dire que des choses vont se dérouler dans des salles de théâtres ici et là"
     },
     {
+        "text": [
+            "4000"
+        ],
+        "type": "autonext"
+    },
+    {
         "type": "text",
         "text": "et elles vont se dérouler ici-même également"
+    },
+    {
+        "text": [
+            "2500"
+        ],
+        "type": "autonext"
     },
     {
         "type": "text",
         "text": "c'est-à-dire"
     },
     {
+        "text": [
+            "2000"
+        ],
+        "type": "autonext"
+    },
+    {
         "type": "text",
         "text": "chez vous"
+    },
+    {
+        "text": [
+            "3000"
+        ],
+        "type": "autonext"
     },
     {
         "type": "text",
         "text": "par l'intermédiaire de cette page web."
     },
     {
+        "text": [
+            "3000"
+        ],
+        "type": "autonext"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "text": [
+            "3000"
+        ],
+        "type": "autonext"
+    },
+    {
         "type": "text",
         "text": "Je vous propose un truc pour commencer,"
+    },
+    {
+        "text": [
+            "4000"
+        ],
+        "type": "autonext"
     },
     {
         "type": "text",
         "text": "c'est de vous donner le contrôle sur le défilement du texte"
     },
     {
+        "text": [
+            "3000"
+        ],
+        "type": "autonext"
+    },
+    {
         "type": "text",
         "text": "comme ça vous pourrez avancer à votre rythme"
+    },
+    {
+        "text": [
+            "2500"
+        ],
+        "type": "autonext"
     },
     {
         "type": "text",
@@ -52,8 +134,20 @@
         "text": "vous pouvez appuyer sur la barre espace de votre clavier s'il vous plaît?"
     },
     {
+        "text": [
+            "6000"
+        ],
+        "type": "autonext"
+    },
+    {
         "type": "text",
         "text": "super, merci"
+    },
+    {
+        "text": [
+            "2000"
+        ],
+        "type": "autonext"
     },
     {
         "type": "text",
@@ -117,20 +211,23 @@
         "type": "addclass"
     },
     {
-        "text": [],
-        "type": "flipbook"
+        "text": [
+            "srtcontainer",
+            "posmid"
+        ],
+        "type": "removeclass"
     },
     {
         "type": "text",
         "text": "hop"
     },
     {
-        "type": "text",
-        "text": "donc"
+        "text": [],
+        "type": "flipbook"
     },
     {
         "type": "text",
-        "text": "ça c'est vous"
+        "text": "donc ça c'est vous"
     },
     {
         "type": "text",
@@ -197,18 +294,6 @@
         "text": "***"
     },
     {
-        "type": "text",
-        "text": "***"
-    },
-    {
-        "type": "text",
-        "text": "***"
-    },
-    {
-        "type": "text",
-        "text": "***"
-    },
-    {
         "text": [],
         "type": "flipbook"
     },
@@ -219,6 +304,12 @@
     {
         "type": "text",
         "text": "alors alors alors"
+    },
+    {
+        "text": [
+            "2"
+        ],
+        "type": "gotonext"
     },
     {
         "type": "text",
@@ -234,28 +325,234 @@
     },
     {
         "text": [
-            "voirbtnY",
-            "oui",
+            "yeuxnon",
+            "Non",
+            "addlistelement(['checklist','boutons_ok','ok'])",
             "destroy(id)",
-            "gotonext()"
+            "gotonext(1)"
         ],
         "type": "btn"
     },
     {
         "text": [
-            "voirbtnN",
-            "non",
+            "yeuxoui",
+            "Oui",
+            "addlistelement(['checklist','boutons_ok','ok'])",
             "destroy(id)",
-            "gotonext()"
+            "gotonext(2)"
         ],
         "type": "btn"
     },
     {
         "type": "text",
-        "text": "vous voyez les bouttons là?"
+        "text": "vous voyez les boutons là?"
     },
     {
         "type": "text",
-        "text": "SU PER"
+        "text": "on dirait que vous avez trouvé le bouton \"non\", cool"
+    },
+    {
+        "text": [
+            "2"
+        ],
+        "type": "gotonext"
+    },
+    {
+        "type": "text",
+        "text": "SU-PER"
+    },
+    {
+        "type": "text",
+        "text": "ok, alors comme je disais"
+    },
+    {
+        "type": "text",
+        "text": "il est important que l'on prenne un petit temps ensemble"
+    },
+    {
+        "type": "text",
+        "text": "c’est pour garantir que vous serez dans un cadre propice le jour du spectacle"
+    },
+    {
+        "type": "text",
+        "text": "c'est un peu comme avant d’aller au hammam "
+    },
+    {
+        "type": "text",
+        "text": "on vous demande de préparer votre maillot de bain, votre serviette,"
+    },
+    {
+        "type": "text",
+        "text": "dans votre cas cependant, c’est plus compliqué car"
+    },
+    {
+        "type": "text",
+        "text": "vous n’allez pas au hammam,"
+    },
+    {
+        "type": "text",
+        "text": "vous êtes en fait seul-e à gérer le cadre d'écoute dans lequel vous vous placez."
+    },
+    {
+        "type": "text",
+        "text": "c'est plutôt chouette."
+    },
+    {
+        "type": "text",
+        "text": "alors, est-ce que :"
+    },
+    {
+        "text": [
+            "seqoui",
+            "Non",
+            "gotonext(1)",
+            "answernext('nope')"
+        ],
+        "type": "btn"
+    },
+    {
+        "text": [
+            "seqnon",
+            "Oui",
+            "gotonext(1)",
+            "answernext('ok')"
+        ],
+        "type": "btn"
+    },
+    {
+        "type": "text",
+        "text": "vous êtes dispo ce soir à 18H30?"
+    },
+    {
+        "type": "text",
+        "text": "vous serez chez vous, ou chez un-e ami-e, enfin dans un espace intime à ce moment ?"
+    },
+    {
+        "type": "text",
+        "text": "vous pourrez faire en sorte d'être seul-e ?"
+    },
+    {
+        "type": "text",
+        "text": "vous disposerez d'un moyen pour écouter du son à ce moment ? (hauts-parleurs, casque, etc.)"
+    },
+    {
+        "type": "text",
+        "text": "vous vous engagez à ne pas faire autre chose en même temps que vous suivez le spectacle?"
+    },
+    {
+        "type": "text",
+        "text": "ok"
+    },
+    {
+        "type": "text",
+        "text": "on peut regarder un coup cette liste"
+    },
+    {
+        "type": "text",
+        "text": "si tout est vert c'est cool"
+    },
+    {
+        "type": "text",
+        "text": "c'est qu'à priori votre cadre à l'air bien propice"
+    },
+    {
+        "type": "text",
+        "text": "si vous avez des icones rouges"
+    },
+    {
+        "type": "text",
+        "text": "bon ben peut-être qu'il vaudrait mieux venir à une autre date"
+    },
+    {
+        "type": "text",
+        "text": "où vous pourriez être dans une situation différente"
+    },
+    {
+        "type": "text",
+        "text": "et plus compatible avec ce qu'on vous propose de vivre pendant le spectacle."
+    },
+    {
+        "type": "text",
+        "text": "je vous laisse encore regarder une seconde"
+    },
+    {
+        "type": "text",
+        "text": "je vous laisse juger"
+    },
+    {
+        "type": "text",
+        "text": "vous êtes en train de prendre votre décision"
+    },
+    {
+        "type": "text",
+        "text": "vous êtes en train de signer mentalement une sorte de contrat avec vous-même"
+    },
+    {
+        "type": "text",
+        "text": "stipulant que vous voulez faire un truc ou non"
+    },
+    {
+        "type": "text",
+        "text": "bref"
+    },
+    {
+        "text": [
+            "listcontainer",
+            "invisible"
+        ],
+        "type": "addclass"
+    },
+    {
+        "text": [
+            "listcontainer",
+            "visible"
+        ],
+        "type": "removeclass"
+    },
+    {
+        "type": "text",
+        "text": "ben écoutez"
+    },
+    {
+        "type": "text",
+        "text": "pour peu que vous ayez décidé de venir,"
+    },
+    {
+        "type": "text",
+        "text": "on se retrouve à 18h30!"
+    },
+    {
+        "type": "text",
+        "text": "j'ai hâte de vous y retrouver"
+    },
+    {
+        "type": "text",
+        "text": "bises,"
+    },
+    {
+        "type": "text",
+        "text": "samuel"
+    },
+    {
+        "type": "text",
+        "text": "..."
+    },
+    {
+        "text": [
+            "srtcontainer",
+            "posmid"
+        ],
+        "type": "addclass"
+    },
+    {
+        "text": [
+            "srtcontainer",
+            "postop"
+        ],
+        "type": "removeclass"
+    },
+    {
+        "type": "text",
+        "text": "Revenez à 18h30"
     }
 ]
