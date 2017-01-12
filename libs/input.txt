@@ -90,7 +90,7 @@ c'est plutôt chouette.
 alors, est-ce que :
 #btn seqoui Non gotonext(1) answernext('nope')
 #btn seqnon Oui gotonext(1) answernext('ok')
-vous êtes dispo ce soir à 18H30?
+vous êtes dispo ce soir à 17H45?
 vous serez chez vous, ou chez un-e ami-e, enfin dans un espace intime à ce moment ?
 vous pourrez faire en sorte d'être seul-e ?
 vous disposerez d'un moyen pour écouter du son à ce moment ? (hauts-parleurs, casque, etc.)
@@ -114,11 +114,11 @@ bref
 #removeclass listcontainer visible
 ben écoutez
 pour peu que vous ayez décidé de venir,
-on se retrouve à 18h30!
+on se retrouve à 17h45!
 j'ai hâte de vous y retrouver
 bises,
 samuel
 ...
 #addclass srtcontainer posmid
 #removeclass srtcontainer postop
-Revenez à 18h30
+Revenez à 17h45
