@@ -38,7 +38,10 @@
 <script>
 
 // TO DO
-// balises pour afficher du texte ailleurs que dans SRT (checklist, rubrique fiction)
+// TABLEAU DES FICTIONS
+// REFACTORING CSS
+// FONCTIONS WASSUP, SETDATE, TIME
+
 
 var compteurquest = -1
 var compteur = -1
@@ -48,6 +51,10 @@ var indeximg = 0
 var alternance = false
 var autonextcontainer
 var flipbookstatus = false
+var timerpassed = false
+
+var nextspectacledate
+var nextspectacletime
 
 var data = []
 
@@ -120,6 +127,19 @@ function next(){
       addclass(params)
       break
 
+      case "setdate":
+      nextspectacledate = params[0]
+      nextspectacletime = params[1]
+      break
+
+      case "wassup":
+      wassup()
+      break
+
+      case "time":
+      time(params)
+      break
+
       case "removeclass":
       removeclass(params)
       break
@@ -129,7 +149,6 @@ function next(){
       break
 
       case "flipbook":
-      console.log(flipbookstatus)
       flipbook()
       break
 
@@ -190,6 +209,25 @@ function next(){
       }
     }
 
+    function time(params){
+      var nextsrt = compteur + 1
+
+      var stringdeb = params[0]
+      var stringfin = params[1] || ""
+      // bam pseudo-argument optionnel dans ta face
+
+      var stringdebpropre = stringdeb.replace(/\_/g, ' ');
+      var stringfinpropre = stringfin.replace(/\_/g, ' ');
+
+      var phrase = stringdebpropre + " le " + nextspectacledate + " à " + nextspectacletime + " " + stringfinpropre
+      var addobject = {text:phrase, type: "text"}
+
+      data.splice(nextsrt, 0, addobject, [type="text"])
+
+      console.log("là j'ai mis un truc de date dans le HTML et tout")
+
+    }
+
     function timer(){
       // le timer ci-dessous
       interupt=true;
@@ -198,6 +236,7 @@ function next(){
       function get_time_diff( datetime )
       {
         var datetime = typeof datetime !== 'undefined' ? datetime : "2017-01-12 17:15:00.000000"
+        // euh alors y'a un bug de timezone là j'ai l'impression qui prend greenwhich
         var datetime = new Date( datetime ).getTime();
         var now = new Date().getTime();
 
@@ -229,10 +268,11 @@ function next(){
 
               document.getElementById("srt").innerHTML = (difdif)
 
-              if (datetime-now < 0) {
+              if (datetime-now < 0 && timerpassed == false) {
                console.log("TOOT TOOT TOOT c'est l'heure du spectacle")
                interupt=false
                gotonext(1)
+               timerpassed = true
              }
            }
          }
@@ -269,47 +309,91 @@ function next(){
         console.log(params[0])
       }
 
-      function autonext(params){
-        var wait = params
+      function wassup(){
+        // là écrire une fonction qui concatène
+        // ce que fait samuel en fonction de l'heure
+        // merci bisous
 
-        console.log("plonk "+wait)
-        autonextcontainer = setTimeout(function(){
-          gotonext(1)
-          console.log("plonk plonk")
-        },wait)}
+/*
+        if(heure<7){
+         data[19] = presentement + "dormir dans ma chambre, à Valenciennes quoi, c'est la nuit." 
+       }
+       if(heure>=7 && heure <12){
+         data[19] = presentement + "fignoler l'un ou l'autre truc dans le studio du Phénix, Valenciennes en vue de la présentation."  
+       }
+       if(heure>=12 && heure <14){
+         data[19] = presentement + "déguster un bon repas de l'avant-scène avec mes collègues."  
+       }
+       if(heure>14 && heure<20){
+         data[19] = presentement + "bosser comme un gros dingue dans le studio du Phénix à Valenciennes."
+       }
+       if(heure>20 && heure<22){
+         data[19] = presentement + "diner avec Marion et Lieven rue d'Askièvre."
+       }
+       if(heure>22){
+         data[19] = presentement + "dormir paisiblement dans ma chambre à Valenciennes."
+       }
+       if(heure>14 && heure <17 && jour==2){
+         data[19] = presentement + "finir les ultimes préparatifs en régie."  
+       }
+       if(heure>18 && heure <20 && jour==2){
+         data[19] = presentement + "stresser en régie, le spectacle va commencer!"  
+       }
+       if(heure=20 && jour==2){
+         data[19] = presentement + "stresser en régie, le spectacle a commencé!"
+       }
+       if(heure>20 && jour==2){
+         data[19] = presentement + "boire des coups, le spectacle était super et tout le monde est bien content."
+       }
+       */
 
-        function addclass(params){
-          console.log("addclass, ", params[0], params[1])
-          $("#"+params[0]).addClass(params[1])
+     }
+
+     function autonext(params){
+      var wait = params
+
+      console.log("DÉBUT autonext "+wait)
+      autonextcontainer = setTimeout(function(){
+        gotonext(1)
+        console.log("FIN autonext")
+      },wait)}
+
+      function addclass(params){
+        console.log("addclass, ", params[0], params[1])
+        $("#"+params[0]).addClass(params[1])
+      }
+
+      function removeclass(params){
+        console.log("removeclass, ", params[0], params[1])
+        $("#"+params[0]).removeClass(params[1])
+      }
+
+      function answernext(params){
+        compteurquest += 1
+        console.log("answernext, "+params+ "compteurq ="+compteurquest)
+        if(params=="ok") addlistelement(['checklist',posanswers[compteurquest], params])
+          if(params=="nope") addlistelement(['checklist',neganswers[compteurquest], params])
+
+            if(compteurquest>=4) destroy("seqoui")
+          }
+
+
+        function addlistelement(params){
+
+          console.log("les params chelous ", params)
+          var where = params[0]
+          var label = params[1]
+          var status = params[2]
+
+          var labelpropre = label.replace(/\_/g, ' ');
+
+          var newListel = $('<li class='+ status +'>'+ labelpropre +'</li>')
+          newListel.appendTo($("#"+where))
+
         }
 
-        function removeclass(params){
-          console.log("removeclass, ", params[0], params[1])
-          $("#"+params[0]).removeClass(params[1])
-        }
-
-        function answernext(params){
-          compteurquest += 1
-          console.log("answernext, "+params+ "compteurq ="+compteurquest)
-          if(params=="ok") addlistelement(['checklist',posanswers[compteurquest], params])
-            if(params=="nope") addlistelement(['checklist',neganswers[compteurquest], params])
-
-              if(compteurquest>=4) destroy("seqoui")
-            }
-
-
-          function addlistelement(params){
-
-            console.log("les params chelous ", params)
-            var where = params[0]
-            var label = params[1]
-            var status = params[2]
-
-            var labelpropre = label.replace(/\_/g, ' ');
-
-            var newListel = $('<li class='+ status +'>'+ labelpropre +'</li>')
-            newListel.appendTo($("#"+where))
-
+        function time(params){
+            //là écrire une fonction qui va bien
           }
 
           function newBoutton(params){
@@ -370,6 +454,7 @@ function gotobookmark(where){
       setTimeout(function(){
         next()
       },333)
+      // cette valeur est liée à la durée de fade-out des boutons 
       console.log("gotobookmark, ", compteur)
       return
     }
@@ -396,6 +481,7 @@ document.onkeydown = function(e) {
     compteur +=1
     next();
     console.log("keydown, ", compteur)
+
     // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
     // ça avance tout seul avec un délai)
   }

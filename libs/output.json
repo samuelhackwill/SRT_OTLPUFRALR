@@ -1,5 +1,16 @@
 [
     {
+        "text": "INSCRIPTION",
+        "type": "comment"
+    },
+    {
+        "text": [
+            "21/01/17",
+            "19:00"
+        ],
+        "type": "setdate"
+    },
+    {
         "text": [
             "3500"
         ],
@@ -189,7 +200,11 @@
     },
     {
         "type": "text",
-        "text": "et là présentement je suis sûrement en train de {en fonction de l’heure, au restau, etc}."
+        "text": "et là présentement je suis sûrement en train de "
+    },
+    {
+        "text": [],
+        "type": "wassup"
     },
     {
         "type": "text",
@@ -420,8 +435,11 @@
         "type": "btn"
     },
     {
-        "type": "text",
-        "text": "vous êtes dispo ce soir à 18H30?"
+        "text": [
+            "vous_êtes_dispo_",
+            "?"
+        ],
+        "type": "time"
     },
     {
         "type": "text",
@@ -437,7 +455,7 @@
     },
     {
         "type": "text",
-        "text": "vous vous engagez à ne pas faire autre chose en même temps que vous suivez le spectacle?"
+        "text": "et euhm vous engagez à ne pas faire autre chose en même temps que vous suivez le spectacle?"
     },
     {
         "type": "text",
@@ -518,8 +536,10 @@
         "text": "pour peu que vous ayez décidé de venir,"
     },
     {
-        "type": "text",
-        "text": "on se retrouve à 18h30!"
+        "text": [
+            "on_se_parle_"
+        ],
+        "type": "time"
     },
     {
         "type": "text",
@@ -553,6 +573,660 @@
     },
     {
         "type": "text",
-        "text": "Revenez à 18h30"
+        "text": ""
+    },
+    {
+        "text": [
+            "revenez_"
+        ],
+        "type": "time"
+    },
+    {
+        "text": "DÉBUT DU SAS ACCUEIL SALM (plus ou moins 10 minutes avant entrée public)",
+        "type": "comment"
+    },
+    {
+        "type": "text",
+        "text": "bienvenue,"
+    },
+    {
+        "type": "text",
+        "text": "c’est samuel à nouveau"
+    },
+    {
+        "type": "text",
+        "text": "je suis dans la salle du spectacle, on est en train de préparer l’arrivée des spectateurs-trices"
+    },
+    {
+        "type": "text",
+        "text": "et moi, je m’occupe de votre arrivée : celle des spectateurs-trices à la maison."
+    },
+    {
+        "type": "text",
+        "text": "on est un bon petit groupe"
+    },
+    {
+        "type": "text",
+        "text": "ça va démarrer dans un petit moment."
+    },
+    {
+        "type": "text",
+        "text": "en attendant que tout le monde arrive, je vous propose d’écouter une petite musique sympa"
+    },
+    {
+        "type": "text",
+        "text": "vous pouvez aller faire la vaisselle ou lire une bd,"
+    },
+    {
+        "type": "text",
+        "text": "comme vous voulez"
+    },
+    {
+        "type": "text",
+        "text": "l’essentiel étant que toute à l’heure, "
+    },
+    {
+        "type": "text",
+        "text": "on vous rappellera quelques secondes avant le vrai début du spectacle."
+    },
+    {
+        "type": "text",
+        "text": "par voie sonore"
+    },
+    {
+        "type": "text",
+        "text": "du coup il faut que vous entendiez bien votre ordinateur"
+    },
+    {
+        "type": "text",
+        "text": "donc hésitez pas à pousser le son."
+    },
+    {
+        "type": "text",
+        "text": "vous l’entendez la musique hein?"
+    },
+    {
+        "type": "text",
+        "text": "si vous n’entendez aucun son il est encore temps"
+    },
+    {
+        "type": "text",
+        "text": "de télécharger la dernière version de google chrome"
+    },
+    {
+        "type": "text",
+        "text": "avec ce navigateur on est sûrs à 100% que notre web app fonctionne."
+    },
+    {
+        "type": "text",
+        "text": "à toute à l’heure."
+    },
+    {
+        "text": [],
+        "type": "timer"
+    },
+    {
+        "text": "DEBUT DU PRE-SPECTACLE (plus ou moins pendant l'entrée public)",
+        "type": "comment"
+    },
+    {
+        "type": "text",
+        "text": "Hello again"
+    },
+    {
+        "type": "text",
+        "text": "c'est samuel"
+    },
+    {
+        "type": "text",
+        "text": "bon alors là je suis carrément en régie"
+    },
+    {
+        "type": "text",
+        "text": "lieven est à côté de moi"
+    },
+    {
+        "type": "text",
+        "text": "c'est lui qui s'occupe du son sur le spectacle"
+    },
+    {
+        "type": "text",
+        "text": "les comédiens quant à eux"
+    },
+    {
+        "type": "text",
+        "text": "sont en train de se taper dans les mains pour se donner du courage"
+    },
+    {
+        "type": "text",
+        "text": "le spectacle va bientôt commencer."
+    },
+    {
+        "type": "text",
+        "text": "vous pouvez appuyer sur la barre espace s'il vous plaît?"
+    },
+    {
+        "type": "text",
+        "text": "merci"
+    },
+    {
+        "type": "text",
+        "text": "bon alors"
+    },
+    {
+        "type": "text",
+        "text": "vous avez sûrement remarqué"
+    },
+    {
+        "type": "text",
+        "text": "mais c'est pas sûr"
+    },
+    {
+        "type": "text",
+        "text": "genre si par un hasard étonnant"
+    },
+    {
+        "type": "text",
+        "text": "certains d'entre vous appuient depuis le début sur la barre espace"
+    },
+    {
+        "type": "text",
+        "text": "pile au moment où j'envoie les textes"
+    },
+    {
+        "type": "text",
+        "text": "ben dans ce cas-ci vous pourriez avoir l'illusion que c'est encore vous "
+    },
+    {
+        "type": "text",
+        "text": "qui pilotez la progression des surtitres"
+    },
+    {
+        "type": "text",
+        "text": "bon mais il y a peu de chances quand même"
+    },
+    {
+        "type": "text",
+        "text": "il est quand même plus probable que "
+    },
+    {
+        "type": "text",
+        "text": "vous ayez remarqué que vous n'aviez plus la main"
+    },
+    {
+        "type": "text",
+        "text": "et que là vous vous relaxez devant votre ordinateur"
+    },
+    {
+        "type": "text",
+        "text": "bon quand à moi je sens la responsabilité qui pèse sur mes épaules"
+    },
+    {
+        "type": "text",
+        "text": "j'appuie sur la barre espace "
+    },
+    {
+        "type": "text",
+        "text": "lentement, "
+    },
+    {
+        "type": "text",
+        "text": "j'essaye de ne pas aller trop vite pour que chacun puisse lire"
+    },
+    {
+        "type": "text",
+        "text": "en tout cas le rythme n'est plus le même"
+    },
+    {
+        "type": "text",
+        "text": "quand vous avez accédé à ce site pour la première fois,"
+    },
+    {
+        "type": "text",
+        "text": "chacun pouvait en fait évoluer à sa vitesse"
+    },
+    {
+        "type": "text",
+        "text": "alors que maintenant"
+    },
+    {
+        "type": "text",
+        "text": "la lecture sur ce site est passée en mode spectacle"
+    },
+    {
+        "type": "text",
+        "text": "le rythme est homogène pour tous"
+    },
+    {
+        "type": "text",
+        "text": "et c'est moi qui en maîtrise le tempo."
+    },
+    {
+        "type": "text",
+        "text": "ça permet de faire en sorte"
+    },
+    {
+        "type": "text",
+        "text": "que tout le monde reçoive les mêmes informations au même instant"
+    },
+    {
+        "type": "text",
+        "text": "d'ailleurs c'est le moment de vous dévoiler"
+    },
+    {
+        "type": "text",
+        "text": "qu'on a choisi une personne parmi vous"
+    },
+    {
+        "type": "text",
+        "text": "de manière arbitraire"
+    },
+    {
+        "type": "text",
+        "text": "pour tester une séquence de rencontre entre les spectateurs à la maison"
+    },
+    {
+        "type": "text",
+        "text": "et les comédiens,"
+    },
+    {
+        "type": "text",
+        "text": "et par voie de conséquence, avec les spectateurs au théâtre."
+    },
+    {
+        "type": "text",
+        "text": "on va se serrer la main psychiquement en quelque sorte"
+    },
+    {
+        "type": "text",
+        "text": "cette séquence s'appelle le \"oui non euh\""
+    },
+    {
+        "type": "text",
+        "text": "alors euh pour la personne qui a été choisie"
+    },
+    {
+        "type": "text",
+        "text": "est ce que vous voyez apparaître les boutons là maintenant?"
+    },
+    {
+        "type": "text",
+        "text": "si vous ne les voyez pas apparaître,"
+    },
+    {
+        "text": "super, alors on va juste s'entraîner encore un coup",
+        "type": "comment"
+    },
+    {
+        "type": "text",
+        "text": "pas d’inquiétude, c'est sûrement que vous n'êtes pas le S.A.L.M."
+    },
+    {
+        "text": "histoire d'être sûrs que vous serez bien au taquet toute à l'heure",
+        "type": "comment"
+    },
+    {
+        "type": "text",
+        "text": "chargé de réaliser la poignée de main psychique."
+    },
+    {
+        "text": "l'idée c'est que vous allez entendre sébastien vous poser des questions",
+        "type": "comment"
+    },
+    {
+        "type": "text",
+        "text": "vous serez juste derrière le S.A.L.M. qui a été choisi"
+    },
+    {
+        "text": "et il s'agira de répondre, assez vite, genre dans la seconde",
+        "type": "comment"
+    },
+    {
+        "type": "text",
+        "text": "et vous assisterez tout de même à ce moment historique"
+    },
+    {
+        "text": "en appuyant sur un des boutons \"oui\", \"non\", ou \"euh\".",
+        "type": "comment"
+    },
+    {
+        "type": "text",
+        "text": "de rencontre entre deux civilisations."
+    },
+    {
+        "text": "on essaie un coup? ",
+        "type": "comment"
+    },
+    {
+        "type": "text",
+        "text": "bon je vais vous passer Mathilde elle veut vous dire un truc."
+    },
+    {
+        "text": "excellent. bon je retourne en régie, ça va bientôt commencer!",
+        "type": "comment"
+    },
+    {
+        "type": "text",
+        "text": "je vous souhaite un bon spectacle à la maison."
+    },
+    {
+        "text": "je vous souhaite un bon spectacle à la maison.",
+        "type": "comment"
+    },
+    {
+        "type": "text",
+        "text": "%%% LIAISON TELEPHONIQUE"
+    },
+    {
+        "type": "text",
+        "text": "Et donc voilà,"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "il n’y a que"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "cette connexion,"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "qui est physique"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "qui est matériellement réalisée."
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "Nous, ici dans la salle,"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "nous sommes bel et bien connectés à quelqu’un,"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "à un des spectateur"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "ou une des spectatrice"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "à la maison."
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "Cette connexion s’effectue"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "par l’intermédiaire de cet appareil téléphonique"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "de câbles,"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "d’ antennes relais,"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "d’ondes électro-magnétique."
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "Elle a une réalité physique,"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "il y a peut-être une dizaine d’ordinateurs,"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "de routeurs,"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "de serveurs"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "qui s’occupent de maintenir cette connexion en vie,"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "et pourtant"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "elle est intangible,"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "invisible,"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "imperceptible,"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "immatérielle."
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "Et pourtant,"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "cette connexion aboutit quelque part"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "elle nous emmène chez quelqu’un."
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "Si on pouvait suivre son chemin"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "on sortirait par les trous de l'écouteur du téléphone"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "posé sur une table ou sur un canapé"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "ou dans la main de cette personne"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "qui vit la même expérience que nous"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "mais de l’autre côté"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "Il ou elle doit être en train de tendre l’oreille"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "pour vérifier si on n’entendrait pas quand même"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "les quelques bruits qui émaneraient du public,"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "les toussotements,"
+    },
+    {
+        "type": "text",
+        "text": "***"
+    },
+    {
+        "type": "text",
+        "text": "le grincement des sièges."
+    },
+    {
+        "type": "text",
+        "text": "***"
     }
 ]

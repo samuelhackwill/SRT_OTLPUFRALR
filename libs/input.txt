@@ -1,3 +1,6 @@
+%%% INSCRIPTION
+#setdate 21/01/17 19:00
+
 #autonext 3500
 vous êtes bien arrivé-e sur le site du spectacle
 #autonext 3500
@@ -38,7 +41,8 @@ c’est samuel, je travaille au sein de l'équipe du projet
 sur les trucs en rapport avec internet
 là je suis pas vraiment en train de vous parler pour de vrai d’ailleurs
 en fait j’ai préparé ce texte il y a quelques jours 
-et là présentement je suis sûrement en train de {en fonction de l’heure, au restau, etc}.
+et là présentement je suis sûrement en train de 
+#wassup
 pis je suis ici pour vous parler un peu du spectacle en fait
 pour vous donner un petit aperçu de ce qui va se passer
 et pour qu'on prépare ensemble le cadre dans lequel vous allez évoluer à ce moment-là.
@@ -90,11 +94,12 @@ c'est plutôt chouette.
 alors, est-ce que :
 #btn seqoui Non gotonext(1) answernext('nope')
 #btn seqnon Oui gotonext(1) answernext('ok')
-vous êtes dispo ce soir à 17H45?
+#time vous_êtes_dispo_ ?
+
 vous serez chez vous, ou chez un-e ami-e, enfin dans un espace intime à ce moment ?
 vous pourrez faire en sorte d'être seul-e ?
 vous disposerez d'un moyen pour écouter du son à ce moment ? (hauts-parleurs, casque, etc.)
-vous vous engagez à ne pas faire autre chose en même temps que vous suivez le spectacle?
+et euhm vous engagez à ne pas faire autre chose en même temps que vous suivez le spectacle?
 
 ok
 on peut regarder un coup cette liste
@@ -114,11 +119,178 @@ bref
 #removeclass listcontainer visible
 ben écoutez
 pour peu que vous ayez décidé de venir,
-on se retrouve à 17h45!
+#time on_se_parle_
 j'ai hâte de vous y retrouver
 bises,
 samuel
 ...
 #addclass srtcontainer posmid
 #removeclass srtcontainer postop
-Revenez à 17h45
+#time revenez_
+
+%%% DÉBUT DU SAS ACCUEIL SALM (plus ou moins 10 minutes avant entrée public)
+
+bienvenue,
+c’est samuel à nouveau
+je suis dans la salle du spectacle, on est en train de préparer l’arrivée des spectateurs-trices
+et moi, je m’occupe de votre arrivée : celle des spectateurs-trices à la maison.
+on est un bon petit groupe
+ça va démarrer dans un petit moment.
+en attendant que tout le monde arrive, je vous propose d’écouter une petite musique sympa
+vous pouvez aller faire la vaisselle ou lire une bd,
+comme vous voulez
+l’essentiel étant que toute à l’heure, 
+on vous rappellera quelques secondes avant le vrai début du spectacle.
+par voie sonore
+du coup il faut que vous entendiez bien votre ordinateur
+donc hésitez pas à pousser le son.
+vous l’entendez la musique hein?
+si vous n’entendez aucun son il est encore temps
+de télécharger la dernière version de google chrome
+avec ce navigateur on est sûrs à 100% que notre web app fonctionne.
+à toute à l’heure.
+#timer
+
+%%% DEBUT DU PRE-SPECTACLE (plus ou moins pendant l'entrée public)
+Hello again
+c'est samuel
+bon alors là je suis carrément en régie
+lieven est à côté de moi
+c'est lui qui s'occupe du son sur le spectacle
+les comédiens quant à eux
+sont en train de se taper dans les mains pour se donner du courage
+le spectacle va bientôt commencer.
+vous pouvez appuyer sur la barre espace s'il vous plaît?
+merci
+bon alors
+vous avez sûrement remarqué
+mais c'est pas sûr
+genre si par un hasard étonnant
+certains d'entre vous appuient depuis le début sur la barre espace
+pile au moment où j'envoie les textes
+ben dans ce cas-ci vous pourriez avoir l'illusion que c'est encore vous 
+qui pilotez la progression des surtitres
+bon mais il y a peu de chances quand même
+il est quand même plus probable que 
+vous ayez remarqué que vous n'aviez plus la main
+et que là vous vous relaxez devant votre ordinateur
+bon quand à moi je sens la responsabilité qui pèse sur mes épaules
+j'appuie sur la barre espace 
+lentement, 
+j'essaye de ne pas aller trop vite pour que chacun puisse lire
+en tout cas le rythme n'est plus le même
+quand vous avez accédé à ce site pour la première fois,
+chacun pouvait en fait évoluer à sa vitesse
+alors que maintenant
+la lecture sur ce site est passée en mode spectacle
+le rythme est homogène pour tous
+et c'est moi qui en maîtrise le tempo.
+ça permet de faire en sorte
+que tout le monde reçoive les mêmes informations au même instant
+d'ailleurs c'est le moment de vous dévoiler
+qu'on a choisi une personne parmi vous
+de manière arbitraire
+pour tester une séquence de rencontre entre les spectateurs à la maison
+et les comédiens,
+et par voie de conséquence, avec les spectateurs au théâtre.
+on va se serrer la main psychiquement en quelque sorte
+cette séquence s'appelle le "oui non euh"
+alors euh pour la personne qui a été choisie
+est ce que vous voyez apparaître les boutons là maintenant?
+si vous ne les voyez pas apparaître,
+%%% super, alors on va juste s'entraîner encore un coup
+pas d’inquiétude, c'est sûrement que vous n'êtes pas le S.A.L.M.
+%%% histoire d'être sûrs que vous serez bien au taquet toute à l'heure
+chargé de réaliser la poignée de main psychique.
+%%% l'idée c'est que vous allez entendre sébastien vous poser des questions
+vous serez juste derrière le S.A.L.M. qui a été choisi
+%%% et il s'agira de répondre, assez vite, genre dans la seconde
+et vous assisterez tout de même à ce moment historique
+%%% en appuyant sur un des boutons "oui", "non", ou "euh".
+de rencontre entre deux civilisations.
+%%% on essaie un coup? 
+bon je vais vous passer Mathilde elle veut vous dire un truc.
+%%% excellent. bon je retourne en régie, ça va bientôt commencer!
+je vous souhaite un bon spectacle à la maison.
+%%% je vous souhaite un bon spectacle à la maison.
+
+
+%%% LIAISON TELEPHONIQUE
+Et donc voilà,
+***
+il n’y a que
+***
+cette connexion,
+***
+qui est physique
+***
+qui est matériellement réalisée.
+***
+Nous, ici dans la salle,
+***
+nous sommes bel et bien connectés à quelqu’un,
+***
+à un des spectateur
+***
+ou une des spectatrice
+***
+à la maison.
+***
+Cette connexion s’effectue
+***
+par l’intermédiaire de cet appareil téléphonique
+***
+de câbles,
+***
+d’ antennes relais,
+***
+d’ondes électro-magnétique.
+***
+Elle a une réalité physique,
+***
+il y a peut-être une dizaine d’ordinateurs,
+***
+de routeurs,
+***
+de serveurs
+***
+qui s’occupent de maintenir cette connexion en vie,
+***
+et pourtant
+***
+elle est intangible,
+***
+invisible,
+***
+imperceptible,
+***
+immatérielle.
+***
+Et pourtant,
+***
+cette connexion aboutit quelque part
+***
+elle nous emmène chez quelqu’un.
+***
+Si on pouvait suivre son chemin
+***
+on sortirait par les trous de l'écouteur du téléphone
+***
+posé sur une table ou sur un canapé
+***
+ou dans la main de cette personne
+***
+qui vit la même expérience que nous
+***
+mais de l’autre côté
+***
+Il ou elle doit être en train de tendre l’oreille
+***
+pour vérifier si on n’entendrait pas quand même
+***
+les quelques bruits qui émaneraient du public,
+***
+les toussotements,
+***
+le grincement des sièges.
+***
