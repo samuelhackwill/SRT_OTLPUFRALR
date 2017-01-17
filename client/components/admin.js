@@ -339,7 +339,7 @@ Template.admin.helpers({
 Template.showtime.helpers({
   isPowerToTheAdminChecked:function(){
     var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
-    console.log("isPowerToTheAdminChecked", powerToThePeople);
+    console.log("isPowerToTheAdminChecked", !powerToThePeople);
     return !powerToThePeople;
   },
   isModeSpectacleChecked:function(){

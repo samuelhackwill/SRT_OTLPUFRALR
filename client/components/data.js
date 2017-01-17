@@ -11,6 +11,7 @@ Template.data.onCreated(function() {
   console.log(this);
   console.log("created2");
   console.log(demoData);
+  console.log(data);
 
 
 
@@ -37,7 +38,7 @@ Template.data.onRendered(function () {
   var templateInstance = Template.instance();
 
   //demoNext event
-  $(document.body).on('keyup', function(e) {
+  /*$(document.body).on('keyup', function(e) {
       // KEYCODE 32 IS SPACEBAR
       // KEYCIODE 78 IS "n"
     // this = 
@@ -48,6 +49,25 @@ Template.data.onRendered(function () {
       demoCompteur +=1
       demoNext();
       return false;
+    }
+  });*/
+
+  $(document.body).on('keyup', function(e) {
+
+    e = e || window.event
+
+
+    // KEYCODE 32 IS SPACEBAR
+    // KEYCIODE 78 IS "n"
+
+    if(e.keyCode =='78' && compteur < data.length-1 && interupt==false){
+      window.clearTimeout(autonextcontainer)
+      compteur +=1
+      next();
+      $('#displayDemoCompteur').val(compteur);
+      console.log("keyup, ", compteur)
+      // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
+      // ça avance tout seul avec un délai)
     }
   });
 
@@ -150,8 +170,8 @@ Template.data.helpers({
   },
 
   displayDemoCompteur:function(){
-    console.log('demoCompteur', demoCompteur)
-    return demoCompteur;
+    console.log('compteur', compteur)
+    return compteur;
   }
 
 });
@@ -162,7 +182,7 @@ Template.data.events({
       event.preventDefault();
       $('#json-result').val( rawTextToJson($('#text-raw').val()) );
       console.log(Template.instance());
-      zoupageJSON($('#json-result').val(), demoData);
+      zoupageJSON($('#json-result').val(), data);
     },
     'click #save-json': function(event) {
       console.log('save-json!');
