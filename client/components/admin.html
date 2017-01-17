@@ -1,0 +1,199 @@
+<template name="admin">
+
+  <h1>Admin</h1>
+  {{> loginButtons}}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        
+      </div>
+    </div>
+    <div class="row">
+        <h2>Stats Server - Users online <button data-toggle="collapse" data-target="#stats">▾</button></h2>
+
+        <div id="stats" class="collapse">
+
+          <div class="col-lg-3 col-md-3">
+                {{> status userStatus}}
+          </div>
+          <div class="col-lg-9 col-md-9">
+              {{> serverStatus }}
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <h2>Spectacle <button data-toggle="collapse" data-target="#showtime">▾</button></h2>
+
+        <div id="showtime" class="collapse in">
+
+          <div class="col-lg-12 col-md-12">
+                {{> showtime}}
+          </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <h2>Téléphones <button data-toggle="collapse" data-target="#phones">▾</button></h2>
+
+        <div id="phones" class="collapse">
+
+          <div class="center-block col-md-10">
+                {{> phonesList}}
+          </div>
+        </div>
+    </div>
+    
+  </div>  
+
+
+</template>
+
+
+<template name="status">
+    <h3>Local status:</h3>
+
+    <button class="btn btn-success resync">Resync Time</button>
+
+    <dl class="dl-horizontal">
+        <dt>Server Time:</dt><dd>{{serverTime}}</dd>
+        <dt>Local Offset:</dt><dd>{{serverOffset}} ms</dd>
+        <dt>RTT:</dt><dd>{{serverRTT}} ms</dd>
+        <dt>Idle:</dt><dd>{{isIdleText}}</dd>
+        <dt>Monitor on:</dt><dd>{{isMonitoringText}}</dd>
+        <dt>Last Activity:</dt><dd>{{lastActivity}}</dd>
+    </dl>
+
+    {{#if isMonitoring}}
+    <h4>Idle monitoring is on.</h4>
+    <button class="btn btn-danger stop-monitor">Stop Monitor</button>
+    {{else}}
+    <form class="start-monitor">
+        <legend>Start monitor with the following parameters:</legend>
+        <label>Idle Threshold:</label>
+        <input class="form-control" name="threshold" type="number" min="5000" step="1" value="30000" required>
+        <label>Monitor Interval:</label>
+        <input class="form-control" name="interval" type="number" min="1000" step="1" value="1000" required>
+        <label>Idle on window blur:</label>
+        <select class="form-control" name="idleOnBlur" required>
+            <option value="true" selected>true</option>
+            <option value="false">false</option>
+        </select>
+        <button type="submit" class="btn btn-primary pull-right">Start Monitor</button>
+    </form>
+    {{/if}}
+</template>
+
+<template name="serverStatus">
+    <h3>All user connections on server:</h3>
+    <p>There are currently {{allUsersCount}} ({{anonymousCount}} anonymous) users online.</p>
+    <table class="table table-condensed table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Username/Connection</th>
+                <th>Route</th>
+                <th>Idle</th>
+                <th>Last Activity</th>
+                <th>IP (<i>Last</i>)</th>
+                <th style="width: 256px">User Agent (<i>Last</i>)</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{#each anonymous}}
+        {{> serverConnection}}
+        {{/each}}
+        {{#each users}}
+            <tr class="bold {{userClass}}">
+                <td>{{username}}<br>(last login {{localeTime status.lastLogin.date}})</td>
+                <td>{{status.idle}}</td>
+                <td>{{#with status.lastActivity}}
+                    {{> relTime}}
+                    {{else}}
+                    (active or not monitoring)
+                    {{/with}}
+                </td>
+                <td><i>{{status.lastLogin.ipAddr}}</i></td>
+                <td><i>{{status.lastLogin.userAgent}}</i></td>
+            </tr>
+            {{#each connections}}
+            {{> serverConnection}}
+            {{/each}}
+        {{/each}}
+        </tbody>
+    </table>
+</template>
+
+<template name="serverConnection">
+    <tr class="{{connectionClass}}">
+        <td>{{_id}}{{#with loginTime}}<br>(login {{this}}){{/with}}</td>
+        <td>{{currentRoute}}</td>
+        <td>{{idle}}</td>
+        <td>{{#with lastActivity}}
+            {{> relTime}}
+            {{else}}
+            (active or not monitoring)
+            {{/with}}
+        </td>
+        <td>{{ipAddr}}</td>
+        <td>{{userAgent}}</td>
+    </tr>
+</template>
+
+<template name="relTime">
+    {{localeTime this}}
+    <br>
+    ({{relativeTime this}})
+</template>
+
+
+<template name="showtime">
+    showtime !<br />
+
+    <label for="josebove" title="ou prendre la main sur le déroulé des évènements">Prendre le pouvoir</label> <input id="josebove" title="aka José Bové!" type="checkbox" /><br />
+    <label for="showmode" title="ou mettre le site en mode Spectacle">Mode Spectacle</label> <input id="showmode" title="aka let's gro!" type="checkbox" /><br /><br /><br />
+    <div id="srt" class="small">
+      bienvenue,
+    </div>
+
+    <div id="srt-the-one">
+      bienvenue,
+    </div>
+    <button id="next">next</button>
+
+
+    
+    <button id="start-the-stream">start the stream</button>
+
+
+    
+    <button id="show-the-ONE">montrer les boutons à jacky</button>
+</template>
+
+
+<template name="phonesList">
+
+    <p>There are currently {{phoneNumbersCount}} phone numbers.</p>
+    <table class="table table-condensed table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Phone</th>
+                <th><span class="small">Calls</span></th>
+                <th><span class="small">Created</span></th>
+                <th><span class="small">Modified</span></th>
+                <th><span class="small">X</span></th>
+            </tr>
+        </thead>
+        <tbody>
+        {{#each listPhoneNumbers}}
+            <tr>
+                <td class="bold">{{number}}</td>
+                <td class="bold">{{calls}}</td>
+                <td class="small">{{created}}</td>
+                <td class="small">{{updated}}</td>
+                <td>{{> quickRemoveButton collection="PhoneNumbers" _id=this._id onError=quickRemoveButtonOnError onSuccess=quickRemoveButtonOnSuccess beforeRemove=quickRemoveButtonBeforeRemove class="btn btn-danger"}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</template>

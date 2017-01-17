@@ -1,0 +1,16 @@
+tr.bold > td {
+    font-weight: bold;
+    text-decoration: underline;
+}
+h1 {
+    color:blue;
+}
+
+
+body.representations {
+    font-size: 14px;
+}
+
+.bootstrap-datetimepicker-widget {
+  color: red !important;
+}

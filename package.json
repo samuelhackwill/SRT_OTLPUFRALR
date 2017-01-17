@@ -1,0 +1,24 @@
+{
+  "name": "oui-non-euh",
+  "version": "0.0.2",
+  "description": "web app pour les spectateurs a la maison",
+  "main": "oui-non-euh.js",
+  "dependencies": {
+    "babel-runtime": "^6.18.0",
+    "bcrypt": "^0.8.7",
+    "meteor-node-stubs": "^0.2.4",
+    "simple-text-parser": "^1.0.0",
+    "simple-text-parser2": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://etienne-moussor@bitbucket.org/etienne-moussor/oui-non-euh.git"
+  },
+  "author": "Etienne Boutin, Samuel Hackwill, et leurs amis de l'équipe du Pont",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/etienne-moussor/oui-non-euh#readme"
+}

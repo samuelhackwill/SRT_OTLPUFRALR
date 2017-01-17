@@ -1,0 +1,77 @@
+<template name="representations">
+  <div class="container">
+    <div class="row small">
+
+      <div class="col-md-6">
+      </div>
+
+      <div class="col-md-6">
+      </div>
+
+    </div>
+
+
+    <div class="row small">
+
+
+      <div class="col-lg-12 col-md-12 small center-block">
+        <table class="table table-condensed table-striped table-hover">
+          <thead>
+              <tr>
+                  <th>Représentation</th>
+                  <th>Lieu</th>
+                  <th>Début</th>
+                  <th>Fin</th>
+                  <th>Participants</th>
+                  <th>Statut</th>
+                  <th>X</th>
+              </tr>
+          </thead>
+          <tbody>
+              {{#each listRepresentations}}
+              <tr>
+                  <td>{{name}}<br />({{_id}})</td>
+                  <td>{{location}}</td>
+                  <td>{{date_start}}</td>
+                  <td>{{date_end}}</td>
+                  <td>{{anonymousParticipants}}+{{countParticipants participants}}</td>
+                  <td>{{status}}</td>
+                  <td>{{> quickRemoveButton collection="representations" _id=this._id onError=quickRemoveButtonOnError onSuccess=quickRemoveButtonOnSuccess beforeRemove=quickRemoveButtonBeforeRemove class="btn btn-danger"}}</td>
+              </tr>
+              {{/each}}
+          </tbody>
+          <tfoot>
+              <tr>
+                  <td><label for="name">Nom :</label><input name="name" id="representation-name" /></td>
+                  <td><label for="location">Lieu :</label><input name="location" id="representation-location" /></td>
+                  <td>
+                    <label for="date_start">Début :</label>
+                     <!--<div class="form-group">
+                        <div class='datetimepicker input-group date' id='representation-date_start-picker'>
+                            <input type='text' class="form-control" name="date_start" id="representation-date_start-time" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>-->
+                    <input type="datetime" class="form-contrpol" placeholder="YYYY-MM-DD HH:mm" name="date_start" id="representation-date_start" />
+                  </td>
+                  <td><label for="date_end">Fin :</label><input type="datetime"  placeholder="YYYY-MM-DD HH:mm" name="date_end" id="representation-date_end" /></td>
+                  <td>
+                    <label for="status">Statut :</label>
+                    <select name="status" id="representation-status" >
+                      <option value="pending">à venir</option>
+                      <option value="running">en cours</option>
+                      <option value="finished">terminé</option>
+                    </select>
+                  </td>
+                  <td><button class="btn btn-primary" type="button" id="addRepresentation">Ajouter</button></td>
+              </tr>
+          </tfoot>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</template>

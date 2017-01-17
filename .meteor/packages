@@ -1,0 +1,32 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+standard-app-packages@1.0.9
+coffeescript@1.11.1_4
+mizzao:user-status
+mizzao:timesync
+mrt:moment
+twbs:bootstrap
+standard-minifier-css@1.3.2
+standard-minifier-js@1.2.1
+iron:router
+raix:eventddp
+u2622:persistent-session
+accounts-ui@1.1.9
+accounts-password@1.3.3
+shell-server@0.2.1
+matb33:collection-hooks
+alanning:roles
+ecmascript@0.6.1
+aldeed:collection2
+aldeed:delete-button
+ctjp:meteor-bootstrap-switch
+flemay:less-autoprefixer
+kadira:debug
+tsega:bootstrap3-datetimepicker
+rajit:bootstrap3-datepicker
+rzymek:moment-locale-fr
+ostrio:cookies
+brylie:first-user-admin

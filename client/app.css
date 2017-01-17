@@ -1,0 +1,214 @@
+/*body  {
+  padding-top:50px; 
+}
+.polls  {
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:center;
+}
+.poll   {
+  width:25%;
+  margin:20px;
+}*/
+  @font-face {
+    font-family: "typo";
+    src: url('OfficeCodePro-Regular.ttf') format('truetype');
+  }
+
+  html{
+    width:100%;
+    height:100%;
+  }
+
+  body{
+    font-family: "typo", sans-serif;
+    font-size:22px;
+    text-align: center;
+    margin: 0px;
+
+    color: black;
+
+    -webkit-transition: color 1s ease-in-out;
+    -webkit-transition: background-color 1s ease-in-out;
+
+    width:100%;
+    height:100%;
+  }
+
+  button{
+    font-size:14px;
+  }
+  button:active {
+    position:relative;
+    top:2px;
+  }
+
+  ul#checklist{
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+
+    width: 50%;
+    transform: translate(25%);
+  }
+
+  ul .ok{
+    list-style-image: url('ok.ico');
+  }
+
+  ul .nope{
+    list-style-image: url('nope.ico');
+  }
+
+  ul#fiction{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+
+  #gcontainer{
+    width:100%;
+    height:100%;
+  }
+
+  #flipbookcontainer{
+    position:absolute;
+    top:25%;
+    left:10%;
+    background-image : url("/img/jeanmich.png");
+    background-repeat : no-repeat;
+    background-position: center;
+    background-size: contain;
+    width:80%;
+    height:70%;
+    z-index:3;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+  }
+
+  #listcontainer{
+    position:absolute;
+    top:40%;
+    left:35%;
+    width:30%;
+    height:50%;
+    z-index:3;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+  }
+
+  #imgcontainerBACK{
+    background : no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -webkit-transition: all 10s ease-in-out;
+    background-color: white;
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:1;
+
+    display:none;
+  }
+
+  #imgcontainerFRONT{
+    background : no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -webkit-transition: all 10s ease-in-out;
+    background-color: white;
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:2;
+  }
+
+  #srtcontainer{
+    /*c'est moi le plus foreground*/
+    -webkit-transition: all 2s ease-in-out;
+    width: 100%;
+    height: 10%;
+    position: absolute;
+  }
+
+  .invisible{
+    opacity: 0;
+  }
+
+  .visible{
+    opacity: 1;
+  }
+
+  .posmid{
+    height : inherit;
+    width : inherit;
+    background-color: rgba(245, 245, 245, 0);
+    /*hum hum transparance*/
+    top:45%;
+  }
+
+  .posbot{
+    height : inherit;
+    width : inherit;
+    background-color: white;
+    top: 90%;
+  }
+
+  .postop{
+    height : inherit;
+    width : inherit;
+    background-color: rgba(245, 245, 245, 0);
+    /*hum hum transparance*/
+    top : 12%;
+  }
+
+  #sacbouttons{
+    z-index:11;
+
+    -webkit-transition: opacity .3s ease-in-out;
+    -moz-transition: opacity .3s ease-in-out;
+    -o-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+    top :200%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+
+  #srt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;   
+    -khtml-user-select: none;    
+    -moz-user-select: none;      
+    -ms-user-select: none;      
+
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+
+  }
+
+
+#stats {
+  font-size: 0.5em;
+}
+#stream-ifr {
+  display: none;
+}
+.hide {
+  display: none !important;
+}
+
+textarea {
+  font-size: 50%;
+}

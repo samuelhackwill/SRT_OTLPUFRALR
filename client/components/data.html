@@ -1,0 +1,133 @@
+<template name="data">
+
+    <div class="row">
+
+      <div class="col-md-4">
+        <div id="source-text">
+          TEXTE<br />
+          <textarea id="text-raw" cols="40" rows="20">
+yo
+#img rain1.jpg
+ça va bien?
+et donc
+
+#btn add Non >gotobookmark('1pasbienassis') >destroy(id)
+#btn add Oui >gotonext() >destroy(id)
+
+Est-ce que vous êtes bien assis?
+Super bien
+C'est chouette d'être bien assis
+C'est super de se reposer la nuque
+
+#bookmark fin1pasbienassis
+
+Bon revenons à nos moutons
+euh pardon nos boutons
+je suis désolé pour la blague de toute à l’heure
+je vous ai demandé d’appuyer sur la barre espace 
+
+#img rain2.jpg
+
+alors que ça ne servait plus à rien
+et que c’était en fait moi qui contrôlait le défilement du texte
+
+#img rain3.jpg
+
+c’était un peu cruel, je le ferai plus
+d’un autre côté je crois que c’était un peu nécéssaire
+
+#bookmark 1pasbienassis
+
+ah ouais vous êtes mal assis? bon dommage
+
+#goto fin1pasbienassis
+          </textarea><br />
+          <button id="text-to-json">Mouline !</button>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div id="demo-text">
+          DEMO<br />
+          reset? compteur = <input id="displayDemoCompteur" value="0" />
+          {{> ecran}}
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div id="json-dest">
+          JSON <button data-toggle="collapse" data-target="#json-result">ouvrir/fermer</button><br />
+          <textarea id="json-result" cols="40" rows="20" class="collapse" disabled></textarea><br />
+          <input placeholder="nom" id="json-name" />
+          <button id="save-json">Enregistre ça</button>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="row">
+
+
+      <div class="col-md-12 small">
+        <table class="table table-condensed table-striped table-hover">
+          <thead>
+              <tr>
+                  <th>Contenu Écran</th>
+                  <th>Données</th>
+                  <th>Crée</th>
+                  <th>Modifié</th>
+              </tr>
+          </thead>
+          <tbody>
+              {{#each listContenusEcran}}
+              <tr>
+                  <td>{{name}}<br />({{_id}})</td>
+                  <td>
+                  {{#each dataArray data}}
+                      {{this.key}}.
+                      {{#each dataArray this.value}}
+                        {{this.key}}: {{this.value}}<br />
+                      {{/each}}
+                      <br />
+                  {{/each}}
+                  </td>
+                  <td>{{created}}</td>
+                  <td>{{updated}}</td>
+                  <td>{{> quickRemoveButton collection="ContenusEcran" _id=this._id onError=quickRemoveButtonOnError onSuccess=quickRemoveButtonOnSuccess beforeRemove=quickRemoveButtonBeforeRemove class="btn btn-danger"}}</td>
+              </tr>
+              {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+</template>
+
+
+
+<template name="ecran">
+
+  <div id="demo-ecran">
+
+    <div id="gcontainer">
+      <div id="imgcontainerBACK">
+        <div id="imgcontainerFRONT">
+        </div>
+      </div>
+      
+      <div id="fiction">
+        <ul id="elemfiction"></ul>
+      </div>
+      <div id="srtcontainer">
+        <div id="srt">
+          Bonjour
+        </div>
+        <div id="sacbouttons">
+        </div>
+      </div>
+
+    </div><!-- fin gcontainer-->
+  </div><!-- fin demo-ecran-->
+
+</template>
