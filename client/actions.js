@@ -27,7 +27,7 @@ next = function(){
   //action spécifique pour vider la div
   //solution envisagée :
   //au moment de parser data, il rajoute une balise #clear une ligne sur deux par exemple
-  console.log('next', data);
+  console.log('next', data[compteur]);
   var currentData = data[compteur]
   var type = currentData["type"]
   var params = currentData["text"]
