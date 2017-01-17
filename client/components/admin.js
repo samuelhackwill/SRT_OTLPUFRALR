@@ -335,6 +335,23 @@ Template.admin.helpers({
    return Meteor.users.find().count();
   }
 });
+
+Template.showtime.helpers({
+  isPowerToTheAdminChecked:function(){
+    var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
+    console.log("isPowerToTheAdminChecked", powerToThePeople);
+    return !powerToThePeople;
+  },
+  isModeSpectacleChecked:function(){
+    var modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}}).modeSpectacle;
+    console.log("isModeSpectacleChecked", modeSpectacle);
+    return modeSpectacle;
+  },
+  usersOnlineCount:function(){
+   //event a count of users online too.
+   return Meteor.users.find().count();
+  }
+});
 Template.phonesList.helpers({
   listPhoneNumbers:function(){
     console.log("PhoneNumbers??");
