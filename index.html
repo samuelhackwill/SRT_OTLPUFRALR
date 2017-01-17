@@ -40,8 +40,7 @@
 // TO DO
 // TABLEAU DES FICTIONS
 // REFACTORING CSS
-// FONCTIONS WASSUP, SETDATE, TIME
-
+// BALISES pour les jackies (si tu est un jacky de type x, goto un texte planqué juste pour toi)
 
 var compteurquest = -1
 var compteur = -1
@@ -89,12 +88,6 @@ function zoupage() {
 }
 
 function next(){
-  //TODO
-  //attention dans le cas actuel il est impossible d'avoir la div de texte vide. il faudrait avoir une balise
-  //action spécifique pour vider la div
-  //solution envisagée :
-  //au moment de parser data, il rajoute une balise #clear une ligne sur deux par exemple
-
   var currentData = data[compteur]
   var type = currentData["type"]
   var params = currentData["text"]
@@ -130,10 +123,6 @@ function next(){
       case "setdate":
       nextspectacledate = params[0]
       nextspectacletime = params[1]
-      break
-
-      case "wassup":
-      wassup()
       break
 
       case "time":
@@ -223,9 +212,6 @@ function next(){
       var addobject = {text:phrase, type: "text"}
 
       data.splice(nextsrt, 0, addobject, [type="text"])
-
-      console.log("là j'ai mis un truc de date dans le HTML et tout")
-
     }
 
     function timer(){
@@ -308,47 +294,34 @@ function next(){
         console.log(alternance)
         console.log(params[0])
       }
+/*
+tu sais quoi, la fonction wassup c'est beaucoup d'énergie déployée pour une blague moyenne.
 
       function wassup(){
         // là écrire une fonction qui concatène
         // ce que fait samuel en fonction de l'heure
-        // merci bisous
+        var now = new Date()
 
-/*
-        if(heure<7){
-         data[19] = presentement + "dormir dans ma chambre, à Valenciennes quoi, c'est la nuit." 
-       }
-       if(heure>=7 && heure <12){
-         data[19] = presentement + "fignoler l'un ou l'autre truc dans le studio du Phénix, Valenciennes en vue de la présentation."  
-       }
-       if(heure>=12 && heure <14){
-         data[19] = presentement + "déguster un bon repas de l'avant-scène avec mes collègues."  
-       }
-       if(heure>14 && heure<20){
-         data[19] = presentement + "bosser comme un gros dingue dans le studio du Phénix à Valenciennes."
-       }
-       if(heure>20 && heure<22){
-         data[19] = presentement + "diner avec Marion et Lieven rue d'Askièvre."
-       }
-       if(heure>22){
-         data[19] = presentement + "dormir paisiblement dans ma chambre à Valenciennes."
-       }
-       if(heure>14 && heure <17 && jour==2){
-         data[19] = presentement + "finir les ultimes préparatifs en régie."  
-       }
-       if(heure>18 && heure <20 && jour==2){
-         data[19] = presentement + "stresser en régie, le spectacle va commencer!"  
-       }
-       if(heure=20 && jour==2){
-         data[19] = presentement + "stresser en régie, le spectacle a commencé!"
-       }
-       if(heure>20 && jour==2){
-         data[19] = presentement + "boire des coups, le spectacle était super et tout le monde est bien content."
-       }
-       */
+        var ville 
+        var salle
+        var heure = now.getHours()
+        var jour = now.getDate()
+        var mois = now.getDay()
+        var annee = now.getFullYear()
+        var wassuptxt
 
-     }
+        console.log(jour + mois + annee)
 
+        if(heure==0) wassuptxt = "hurler à la lune, c'est minuit..."
+        if(heure<8) wassuptxt = "dormir dans mon lit douillet à "+ ville +", c'est "+ heure +" heure quoi."
+        if(heure==8) wassuptxt = "partager un frugal petit dejeuner avec mes collègues."
+        if(heure>=9 && heure <12) wassuptxt = "bosser sur l'un ou l'autre truc au " + salle
+        if(heure>=12 && heure <14) wassuptxt = "déguster un bon repas avec mes collègues."
+        if(heure>14 && heure<20) wassuptxt = "bosser sur l'un ou l'autre truc au " + salle
+        if(heure>20 && heure<22) wassuptxt = "diner à " + ville + " avec mes collègues."
+        if(heure>22) wassuptxt = "dormir paisiblement dans mon lit à " + ville
+}
+*/
      function autonext(params){
       var wait = params
 

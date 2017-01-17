@@ -169,6 +169,10 @@
         "text": "et encore un coup s'il vous plaît?"
     },
     {
+        "text": [],
+        "type": "wassup"
+    },
+    {
         "type": "text",
         "text": "allez ben on dirait que ça marche hyper bien"
     },
@@ -433,6 +437,10 @@
             "answernext('ok')"
         ],
         "type": "btn"
+    },
+    {
+        "type": "text",
+        "text": ""
     },
     {
         "text": [

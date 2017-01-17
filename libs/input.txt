@@ -41,8 +41,6 @@ c’est samuel, je travaille au sein de l'équipe du projet
 sur les trucs en rapport avec internet
 là je suis pas vraiment en train de vous parler pour de vrai d’ailleurs
 en fait j’ai préparé ce texte il y a quelques jours 
-et là présentement je suis sûrement en train de 
-#wassup
 pis je suis ici pour vous parler un peu du spectacle en fait
 pour vous donner un petit aperçu de ce qui va se passer
 et pour qu'on prépare ensemble le cadre dans lequel vous allez évoluer à ce moment-là.
@@ -196,23 +194,20 @@ et par voie de conséquence, avec les spectateurs au théâtre.
 on va se serrer la main psychiquement en quelque sorte
 cette séquence s'appelle le "oui non euh"
 alors euh pour la personne qui a été choisie
+#jacky onh goto ecole_one
 est ce que vous voyez apparaître les boutons là maintenant?
 si vous ne les voyez pas apparaître,
-%%% super, alors on va juste s'entraîner encore un coup
 pas d’inquiétude, c'est sûrement que vous n'êtes pas le S.A.L.M.
-%%% histoire d'être sûrs que vous serez bien au taquet toute à l'heure
 chargé de réaliser la poignée de main psychique.
-%%% l'idée c'est que vous allez entendre sébastien vous poser des questions
 vous serez juste derrière le S.A.L.M. qui a été choisi
-%%% et il s'agira de répondre, assez vite, genre dans la seconde
 et vous assisterez tout de même à ce moment historique
-%%% en appuyant sur un des boutons "oui", "non", ou "euh".
 de rencontre entre deux civilisations.
-%%% on essaie un coup? 
+#bookmark retourjackyone
 bon je vais vous passer Mathilde elle veut vous dire un truc.
-%%% excellent. bon je retourne en régie, ça va bientôt commencer!
 je vous souhaite un bon spectacle à la maison.
-%%% je vous souhaite un bon spectacle à la maison.
+
+%%% WARNING LIAISON TELEPHONIQUE
+
 
 
 %%% LIAISON TELEPHONIQUE
@@ -294,3 +289,22 @@ les toussotements,
 ***
 le grincement des sièges.
 ***
+
+
+%%%CAMP D'ENTRAINEMENT
+#bookmark ecole_one
+est ce que vous voyez apparaître les boutons là maintenant?
+#btn ecoleoneO Oui gotonext(1) destroy(id)
+#btn ecoleoneN Non gotonext(1) destroy(id)
+#btn ecoleoneE Euh gotonext(1) destroy(id)
+super, alors on va juste s'entraîner encore un coup
+histoire d'être sûrs que vous serez bien au taquet toute à l'heure
+l'idée c'est que vous allez entendre sébastien vous poser des questions
+et il s'agira de répondre, assez vite, genre dans la seconde
+en appuyant sur un des boutons "oui", "non", ou "euh".
+on essaie un coup? 
+#btn ecoleoneOO Oui gotonext(1) destroy(id)
+#btn ecoleoneNN Non gotonext(1) destroy(id)
+#btn ecoleoneEE Euh gotonext(1) destroy(id)
+excellent. Je retourne en régie, ça va bientôt commencer!
+#goto retourjackyone
