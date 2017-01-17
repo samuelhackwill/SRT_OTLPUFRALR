@@ -96,7 +96,7 @@ Template.home.onRendered(function () {
 
   // Initialize the library (all console debuggers enabled)
   console.log(window.Janus, this.Janus, Janus);
-  var host = "http://www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com";
+  var host = "www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com";
   var server = null;
   if(window.location.protocol === 'http:')
       server = "http://" + host + ":8088/janus";
