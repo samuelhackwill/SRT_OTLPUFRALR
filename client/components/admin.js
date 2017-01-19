@@ -26,7 +26,7 @@ Template.admin.onRendered(function () {
     if (!ready){ return; }
     let contnus = ContenusEcran.find().fetch();
     console.log("showtime contnus", contnus, data);
-    data = ContenusEcran.findOne({name: "text-spectacle-20170119"}).data
+    data = ContenusEcran.findOne({name: "ce_jeudi_no_comment"}).data
     console.log('showtime data ?', data);
     console.log('showtime ContenusEcran ?', ContenusEcran.find().fetch());
     var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;

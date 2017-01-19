@@ -18,7 +18,7 @@ Template.jacky.onRendered(function () {
     if (!ready){ return; }
     let contnus = ContenusEcran.find().fetch();
     console.log("contnus", contnus, data);
-    data = ContenusEcran.findOne({name: "text-spectacle-jacky"}).data
+    data = ContenusEcran.findOne({name: "ce_jeudi_no_comment"}).data
     console.log('srt spectacle jacky rendered');
     console.log('data ?', data);
     console.log('ContenusEcran ?', ContenusEcran.find().fetch());
