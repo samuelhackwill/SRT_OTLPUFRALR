@@ -193,7 +193,7 @@ parking = function(params){
 
 get_time_diff = function(datetime){
   // euh alors y'a un bug de timezone là j'ai l'impression qu'il prend greenwitch
-  var datetime = typeof datetime !== 'undefined' ? datetime : "2017-01-12 17:15:00.000000"
+  var datetime = typeof datetime !== 'undefined' ? datetime : "2017-01-19 18:45:00.000000"
   var datetime = new Date( datetime ).getTime();
   var now = new Date().getTime();
 
