@@ -26,7 +26,7 @@ Template.admin.onRendered(function () {
     if (!ready){ return; }
     let contnus = ContenusEcran.find().fetch();
     console.log("showtime contnus", contnus, data);
-    data = ContenusEcran.findOne({name: "text-spectacle"}).data
+    data = ContenusEcran.findOne({name: "text-spectacle-20170119"}).data
     console.log('showtime data ?', data);
     console.log('showtime ContenusEcran ?', ContenusEcran.find().fetch());
     var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
@@ -100,7 +100,7 @@ Template.admin.onRendered(function () {
   em.addListener('adminSUPERinterrupt', function(what) {
     console.log('admin SUPER interrupt!', what);
     console.log('changer le mode SUPERinterrupt');
-    Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: what});
+    Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: what.value});
     // var son = new Audio('euuuh.ogg').play();
     // console.log('SERVER HI', arguments[0].$inc, Object.keys(arguments[0].$inc)[0], _.toArray(arguments));
 
@@ -119,6 +119,14 @@ Template.admin.onRendered(function () {
     console.log('prendre le pouvoir? ', data, $(this).val());
     Meteor.call('setSuperGlobal', {name: 'powerToThePeople', value: !data});
     //em.emit('adminswitchthepower');
+    if(data == true) { //power admin
+      em.setClient({ bookmark: 'spectacle' });
+      em.emit('adminForceGoTo');
+      gotobookmark('spectacle');
+    } else if(data == false) { //power retourne aux SALM
+      // em.setClient({ bookmark: 'fin-spectacle' });
+      // em.emit('adminForceGoTo');
+    }
   });
   //activer le mode spectacle
   //transformer en joli switch
@@ -132,7 +140,7 @@ Template.admin.onRendered(function () {
   });
   //activer le mode SUPERinterrupt
   //transformer en joli switch
-  $('input#SUPERinterruptMode').bootstrapSwitch();
+  $('input#SUPERinterrupt').bootstrapSwitch();
   // $('input#SUPERinterruptMode').on('switchChange.bootstrapSwitch', function (event, data) {
   //   console.log('SUPERinterruptMode ftw!');
   //   // event.preventDefault();
@@ -147,9 +155,10 @@ Template.admin.onRendered(function () {
   // cookie quand quelqu'un arrive au bout
   // attention y'a un bug avec les boutons que j'ai pseudo-rêglé en empêchant les mouseevents quand le compteur =! x ou y
 
-  function next(){
+  function adminNext(){
     // console.log('next', compteur);
     // if(compteur >= 75) compteur = 75;
+
     var currentSub = data[compteur]
     document.getElementById("srt").innerHTML = currentSub
     // ça c'est pour virer le focus des boutons oui et non histoire de pas les activer en appuyant sur espace
@@ -172,11 +181,15 @@ Template.admin.onRendered(function () {
     //  KEYCODE 32 IS SPACEBAR
     // KEYCIODE 78 IS "n"
 
-    if(e.keyCode =='78' && compteur < Object.keys(data).length-1){
+    
+    if(e.keyCode =='32' && compteur < data.length-1){
+      window.clearTimeout(autonextcontainer)
       compteur +=1
-      next();
+      adminNext();
+      console.log("keyup, ", compteur)
+      // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
+      // ça avance tout seul avec un délai)
     }
-
     //CUES
 
     // ptin on pourrait faire comment pour override les fonctions avec du délai si le client appuie une première fois sur espace 

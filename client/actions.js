@@ -175,10 +175,20 @@ jacky = function(params){
 }
 
 parking = function(params){
-  if(params[0]=="ON" && Roles.userIsInRole(Meteor.user(), "jacky_one")==false){
-  //  SUPERinterrupt = true
-  }else{
-  //  SUPERinterrupt = false
+  if(Roles.userIsInRole(Meteor.user(), "admin")==true) {
+    console.log("parking : is admin");
+    if(params[0]=="ON"){
+      console.log("parking : enable");
+      em.setClient({ value: true });
+    //  SUPERinterrupt = true
+    } else if(params[0]=="OFF"){
+      console.log("parking : disable");
+      em.setClient({ value: false });
+    }
+    em.emit('adminSUPERinterrupt');
+  } else {
+
+    //  SUPERinterrupt = false
   }
 }
 

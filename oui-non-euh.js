@@ -258,6 +258,16 @@ if (Meteor.isServer) {
   });
 
 
+  em.addListener('adminForceGoTo', function(/* client */) {
+    console.log('ADMIN FORCE GO TO', _.toArray(arguments), arguments[0]);
+    // em.setClient({ reponse: arguments[0].reponse });
+    var args = arguments[0];
+    if(args) {
+      em.emit('salmForceGoTo', args);
+    }
+  });
+
+
   
 
 
