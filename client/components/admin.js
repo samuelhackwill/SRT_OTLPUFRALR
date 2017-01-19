@@ -96,6 +96,20 @@ Template.admin.onRendered(function () {
   }); 
 
 
+
+  em.addListener('adminSUPERinterrupt', function(what) {
+    console.log('admin SUPER interrupt!', what);
+    console.log('changer le mode SUPERinterrupt');
+    Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: what});
+    // var son = new Audio('euuuh.ogg').play();
+    // console.log('SERVER HI', arguments[0].$inc, Object.keys(arguments[0].$inc)[0], _.toArray(arguments));
+
+    // var choice = parseInt(Object.keys(arguments[0].$inc)[0].replace(/(choices\.|\.votes)/g, ''));
+    // var sounds = ['oui.ogg', 'non.ogg', 'euuuh.ogg'];
+    // var son = new Audio(sounds[choice]).play();
+  }); 
+
+
   //prendre le pouvoir
   //transformer en joli switch
   $('input#josebove').bootstrapSwitch();
@@ -116,6 +130,16 @@ Template.admin.onRendered(function () {
     Meteor.call('setSuperGlobal', {name: 'modeSpectacle', value: data});
     em.emit('adminrefreshpage');
   });
+  //activer le mode SUPERinterrupt
+  //transformer en joli switch
+  $('input#SUPERinterruptMode').bootstrapSwitch();
+  // $('input#SUPERinterruptMode').on('switchChange.bootstrapSwitch', function (event, data) {
+  //   console.log('SUPERinterruptMode ftw!');
+  //   // event.preventDefault();
+  //   console.log('activer le mode SUPERinterrupt', data, $(this).val());
+  //   Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: data});
+  //   // em.emit('adminrefreshpage');
+  // });
 
 
   // TO DO
@@ -183,6 +207,11 @@ Template.showtime.helpers({
     var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
     console.log("isPowerToTheAdminChecked", !powerToThePeople);
     return !powerToThePeople;
+  },
+  isSUPERinterruptChecked:function(){
+    var modeSUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}}).SUPERinterrupt;
+    console.log("isSUPERinterruptChecked", modeSUPERinterrupt);
+    return modeSUPERinterrupt;
   },
   isModeSpectacleChecked:function(){
     var modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}}).modeSpectacle;

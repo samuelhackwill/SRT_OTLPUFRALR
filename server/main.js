@@ -98,6 +98,26 @@ Meteor.methods({
             // superGlobals.upsert({powerToThePeople: obj.value}, { filter: false });
           }
           break;
+          
+        case 'SUPERinterrupt':
+          console.log('SUPERinterrupt', obj.value);
+          if(typeof(obj.value) === "boolean") {
+            console.log('SUPERinterrupt2', obj.value, superGlobals.findOne({ SUPERinterrupt: { $exists: true}}));
+            var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
+            if(SUPERinterrupt) {
+              console.log('SUPERinterrupt3 mise a jour');
+              //mise à jour
+              superGlobals.update(SUPERinterrupt._id, { $set: {SUPERinterrupt: obj.value} }, { filter: false });
+            } else {
+              console.log('SUPERinterrupt3 insert!');
+              //création
+              superGlobals.insert({SUPERinterrupt: obj.value}, { filter: false });
+
+            }
+            // superGlobals.upsert({modeSpectacle: obj.value}, { filter: false });
+          }
+          break;
+
         case 'modeSpectacle':
           console.log('modeSpectacle', obj.value);
           if(typeof(obj.value) === "boolean") {

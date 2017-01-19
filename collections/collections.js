@@ -58,6 +58,12 @@ Schemas.superGlobals = new SimpleSchema({
       optional: true
     },
 
+    SUPERinterrupt: {
+      type: Boolean,
+      label: "bloquer l'action next (barre espace) pour les SALM",
+      optional: true
+    },
+
     modeSpectacle: {
       type: Boolean,
       label: "Quand le spectacle va commencer ou commence",
