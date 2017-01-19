@@ -55,7 +55,7 @@ Meteor.methods({
       // console.log(copie instanceof Object);
       // console.log(copie);
       // insertion du nouveau contenu écran
-      ContenusEcran.insert({name: obj.name, data: data}, { filter: false });
+      ContenusEcran.insert({name: obj.name, data: data, text: obj.text}, { filter: false });
     }
   },
   setSuperGlobal: function(obj) {

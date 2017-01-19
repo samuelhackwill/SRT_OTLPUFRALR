@@ -201,9 +201,10 @@ Template.data.events({
       if($('#json-result').val() != "") {
         console.log('saving json.');
         var contenuNom = $('#json-name').val();
+        var contenuText = $('#text-raw').val();
         var contenuData = $('#json-result').val();
-        console.log('nom', contenuNom, typeof contenuNom, 'data result', contenuData, typeof contenuData);
-        Meteor.call('newContenuEcran', {name: contenuNom, data: contenuData});
+        console.log('nom', contenuNom, typeof contenuNom, 'data result', contenuData, typeof contenuData, contenuText, typeof contenuText);
+        Meteor.call('newContenuEcran', {name: contenuNom, data: contenuData, text: contenuText});
       }
     }
 });

@@ -15,6 +15,10 @@ Schemas.ContenusEcran = new SimpleSchema({
           label: "Nom",
           max: 200
     },
+    text: {
+          type: String,
+          label: "Texte"
+    },
     "data": {
         type: [Object],
         label: "Données",
