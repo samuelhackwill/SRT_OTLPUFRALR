@@ -56,7 +56,6 @@ Template.data.onRendered(function () {
 
     e = e || window.event
 
-
     // KEYCODE 32 IS SPACEBAR
     // KEYCIODE 78 IS "n"
 
@@ -81,7 +80,6 @@ Template.data.onRendered(function () {
 });
 
 demoCompteur = 0;
-var interrupt = false
 var indeximg = 0
 var alternance = false
 

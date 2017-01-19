@@ -134,7 +134,7 @@ Template.admin.onRendered(function () {
     em.emit('adminnext');
   }
 
-  document.onkeydown = function(e) {
+  document.onkeyup = function(e) {
 
     e = e || window.event
     /*
@@ -148,7 +148,7 @@ Template.admin.onRendered(function () {
     //  KEYCODE 32 IS SPACEBAR
     // KEYCIODE 78 IS "n"
 
-    if(e.keyCode =='32' && compteur < Object.keys(data).length-1){
+    if(e.keyCode =='78' && compteur < Object.keys(data).length-1){
       compteur +=1
       next();
     }

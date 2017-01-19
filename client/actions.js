@@ -276,7 +276,12 @@ answernext = function(params){
   console.log("answernext, "+params+ "compteurq ="+compteurquest)
   if(params=="ok") addlistelement(['checklist',posanswers[compteurquest], params])
   if(params=="nope") addlistelement(['checklist',neganswers[compteurquest], params])
-  if(compteurquest>=4) destroy("seqoui")
+  if(compteurquest<4){
+    interrupt=true
+  }else{
+    interrupt=false
+    destroy("seqoui")
+  }
 }
 
 
