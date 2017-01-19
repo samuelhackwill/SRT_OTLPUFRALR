@@ -21,12 +21,13 @@
   }
 
   body{
+    background-color: black;
     font-family: "typo", sans-serif;
     font-size:22px;
     text-align: center;
     margin: 0px;
 
-    color: black;
+    color: white;
 
     -webkit-transition: color 1s ease-in-out;
     -webkit-transition: background-color 1s ease-in-out;
@@ -36,6 +37,7 @@
   }
 
   button{
+    color: black;
     font-size:14px;
   }
   button:active {

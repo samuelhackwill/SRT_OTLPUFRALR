@@ -137,6 +137,25 @@ Meteor.methods({
           }
           break;
 
+        case 'spectacleStarted':
+          console.log('spectacleStarted', obj.value);
+          if(typeof(obj.value) === "boolean") {
+            console.log('spectacleStarted2', obj.value, superGlobals.findOne({ spectacleStarted: { $exists: true}}));
+            var spectacleStarted = superGlobals.findOne({ spectacleStarted: { $exists: true}});
+            if(spectacleStarted) {
+              console.log('spectacleStarted3 mise a jour');
+              //mise à jour
+              superGlobals.update(spectacleStarted._id, { $set: {spectacleStarted: obj.value} }, { filter: false });
+            } else {
+              console.log('spectacleStarted3 insert!');
+              //création
+              superGlobals.insert({spectacleStarted: obj.value}, { filter: false });
+
+            }
+            // superGlobals.upsert({modeSpectacle: obj.value}, { filter: false });
+          }
+          break;
+
         case 'cuppasInc':
           var thecuppasCount = superGlobals.findOne({ cuppasCount: { $exists: true}});
           if(thecuppasCount){

@@ -70,6 +70,12 @@ Schemas.superGlobals = new SimpleSchema({
       optional: true
     },
 
+    spectacleStarted: {
+      type: Boolean,
+      label: "Quand le spectacle a commencé",
+      optional: true
+    },
+
     cuppasCount: {
       type: Number,
       label: "Le nombre de tasses de thé fumantes chez les PALMES",

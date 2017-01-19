@@ -243,8 +243,9 @@ Template.spectacle.onRendered(function () {
     // KEYCODE 32 IS SPACEBAR
     // KEYCIODE 78 IS "n"
     var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
-    console.log('spectacle keyup compteur = ', compteur, 'interrupt = ', interrupt, 'isItPowerToThePeople = ', isItPowerToThePeople);
-    if(e.keyCode =='32' && compteur < data.length-1 && interrupt==false && isItPowerToThePeople == true){
+    var isSUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}}).SUPERinterrupt;
+    console.log('spectacle keyup compteur = ', compteur, 'interrupt = ', interrupt, 'isItPowerToThePeople = ', isItPowerToThePeople, 'isSUPERinterrupt = ', isSUPERinterrupt);
+    if(e.keyCode =='32' && compteur < data.length-1 && interrupt==false && isItPowerToThePeople == true && isSUPERinterrupt == false){
       window.clearTimeout(autonextcontainer)
       compteur +=1
       next();

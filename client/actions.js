@@ -55,6 +55,10 @@ next = function(){
 
 action = function(type, params){
   switch(type){
+    case "sound":
+    sound(params)
+    break
+
     case "addclass":
     addclass(params)
     break
@@ -129,6 +133,13 @@ action = function(type, params){
   }
 }
 
+sound = function(params){
+  console.log("sound", params);
+  if(params[0]=="start"){
+    em.emit('adminstartstream');
+  }
+}
+
 flipbook = function(){
   if(flipbookstatus==true){
     $("#flipbookcontainer").removeClass("visible")
@@ -167,8 +178,9 @@ timer = function(){
 }
 
 jacky = function(params){
+  console.log("etes vous bien le jacky que nous cherchons?", params[0], params[1])
   if(Roles.userIsInRole(Meteor.user(), params[0])==true){
-    console.log("l'user est bien le jacky que nous cherchons")
+    console.log("l'user est bien le jacky que nous cherchons", params[0], params[1])
     gotobookmark(params[1])
   }
 }
@@ -193,7 +205,7 @@ parking = function(params){
 
 get_time_diff = function(datetime){
   // euh alors y'a un bug de timezone là j'ai l'impression qu'il prend greenwitch
-  var datetime = typeof datetime !== 'undefined' ? datetime : "2017-01-19 17:07:00.000000"
+  var datetime = typeof datetime !== 'undefined' ? datetime : "2017-01-19 17:36:00.000000"
   var datetime = new Date( datetime ).getTime();
   var now = new Date().getTime();
 
@@ -223,11 +235,11 @@ get_time_diff = function(datetime){
 
   document.getElementById("srt").innerHTML = (difdif)
 
-  if (datetime-now < 0) {
+  if (datetime-now <= -1) {
    console.log("TOOT TOOT TOOT c'est l'heure du spectacle")
    gotobookmark('spectacle')
    clearInterval(clock)
-   interrupt=false
+   interrupt=true
    gotonext(1)
 
   }
@@ -359,6 +371,7 @@ destroy = function(self){
 }
 
 gotobookmark = function(where){
+  console.log("gotobookmark!!? where=", where);
   if(interrupt==true) interrupt=false
     howmuch = data.length
   for(i=0; i<howmuch; i++){

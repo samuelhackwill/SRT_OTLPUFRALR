@@ -138,16 +138,26 @@ Template.admin.onRendered(function () {
     Meteor.call('setSuperGlobal', {name: 'modeSpectacle', value: data});
     em.emit('adminrefreshpage');
   });
+  //démarrer le spectacle
+  //transformer en joli switch
+  $('input#startSpectacle').bootstrapSwitch();
+  $('input#startSpectacle').on('switchChange.bootstrapSwitch', function (event, data) {
+    console.log('startSpectacle ftw!');
+    // event.preventDefault();
+    console.log('démarrer le spectacle? ', data, $(this).val());
+    Meteor.call('setSuperGlobal', {name: 'spectacleStarted', value: data});
+    // em.emit('adminrefreshpage');
+  });
   //activer le mode SUPERinterrupt
   //transformer en joli switch
   $('input#SUPERinterrupt').bootstrapSwitch();
-  // $('input#SUPERinterruptMode').on('switchChange.bootstrapSwitch', function (event, data) {
-  //   console.log('SUPERinterruptMode ftw!');
-  //   // event.preventDefault();
-  //   console.log('activer le mode SUPERinterrupt', data, $(this).val());
-  //   Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: data});
-  //   // em.emit('adminrefreshpage');
-  // });
+  $('input#SUPERinterruptMode').on('switchChange.bootstrapSwitch', function (event, data) {
+    console.log('SUPERinterruptMode ftw!');
+    // event.preventDefault();
+    console.log('activer le mode SUPERinterrupt', data, $(this).val());
+    Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: data});
+    // em.emit('adminrefreshpage');
+  });
 
 
   // TO DO
@@ -230,6 +240,11 @@ Template.showtime.helpers({
     var modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}}).modeSpectacle;
     console.log("isModeSpectacleChecked", modeSpectacle);
     return modeSpectacle;
+  },
+  isTheShowStarted:function(){
+    var spectacleStarted = superGlobals.findOne({ spectacleStarted: { $exists: true}}).spectacleStarted;
+    console.log("isTheShowStarted", spectacleStarted);
+    return spectacleStarted;
   },
   usersOnlineCount:function(){
    //event a count of users online too.
