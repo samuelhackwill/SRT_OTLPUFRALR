@@ -22,13 +22,11 @@
 
   body{
     background-color: black;
+    color: white;
     font-family: "typo", sans-serif;
     font-size:22px;
     text-align: center;
     margin: 0px;
-
-    color: white;
-
     -webkit-transition: color 1s ease-in-out;
     -webkit-transition: background-color 1s ease-in-out;
 
