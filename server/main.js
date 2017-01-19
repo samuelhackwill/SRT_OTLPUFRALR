@@ -16,6 +16,16 @@ Meteor.publish('allPhoneNumbers', function () {
   return PhoneNumbers.find();
 });
 
+Meteor.publish( 'users', function() {
+  let isAdmin = Roles.userIsInRole( this.userId, 'admin' );
+
+  if ( isAdmin ) {
+    return Meteor.users.find( {}, { fields: { "emails.address": 1, "roles": 1 } } )
+  } else {
+    return null;
+  }
+});
+
 
 Meteor.methods({
 
@@ -166,6 +176,17 @@ Meteor.methods({
       });
     } else {
       PhoneNumbers.insert(obj, { filter: false });
+    }
+  },
+  createUserFromAdmin: function(email,password,role){
+    console.log('createUserFromAdmin', email,password,role);
+    var id = Accounts.createUser({ email: email, password: password });
+    console.log('Accounts.createUser', id);
+    if (role != '' && role != 'admin') {
+      // Need _id of existing user record so this call must come
+      // after `Accounts.createUser` or `Accounts.onCreate`
+      console.log('addUsersToRoles', role);
+      Roles.addUsersToRoles(id, [role]);
     }
   }
 

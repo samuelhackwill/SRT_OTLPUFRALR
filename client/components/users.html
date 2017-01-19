@@ -1,0 +1,75 @@
+
+<template name="users">
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="page-header">Users</h4>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Email Address</th>
+              <th class="text-center">id</th>
+              <th class="text-center">Role</th>
+              <th class="text-center">X</th>
+            </tr>
+          </thead>
+          <tbody>
+          {{#each users}}
+          <tr>
+            <td class="text-left text-middle">{{#if isCurrentUser _id}}<label class="label label-success">You!</label>{{/if}} {{emails.[0].address}}</td>
+            <td class="user-id">{{_id}}</td>
+            <td>
+              <select {{disableIfAdmin _id}} name="userRole" class="form-control">
+                <option selected="{{selected roles.[0] 'admin'}}" value="admin">Admin</option>
+                <option selected="{{selected roles.[0] 'jacky1'}}" value="jacky1">Jacky1</option>
+                <option selected="{{selected roles.[0] 'jacky2'}}" value="jacky2">Jacky2</option>
+                <option selected="{{selected roles.[0] 'jacky3'}}" value="jacky3">Jacky3</option>
+              </select>
+            </td>
+            <td>
+              {{#if isCurrentUser _id}}
+              no
+              {{else}}
+              {{> quickRemoveButton collection="Meteor.users" _id=_id onError=quickRemoveButtonOnError onSuccess=quickRemoveButtonOnSuccess beforeRemove=quickRemoveButtonBeforeRemove class="btn btn-danger"}}
+              {{/if}}
+            </td>
+          </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="page-header">Add user</h4>
+        <form id="adduser">
+          <table class="table table-bordered">
+            <tbody>
+            <tr>
+              <td class="text-left text-middle"><input id="newUserEmailAddress" name="emailaddress" placeholder="email@address.com" /></td>
+              <td><input  id="newUserPassword" name="password" placeholder="password" /></td>
+              <td>
+                <select id="newUserRole" name="userRole" class="form-control">
+                  <option value="jacky1">Jacky1</option>
+                  <option value="jacky2">Jacky2</option>
+                  <option value="jacky3">Jacky3</option>
+                </select>
+              </td>
+              <td>
+                <button type="submit">Add</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+
+    
+  </div>
+
+</template>
