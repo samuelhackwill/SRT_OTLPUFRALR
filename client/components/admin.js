@@ -1,6 +1,6 @@
 
-Template.data.onCreated(function() {
-
+Template.admin.onCreated(function() {
+  console.log('Template admin created.');
   //subscribe à la collection contenus écran
   this.autorun(() => {
     this.subscribe('allSuperGlobals');
@@ -10,6 +10,8 @@ Template.data.onCreated(function() {
 
 });
 
+Template.showtime.onRendered(function () {
+});
 Template.admin.onRendered(function () {
   console.log('admin!');
   console.log(UserStatus);
@@ -17,6 +19,23 @@ Template.admin.onRendered(function () {
 
   Meteor.subscribe('userStatus');
   Meteor.subscribe('allPhoneNumbers');
+
+  this.autorun(() => {
+    console.log("showtime autorun admin", Template.instance());
+    let ready = Template.instance().subscriptionsReady();
+    if (!ready){ return; }
+    let contnus = ContenusEcran.find().fetch();
+    console.log("showtime contnus", contnus, data);
+    data = ContenusEcran.findOne({name: "text-spectacle"}).data
+    console.log('showtime data ?', data);
+    console.log('showtime ContenusEcran ?', ContenusEcran.find().fetch());
+    var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
+    console.log("showtime isItPowerToThePeople", isItPowerToThePeople);
+    // rawTextToJson();
+  // console.log(Template.instance());
+    // zoupageJSON(dataFromDB, data);
+    // autonext(2000);
+  });
 /*
   Polls.after.update(function (userId, doc, fieldNames, modifier, options) {
     em.emit('hi', userId, doc, fieldNames, modifier, options);
@@ -84,8 +103,8 @@ Template.admin.onRendered(function () {
     console.log('jose bové ftw!');
     // event.preventDefault();
     console.log('prendre le pouvoir? ', data, $(this).val());
-    // Meteor.call('toggleScraper', data.value);
     Meteor.call('setSuperGlobal', {name: 'powerToThePeople', value: !data});
+    //em.emit('adminswitchthepower');
   });
   //activer le mode spectacle
   //transformer en joli switch
@@ -94,7 +113,6 @@ Template.admin.onRendered(function () {
     console.log('showmode ftw!');
     // event.preventDefault();
     console.log('activer le mode spectacle? ', data, $(this).val());
-    // Meteor.call('toggleScraper', data.value);
     Meteor.call('setSuperGlobal', {name: 'modeSpectacle', value: data});
     em.emit('adminrefreshpage');
   });
@@ -104,19 +122,6 @@ Template.admin.onRendered(function () {
 
   // cookie quand quelqu'un arrive au bout
   // attention y'a un bug avec les boutons que j'ai pseudo-rêglé en empêchant les mouseevents quand le compteur =! x ou y
-
-
-  compteur = 18;
-  // if(Session.get('compteur') >= "6") {
-  //   compteur = Session.get('compteur');
-  // }
-  // console.log('compteur', compteur);
-
-  var delay = 3000
-  // le premier delay de defilement auto entre data[0] et data[1]
-
-  var data = {}
-
 
   function next(){
     // console.log('next', compteur);

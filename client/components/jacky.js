@@ -47,7 +47,8 @@ Template.jacky.onRendered(function () {
 
   em.addListener('salmnext', function(what) {
     console.log('salm next!', what);
-    compteur = what.compteur;
+    // compteur = what.compteur;
+    compteur += 1;
     next();
   }); 
 
@@ -70,7 +71,9 @@ Template.jacky.onRendered(function () {
     // KEYCODE 32 IS SPACEBAR
     // KEYCIODE 78 IS "n"
 
-    if(e.keyCode =='32' && compteur < data.length-1 && interupt==false){
+    var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
+    console.log('spectacle keyup compteur = ', compteur, 'interupt = ', interupt, 'isItPowerToThePeople = ', isItPowerToThePeople);
+    if(e.keyCode =='32' && compteur < data.length-1 && interupt==false && isItPowerToThePeople == true){
       window.clearTimeout(autonextcontainer)
       compteur +=1
       next();
