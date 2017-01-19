@@ -53,10 +53,17 @@ Schemas.superGlobals = new SimpleSchema({
       label: "Pouvoir au peuple, les SALM dirigent le déroulé (barre espace)",
       optional: true
     },
+
     modeSpectacle: {
       type: Boolean,
       label: "Quand le spectacle va commencer ou commence",
       optional: true
+    },
+
+    cuppasCount: {
+      type: Number,
+      label: "Le nombre de tasses de thé fumantes chez les PALMES",
+      optional: true,
     }
 
 });

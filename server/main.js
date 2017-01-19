@@ -88,6 +88,52 @@ Meteor.methods({
             // superGlobals.upsert({modeSpectacle: obj.value}, { filter: false });
           }
           break;
+
+        case 'cuppasInc':
+          var thecuppasCount = superGlobals.findOne({ cuppasCount: { $exists: true}});
+          if(thecuppasCount){
+            if(thecuppasCount.cuppasCount || thecuppasCount.cuppasCount < 1) {
+              console.log('un thé supplémentaire en cours de préparation');
+              console.log(thecuppasCount)
+              //mise à jour
+              superGlobals.update(thecuppasCount._id, { $inc: { "cuppasCount": 1 } }, { filter: false });
+            }
+          } else {
+            console.log('le premier thé est en cours de préparation');
+            //création
+            superGlobals.insert({thecuppasCount: 1}, { filter: false });
+          }
+
+        break
+
+        case 'cuppasReset':
+          var thecuppasCount = superGlobals.findOne({ cuppasCount: { $exists: true}});
+          if(thecuppasCount){
+            if(thecuppasCount.cuppasCount) {
+              console.log('un thé supplémentaire en cours de préparation');
+              //mise à jour
+              superGlobals.update(thecuppasCount._id, { $set: { "cuppasCount": 0 } }, { filter: false });
+            }
+            console.log('ben euh ya bien une collection mais elle est vide');
+          } else {
+            console.log('ben euh ya rien en fait');
+          }
+          
+        break
+
+        case 'cuppasDec':
+          var thecuppasCount = superGlobals.findOne({ cuppasCount: { $exists: true}});
+          if(thecuppasCount){
+            if(thecuppasCount.cuppasCount && thecuppasCount.cuppasCount > 0) {
+              console.log('un thé supplémentaire en cours de préparation');
+              //mise à jour
+              superGlobals.update(thecuppasCount._id, { $inc: { "cuppasCount": -1 } }, { filter: false });
+            }
+          } else {
+            console.log('on peut pas enlever des thés parce que yen a pas');
+            //création
+          }
+
         default:
           break;
       }
