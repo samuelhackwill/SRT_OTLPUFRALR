@@ -20,14 +20,7 @@
           <tr>
             <td class="text-left text-middle">{{#if isCurrentUser _id}}<label class="label label-success">You!</label>{{/if}} {{emails.[0].address}}</td>
             <td class="user-id">{{_id}}</td>
-            <td>
-              <select {{disableIfAdmin _id}} name="userRole" class="form-control">
-                <option selected="{{selected roles.[0] 'admin'}}" value="admin">Admin</option>
-                <option selected="{{selected roles.[0] 'jacky1'}}" value="jacky1">Jacky1</option>
-                <option selected="{{selected roles.[0] 'jacky2'}}" value="jacky2">Jacky2</option>
-                <option selected="{{selected roles.[0] 'jacky3'}}" value="jacky3">Jacky3</option>
-              </select>
-            </td>
+            <td>{{roles.[0]}}</td>
             <td>
               {{#if isCurrentUser _id}}
               no
@@ -52,13 +45,7 @@
             <tr>
               <td class="text-left text-middle"><input id="newUserEmailAddress" name="emailaddress" placeholder="email@address.com" /></td>
               <td><input  id="newUserPassword" name="password" placeholder="password" /></td>
-              <td>
-                <select id="newUserRole" name="userRole" class="form-control">
-                  <option value="jacky1">Jacky1</option>
-                  <option value="jacky2">Jacky2</option>
-                  <option value="jacky3">Jacky3</option>
-                </select>
-              </td>
+              <td><input  id="newUserRole" name="userRole" placeholder="role" /></td>
               <td>
                 <button type="submit">Add</button>
               </td>
