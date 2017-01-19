@@ -70,8 +70,8 @@ Template.spectacle.onRendered(function () {
     // compteur = what.compteur;
     var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
     console.log('salm doYouHavePower ?', isItPowerToThePeople);
-    console.log('salm interupt ?', interupt);
-    // interupt = !isItPowerToThePeople;
+    console.log('salm interrupt ?', interrupt);
+    // interrupt = !isItPowerToThePeople;
     switchThePower(!isItPowerToThePeople);
   }); */
 
@@ -237,8 +237,8 @@ Template.spectacle.onRendered(function () {
     // KEYCODE 32 IS SPACEBAR
     // KEYCIODE 78 IS "n"
     var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
-    console.log('spectacle keyup compteur = ', compteur, 'interupt = ', interupt, 'isItPowerToThePeople = ', isItPowerToThePeople);
-    if(e.keyCode =='32' && compteur < data.length-1 && interupt==false && isItPowerToThePeople == true){
+    console.log('spectacle keyup compteur = ', compteur, 'interrupt = ', interrupt, 'isItPowerToThePeople = ', isItPowerToThePeople);
+    if(e.keyCode =='32' && compteur < data.length-1 && interrupt==false && isItPowerToThePeople == true){
       window.clearTimeout(autonextcontainer)
       compteur +=1
       next();
@@ -300,9 +300,9 @@ Template.spectacle.onRendered(function () {
 switchThePower = function(toWhat){
 
   console.log('salm switchThePower toWhat', toWhat);
-  console.log('salm interupt is ', interupt);
-  interupt = toWhat;
-  console.log('salm interupt is ', interupt);
+  console.log('salm interrupt is ', interrupt);
+  interrupt = toWhat;
+  console.log('salm interrupt is ', interrupt);
 }
 
 // TO DO
@@ -311,7 +311,7 @@ switchThePower = function(toWhat){
 // var compteurquest = -1
 // var compteur = -1
 // // ça c'est pour commencer au 0 du tableau.
-// var interupt = false
+// var interrupt = false
 // var indeximg = 0
 // var alternance = false
 // var autonextcontainer

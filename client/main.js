@@ -248,7 +248,7 @@ Template.srt.onRendered(function () {
     // KEYCODE 32 IS SPACEBAR
     // KEYCIODE 78 IS "n"
 
-    if(e.keyCode =='32' && compteur < data.length-1 && interupt==false){
+    if(e.keyCode =='32' && compteur < data.length-1 && interrupt==false){
       window.clearTimeout(autonextcontainer)
       compteur +=1
       next();
