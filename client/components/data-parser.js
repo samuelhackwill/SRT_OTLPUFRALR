@@ -77,14 +77,24 @@ rawTextToJson = function (rawText) {
   zoupageJSON = function(response, obj) {
     // Parse JSON string into object
     console.log("zoupageJSON");
-    console.log(response);
+    console.log(response, response.length);
+    // var actual_JSON = JSON.parse(response);
     var actual_JSON = JSON.parse(response);
     console.log("actual_JSON");
     console.log(actual_JSON);
-
     for(i=0; i<actual_JSON.length; i++){
-      obj.push(actual_JSON[i])
+     // console.log(actual_JSON[i]["type"])
+     if((actual_JSON[i]["text"]=="") && (actual_JSON[i]["type"]=="text")){
+        console.log("cette ligne s'est fait zoupper ", actual_JSON[i])
+      }else{
+        obj.push(actual_JSON[i])
+      }
+      // là tu mets une condition pour qu'il pushe pas les trucs de texte vide sa mère
     }
+    // for(i=0; i<actual_JSON.length; i++){
+    //   obj.push(actual_JSON[i])
+    // }
     console.log("demoData", obj, demoData);
     console.log("demoCompteur", demoCompteur);
+    return obj;
   };

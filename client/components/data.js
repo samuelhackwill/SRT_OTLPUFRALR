@@ -180,16 +180,20 @@ Template.data.events({
     'click #text-to-json': function(event) {
       console.log('text-to-json!');
       event.preventDefault();
-      $('#json-result').val( rawTextToJson($('#text-raw').val()) );
+      var jsonRaw = rawTextToJson($('#text-raw').val());
+      // $('#json-result').val( jsonRaw );
       console.log(Template.instance());
-      zoupageJSON($('#json-result').val(), data);
+      $('#json-result').val( JSON.stringify(zoupageJSON(jsonRaw, data), null, 4) );
     },
     'click #save-json': function(event) {
-      console.log('save-json!');
       event.preventDefault();
-      var contenuNom = $('#json-name').val();
-      var contenuData = $('#json-result').val();
-      console.log('nom', contenuNom, typeof contenuNom, 'data result', contenuData, typeof contenuData);
-      Meteor.call('newContenuEcran', {name: contenuNom, data: contenuData});
+      console.log('save-json!');
+      if($('#json-result').val() != "") {
+        console.log('saving json.');
+        var contenuNom = $('#json-name').val();
+        var contenuData = $('#json-result').val();
+        console.log('nom', contenuNom, typeof contenuNom, 'data result', contenuData, typeof contenuData);
+        Meteor.call('newContenuEcran', {name: contenuNom, data: contenuData});
+      }
     }
 });
