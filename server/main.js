@@ -149,7 +149,7 @@ Meteor.methods({
           } else {
             console.log('le premier thé est en cours de préparation');
             //création
-            superGlobals.insert({thecuppasCount: 1}, { filter: false });
+            superGlobals.insert({cuppasCount: 1}, { filter: false });
           }
 
         break
@@ -165,6 +165,8 @@ Meteor.methods({
             console.log('ben euh ya bien une collection mais elle est vide');
           } else {
             console.log('ben euh ya rien en fait');
+            //création
+            superGlobals.insert({cuppasCount: 0}, { filter: false });
           }
           
         break
