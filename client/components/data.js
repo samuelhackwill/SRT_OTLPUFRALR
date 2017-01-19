@@ -177,6 +177,16 @@ Template.data.helpers({
 });
 
 Template.data.events({
+
+    'click #cuppasInc': function(){
+      //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
+      Meteor.call('setSuperGlobal', {name: 'cuppasInc'});
+    },
+
+    'click #cuppasDec': function(){
+      Meteor.call('setSuperGlobal', {name: 'cuppasDec'});
+    },
+
     'click #text-to-json': function(event) {
       console.log('text-to-json!');
       event.preventDefault();

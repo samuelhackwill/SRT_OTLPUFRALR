@@ -60,6 +60,10 @@ action = function(type, params){
     addclass(params)
     break
 
+    case "jacky":
+    jacky(params)
+    break
+
     case "setdate":
     nextspectacledate = params[0]
     nextspectacletime = params[1]
@@ -121,7 +125,7 @@ action = function(type, params){
 
     case "timer":
     console.log("TIMER!!!!!")
-    timerZob()
+    timer()
     break;
   }
 }
@@ -157,14 +161,21 @@ var addobject = {text:phrase, type: "text"}
 data.splice(nextsrt, 0, addobject, [type="text"])
 }
 
-timer =function(){
+timer = function(){
   // le timer ci-dessous
   interupt = true;
   var clock = setInterval(get_time_diff, 1000)
 }
 
+jacky = function(params){
+  if(Roles.userIsInRole(Meteor.user(), params[0])==true){
+    console.log("l'user est bien le jacky que nous cherchons")
+    gotobookmark(params[1])
+  }
+}
+
 get_time_diff = function(datetime){
-  // euh alors y'a un bug de timezone là j'ai l'impression qui prend greenwhich
+  // euh alors y'a un bug de timezone là j'ai l'impression qu'il prend greenwitch
   var datetime = typeof datetime !== 'undefined' ? datetime : "2017-01-12 17:15:00.000000"
   var datetime = new Date( datetime ).getTime();
   var now = new Date().getTime();

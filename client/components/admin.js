@@ -3,7 +3,7 @@ Template.admin.onCreated(function() {
   console.log('Template admin created.');
   //subscribe à la collection contenus écran
   this.autorun(() => {
-    this.subscribe('superGlobals');
+    this.subscribe('allSuperGlobals');
     this.subscribe('allRepresentations');
     this.subscribe('allContenusEcran');
   });
@@ -123,8 +123,6 @@ Template.admin.onRendered(function () {
   // cookie quand quelqu'un arrive au bout
   // attention y'a un bug avec les boutons que j'ai pseudo-rêglé en empêchant les mouseevents quand le compteur =! x ou y
 
-
-
   function next(){
     // console.log('next', compteur);
     // if(compteur >= 75) compteur = 75;
@@ -170,7 +168,6 @@ Template.admin.onRendered(function () {
 
 });
 
-
 Template.admin.helpers({
   usersOnline:function(){
     return Meteor.users.find();
@@ -195,8 +192,13 @@ Template.showtime.helpers({
   usersOnlineCount:function(){
    //event a count of users online too.
    return Meteor.users.find().count();
+  },
+  cuppasCount:function(){
+    var cuppasCount = superGlobals.findOne({ cuppasCount: { $exists: true}}).cuppasCount
+   return cuppasCount;
   }
 });
+
 Template.phonesList.helpers({
   listPhoneNumbers:function(){
     console.log("PhoneNumbers??");
@@ -222,9 +224,12 @@ Template.phonesList.helpers({
   }
 });
 
-
-
 Template.showtime.events({
+
+  'click #resetCuppas': function(){
+    //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
+    Meteor.call('setSuperGlobal', {name: 'cuppasReset'});
+  },
 
   'click #start-the-stream': function(){
     // console.log('superGlobals streamStarted', Meteor);
