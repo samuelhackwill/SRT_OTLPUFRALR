@@ -72,8 +72,8 @@ Template.jacky.onRendered(function () {
     // KEYCIODE 78 IS "n"
 
     var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
-    console.log('spectacle keyup compteur = ', compteur, 'interupt = ', interupt, 'isItPowerToThePeople = ', isItPowerToThePeople);
-    if(e.keyCode =='32' && compteur < data.length-1 && interupt==false && isItPowerToThePeople == true){
+    console.log('spectacle keyup compteur = ', compteur, 'interrupt = ', interrupt, 'isItPowerToThePeople = ', isItPowerToThePeople);
+    if(e.keyCode =='32' && compteur < data.length-1 && interrupt==false && isItPowerToThePeople == true){
       window.clearTimeout(autonextcontainer)
       compteur +=1
       next();

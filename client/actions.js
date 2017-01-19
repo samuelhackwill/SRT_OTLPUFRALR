@@ -8,7 +8,7 @@
 compteurquest = -1
 compteur = -1
 // ça c'est pour commencer au 0 du tableau.
-interupt = false
+interrupt = false
 indeximg = 0
 alternance = false
 autonextcontainer = null
@@ -91,7 +91,7 @@ action = function(type, params){
     break
 
     case "stop":
-    interupt=true
+    interrupt=true
     console.log("stoooooop!")
     break
 
@@ -163,7 +163,7 @@ data.splice(nextsrt, 0, addobject, [type="text"])
 
 timer = function(){
   // le timer ci-dessous
-  interupt = true;
+  interrupt = true;
   var clock = setInterval(get_time_diff, 1000)
 }
 
@@ -171,6 +171,14 @@ jacky = function(params){
   if(Roles.userIsInRole(Meteor.user(), params[0])==true){
     console.log("l'user est bien le jacky que nous cherchons")
     gotobookmark(params[1])
+  }
+}
+
+parking = function(params){
+  if(params[0]=="ON" && Roles.userIsInRole(Meteor.user(), "jacky_one")==false){
+  //  SUPERinterrupt = true
+  }else{
+  //  SUPERinterrupt = false
   }
 }
 
@@ -208,7 +216,7 @@ get_time_diff = function(datetime){
 
   if (datetime-now < 0 && timerpassed == false) {
    console.log("TOOT TOOT TOOT c'est l'heure du spectacle")
-   interupt=false
+   interrupt=false
    gotonext(1)
    timerpassed = true
   }
@@ -268,7 +276,12 @@ answernext = function(params){
   console.log("answernext, "+params+ "compteurq ="+compteurquest)
   if(params=="ok") addlistelement(['checklist',posanswers[compteurquest], params])
   if(params=="nope") addlistelement(['checklist',neganswers[compteurquest], params])
-  if(compteurquest>=4) destroy("seqoui")
+  if(compteurquest<4){
+    interrupt=true
+  }else{
+    interrupt=false
+    destroy("seqoui")
+  }
 }
 
 
@@ -287,7 +300,7 @@ addlistelement = function(params){
 }
 
 newBoutton = function(params){
-  interupt=true
+  interrupt=true
 
   var fonctions = []
   var nom = params[0]
@@ -335,7 +348,7 @@ destroy = function(self){
 }
 
 gotobookmark = function(where){
-  if(interupt==true) interupt=false
+  if(interrupt==true) interrupt=false
     howmuch = data.length
   for(i=0; i<howmuch; i++){
     if((data[i]["type"]=="bookmark")&&(data[i]["text"]==where)){
@@ -354,6 +367,6 @@ gotonext = function(params){
   var bonus = parseInt(params)
   compteur += bonus
   next()
-  interupt=false
+  interrupt=false
   console.log("gotonext, ", params)
 }

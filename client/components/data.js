@@ -42,7 +42,7 @@ Template.data.onRendered(function () {
       // KEYCODE 32 IS SPACEBAR
       // KEYCIODE 78 IS "n"
     // this = 
-    console.log('keyup', demoData.length, e, Template.instance(), interupt);
+    console.log('keyup', demoData.length, e, Template.instance(), interrupt);
     if(e.keyCode =='78' && demoCompteur <= demoData.length){
       e.stopPropagation();
       e.preventDefault();
@@ -56,11 +56,10 @@ Template.data.onRendered(function () {
 
     e = e || window.event
 
-
     // KEYCODE 32 IS SPACEBAR
     // KEYCIODE 78 IS "n"
 
-    if(e.keyCode =='78' && compteur < data.length-1 && interupt==false){
+    if(e.keyCode =='78' && compteur < data.length-1 && interrupt==false){
       window.clearTimeout(autonextcontainer)
       compteur +=1
       next();
@@ -81,7 +80,6 @@ Template.data.onRendered(function () {
 });
 
 demoCompteur = 0;
-var interupt = false
 var indeximg = 0
 var alternance = false
 
