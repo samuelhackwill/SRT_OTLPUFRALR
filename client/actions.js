@@ -14,7 +14,6 @@ alternance = false
 autonextcontainer = null
 flipbookstatus = false
 clock = null
-timerDone = false
 
 data = []
 
@@ -224,11 +223,11 @@ get_time_diff = function(datetime){
 
   document.getElementById("srt").innerHTML = (difdif)
 
-  if (datetime-now < 0 && timerpassed == false) {
+  if (datetime-now < 0) {
    console.log("TOOT TOOT TOOT c'est l'heure du spectacle")
+   gotobookmark('spectacle')
    interrupt=false
    gotonext(1)
-   timerpassed = true
   }
 }
 
