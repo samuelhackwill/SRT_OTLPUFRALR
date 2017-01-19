@@ -42,20 +42,38 @@ Meteor.methods({
     if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
       throw new Meteor.Error(403, "Access denied")
     }
-
+    //check si deja enregistré
     var data = tryParseJSON(obj.data);
     if(data) {
+    
       console.log(typeof obj.name, obj.name);
       console.log('valid JSON?'); 
       console.log(typeof data);
       console.log(data instanceof Object);
-      // var copie = Object.assign({}, data);
-      // console.log('true Object?'); 
-      // console.log(typeof copie);
-      // console.log(copie instanceof Object);
-      // console.log(copie);
-      // insertion du nouveau contenu écran
-      ContenusEcran.insert({name: obj.name, data: data, text: obj.text}, { filter: false });
+
+      var contenuEcran = ContenusEcran.findOne({name: obj.name});
+      console.log("contenuEcran existe ?", contenuEcran);
+      
+      if(contenuEcran) {
+        console.log("contenuEcran existe. mise à jour.");
+        ContenusEcran.update(contenuEcran._id, { 
+          $set: {
+            name: obj.name, 
+            data: data, 
+            text: obj.text 
+          }
+        }, { filter: false });
+      } else {
+        console.log("nouveau contenuEcran. insertion");
+        // var copie = Object.assign({}, data);
+        // console.log('true Object?'); 
+        // console.log(typeof copie);
+        // console.log(copie instanceof Object);
+        // console.log(copie);
+        // insertion du nouveau contenu écran
+        ContenusEcran.insert({name: obj.name, data: data, text: obj.text}, { filter: false });  
+      }
+      
     }
   },
   setSuperGlobal: function(obj) {

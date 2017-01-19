@@ -206,5 +206,11 @@ Template.data.events({
         console.log('nom', contenuNom, typeof contenuNom, 'data result', contenuData, typeof contenuData, contenuText, typeof contenuText);
         Meteor.call('newContenuEcran', {name: contenuNom, data: contenuData, text: contenuText});
       }
+    },
+    'click button.charger-contenu': function(event) {
+      event.preventDefault();
+      console.log('charger', this);
+      $('#text-raw').val( this.text );
+      $('#json-name').val( this.name );
     }
 });
