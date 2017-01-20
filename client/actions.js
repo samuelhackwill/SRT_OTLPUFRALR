@@ -17,8 +17,10 @@ clock = null
 
 data = []
 
+/*
 posanswers =["disponible", "à la maison", "tranquille", "son ok", "concentré"]
 neganswers =["occupé","en ville","pas seul", "mute", "distrait"]
+*/
 
 next = function(){
   //TODO
@@ -92,7 +94,11 @@ action = function(type, params){
     case "autonext":
     autonext(params)
     break
-
+/*
+    case "parking":
+    parking(params)
+    break
+*/
     case "stop":
     interrupt=true
     console.log("stoooooop!")
@@ -186,6 +192,7 @@ jacky = function(params){
 }
 
 parking = function(params){
+  // TO DO : A REFACTORER SALEMENT
   if(Roles.userIsInRole(Meteor.user(), "admin")==true) {
     console.log("parking : is admin");
     if(params[0]=="ON"){
