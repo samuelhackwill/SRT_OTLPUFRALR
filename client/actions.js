@@ -338,7 +338,7 @@ newBoutton = function(params){
     fonctionsconcat = fonctions.join(";")
   }
 
-  var newBoutton = $('<input type="button" value="'+ labelpropre +'" id="'+ nom +'" onclick = "' + fonctionsconcat + '">')
+  var newBoutton = $('<input type="button" class="button" value="'+ labelpropre +'" id="'+ nom +'" onclick = "' + fonctionsconcat + '">')
   newBoutton.appendTo($("#sacbouttons"))
 }
 

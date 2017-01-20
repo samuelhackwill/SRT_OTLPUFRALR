@@ -32,14 +32,40 @@
     height:100%;
   }
 
-  button{
+  .button{
+    box-shadow: 0px -5px 0px 0px #999999;
+    border: solid 2px white;
+    border-radius: 6px;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background-color:#666666;
+
+    -webkit-transition: opacity .3s ease-in-out;
+    -moz-transition: opacity .3s ease-in-out;
+    -o-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+
+    margin:8px;
+  }
+
+  .button:active {
+    box-shadow: 0 -2px #666;
+    transform: translateY(-4px);
+}
+
+  .button:focus {
+    outline:0;
+  }
+
+  .button:hover{
+    background-color: white ;
     color: black;
-    font-size:14px;
   }
-  button:active {
-    position:relative;
-    top:2px;
-  }
+
 
   ul#checklist{
     -webkit-transition: all 1s ease-in-out;
@@ -166,6 +192,7 @@
   }
 
   #sacbouttons{
+    margin-top:12px;
     z-index:11;
 
     -webkit-transition: opacity .3s ease-in-out;
