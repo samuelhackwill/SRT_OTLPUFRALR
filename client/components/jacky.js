@@ -33,7 +33,9 @@ Template.jacky.onRendered(function () {
 
   function showTheOneButtons(){
     console.log('showTheOneButtons');
-    $('<button id="oui">oui</button><button id="non">non</button><button id="euh">euh</button>').appendTo('#one');
+    $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
+    $('#sacbouttons').removeClass('invisible');
+    $('#sacbouttons').addClass('visible');
   }
 
 
@@ -266,9 +268,6 @@ Template.jacky.onRendered(function () {
     //   // $('streamFrame').attr();
     //   // console.log('streamFrame src', $('streamFrame').attr('src'));
     // }
-
-
-
   }
 
 });
@@ -276,6 +275,15 @@ Template.jacky.onRendered(function () {
 
 
 Template.jacky.events({
+
+    'click #cuppasInc': function(){
+    //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
+    Meteor.call('setSuperGlobal', {name: 'cuppasInc'});
+    },
+
+    'click #cuppasDec': function(){
+      Meteor.call('setSuperGlobal', {name: 'cuppasDec'});
+    },
 
   'click #oui': function(){
     console.log('salmclick oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
