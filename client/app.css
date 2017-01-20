@@ -50,6 +50,7 @@
     transition: opacity .3s ease-in-out;
 
     margin:8px;
+    font-family: "typo", sans-serif;
   }
 
   .button:active {
