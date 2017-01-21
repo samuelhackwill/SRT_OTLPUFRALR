@@ -80,6 +80,12 @@ Schemas.superGlobals = new SimpleSchema({
       type: Number,
       label: "Le nombre de tasses de thé fumantes chez les PALMES",
       optional: true,
+    },
+
+    compteurs: {
+      type: [Object],
+      label: "Les compteurs pour chaque role",
+      optional: true,
     }
 
 });

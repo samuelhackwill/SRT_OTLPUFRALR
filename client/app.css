@@ -242,3 +242,8 @@
 textarea {
   font-size: 50%;
 }
+
+
+body.admin #gcontainer {
+  height: 400px;
+}

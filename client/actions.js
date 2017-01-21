@@ -95,9 +95,9 @@ action = function(type, params){
     autonext(params)
     break
 
-    case "parking":
-    parking(params)
-    break
+    // case "parking":
+    // parking(params)
+    // break
 
     case "stop":
     interrupt=true
@@ -194,36 +194,56 @@ jacky = function(params){
 parking = function(params){
   // TO DO : A REFACTORER SALEMENT
   console.log("parking : is admin?");
-  if(Roles.userIsInRole(Meteor.user(), "admin")==true) {
 
-    console.log("parking : is admin");
+  var fonctions = []
+  var on_off = params[0]
+  params.shift()
+
+  var howmany = params.length
+  for(i=0; i<howmany; i++){
+    fonctions.push(params[i])
+  }
+
+  console.log("fonctions", fonctions);
+
+  // if(Roles.userIsInRole(Meteor.user(), "admin")==true) {
+
+    // console.log("parking : is admin");
     var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
     var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : false;
     console.log("parking : is isSUPERinterrupt", isSUPERinterrupt);
     if(SUPERinterrupt !== false) {
-      var parkingRole = params[1];
-      if(params[0]=="ON"){
-        console.log("parking : enable FOR ONE ROLE -> ", parkingRole);
-        //ajouter role dans le tableau SUPERinterrupt si pas déjà dedans
-        var found = jQuery.inArray(parkingRole, isSUPERinterrupt);
-        if (found >= 0) {
-          // Element was found, don't add it again.
-        } else {
-          // Element was not found, add it.
-          isSUPERinterrupt.push(parkingRole);
-          console.log("parking : enabling for ", parkingRole);
+      var parkingRoles = fonctions;
+      if(on_off=="ON"){
+        console.log("parking : enable FOR ROLES -> ", parkingRoles);
+        //ajouter roles dans le tableau SUPERinterrupt si pas déjà dedans
+        for(i=0;i<parkingRoles.length;i++){
+          console.log("user is in role", parkingRoles[i], " ?", Roles.userIsInRole(Meteor.user(), parkingRoles[i]));
+          if((parkingRoles[i] == 'salm' && !Meteor.user()) || Roles.userIsInRole(Meteor.user(), parkingRoles[i])==true) {
+            var found = jQuery.inArray(parkingRoles[i], isSUPERinterrupt);
+            if (found >= 0) {
+              // Element was found, don't add it again.
+            } else {
+              // Element was not found, add it.
+              isSUPERinterrupt.push(parkingRoles[i]);
+              console.log("parking : enabling for ", parkingRoles[i]);
+            }
+          }
         }
+        
       //  SUPERinterrupt = true
-      } else if(params[0]=="OFF"){
-        console.log("parking : disable FOR ONE ROLE -> ", parkingRole);
-        //retirer role du tableau SUPERinterrupt (si déjà dedans)
-        var found = jQuery.inArray(parkingRole, isSUPERinterrupt);
-        if (found >= 0) {
-          // Element was found, remove it.
-          isSUPERinterrupt.splice(found, 1);
-          console.log("parking : disabling for ", parkingRole);
-        } else {
-          // Element was not found, don't remove it.
+      } else if(on_off=="OFF"){
+        console.log("parking : disable FOR ROLES -> ", parkingRoles);
+        //retirer roles du tableau SUPERinterrupt (si déjà dedans)
+        for(i=0;i<parkingRoles.length;i++){
+          var found = jQuery.inArray(parkingRoles[i], isSUPERinterrupt);
+          if (found >= 0) {
+            // Element was found, remove it.
+            isSUPERinterrupt.splice(found, 1);
+            console.log("parking : disabling for ", parkingRoles[i]);
+          } else {
+            // Element was not found, don't remove it.
+          }
         }
       }
       // em.setClient({ value: isSUPERinterrupt });
@@ -231,10 +251,10 @@ parking = function(params){
       console.log("parking : new SUPERinterrupt = ", isSUPERinterrupt);
       Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: isSUPERinterrupt});
     }
-  } else {
+  // } else {
 
     //  SUPERinterrupt = false
-  }
+  // }
 }
 
 get_time_diff = function(datetime){
@@ -404,9 +424,12 @@ destroy = function(self){
 }
 
 gotobookmark = function(where){
-  console.log("gotobookmark!!? where=", where);
+  console.log("gotobookmark1!!? where=", where);
+  if(typeof where !== 'string') where = where.toString();
+  console.log("gotobookmark1b!!? where=", where);
   if(interrupt==true) interrupt=false
     howmuch = data.length
+  console.log("gotobookmark2 howmuch", howmuch);
   for(i=0; i<howmuch; i++){
     if((data[i]["type"]=="bookmark")&&(data[i]["text"]==where)){
       //ça c'est la valeur de ton compteur mon ptit gars

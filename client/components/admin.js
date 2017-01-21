@@ -14,6 +14,8 @@ Template.showtime.onRendered(function () {
 });
 Template.admin.onRendered(function () {
   console.log('admin!');
+  
+  $(document.body).addClass('admin');
   console.log(UserStatus);
   console.log(this.UserConnections);
 
@@ -251,7 +253,7 @@ Template.showtime.helpers({
     var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
     var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : [];
     console.log("isSUPERinterruptChecked", isSUPERinterrupt);
-    return isSUPERinterrupt.join(',');
+    return isSUPERinterrupt;
   },
   isModeSpectacleChecked:function(){
     var modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}});
@@ -274,7 +276,18 @@ Template.showtime.helpers({
     var theCuppasCount = (cuppasCount) ? cuppasCount.cuppasCount : 0;
     console.log("theCuppasCount", theCuppasCount);
    return theCuppasCount;
-  }
+  },
+
+  dataArray: function (obj) {
+    var arr = [], datas = obj;
+    for (var key in datas) {
+        var obj = {};
+        obj.key = key;
+        obj.value = datas[key];
+        arr.push(obj);
+    }
+    return arr;
+  },
 });
 
 Template.phonesList.helpers({
@@ -328,6 +341,84 @@ Template.showtime.events({
   },
   'click #hide-the-ONE': function(){
       em.emit('adminhidetheone');
+  },
+/*
+  'submit #addcompteur': function(event){
+
+
+      var newCompteur = $('#newCompteur').val();
+
+
+      console.log("addcompteur submit", newCompteur);
+      Meteor.call('createCompteurFromAdmin',newCompteur,function(err,result){
+        if(!err){
+          console.log("a new compteur just got created")
+        } else {
+          console.log("something goes wrong with the following error message " +err.reason )
+        }
+      });
+           
+
+      return false;
+
+
+  },*/
+  'click button.remove-SUPERinterrupt': function(event){
+
+    if(Roles.userIsInRole(Meteor.user(), "admin")==true) {
+      console.log('click button.remove-SUPERinterrupt', $(event.currentTarget).val());
+
+      var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
+      var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : false;
+      console.log("parking from admin : is isSUPERinterrupt", isSUPERinterrupt);
+      if(SUPERinterrupt !== false) {
+        var parkingRole = $(event.currentTarget).val();
+        console.log("parking from admin : disable FOR ONE ROLE -> ", parkingRole);
+        //retirer role du tableau SUPERinterrupt (si déjà dedans)
+        var found = jQuery.inArray(parkingRole, isSUPERinterrupt);
+        if (found >= 0) {
+          // Element was found, remove it.
+          isSUPERinterrupt.splice(found, 1);
+          console.log("parking from admin : disabling for ", parkingRole);
+        } else {
+          // Element was not found, don't remove it.
+        }
+      }
+      // em.setClient({ value: isSUPERinterrupt });
+      // em.emit('adminSUPERinterrupt');
+      console.log("parking from admin : new SUPERinterrupt = ", isSUPERinterrupt);
+      Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: isSUPERinterrupt});
+    }
+  },
+  'click button.add-SUPERinterrupt': function(event){
+
+      console.log('click button.add-SUPERinterrupt', $(event.currentTarget).val());
+
+      var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
+      var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : false;
+      console.log("parking from admin : is isSUPERinterrupt", isSUPERinterrupt);
+      if(SUPERinterrupt !== false) {
+
+        var parkingRole = $(event.currentTarget).val();
+        console.log("parking from admin : enable FOR ONE ROLE -> ", parkingRole);
+        //retirer role du tableau SUPERinterrupt (si déjà dedans)
+        var found = jQuery.inArray(parkingRole, isSUPERinterrupt);
+        if (found >= 0) {
+          // Element was found, don't add it again.
+        } else {
+          // Element was not found, add it.
+          isSUPERinterrupt.push(parkingRole);
+          console.log("parking : enabling for ", parkingRole);
+        }
+        console.log("parking from admin : new SUPERinterrupt = ", isSUPERinterrupt);
+        Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: isSUPERinterrupt});
+      }
+      // em.setClient({ value: isSUPERinterrupt });
+      // em.emit('adminSUPERinterrupt');
+
+
+
+
   }
 
 });

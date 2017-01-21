@@ -53,6 +53,7 @@ Template.jacky.onRendered(function () {
     var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
     var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : [];
     var userRoles = Roles.getRolesForUser(Meteor.user());
+    if(userRoles.length == 0) userRoles.push("salm");
     console.log("salm next : isSUPERinterrupt", isSUPERinterrupt, userRoles);
     var found = jQuery.inArray(userRoles[0], isSUPERinterrupt);
     if (found >= 0) {

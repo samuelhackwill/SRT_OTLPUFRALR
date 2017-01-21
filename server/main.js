@@ -294,6 +294,32 @@ Meteor.methods({
       console.log('addUsersToRoles', role);
       Roles.addUsersToRoles(id, [role]);
     }
-  }
+  },
+  /*createCompteurFromAdmin: function(compteurName){
+    console.log('createCompteurFromAdmin', compteurName);
+
+
+    var compteurs = superGlobals.findOne({ compteurs: { $exists: true}});
+    if(compteurs) {
+      console.log('spectacleStarted3 mise a jour');
+      //mise à jour
+      superGlobals.update(spectacleStarted._id, { $set: {spectacleStarted: obj.value} }, { filter: false });
+    } else {
+      console.log('spectacleStarted3 insert!');
+      //création
+      superGlobals.insert({spectacleStarted: obj.value}, { filter: false });
+
+    }
+
+    var id = Accounts.createUser({ email: email, password: password });
+    console.log('Accounts.createUser', id);
+    if (role != '' && role != 'admin') {
+      // Need _id of existing user record so this call must come
+      // after `Accounts.createUser` or `Accounts.onCreate`
+      console.log('addUsersToRoles', role);
+      Roles.addUsersToRoles(id, [role]);
+    }
+  }*/
+
 
 });

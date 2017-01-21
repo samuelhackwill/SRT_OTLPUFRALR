@@ -169,11 +169,64 @@
       <label for="showmode" title="ou mettre le site en mode Spectacle">Mode Spectacle</label>
       <input id="showmode" title="aka let's gro!" type="checkbox" checked="{{isModeSpectacleChecked}}" /><br />
       <br />
-      SUPERinterrupt = {{whoIsSUPERinterrupted}}
+      SUPERinterrupt = <br />
+      <button type="button" class="add-SUPERinterrupt" value="salm">parking ON salm</button>
+      <button type="button" class="add-SUPERinterrupt" value="jacky_one">parking ON jacky_one</button>
+      <button type="button" class="add-SUPERinterrupt" value="jacky_lt">parking ON jacky_lt</button><br />
+      en cours de parking :<br />
+      {{#each whoIsSUPERinterrupted}}
+        {{this}} <button class="remove-SUPERinterrupt" type="submit" value="{{this}}">x</button>
+      {{/each}}
+
       <input type="button" id="resetSUPERinterrupt" value="reset SUPERinterrupt">
       <br />
       <br />
-      <br />
+      <!--<h4 class="page-header">compteurs</h4>
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th class="text-center">Role</th>
+              <th class="text-center">X</th>
+            </tr>
+          </thead>
+          <tbody>
+          {{#each compteurs}}
+          <tr>
+            <td>{{_id}}</td>
+            <td>{{roles.[0]}}</td>
+            <td>
+              {{#if isCurrentUser _id}}
+              no
+              {{else}}
+              {{> quickRemoveButton collection="superGlobals" _id=_id onError=quickRemoveButtonOnError onSuccess=quickRemoveButtonOnSuccess beforeRemove=quickRemoveButtonBeforeRemove class="btn btn-danger"}}
+              {{/if}}
+            </td>
+          </tr>
+          {{/each}}
+          </tbody>
+        </table>
+        <form id="addcompteur">
+          <table class="table table-bordered">
+            <tbody>
+            <tr>
+              <td class="text-left text-middle"><input id="newCompteur" name="compteurName" placeholder="compteur pour role" /></td>
+              <td>
+                <button type="submit">Add</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </form>
+      compteurs<br />
+      {{#each dataArray compteurs}}
+          {{this.key}}.
+          {{#each dataArray this.value}}
+            {{this.key}}: {{this.value}}<br />
+          {{/each}}
+          <br />
+      {{/each}}
+      -->
       <br />
       <br />
       <br />
