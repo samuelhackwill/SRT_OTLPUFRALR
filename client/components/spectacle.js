@@ -248,8 +248,6 @@ Template.spectacle.onRendered(function () {
   $(document.body).on('keyup', function(e) {
 
     e = e || window.event
-
-
     // KEYCODE 32 IS SPACEBAR
     // KEYCIODE 78 IS "n"
     var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
@@ -264,6 +262,7 @@ Template.spectacle.onRendered(function () {
       // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
       // ça avance tout seul avec un délai)
     }
+
   });
 
 
@@ -322,6 +321,24 @@ switchThePower = function(toWhat){
   interrupt = toWhat;
   console.log('salm interrupt is ', interrupt);
 }
+
+Template.spectacle.events({
+
+    'click #cuppasInc': function(){
+    //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
+    Meteor.call('setSuperGlobal', {name: 'cuppasInc'});
+    },
+
+    'click #cuppasDec': function(){
+      Meteor.call('setSuperGlobal', {name: 'cuppasDec'});
+    },
+
+    'touchstart #gcontainer': function(){
+      compteur+=1;
+      next();
+    }
+
+})
 
 // TO DO
 // balises pour afficher du texte ailleurs que dans SRT (checklist, rubrique fiction)

@@ -70,8 +70,7 @@ action = function(type, params){
     break
 
     case "setdate":
-    nextspectacledate = params[0]
-    nextspectacletime = params[1]
+    nextspectacledate = params[0] + " " + params[1]
     break
 
     case "time":
@@ -161,6 +160,9 @@ flipbook = function(){
   }
 }
 
+/*
+ça je m'en servais avant dans l'inscription pour donner rendez-vous aux gens 
+
 time = function(params){
 var nextsrt = compteur + 1
 
@@ -176,12 +178,8 @@ var addobject = {text:phrase, type: "text"}
 
 data.splice(nextsrt, 0, addobject, [type="text"])
 }
+*/
 
-timer = function(){
-  // le timer ci-dessous
-  interrupt = true;
-  clock = setInterval(get_time_diff, 1000)
-}
 
 jacky = function(params){
   console.log("etes vous bien le jacky que nous cherchons?", params[0], params[1])
@@ -257,10 +255,21 @@ parking = function(params){
   // }
 }
 
+timer = function(){
+  // le timer ci-dessous
+  interrupt = true;
+  clock = setInterval(get_time_diff(), 1000)
+  console.log("go TIMER")
+}
+
 get_time_diff = function(datetime){
+  console.log("go GET TIME DIFF");
+  $("#srt").html("zoupla")
   // euh alors y'a un bug de timezone là j'ai l'impression qu'il prend greenwitch
-  var datetime = typeof datetime !== 'undefined' ? datetime : "2017-01-19 17:55:00.000000"
-  var datetime = new Date( datetime ).getTime();
+  var datetime = typeof datetime !== 'undefined' ? datetime : "2017-01-21 21:29:99.000000"
+  var datetime = new Date(datetime).getTime();
+
+  console.log("datetime " + datetime)
   var now = new Date().getTime();
 
   if(isNaN(datetime)) return ""
@@ -296,6 +305,10 @@ get_time_diff = function(datetime){
    interrupt=true
    gotonext(1)
   }
+
+  console.log("difdif " + difdif)
+  console.log("now " + now)
+  console.log("date_diff " + date_diff)
 }
 
 addFiction = function(params){

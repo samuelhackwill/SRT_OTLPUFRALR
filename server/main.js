@@ -204,6 +204,8 @@ Meteor.methods({
             //création
           }
 
+          break
+
         default:
           break;
       }

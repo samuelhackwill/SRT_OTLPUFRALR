@@ -280,6 +280,9 @@ Template.jacky.onRendered(function () {
     //   // $('streamFrame').attr();
     //   // console.log('streamFrame src', $('streamFrame').attr('src'));
     // }
+
+
+
   }
 
 });
