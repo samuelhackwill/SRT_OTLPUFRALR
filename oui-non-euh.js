@@ -166,9 +166,6 @@ console.log("cooky2", cookies);
   });
 
 
-  em.addListener('salmrefreshpage', function(what) {
-    console.log('salm refresh page!', what);
-  }); 
 }
 
 if (Meteor.isServer) {

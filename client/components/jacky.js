@@ -25,17 +25,21 @@ Template.jacky.onRendered(function () {
     // rawTextToJson();
   // console.log(Template.instance());
     // zoupageJSON(dataFromDB, data);
-    autonext(2000);
+    // autonext(2000);
   });
 
   em.addListener('salmtheoneshow', showTheOneButtons);
   em.addListener('salmtheonehide', hideTheOneButtons);
 
   function showTheOneButtons(){
-    console.log('showTheOneButtons');
-    $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
-    $('#sacbouttons').removeClass('invisible');
-    $('#sacbouttons').addClass('visible');
+
+    if(Roles.userIsInRole(Meteor.user(), "jacky_one")==true) {
+      console.log('showTheOneButtons');
+      $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
+      $('#sacbouttons').removeClass('invisible');
+      $('#sacbouttons').addClass('visible');
+    }
+
   }
 
 
@@ -70,6 +74,11 @@ Template.jacky.onRendered(function () {
     console.log('salm salmForceGoTo!', what);
     // compteur = what.compteur;
     gotobookmark(what.bookmark);
+  }); 
+
+  em.addListener('salmrefreshpage', function(what) {
+    console.log('salm refresh page!', what);
+    location.reload();
   }); 
   
   // var streamStarted = Meteor.superGlobals.findOne({}, {fields: {name: 1, _id: 0}}).name;

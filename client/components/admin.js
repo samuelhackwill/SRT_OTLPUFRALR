@@ -36,7 +36,7 @@ Template.admin.onRendered(function () {
     // rawTextToJson();
   // console.log(Template.instance());
     // zoupageJSON(dataFromDB, data);
-    autonext(2000);
+    // autonext(2000);
   });
 /*
   Polls.after.update(function (userId, doc, fieldNames, modifier, options) {
@@ -185,13 +185,13 @@ Template.admin.onRendered(function () {
     // }
     // ça c'est pour virer le focus des boutons oui et non histoire de pas les activer en appuyant sur espace
     // Session.update("compteur", compteur);
-    if(compteur < data.length-1){
+    // if(compteur < data.length-1){
       window.clearTimeout(autonextcontainer)
       compteur +=1
       next();
       em.setClient({ compteur: compteur });
       em.emit('adminnext');
-    }
+    // }
   }
 
   document.onkeyup = function(e) {
@@ -247,7 +247,7 @@ Template.showtime.helpers({
     var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
     var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
     console.log("isPowerToTheAdminChecked", !isPowerToThePeople);
-    return !powerToThePeople;
+    return !isPowerToThePeople;
   },
   whoIsSUPERinterrupted:function(){
     var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
@@ -272,7 +272,7 @@ Template.showtime.helpers({
    return Meteor.users.find().count();
   },
   cuppasCount:function(){
-    var cuppasCount = superGlobals.findOne({ spectacleStarted: { $exists: true}});
+    var cuppasCount = superGlobals.findOne({ cuppasCount: { $exists: true}});
     var theCuppasCount = (cuppasCount) ? cuppasCount.cuppasCount : 0;
     console.log("theCuppasCount", theCuppasCount);
    return theCuppasCount;
@@ -324,6 +324,9 @@ Template.showtime.events({
   'click #resetSUPERinterrupt': function(){
     console.log("resetSUPERinterrupt!");
     //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
+    var bookmarkToGo = ($('#whereSUPERinterrupt').val() != "") ? $('#whereSUPERinterrupt').val() : 'spectacle';
+    em.setClient({ bookmark: bookmarkToGo });
+    em.emit('adminForceGoTo');
     Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: []});
   },
 

@@ -246,4 +246,9 @@ textarea {
 
 body.admin #gcontainer {
   height: 400px;
+  position: relative;
+}
+div.login input {
+  background-color: #FFF;
+  color: #000;
 }

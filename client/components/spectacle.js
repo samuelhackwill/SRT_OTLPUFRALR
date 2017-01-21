@@ -53,7 +53,7 @@ Template.spectacle.onRendered(function () {
     // rawTextToJson();
   // console.log(Template.instance());
     // zoupageJSON(dataFromDB, data);
-    autonext(2000);
+    // autonext(2000);
   });
 
 

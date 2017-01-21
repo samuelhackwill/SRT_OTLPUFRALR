@@ -1,5 +1,5 @@
 <head>
-  <title>ADMIN</title>
+  <title>LE PONT</title>
   <meta charset="utf-8">
 </head>
 
@@ -12,19 +12,6 @@
       <div class="col-md-6 col-md-offset-3">
         
       </div>
-    </div>
-    <div class="row">
-        <h2>Stats Server - Users online <button data-toggle="collapse" data-target="#stats">▾</button></h2>
-
-        <div id="stats" class="collapse">
-
-          <div class="col-lg-3 col-md-3">
-                {{> status userStatus}}
-          </div>
-          <div class="col-lg-9 col-md-9">
-              {{> serverStatus }}
-          </div>
-        </div>
     </div>
 
     <div class="row">
@@ -49,7 +36,27 @@
           </div>
         </div>
     </div>
+
+
+    <div class="row">
+        <h2>Stats Server - Users online <button data-toggle="collapse" data-target="#stats">▾</button></h2>
+
+        <div id="stats" class="collapse">
+
+          <div class="col-lg-3 col-md-3">
+                {{> status userStatus}}
+          </div>
+          <div class="col-lg-9 col-md-9">
+              {{> serverStatus }}
+          </div>
+        </div>
+    </div>
     
+
+
+    <div class="row">
+      {{> screen}}
+    </div>
   </div>  
 
 
@@ -183,7 +190,8 @@
         {{this}} <button class="remove-SUPERinterrupt" type="submit" value="{{this}}">x</button>
       {{/each}}
 
-      <input type="button" id="resetSUPERinterrupt" value="reset SUPERinterrupt">
+      <input type="button" id="resetSUPERinterrupt" value="reset SUPERinterrupt" />
+      <input type="text" id="whereSUPERinterrupt" placeholder="bookmark?" value="liaison_tel"/>
       <br />
       <br />
       <!--<h4 class="page-header">compteurs</h4>
@@ -239,10 +247,6 @@
       <br />
       <br />
     </div>
-    {{> screen}}
-    <div id="srt-the-one">
-      bienvenue,
-    </div>
     <button id="next">next</button>
 
 
@@ -253,6 +257,9 @@
     
     <button id="show-the-ONE">montrer les boutons à jacky</button>
     <button id="hide-the-ONE">cachez moi ces boutons que je ne saurais voir</button>
+    <!--<div id="srt-the-one">
+      bienvenue,
+    </div>-->
 </template>
 
 
