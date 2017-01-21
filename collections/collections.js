@@ -59,8 +59,8 @@ Schemas.superGlobals = new SimpleSchema({
     },
 
     SUPERinterrupt: {
-      type: Boolean,
-      label: "bloquer l'action next (barre espace) pour les SALM",
+      type: [String],
+      label: "bloquer l'action next (barre espace) pour les SALM selon leur role",
       optional: true
     },
 

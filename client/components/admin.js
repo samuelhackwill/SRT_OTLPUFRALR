@@ -34,7 +34,7 @@ Template.admin.onRendered(function () {
     // rawTextToJson();
   // console.log(Template.instance());
     // zoupageJSON(dataFromDB, data);
-    // autonext(2000);
+    autonext(2000);
   });
 /*
   Polls.after.update(function (userId, doc, fieldNames, modifier, options) {
@@ -99,8 +99,8 @@ Template.admin.onRendered(function () {
 
   em.addListener('adminSUPERinterrupt', function(what) {
     console.log('admin SUPER interrupt!', what);
-    console.log('changer le mode SUPERinterrupt');
-    Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: what.value});
+    console.log('changer le mode SUPERinterrupt NOT USED RIGHT NOW');
+    // Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: what.value});
     // var son = new Audio('euuuh.ogg').play();
     // console.log('SERVER HI', arguments[0].$inc, Object.keys(arguments[0].$inc)[0], _.toArray(arguments));
 
@@ -120,9 +120,9 @@ Template.admin.onRendered(function () {
     Meteor.call('setSuperGlobal', {name: 'powerToThePeople', value: !data});
     //em.emit('adminswitchthepower');
     if(data == true) { //power admin
-      em.setClient({ bookmark: 'spectacle' });
-      em.emit('adminForceGoTo');
-      gotobookmark('spectacle');
+      // em.setClient({ bookmark: 'spectacle' });
+      // em.emit('adminForceGoTo');
+      // gotobookmark('spectacle');
     } else if(data == false) { //power retourne aux SALM
       // em.setClient({ bookmark: 'fin-spectacle' });
       // em.emit('adminForceGoTo');
@@ -169,12 +169,27 @@ Template.admin.onRendered(function () {
     // console.log('next', compteur);
     // if(compteur >= 75) compteur = 75;
 
-    var currentSub = data[compteur]
-    document.getElementById("srt").innerHTML = currentSub
+    // var currentSub = data[compteur]
+    // document.getElementById("srt").innerHTML = currentSub
+
+    // if((type=="text")&&(params!="")){
+    //   document.getElementById("srt").innerHTML = params
+    //   // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
+    //   // bon ben c'est ici qu'il faudrait faire un truc
+    //   if(params=="***"){
+    //     // ça c'est pour caler des blancs
+    //     document.getElementById("srt").innerHTML = ""
+    //   }
+    // }
     // ça c'est pour virer le focus des boutons oui et non histoire de pas les activer en appuyant sur espace
     // Session.update("compteur", compteur);
-    em.setClient({ compteur: compteur });
-    em.emit('adminnext');
+    if(compteur < data.length-1){
+      window.clearTimeout(autonextcontainer)
+      compteur +=1
+      next();
+      em.setClient({ compteur: compteur });
+      em.emit('adminnext');
+    }
   }
 
   document.onkeyup = function(e) {
@@ -192,9 +207,9 @@ Template.admin.onRendered(function () {
     // KEYCIODE 78 IS "n"
 
     
-    if(e.keyCode =='32' && compteur < data.length-1){
-      window.clearTimeout(autonextcontainer)
-      compteur +=1
+    if(e.keyCode =='78' && compteur < data.length-1){
+      // window.clearTimeout(autonextcontainer)
+      // compteur +=1
       adminNext();
       console.log("keyup, ", compteur)
       // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
@@ -227,32 +242,38 @@ Template.admin.helpers({
 
 Template.showtime.helpers({
   isPowerToTheAdminChecked:function(){
-    var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
-    console.log("isPowerToTheAdminChecked", !powerToThePeople);
+    var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
+    var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
+    console.log("isPowerToTheAdminChecked", !isPowerToThePeople);
     return !powerToThePeople;
   },
-  isSUPERinterruptChecked:function(){
-    var modeSUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}}).SUPERinterrupt;
-    console.log("isSUPERinterruptChecked", modeSUPERinterrupt);
-    return modeSUPERinterrupt;
+  whoIsSUPERinterrupted:function(){
+    var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
+    var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : [];
+    console.log("isSUPERinterruptChecked", isSUPERinterrupt);
+    return isSUPERinterrupt.join(',');
   },
   isModeSpectacleChecked:function(){
-    var modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}}).modeSpectacle;
-    console.log("isModeSpectacleChecked", modeSpectacle);
-    return modeSpectacle;
+    var modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}});
+    var isModeSpectacle = (modeSpectacle) ? modeSpectacle.modeSpectacle : false;
+    console.log("isModeSpectacleChecked", isModeSpectacle);
+    return isModeSpectacle;
   },
   isTheShowStarted:function(){
-    var spectacleStarted = superGlobals.findOne({ spectacleStarted: { $exists: true}}).spectacleStarted;
-    console.log("isTheShowStarted", spectacleStarted);
-    return spectacleStarted;
+    var spectacleStarted = superGlobals.findOne({ spectacleStarted: { $exists: true}});
+    var isSpectacleStarted = (spectacleStarted) ? spectacleStarted.spectacleStarted : false;
+    console.log("isTheShowStarted", isSpectacleStarted);
+    return isSpectacleStarted;
   },
   usersOnlineCount:function(){
    //event a count of users online too.
    return Meteor.users.find().count();
   },
   cuppasCount:function(){
-    var cuppasCount = superGlobals.findOne({ cuppasCount: { $exists: true}}).cuppasCount
-   return cuppasCount;
+    var cuppasCount = superGlobals.findOne({ spectacleStarted: { $exists: true}});
+    var theCuppasCount = (cuppasCount) ? cuppasCount.cuppasCount : 0;
+    console.log("theCuppasCount", theCuppasCount);
+   return theCuppasCount;
   }
 });
 
@@ -286,6 +307,11 @@ Template.showtime.events({
   'click #resetCuppas': function(){
     //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
     Meteor.call('setSuperGlobal', {name: 'cuppasReset'});
+  },
+  'click #resetSUPERinterrupt': function(){
+    console.log("resetSUPERinterrupt!");
+    //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
+    Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: []});
   },
 
   'click #start-the-stream': function(){

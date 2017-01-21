@@ -101,7 +101,8 @@ Meteor.methods({
           
         case 'SUPERinterrupt':
           console.log('SUPERinterrupt', obj.value);
-          if(typeof(obj.value) === "boolean") {
+          // if(typeof(obj.value) === "boolean") {
+          if( Object.prototype.toString.call( obj.value ) === '[object Array]' ) { //check si c'est un array
             console.log('SUPERinterrupt2', obj.value, superGlobals.findOne({ SUPERinterrupt: { $exists: true}}));
             var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
             if(SUPERinterrupt) {

@@ -50,8 +50,19 @@ Template.jacky.onRendered(function () {
   em.addListener('salmnext', function(what) {
     console.log('salm next!', what);
     // compteur = what.compteur;
-    compteur += 1;
-    next();
+    var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
+    var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : [];
+    var userRoles = Roles.getRolesForUser(Meteor.user());
+    console.log("salm next : isSUPERinterrupt", isSUPERinterrupt, userRoles);
+    var found = jQuery.inArray(userRoles[0], isSUPERinterrupt);
+    if (found >= 0) {
+      //ce role est dans le parking !
+    } else {
+      //ce role n'est pas dans le parking, faisons un next
+      console.log('pas dans le parking, faisons un next')
+      compteur += 1;
+      next();
+    } 
   }); 
 
   em.addListener('salmForceGoTo', function(what) {

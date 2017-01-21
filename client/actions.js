@@ -28,7 +28,7 @@ next = function(){
   //action spécifique pour vider la div
   //solution envisagée :
   //au moment de parser data, il rajoute une balise #clear une ligne sur deux par exemple
-  console.log('next', data[compteur]);
+  console.log('next', compteur, data[compteur]);
   var currentData = data[compteur]
   var type = currentData["type"]
   var params = currentData["text"]
@@ -94,11 +94,11 @@ action = function(type, params){
     case "autonext":
     autonext(params)
     break
-/*
+
     case "parking":
     parking(params)
     break
-*/
+
     case "stop":
     interrupt=true
     console.log("stoooooop!")
@@ -193,17 +193,44 @@ jacky = function(params){
 
 parking = function(params){
   // TO DO : A REFACTORER SALEMENT
+  console.log("parking : is admin?");
   if(Roles.userIsInRole(Meteor.user(), "admin")==true) {
+
     console.log("parking : is admin");
-    if(params[0]=="ON"){
-      console.log("parking : enable");
-      em.setClient({ value: true });
-    //  SUPERinterrupt = true
-    } else if(params[0]=="OFF"){
-      console.log("parking : disable");
-      em.setClient({ value: false });
+    var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
+    var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : false;
+    console.log("parking : is isSUPERinterrupt", isSUPERinterrupt);
+    if(SUPERinterrupt !== false) {
+      var parkingRole = params[1];
+      if(params[0]=="ON"){
+        console.log("parking : enable FOR ONE ROLE -> ", parkingRole);
+        //ajouter role dans le tableau SUPERinterrupt si pas déjà dedans
+        var found = jQuery.inArray(parkingRole, isSUPERinterrupt);
+        if (found >= 0) {
+          // Element was found, don't add it again.
+        } else {
+          // Element was not found, add it.
+          isSUPERinterrupt.push(parkingRole);
+          console.log("parking : enabling for ", parkingRole);
+        }
+      //  SUPERinterrupt = true
+      } else if(params[0]=="OFF"){
+        console.log("parking : disable FOR ONE ROLE -> ", parkingRole);
+        //retirer role du tableau SUPERinterrupt (si déjà dedans)
+        var found = jQuery.inArray(parkingRole, isSUPERinterrupt);
+        if (found >= 0) {
+          // Element was found, remove it.
+          isSUPERinterrupt.splice(found, 1);
+          console.log("parking : disabling for ", parkingRole);
+        } else {
+          // Element was not found, don't remove it.
+        }
+      }
+      // em.setClient({ value: isSUPERinterrupt });
+      // em.emit('adminSUPERinterrupt');
+      console.log("parking : new SUPERinterrupt = ", isSUPERinterrupt);
+      Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: isSUPERinterrupt});
     }
-    em.emit('adminSUPERinterrupt');
   } else {
 
     //  SUPERinterrupt = false
