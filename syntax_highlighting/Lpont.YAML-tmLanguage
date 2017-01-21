@@ -1,0 +1,25 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: Lpont
+scopeName: Lpont
+fileTypes: []
+uuid: 9915ee2a-e22d-4797-88e9-4667fed39e5a
+
+patterns:
+- name: text.command
+  match: \"command\":[0-9]{4}
+
+- name: p.comments
+  match: (\%\%\% )(.+)
+  captures:
+    '1': {name : p.comments.1}
+    '2': {name : p.comments.2}
+
+- name: p.white
+  match: \*\*\*
+
+- name: p.balise
+  match: (\#\w{0,})\s{0,}(.+|\n)
+  captures:
+    '1': {name : p.balise.1}
+    '2': {name : p.balise.2}

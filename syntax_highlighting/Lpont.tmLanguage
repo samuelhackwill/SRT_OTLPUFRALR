@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array/>
+	<key>name</key>
+	<string>Lpont</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>match</key>
+			<string>\"command\":[0-9]{4}</string>
+			<key>name</key>
+			<string>text.command</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>p.comments.1</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>p.comments.2</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(\%\%\% )(.+)</string>
+			<key>name</key>
+			<string>p.comments</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\*\*\*</string>
+			<key>name</key>
+			<string>p.white</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>p.balise.1</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>p.balise.2</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(\#\w{0,})\s{0,}(.+|\n)</string>
+			<key>name</key>
+			<string>p.balise</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>Lpont</string>
+	<key>uuid</key>
+	<string>9915ee2a-e22d-4797-88e9-4667fed39e5a</string>
+</dict>
+</plist>
