@@ -93,11 +93,11 @@ action = function(type, params){
     case "autonext":
     autonext(params)
     break
-/*
+
     case "parking":
     parking(params)
     break
-*/
+
     case "stop":
     interrupt=true
     console.log("stoooooop!")

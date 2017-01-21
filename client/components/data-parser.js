@@ -17,6 +17,11 @@ rawTextToJson = function (rawText) {
   var wordsz = words.replace(/^\n/gm, '');
   // vire toutes les lignes vides
 
+    parser.addRule(/\%{3}.+/g, function(content){
+    cleantext = content.substr(4)
+    return{text:cleantext, type:"comment"}
+  })
+
   parser.addRule(/\#.+/gm, function(content){
 
     var contentz = content.replace(/\n/gm, '');
@@ -35,13 +40,6 @@ rawTextToJson = function (rawText) {
     return false
     // ben lui tu vois il sert à la fois à splitter et a caler des blancs.
   });
-
-
-
-  parser.addRule(/\%{3}.+/g, function(content){
-    cleantext = content.substr(4)
-    return{text:cleantext, type:"comment"}
-  })
 
   var parsed = parser.toTree(wordsz);
 
