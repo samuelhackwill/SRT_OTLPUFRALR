@@ -21,7 +21,7 @@ rawTextToJson = function (rawText) {
 
     var contentz = content.replace(/\n/gm, '');
     // pour virer les incohérences avec les newlines de mairde
-    var contentzarray = contentz.match(/[^# ][a-zA-Z0-9\u00E0-\u00FC().'\[\]\;,_!?/:]{0,}/gm)
+    var contentzarray = contentz.match(/[^# ][a-zA-Z0-9\u00E0-\u00FC().'\[\]\;,_!?\-\:]{0,}/gm)
     var cleanbalise = contentzarray[0]
     contentzarray.shift()
 
@@ -44,11 +44,6 @@ rawTextToJson = function (rawText) {
   })
 
   var parsed = parser.toTree(wordsz);
-
-
-
-
-
 
 
   console.log(JSON.stringify(parsed, null, 4));
