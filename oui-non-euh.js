@@ -237,14 +237,16 @@ if (Meteor.isServer) {
 
 
 
-  /*em.addListener('adminswitchthepower', function() {
-    console.log('ADMIN SWITCH THE POWER', _.toArray(arguments), arguments[0]);
+  em.addListener('adminswitchthepower', function(what) {
+    console.log('ADMIN SWITCH THE POWER', _.toArray(arguments), arguments[0], what, em);
     // em.setClient({ reponse: arguments[0].reponse });
     // var args = arguments[0];
     // if(args) {
-      em.emit('salmswitchthepower');
+      // em.setClient({ powerToThePeople: what.powerToThePeople });
+
+      em.emit(what.powerToThePeople ? 'salmpowerpeople' : 'salmpoweradmin');
     // }
-  });*/
+  });
   em.addListener('adminrefreshpage', function(/* client */) {
     console.log('ADMIN REFRESH PAGE', _.toArray(arguments), arguments[0]);
     // em.setClient({ reponse: arguments[0].reponse });

@@ -1,4 +1,6 @@
 
+var streamCheckInterval;
+
 Template.jacky.onCreated(function() {
 
   //subscribe à la collection representations
@@ -85,6 +87,31 @@ Template.jacky.onRendered(function () {
   Meteor.call('isTheStreamStarted', function(result){
     console.log(result);
   });
+
+
+  em.addListener('salmpoweradmin', function(what) {
+    console.log('salm admin has the power!', what);
+    console.log("le pouvoir est aux mains de l'admin", streamCheckInterval);
+    //faire des trucs quand l'admin prend le pouvoir
+    startTheStream();
+    //lancer le check du stream à interval régulier
+    console.log("streamCheckInterval?", streamCheckInterval);
+
+    if (!streamCheckInterval) {
+        console.log("starting streamCheckInterval 1");
+        streamCheckInterval = setInterval(function(){checkTheStream();}, 5000); 
+        console.log("starting streamCheckInterval 2", streamCheckInterval);
+    }
+  });
+  em.addListener('salmpowerpeople', function(what) {
+    console.log('salm people have the power!', what);
+      console.log("le pouvoir est aux mains du peuple", streamCheckInterval);
+      //arretons le check du stream à interval régulier
+      console.log("stopping streamCheckInterval 1", streamCheckInterval);
+      clearInterval(streamCheckInterval); 
+      streamCheckInterval = null;
+      console.log("stopping streamCheckInterval 2", streamCheckInterval);
+  }); 
   // console.log()
   // superGlobals.find({});
     //   {},{fields: {'source':"SourceOne", 'currency': "USD"}}
@@ -146,6 +173,13 @@ Template.jacky.onRendered(function () {
             // $('#update-streams').click(updateStreamsList);
             // updateStreamsList();
             //janus.destroy();
+              //si le pouvoir est déjà aux mains de l'admin lancons le stream au chargement de la page
+              var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
+              var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
+              if(!isPowerToThePeople) {
+                console.log("le pouvoir est déjà aux mains de l'admin lancons le stream au chargement de la page");
+                startTheStream();
+              }
 
           },
           error: function(error) {
@@ -257,6 +291,18 @@ Template.jacky.onRendered(function () {
 
 
 
+
+  // $("#login").click(function(e) { 
+  //     if (!interval) {
+  //         interval = setInterval(function(){myFunction();}, 2000); 
+  //     }
+  // });
+
+  // $("#logout").click(function(e) { 
+  //     clearInterval(interval); 
+  //     interval = null;
+  // });
+
   em.addListener('salmstartstream', startTheStream);
 
   function startTheStream(what) {
@@ -265,6 +311,10 @@ Template.jacky.onRendered(function () {
 
     var body = { "request": "watch", id: parseInt(1) };
     streaming.send({"message": body});
+
+    if (!streamCheckInterval) {
+        streamCheckInterval = setInterval(function(){checkTheStream();}, 5000); 
+    }
     // if($('#streamFrame').length == 0) {
 
     //   $('<iframe>', {
@@ -294,20 +344,26 @@ Template.jacky.onRendered(function () {
 
   }
 
+  function checkTheStream(){
+    console.log('checkTheStream!');
+    if(!streaming) Janus.init();
+    startTheStream();
+  }
+
 });
 
 
 
 Template.jacky.events({
 
-    'click #cuppasInc': function(){
-    //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
-    Meteor.call('setSuperGlobal', {name: 'cuppasInc'});
-    },
+  'click #cuppasInc': function(){
+  //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
+  Meteor.call('setSuperGlobal', {name: 'cuppasInc'});
+  },
 
-    'click #cuppasDec': function(){
-      Meteor.call('setSuperGlobal', {name: 'cuppasDec'});
-    },
+  'click #cuppasDec': function(){
+    Meteor.call('setSuperGlobal', {name: 'cuppasDec'});
+  },
 
   'click #oui': function(){
     console.log('salmclick oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));

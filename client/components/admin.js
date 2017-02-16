@@ -119,8 +119,20 @@ Template.admin.onRendered(function () {
     console.log('jose bové ftw!');
     // event.preventDefault();
     console.log('prendre le pouvoir? ', data, $(this).val());
+
+    var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
+    console.log("le pouvoir 1 ?", powerToThePeople);
+    var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
+    console.log("le pouvoir 1 ?", isPowerToThePeople);
     Meteor.call('setSuperGlobal', {name: 'powerToThePeople', value: !data});
-    //em.emit('adminswitchthepower');
+
+    var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
+    console.log("le pouvoir 2 ?", powerToThePeople);
+    var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
+    console.log("le pouvoir 2 ?", isPowerToThePeople);
+
+    em.setClient({ powerToThePeople: !data });
+    em.emit('adminswitchthepower');
     if(data == true) { //power admin
       // em.setClient({ bookmark: 'spectacle' });
       // em.emit('adminForceGoTo');
