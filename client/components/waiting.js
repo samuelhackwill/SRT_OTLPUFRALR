@@ -105,5 +105,11 @@ Template.waiting.helpers({
     if(null != checkCookie && undefined != checkCookie && checkCookie == this._id) {
       return " alreadyParticipating";
     } else return "";
+  },
+  isModeSpectacle: function(){
+      // modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}}).modeSpectacle;
+      console.log("waiting - modeSpectacle??", modeSpectacle);
+      // if(modeSpectacle) this.render('jacky');
+      return modeSpectacle;
   }
 });

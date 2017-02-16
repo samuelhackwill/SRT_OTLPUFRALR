@@ -4,11 +4,17 @@
   <!--<iframe src="http://on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com/stream/"></iframe>-->
 
   <div class="container">
-    {{#with nextRepresentation}}
+    {{#if isModeSpectacle}}
+    <div class="alert-fixed">
+      La représentation va commencer ou a commencé (TODO)
+    </div>
+    {{else}}
+      {{#with nextRepresentation}}
     <div class="alert-fixed">
       La prochaine représentation commence le <span title="{{location}}">{{formatDateLeFrenchStyle date_start}}</span>.
     </div>
-    {{/with}}
+      {{/with}}
+    {{/if}}
     <div class="row">
       <div class="col-md-offset-2 col-md-8 text-left">
         <div class="inscription small">
