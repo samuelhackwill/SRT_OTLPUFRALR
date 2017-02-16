@@ -1,4 +1,6 @@
 
+// salut c'est sam
+
 Template.admin.onCreated(function() {
   console.log('Template admin created.');
   //subscribe à la collection contenus écran
@@ -12,6 +14,7 @@ Template.admin.onCreated(function() {
 
 Template.showtime.onRendered(function () {
 });
+
 Template.admin.onRendered(function () {
   console.log('admin!');
   
@@ -46,6 +49,7 @@ Template.admin.onRendered(function () {
   
   */
   console.log('em', em);
+
   em.addListener('salmreponseoui', function(what) {
     console.log('salm oui!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
     var son = new Audio('oui.ogg');
