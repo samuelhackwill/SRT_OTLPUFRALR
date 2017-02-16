@@ -2,9 +2,71 @@
 <template name="waiting">
 
   <!--<iframe src="http://on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com/stream/"></iframe>-->
-  <div class="posmid">
-    Bonjour<br />
-    La prochaine représentation aura lieu le 1er mars à 19h30.
-  </div>
+
+  <div class="container">
+    {{#with nextRepresentation}}
+    <div class="alert-fixed">
+      La prochaine représentation commence le <span title="{{location}}">{{formatDateLeFrenchStyle date_start}}</span>.
+    </div>
+    {{/with}}
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8 text-left">
+        <div class="inscription small">
+
+          <p>
+          Bonjour<br /><br />
+          </p>
+          <p>
+          On traversera le pont une fois rendus à la rivière est un spectacle radio-diffusé. Ce qui implique qu’il y a en même temps des spectateurs·trices et des auditeurs·trices. Si vous êtes ici, c’est qu’il y a de fortes chances pour que vous soyez intéressé·e·s par l’expérience “radiophonique”.
+          </p>
+
+          <p>*petit dessin de samuel*</p>
+
+          <p>
+          À quoi ça ressemble, d’être auditeur·trice ?
+          Vous serez chez vous, le soir de la représentation, et vous entendrez ce qui se passe sur scène. C’est un spectacle qui a été écrit pour vous (enfin, pas seulement pour vous, aussi pour ceux·celles qui sont venu·e·s au théâtre, mais disons : pas seulement pour eux·elles)
+          </p>
+
+          <p>*petit dessin de samuel*</p>
+
+          <p>
+          De quoi avez-vous besoin ?<br />
+          {{#if clientBrowserSupportsWebRTC}}
+              {{> WebRTCsupport}}
+          {{else}}
+              {{> noWebRTCsupport}}
+          {{/if}}
+          <br />
+          /!\ ICI ÉVENTUEL WARNING NAVIGATEUR LE CAS ÉCHÉANT (si on détecte que leur browser est pas compatible on ajoute une ligne ici pour dire que ça va craindre à mort), mais à part ça vous aurez besoin :
+          </p>
+
+          <p>
+          D’une connexion internet correcte
+          De pouvoir diffuser le son (c’est mieux avec un bon son plutôt qu’aux écouteurs)
+          D’être chez vous (de préférence)
+          D’être seul·e (de préférence)
+          Et bien sûr d’être disponible à ce moment là
+          </p>
+
+          <p>*petit dessin de samuel*</p>
+
+          <p>
+          Ah oui mais alors à quels moments exactement ?
+
+
+          <ul id="shows-list" class="">
+            Les prochaines dates sont les suivantes :<br />
+            {{#each listRepresentations}}
+              <li><a class="represent{{alreadyParticipating}}" title="Choisir cette représentation" href="/chooseRepresentation/{{_id}}">le {{formatDateLeFrenchStyle date_start}} : {{name}}, {{location}}</a></li>
+            {{/each}}
+          </ul>
+          Vous pouvez vous “inscrire”, en réalité ça ne vous engage à rien, mais comme ça nous on sait plus où moins combien de salms on peut espérer
+          </p>
+
+
+        </div>
+      </div>
+    </div>
+  </div><!-- fin #container -->
 
 </template>

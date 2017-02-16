@@ -1,3 +1,8 @@
+Template.registerHelper('clientBrowserSupportsWebRTC', function() {
+  return Janus.isWebrtcSupported();
+});
+
+
 Meteor.startup(function () {
 
 });
@@ -14,41 +19,6 @@ Template.home.onCreated(function () {
 
 Template.srt.events({
 
-  'click a.represent': function(e){
-    console.log(e, 'choose represent!', this);
-    e.stopPropagation();
-    e.preventDefault();
-
-    var loggedInUser = Meteor.user();
-    console.log("loggedInUser", loggedInUser);
-
-    checkCookie = cookies.get("user_represent");
-
-    if(null == checkCookie || undefined == checkCookie) {
-      console.log("new user chose representation");
-      var args = {
-        _id: this._id
-      };
-      if(loggedInUser) args.userId = loggedInUser._id;
-      console.log('representation : ', args);
-      Meteor.call('addUserToRepresentation', args);
-      cookies.set("user_represent", this._id);
-    } else if(checkCookie != this._id) {
-      console.log("already user change representation");
-
-      var args = {
-        _id: this._id,
-        old_representation: checkCookie
-      };
-      if(loggedInUser) args.userId = loggedInUser._id;
-      console.log('representation : ', args);
-      Meteor.call('addUserToRepresentation', args);
-      cookies.set("user_represent", this._id);
-    } else {
-      console.log("already chosen this", cookies.get("user_represent"));
-
-    }
-  }
 
 })
 Template.srt.helpers({
