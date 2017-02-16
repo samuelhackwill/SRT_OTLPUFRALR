@@ -57,9 +57,34 @@ Template.representations.helpers({
         this.remove();
       }
     };
-  }
+  },
+
+  editing: function(){
+    return Session.equals('editItemId', this._id);
+  } 
 
 });
+
+
+var saveItem = function(){
+  var editItem = {
+    
+    name: $("#editItemName").val(),
+    location: $("#editItemLocation").val(),
+    date_start: moment($("#editItemDateStart").val(), "YYYY-MM-DD HH:mm").toDate(),
+    date_end: moment($("#editItemDateEnd").val(), "YYYY-MM-DD HH:mm").toDate(),
+    anonymousParticipants: $("#editItemAnonymousParticipants").val(),
+    status: $("#editItemStatus").val()
+  }
+  var args = {
+    _id: Session.get('editItemId'),
+    obj: editItem
+  }
+  Meteor.call('editRepresentation', args);
+  // Items.update(Session.get('editItemId'), {$set: editItem});
+  Session.set('editItemId', null);
+}
+
 
 Template.representations.events({
     // 'click #text-to-json': function(event) {
@@ -94,6 +119,28 @@ Template.representations.events({
         Meteor.call('newRepresentation', args);
       } else {
         alert("il y a un champ non renseigné.");
+      }
+    },
+
+
+    // 'click .deleteItem': function(){
+    //   Items.remove(this._id);
+    // },
+    'click .editItem': function(){
+      Session.set('editItemId', this._id);
+    },
+    'click .cancelItem': function(){
+      Session.set('editItemId', null);
+    },
+    'click .saveItem': function(){
+      saveItem();
+    },
+    'keypress input': function(e){
+      if(e.keyCode === 13){
+        saveItem();
+      }
+      else if(e.keyCode === 27){
+        Session.set('editItemId', null);
       }
     }
 });

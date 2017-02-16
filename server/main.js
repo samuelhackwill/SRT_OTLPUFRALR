@@ -227,6 +227,18 @@ Meteor.methods({
     console.log("newRepresentation", obj);
     representations.insert(obj, { filter: false });
   },
+  editRepresentation: function (args) {
+    var loggedInUser = Meteor.user()
+
+    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+      throw new Meteor.Error(403, "Access denied")
+    }
+    console.log("editRepresentation", args);
+    representations.update(args._id, 
+      { $set: args.obj },
+      { filter: false }
+    );
+  },
   addUserToRepresentation: function (obj) {
     console.log("addUserToRepresentation", obj);
     if(obj._id) {
