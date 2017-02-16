@@ -19,7 +19,9 @@ Template.representations.onRendered(function () {
   // $('#representation-date_start').datepicker();
 });
 
-
+Template.registerHelper('formatDate', function(date,format) {
+  return moment(date).format(format);
+});
 
 
 Template.representations.helpers({
