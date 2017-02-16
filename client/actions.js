@@ -17,6 +17,15 @@ clock = null
 
 data = []
 
+etats = {
+  e41:"rain1",
+  e43:"rain2",
+  e45:"rain1",
+  e47:"rain2",
+  e48:"rain3",
+  e49:"rain1"
+}
+
 /*
 posanswers =["disponible", "à la maison", "tranquille", "son ok", "concentré"]
 neganswers =["occupé","en ville","pas seul", "mute", "distrait"]
@@ -330,10 +339,10 @@ removeFiction = function(params){
 
 changeImg = function(params){
   if (alternance) {
-    $("#imgcontainerFRONT").css("background-image", "url(/img/"+params[0]);  
+    $("#imgcontainerFRONT").css("background-image", "url(/img/"+params+".jpg");  
     $("#imgcontainerFRONT").css("opacity", "1");  
   }else{
-    $("#imgcontainerBACK").css("background-image", "url(/img/"+params[0]);  
+    $("#imgcontainerBACK").css("background-image", "url(/img/"+params+".jpg");  
     $("#imgcontainerFRONT").css("opacity", "0");  
   }
   console.log(alternance)

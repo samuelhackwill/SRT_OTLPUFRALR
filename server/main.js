@@ -26,6 +26,134 @@ Meteor.publish( 'users', function() {
   }
 });
 
+// ICI TOUS LES EVENEMENTS DE DDP
+if (Meteor.isServer) {
+  process.env.HTTP_FORWARDED_COUNT = 1;
+  Meteor.publish(null, function() {
+    return [
+      Meteor.users.find({
+        "status.online": true
+      }, {
+        fields: {
+          status: 1,
+          username: 1
+        }
+      }), UserStatus.connections.find()
+    ];
+  });
+
+
+  UserStatus.events.on("connectionLogin", function(fields) { console.log("connectionLogin", fields); });
+
+  em.addListener('salmclick', function(/* client */) {
+    console.log('HELLO', _.toArray(arguments), arguments[0].reponse, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+    // em.setClient({ reponse: arguments[0].reponse });
+    var reponse = arguments[0].reponse;
+    if(reponse) {
+      console.log('emit salmreponse '+reponse, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+      em.emit('salmreponse'+reponse);
+    }
+  });
+
+
+
+  em.addListener('adminnext', function(/* client */) {
+    console.log('ADMIN NEXT', _.toArray(arguments), arguments[0]);
+    // em.setClient({ reponse: arguments[0].reponse });
+    var args = arguments[0];
+    if(args) {
+      em.emit('salmnext', args);
+    }
+  });
+
+  em.addListener('ca_va_peter', function(/* client */) {
+    console.log("ca_va_peter cote serveur");
+    em.emit('ca_va_peter_client')
+  });
+
+  em.addListener('adminstartstream', function(/* client */) {
+    console.log('ADMIN START STREAM', _.toArray(arguments), arguments[0]);
+    // em.setClient({ reponse: arguments[0].reponse });
+    var args = arguments[0];
+    if(args) {
+      em.emit('salmstartstream', args);
+    }
+  });
+
+  em.addListener('adminshowtheone', function(/* client */) {
+    console.log('ADMIN SHOW THE ONE', _.toArray(arguments), arguments[0]);
+    // em.setClient({ reponse: arguments[0].reponse });
+    // var args = arguments[0];
+    // if(args) {
+      em.emit('salmtheoneshow');
+    // }
+  });
+  em.addListener('adminhidetheone', function(/* client */) {
+    console.log('ADMIN HIDE THE ONE', _.toArray(arguments), arguments[0]);
+    // em.setClient({ reponse: arguments[0].reponse });
+    // var args = arguments[0];
+    // if(args) {
+      em.emit('salmtheonehide');
+    // }
+  });
+
+
+
+  /*em.addListener('adminswitchthepower', function() {
+    console.log('ADMIN SWITCH THE POWER', _.toArray(arguments), arguments[0]);
+    // em.setClient({ reponse: arguments[0].reponse });
+    // var args = arguments[0];
+    // if(args) {
+      em.emit('salmswitchthepower');
+    // }
+  });*/
+  em.addListener('adminrefreshpage', function(/* client */) {
+    console.log('ADMIN REFRESH PAGE', _.toArray(arguments), arguments[0]);
+    // em.setClient({ reponse: arguments[0].reponse });
+    // var args = arguments[0];
+    // if(args) {
+      em.emit('salmrefreshpage');
+    // }
+  });
+
+
+  em.addListener('adminForceGoTo', function(/* client */) {
+    console.log('ADMIN FORCE GO TO', _.toArray(arguments), arguments[0]);
+    // em.setClient({ reponse: arguments[0].reponse });
+    var args = arguments[0];
+    if(args) {
+      em.emit('salmForceGoTo', args);
+    }
+  });
+
+
+  
+
+
+  
+  // This code only runs on the server
+  Meteor.publish('superGlobals', function tasksPublication() {
+    return superGlobals.find();
+  });
+
+  Meteor.methods({
+    startTheStream: function(){
+      // superGlobals.upsert('streamStarted', { $set: { value: true, time: Date.now() } });
+    },
+    isTheStreamStarted: function(){
+      return superGlobals.find();
+    },
+  });
+
+  console.log('SERVER', this.UserConnections, UserStatus, UserStatus.connections);
+
+  // UserStatus.connections.before.upsert(function (userId, selector, modifier, options) {
+  //   console.log("before upsert", userId, selector, modifier, options);
+  //   // modifier.$set = modifier.$set || {};
+  //   // modifier.$set.modifiedAt = Date.now();
+  // });
+}
+
 
 Meteor.methods({
 

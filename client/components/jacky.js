@@ -1,4 +1,3 @@
-
 Template.jacky.onCreated(function() {
 
   //subscribe à la collection representations
@@ -255,7 +254,38 @@ Template.jacky.onRendered(function () {
     }
   });
 
+  var alternance = false;
+  var balayeur
 
+  em.addListener('ca_va_peter_client', function(/* client */) {
+        if(alternance){
+          clearTimeout(balayeur)
+          $( ".eclair" ).remove();
+          $('#gcontainer').append('<div class="eclair2"></div>');
+          alternance = false;
+        }else{
+          clearTimeout(balayeur)
+          $( ".eclair2" ).remove();
+          $('#gcontainer').append('<div class="eclair"></div>');
+          alternance = true;
+        }
+        balayeur = setTimeout(balayeurfunc,2500)
+    });
+
+    var alternanceimg = false;
+
+  em.addListener('changeImg', function(params){
+
+        if (alternanceimg) {
+          $("#imgcontainerFRONT").css("background-image", "url(/img/"+params+".jpg");  
+          $("#imgcontainerFRONT").css("opacity", "1");  
+        }else{
+          $("#imgcontainerBACK").css("background-image", "url(/img/"+params+".jpg");  
+          $("#imgcontainerFRONT").css("opacity", "0");  
+        }
+
+        alternance =! alternance
+  })
 
   em.addListener('salmstartstream', startTheStream);
 
@@ -330,3 +360,8 @@ Template.jacky.events({
   }
 
 })
+
+  function balayeurfunc(){
+          $( ".eclair" ).remove();
+          $( ".eclair2" ).remove();
+  }

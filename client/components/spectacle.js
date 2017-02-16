@@ -265,8 +265,6 @@ Template.spectacle.onRendered(function () {
   });
 
 
-
-
   em.addListener('salmstartstream', startTheStream);
 
   function startTheStream(what) {

@@ -17,6 +17,51 @@ Template.showtime.onRendered(function () {
 
 Template.admin.onRendered(function () {
   console.log('admin!');
+
+
+  function myMIDIMessagehandler(event){
+
+    whichEtat = "e"+event.data[1]
+    key = etats[whichEtat]
+    console.log(key)
+
+
+  if(event.data[0]==144 && event.data[1]==48){
+    console.log("ca_va_peter cote client")
+    em.emit("ca_va_peter")
+    // donc là il faut instead qu'il appelle une fonction serveur qui fasse claquer un orage chez tous 
+    // les clients
+  }
+
+  console.log(event.data)
+  }
+
+  output = null
+  m = null; // m = MIDIAccess object for you to make calls on
+  navigator.requestMIDIAccess().then( onsuccesscallback, onerrorcallback );
+
+  function onsuccesscallback( access ) {
+    m = access;
+
+    // Things you can do with the MIDIAccess object:
+    var inputs = m.inputs; // inputs = MIDIInputMaps, you can retrieve the inputs with iterators
+
+    var iteratorInputs = inputs.values() // returns an iterator that loops over all inputs
+    var input = iteratorInputs.next().value // get the first input
+
+
+    var outputs = m.outputs; // outputs = MIDIOutputMaps, you can retrieve the outputs with iterators
+    input.onmidimessage = myMIDIMessagehandler; // onmidimessage( event ), event.data & event.receivedTime are populated
+    var iteratorOutputs = outputs.values() // returns an iterator that loops over all outputs
+    output = iteratorOutputs.next().value; // grab first output device
+
+    
+  }
+
+  function onerrorcallback( err ) {
+    console.log( "uh-oh! Something went wrong! Error code: " + err.code );
+  }
+
   
   $(document.body).addClass('admin');
   console.log(UserStatus);
@@ -51,38 +96,27 @@ Template.admin.onRendered(function () {
   console.log('em', em);
 
   em.addListener('salmreponseoui', function(what) {
-    console.log('salm oui!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    var son = new Audio('oui.ogg');
-    son.addEventListener('playing', function(){
-      console.log('oui playing', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    });
-    son.play();
-    // console.log('SERVER HI', arguments[0].$inc, Object.keys(arguments[0].$inc)[0], _.toArray(arguments));
 
-    // var choice = parseInt(Object.keys(arguments[0].$inc)[0].replace(/(choices\.|\.votes)/g, ''));
-    // var sounds = ['oui.ogg', 'non.ogg', 'euuuh.ogg'];
-    // var son = new Audio(sounds[choice]).play();
+    console.log('salm oui!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+    output.send([144, 50, 91]);
+    un_note = setTimeout(output.send([144, 50, 0]),1500)
+    //var son = new Audio('oui.ogg');
+    //son.addEventListener('playing', function(){
+    //  console.log('oui playing', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+    //});
+    //son.play();
   }); 
+
   em.addListener('salmreponsenon', function(what) {
     console.log('salm non!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    var son = new Audio('non.ogg');
-    son.addEventListener('playing', function(){
-      console.log('non playing', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    });
-    son.play();
-    // console.log('SERVER HI', arguments[0].$inc, Object.keys(arguments[0].$inc)[0], _.toArray(arguments));
-
-    // var choice = parseInt(Object.keys(arguments[0].$inc)[0].replace(/(choices\.|\.votes)/g, ''));
-    // var sounds = ['oui.ogg', 'non.ogg', 'euuuh.ogg'];
-    // var son = new Audio(sounds[choice]).play();
+    output.send([144, 51, 91]);
+    un_note = setTimeout(output.send([144, 51, 0]),1500)
   }); 
+
   em.addListener('salmreponseeuh', function(what) {
     console.log('salm euh!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    var son = new Audio('euuuh.ogg');
-    son.addEventListener('playing', function(){
-      console.log('euuuh playing', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    });
-    son.play();
+    output.send([144, 52, 91]);
+    un_note = setTimeout(output.send([144, 52, 0]),1500)
     // console.log('SERVER HI', arguments[0].$inc, Object.keys(arguments[0].$inc)[0], _.toArray(arguments));
 
     // var choice = parseInt(Object.keys(arguments[0].$inc)[0].replace(/(choices\.|\.votes)/g, ''));
@@ -320,6 +354,10 @@ Template.phonesList.helpers({
 });
 
 Template.showtime.events({
+
+  'click #top_midi':function(){
+    output.send([144, 50, 91]); // full velocity note on A4 on channel zero
+  },
 
   'click #resetCuppas': function(){
     //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});

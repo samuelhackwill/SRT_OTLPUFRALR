@@ -215,6 +215,8 @@
     left: 50%;
     transform: translate(-50%,-50%);
 
+    z-index:2;
+
     -webkit-touch-callout: none; 
     -webkit-user-select: none;   
     -khtml-user-select: none;    
@@ -251,4 +253,43 @@ body.admin #gcontainer {
 div.login input {
   background-color: #FFF;
   color: #000;
+}
+
+
+.eclair{
+  height:100%;
+  width:100%;
+  animation: nuitjour 2.5s;
+  background-color: black; 
+  position:absolute;
+}
+
+.eclair2{
+  height:100%;
+  width:100%;
+  animation: nuitjourd 1s;
+  background-color: black; 
+  position:absolute;
+}
+
+@keyframes nuitjour {
+  0%, 100% {background: black;}
+  1% {background: grey;}
+  3% {background: black;}
+  4% {background: blue;}
+  6% {background: white;}
+  15% {background: grey;}
+  16% {background: white;}
+  30% {background: black;}
+  31% {background: white;} 
+}
+
+@keyframes nuitjourd {
+  0%, 100% {background: black;}
+  3% {background: grey;}
+  6% {background: red;}
+  15% {background: grey;}
+  16% {background: white;}
+  30% {background: black;}
+  31% {background: white;}
 }
