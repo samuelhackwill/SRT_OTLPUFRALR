@@ -167,9 +167,14 @@
     showtime !<br />
 
     <div>
-      yoyoyoy
-      {{cuppasCount}}
+      <strong>Thés</strong> volontaires : {{cuppasCount}}, tasses prêtes : {{nbCuppasFinished}}, bûches à allumer : {{buchesCount}}, next bûche in {{nextBucheAllumage}} cup(s).
       <input type="button" id="resetCuppas" value="reset cuppas">
+      <br />
+      <input type="button" id="fakeCuppasInc" value="inc cuppas">
+      <input type="button" id="fakeCuppasFinished" value="finish a cup"><br />
+      {{#each dataArray buchesArray}}
+        <img id="buche-{{@index}}" src="wooden-log{{#if equals this.value true}}-burning{{/if}}.svg" width="12" />
+      {{/each}}
     </div>
 
     <div class="switches small">

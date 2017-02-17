@@ -22,6 +22,7 @@
                   <th>Lieu</th>
                   <th>Début</th>
                   <th>Fin</th>
+                  <th>Contenu Écran</th>
                   <th>Participants</th>
                   <th>Statut</th>
                   <th>X</th>
@@ -35,6 +36,7 @@
                 <td><input type="text" id="editItemLocation" value="{{location}}"></td>
                 <td><input type="text" id="editItemDateStart" value="{{formatDate date_start 'YYYY-MM-DD HH:mm'}}"></td>
                 <td><input type="text" id="editItemDateEnd" value="{{formatDate date_end 'YYYY-MM-DD HH:mm'}}"></td>
+                <td><input type="text" id="editItemContenuEcran" value="{{contenuEcran}}"></td>
                 <td><input type="text" id="editItemAnonymousParticipants" value="{{anonymousParticipants}}"></td>
                 <td><input type="text" id="editItemStatus" value="{{status}}"></td>
                 <td><button class="saveItem">save</button><button class="cancelItem">Cancel</button>{{#each errors}}<div>{{message}}</div>{{/each}}</td>
@@ -45,6 +47,7 @@
                   <td>{{location}}</td>
                   <td>{{formatDate date_start 'YYYY-MM-DD HH:mm'}}</td>
                   <td>{{formatDate date_end 'YYYY-MM-DD HH:mm'}}</td>
+                  <td>{{contenuEcran}}</td>
                   <td>{{anonymousParticipants}}+{{countParticipants participants}}</td>
                   <td>{{status}}</td>
                   <td><button class="editItem">Edit</button>{{> quickRemoveButton collection="representations" _id=this._id onError=quickRemoveButtonOnError onSuccess=quickRemoveButtonOnSuccess beforeRemove=quickRemoveButtonBeforeRemove class="btn btn-danger"}}</td>

@@ -1,3 +1,6 @@
+Template.registerHelper('equals', function (a, b) {
+  return a == b;
+});
 
 Template.admin.onCreated(function() {
   console.log('Template admin created.');
@@ -283,11 +286,43 @@ Template.showtime.helpers({
    //event a count of users online too.
    return Meteor.users.find().count();
   },
+
   cuppasCount:function(){
     var cuppasCount = superGlobals.findOne({ cuppasCount: { $exists: true}});
     var theCuppasCount = (cuppasCount) ? cuppasCount.cuppasCount : 0;
     console.log("theCuppasCount", theCuppasCount);
    return theCuppasCount;
+  },
+  nbCuppasFinished: function(){
+    var cuppasFinished = superGlobals.findOne({ nbCuppasFinished: { $exists: true}});
+    var nbCuppasFinished = (cuppasFinished) ? cuppasFinished.nbCuppasFinished : 0;
+    console.log("nbCuppasFinished", nbCuppasFinished);
+   return nbCuppasFinished;
+  },
+  nextBucheAllumage:function(){
+    var nextBuche = superGlobals.findOne({ nextBucheAllumage: { $exists: true}});
+    var nextBucheAllumage = (nextBuche) ? nextBuche.nextBucheAllumage : 0;
+    console.log("nextBucheAllumage", nextBucheAllumage);
+   return nextBucheAllumage;
+  },
+  buchesCount: function(){
+    var buchesCount = superGlobals.findOne({ buchesCount: { $exists: true}});
+    var buchesArray = (buchesCount) ? buchesCount.buchesCount : 0;
+    console.log("buchesArray", buchesArray);
+   return buchesArray.length;
+  },
+  buchesArray: function(){
+    var buchesCount = superGlobals.findOne({ buchesCount: { $exists: true}});
+    var buchesArray = (buchesCount) ? buchesCount.buchesCount : [];
+    console.log("buchesArray", buchesArray, buchesArray.sort().reverse());
+   return buchesArray.sort().reverse();
+  },
+  loopCount: function(count){
+    var countArr = [];
+    for (var i=0; i<count; i++){
+      countArr.push({});
+    }
+    return countArr;
   },
 
   dataArray: function (obj) {
@@ -332,6 +367,14 @@ Template.showtime.events({
   'click #resetCuppas': function(){
     //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
     Meteor.call('setSuperGlobal', {name: 'cuppasReset'});
+  },
+  'click #fakeCuppasInc': function(){
+    //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
+    Meteor.call('setSuperGlobal', {name: 'cuppasInc'});
+  },
+  'click #fakeCuppasFinished': function(){
+    //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
+    Meteor.call('setSuperGlobal', {name: 'finishCuppa'});
   },
   'click #resetSUPERinterrupt': function(){
     console.log("resetSUPERinterrupt!");

@@ -78,8 +78,25 @@ Schemas.superGlobals = new SimpleSchema({
 
     cuppasCount: {
       type: Number,
-      label: "Le nombre de tasses de thé fumantes chez les PALMES",
+      label: "Le nombre de volontaires PALM pour préparer une tasses de thé",
       optional: true,
+    },
+
+    nbCuppasFinished: {
+      type: Number,
+      label: "Le nombre de tasses de thé qui sont prêtes",
+      optional: true,
+    },
+
+    buchesCount: {
+      type: [Boolean],
+      label: "Le nombre de bûches allumées ou pas (true/false)",
+      optional: true
+    },
+    nextBucheAllumage: {
+      type: Number,
+      label: "Le prochain nombre de tasses restantes avant d'allumer la prochaine bûche",
+      optional: true
     },
 
     compteurs: {
@@ -110,6 +127,10 @@ Schemas.representations = new SimpleSchema({
     "date_end": {
       type: Date,
       label: "Date et heure de Fin"
+    },
+    "contenuEcran": {
+      type: String,
+      label: "Contenu Écran à charger",
     },
     "status": {
       type: String,
