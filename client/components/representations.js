@@ -75,6 +75,7 @@ var saveItem = function(){
     location: $("#editItemLocation").val(),
     date_start: moment($("#editItemDateStart").val(), "YYYY-MM-DD HH:mm").toDate(),
     date_end: moment($("#editItemDateEnd").val(), "YYYY-MM-DD HH:mm").toDate(),
+    contenuEcran: $("#editItemContenuEcran").val(),
     anonymousParticipants: $("#editItemAnonymousParticipants").val(),
     status: $("#editItemStatus").val()
   }
@@ -101,12 +102,14 @@ Template.representations.events({
       var representationLieu = $('#representation-location').val();
       var representationDebut = $('#representation-date_start').val();
       var representationFin = $('#representation-date_end').val();
+      var representationContenuEcran = $('#representation-contenuEcran').val();
       var representationStatut = $('#representation-status').val();
       if(
         representationNom != "" &&
         representationLieu != "" &&
         representationDebut != "" &&
         representationFin != "" &&
+        representationContenuEcran != "" &&
         representationStatut != ""
       ) {
         // var contenuData = $('#json-result').val();
@@ -115,6 +118,7 @@ Template.representations.events({
           location: representationLieu,
           date_start: moment(representationDebut, "YYYY-MM-DD HH:mm").toDate(),
           date_end: moment(representationFin, "YYYY-MM-DD HH:mm").toDate(),
+          contenuEcran: representationContenuEcran,
           status: representationStatut
         };
         console.log('representation : ', args);
