@@ -26,11 +26,16 @@ Template.admin.onRendered(function () {
     console.log(key)
 
 
-  if(event.data[0]==144 && event.data[1]==48){
+  if(event.data[0]==144 && event.data[1]==42){
     console.log("ca_va_peter cote client")
     em.emit("ca_va_peter")
     // donc là il faut instead qu'il appelle une fonction serveur qui fasse claquer un orage chez tous 
     // les clients
+  }
+
+  if(event.data[0]==144 && event.data[1]==45){
+    em.setClient({ key: 'e43' });
+    em.emit("new_ambiance")
   }
 
   console.log(event.data)

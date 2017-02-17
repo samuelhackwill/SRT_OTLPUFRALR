@@ -71,9 +71,17 @@ if (Meteor.isServer) {
     em.emit('ca_va_peter_client')
   });
 
+  em.addListener('new_ambiance', function(params) {
+    console.log("new_ambiance cote serveur ", params);
+    Meteor.call('setSuperGlobal', {name: 'ambiance', value: params.key});
+    em.emit('new_ambiance_client')
+
+  });
+
   em.addListener('adminstartstream', function(/* client */) {
     console.log('ADMIN START STREAM', _.toArray(arguments), arguments[0]);
     // em.setClient({ reponse: arguments[0].reponse });
+    // set client ça marche pas côté serveur
     var args = arguments[0];
     if(args) {
       em.emit('salmstartstream', args);
@@ -333,6 +341,22 @@ Meteor.methods({
           }
 
           break
+
+        case 'ambiance':
+          var ambiance = superGlobals.findOne({ whichAmbiance: { $exists: true}});
+          if(ambiance){
+            if(ambiance.whichAmbiance) {
+              console.log('changement d\'ambiance');
+              //mise à jour
+              superGlobals.update(ambiance._id, { $set: { "whichAmbiance": obj.value } }, { filter: false });
+            }
+            console.log('ben euh ya bien une collection mais elle est vide');
+          } else {
+            console.log('ben euh ya rien en fait');
+            //création
+            superGlobals.insert({whichAmbiance: obj.value}, { filter: false });
+          }
+
 
         default:
           break;
