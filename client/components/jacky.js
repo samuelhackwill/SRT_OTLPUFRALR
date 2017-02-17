@@ -289,7 +289,53 @@ Template.jacky.onRendered(function () {
     }
   });
 
+  var alternanceStorm = false;
+  var balayeur
 
+  em.addListener('new_ambiance_client', function() {
+    var ambiance = superGlobals.findOne({ whichAmbiance: { $exists: true}});
+    var whichAmbiance = (ambiance) ? ambiance.whichAmbiance : "e41";
+    if(etats[whichAmbiance]){
+      console.log(etats[whichAmbiance])
+      changeImg(etats[whichAmbiance])    
+    }
+  });
+
+  em.addListener('ca_va_peter_client', function(/* client */) {
+        if(alternanceStorm){
+          clearTimeout(balayeur)
+          $( ".eclair" ).remove();
+          $('#gcontainer').prepend('<div class="eclair2"></div>');
+          alternanceStorm = false;
+        }else{
+          clearTimeout(balayeur)
+          $( ".eclair2" ).remove();
+          $('#gcontainer').prepend('<div class="eclair"></div>');
+          alternanceStorm = true;
+        }
+        balayeur = setTimeout(balayeurfunc,2500)
+    });
+
+    alternanceImg = false;
+
+  function changeImg(params){
+
+    if($("#imgcontainerBACK").hasClass( "invisible")){
+      $('#imgcontainerBACK').removeClass('invisible');
+      $('#imgcontainerBACK').addClass('visible');
+    }
+
+    if (alternanceImg==true) {
+      $("#imgcontainerFRONT").css("background-image", "url(/img/"+params+".jpg");  
+      $('#imgcontainerFRONT').removeClass('invisible');
+      $('#imgcontainerFRONT').addClass('visible');
+    }else{
+      $("#imgcontainerBACK").css("background-image", "url(/img/rain3.jpg");  
+      $('#imgcontainerFRONT').addClass('invisible');
+      $('#imgcontainerFRONT').removeClass('visible');
+    }
+    alternanceImg =! alternanceImg
+  }
 
 
   // $("#login").click(function(e) { 
@@ -386,3 +432,8 @@ Template.jacky.events({
   }
 
 })
+
+  function balayeurfunc(){
+          $( ".eclair" ).remove();
+          $( ".eclair2" ).remove();
+  }

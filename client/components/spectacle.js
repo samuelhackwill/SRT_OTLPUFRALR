@@ -37,7 +37,6 @@ Template.spectacle.helpers({
 Template.spectacle.onRendered(function () {
 
 
-
   this.autorun(() => {
     console.log("spectacle autorun admin", Template.instance());
     let ready = Template.instance().subscriptionsReady();
@@ -264,8 +263,6 @@ Template.spectacle.onRendered(function () {
     }
 
   });
-
-
 
 
   em.addListener('salmstartstream', startTheStream);

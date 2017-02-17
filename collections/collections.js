@@ -82,6 +82,12 @@ Schemas.superGlobals = new SimpleSchema({
       optional: true,
     },
 
+    whichAmbiance:{
+      type: String,
+      label: "bonne ambiance en cours",
+      optional: true
+    },
+
     compteurs: {
       type: [Object],
       label: "Les compteurs pour chaque role",
