@@ -26,13 +26,29 @@ Template.jacky.onRendered(function () {
     console.log('ContenusEcran ?', ContenusEcran.find().fetch());
 
     console.log("checking compteur", compteur, "cookie.compteur", cookies.get('compteur'), modeSpectacle);
-    //si on est en mode spectacle, que l'admin a le pouvoir et qu'il y a un compteur enregistré
+    //si on est en mode spectacle, que l'admin a le pouvoir
     var isPowerToThePeople = getSuperGlobal('powerToThePeople');
-    if(modeSpectacle && !isPowerToThePeople && cookies.get('compteur') !== null) compteur = parseInt(cookies.get('compteur'));
-    if(compteur != -1) {
-      //revenir où on était dans le spectacle
-      next();
+    if(modeSpectacle && !isPowerToThePeople) {
+      //et si il y a un compteur enregistré
+      if(cookies.get('compteur') !== null) compteur = parseInt(cookies.get('compteur'));
+      if(compteur != -1) {
+        //revenir où on était dans le spectacle
+        next();
+      }
+
+      //ambiance?
+      var whichAmbiance = getSuperGlobal("whichAmbiance", "");
+      if(whichAmbiance != "") { //il y a une ambiance en cours
+        //passons à cette ambiance
+        var newAmbiance = ambiances.findOne({name: whichAmbiance});
+        if(newAmbiance) {
+          console.log("set Ambiance", newAmbiance.value)
+          changeImg(newAmbiance.value)
+        }
+      }
     }
+
+    //
     // rawTextToJson();
   // console.log(Template.instance());
     // zoupageJSON(dataFromDB, data);
@@ -305,8 +321,8 @@ Template.jacky.onRendered(function () {
     var newAmbiance = ambiances.findOne({name: whichAmbiance});
     console.log("ambiance?", newAmbiance);
     if(newAmbiance){
-      console.log("new Ambiance", newAmbiance)
-      changeImg(newAmbiance)
+      console.log("new Ambiance", newAmbiance.value)
+      changeImg(newAmbiance.value)
     }
   });
 
