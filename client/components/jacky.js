@@ -24,6 +24,15 @@ Template.jacky.onRendered(function () {
     console.log('srt spectacle jacky rendered');
     console.log('data ?', data);
     console.log('ContenusEcran ?', ContenusEcran.find().fetch());
+
+    console.log("checking compteur", compteur, "cookie.compteur", cookies.get('compteur'), modeSpectacle);
+    //si on est en mode spectacle, que l'admin a le pouvoir et qu'il y a un compteur enregistré
+    var isPowerToThePeople = getSuperGlobal('powerToThePeople');
+    if(modeSpectacle && !isPowerToThePeople && cookies.get('compteur') !== null) compteur = parseInt(cookies.get('compteur'));
+    if(compteur != -1) {
+      //revenir où on était dans le spectacle
+      next();
+    }
     // rawTextToJson();
   // console.log(Template.instance());
     // zoupageJSON(dataFromDB, data);
@@ -56,6 +65,8 @@ Template.jacky.onRendered(function () {
   em.addListener('salmnext', function(what) {
     console.log('salm next!', what);
     // compteur = what.compteur;
+    //enregistrons le compteur dans un cookie
+    if(what.compteur && cookies.get('compteur') != what.compteur) cookies.set('compteur', what.compteur);
     // var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
     // var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : [];
     var isSUPERinterrupt = getSuperGlobal("SUPERinterrupt", []);
@@ -68,7 +79,9 @@ Template.jacky.onRendered(function () {
     } else {
       //ce role n'est pas dans le parking, faisons un next
       console.log('pas dans le parking, faisons un next')
-      compteur += 1;
+      window.clearTimeout(autonextcontainer) //clear auto next
+      // compteur += 1;
+      compteur = what.compteur; //changer le compteur depuis l'évènement admin (rattraper le spectacle)
       next();
     } 
   }); 
@@ -271,7 +284,7 @@ Template.jacky.onRendered(function () {
     });
   }});
 
-
+  
   $(document.body).on('keyup', function(e) {
 
     e = e || window.event
@@ -279,18 +292,7 @@ Template.jacky.onRendered(function () {
 
     // KEYCODE 32 IS SPACEBAR
     // KEYCIODE 78 IS "n"
-
-    // var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
-    var isItPowerToThePeople = getSuperGlobal("powerToThePeople", true);
-    console.log('spectacle keyup compteur = ', compteur, 'interrupt = ', interrupt, 'isItPowerToThePeople = ', isItPowerToThePeople);
-    if(e.keyCode =='32' && compteur < data.length-1 && interrupt==false && isItPowerToThePeople == true){
-      window.clearTimeout(autonextcontainer)
-      compteur +=1
-      next();
-      console.log("keyup, ", compteur)
-      // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
-      // ça avance tout seul avec un délai)
-    }
+    if(e.keyCode == '32') nextEvent();
   });
 
   var alternanceStorm = false;
@@ -403,7 +405,20 @@ Template.jacky.onRendered(function () {
 
 });
 
+var nextEvent = function(){
 
+  // var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
+  var isItPowerToThePeople = getSuperGlobal("powerToThePeople", true);
+  console.log('spectacle keyup compteur = ', compteur, 'interrupt = ', interrupt, 'isItPowerToThePeople = ', isItPowerToThePeople);
+  if(compteur < data.length-1 && interrupt==false && isItPowerToThePeople == true){
+    window.clearTimeout(autonextcontainer)
+    compteur +=1
+    next();
+    console.log("keyup, ", compteur)
+    // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
+    // ça avance tout seul avec un délai)
+  }
+}
 
 Template.jacky.events({
 
@@ -434,6 +449,11 @@ Template.jacky.events({
     em.setClient({ reponse: 'euh' });
     em.emit('salmclick');
     console.log('salmclick emmited euh', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  },
+
+  'touchstart #gcontainer': function(){
+    // alert('touchstart #gcontainer');
+    nextEvent();
   }
 
 })
