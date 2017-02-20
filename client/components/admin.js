@@ -208,6 +208,17 @@ Template.admin.onRendered(function () {
     Meteor.call('setSuperGlobal', {name: 'spectacleStarted', value: data});
     // em.emit('adminrefreshpage');
   });
+
+  //activer le raccrochage
+  //transformer en joli switch
+  $('input#forcehangup').bootstrapSwitch();
+  $('input#forcehangup').on('switchChange.bootstrapSwitch', function (event, data) {
+    console.log('forcehangup ftw!');
+    // event.preventDefault();
+    console.log('activer le raccrochage? ', data, $(this).val());
+    Meteor.call('setSuperGlobal', {name: 'forceHangup', value: data});
+    // em.emit('adminrefreshpage');
+  });
   //activer le mode SUPERinterrupt
   //transformer en joli switch
   $('input#SUPERinterrupt').bootstrapSwitch();
@@ -322,6 +333,13 @@ Template.showtime.helpers({
     console.log("isModeSpectacleChecked", isModeSpectacle);
     return isModeSpectacle;
   },
+  isForceHangupChecked:function(){
+    // var modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}});
+    // var isModeSpectacle = (modeSpectacle) ? modeSpectacle.modeSpectacle : false;
+    var isForceHangup = getSuperGlobal("forceHangup", false);
+    console.log("isForceHangupChecked", isForceHangup);
+    return isForceHangup;
+  },
   isTheShowStarted:function(){
     // var spectacleStarted = superGlobals.findOne({ spectacleStarted: { $exists: true}});
     // var isSpectacleStarted = (spectacleStarted) ? spectacleStarted.spectacleStarted : false;
@@ -397,6 +415,11 @@ Template.phonesList.helpers({
   phoneNumbersCount:function(){
    //event a count of users online too.
    return PhoneNumbers.find().count();
+  },
+  getRepresentationName:function(){
+   var found = representations.findOne({_id: this.representation})
+   console.log("getRepresentationName", found);
+   return (found) ? found.name : this.representation;
   },
   quickRemoveButtonOnError: function () {
     return function (error) { alert("BOO!"); console.log(error); };

@@ -12,6 +12,9 @@ Meteor.publish('allSuperGlobals', function () {
 Meteor.publish('allRepresentations', function () {
   return representations.find();
 });
+Meteor.publish('allAmbiances', function () {
+  return ambiances.find();
+});
 Meteor.publish('allPhoneNumbers', function () {
   return PhoneNumbers.find();
 });
@@ -295,6 +298,25 @@ Meteor.methods({
           }
           break;
 
+        case 'forceHangup':
+          console.log('forceHangup', obj.value);
+          if(typeof(obj.value) === "boolean") {
+            console.log('forceHangup2', obj.value, superGlobals.findOne({ forceHangup: { $exists: true}}));
+            var forceHangup = superGlobals.findOne({ forceHangup: { $exists: true}});
+            if(forceHangup) {
+              console.log('forceHangup3 mise a jour');
+              //mise à jour
+              superGlobals.update(forceHangup._id, { $set: {forceHangup: obj.value} }, { filter: false });
+            } else {
+              console.log('forceHangup3 insert!');
+              //création
+              superGlobals.insert({forceHangup: obj.value}, { filter: false });
+
+            }
+            // superGlobals.upsert({modeSpectacle: obj.value}, { filter: false });
+          }
+          break;
+
         case 'cuppasInc':
           var thecuppasCount = superGlobals.findOne({ cuppasCount: { $exists: true}});
           if(thecuppasCount){
@@ -571,6 +593,29 @@ Meteor.methods({
       });
     }
   },
+
+  newAmbiance: function (obj) {
+    var loggedInUser = Meteor.user()
+
+    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+      throw new Meteor.Error(403, "Access denied")
+    }
+    console.log("newAmbiance", obj);
+    ambiances.insert(obj, { filter: false });
+  },
+  editRepresentation: function (args) {
+    var loggedInUser = Meteor.user()
+
+    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+      throw new Meteor.Error(403, "Access denied")
+    }
+    console.log("editAmbiance", args);
+    ambiances.update(args._id, 
+      { $set: args.obj },
+      { filter: false }
+    );
+  },
+
   addPhoneNumber: function (obj) {
     // var loggedInUser = Meteor.user()
 

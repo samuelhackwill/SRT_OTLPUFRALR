@@ -4,6 +4,8 @@ ContenusEcran = new Meteor.Collection('contenusEcran');
 
 representations = new Meteor.Collection('representations');
 
+ambiances = new Meteor.Collection('ambiances');
+
 PhoneNumbers = new Meteor.Collection('phoneNumbers');
 
 var Schemas = {};
@@ -73,6 +75,11 @@ Schemas.superGlobals = new SimpleSchema({
     spectacleStarted: {
       type: Boolean,
       label: "Quand le spectacle a commencé",
+      optional: true
+    },
+    forceHangup: {
+      type: Boolean,
+      label: "Quand le serveur vocal force à raccrocher après la prochaine note",
       optional: true
     },
 
@@ -174,6 +181,40 @@ Schemas.representations = new SimpleSchema({
 });
 
 
+Schemas.ambiances = new SimpleSchema({
+
+    name: {
+          type: String,
+          label: "Nom",
+          max: 200
+    },
+    value: {
+          type: String,
+          label: "Valeur",
+          max: 200
+    },
+    "created": {
+      type: Date,
+      label: "Date de création",
+      autoValue: function() {
+        if ( this.isInsert ) {
+          return new Date;
+        } 
+      }
+    },
+    "updated": {
+      type: Date,
+      label: "Date de modification",
+      autoValue: function() {
+        if ( this.isUpdate || this.isInsert || this.isInsert ) {
+          return new Date;
+        } 
+      }
+    }
+
+});
+
+
 Schemas.phoneNumbers = new SimpleSchema({
 
     "number": {
@@ -184,6 +225,11 @@ Schemas.phoneNumbers = new SimpleSchema({
         type: Number,
         label: "Appels",
         defaultValue: 0
+    },
+    "representation": {
+        type: String,
+        label: "representation",
+        defaultValue: ""
     },
     "created": {
       type: Date,
@@ -210,6 +256,7 @@ Schemas.phoneNumbers = new SimpleSchema({
 ContenusEcran.attachSchema(Schemas.ContenusEcran);
 superGlobals.attachSchema(Schemas.superGlobals);
 representations.attachSchema(Schemas.representations);
+ambiances.attachSchema(Schemas.ambiances);
 PhoneNumbers.attachSchema(Schemas.phoneNumbers);
 
 
@@ -265,6 +312,40 @@ superGlobals.allow({
 
 //permissions
 representations.allow({
+  insert: function () {
+
+    var loggedInUser = Meteor.user()
+
+    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+      throw new Meteor.Error(403, "Access denied")
+    }
+    return true; 
+  },
+  update: function () {
+
+    var loggedInUser = Meteor.user()
+
+    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+      throw new Meteor.Error(403, "Access denied")
+    }
+    return true; 
+  },
+  remove: function () {
+
+    var loggedInUser = Meteor.user()
+
+    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+      throw new Meteor.Error(403, "Access denied")
+    }
+    return true; 
+
+  }
+});
+
+
+
+//permissions
+ambiances.allow({
   insert: function () {
 
     var loggedInUser = Meteor.user()

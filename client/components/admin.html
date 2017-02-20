@@ -14,6 +14,7 @@
           <li><a href="/data" target="_blank">data</a></li>
           <li><a href="/representations" target="_blank">réprésentations</a></li>
           <li><a href="/users" target="_blank">users</a></li>
+          <li><a href="/ambiances" target="_blank">ambiances</a></li>
         </ul>
       </div>
     </div>
@@ -190,6 +191,8 @@
 
       <label for="showmode" title="ou mettre le site en mode Spectacle">Mode Spectacle</label>
       <input id="showmode" title="aka let's gro!" type="checkbox" checked="{{isModeSpectacleChecked}}" /><br />
+      <label for="forcehangup" title="ou forcer le raccrochage après la prochaine note">Raccrocher les tél</label>
+      <input id="forcehangup" title="aka hang up!" type="checkbox" checked="{{isForceHangupChecked}}" /><br />
       <br />
       SUPERinterrupt = <br />
       <button type="button" class="add-SUPERinterrupt" value="salm">parking ON salm</button>
@@ -281,6 +284,7 @@
             <tr>
                 <th>Phone</th>
                 <th><span class="small">Calls</span></th>
+                <th><span class="small">Representation</span></th>
                 <th><span class="small">Created</span></th>
                 <th><span class="small">Modified</span></th>
                 <th><span class="small">X</span></th>
@@ -291,6 +295,7 @@
             <tr>
                 <td class="bold">{{number}}</td>
                 <td class="bold">{{calls}}</td>
+                <td class="bold">{{getRepresentationName}}</td>
                 <td class="small">{{created}}</td>
                 <td class="small">{{updated}}</td>
                 <td>{{> quickRemoveButton collection="PhoneNumbers" _id=this._id onError=quickRemoveButtonOnError onSuccess=quickRemoveButtonOnSuccess beforeRemove=quickRemoveButtonBeforeRemove class="btn btn-danger"}}</td>
