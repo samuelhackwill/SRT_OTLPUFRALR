@@ -56,8 +56,9 @@ Template.jacky.onRendered(function () {
   em.addListener('salmnext', function(what) {
     console.log('salm next!', what);
     // compteur = what.compteur;
-    var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
-    var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : [];
+    // var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
+    // var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : [];
+    var isSUPERinterrupt = getSuperGlobal("SUPERinterrupt", []);
     var userRoles = Roles.getRolesForUser(Meteor.user());
     if(userRoles.length == 0) userRoles.push("salm");
     console.log("salm next : isSUPERinterrupt", isSUPERinterrupt, userRoles);
@@ -175,8 +176,9 @@ Template.jacky.onRendered(function () {
             // updateStreamsList();
             //janus.destroy();
               //si le pouvoir est déjà aux mains de l'admin lancons le stream au chargement de la page
-              var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
-              var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
+              // var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
+              // var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
+              var isPowerToThePeople = getSuperGlobal("powerToThePeople", false); // par défaut false, admin a le pouvoir -> donc lancer le stream (?)
               if(!isPowerToThePeople) {
                 console.log("le pouvoir est déjà aux mains de l'admin lancons le stream au chargement de la page");
                 startTheStream();
@@ -278,7 +280,8 @@ Template.jacky.onRendered(function () {
     // KEYCODE 32 IS SPACEBAR
     // KEYCIODE 78 IS "n"
 
-    var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
+    // var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
+    var isItPowerToThePeople = getSuperGlobal("powerToThePeople", true);
     console.log('spectacle keyup compteur = ', compteur, 'interrupt = ', interrupt, 'isItPowerToThePeople = ', isItPowerToThePeople);
     if(e.keyCode =='32' && compteur < data.length-1 && interrupt==false && isItPowerToThePeople == true){
       window.clearTimeout(autonextcontainer)
@@ -294,8 +297,9 @@ Template.jacky.onRendered(function () {
   var balayeur
 
   em.addListener('new_ambiance_client', function() {
-    var ambiance = superGlobals.findOne({ whichAmbiance: { $exists: true}});
-    var whichAmbiance = (ambiance) ? ambiance.whichAmbiance : "e41";
+    // var ambiance = superGlobals.findOne({ whichAmbiance: { $exists: true}});
+    // var whichAmbiance = (ambiance) ? ambiance.whichAmbiance : "e41";
+    var whichAmbiance = getSuperGlobal("whichAmbiance", "e41");
     if(etats[whichAmbiance]){
       console.log(etats[whichAmbiance])
       changeImg(etats[whichAmbiance])    

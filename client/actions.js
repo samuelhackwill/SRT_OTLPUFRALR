@@ -216,8 +216,9 @@ parking = function(params){
   // if(Roles.userIsInRole(Meteor.user(), "admin")==true) {
 
     // console.log("parking : is admin");
-    var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
-    var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : false;
+    // var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
+    // var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : false;
+    var isSUPERinterrupt = getSuperGlobal("SUPERinterrupt", false);
     console.log("parking : is isSUPERinterrupt", isSUPERinterrupt);
     if(SUPERinterrupt !== false) {
       var parkingRoles = fonctions;

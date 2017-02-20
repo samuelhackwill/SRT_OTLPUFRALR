@@ -87,7 +87,7 @@ Template.admin.onRendered(function () {
     data = ContenusEcran.findOne({name: "ce_jeudi_no_comment"}).data
     console.log('showtime data ?', data);
     console.log('showtime ContenusEcran ?', ContenusEcran.find().fetch());
-    var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
+    var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
     console.log("showtime isItPowerToThePeople", isItPowerToThePeople);
     // rawTextToJson();
   // console.log(Template.instance());
@@ -166,16 +166,16 @@ Template.admin.onRendered(function () {
     // event.preventDefault();
     console.log('prendre le pouvoir? ', data, $(this).val());
 
-    var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
-    console.log("le pouvoir 1 ?", powerToThePeople);
-    var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
-    console.log("le pouvoir 1 ?", isPowerToThePeople);
+    // var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
+    // console.log("le pouvoir 1 ?", powerToThePeople);
+    // var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
+    // console.log("le pouvoir 1 ?", isPowerToThePeople);
     Meteor.call('setSuperGlobal', {name: 'powerToThePeople', value: !data});
 
-    var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
-    console.log("le pouvoir 2 ?", powerToThePeople);
-    var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
-    console.log("le pouvoir 2 ?", isPowerToThePeople);
+    // var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
+    // console.log("le pouvoir 2 ?", powerToThePeople);
+    // var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
+    // console.log("le pouvoir 2 ?", isPowerToThePeople);
 
     em.setClient({ powerToThePeople: !data });
     em.emit('adminswitchthepower');
@@ -302,26 +302,30 @@ Template.admin.helpers({
 
 Template.showtime.helpers({
   isPowerToTheAdminChecked:function(){
-    var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
-    var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
+    // var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
+    // var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
+    var isPowerToThePeople = getSuperGlobal("powerToThePeople", true);
     console.log("isPowerToTheAdminChecked", !isPowerToThePeople);
     return !isPowerToThePeople;
   },
   whoIsSUPERinterrupted:function(){
-    var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
-    var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : [];
+    // var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
+    // var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : [];
+    var isSUPERinterrupt = getSuperGlobal("SUPERinterrupt", []);
     console.log("isSUPERinterruptChecked", isSUPERinterrupt);
     return isSUPERinterrupt;
   },
   isModeSpectacleChecked:function(){
-    var modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}});
-    var isModeSpectacle = (modeSpectacle) ? modeSpectacle.modeSpectacle : false;
+    // var modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}});
+    // var isModeSpectacle = (modeSpectacle) ? modeSpectacle.modeSpectacle : false;
+    var isModeSpectacle = getSuperGlobal("modeSpectacle", []);
     console.log("isModeSpectacleChecked", isModeSpectacle);
     return isModeSpectacle;
   },
   isTheShowStarted:function(){
-    var spectacleStarted = superGlobals.findOne({ spectacleStarted: { $exists: true}});
-    var isSpectacleStarted = (spectacleStarted) ? spectacleStarted.spectacleStarted : false;
+    // var spectacleStarted = superGlobals.findOne({ spectacleStarted: { $exists: true}});
+    // var isSpectacleStarted = (spectacleStarted) ? spectacleStarted.spectacleStarted : false;
+    var isSpectacleStarted = getSuperGlobal("spectacleStarted", false);
     console.log("isTheShowStarted", isSpectacleStarted);
     return isSpectacleStarted;
   },
@@ -331,32 +335,37 @@ Template.showtime.helpers({
   },
 
   cuppasCount:function(){
-    var cuppasCount = superGlobals.findOne({ cuppasCount: { $exists: true}});
-    var theCuppasCount = (cuppasCount) ? cuppasCount.cuppasCount : 0;
+    // var cuppasCount = superGlobals.findOne({ cuppasCount: { $exists: true}});
+    // var theCuppasCount = (cuppasCount) ? cuppasCount.cuppasCount : 0;
+    var theCuppasCount = getSuperGlobal("cuppasCount", 0);
     console.log("theCuppasCount", theCuppasCount);
    return theCuppasCount;
   },
   nbCuppasFinished: function(){
-    var cuppasFinished = superGlobals.findOne({ nbCuppasFinished: { $exists: true}});
-    var nbCuppasFinished = (cuppasFinished) ? cuppasFinished.nbCuppasFinished : 0;
+    // var cuppasFinished = superGlobals.findOne({ nbCuppasFinished: { $exists: true}});
+    // var nbCuppasFinished = (cuppasFinished) ? cuppasFinished.nbCuppasFinished : 0;
+    var nbCuppasFinished = getSuperGlobal("nbCuppasFinished", 0);
     console.log("nbCuppasFinished", nbCuppasFinished);
    return nbCuppasFinished;
   },
   nextBucheAllumage:function(){
-    var nextBuche = superGlobals.findOne({ nextBucheAllumage: { $exists: true}});
-    var nextBucheAllumage = (nextBuche) ? nextBuche.nextBucheAllumage : 0;
+    // var nextBuche = superGlobals.findOne({ nextBucheAllumage: { $exists: true}});
+    // var nextBucheAllumage = (nextBuche) ? nextBuche.nextBucheAllumage : 0;
+    var nextBucheAllumage = getSuperGlobal("nextBucheAllumage", 0);
     console.log("nextBucheAllumage", nextBucheAllumage);
    return nextBucheAllumage;
   },
   buchesCount: function(){
-    var buchesCount = superGlobals.findOne({ buchesCount: { $exists: true}});
-    var buchesArray = (buchesCount) ? buchesCount.buchesCount : 0;
+    // var buchesCount = superGlobals.findOne({ buchesCount: { $exists: true}});
+    // var buchesArray = (buchesCount) ? buchesCount.buchesCount : 0;
+    var buchesArray = getSuperGlobal("buchesCount", 0);
     console.log("buchesArray", buchesArray);
    return buchesArray.length;
   },
   buchesArray: function(){
-    var buchesCount = superGlobals.findOne({ buchesCount: { $exists: true}});
-    var buchesArray = (buchesCount) ? buchesCount.buchesCount : [];
+    // var buchesCount = superGlobals.findOne({ buchesCount: { $exists: true}});
+    // var buchesArray = (buchesCount) ? buchesCount.buchesCount : [];
+    var buchesArray = getSuperGlobal("buchesCount", []);
     console.log("buchesArray", buchesArray, buchesArray.sort().reverse());
    return buchesArray.sort().reverse();
   },
@@ -473,8 +482,9 @@ Template.showtime.events({
     if(Roles.userIsInRole(Meteor.user(), "admin")==true) {
       console.log('click button.remove-SUPERinterrupt', $(event.currentTarget).val());
 
-      var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
-      var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : false;
+      // var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
+      // var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : false;
+      var isSUPERinterrupt = getSuperGlobal("SUPERinterrupt", false);
       console.log("parking from admin : is isSUPERinterrupt", isSUPERinterrupt);
       if(SUPERinterrupt !== false) {
         var parkingRole = $(event.currentTarget).val();
@@ -499,8 +509,9 @@ Template.showtime.events({
 
       console.log('click button.add-SUPERinterrupt', $(event.currentTarget).val());
 
-      var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
-      var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : false;
+      // var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
+      // var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : false;
+      var isSUPERinterrupt = getSuperGlobal("SUPERinterrupt", false);
       console.log("parking from admin : is isSUPERinterrupt", isSUPERinterrupt);
       if(SUPERinterrupt !== false) {
 
