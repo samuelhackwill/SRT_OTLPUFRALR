@@ -29,7 +29,7 @@ Template.admin.onRendered(function () {
     console.log(key)
 
 
-  if(event.data[0]==144 && event.data[1]==42){
+  if(event.data[0]==144 && event.data[1]==49){
     console.log("ca_va_peter cote client")
     em.emit("ca_va_peter")
     // donc là il faut instead qu'il appelle une fonction serveur qui fasse claquer un orage chez tous 
@@ -439,9 +439,37 @@ Template.phonesList.helpers({
 
 Template.showtime.events({
 
-  'click #top_midi':function(){
-    output.send([144, 50, 91]); // full velocity note on A4 on channel zero
+  'click #top_midi1':function(){
+    output.send([144, 84, 127]); // full velocity note on A4 on channel zero
+/*  
+        var zoupla = setTimeout(function(){
+          output.send([144, 72,0])
+          },1000)
+*/
   },
+    'click #top_midi2':function(){
+    output.send([144, 85, 127]); // full velocity note on A4 on channel zero
+  },
+    'click #top_midi3':function(){
+    output.send([144, 86, 127]); // full velocity note on A4 on channel zero
+  },
+    'click #top_midi4':function(){
+    output.send([144, 87, 127]); // full velocity note on A4 on channel zero
+  },    'click #top_midi5':function(){
+    output.send([144, 88, 127]); // full velocity note on A4 on channel zero
+  },    'click #top_midi6':function(){
+    output.send([144, 89, 127]); // full velocity note on A4 on channel zero
+  },
+      'click #kill_midi':function(){
+    output.send([144, 84, 0]); // full velocity note on A4 on channel zero
+    output.send([144, 85, 0]); // full velocity note on A4 on channel zero
+    output.send([144, 86, 0]); // full velocity note on A4 on channel zero
+    output.send([144, 87, 0]); // full velocity note on A4 on channel zero
+    output.send([144, 88, 0]); // full velocity note on A4 on channel zero
+    output.send([144, 89, 0]); // full velocity note on A4 on channel zero
+  },
+
+  // faire un bouton pour éteindre toutes les buches!
 
   'click #resetCuppas': function(){
     //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
