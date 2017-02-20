@@ -132,7 +132,8 @@ Template.jacky.onRendered(function () {
       server = "https://" + host + ":8089/janus";
 
   var janus = null;
-  var streaming = null;
+  // var streaming = null;
+  streaming = null;
   var started = false;
   var spinner = null;
 
@@ -359,7 +360,7 @@ Template.jacky.onRendered(function () {
     streaming.send({"message": body});
 
     if (!streamCheckInterval) {
-        streamCheckInterval = setInterval(function(){checkTheStream();}, 5000); 
+        streamCheckInterval = setInterval(function(){checkTheStream();}, 30000); 
     }
     // if($('#streamFrame').length == 0) {
 
@@ -392,8 +393,8 @@ Template.jacky.onRendered(function () {
 
   function checkTheStream(){
     console.log('checkTheStream!');
-    if(!streaming) Janus.init();
-    startTheStream();
+    if(!Janus.initDone || !streaming) Janus.init();
+    if(!streaming.webrtcStuff.started) startTheStream();
   }
 
 });
