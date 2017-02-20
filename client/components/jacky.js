@@ -302,9 +302,11 @@ Template.jacky.onRendered(function () {
     // var ambiance = superGlobals.findOne({ whichAmbiance: { $exists: true}});
     // var whichAmbiance = (ambiance) ? ambiance.whichAmbiance : "e41";
     var whichAmbiance = getSuperGlobal("whichAmbiance", "e41");
-    if(etats[whichAmbiance]){
-      console.log(etats[whichAmbiance])
-      changeImg(etats[whichAmbiance])    
+    var newAmbiance = ambiances.findOne({name: whichAmbiance});
+    console.log("ambiance?", newAmbiance);
+    if(newAmbiance){
+      console.log("new Ambiance", newAmbiance)
+      changeImg(newAmbiance)
     }
   });
 

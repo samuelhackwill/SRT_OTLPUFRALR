@@ -25,8 +25,7 @@ Template.admin.onRendered(function () {
   function myMIDIMessagehandler(event){
 
     whichEtat = "e"+event.data[1]
-    key = etats[whichEtat]
-    console.log(key)
+    console.log(whichEtat)
 
 
   if(event.data[0]==144 && event.data[1]==49){
@@ -37,7 +36,7 @@ Template.admin.onRendered(function () {
   }
 
   if(event.data[0]==144 && event.data[1]==45){
-    em.setClient({ key: 'e43' });
+    em.setClient({ key: whichEtat });
     em.emit("new_ambiance")
   }
 
