@@ -11,8 +11,20 @@ Template.waiting.onCreated(function() {
   this.autorun(() => {
     this.subscribe('allRepresentations');
   });
+})
 
-  Template.waiting.onRendered(function () {
+Template.waiting.onRendered(function () {
+
+    console.log("splash")
+
+          autonextcontainer = setTimeout(function(){
+    $("#inscription").css("opacity", "1")
+    $("#bonjour").css("opacity", "0")
+      },1500)
+
+
+  //  $("#inscription").css("opacity", "1")
+  //  $("#bonjour").css("opacity", "0")
 
     console.log("waiting", new Date());
 /*
@@ -35,8 +47,6 @@ Template.waiting.onCreated(function() {
     });*/
   });
 
-
-});
 
 Template.waiting.events({
 

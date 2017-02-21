@@ -32,6 +32,76 @@
     height:100%;
   }
 
+  #bonjour{
+    opacity:1;
+
+    position: absolute;
+    top:50%;
+    transform: translateY(-100%);
+    width:100%;
+    text-align:center;
+    font-size:5vw;    
+
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+  }
+
+
+  #first_drawing{
+    width:600px;
+    height:600px;
+    background: url(img/drawing1.svg) no-repeat center;
+    background-size: cover;
+    margin: auto;
+  }  
+
+  #second_drawing{
+    width:600px;
+    height:600px;
+    background: url(img/drawing2.svg) no-repeat center;
+    background-size: contain;
+    margin: auto;
+  }
+
+  #inscription{
+    opacity:0;
+
+    text-align:left;
+
+    width: 66.66666667%;
+    margin-left: 16.66666667%;
+
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+  }
+
+  #titre{
+    font-size: 5vw;
+    background: url(img/patate1.svg) no-repeat center;
+    background-size: contain;
+    margin: -127px;
+    margin-top:-90px;
+    padding: 150px;
+
+  }
+
+  #nextshow{
+    float:right;
+    background: url(img/patate2.svg) no-repeat center;
+    background-position: 0px 25px;
+    background-size: contain;
+    margin: -80px;
+    margin-top:10px;
+    
+    padding: 80px;
+
+    font-size: 1.8vw;
+  }
+
   .button{
     box-shadow: 0px -5px 0px 0px #999999;
     border: solid 2px white;
@@ -295,3 +365,16 @@ div.login input {
   31% {background: white;}
   100% {background: rgba(255,255,255,0);}
 }
+
+
+  @media (max-width:900px) {
+    #nextshow{
+      background-position: 0px 32px;
+      }
+  }
+
+    @media (max-width:500px) {
+    #nextshow{
+      background-position: 0px 43px;
+      }
+  }

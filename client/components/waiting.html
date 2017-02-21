@@ -3,37 +3,37 @@
 
   <!--<iframe src="http://on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com/stream/"></iframe>-->
 
-  <div class="container">
+  <div id="bonjour">
+  Bonjour
+  </div>
+
+  <div id="inscription">
     {{#if isModeSpectacle}}
-    <div class="alert-fixed">
+    <div>
       La représentation va commencer ou a commencé (TODO)
     </div>
     {{else}}
       {{#with nextRepresentation}}
-    <div class="alert-fixed">
-      La prochaine représentation commence le <span title="{{location}}">{{formatDateLeFrenchStyle date_start}}</span>.
+    <div id="nextshow">
+      La prochaine représentation commence le <br /> <span title="{{location}}">{{formatDateLeFrenchStyle date_start}}</span>.
     </div>
       {{/with}}
     {{/if}}
-    <div class="row">
-      <div class="col-md-offset-2 col-md-8 text-left">
-        <div class="inscription small">
-
+          
+          <br /><br /><br /><br />
+          <br /><br />
+          
           <p>
-          Bonjour<br /><br />
-          </p>
-          <p>
-          On traversera le pont une fois rendus à la rivière est un spectacle radio-diffusé. Ce qui implique qu’il y a en même temps des spectateurs·trices et des auditeurs·trices. Si vous êtes ici, c’est qu’il y a de fortes chances pour que vous soyez intéressé·e·s par l’expérience “radiophonique”.
+          <p id="titre">On traversera le pont une fois rendus à la rivière </p><br /><br /> est un spectacle radio-diffusé. Pour vous inscrire à une représentation, merci de lire ce qui suit &darr; &darr; &darr;
           </p>
 
-          <p>*petit dessin de samuel*</p>
+          <div id="first_drawing"></div>
 
           <p>
-          À quoi ça ressemble, d’être auditeur·trice ?
           Vous serez chez vous, le soir de la représentation, et vous entendrez ce qui se passe sur scène. C’est un spectacle qui a été écrit pour vous (enfin, pas seulement pour vous, aussi pour ceux·celles qui sont venu·e·s au théâtre, mais disons : pas seulement pour eux·elles)
           </p>
 
-          <p>*petit dessin de samuel*</p>
+          <div id="second_drawing"></div>
 
           <p>
           De quoi avez-vous besoin ?<br />
@@ -68,11 +68,6 @@
           </ul>
           Vous pouvez vous “inscrire”, en réalité ça ne vous engage à rien, mais comme ça nous on sait plus où moins combien de salms on peut espérer
           </p>
-
-
-        </div>
-      </div>
-    </div>
-  </div><!-- fin #container -->
+  </div><!-- fin #inscription -->
 
 </template>
