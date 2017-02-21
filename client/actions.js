@@ -473,3 +473,15 @@ gotonext = function(params){
   interrupt=false
   console.log("gotonext, ", params)
 }
+
+// m'ajouter à un pool de loterie
+addUserToLottery = function(params){
+  console.log('user?', Meteor.connection._lastSessionId, params);
+  var lotteryName = params;
+  if(lotteryName != "") {
+    cookies.set(lotteryName, Meteor.connection._lastSessionId);
+    em.setClient({ lotteryName: lotteryName, sessionId: Meteor.connection._lastSessionId });
+    em.emit('salmAddMeToLottery');
+  }
+
+}

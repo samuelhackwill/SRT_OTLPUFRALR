@@ -6,6 +6,8 @@ representations = new Meteor.Collection('representations');
 
 ambiances = new Meteor.Collection('ambiances');
 
+loteries = new Meteor.Collection('loteries');
+
 PhoneNumbers = new Meteor.Collection('phoneNumbers');
 
 var Schemas = {};
@@ -215,6 +217,48 @@ Schemas.ambiances = new SimpleSchema({
 });
 
 
+Schemas.loteries = new SimpleSchema({
+
+    name: {
+      type: String,
+      label: "Nom",
+      max: 200
+    },
+    ids: {
+      type: [String],
+      label: "ids des participants",
+      max: 200,
+      optional: true
+    },
+    messages: {
+      type: [Object],
+      label: "messages à envoyer et à qui",
+      max: 200,
+      optional: true,
+      blackbox: true
+    },
+    "created": {
+      type: Date,
+      label: "Date de création",
+      autoValue: function() {
+        if ( this.isInsert ) {
+          return new Date;
+        } 
+      }
+    },
+    "updated": {
+      type: Date,
+      label: "Date de modification",
+      autoValue: function() {
+        if ( this.isUpdate || this.isInsert || this.isInsert ) {
+          return new Date;
+        } 
+      }
+    }
+
+});
+
+
 Schemas.phoneNumbers = new SimpleSchema({
 
     "number": {
@@ -257,6 +301,7 @@ ContenusEcran.attachSchema(Schemas.ContenusEcran);
 superGlobals.attachSchema(Schemas.superGlobals);
 representations.attachSchema(Schemas.representations);
 ambiances.attachSchema(Schemas.ambiances);
+loteries.attachSchema(Schemas.loteries);
 PhoneNumbers.attachSchema(Schemas.phoneNumbers);
 
 
@@ -346,6 +391,39 @@ representations.allow({
 
 //permissions
 ambiances.allow({
+  insert: function () {
+
+    var loggedInUser = Meteor.user()
+
+    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+      throw new Meteor.Error(403, "Access denied")
+    }
+    return true; 
+  },
+  update: function () {
+
+    var loggedInUser = Meteor.user()
+
+    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+      throw new Meteor.Error(403, "Access denied")
+    }
+    return true; 
+  },
+  remove: function () {
+
+    var loggedInUser = Meteor.user()
+
+    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+      throw new Meteor.Error(403, "Access denied")
+    }
+    return true; 
+
+  }
+});
+
+
+//permissions
+loteries.allow({
   insert: function () {
 
     var loggedInUser = Meteor.user()

@@ -7,6 +7,7 @@ Template.jacky.onCreated(function() {
   this.autorun(() => {
     this.subscribe('allRepresentations');
     this.subscribe('allContenusEcran');
+    this.subscribe('allLoteries');
   });
 
 });
@@ -20,7 +21,8 @@ Template.jacky.onRendered(function () {
     if (!ready){ return; }
     let contnus = ContenusEcran.find().fetch();
     console.log("contnus", contnus, data);
-    data = ContenusEcran.findOne({name: "ce_jeudi_no_comment"}).data
+    // data = ContenusEcran.findOne({name: "ce_jeudi_no_comment"}).data
+    data = ContenusEcran.findOne({name: "data_test"}).data
     console.log('srt spectacle jacky rendered');
     console.log('data ?', data);
     console.log('ContenusEcran ?', ContenusEcran.find().fetch());
@@ -75,7 +77,16 @@ Template.jacky.onRendered(function () {
   }
 
 // });
+  function showMeTheButtons(){
 
+      // if(Roles.userIsInRole(Meteor.user(), "jacky_one")==true) {
+        console.log('showMeTheButtons');
+        $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
+        $('#sacbouttons').removeClass('invisible');
+        $('#sacbouttons').addClass('visible');
+      // }
+
+    }
 
 
   em.addListener('salmnext', function(what) {
@@ -141,6 +152,31 @@ Template.jacky.onRendered(function () {
       clearInterval(streamCheckInterval); 
       streamCheckInterval = null;
       console.log("stopping streamCheckInterval 2", streamCheckInterval);
+  }); 
+
+
+  em.addListener('salmGetMessage', function(what) {
+    console.log('salm get message', what);
+    if(what.name != "") { //checkons le nom de la loterie
+      var lotteryCookie = cookies.get(what.name);
+      if(lotteryCookie) { //le cookie de cette loterie est bien là
+        console.log('salm get message lotteryCookie', lotteryCookie);
+        Meteor.call('retrieveMessage', what._id, lotteryCookie, function(error, result) {
+          // 'result' is the method return value
+          if(error) console.log("error", error);
+          if(result) {
+            console.log("result", result);
+            switch(result) {
+              case 'showMeTheButtons':
+                showMeTheButtons();
+                break;
+              default:
+                break;
+            }
+          }
+        });
+      }
+    }
   }); 
   // console.log()
   // superGlobals.find({});

@@ -11,6 +11,7 @@ Template.admin.onCreated(function() {
     this.subscribe('allSuperGlobals');
     this.subscribe('allRepresentations');
     this.subscribe('allContenusEcran');
+    this.subscribe('allLoteries');
   });
 
 });
@@ -83,7 +84,8 @@ Template.admin.onRendered(function () {
     if (!ready){ return; }
     let contnus = ContenusEcran.find().fetch();
     console.log("showtime contnus", contnus, data);
-    data = ContenusEcran.findOne({name: "ce_jeudi_no_comment"}).data
+    // data = ContenusEcran.findOne({name: "ce_jeudi_no_comment"}).data
+    data = ContenusEcran.findOne({name: "data_test"}).data
     console.log('showtime data ?', data);
     console.log('showtime ContenusEcran ?', ContenusEcran.find().fetch());
     var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
@@ -435,6 +437,37 @@ Template.phonesList.helpers({
     };
   }
 });
+Template.loteriesList.helpers({
+  listLoteries:function(){
+    console.log("loteries??");
+    return loteries.find();
+  },
+  quickRemoveButtonOnError: function () {
+    return function (error) { alert("BOO!"); console.log(error); };
+  },
+  quickRemoveButtonOnSuccess: function () {
+    return function (result) { alert("YAY!"); console.log(result); };
+  },
+  quickRemoveButtonBeforeRemove: function () {
+    return function (collection, id) {
+      var doc = collection.findOne(id);
+      if (confirm('Really delete "' + doc.name + '"?')) {
+        this.remove();
+      }
+    };
+  },
+
+  dataArray: function (obj) {
+    var arr = [], datas = obj;
+    for (var key in datas) {
+        var obj = {};
+        obj.key = key;
+        obj.value = datas[key];
+        arr.push(obj);
+    }
+    return arr;
+  }
+});
 
 Template.showtime.events({
 
@@ -584,7 +617,36 @@ Template.showtime.events({
 
 
 
+  },
 
+});
+
+
+Template.loteriesList.events({
+
+  'click button.pick-random-one': function(event){
+
+    console.log('click button.pick-random-one', $(event.currentTarget).val(), this);
+
+    args = {_id: this._id}
+
+    Meteor.call('chooseRandomONE', args);
+  },
+  'click button.assign-random-phoneNumbers': function(event){
+
+    console.log('click button.assign-random-phoneNumbers', $(event.currentTarget).val(), this);
+
+    args = {_id: this._id}
+
+    Meteor.call('assignRandomPhoneNumbers', args);
+  },
+  'click button.deliver-messages': function(event){
+
+    console.log('click button.deliver-messages', $(event.currentTarget).val(), this);
+
+    args = {_id: this._id, name: this.name}
+    em.setClient(args);
+    em.emit('adminDeliverMessages');
   }
 
 });

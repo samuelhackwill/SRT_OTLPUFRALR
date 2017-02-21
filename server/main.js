@@ -15,6 +15,9 @@ Meteor.publish('allRepresentations', function () {
 Meteor.publish('allAmbiances', function () {
   return ambiances.find();
 });
+Meteor.publish('allLoteries', function () {
+  return loteries.find();
+});
 Meteor.publish('allPhoneNumbers', function () {
   return PhoneNumbers.find();
 });
@@ -139,6 +142,25 @@ if (Meteor.isServer) {
     }
   });
 
+
+  em.addListener('salmAddMeToLottery', function(/* client */) {
+    console.log('SALM REQUEST ADD TO LOTTERY', _.toArray(arguments), arguments[0]);
+    // em.setClient({ reponse: arguments[0].reponse });
+    var args = arguments[0];
+    if(args) {
+      // em.emit('salmForceGoTo', args);
+      Meteor.call('addUserToLottery', args);
+    }
+  });
+
+  em.addListener('adminDeliverMessages', function(/* client */) {
+    console.log('ADMIN DELIVER MESSAGES', _.toArray(arguments), arguments[0]);
+    // em.setClient({ reponse: arguments[0].reponse });
+    var args = arguments[0];
+    if(args) {
+      em.emit('salmGetMessage', args);
+    }
+  });
 
   
 
@@ -603,7 +625,7 @@ Meteor.methods({
     console.log("newAmbiance", obj);
     ambiances.insert(obj, { filter: false });
   },
-  editRepresentation: function (args) {
+  editAmbiances: function (args) {
     var loggedInUser = Meteor.user()
 
     if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
@@ -670,6 +692,174 @@ Meteor.methods({
       Roles.addUsersToRoles(id, [role]);
     }
   }*/
+  addUserToLottery: function(args){
 
+    console.log("addUserToLottery server", args);
+    var lotteryName = args.lotteryName;
+    if(lotteryName != "") {
+      var lottery = loteries.findOne({name: lotteryName});
+      console.log("lottery", lottery);
+      if(!lottery) {
+        //créer la loterie
+        var lotteryId = loteries.insert({name: lotteryName, ids: []});
+      } else {
+        var lotteryId = lottery._id;
+      }
+      console.log("lotteryId", lotteryId);
+      if(args.sessionId != "") {
+        lottery = loteries.findOne({_id: lotteryId});
+        if(lottery) {
+          if(lottery.ids.indexOf(args.sessionId) === -1) {
+            console.log('id pas déjà dans la loterie, ajoutons le');
+            loteries.update(lotteryId, { $push: { ids: args.sessionId }});
+          } else {
+            console.log('cet id est deja dans la loterie');
+          }
+        }
+      }
+      
+    }
+    // var phoneNumber = PhoneNumbers.findOne(obj);
+    // console.log("phoneNumber exists ?", phoneNumber);
+    // if(phoneNumber) {
+    //   console.log("it exists already. increment number of calls");
+    //   PhoneNumbers.update(phoneNumber._id, {
+    //     $inc: { calls: 1 },
+    //   });
+    // } else {
+    //   PhoneNumbers.insert(obj, { filter: false });
+    // }
+  },
+
+
+  chooseRandomONE: function(args){
+
+    console.log("chooseRandomONE server", args);
+    var nbPeopleToChoose = 1;
+    var lotteryId = args._id;
+    if(lotteryId != "") {
+
+      var lottery = loteries.findOne({_id: lotteryId});
+      console.log("lottery", lottery);
+      if(!lottery) {
+        //créer la loterie
+        console.log("couldn't find lottery");
+      } else {
+
+        var random = _.sample(lottery.ids, nbPeopleToChoose);
+        console.log("random", random);
+        var messages = [];
+        for(i=0;i<random.length;i++){
+          var obj = {};
+          obj[random[i]] = 'showMeTheButtons';
+          messages.push(obj);
+        }
+        if(messages.length>0){
+          console.log('update lottery messages', messages);
+          loteries.update(lottery._id, 
+            {  $set: { messages: messages} },
+            { filter: false }
+          );
+        }
+
+        // return Collection.find({_id: random && random._id}
+        // var lotteryId = lottery._id;
+      }
+      
+    }
+  },
+
+
+  assignRandomPhoneNumbers: function(args){
+
+    console.log("assignRandomPhoneNumbers server", args);
+    // var nbPeopleToChoose = 1;
+    var lotteryId = args._id;
+    if(lotteryId != "") {
+
+      var lottery = loteries.findOne({_id: lotteryId});
+      console.log("lottery", lottery);
+      if(!lottery) {
+        //y'a pas cette loterie
+        console.log("couldn't find lottery");
+      } else {
+
+
+        //mélanger les ids des participants pour avoir un ordre aléatoire
+        var random = _.shuffle(lottery.ids);
+        console.log("random", random);
+
+        //récupérer les numéros des SAT qui ont appelés
+        var currentRepresentation = null;
+        modeSpectacle = getSuperGlobal("modeSpectacle");
+        if(modeSpectacle) { //le spectacle va bientôt commencer ou a déjà commencé
+          //récupérons la representation du jour
+          var now = new Date();
+          todayStart = new Date(now.setHours(0,0,0,0));
+          todayEnd = new Date(now.setHours(24,0,0,0));
+          console.log("router checkPhone - today is between", todayStart, todayEnd);
+          var foundRepresentation = representations.findOne({ 
+            date_start: { 
+              $gte: todayStart,
+              $lt: todayEnd
+            },
+            "status": /(pending|running)/
+          }, {sort: {date_start: 1}});
+          console.log("router checkPhone - representation?", foundRepresentation);
+          if(foundRepresentation) { //representation du jour trouvée
+            console.log("router checkPhone - representation du jour trouvée");
+            var currentRepresentation = foundRepresentation._id;
+            console.log("router checkPhone - representation?", currentRepresentation);
+          }
+          if(currentRepresentation) {
+
+            console.log("representation en cours = ", currentRepresentation);
+            var phones = PhoneNumbers.find({representation: currentRepresentation}).fetch()
+            var phonesRandom = _.shuffle(phones);
+            console.log("numeros de tél trouvés pour cette representation", phones, phonesRandom);
+            var messages = [];
+            for(i=0;i<random.length;i++){
+              var obj = {};
+              obj[random[i]] = phonesRandom[i].number;
+              messages.push(obj);
+            }
+            if(messages.length>0){
+              console.log('update lottery messages', messages);
+              loteries.update(lottery._id, 
+                {  $set: { messages: messages} },
+                { filter: false }
+              );
+            }
+          }
+        }
+
+        // return Collection.find({_id: random && random._id}
+        // var lotteryId = lottery._id;
+      }
+      
+    }
+  },
+
+  retrieveMessage: function(lotteryId, userCookie){
+    if(lotteryId && userCookie) {
+      var lottery = loteries.findOne({_id: lotteryId});
+      if(lottery){
+        console.log("retrieveMessage lottery", lottery);
+        var theMessage = _.find(lottery.messages, function(message){ 
+          console.log("message", message, userCookie in message);
+          return userCookie in message; 
+        });
+        console.log('theMessage', theMessage);
+        if(theMessage) {
+          return theMessage[userCookie];
+        }
+        // if(lottery.messages[userCookie] && lottery.messages[userCookie] != "") {
+
+          // return 
+        // }
+        // var messageToReturn = lottery.messages
+      }
+    }
+  }
 
 });

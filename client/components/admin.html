@@ -62,6 +62,24 @@
     <div class="row">
       {{> screen}}
     </div>
+
+
+
+
+    <div class="row">
+        <h2>Loteries <button data-toggle="collapse" data-target="#loteries">▾</button></h2>
+
+        <div id="loteries" class="collapse in">
+
+          <div class="center-block col-md-10">
+                {{> loteriesList}}
+          </div>
+        </div>
+    </div>
+
+
+
+
   </div>  
 
 
@@ -308,5 +326,58 @@
             </tr>
         {{/each}}
         </tbody>
+    </table>
+</template>
+
+
+
+<template name="loteriesList">
+
+    <table class="table table-condensed table-striped table-hover">
+        <!--<thead>
+            <tr>
+                <th>Nom</th>
+                <th><span class="small">Ids</span></th>
+                <th><span class="small">Created</span></th>
+                <th><span class="small">Modified</span></th>
+                <th><span class="small">X</span></th>
+            </tr>
+        </thead>-->
+        {{#each listLoteries}}
+          <thead>
+            <tr>
+                <th colspan="3">Nom</th>
+                <th><span class="small">Created</span></th>
+                <th><span class="small">Modified</span></th>
+                <th><span class="small">X</span></th>
+            </tr>
+            <tr>
+                <th class="bold" colspan="3">{{name}}<br /><span class="small">{{_id}}</span></th>
+                <td class="small"><span class="small">{{created}}</span></td>
+                <td class="small"><span class="small">{{updated}}</span></td>
+                <td>{{> quickRemoveButton collection="loteries" _id=this._id onError=quickRemoveButtonOnError onSuccess=quickRemoveButtonOnSuccess beforeRemove=quickRemoveButtonBeforeRemove class="btn btn-danger"}}</td>
+            </tr>
+            <tr>
+                <th colspan="3"><span class="small">Ids</span></th>
+                <th colspan="3"><span class="small">messages
+                  <br /><button class="pick-random-one">montrer les boutons à 1 personne au hasard</button>
+                  <br /><button class="assign-random-phoneNumbers">assigner des numéros au hasard</button>
+                  <br /><button class="deliver-messages">envoyer les messages</button></span>
+                </th>
+            </tr>
+          </thead>
+        <tbody>
+            <tr>
+                <td colspan="3" class="bold">{{#each dataArray ids}}{{this.value}}<br />{{/each}}</td>
+                <td colspan="3" class="bold">
+                {{#each dataArray messages}}
+                  {{#each dataArray this.value}}
+                    {{this.key}}: {{this.value}}<br />
+                  {{/each}}
+                {{/each}}
+                </td>
+            </tr>
+        </tbody>
+        {{/each}}
     </table>
 </template>
