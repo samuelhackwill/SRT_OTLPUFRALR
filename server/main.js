@@ -814,21 +814,55 @@ Meteor.methods({
           if(currentRepresentation) {
 
             console.log("representation en cours = ", currentRepresentation);
-            var phones = PhoneNumbers.find({representation: currentRepresentation}).fetch()
-            var phonesRandom = _.shuffle(phones);
-            console.log("numeros de tél trouvés pour cette representation", phones, phonesRandom);
-            var messages = [];
-            for(i=0;i<random.length;i++){
-              var obj = {};
-              obj[random[i]] = phonesRandom[i].number;
-              messages.push(obj);
-            }
-            if(messages.length>0){
-              console.log('update lottery messages', messages);
-              loteries.update(lottery._id, 
-                {  $set: { messages: messages} },
-                { filter: false }
-              );
+            var phones = PhoneNumbers.find({representation: currentRepresentation}).fetch();
+            if(phones) {
+              var messages = [];
+              var phonesRandom = _.shuffle(phones);
+              console.log("numeros de tél trouvés pour cette representation", phones, phonesRandom);
+              //TODO + de num -> envoyer plusieurs num a chaque SALM (max 4)
+              if(phones.length > random.length) {
+                console.log("+ de nums de tél que de SALM volontaires pour appeler");
+                var nbPhonesToSend = Math.ceil(phones.length/random.length);
+                console.log("nbPhonesToSend", phones.length, random.length, phones.length/random.length, nbPhonesToSend);
+
+                var groupSize = nbPhonesToSend > 4 ? 4 : nbPhonesToSend;
+
+                var phoneGroups = _.map(phonesRandom, function(item, index){
+                  return index % groupSize === 0 ? phonesRandom.slice(index, index + groupSize) : null; 
+                }).filter(function(item){ 
+                  return item; 
+                });
+                console.log("phones groups", phoneGroups);
+                for(i=0;i<random.length;i++){
+                  if(phoneGroups.length>i) {
+                    var obj = {};
+                    var numbers = _.map(phoneGroups[i], function(a) {return "'"+a.number+"'";});
+                    console.log("numbers", numbers, numbers.join(','));
+                    obj[random[i]] = 'displayPhoneNumbers(['+numbers.join(',')+'])';
+                    messages.push(obj);
+                  }
+                }
+
+              } else if(phones.length <= random.length){
+                // - de num (ou pareil)-> envoyer 1 à chaque SALM tant que y'a des nums 
+                
+                for(i=0;i<random.length;i++){
+                  if(phonesRandom.length>i) {
+                    var obj = {};
+                    obj[random[i]] = "displayPhoneNumbers(['"+phonesRandom[i].number+"']);";
+                    messages.push(obj);
+                  }
+                }
+              }
+              //TODO et sinon envoyer message 'désolé y'avait pas assez de numéros à distribuer'
+              if(messages.length>0){
+                console.log('update lottery messages', messages);
+                loteries.update(lottery._id, 
+                  {  $set: { messages: messages} },
+                  { filter: false }
+                );
+              }
+
             }
           }
         }

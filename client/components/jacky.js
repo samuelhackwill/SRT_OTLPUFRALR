@@ -166,10 +166,14 @@ Template.jacky.onRendered(function () {
           if(error) console.log("error", error);
           if(result) {
             console.log("result", result);
-            switch(result) {
+            var resultParsed = result.replace(/(\w+)\(?.*/, '$1');
+            console.log("resultParsed", resultParsed);
+            switch(resultParsed) {
               case 'showMeTheButtons':
                 showMeTheButtons();
                 break;
+              case 'displayPhoneNumbers':
+                console.log("DISPLAY PHONE NUMBERS");
               default:
                 break;
             }
@@ -485,6 +489,9 @@ Template.jacky.events({
     Meteor.call('setSuperGlobal', {name: 'cuppasDec'});
   },
 
+  'click #finishCuppa': function(){
+    Meteor.call('setSuperGlobal', {name: 'finishCuppa'});
+  },
   'click #oui': function(){
     console.log('salmclick oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
     em.setClient({ reponse: 'oui' });
