@@ -120,7 +120,7 @@ Template.admin.onRendered(function () {
     } else if(what.mode == 'multiPlayer') {
       //mode multi - send midi
       output.send([144, 65, 91]);
-      un_note = setTimeout(output.send([144, 50, 0]),1500)
+      un_note = setTimeout(output.send([144, 65, 0]),1500)
     }
   }); 
 
@@ -136,7 +136,7 @@ Template.admin.onRendered(function () {
     } else if(what.mode == 'multiPlayer') {
       //mode multi - send midi
       output.send([144, 67, 91]);
-      un_note = setTimeout(output.send([144, 51, 0]),1500)
+      un_note = setTimeout(output.send([144, 67, 0]),1500)
     }
   }); 
 
@@ -153,7 +153,7 @@ Template.admin.onRendered(function () {
     } else if(what.mode == 'multiPlayer') {
       //mode multi - send midi
       output.send([144, 69, 91]);
-      un_note = setTimeout(output.send([144, 52, 0]),1500)
+      un_note = setTimeout(output.send([144, 69, 0]),1500)
     }
   }); 
 
