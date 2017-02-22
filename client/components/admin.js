@@ -563,6 +563,16 @@ Template.showtime.events({
   'click #hide-the-ONE': function(){
       em.emit('adminhidetheone');
   },
+  'click #show-the-ONE-single-training': function(){
+      em.emit('adminshowtheone-single-training');
+  },
+  'click #show-the-ONE-multi-training': function(){
+      em.emit('adminshowtheone-multi-training');
+  },
+
+  'click #hide-the-ONE-training': function(){
+      em.emit('adminhidetheone-training');
+  },
 /*
   'submit #addcompteur': function(event){
 

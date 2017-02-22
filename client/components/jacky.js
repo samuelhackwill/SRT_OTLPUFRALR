@@ -74,6 +74,7 @@ Template.jacky.onRendered(function () {
 
   function hideTheOneButtons(){
     $('#oui, #non, #euh').hide();
+    $('#sacbouttons input, #sacbouttons button').hide();
   }
 
 // });
