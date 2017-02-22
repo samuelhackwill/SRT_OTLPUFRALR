@@ -89,22 +89,42 @@ Template.waiting.events({
 Template.waiting.helpers({
   listRepresentations:function(){
     var now = new Date();
+    var todayStart = new Date(now.setHours(0,0,0,0));
+    var todayEnd = new Date(now.setHours(24,0,0,0));
     console.log("listRepresentations??", representations.find().fetch());
     return representations.find({ 
-      date_start: { $gte: now },
+        date_start: { 
+          $gte: todayStart
+          // ,
+          // $lt: todayEnd
+        },
       "status": /(pending|running)/
     }, {sort: {date_start: 1}});
   },
   nextRepresentation:function(){
     // var now = new Date('2017-03-02T00:00:00.000Z');
+    var currentRepresentation = null;
+    // modeSpectacle = getSuperGlobal("modeSpectacle");
+    // if(modeSpectacle) { //le spectacle va bientôt commencer ou a déjà commencé
+      //récupérons la representation du jour
     var now = new Date();
-    console.log("nextRepresentations??", now, representations.find().fetch());
-    var theNextRepresentation = representations.findOne({ 
-      date_start: { $gte: now },
+    var todayStart = new Date(now.setHours(0,0,0,0));
+    var todayEnd = new Date(now.setHours(24,0,0,0));
+    console.log("router checkPhone - today is between", todayStart, todayEnd);
+    var foundRepresentation = representations.findOne({ 
+      date_start: { 
+        $gte: todayStart,
+        $lt: todayEnd
+      },
       "status": /(pending|running)/
     }, {sort: {date_start: 1}});
-    console.log("nextRepresentation=",theNextRepresentation);
-    return theNextRepresentation
+    console.log("router checkPhone - representation?", foundRepresentation);
+    if(foundRepresentation) { //representation du jour trouvée
+      console.log("router checkPhone - representation du jour trouvée");
+      theNextRepresentation = foundRepresentation;
+      console.log("nextRepresentation=",theNextRepresentation);
+      return theNextRepresentation
+    }
   },
   alreadyParticipating: function(){
 
