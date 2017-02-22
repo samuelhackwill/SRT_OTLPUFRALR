@@ -469,14 +469,16 @@ gotobookmark = function(where){
 replaceNext = function(params){
   console.log("replace next ", params)
   nextsrt = compteur + 1
-  //var addobject = {text:params, type: "text"}
+  var string = params
+  var stringpropre = string.replace(/\_/g, ' ');
+  var addobject = {text:stringpropre, type: "text"}
   data.splice(nextsrt, 0, params, [type="text"])
 
 }
 
 addCuppasButtons = function(){
   console.log("addCuppasButtons yo yo yo yo yo")
-  newBoutton(["finish_a_cup","c'est_bon_mon_thé_est_prêt","gotonext('1')", "destroy(id)"])
+  newBoutton(["finishCuppa","c'est_bon_mon_thé_est_prêt","gotonext('1')", "destroy(id)"])
 }
 
 gotonext = function(params){
