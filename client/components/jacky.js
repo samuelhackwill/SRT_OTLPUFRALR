@@ -62,12 +62,12 @@ Template.jacky.onRendered(function () {
 
   function showTheOneButtons(){
 
-    if(Roles.userIsInRole(Meteor.user(), "jacky_one")==true) {
+    // if(Roles.userIsInRole(Meteor.user(), "jacky_one")==true) {
       console.log('showTheOneButtons');
       $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
       $('#sacbouttons').removeClass('invisible');
       $('#sacbouttons').addClass('visible');
-    }
+    // }
 
   }
 
@@ -494,20 +494,39 @@ Template.jacky.events({
   },
   'click #oui': function(){
     console.log('salmclick oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    em.setClient({ reponse: 'oui' });
+    em.setClient({ reponse: 'oui', mode: 'singlePlayer' });
     em.emit('salmclick');
     console.log('salmclick emmited');
     console.log('salmclick emmited oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
   },
   'click #non': function(){
     console.log('salmclick non', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    em.setClient({ reponse: 'non' });
+    em.setClient({ reponse: 'non', mode: 'singlePlayer' });
     em.emit('salmclick');
     console.log('salmclick emmited non', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
   },
   'click #euh': function(){
     console.log('salmclick euh', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    em.setClient({ reponse: 'euh' });
+    em.setClient({ reponse: 'euh', mode: 'singlePlayer' });
+    em.emit('salmclick');
+    console.log('salmclick emmited euh', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  },
+  'click #ouiMP': function(){
+    console.log('salmclick oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+    em.setClient({ reponse: 'oui', mode: 'multiPlayer' });
+    em.emit('salmclick');
+    console.log('salmclick emmited');
+    console.log('salmclick emmited oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  },
+  'click #nonMP': function(){
+    console.log('salmclick non', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+    em.setClient({ reponse: 'non', mode: 'multiPlayer' });
+    em.emit('salmclick');
+    console.log('salmclick emmited non', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  },
+  'click #euhMP': function(){
+    console.log('salmclick euh', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+    em.setClient({ reponse: 'euh', mode: 'multiPlayer' });
     em.emit('salmclick');
     console.log('salmclick emmited euh', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
   },

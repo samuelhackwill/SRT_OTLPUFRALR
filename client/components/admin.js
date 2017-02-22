@@ -107,25 +107,51 @@ Template.admin.onRendered(function () {
   em.addListener('salmreponseoui', function(what) {
 
     console.log('salm oui!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    output.send([144, 50, 91]);
-    un_note = setTimeout(output.send([144, 50, 0]),1500)
-    //var son = new Audio('oui.ogg');
-    //son.addEventListener('playing', function(){
-    //  console.log('oui playing', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    //});
-    //son.play();
+    if(what.mode == 'singlePlayer') {
+      //mode single - play sound
+      var son = new Audio('oui.ogg');
+      son.addEventListener('playing', function(){
+       console.log('oui playing', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+      });
+      son.play();
+    } else if(what.mode == 'multiPlayer') {
+      //mode multi - send midi
+      output.send([144, 50, 91]);
+      un_note = setTimeout(output.send([144, 50, 0]),1500)
+    }
   }); 
 
   em.addListener('salmreponsenon', function(what) {
     console.log('salm non!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    output.send([144, 51, 91]);
-    un_note = setTimeout(output.send([144, 51, 0]),1500)
+    if(what.mode == 'singlePlayer') {
+      //mode single - play sound
+      var son = new Audio('non.ogg');
+      son.addEventListener('playing', function(){
+       console.log('non playing', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+      });
+      son.play();
+    } else if(what.mode == 'multiPlayer') {
+      //mode multi - send midi
+      output.send([144, 51, 91]);
+      un_note = setTimeout(output.send([144, 51, 0]),1500)
+    }
   }); 
 
   em.addListener('salmreponseeuh', function(what) {
     console.log('salm euh!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    output.send([144, 52, 91]);
-    un_note = setTimeout(output.send([144, 52, 0]),1500)
+
+    if(what.mode == 'singlePlayer') {
+      //mode single - play sound
+      var son = new Audio('euuuh.ogg');
+      son.addEventListener('playing', function(){
+       console.log('euh playing', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+      });
+      son.play();
+    } else if(what.mode == 'multiPlayer') {
+      //mode multi - send midi
+      output.send([144, 52, 91]);
+      un_note = setTimeout(output.send([144, 52, 0]),1500)
+    }
     // console.log('SERVER HI', arguments[0].$inc, Object.keys(arguments[0].$inc)[0], _.toArray(arguments));
 
     // var choice = parseInt(Object.keys(arguments[0].$inc)[0].replace(/(choices\.|\.votes)/g, ''));
@@ -258,9 +284,9 @@ Template.admin.onRendered(function () {
     // if(compteur < data.length-1){
       window.clearTimeout(autonextcontainer)
       compteur +=1
-      next();
       em.setClient({ compteur: compteur });
       em.emit('adminnext');
+      next();
     // }
   }
 

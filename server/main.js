@@ -55,9 +55,11 @@ if (Meteor.isServer) {
     console.log('HELLO', _.toArray(arguments), arguments[0].reponse, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
     // em.setClient({ reponse: arguments[0].reponse });
     var reponse = arguments[0].reponse;
+    var mode = arguments[0].mode;
+    var args = {mode: mode}
     if(reponse) {
       console.log('emit salmreponse '+reponse, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-      em.emit('salmreponse'+reponse);
+      em.emit('salmreponse'+reponse, args);
     }
   });
 
