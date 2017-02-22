@@ -104,8 +104,11 @@ Template.admin.onRendered(function () {
   */
   console.log('em', em);
 
-  em.addListener('salmreponseoui', function(what) {
 
+  em.addListener('salmreponseoui', function(what) {
+    //console.log('salm euh!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+    //output.send([144, 69, 91]);
+    //un_note = setTimeout(output.send([144, 52, 0]),1500)
     console.log('salm oui!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
     if(what.mode == 'singlePlayer') {
       //mode single - play sound
@@ -116,7 +119,7 @@ Template.admin.onRendered(function () {
       son.play();
     } else if(what.mode == 'multiPlayer') {
       //mode multi - send midi
-      output.send([144, 50, 91]);
+      output.send([144, 65, 91]);
       un_note = setTimeout(output.send([144, 50, 0]),1500)
     }
   }); 
@@ -132,7 +135,7 @@ Template.admin.onRendered(function () {
       son.play();
     } else if(what.mode == 'multiPlayer') {
       //mode multi - send midi
-      output.send([144, 51, 91]);
+      output.send([144, 67, 91]);
       un_note = setTimeout(output.send([144, 51, 0]),1500)
     }
   }); 
@@ -149,14 +152,9 @@ Template.admin.onRendered(function () {
       son.play();
     } else if(what.mode == 'multiPlayer') {
       //mode multi - send midi
-      output.send([144, 52, 91]);
+      output.send([144, 69, 91]);
       un_note = setTimeout(output.send([144, 52, 0]),1500)
     }
-    // console.log('SERVER HI', arguments[0].$inc, Object.keys(arguments[0].$inc)[0], _.toArray(arguments));
-
-    // var choice = parseInt(Object.keys(arguments[0].$inc)[0].replace(/(choices\.|\.votes)/g, ''));
-    // var sounds = ['oui.ogg', 'non.ogg', 'euuuh.ogg'];
-    // var son = new Audio(sounds[choice]).play();
   }); 
 
 
