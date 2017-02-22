@@ -15,17 +15,14 @@ Template.waiting.onCreated(function() {
 
 Template.waiting.onRendered(function () {
 
-  // ON EST PAS PRÊÊÊÊTS
-    // console.log("splash")
 
-    // autonextcontainer = setTimeout(function(){
-    // $("#inscription").css("opacity", "1")
-    // $("#bonjour").css("opacity", "0")
-    //  },1500)
+    console.log("splash")
 
+    autonextcontainer = setTimeout(function(){
+    $("#inscription").css("opacity", "1")
+    $("#bonjour").css("opacity", "0")
+     },1500)
 
-  //  $("#inscription").css("opacity", "1")
-  //  $("#bonjour").css("opacity", "0")
 
     console.log("waiting", new Date());
 /*
