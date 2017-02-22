@@ -466,6 +466,10 @@ gotobookmark = function(where){
   }
 }
 
+addCuppasButtons = function(){
+  console.log("là ajoute les boutons pour dire que t'as fini ton thé")
+}
+
 gotonext = function(params){
   var bonus = parseInt(params)
   compteur += bonus
