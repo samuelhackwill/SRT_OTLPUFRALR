@@ -29,19 +29,19 @@ Template.admin.onRendered(function () {
     console.log(whichEtat)
 
 
-  if(event.data[0]==144 && event.data[1]==49){
-    console.log("ca_va_peter cote client")
-    em.emit("ca_va_peter")
-    // donc là il faut instead qu'il appelle une fonction serveur qui fasse claquer un orage chez tous 
-    // les clients
-  }
+    if(event.data[0]==144 && event.data[1]==49){
+      console.log("ca_va_peter cote client")
+      em.emit("ca_va_peter")
+      // donc là il faut instead qu'il appelle une fonction serveur qui fasse claquer un orage chez tous 
+      // les clients
+    }
 
-  if(event.data[0]==144 && event.data[1]==45){
-    em.setClient({ key: whichEtat });
-    em.emit("new_ambiance")
-  }
+    if(event.data[0]==144 && event.data[1]==45){
+      em.setClient({ key: whichEtat });
+      em.emit("new_ambiance")
+    }
 
-  console.log(event.data)
+    console.log(event.data)
   }
 
   output = null
@@ -90,6 +90,27 @@ Template.admin.onRendered(function () {
     console.log('showtime ContenusEcran ?', ContenusEcran.find().fetch());
     var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
     console.log("showtime isItPowerToThePeople", isItPowerToThePeople);
+
+    //recup compteur si on est en mode spectacle (par ex si on reload la page par inadvertance
+    var modeSpectacle = getSuperGlobal("modeSpectacle");
+    console.log('admin! compteur', compteur, "modeSpectacle", modeSpectacle);
+    if(modeSpectacle) {
+      console.log('admin! mode spectacle', compteur);
+      //si on était en mode prendre le pouvoir, récupérer le compteur du cookie (= reprendre ou on en était)
+      if(!isItPowerToThePeople) { //pouvoir à l'admin
+        if(cookies.get('compteurAdmin') != compteur) {
+          console.log('admin! compteurAdmin!=compteur');
+          compteur = parseInt(cookies.get('compteurAdmin'));
+          $('#currentCompteur').text(compteur);
+          console.log('admin! compteur set to', compteur);
+        }
+      }
+
+    } else {
+      //on est pas en mode spectacle reset compteur
+      cookies.set('compteurAdmin', compteur);
+
+    }
     // rawTextToJson();
   // console.log(Template.instance());
     // zoupageJSON(dataFromDB, data);
@@ -282,6 +303,14 @@ Template.admin.onRendered(function () {
     // if(compteur < data.length-1){
       window.clearTimeout(autonextcontainer)
       compteur +=1
+      var modeSpectacle = getSuperGlobal("modeSpectacle");
+      var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
+      console.log("adminNext modeSpectacle?", modeSpectacle, "isItPowerToThePeople?", isItPowerToThePeople);
+      if(modeSpectacle && !isItPowerToThePeople && parseInt(cookies.get('compteurAdmin')) != compteur) {
+        console.log("admin next compteur set cookie", compteur)
+        cookies.set('compteurAdmin', compteur);
+      }
+      $('#currentCompteur').text(compteur);
       em.setClient({ compteur: compteur });
       em.emit('adminnext');
       next();
@@ -430,6 +459,9 @@ Template.showtime.helpers({
     }
     return arr;
   },
+  compteurAdmin: function(){
+    return compteur;
+  }
 });
 
 Template.phonesList.helpers({
@@ -651,10 +683,34 @@ Template.showtime.events({
 
 
 
-  },
+  }
 
 });
 
+
+
+Template.admin.events({
+
+  'click input#setCompteur': function(){
+    console.log('setCompteur', $('#adminCompteur').val());
+    compteur = parseInt($('#adminCompteur').val())-1;
+    //fake adminNext()
+    window.clearTimeout(autonextcontainer)
+    compteur +=1
+    var modeSpectacle = getSuperGlobal("modeSpectacle");
+    var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
+    console.log("adminNext modeSpectacle?", modeSpectacle, "isItPowerToThePeople?", isItPowerToThePeople);
+    if(modeSpectacle && !isItPowerToThePeople && parseInt(cookies.get('compteurAdmin')) != compteur) {
+      console.log("admin next compteur set cookie", compteur)
+      cookies.set('compteurAdmin', compteur);
+    }
+    $('#currentCompteur').text(compteur);
+    em.setClient({ compteur: compteur });
+    em.emit('adminnext');
+    next();
+  }
+
+});
 
 Template.loteriesList.events({
 
