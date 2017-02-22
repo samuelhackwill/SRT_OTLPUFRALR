@@ -15,12 +15,13 @@ Template.waiting.onCreated(function() {
 
 Template.waiting.onRendered(function () {
 
-    console.log("splash")
+  // ON EST PAS PRÊÊÊÊTS
+    // console.log("splash")
 
-          autonextcontainer = setTimeout(function(){
-    $("#inscription").css("opacity", "1")
-    $("#bonjour").css("opacity", "0")
-      },1500)
+    // autonextcontainer = setTimeout(function(){
+    // $("#inscription").css("opacity", "1")
+    // $("#bonjour").css("opacity", "0")
+    //  },1500)
 
 
   //  $("#inscription").css("opacity", "1")
