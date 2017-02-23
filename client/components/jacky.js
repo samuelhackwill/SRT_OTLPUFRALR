@@ -1,5 +1,6 @@
 
 var streamCheckInterval;
+var caughtUp = false;
 
 Template.jacky.onCreated(function() {
 
@@ -26,28 +27,8 @@ Template.jacky.onRendered(function () {
     console.log('srt spectacle jacky rendered');
     console.log('data ?', data);
     console.log('ContenusEcran ?', ContenusEcran.find().fetch());
-
-    console.log("checking compteur", compteur, "cookie.compteur", cookies.get('compteur'), modeSpectacle);
-    //si on est en mode spectacle, que l'admin a le pouvoir
-    var isPowerToThePeople = getSuperGlobal('powerToThePeople');
-    if(modeSpectacle && !isPowerToThePeople) {
-      //et si il y a un compteur enregistré
-      if(cookies.get('compteur') !== null) compteur = parseInt(cookies.get('compteur'));
-      if(compteur != -1) {
-        //revenir où on était dans le spectacle
-        next();
-      }
-
-      //ambiance?
-      var whichAmbiance = getSuperGlobal("whichAmbiance", "");
-      if(whichAmbiance != "") { //il y a une ambiance en cours
-        //passons à cette ambiance
-        var newAmbiance = ambiances.findOne({name: whichAmbiance});
-        if(newAmbiance) {
-          console.log("set Ambiance", newAmbiance.value)
-          changeImg(newAmbiance.value)
-        }
-      }
+    if(data) {
+      catchUpWithTheShow();
     }
 
     //
@@ -56,6 +37,40 @@ Template.jacky.onRendered(function () {
     // zoupageJSON(dataFromDB, data);
     // autonext(2000);
   });
+
+  function catchUpWithTheShow(){
+    console.log('catchUpWithTheShow caughtUp?', caughtUp);
+    if(!caughtUp) {
+      caughtUp = true;
+      console.log("checking compteur", compteur, "cookie.compteur", cookies.get('compteur'), modeSpectacle);
+      //si on est en mode spectacle, que l'admin a le pouvoir
+      var isPowerToThePeople = getSuperGlobal('powerToThePeople');
+      if(modeSpectacle && !isPowerToThePeople) {
+        //et si il y a un compteur enregistré
+        var compteurAdmin = getSuperGlobal('compteurAdmin');
+        console.log("checking compteurAdmin", compteurAdmin);
+
+        if(null !== compteurAdmin) compteur = parseInt(compteurAdmin);
+        if(compteur != -1) {
+          //revenir où on était dans le spectacle
+          next();
+        }
+
+        //ambiance?
+        var whichAmbiance = getSuperGlobal("whichAmbiance", "");
+        if(whichAmbiance != "") { //il y a une ambiance en cours
+          //passons à cette ambiance
+          var newAmbiance = ambiances.findOne({name: whichAmbiance});
+          if(newAmbiance) {
+            console.log("set Ambiance", newAmbiance.value)
+            changeImg(newAmbiance.value)
+          }
+        }
+      }
+      
+    }
+
+  }
 
   em.addListener('salmtheoneshow', showTheOneButtons);
   em.addListener('salmtheonehide', hideTheOneButtons);
@@ -94,7 +109,7 @@ Template.jacky.onRendered(function () {
     console.log('salm next!', what);
     // compteur = what.compteur;
     //enregistrons le compteur dans un cookie
-    if(what.compteur && cookies.get('compteur') != what.compteur) cookies.set('compteur', what.compteur);
+    // if(what.compteur && cookies.get('compteur') != what.compteur) cookies.set('compteur', what.compteur);
     // var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
     // var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : [];
     var isSUPERinterrupt = getSuperGlobal("SUPERinterrupt", []);
@@ -154,6 +169,11 @@ Template.jacky.onRendered(function () {
       streamCheckInterval = null;
       console.log("stopping streamCheckInterval 2", streamCheckInterval);
   }); 
+  em.addListener('salmUnStop', function(what) {
+    console.log('salm unstop', what);
+    console.log('salm unstop - interrupt?', interrupt);
+    unstop();
+  }); 
 
 
   em.addListener('salmGetMessage', function(what) {
@@ -195,7 +215,9 @@ Template.jacky.onRendered(function () {
   // else
   //     server = "https://" + window.location.hostname + ":8089/janus";
 
-  var host = window.location.hostname == "localhost" ? "www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com" : window.location.hostname;
+  // var host = window.location.hostname == "localhost" ? "www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com" : window.location.hostname;
+  // var host = window.location.hostname == "localhost" ? "www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com" : window.location.hostname;
+  var host = "www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com";
   var server = null;
   if(window.location.protocol === 'http:')
       server = "http://" + host + ":8088/janus";

@@ -500,3 +500,7 @@ addUserToLottery = function(params){
   }
 
 }
+// unstop (si l'admin redonne le pouvoir au peuple)
+unstop = function(params){
+  interrupt = false;
+}

@@ -73,6 +73,14 @@ if (Meteor.isServer) {
       em.emit('salmnext', args);
     }
   });
+  em.addListener('adminUnStop', function(/* client */) {
+    console.log('ADMIN UNSTOP', _.toArray(arguments), arguments[0]);
+    // em.setClient({ reponse: arguments[0].reponse });
+    var args = arguments[0];
+    if(args) {
+      em.emit('salmUnStop', args);
+    }
+  });
 
   em.addListener('ca_va_peter', function(/* client */) {
     console.log("ca_va_peter cote serveur");
@@ -566,6 +574,25 @@ Meteor.methods({
             superGlobals.insert({whichAmbiance: obj.value}, { filter: false });
           }
 
+        case 'compteurAdmin':
+          console.log('compteurAdmin', obj.value);
+          if(typeof(obj.value) === "number") { //check si c'est un number
+          // if( Object.prototype.toString.call( obj.value ) === '[object Array]' ) { 
+            console.log('compteurAdmin2', obj.value, superGlobals.findOne({ compteurAdmin: { $exists: true}}));
+            var compteurAdmin = superGlobals.findOne({ compteurAdmin: { $exists: true}});
+            if(compteurAdmin) {
+              console.log('compteurAdmin3 mise a jour');
+              //mise à jour
+              superGlobals.update(compteurAdmin._id, { $set: {compteurAdmin: obj.value} }, { filter: false });
+            } else {
+              console.log('compteurAdmin3 insert!');
+              //création
+              superGlobals.insert({compteurAdmin: obj.value}, { filter: false });
+
+            }
+            // superGlobals.upsert({modeSpectacle: obj.value}, { filter: false });
+          }
+          break;
 
         default:
           break;

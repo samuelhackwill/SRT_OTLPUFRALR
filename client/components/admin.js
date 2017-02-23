@@ -77,6 +77,7 @@ Template.admin.onRendered(function () {
 
   Meteor.subscribe('userStatus');
   Meteor.subscribe('allPhoneNumbers');
+  Meteor.subscribe('allSuperGlobals');
 
   this.autorun(() => {
     console.log("showtime autorun admin", Template.instance());
@@ -88,34 +89,39 @@ Template.admin.onRendered(function () {
     data = ContenusEcran.findOne({name: "data_test"}).data
     console.log('showtime data ?', data);
     console.log('showtime ContenusEcran ?', ContenusEcran.find().fetch());
-    var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
-    console.log("showtime isItPowerToThePeople", isItPowerToThePeople);
-
-    //recup compteur si on est en mode spectacle (par ex si on reload la page par inadvertance
-    var modeSpectacle = getSuperGlobal("modeSpectacle");
-    console.log('admin! compteur', compteur, "modeSpectacle", modeSpectacle);
-    if(modeSpectacle) {
-      console.log('admin! mode spectacle', compteur);
-      //si on était en mode prendre le pouvoir, récupérer le compteur du cookie (= reprendre ou on en était)
-      if(!isItPowerToThePeople) { //pouvoir à l'admin
-        if(cookies.get('compteurAdmin') != compteur) {
-          console.log('admin! compteurAdmin!=compteur');
-          compteur = parseInt(cookies.get('compteurAdmin'));
-          $('#currentCompteur').text(compteur);
-          console.log('admin! compteur set to', compteur);
-        }
-      }
-
-    } else {
-      //on est pas en mode spectacle reset compteur
-      cookies.set('compteurAdmin', compteur);
-
-    }
     // rawTextToJson();
   // console.log(Template.instance());
     // zoupageJSON(dataFromDB, data);
     // autonext(2000);
   });
+
+
+
+  var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
+  console.log("showtime isItPowerToThePeople", isItPowerToThePeople);
+
+  //recup compteur si on est en mode spectacle (par ex si on reload la page par inadvertance
+  var modeSpectacle = getSuperGlobal("modeSpectacle");
+  console.log('admin! compteur', compteur, "modeSpectacle", modeSpectacle);
+  if(modeSpectacle) {
+    console.log('admin! mode spectacle', compteur);
+    //si on était en mode prendre le pouvoir, récupérer le compteur du cookie (= reprendre ou on en était)
+    if(!isItPowerToThePeople) { //pouvoir à l'admin
+
+      var compteurAdmin = getSuperGlobal("compteurAdmin");
+      if(null !== compteurAdmin && compteurAdmin != compteur) {
+        console.log('admin! compteurAdmin!=compteur');
+        compteur = parseInt(compteurAdmin);
+        // $('#currentCompteur').text(compteur);
+        console.log('admin! compteur set to', compteur);
+      }
+    }
+
+  } else {
+    //on est pas en mode spectacle reset compteur
+    Meteor.call('setSuperGlobal', {name: 'compteurAdmin', value: parseInt(compteur)});
+
+  }
 /*
   Polls.after.update(function (userId, doc, fieldNames, modifier, options) {
     em.emit('hi', userId, doc, fieldNames, modifier, options);
@@ -232,6 +238,7 @@ Template.admin.onRendered(function () {
     } else if(data == false) { //power retourne aux SALM
       // em.setClient({ bookmark: 'fin-spectacle' });
       // em.emit('adminForceGoTo');
+      em.emit('adminUnStop');
     }
   });
   //activer le mode spectacle
@@ -283,7 +290,7 @@ Template.admin.onRendered(function () {
   // attention y'a un bug avec les boutons que j'ai pseudo-rêglé en empêchant les mouseevents quand le compteur =! x ou y
 
   function adminNext(){
-    // console.log('next', compteur);
+    console.log('adminNext', compteur);
     // if(compteur >= 75) compteur = 75;
 
     // var currentSub = data[compteur]
@@ -302,15 +309,19 @@ Template.admin.onRendered(function () {
     // Session.update("compteur", compteur);
     // if(compteur < data.length-1){
       window.clearTimeout(autonextcontainer)
+    console.log('adminNext2', compteur);
       compteur +=1
+    console.log('adminNext3', compteur);
       var modeSpectacle = getSuperGlobal("modeSpectacle");
       var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
-      console.log("adminNext modeSpectacle?", modeSpectacle, "isItPowerToThePeople?", isItPowerToThePeople);
-      if(modeSpectacle && !isItPowerToThePeople && parseInt(cookies.get('compteurAdmin')) != compteur) {
-        console.log("admin next compteur set cookie", compteur)
-        cookies.set('compteurAdmin', compteur);
+      var compteurAdmin = getSuperGlobal("compteurAdmin");
+      console.log("adminNext modeSpectacle?", modeSpectacle, "isItPowerToThePeople?", isItPowerToThePeople, "compteurAdmin", compteurAdmin);
+      if(modeSpectacle && !isItPowerToThePeople && parseInt(compteurAdmin) != compteur) {
+        console.log("admin next compteur set compteurAdmin", compteur)
+        // cookies.set('compteurAdmin', compteur);
+        Meteor.call('setSuperGlobal', {name: 'compteurAdmin', value: parseInt(compteur)});
       }
-      $('#currentCompteur').text(compteur);
+      // $('#currentCompteur').text(compteur);
       em.setClient({ compteur: compteur });
       em.emit('adminnext');
       next();
@@ -331,14 +342,16 @@ Template.admin.onRendered(function () {
     //  KEYCODE 32 IS SPACEBAR
     // KEYCIODE 78 IS "n"
 
-    
-    if(e.keyCode =='78' && compteur < data.length-1){
-      // window.clearTimeout(autonextcontainer)
-      // compteur +=1
-      adminNext();
-      console.log("keyup, ", compteur)
-      // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
-      // ça avance tout seul avec un délai)
+    var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
+    if(!isItPowerToThePeople) {
+      if(e.keyCode =='78' && compteur < data.length-1){
+        // window.clearTimeout(autonextcontainer)
+        // compteur +=1
+        adminNext();
+        console.log("keyup, ", compteur)
+        // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
+        // ça avance tout seul avec un délai)
+      }
     }
     //CUES
 
@@ -460,7 +473,7 @@ Template.showtime.helpers({
     return arr;
   },
   compteurAdmin: function(){
-    return compteur;
+    return getSuperGlobal('compteurAdmin');
   }
 });
 
@@ -699,12 +712,14 @@ Template.admin.events({
     compteur +=1
     var modeSpectacle = getSuperGlobal("modeSpectacle");
     var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
-    console.log("adminNext modeSpectacle?", modeSpectacle, "isItPowerToThePeople?", isItPowerToThePeople);
-    if(modeSpectacle && !isItPowerToThePeople && parseInt(cookies.get('compteurAdmin')) != compteur) {
+    var compteurAdmin = getSuperGlobal("compteurAdmin");
+    console.log("adminNext modeSpectacle?", modeSpectacle, "isItPowerToThePeople?", isItPowerToThePeople, "compteurAdmin?", compteurAdmin);
+    if(modeSpectacle && !isItPowerToThePeople && parseInt(compteurAdmin) != compteur) {
       console.log("admin next compteur set cookie", compteur)
-      cookies.set('compteurAdmin', compteur);
+      // cookies.set('compteurAdmin', compteur);
+      Meteor.call('setSuperGlobal', {name: 'compteurAdmin', value: parseInt(compteur)});
     }
-    $('#currentCompteur').text(compteur);
+    // $('#currentCompteur').text(compteur);
     em.setClient({ compteur: compteur });
     em.emit('adminnext');
     next();
