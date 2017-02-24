@@ -439,7 +439,8 @@ destroy = function(self){
   var element = document.getElementById(self)
   var parentid = element.parentNode.id
 
-  $("#"+parentid).addClass("invisible")
+  $("#"+parentid).css("0")
+
 
   setTimeout(function(){
     $("#"+parentid).empty()
@@ -479,6 +480,9 @@ replaceNext = function(params){
 addCuppasButtons = function(){
   console.log("addCuppasButtons yo yo yo yo yo")
   newBoutton(["finishCuppa","c'est_bon_mon_thé_est_prêt","gotonext('1')", "destroy(id)"])
+  $("#cuppasInc").remove()
+  $("#sacbouttons").addClass("visible")
+  $("#sacbouttons").removeClass("invisible")
 }
 
 gotonext = function(params){

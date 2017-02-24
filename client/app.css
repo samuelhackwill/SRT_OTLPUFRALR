@@ -22,7 +22,7 @@
 
   body{
     font-family: "typo", sans-serif;
-    font-size:22px;
+    font-size:20px;
     text-align: center;
     margin: 0px;
     -webkit-transition: color 1s ease-in-out;
@@ -30,6 +30,23 @@
 
     width:100%;
     height:100%;
+  }
+
+  #dequoi{
+  }
+
+  #dateNextRepresentation{
+    background-color: black;
+
+    color:white;
+
+    transition:all .2s ease-in-out;
+  }  
+
+  #dateNextRepresentation:hover{
+    background-color: blue;
+
+    transition:all .2s ease-in-out;
   }
 
   #bonjour{
@@ -48,20 +65,67 @@
     transition: opacity 1s ease-in-out;
   }
 
+  #bottomcontainer{
+    margin:0 auto 0 auto;
+    width:100%;
+  }
+
+  #checkboxRTC{
+    pointer-events: none;
+  }
+
+  input[type='checkbox'] #checkboxRTC{
+    cursor:none;
+  }
+
+  #zob{
+    color:grey;
+  }
+
+  #logoamikal{
+/*    opacity:.5;
+    transition: opacity .2s ease-in-out;
+
+    width:95px;
+    height:65px;
+    background: url(logoamikal.png) no-repeat;
+    background-size:contain;
+    margin:auto;
+*/
+        text-align:center;
+          margin-bottom:100px;
+  }
+
+  #logoamikal img{
+    opacity:.5;
+    transition: opacity .2s ease-in-out;
+
+    margin:6px 0 10px 0;
+  width:95px;
+}
+
+  #logoamikal img:hover{
+    opacity:1;
+    transition: opacity .2s ease-in-out;
+  }
+
 
   #first_drawing{
-    width:600px;
-    height:600px;
-    background: url(img/drawing1.svg) no-repeat center;
-    background-size: cover;
-    margin: auto;
-  }  
+    width:27vw;
+    height:44vh;
+    bottom:1vh;
+    background: url(img/pelo.svg) no-repeat center;
+    background-size: contain;
+    margin-right: 41px;
+    float: left;
+      }  
 
   #second_drawing{
     width:600px;
     height:600px;
-    background: url(img/drawing2.svg) no-repeat center;
+    /*background: url(img/check.svg) no-repeat center;
     background-size: contain;
+    */
     margin: auto;
   }
 
@@ -96,7 +160,7 @@
     background-size: contain;
     margin: -80px;
     margin-top:10px;
-    
+
     padding: 80px;
 
     font-size: 1.8vw;
@@ -137,6 +201,9 @@
     color: black;
   }
 
+  #liste{
+    font-size:1.6vw;
+  }
 
   ul#checklist{
     -webkit-transition: all 1s ease-in-out;
@@ -231,6 +298,7 @@
 
   .invisible{
     opacity: 0;
+
   }
 
   .visible{
@@ -272,6 +340,44 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%,-50%);
+
+    opacity: 0;
+  }
+
+  #success{
+    font-size: 1.8vw;
+    position: fixed;
+    width: 95%;
+    height: 95%;
+    top: 2.5%;
+    left: 2.5%;
+    background-color: beige;
+    opacity: 0;
+    display:none;
+
+        -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+
+  }
+
+  #close{
+    position: absolute;
+    transform: translateX(-50%);
+    top: 75vh;  
+  }
+
+  #sucesstext{
+    width: 50%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+
+  #shows-list{
+    margin-bottom: 100px;
   }
 
 
@@ -367,10 +473,24 @@ div.login input {
 }
 
 
-  @media (max-width:900px) {
+  @media (max-width:920px) {
     #nextshow{
       background-position: 0px 32px;
       }
+    #first_drawing{
+      display:none;
+    }
+    #inscription{
+      text-align: center;
+    }
+    #success{
+      font-size:15px;
+    }
+    /* #second_drawing{
+      margin-left: -85px;
+    transform: translateX(-15%);
+    }
+    */
   }
 
     @media (max-width:500px) {

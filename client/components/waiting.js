@@ -1,4 +1,3 @@
-
 Template.registerHelper('formatDateLeFrenchStyle', function(date) {
   console.log("formatDateLeFrenchStyle?", date, date.getDate());
   // if(date.getDate() == "1")
@@ -49,6 +48,9 @@ Template.waiting.onRendered(function () {
 Template.waiting.events({
 
   'click a.represent': function(e){
+    $("#success").show()
+    $("#success").css("opacity", ".97")
+
     console.log(e, 'choose represent!', this);
     e.stopPropagation();
     e.preventDefault();
@@ -102,12 +104,16 @@ Template.waiting.helpers({
     }, {sort: {date_start: 1}});
   },
   nextRepresentation:function(){
-    // var now = new Date('2017-03-02T00:00:00.000Z');
+    //var now = new Date('2017-03-02T00:00:00.000Z');
     var currentRepresentation = null;
     // modeSpectacle = getSuperGlobal("modeSpectacle");
     // if(modeSpectacle) { //le spectacle va bientôt commencer ou a déjà commencé
       //récupérons la representation du jour
     var now = new Date();
+    // var yesterday = new Date();
+    // yesterday.setDate(now.getDate() - 1);
+    // console.log("NOW ", now)
+    // console.log("YESTERDAY ",yesterday)
     var todayStart = new Date(now.setHours(0,0,0,0));
     var todayEnd = new Date(now.setHours(24,0,0,0));
     console.log("router checkPhone - today is between", todayStart, todayEnd);
@@ -118,6 +124,7 @@ Template.waiting.helpers({
       },
       "status": /(pending|running)/
     }, {sort: {date_start: 1}});
+
     console.log("router checkPhone - representation?", foundRepresentation);
     if(foundRepresentation) { //representation du jour trouvée
       console.log("router checkPhone - representation du jour trouvée");

@@ -72,8 +72,7 @@ Template.training.onRendered(function () {
     // if(Roles.userIsInRole(Meteor.user(), "jacky_one")==true) {
       console.log('showTheOneButtons');
       $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
-      $('#sacbouttons').removeClass('invisible');
-      $('#sacbouttons').addClass('visible');
+    $("#sacbouttons").css("opacity", "1")
     // }
 
   }
@@ -82,8 +81,7 @@ Template.training.onRendered(function () {
     // if(Roles.userIsInRole(Meteor.user(), "jacky_one")==true) {
       console.log('showTheOneButtons');
       $('<button id="ouiMP" class="button">oui</button><button id="nonMP" class="button">non</button><button id="euhMP" class="button">euh</button>').appendTo('#sacbouttons');
-      $('#sacbouttons').removeClass('invisible');
-      $('#sacbouttons').addClass('visible');
+    $("#sacbouttons").css("opacity", "1")
     // }
 
   }
@@ -91,9 +89,10 @@ Template.training.onRendered(function () {
 
   function hideTheOneButtonsTraining(){
     console.log('hideTheOneButtonsTraining?');
-    $('#oui, #non, #euh').hide();
-    $('#sacbouttons input, #sacbouttons button').hide();
-  }
+    $("#sacbouttons").css("opacity", "0")
+      delayedEmpty = setTimeout(function(){
+      $("#sacbouttons").empty()
+      },333)  }
 
 
 
