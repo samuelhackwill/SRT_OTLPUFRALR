@@ -133,6 +133,25 @@ Template.waiting.helpers({
       return theNextRepresentation
     }
   },
+  chosenRepresentation:function(){
+
+    var checkCookie = cookies.get("user_represent");
+    console.log("chosenRepresentation - checkCookie?", checkCookie);
+    if(checkCookie) {
+      var chosenRepresentation = null;
+      var foundRepresentation = representations.findOne({ 
+        _id: checkCookie
+      });
+
+      console.log("chosenRepresentation - foundRepresentation?", foundRepresentation);
+      if(foundRepresentation) { //representation du jour trouvée
+        console.log("chosenRepresentation - representation choisie trouvée");
+        chosenRepresentation = foundRepresentation;
+        console.log("chosenRepresentation =", chosenRepresentation);
+        return chosenRepresentation
+      } else return null;
+    } else return null;
+  },
   alreadyParticipating: function(){
 
     var checkCookie = cookies.get("user_represent");

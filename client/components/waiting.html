@@ -1662,16 +1662,19 @@
       </div>
   </div>
 
+  {{#with chosenRepresentation}}
   <div id="success">
+
     <div id="sucesstext">
-      Okay, vous êtes bien inscrit à la représentation XXXXX.
+      Okay, vous êtes bien inscrit à la représentation {{name}}.
       <br /><br />
-      On se donne rendez-vous le XXXXX à XXXX h ici même, sur http://www.on-traversera-le-pont-une-fois-rendus-a-la-riviere.com/.
+      On se donne rendez-vous le {{formatDateLeFrenchStyle date_start}} ici même, sur http://www.on-traversera-le-pont-une-fois-rendus-a-la-riviere.com/.
       <br /><br />
       Par ailleurs si vous changez d'avis et voulez participer à un autre moment, n'hésitez pas à revenir sur ce site et cliquer sur une autre date.
     </div>
     <button id="close" onclick="closeSplash()"> OK </button>
   </div>
+  {{/with}}
 
 <script>
 
