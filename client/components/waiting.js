@@ -50,6 +50,7 @@ Template.waiting.events({
   'click a.represent': function(e){
     $("#success").show()
     $("#success").css("opacity", ".97")
+    console.log("THIS THIS ", this.date_start)
 
     console.log(e, 'choose represent!', this);
     e.stopPropagation();
@@ -84,6 +85,7 @@ Template.waiting.events({
       console.log("already chosen this", cookies.get("user_represent"));
 
     }
+    $("#date_choisie").html(moment(this.date_start).format('dddd Do MMM YYYY à HH[h]mm'))
   }
 });
 
@@ -119,8 +121,8 @@ Template.waiting.helpers({
     console.log("router checkPhone - today is between", todayStart, todayEnd);
     var foundRepresentation = representations.findOne({ 
       date_start: { 
-        $gte: todayStart,
-        $lt: todayEnd
+        $gte: todayStart
+        // $lt: todayEnd
       },
       "status": /(pending|running)/
     }, {sort: {date_start: 1}});
@@ -133,6 +135,7 @@ Template.waiting.helpers({
       return theNextRepresentation
     }
   },
+
   alreadyParticipating: function(){
 
     var checkCookie = cookies.get("user_represent");
