@@ -50,7 +50,6 @@ Template.waiting.events({
   'click a.represent': function(e){
     $("#success").show()
     $("#success").css("opacity", ".97")
-    console.log("THIS THIS ", this.date_start)
 
     console.log(e, 'choose represent!', this);
     e.stopPropagation();
@@ -85,8 +84,12 @@ Template.waiting.events({
       console.log("already chosen this", cookies.get("user_represent"));
 
     }
-    // $("#date_choisie").html(moment(this.date_start).format('dddd Do MMM YYYY à HH[h]mm'))
+    if (this.name=="Répétition générale") {
+      $("#warning").html("(notez bien que la date que vous avez choisi est une répétition générale.)")
+}else{
+      $("#warning").html("<br />")
   }
+}
 });
 
 
