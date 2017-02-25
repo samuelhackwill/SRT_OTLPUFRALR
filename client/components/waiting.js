@@ -84,6 +84,8 @@ Template.waiting.events({
       console.log("already chosen this", cookies.get("user_represent"));
 
     }
+    $("#date_choisie").html(moment(this.date_start).format('dddd Do MMM YYYY à HH[h]mm'))
+
     if (this.name=="Répétition générale") {
       $("#warning").html("(notez bien que la date que vous avez choisi est une répétition générale.)")
 }else{

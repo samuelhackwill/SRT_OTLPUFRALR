@@ -1651,7 +1651,7 @@
 
       <ul id="shows-list" class="">
         {{#each listRepresentations}}
-          <li><a class="represent{{alreadyParticipating}}" title="Choisir cette représentation" href="/chooseRepresentation/{{_id}}">le {{formatDateLeFrenchStyle date_start}} : {{name}}, {{location}}</a></li>
+          <li class="shows-list-a"><a class="represent{{alreadyParticipating}}" title="Choisir cette représentation" href="/chooseRepresentation/{{_id}}">le {{formatDateLeFrenchStyle date_start}} : {{name}}, {{location}}</a></li>
         {{/each}}
       </ul>
       </p>
@@ -1662,27 +1662,25 @@
       </div>
   </div>
 
-  {{#with chosenRepresentation}}
-  <div id="success">
+<!--   //{{#with chosenRepresentation}}
+ -->  <div id="success">
 
     <div id="sucesstext">
-<!-- <<<<<<< HEAD
       Okay, vous êtes bien inscrit à la représentation du <p id="date_choisie"></p>
       <br /><br />
       On se donne rendez-vous à ce moment-là, ici même, sur <br />
       http://www.on-traversera-le-pont-une-fois-rendus-a-la-riviere.com/.
-======= -->
-      Okay, vous êtes bien inscrit à la représentation du <br />
+<!--       Okay, vous êtes bien inscrit à la représentation du <br />
       <p id="date_choisie">{{formatDateLeFrenchStyle date_start}}.</p>
       <p id="warning"> <br /></p>   
-      On se donne rendez-vous ici même, sur <br />http://www.on-traversera-le-pont-une-fois-rendus-a-la-riviere.com/.
+      On se donne rendez-vous ici même, sur <br />http://www.on-traversera-le-pont-une-fois-rendus-a-la-riviere.com/. -->
       <br /><br />
       Par ailleurs si vous changez d'avis et voulez participer à un autre moment, n'hésitez pas à revenir sur ce site et cliquer sur une autre date.
     </div>
     <button id="close" onclick="closeSplash()"> OK </button>
   </div>
-  {{/with}}
-
+<!--   {{/with}}
+ -->
 <script>
 
 // AHHH la honte bon ben voila c'est la honte quoi
@@ -1786,7 +1784,20 @@ function closeSplash(){
    var waitandclear = setTimeout(function() {
     $("#success").hide()
    }, 333);
- }
+ };
+
+// var classname = document.getElementsByClassName("shows-list-a");
+
+// var myFunction = function() {
+//     $("#success").show()
+//     $("#success").css("opacity", ".97")
+//     console.log("zoupla boum")
+// };
+
+// for (var i = 0; i < classname.length; i++) {
+//     classname[i].addEventListener('click', myFunction, false);
+// }
+
 
 // var closediv = document.getElementById("close")
 // closediv.addEventListener('click', closeSplash())
