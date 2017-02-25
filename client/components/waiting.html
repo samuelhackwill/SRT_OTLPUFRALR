@@ -1662,17 +1662,26 @@
       </div>
   </div>
 
+  {{#with chosenRepresentation}}
   <div id="success">
+
     <div id="sucesstext">
+<!-- <<<<<<< HEAD
       Okay, vous êtes bien inscrit à la représentation du <p id="date_choisie"></p>
       <br /><br />
       On se donne rendez-vous à ce moment-là, ici même, sur <br />
       http://www.on-traversera-le-pont-une-fois-rendus-a-la-riviere.com/.
+======= -->
+      Okay, vous êtes bien inscrit à la représentation du <br />
+      <p id="date_choisie">{{formatDateLeFrenchStyle date_start}}.</p>
+      <br /><br />
+      On se donne rendez-vous ici même, sur <br />http://www.on-traversera-le-pont-une-fois-rendus-a-la-riviere.com/.
       <br /><br />
       Par ailleurs si vous changez d'avis et voulez participer à un autre moment, n'hésitez pas à revenir sur ce site et cliquer sur une autre date.
     </div>
     <button id="close" onclick="closeSplash()"> OK </button>
   </div>
+  {{/with}}
 
 <script>
 

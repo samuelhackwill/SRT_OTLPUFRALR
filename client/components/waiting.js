@@ -85,7 +85,7 @@ Template.waiting.events({
       console.log("already chosen this", cookies.get("user_represent"));
 
     }
-    $("#date_choisie").html(moment(this.date_start).format('dddd Do MMM YYYY à HH[h]mm'))
+    // $("#date_choisie").html(moment(this.date_start).format('dddd Do MMM YYYY à HH[h]mm'))
   }
 });
 
@@ -135,7 +135,29 @@ Template.waiting.helpers({
       return theNextRepresentation
     }
   },
+// <<<<<<< HEAD
 
+// =======
+  chosenRepresentation:function(){
+
+    var checkCookie = cookies.get("user_represent");
+    console.log("chosenRepresentation - checkCookie?", checkCookie);
+    if(checkCookie) {
+      var chosenRepresentation = null;
+      var foundRepresentation = representations.findOne({ 
+        _id: checkCookie
+      });
+
+      console.log("chosenRepresentation - foundRepresentation?", foundRepresentation);
+      if(foundRepresentation) { //representation du jour trouvée
+        console.log("chosenRepresentation - representation choisie trouvée");
+        chosenRepresentation = foundRepresentation;
+        console.log("chosenRepresentation =", chosenRepresentation);
+        return chosenRepresentation
+      } else return null;
+    } else return null;
+  },
+// >>>>>>> da32dacf5a3c9a7a1090c7f3f7d38e41ae73f5bf
   alreadyParticipating: function(){
 
     var checkCookie = cookies.get("user_represent");
