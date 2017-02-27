@@ -99,12 +99,12 @@ Template.jacky.onRendered(function () {
   function showMeTheButtons(){
 
       // if(Roles.userIsInRole(Meteor.user(), "jacky_one")==true) {
-        console.log('showMeTheButtons');
-        $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
+    console.log('showMeTheButtons');
+    $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
     $("#sacbouttons").css("opacity", "1")
       // }
 
-    }
+  }
 
 
   em.addListener('salmnext', function(what) {
