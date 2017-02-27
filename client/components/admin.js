@@ -787,6 +787,14 @@ Template.loteriesList.events({
 
     Meteor.call('chooseRandomONE', args);
   },
+  'click button.pick-everybody-tea': function(event){
+
+    console.log('click button.pick-everybody-tea', $(event.currentTarget).val(), this);
+
+    args = {_id: this._id}
+
+    Meteor.call('chooseEverybodyTea', args);
+  },
   'click button.assign-random-phoneNumbers': function(event){
 
     console.log('click button.assign-random-phoneNumbers', $(event.currentTarget).val(), this);

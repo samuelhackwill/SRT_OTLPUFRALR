@@ -833,6 +833,42 @@ Meteor.methods({
       
     }
   },
+  chooseEverybodyTea: function(args){
+
+    console.log("chooseEverybodyTea server", args);
+    // var nbPeopleToChoose = 1;
+    var lotteryId = args._id;
+    if(lotteryId != "") {
+
+      var lottery = loteries.findOne({_id: lotteryId});
+      console.log("lottery", lottery);
+      if(!lottery) {
+        //créer la loterie
+        console.log("couldn't find lottery");
+      } else {
+
+        var teaPeople = lottery.ids;
+        console.log("teaPeople", teaPeople);
+        var messages = [];
+        for(i=0;i<teaPeople.length;i++){
+          var obj = {};
+          obj[teaPeople[i]] = 'addCuppasButtons';
+          messages.push(obj);
+        }
+        if(messages.length>0){
+          console.log('update lottery messages', messages);
+          loteries.update(lottery._id, 
+            {  $set: { messages: messages} },
+            { filter: false }
+          );
+        }
+
+        // return Collection.find({_id: random && random._id}
+        // var lotteryId = lottery._id;
+      }
+      
+    }
+  },
 
 
   assignRandomPhoneNumbers: function(args){
