@@ -497,6 +497,15 @@ addCuppasButtons = function(){
   $("#sacbouttons").removeClass("invisible")
 }
 
+finishCuppa = function(){
+  console.log("finishCuppa!");
+  var buchesArray = getSuperGlobal("buchesCount", []);
+  var buchesAllumees = buchesArray.filter(function(buche){ return buche; }).length;
+  console.log("finishCuppa?",buchesAllumees);
+  if(buchesAllumees < 6) em.emit('salmFinishCuppa');
+
+}
+
 gotonext = function(params){
   var bonus = parseInt(params)
   compteur += bonus

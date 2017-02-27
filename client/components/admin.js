@@ -86,13 +86,23 @@ Template.admin.onRendered(function () {
     let contnus = ContenusEcran.find().fetch();
     console.log("showtime contnus", contnus, data);
     // data = ContenusEcran.findOne({name: "ce_jeudi_no_comment"}).data
-    data = ContenusEcran.findOne({name: "data_test"}).data
+    if(data.length == 0) {
+      console.log('showtime retrieving data');
+      data = ContenusEcran.findOne({name: "data_test"}).data
+    }
     console.log('showtime data ?', data);
     console.log('showtime ContenusEcran ?', ContenusEcran.find().fetch());
     // rawTextToJson();
   // console.log(Template.instance());
     // zoupageJSON(dataFromDB, data);
     // autonext(2000);
+    //refresh switches
+    var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
+    $('input#josebove').bootstrapSwitch('state', !isItPowerToThePeople, true);
+    var modeSpectacle = getSuperGlobal("modeSpectacle");
+    $('input#showmode').bootstrapSwitch('state', modeSpectacle, true);
+    var isTheShowStarted = getSuperGlobal("spectacleStarted", false);
+    $('input#startSpectacle').bootstrapSwitch('state', isTheShowStarted, true);
   });
 
 
@@ -200,6 +210,40 @@ Template.admin.onRendered(function () {
   em.addListener('adminSUPERinterrupt', function(what) {
     console.log('admin SUPER interrupt!', what);
     console.log('changer le mode SUPERinterrupt NOT USED RIGHT NOW');
+    // Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: what.value});
+    // var son = new Audio('euuuh.ogg').play();
+    // console.log('SERVER HI', arguments[0].$inc, Object.keys(arguments[0].$inc)[0], _.toArray(arguments));
+
+    // var choice = parseInt(Object.keys(arguments[0].$inc)[0].replace(/(choices\.|\.votes)/g, ''));
+    // var sounds = ['oui.ogg', 'non.ogg', 'euuuh.ogg'];
+    // var son = new Audio(sounds[choice]).play();
+  }); 
+
+  em.addListener('adminFireBuche', function(what) {
+    console.log('admin FIRE a buche!', what);
+
+    var buchesArray = getSuperGlobal("buchesCount", []);
+    var buchesAllumees = buchesArray.filter(function(buche){ return buche; }).length;
+    if(buchesAllumees > 0) {
+      buchesToMidi = {
+        midi1: [144, 84, 127],
+        midi2: [144, 85, 127],
+        midi3: [144, 86, 127],
+        midi4: [144, 87, 127],
+        midi5: [144, 88, 127],
+        midi6: [144, 89, 127]
+      }
+      output.send(buchesToMidi['midi'+buchesAllumees]);
+    } else if(buchesAllumees == 0) {
+      //kill buches midi
+      output.send([144, 84, 0]); // full velocity note on A4 on channel zero
+      output.send([144, 85, 0]); // full velocity note on A4 on channel zero
+      output.send([144, 86, 0]); // full velocity note on A4 on channel zero
+      output.send([144, 87, 0]); // full velocity note on A4 on channel zero
+      output.send([144, 88, 0]); // full velocity note on A4 on channel zero
+      output.send([144, 89, 0]); // full velocity note on A4 on channel zero
+
+    }
     // Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: what.value});
     // var son = new Audio('euuuh.ogg').play();
     // console.log('SERVER HI', arguments[0].$inc, Object.keys(arguments[0].$inc)[0], _.toArray(arguments));
@@ -432,6 +476,12 @@ Template.showtime.helpers({
     var nbCuppasFinished = getSuperGlobal("nbCuppasFinished", 0);
     console.log("nbCuppasFinished", nbCuppasFinished);
    return nbCuppasFinished;
+  },
+  buchesAllummees: function(){
+
+    var buchesArray = getSuperGlobal("buchesCount", []);
+    var buchesAllumees = buchesArray.filter(function(buche){ return buche; }).length;
+
   },
   nextBucheAllumage:function(){
     // var nextBuche = superGlobals.findOne({ nextBucheAllumage: { $exists: true}});
