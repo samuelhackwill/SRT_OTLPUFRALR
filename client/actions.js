@@ -66,6 +66,10 @@ next = function(){
 
 action = function(type, params){
   switch(type){
+    case "cue":
+    cue(params)
+    break
+
     case "sound":
     sound(params)
     break
@@ -188,6 +192,12 @@ var addobject = {text:phrase, type: "text"}
 data.splice(nextsrt, 0, addobject, [type="text"])
 }
 */
+
+cue = function(params){
+    if(Roles.userIsInRole(Meteor.user(), "admin")==true){
+      console.log(params)
+    }
+}
 
 
 jacky = function(params){
