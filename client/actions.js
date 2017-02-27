@@ -484,11 +484,19 @@ gotobookmark = function(where){
 
 replaceNext = function(params){
   console.log("replace next ", params)
-  nextsrt = compteur + 1
-  var string = params
-  var stringpropre = string.replace(/\_/g, ' ');
-  var addobject = {text:stringpropre, type: "text"}
-  data.splice(nextsrt, 0, params, [type="text"])
+  var nextsrt = compteur + 1
+  var leReplace = {"text":" ", "type":"text"}
+
+  if(params=="1"){
+    leReplace.text = "Bon,tant pis. Par contre vous n’allez rien avoir pour vous abriter pendant l’orage."
+  }
+
+  if(params=="2"){
+    leReplace.text = " "
+  }
+  console.log("data next srt AVANT LIFTING ,",data[nextsrt])
+  data.splice(nextsrt, 0, leReplace)
+  console.log("data next srt APRé LIFTING ,",data[nextsrt])
 
 }
 
