@@ -185,15 +185,21 @@
 <template name="showtime">
     showtime !<br />
 
-    <div>
-      <input type="button" id="top_midi1" value="BUCHE 1">
-      <input type="button" id="top_midi2" value="BUCHE 2">
-      <input type="button" id="top_midi3" value="BUCHE 3">
-      <input type="button" id="top_midi4" value="BUCHE 4">
-      <input type="button" id="top_midi5" value="BUCHE 5">
-      <input type="button" id="top_midi6" value="BUCHE 6">
+    <div class="col-lg-6 col-md-6 col-xs-12 text-left">
+      Buches 
+      <input type="button" id="top_midi1" value="1">
+      <input type="button" id="top_midi2" value="2">
+      <input type="button" id="top_midi3" value="3">
+      <input type="button" id="top_midi4" value="4">
+      <input type="button" id="top_midi5" value="5">
+      <input type="button" id="top_midi6" value="6">
       <input type="button" id="kill_midi" value="KILL MIDI">
-      <strong>Thés</strong> volontaires : {{cuppasCount}}, tasses prêtes : {{nbCuppasFinished}}, bûches à allumer : {{buchesCount}}, next bûche in {{nextBucheAllumage}} cup(s).
+      <br />
+      <strong>Thés</strong><br />
+      volontaires : {{cuppasCount}}<br />
+      tasses prêtes : {{nbCuppasFinished}}<br />
+      bûches à allumer : {{buchesCount}}<br />
+      next bûche in {{nextBucheAllumage}} cup(s).<br />
       <input type="button" id="resetCuppas" value="reset cuppas">
       <br />
       <input type="button" id="fakeCuppasInc" value="inc cuppas">
@@ -203,12 +209,12 @@
       {{/each}}
     </div>
 
-    <div class="switches small">
+    <div class="col-lg-6 col-md-6 col-xs-12 switches small text-left">
       <label for="josebove" title="ou prendre la main sur le déroulé des évènements">Prendre le pouvoir</label> 
       <input id="josebove" title="aka José Bové!" type="checkbox" checked="{{isPowerToTheAdminChecked}}" /><br />
 
       <label for="startSpectacle" title="ou démarrer le Spectacle">Démarrer/arrêter le spectacle</label>
-      <input id="startSpectacle" title="aka start the show!" type="checkbox" checked="{{isTheShowStarted}}" />
+      <input id="startSpectacle" title="aka start the show!" type="checkbox" checked="{{isTheShowStarted}}" /><br />
       compteur = <span id="currentCompteur">{{compteurAdmin}}</span> <input id="adminCompteur" name="adminCompteur" placeholder="compteur" value="{{compteurAdmin}}" size="3" /><input type="button" id="setCompteur" value="change"><br />
 
       <!--<label for="SUPERinterrupt" title="ou mode parking pour les SALM pas jacky">SUPERinterrupt</label> 
@@ -278,12 +284,12 @@
           <br />
       {{/each}}
       -->
+      <!--<br />
       <br />
       <br />
       <br />
       <br />
-      <br />
-      <br />
+      <br />-->
     </div>
     <button id="next">next</button>
 

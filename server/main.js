@@ -187,6 +187,17 @@ if (Meteor.isServer) {
     }
   });
 
+  em.addListener('salmFinishCuppa', function(/* client */) {
+    console.log('SALM FINISH A CUP', _.toArray(arguments), arguments[0]);
+    // em.setClient({ reponse: arguments[0].reponse });
+    var args = arguments[0];
+    if(args) {
+      // em.emit('salmForceGoTo', args);
+      // Meteor.call('addUserToLottery', args);
+      Meteor.call('setSuperGlobal', {name: 'finishCuppa'});
+    }
+  });
+
   em.addListener('adminDeliverMessages', function(/* client */) {
     console.log('ADMIN DELIVER MESSAGES', _.toArray(arguments), arguments[0]);
     // em.setClient({ reponse: arguments[0].reponse });
@@ -464,6 +475,7 @@ Meteor.methods({
                 console.log("buchesArray", buchesArray);
                 //mise à jour
                 superGlobals.update(buches._id, { $set: { "buchesCount": buchesArray } }, { filter: false });
+                em.emit('adminFireBuche');
               } else {
                 console.log("on a pas encore atteint le prochain allumage");
               }
