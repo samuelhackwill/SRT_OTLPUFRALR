@@ -195,7 +195,7 @@ data.splice(nextsrt, 0, addobject, [type="text"])
 
 cue = function(params){
     if(Roles.userIsInRole(Meteor.user(), "admin")==true){
-      console.log(params)
+      alert(params)
     }
 }
 
@@ -427,6 +427,8 @@ newBoutton = function(params){
 
   var newBoutton = $('<input type="button" class="button" value="'+ labelpropre +'" id="'+ nom +'" onclick = "' + fonctionsconcat + '">')
   newBoutton.appendTo($("#sacbouttons"))
+
+  $("#sacbouttons").css("opacity", "1");  
 }
 
 fullscreen = function(){
@@ -449,7 +451,7 @@ destroy = function(self){
   var element = document.getElementById(self)
   var parentid = element.parentNode.id
 
-  $("#"+parentid).css("0")
+  $("#"+parentid).css("opacity","0")
 
 
   setTimeout(function(){
