@@ -484,11 +484,18 @@ gotobookmark = function(where){
 
 replaceNext = function(params){
   console.log("replace next ", params)
-  nextsrt = compteur + 1
-  var string = params
-  var stringpropre = string.replace(/\_/g, ' ');
-  var addobject = {text:stringpropre, type: "text"}
-  data.splice(nextsrt, 0, params, [type="text"])
+  var nextsrt = compteur + 1
+  var leReplace = ""
+
+  if(params=="1"){
+    leReplace = "Bon,tant pis. Par contre vous n’allez rien avoir pour vous abriter pendant l’orage."
+  }
+
+  if(params=="2"){
+    leReplace = " "
+  }
+
+  data.splice(nextsrt, 0, leReplace, [type="text"])
 
 }
 
