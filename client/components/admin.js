@@ -224,7 +224,10 @@ Template.admin.onRendered(function () {
 
     var buchesArray = getSuperGlobal("buchesCount", []);
     var buchesAllumees = buchesArray.filter(function(buche){ return buche; }).length;
-    if(buchesAllumees > 0) {
+    console.log("buchesAllumees is ", buchesAllumees);
+    // if(buchesAllumees > 0) {
+    if(what.buches > 0) {
+      console.log("buchesAllumees > 0 !!", buchesAllumees);
       buchesToMidi = {
         midi1: [144, 84, 127],
         midi2: [144, 85, 127],
@@ -233,8 +236,11 @@ Template.admin.onRendered(function () {
         midi5: [144, 88, 127],
         midi6: [144, 89, 127]
       }
-      output.send(buchesToMidi['midi'+buchesAllumees]);
-    } else if(buchesAllumees == 0) {
+      // output.send(buchesToMidi['midi'+buchesAllumees]);
+      output.send(buchesToMidi['midi'+what.buches]);
+    // } else if(buchesAllumees == 0) {
+    } else if(what.buches == 0) {
+      console.log("buchesAllumees == 0", buchesAllumees);
       //kill buches midi
       output.send([144, 84, 0]); // full velocity note on A4 on channel zero
       output.send([144, 85, 0]); // full velocity note on A4 on channel zero
