@@ -485,17 +485,18 @@ gotobookmark = function(where){
 replaceNext = function(params){
   console.log("replace next ", params)
   var nextsrt = compteur + 1
-  var leReplace = ""
+  var leReplace = {"text":" ", "type":"text"}
 
   if(params=="1"){
-    leReplace = "Bon,tant pis. Par contre vous n’allez rien avoir pour vous abriter pendant l’orage."
+    leReplace.text = "Bon,tant pis. Par contre vous n’allez rien avoir pour vous abriter pendant l’orage."
   }
 
   if(params=="2"){
-    leReplace = " "
+    leReplace.text = " "
   }
-
-  data.splice(nextsrt, 0, leReplace, [type="text"])
+  console.log("data next srt AVANT LIFTING ,",data[nextsrt])
+  data.splice(nextsrt, 0, leReplace)
+  console.log("data next srt APRé LIFTING ,",data[nextsrt])
 
 }
 
