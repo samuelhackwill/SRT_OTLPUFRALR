@@ -198,7 +198,11 @@ cue = function(params){
     if(Roles.userIsInRole(Meteor.user(), "admin")==true){
       var string = params[0]
       var stringpropre = string.replace(/\_/g, ' ');
-      alert(stringpropre)
+      console.log("CUE DU CUE, ",stringpropre)
+      console.log("CUE DU CUE, ",stringpropre)
+      console.log("CUE DU CUE, ",stringpropre)
+      console.log("CUE DU CUE, ",stringpropre)
+      console.log("CUE DU CUE, ",stringpropre)
     }
 }
 
@@ -456,6 +460,7 @@ destroy = function(self){
 
   $("#"+parentid).css("opacity","0")
 
+  $("#srt").html("ok")
 
   setTimeout(function(){
     $("#"+parentid).empty()
@@ -495,7 +500,7 @@ replaceNext = function(params){
     leReplace.text = " "
   }
   console.log("data next srt AVANT LIFTING ,",data[nextsrt])
-  data.splice(nextsrt, 0, leReplace)
+  data.splice(nextsrt, 1, leReplace)
   console.log("data next srt APRé LIFTING ,",data[nextsrt])
 
 }

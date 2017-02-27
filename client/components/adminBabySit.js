@@ -4,7 +4,7 @@ Template.registerHelper('equals', function (a, b) {
 
 // salut c'est sam
 
-Template.admin.onCreated(function() {
+Template.adminBabySit.onCreated(function() {
   console.log('Template admin created.');
   //subscribe à la collection contenus écran
   this.autorun(() => {
@@ -19,7 +19,7 @@ Template.admin.onCreated(function() {
 Template.showtime.onRendered(function () {
 });
 
-Template.admin.onRendered(function () {
+Template.adminBabySit.onRendered(function () {
   console.log('admin!');
 
 

@@ -1,0 +1,148 @@
+<head>
+  <title>LE PONT</title>
+  <meta charset="utf-8">
+</head>
+
+<!--
+START SPECTACLE
+
+START SHOW BUTTONS LOTTERIE ONH
+NEXT
+HIDE BUTTONS
+CHOOSE RANDOM SALM
+SHOW BUTTONS TO RANDOM SALM
+HIDE BUTTONS
+
+START SHOW BUTTONS ONH MULTIPLAYER
+HIDE BUTTONS
+
+START PHONE NUMBER LT
+  alert stop stop stop stooooop!
+
+START SHOW BUTTONS LOTTERIE CABANE
+HIDE BUTTONS
+SHOW BUTTONS CABANE READY
+NEXT
+NEXT
+NEXT
+HIDE BUTTONS
+
+START PHONE NUMBER LT-CABANE
+  alert stop stop stop stooooop!
+
+TEXTE DE FIN
+-->
+
+
+<template name="adminBabySit">
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>DEBUT DU SPECTACLE</th>
+      <th>ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">0</th>
+      <td>Entrée public</td>
+      <td><button class="btn btn-primary">SYNCHRONISER LES SALMs</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>CUE</th>
+      <th>ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Jacques = “on va sélectionner au hasard un·e d’entre vous parmi les volontaires”</td>
+      <td><button class="btn btn-primary">SHOW BUTTONS LOTTERIE ONH</button></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>cue roger mange un toast</td>
+      <td><button class="btn btn-primary">NEXT</button></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>là genre attendre 1 minute puis cacher les boutons </td>
+      <td><button class="btn btn-warning">HIDE BUTTONS</button></td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>ensuite direct t'en choisis un </td>
+      <td><button class="btn btn-primary">CHOOSE RANDOM SALM</button></td>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
+      <td>Jacques = "???" il dit quoi précisément? </td>
+      <td><button class="btn btn-primary">SHOW BUTTONS TO RANDOM SALM</button></td>
+    </tr>
+    <tr>
+      <th scope="row">6</th>
+      <td>là genre attendre 1 minute puis cacher les boutons </td>
+      <td><button class="btn btn-warning">HIDE BUTTONS</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>OUI-NON-EUH</th>
+      <th>ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Jacques = “on va sélectionner au hasard un·e d’entre vous parmi les volontaires”</td>
+      <td><button class="btn btn-primary">SHOW BUTTONS LOTTERIE ONH</button></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>cue roger mange un toast</td>
+      <td><button class="btn btn-primary">NEXT</button></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>là genre attendre 1 minute puis cacher les boutons </td>
+      <td><button class="btn btn-warning">HIDE BUTTONS</button></td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>ensuite direct t'en choisis un </td>
+      <td><button class="btn btn-primary">CHOOSE RANDOM SALM</button></td>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
+      <td>Jacques = "???" il dit quoi précisément? </td>
+      <td><button class="btn btn-primary">SHOW BUTTONS TO RANDOM SALM</button></td>
+    </tr>
+    <tr>
+      <th scope="row">6</th>
+      <td>là genre attendre 1 minute puis cacher les boutons </td>
+      <td><button class="btn btn-warning">HIDE BUTTONS</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<script>
+$('button').on('click', function(){
+    $(this).addClass('barred');
+});
+</script>
+
+
+</template>
