@@ -475,7 +475,8 @@ Meteor.methods({
                 console.log("buchesArray", buchesArray);
                 //mise à jour
                 superGlobals.update(buches._id, { $set: { "buchesCount": buchesArray } }, { filter: false });
-                em.emit('adminFireBuche');
+                var args = {buches: buchesAllumees+1}
+                em.emit('adminFireBuche', args);
               } else {
                 console.log("on a pas encore atteint le prochain allumage");
               }
