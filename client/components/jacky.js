@@ -353,7 +353,11 @@ Template.jacky.onRendered(function () {
       },
       error: function(error) {
         Janus.error(error);
-        console.log(error);
+        console.log("ERROR !!! :"+error);
+        // var body = { "request": "stop" };
+        // streaming.send({"message": body});
+        // streaming.hangup();
+        //TODO setTimeout hangup + setTimeout request watch à nouveau? à tester en régie avec lieven
         // bootbox.alert(error, function() {
         //   window.location.reload();
         // });
