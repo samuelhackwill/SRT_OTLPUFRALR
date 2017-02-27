@@ -195,7 +195,9 @@ data.splice(nextsrt, 0, addobject, [type="text"])
 
 cue = function(params){
     if(Roles.userIsInRole(Meteor.user(), "admin")==true){
-      alert(params)
+      var string = params
+      var stringpropre = string.replace(/\_/g, ' ');
+      alert(stringpropre)
     }
 }
 
