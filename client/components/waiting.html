@@ -10,16 +10,16 @@
     <div id="inscription">
 
       {{#if isModeSpectacle}}
-      <div>
-      <!--  La représentation va commencer ou a commencé (TODO) -->
-      </div>
+      <!--<div>
+        La représentation va commencer ou a commencé (TODO) 
+      </div>-->
       {{else}}
+      {{/if}}
         {{#with nextRepresentation}}
       <div id="nextshow">
         La prochaine représentation commence le <br /> <span id="dateNextRepresentation" title="{{location}}">{{formatDateLeFrenchStyle date_start}}</span>.
       </div>
         {{/with}}
-      {{/if}}
             
       <br /><br /><br /><br />
       <br /><br />
