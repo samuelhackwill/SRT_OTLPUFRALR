@@ -1,6 +1,7 @@
 
 var streamCheckInterval;
 var caughtUp = false;
+var intervalReload;
 
 Template.jacky.onCreated(function() {
 
@@ -361,6 +362,28 @@ Template.jacky.onRendered(function () {
         // bootbox.alert(error, function() {
         //   window.location.reload();
         // });
+        var waitBeforeReload = 15 //secondes;
+        $('#stream-error').append("Il semble que la connection avec le serveur a été perdue. La page va se recharger dans <span>"+waitBeforeReload+" secondes</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
+        $('#stream-error a.reload').click(function(){
+          console.log("Manual page reload.");
+          window.location.reload();
+        });
+        $('#stream-error a.cancel').click(function(){
+          console.log("cancelling auto page reload.");
+          clearInterval(intervalReload);
+          $('#stream-error').empty(); //vider l'élément d'erreur
+        });
+        var count = waitBeforeReload;
+        intervalReload = setInterval(function(){
+          $('#stream-error').find('span').text(count == 1 ? count+" seconde" : count+" secondes");
+          count -= 1;
+          if (count === 0){
+            clearInterval(intervalReload); // Stopping the counter when reaching 0.
+            console.log("Stream error reloading");
+            window.location.reload();
+          }
+        }, 1000);
+
       },
       destroyed: function() {
         console.log("destroyed");
