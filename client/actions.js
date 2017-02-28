@@ -154,7 +154,14 @@ action = function(type, params){
 sound = function(params){
   console.log("sound", params);
   if(params[0]=="start"){
-    em.emit('adminstartstream');
+    // em.emit('adminstartstream');
+    console.log("jacky startTheStream??", streaming);
+    // em.emit('salmstartstream');
+    if(streaming) {
+      var body = { "request": "watch", id: parseInt(1) };
+      streaming.send({"message": body});
+    }
+      
   }
 }
 
@@ -473,6 +480,19 @@ gotobookmark = function(where){
     if((data[i]["type"]=="bookmark")&&(data[i]["text"]==where)){
       //ça c'est la valeur de ton compteur mon ptit gars
       compteur = i
+
+      if(Roles.userIsInRole(Meteor.user(), "admin")==true){
+        
+        var modeSpectacle = getSuperGlobal("modeSpectacle");
+        var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
+        var compteurAdmin = getSuperGlobal("compteurAdmin");
+        console.log("adminNext modeSpectacle?", modeSpectacle, "isItPowerToThePeople?", isItPowerToThePeople, "compteurAdmin", compteurAdmin);
+        if(modeSpectacle && !isItPowerToThePeople && parseInt(compteurAdmin) != compteur) {
+          console.log("admin next compteur set compteurAdmin", compteur)
+          // cookies.set('compteurAdmin', compteur);
+          Meteor.call('setSuperGlobal', {name: 'compteurAdmin', value: parseInt(compteur)});
+        }
+      }
       setTimeout(function(){
         next()
       },333)
