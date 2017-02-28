@@ -1651,7 +1651,7 @@
 
       <ul id="shows-list" class="">
         {{#each listRepresentations}}
-          <li class="shows-list-a"><a class="represent{{alreadyParticipating}}" title="Choisir cette représentation" href="/chooseRepresentation/{{_id}}">le {{formatDateLeFrenchStyle date_start}} : {{name}}, {{location}}</a></li>
+          <li class="shows-list-a{{#if isStealth name}} hidden{{/if}}"><a class="represent{{alreadyParticipating}}" title="Choisir cette représentation" href="/chooseRepresentation/{{_id}}">le {{formatDateLeFrenchStyle date_start}} : {{name}}, {{location}}</a></li>
         {{/each}}
       </ul>
       </p>

@@ -176,5 +176,9 @@ Template.waiting.helpers({
       console.log("waiting - modeSpectacle??", modeSpectacle);
       // if(modeSpectacle) this.render('jacky');
       return modeSpectacle;
+  },
+  isStealth: function(name){
+    if(name == "STEALTH") return true;
+    else return false;
   }
 });
