@@ -766,6 +766,14 @@ Template.showtime.events({
 
 
 
+  },
+  'click div.autofill_bookmark span': function(event){
+
+      console.log('div.autofill_bookmark span', $(event.currentTarget).text());
+
+      $('#whereSUPERinterrupt').val($(event.currentTarget).text());
+
+
   }
 
 });
