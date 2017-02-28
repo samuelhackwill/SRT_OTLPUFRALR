@@ -333,6 +333,20 @@ Template.admin.onRendered(function () {
     // em.emit('adminrefreshpage');
   });
 
+  $('#next').on('click', function(){
+
+    var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
+    if(!isItPowerToThePeople) {
+      if(compteur < data.length-1){
+        // window.clearTimeout(autonextcontainer)
+        // compteur +=1
+        adminNext();
+        console.log("click next, compteur = ", compteur);
+        // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
+        // ça avance tout seul avec un délai)
+      }
+    }
+  });
 
   // TO DO
 
@@ -596,20 +610,6 @@ Template.loteriesList.helpers({
 
 Template.showtime.events({
 
-  'click #next':function(){
-
-    var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
-    if(!isItPowerToThePeople) {
-      if(compteur < data.length-1){
-        // window.clearTimeout(autonextcontainer)
-        // compteur +=1
-        adminNext();
-        console.log("click next, compteur = ", compteur);
-        // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
-        // ça avance tout seul avec un délai)
-      }
-    }
-  },
   'click #top_midi1':function(){
     output.send([144, 84, 127]); // full velocity note on A4 on channel zero
 /*  
