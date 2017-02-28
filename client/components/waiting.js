@@ -129,7 +129,8 @@ Template.waiting.helpers({
         $gte: todayStart
         // $lt: todayEnd
       },
-      "status": /(pending|running)/
+      "status": /(pending|running)/,
+      "name": { $not: /STEALTH/ }
     }, {sort: {date_start: 1}});
 
     console.log("router checkPhone - representation?", foundRepresentation);
