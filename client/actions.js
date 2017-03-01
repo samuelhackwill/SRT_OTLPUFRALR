@@ -486,9 +486,10 @@ gotobookmark = function(where){
         var modeSpectacle = getSuperGlobal("modeSpectacle");
         var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
         var compteurAdmin = getSuperGlobal("compteurAdmin");
-        console.log("adminNext modeSpectacle?", modeSpectacle, "isItPowerToThePeople?", isItPowerToThePeople, "compteurAdmin", compteurAdmin);
-        if(modeSpectacle && !isItPowerToThePeople && parseInt(compteurAdmin) != compteur) {
-          console.log("admin next compteur set compteurAdmin", compteur)
+        console.log("ACTIONS adminNext modeSpectacle?", modeSpectacle, "isItPowerToThePeople?", isItPowerToThePeople, "compteurAdmin", compteurAdmin);
+        // if(modeSpectacle && !isItPowerToThePeople && parseInt(compteurAdmin) != compteur) {
+        if(modeSpectacle && parseInt(compteurAdmin) != compteur) {
+          console.log("ACTIONS admin next compteur set compteurAdmin", compteur)
           // cookies.set('compteurAdmin', compteur);
           Meteor.call('setSuperGlobal', {name: 'compteurAdmin', value: parseInt(compteur)});
         }
@@ -515,14 +516,14 @@ replaceNext = function(params){
     leReplace.text = " "
   }
   console.log("data next srt AVANT LIFTING ,",data[nextsrt])
-  data.splice(nextsrt, 0, leReplace)
+  data.splice(nextsrt, 1, leReplace)
   console.log("data next srt APRé LIFTING ,",data[nextsrt])
 
 }
 
 addCuppasButtons = function(){
   console.log("addCuppasButtons yo yo yo yo yo")
-  newBoutton(["finishCuppa","c'est_bon_mon_thé_est_prêt","gotonext('1')", "destroy(id)"])
+  newBoutton(["finishCuppa","c'est_bon_mon_thé_est_prêt","destroy(id)"])
   $("#cuppasInc").remove()
   $("#sacbouttons").addClass("visible")
   $("#sacbouttons").removeClass("invisible")
