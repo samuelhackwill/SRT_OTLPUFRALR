@@ -2,13 +2,9 @@ Template.registerHelper('equals', function (a, b) {
   return a == b;
 });
 
-
-
-var refreshedUp = false;
-
 // salut c'est sam
 
-Template.admin.onCreated(function() {
+Template.adminBabySit.onCreated(function() {
   console.log('Template admin created.');
   //subscribe à la collection contenus écran
   this.autorun(() => {
@@ -20,17 +16,14 @@ Template.admin.onCreated(function() {
 
 });
 
-Template.showtime.onRendered(function () {
-});
-
-Template.admin.onRendered(function () {
+Template.adminBabySit.onRendered(function () {
   console.log('admin!');
 
 
   function myMIDIMessagehandler(event){
 
-    whichEtat = "e"+event.data[1]
-    console.log(whichEtat)
+    // whichEtat = "e"+event.data[1]
+    // console.log(whichEtat)
 
 
     if(event.data[0]==144 && event.data[1]==49){
@@ -101,15 +94,12 @@ Template.admin.onRendered(function () {
     // zoupageJSON(dataFromDB, data);
     // autonext(2000);
     //refresh switches
-    if(!refreshedUp) {
-      refreshedUp = true;
-      var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
-      $('input#josebove').bootstrapSwitch('state', !isItPowerToThePeople, true);
-      var modeSpectacle = getSuperGlobal("modeSpectacle");
-      $('input#showmode').bootstrapSwitch('state', modeSpectacle, true);
-      var isTheShowStarted = getSuperGlobal("spectacleStarted", false);
-      $('input#startSpectacle').bootstrapSwitch('state', isTheShowStarted, true);
-    }
+    var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
+    $('input#josebove').bootstrapSwitch('state', !isItPowerToThePeople, true);
+    var modeSpectacle = getSuperGlobal("modeSpectacle");
+    $('input#showmode').bootstrapSwitch('state', modeSpectacle, true);
+    var isTheShowStarted = getSuperGlobal("spectacleStarted", false);
+    $('input#startSpectacle').bootstrapSwitch('state', isTheShowStarted, true);
   });
 
 
@@ -231,10 +221,7 @@ Template.admin.onRendered(function () {
 
     var buchesArray = getSuperGlobal("buchesCount", []);
     var buchesAllumees = buchesArray.filter(function(buche){ return buche; }).length;
-    console.log("buchesAllumees is ", buchesAllumees);
-    // if(buchesAllumees > 0) {
-    if(what.buches > 0) {
-      console.log("buchesAllumees > 0 !!", buchesAllumees);
+    if(buchesAllumees > 0) {
       buchesToMidi = {
         midi1: [144, 84, 127],
         midi2: [144, 85, 127],
@@ -243,11 +230,8 @@ Template.admin.onRendered(function () {
         midi5: [144, 88, 127],
         midi6: [144, 89, 127]
       }
-      // output.send(buchesToMidi['midi'+buchesAllumees]);
-      output.send(buchesToMidi['midi'+what.buches]);
-    // } else if(buchesAllumees == 0) {
-    } else if(what.buches == 0) {
-      console.log("buchesAllumees == 0", buchesAllumees);
+      output.send(buchesToMidi['midi'+buchesAllumees]);
+    } else if(buchesAllumees == 0) {
       //kill buches midi
       output.send([144, 84, 0]); // full velocity note on A4 on channel zero
       output.send([144, 85, 0]); // full velocity note on A4 on channel zero
@@ -340,20 +324,6 @@ Template.admin.onRendered(function () {
     // em.emit('adminrefreshpage');
   });
 
-  $('#next').on('click', function(){
-
-    var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
-    if(!isItPowerToThePeople) {
-      if(compteur < data.length-1){
-        // window.clearTimeout(autonextcontainer)
-        // compteur +=1
-        adminNext();
-        console.log("click next, compteur = ", compteur);
-        // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
-        // ça avance tout seul avec un délai)
-      }
-    }
-  });
 
   // TO DO
 
@@ -439,356 +409,63 @@ Template.admin.onRendered(function () {
 
 });
 
-Template.admin.helpers({
-  usersOnline:function(){
-    return Meteor.users.find();
-  },
-  usersOnlineCount:function(){
-   //event a count of users online too.
-   return Meteor.users.find().count();
-  }
-});
 
-Template.showtime.helpers({
-  isPowerToTheAdminChecked:function(){
+
+Template.adminBabySit.events({
+
+  'click button#start' : function(){
+    console.log('jose bové ftw!');
+    // event.preventDefault();
     // var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
+    // console.log("le pouvoir 1 ?", powerToThePeople);
     // var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
-    var isPowerToThePeople = getSuperGlobal("powerToThePeople", true);
-    console.log("isPowerToTheAdminChecked", !isPowerToThePeople);
-    return !isPowerToThePeople;
-  },
-  whoIsSUPERinterrupted:function(){
-    // var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
-    // var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : [];
-    var isSUPERinterrupt = getSuperGlobal("SUPERinterrupt", []);
-    console.log("isSUPERinterruptChecked", isSUPERinterrupt);
-    return isSUPERinterrupt;
-  },
-  isModeSpectacleChecked:function(){
-    // var modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}});
-    // var isModeSpectacle = (modeSpectacle) ? modeSpectacle.modeSpectacle : false;
-    var isModeSpectacle = getSuperGlobal("modeSpectacle", []);
-    console.log("isModeSpectacleChecked", isModeSpectacle);
-    return isModeSpectacle;
-  },
-  isForceHangupChecked:function(){
-    // var modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}});
-    // var isModeSpectacle = (modeSpectacle) ? modeSpectacle.modeSpectacle : false;
-    var isForceHangup = getSuperGlobal("forceHangup", false);
-    console.log("isForceHangupChecked", isForceHangup);
-    return isForceHangup;
-  },
-  isTheShowStarted:function(){
-    // var spectacleStarted = superGlobals.findOne({ spectacleStarted: { $exists: true}});
-    // var isSpectacleStarted = (spectacleStarted) ? spectacleStarted.spectacleStarted : false;
-    var isSpectacleStarted = getSuperGlobal("spectacleStarted", false);
-    console.log("isTheShowStarted", isSpectacleStarted);
-    return isSpectacleStarted;
-  },
-  usersOnlineCount:function(){
-   //event a count of users online too.
-   return Meteor.users.find().count();
-  },
+    // console.log("le pouvoir 1 ?", isPowerToThePeople);
+    Meteor.call('setSuperGlobal', {name: 'powerToThePeople', value: !data});
 
-  cuppasCount:function(){
-    // var cuppasCount = superGlobals.findOne({ cuppasCount: { $exists: true}});
-    // var theCuppasCount = (cuppasCount) ? cuppasCount.cuppasCount : 0;
-    var theCuppasCount = getSuperGlobal("cuppasCount", 0);
-    console.log("theCuppasCount", theCuppasCount);
-   return theCuppasCount;
-  },
-  nbCuppasFinished: function(){
-    // var cuppasFinished = superGlobals.findOne({ nbCuppasFinished: { $exists: true}});
-    // var nbCuppasFinished = (cuppasFinished) ? cuppasFinished.nbCuppasFinished : 0;
-    var nbCuppasFinished = getSuperGlobal("nbCuppasFinished", 0);
-    console.log("nbCuppasFinished", nbCuppasFinished);
-   return nbCuppasFinished;
-  },
-  buchesAllummees: function(){
+    // var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
+    // console.log("le pouvoir 2 ?", powerToThePeople);
+    // var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
+    // console.log("le pouvoir 2 ?", isPowerToThePeople);
 
-    var buchesArray = getSuperGlobal("buchesCount", []);
-    var buchesAllumees = buchesArray.filter(function(buche){ return buche; }).length;
-
-  },
-  nextBucheAllumage:function(){
-    // var nextBuche = superGlobals.findOne({ nextBucheAllumage: { $exists: true}});
-    // var nextBucheAllumage = (nextBuche) ? nextBuche.nextBucheAllumage : 0;
-    var nextBucheAllumage = getSuperGlobal("nextBucheAllumage", 0);
-    console.log("nextBucheAllumage", nextBucheAllumage);
-   return nextBucheAllumage;
-  },
-  buchesCount: function(){
-    // var buchesCount = superGlobals.findOne({ buchesCount: { $exists: true}});
-    // var buchesArray = (buchesCount) ? buchesCount.buchesCount : 0;
-    var buchesArray = getSuperGlobal("buchesCount", 0);
-    console.log("buchesArray", buchesArray);
-   return buchesArray.length;
-  },
-  buchesArray: function(){
-    // var buchesCount = superGlobals.findOne({ buchesCount: { $exists: true}});
-    // var buchesArray = (buchesCount) ? buchesCount.buchesCount : [];
-    var buchesArray = getSuperGlobal("buchesCount", []);
-    console.log("buchesArray", buchesArray, buchesArray.sort().reverse());
-   return buchesArray.sort().reverse();
-  },
-  loopCount: function(count){
-    var countArr = [];
-    for (var i=0; i<count; i++){
-      countArr.push({});
-    }
-    return countArr;
-  },
-
-  dataArray: function (obj) {
-    var arr = [], datas = obj;
-    for (var key in datas) {
-        var obj = {};
-        obj.key = key;
-        obj.value = datas[key];
-        arr.push(obj);
-    }
-    return arr;
-  },
-  compteurAdmin: function(){
-    return getSuperGlobal('compteurAdmin');
-  }
-});
-
-Template.phonesList.helpers({
-  listPhoneNumbers:function(){
-    console.log("PhoneNumbers??");
-    return PhoneNumbers.find({}, {sort: {updated: -1}});
-  },
-  phoneNumbersCount:function(){
-   //event a count of users online too.
-   return PhoneNumbers.find().count();
-  },
-  getRepresentationName:function(){
-   var found = representations.findOne({_id: this.representation})
-   console.log("getRepresentationName", found);
-   return (found) ? found.name : this.representation;
-  },
-  quickRemoveButtonOnError: function () {
-    return function (error) { alert("BOO!"); console.log(error); };
-  },
-  quickRemoveButtonOnSuccess: function () {
-    return function (result) { alert("YAY!"); console.log(result); };
-  },
-  quickRemoveButtonBeforeRemove: function () {
-    return function (collection, id) {
-      var doc = collection.findOne(id);
-      if (confirm('Really delete "' + doc.number + '"?')) {
-        this.remove();
-      }
-    };
-  }
-});
-Template.loteriesList.helpers({
-  listLoteries:function(){
-    console.log("loteries??");
-    return loteries.find();
-  },
-  quickRemoveButtonOnError: function () {
-    return function (error) { alert("BOO!"); console.log(error); };
-  },
-  quickRemoveButtonOnSuccess: function () {
-    return function (result) { alert("YAY!"); console.log(result); };
-  },
-  quickRemoveButtonBeforeRemove: function () {
-    return function (collection, id) {
-      var doc = collection.findOne(id);
-      if (confirm('Really delete "' + doc.name + '"?')) {
-        this.remove();
-      }
-    };
-  },
-
-  dataArray: function (obj) {
-    var arr = [], datas = obj;
-    for (var key in datas) {
-        var obj = {};
-        obj.key = key;
-        obj.value = datas[key];
-        arr.push(obj);
-    }
-    return arr;
-  }
-});
-
-Template.showtime.events({
-
-  'click #top_midi1':function(){
-    output.send([144, 84, 127]); // full velocity note on A4 on channel zero
-/*  
-        var zoupla = setTimeout(function(){
-          output.send([144, 72,0])
-          },1000)
-*/
-  },
-    'click #top_midi2':function(){
-    output.send([144, 85, 127]); // full velocity note on A4 on channel zero
-  },
-    'click #top_midi3':function(){
-    output.send([144, 86, 127]); // full velocity note on A4 on channel zero
-  },
-    'click #top_midi4':function(){
-    output.send([144, 87, 127]); // full velocity note on A4 on channel zero
-  },    'click #top_midi5':function(){
-    output.send([144, 88, 127]); // full velocity note on A4 on channel zero
-  },    'click #top_midi6':function(){
-    output.send([144, 89, 127]); // full velocity note on A4 on channel zero
-  },
-      'click #kill_midi':function(){
-    output.send([144, 84, 0]); // full velocity note on A4 on channel zero
-    output.send([144, 85, 0]); // full velocity note on A4 on channel zero
-    output.send([144, 86, 0]); // full velocity note on A4 on channel zero
-    output.send([144, 87, 0]); // full velocity note on A4 on channel zero
-    output.send([144, 88, 0]); // full velocity note on A4 on channel zero
-    output.send([144, 89, 0]); // full velocity note on A4 on channel zero
-  },
-
-  // faire un bouton pour éteindre toutes les buches!
-
-  'click #resetCuppas': function(){
-    //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
-    Meteor.call('setSuperGlobal', {name: 'cuppasReset'});
-  },
-  'click #fakeCuppasInc': function(){
-    //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
-    Meteor.call('setSuperGlobal', {name: 'cuppasInc'});
-  },
-  'click #fakeCuppasFinished': function(){
-    //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
-    Meteor.call('setSuperGlobal', {name: 'finishCuppa'});
-  },
-  'click #resetSUPERinterrupt': function(){
-    console.log("resetSUPERinterrupt!");
-    //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
-    var bookmarkToGo = ($('#whereSUPERinterrupt').val() != "") ? $('#whereSUPERinterrupt').val() : 'spectacle';
-    em.setClient({ bookmark: bookmarkToGo });
-    em.emit('adminForceGoTo');
-      gotobookmark(bookmarkToGo);
-    Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: []});
-  },
-
-  'click #start-the-stream': function(){
-    // console.log('superGlobals streamStarted', Meteor);
-    // Meteor.call('startTheStream', function(result){
-    //   console.log(result);
-    // });
-    // em.setClient({ compteur: compteur });
-    em.emit('adminstartstream');
-    console.log('adminstartstream emmited');
-  },
-  'click #show-the-ONE': function(){
-      em.emit('adminshowtheone');
-  },
-  'click #hide-the-ONE': function(){
-      em.emit('adminhidetheone');
-  },
-  'click #show-the-ONE-single-training': function(){
-      em.emit('adminshowtheone-single-training');
-  },
-  'click #show-the-ONE-multi-training': function(){
-      em.emit('adminshowtheone-multi-training');
-  },
-
-  'click #hide-the-ONE-training': function(){
-      em.emit('adminhidetheone-training');
-  },
-/*
-  'submit #addcompteur': function(event){
-
-
-      var newCompteur = $('#newCompteur').val();
-
-
-      console.log("addcompteur submit", newCompteur);
-      Meteor.call('createCompteurFromAdmin',newCompteur,function(err,result){
-        if(!err){
-          console.log("a new compteur just got created")
-        } else {
-          console.log("something goes wrong with the following error message " +err.reason )
-        }
-      });
-           
-
-      return false;
-
-
-  },*/
-  'click button.remove-SUPERinterrupt': function(event){
-
-    if(Roles.userIsInRole(Meteor.user(), "admin")==true) {
-      console.log('click button.remove-SUPERinterrupt', $(event.currentTarget).val());
-
-      // var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
-      // var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : false;
-      var isSUPERinterrupt = getSuperGlobal("SUPERinterrupt", false);
-      console.log("parking from admin : is isSUPERinterrupt", isSUPERinterrupt);
-      if(SUPERinterrupt !== false) {
-        var parkingRole = $(event.currentTarget).val();
-        console.log("parking from admin : disable FOR ONE ROLE -> ", parkingRole);
-        //retirer role du tableau SUPERinterrupt (si déjà dedans)
-        var found = jQuery.inArray(parkingRole, isSUPERinterrupt);
-        if (found >= 0) {
-          // Element was found, remove it.
-          isSUPERinterrupt.splice(found, 1);
-          console.log("parking from admin : disabling for ", parkingRole);
-        } else {
-          // Element was not found, don't remove it.
-        }
-      }
-      // em.setClient({ value: isSUPERinterrupt });
-      // em.emit('adminSUPERinterrupt');
-      console.log("parking from admin : new SUPERinterrupt = ", isSUPERinterrupt);
-      Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: isSUPERinterrupt});
+    em.setClient({ powerToThePeople: !data });
+    em.emit('adminswitchthepower');
+    if(data == true) { //power admin
+      em.setClient({ bookmark: 'spectacle' });
+      em.emit('adminForceGoTo');
+      gotobookmark('spectacle');
+    } else if(data == false) { //power retourne aux SALM
+      // em.setClient({ bookmark: 'fin-spectacle' });
+      // em.emit('adminForceGoTo');
+      em.emit('adminUnStop');
     }
   },
-  'click button.add-SUPERinterrupt': function(event){
 
-      console.log('click button.add-SUPERinterrupt', $(event.currentTarget).val());
+  'click button.Bnext': function(){
+    em.emit('adminnext');
+  },  
 
-      // var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
-      // var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : false;
-      var isSUPERinterrupt = getSuperGlobal("SUPERinterrupt", false);
-      console.log("parking from admin : is isSUPERinterrupt", isSUPERinterrupt);
-      if(SUPERinterrupt !== false) {
-
-        var parkingRole = $(event.currentTarget).val();
-        console.log("parking from admin : enable FOR ONE ROLE -> ", parkingRole);
-        //retirer role du tableau SUPERinterrupt (si déjà dedans)
-        var found = jQuery.inArray(parkingRole, isSUPERinterrupt);
-        if (found >= 0) {
-          // Element was found, don't add it again.
-        } else {
-          // Element was not found, add it.
-          isSUPERinterrupt.push(parkingRole);
-          console.log("parking : enabling for ", parkingRole);
-        }
-        console.log("parking from admin : new SUPERinterrupt = ", isSUPERinterrupt);
-        Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: isSUPERinterrupt});
-      }
-      // em.setClient({ value: isSUPERinterrupt });
-      // em.emit('adminSUPERinterrupt');
-
-
+  'click button#lotterieOnh': function(){
+    console.log("montrez moi les boutons de la lotterie s'il vous plaît")
+// là il faut appeler la fonction ADDLOTTERYBUTTONS BISOUS JE VAIS ME COUCHER
 
   },
-  'click div.autofill_bookmark span': function(event){
 
-      console.log('div.autofill_bookmark span', $(event.currentTarget).text());
+  'click button.hideB': function(){
+    em.emit('adminhidetheone');
+  },
 
-      $('#whereSUPERinterrupt').val($(event.currentTarget).text());
+  'click button#showButtonsToTheOne' : function(event){
+    console.log('click button.pick-random-one', $(event.currentTarget).val(), this);
+    args = {_id: this._id}
+    Meteor.call('chooseRandomONE', args);
+  },
 
-
-  }
-
-});
-
-
-
-Template.admin.events({
+  'click button#chooseSalm' : function(event){
+    console.log('click button.deliver-messages', $(event.currentTarget).val(), this);
+    args = {_id: this._id, name: this.name}
+    em.setClient(args);
+    em.emit('adminDeliverMessages');
+  },
 
   'click input#setCompteur': function(){
     console.log('setCompteur', $('#adminCompteur').val());
@@ -809,43 +486,6 @@ Template.admin.events({
     em.setClient({ compteur: compteur });
     em.emit('adminnext');
     next();
-  }
-
-});
-
-Template.loteriesList.events({
-
-  'click button.pick-random-one': function(event){
-
-    console.log('click button.pick-random-one', $(event.currentTarget).val(), this);
-
-    args = {_id: this._id}
-
-    Meteor.call('chooseRandomONE', args);
-  },
-  'click button.pick-everybody-tea': function(event){
-
-    console.log('click button.pick-everybody-tea', $(event.currentTarget).val(), this);
-
-    args = {_id: this._id}
-
-    Meteor.call('chooseEverybodyTea', args);
-  },
-  'click button.assign-random-phoneNumbers': function(event){
-
-    console.log('click button.assign-random-phoneNumbers', $(event.currentTarget).val(), this);
-
-    args = {_id: this._id}
-
-    Meteor.call('assignRandomPhoneNumbers', args);
-  },
-  'click button.deliver-messages': function(event){
-
-    console.log('click button.deliver-messages', $(event.currentTarget).val(), this);
-
-    args = {_id: this._id, name: this.name}
-    em.setClient(args);
-    em.emit('adminDeliverMessages');
   }
 
 });
