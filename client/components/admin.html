@@ -59,7 +59,7 @@
     
 
 
-    <div class="row">
+    <div class="row" style="display:none">
       {{> screen}}
     </div>
 
@@ -185,7 +185,19 @@
 <template name="showtime">
     showtime !<br />
 
+
+
     <div class="col-lg-6 col-md-6 col-xs-12 text-left">
+      <div id="containerAmbiance">
+        <div id="ambiance1" class="divAmbiance">1</div>
+        <div id="ambiance2" class="divAmbiance">2</div>
+        <div id="ambiance3" class="divAmbiance">3</div>
+        <div id="ambiance4" class="divAmbiance">4</div>
+        <div id="ambiance5" class="divAmbiance">5</div>
+        <div id="ambiance6" class="divAmbiance">6</div>
+        <div id="ambiance7" class="divAmbiance">7</div>
+        <div id="ambiance8" class="divAmbiance">8</div>
+      </div>
       Buches 
       <input type="button" id="top_midi1" value="1">
       <input type="button" id="top_midi2" value="2">
@@ -225,7 +237,8 @@
       <label for="forcehangup" title="ou forcer le raccrochage après la prochaine note">Raccrocher les tél</label>
       <input id="forcehangup" title="aka hang up!" type="checkbox" checked="{{isForceHangupChecked}}" /><br />
       <br />
-      SUPERinterrupt = <br />
+
+<!--       SUPERinterrupt = <br />
       <button type="button" class="add-SUPERinterrupt" value="salm">parking ON salm</button>
       <button type="button" class="add-SUPERinterrupt" value="jacky_one">parking ON jacky_one</button>
       <button type="button" class="add-SUPERinterrupt" value="jacky_lt">parking ON jacky_lt</button><br />
@@ -238,7 +251,7 @@
       <input type="text" id="whereSUPERinterrupt" placeholder="bookmark?" value="liaison_tel"/>
       <br />
       <br />
-      <!--<h4 class="page-header">compteurs</h4>
+ -->      <!--<h4 class="page-header">compteurs</h4>
 
         <table class="table table-bordered">
           <thead>
@@ -304,6 +317,9 @@
     <!--<div id="srt-the-one">
       bienvenue,
     </div>-->
+    <button id="oui">FAKE OUI</button>
+    <button id="non">FAKE NON</button>
+    <button id="euh">FAKE EUH</button>
     Training
     <button id="show-the-ONE-single-training">montrer les boutons à training SINGLE</button>
     <button id="show-the-ONE-multi-training">montrer les boutons à training MULTI</button>
