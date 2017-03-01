@@ -18,12 +18,13 @@ clock = null
 data = []
 
 etats = {
-  e41:"rain1",
-  e43:"rain2",
-  e45:"rain1",
-  e47:"rain2",
-  e48:"rain3",
-  e49:"rain1"
+  ambiance1:["rain1","1"],
+  ambiance2:["rain1","2"],
+  ambiance3:["rain2","3"],
+  ambiance4:["rain1","4"],
+  ambiance5:["rain2","5"],
+  ambiance6:["rain3","6"],
+  ambiance7:["rain1","7"]
 }
 
 /*
@@ -359,15 +360,44 @@ removeFiction = function(params){
 }
 
 changeImg = function(params){
-  if (alternance) {
-    $("#imgcontainerFRONT").css("background-image", "url(/img/"+params+".jpg");  
-    $("#imgcontainerFRONT").css("opacity", "1");  
-  }else{
-    $("#imgcontainerBACK").css("background-image", "url(/img/"+params+".jpg");  
-    $("#imgcontainerFRONT").css("opacity", "0");  
-  }
-  console.log(alternance)
-  console.log(params[0])
+
+  console.log("tous les params, ",params)
+
+  console.log("src, ",params[0])
+  console.log("transition, ",params[1])
+  console.log('opacity '+ params[1] +' ease-in-out')
+
+$("#imgcontainerFRONT").css({
+        WebkitTransition : 'opacity '+params[1]+'s ease-in-out',
+        MozTransition    : 'opacity '+params[1]+'s ease-in-out',
+        MsTransition     : 'opacity '+params[1]+'s ease-in-out',
+        OTransition      : 'opacity '+params[1]+'s ease-in-out',
+        transition       : 'opacity '+params[1]+'s ease-in-out'
+    });
+
+  $("#imgcontainerFRONT").addClass("visible")
+  $("#imgcontainerFRONT").removeClass("invisible")
+  
+   // tu change le background-image de front 
+   // tu changes la durée de transition de front 
+   // tu rend visible back et front 
+   // avec un timout = a la durée de la transition de front
+   //    tu changes de lbackground-image de back
+   //    sans transition du fais disparaître front  
+
+
+
+  // if (alternance) {
+  //   $("#imgcontainerFRONT").css("background-image", "url(/img/"+params+".jpg");  
+  //   $("#imgcontainerFRONT").css("opacity", "1");  
+  // }else{
+  //   $("#imgcontainerBACK").css("background-image", "url(/img/"+params+".jpg");  
+  //   $("#imgcontainerFRONT").css("opacity", "0");  
+  // }
+  // console.log(alternance)
+  // console.log(params[0])
+
+
 }
 
 autonext = function(params){

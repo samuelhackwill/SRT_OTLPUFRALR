@@ -772,8 +772,6 @@ Template.showtime.events({
       // em.setClient({ value: isSUPERinterrupt });
       // em.emit('adminSUPERinterrupt');
 
-
-
   },
   'click div.autofill_bookmark span': function(event){
 
@@ -789,6 +787,31 @@ Template.showtime.events({
 
 
 Template.admin.events({
+
+  'click .divAmbiance' : function(event){
+    var _id = event.currentTarget.id
+    changeImg([etats[_id][0], etats[_id][1]])
+  },
+
+    'click #oui': function(){
+    console.log('salmclick oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+    em.setClient({ reponse: 'oui', mode: 'singlePlayer' });
+    em.emit('salmclick');
+    console.log('salmclick emmited');
+    console.log('salmclick emmited oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  },
+  'click #non': function(){
+    console.log('salmclick non', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+    em.setClient({ reponse: 'non', mode: 'singlePlayer' });
+    em.emit('salmclick');
+    console.log('salmclick emmited non', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  },
+  'click #euh': function(){
+    console.log('salmclick euh', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+    em.setClient({ reponse: 'euh', mode: 'singlePlayer' });
+    em.emit('salmclick');
+    console.log('salmclick emmited euh', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  },
 
   'click input#setCompteur': function(){
     console.log('setCompteur', $('#adminCompteur').val());
