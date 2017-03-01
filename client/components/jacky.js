@@ -365,7 +365,7 @@ Template.jacky.onRendered(function () {
         // bootbox.alert(error, function() {
         //   window.location.reload();
         // });
-        var waitBeforeReload = 15 //secondes;
+        var waitBeforeReload = 10 //secondes;
         $('#stream-error').append("Il semble que la connection avec le serveur a été perdue. La page va se recharger dans <span>"+waitBeforeReload+" secondes</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
         $('#stream-error a.reload').click(function(){
           console.log("Manual page reload.");
