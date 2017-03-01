@@ -198,11 +198,7 @@ cue = function(params){
     if(Roles.userIsInRole(Meteor.user(), "admin")==true){
       var string = params[0]
       var stringpropre = string.replace(/\_/g, ' ');
-      console.log("CUE DU CUE, ",stringpropre)
-      console.log("CUE DU CUE, ",stringpropre)
-      console.log("CUE DU CUE, ",stringpropre)
-      console.log("CUE DU CUE, ",stringpropre)
-      console.log("CUE DU CUE, ",stringpropre)
+      alert("CUE DU CUE, ",stringpropre)
     }
 }
 
@@ -499,15 +495,36 @@ replaceNext = function(params){
   if(params=="2"){
     leReplace.text = " "
   }
+
+  if(params=="3"){
+    leReplace.text = "Excellent. Et puis tenez, si c'est possible et que ça vous ferait plaisir, vous pouvez faire bouillir de l'eau pour vous faire une tisane, ou un chocolat chaud, quelque chose de chaud quoi..."
+  }
+
   console.log("data next srt AVANT LIFTING ,",data[nextsrt])
   data.splice(nextsrt, 1, leReplace)
   console.log("data next srt APRé LIFTING ,",data[nextsrt])
 
 }
 
+addLotteryButtons = function(){
+  console.log("addCuppasButtons yo yo yo yo yo")
+  newBoutton(["finishCuppa","Oui","addUserToLottery('oui-non-euh')", "destroy(id)"])
+  newBoutton(["nonB","Non","replaceNext('2')", "destroy(id)"])
+  $("#sacbouttons").addClass("visible")
+  $("#sacbouttons").removeClass("invisible")
+
+}
+
+// SHOW BUTTONS READY!
+// il faut qu'il cale un texte dans la div qui sinon est vide
+// Quand vous avez fini vote cabane / installation, appuyez sur le bouton.
+// LE BOUTON DIT : ça y est je suis installé.
+
+// euh c'est un replaceNext() en fait
+
 addCuppasButtons = function(){
   console.log("addCuppasButtons yo yo yo yo yo")
-  newBoutton(["finishCuppa","c'est_bon_mon_thé_est_prêt","gotonext('1')", "destroy(id)"])
+  newBoutton(["finishCuppa","c'est_bon_mon_thé_est_prêt", "destroy(id)"])
   $("#cuppasInc").remove()
   $("#sacbouttons").addClass("visible")
   $("#sacbouttons").removeClass("invisible")
@@ -527,6 +544,21 @@ gotonext = function(params){
   compteur += bonus
   next()
   interrupt=false
+  console.log("gotonext, ", params)
+  console.log("gotonext, ", params)
+  console.log("gotonext, ", params)
+  console.log("gotonext, ", params)
+  console.log("gotonext, ", params)
+  console.log("gotonext, ", params)
+  console.log("gotonext, ", params)
+  console.log("gotonext, ", params)
+  console.log("gotonext, ", params)
+  console.log("gotonext, ", params)
+  console.log("gotonext, ", params)
+  console.log("gotonext, ", params)
+  console.log("gotonext, ", params)
+  console.log("gotonext, ", params)
+  console.log("gotonext, ", params)
   console.log("gotonext, ", params)
 }
 

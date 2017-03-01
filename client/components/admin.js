@@ -25,8 +25,8 @@ Template.admin.onRendered(function () {
 
   function myMIDIMessagehandler(event){
 
-    // whichEtat = "e"+event.data[1]
-    // console.log(whichEtat)
+    whichEtat = "e"+event.data[1]
+    console.log(whichEtat)
 
 
     if(event.data[0]==144 && event.data[1]==49){
