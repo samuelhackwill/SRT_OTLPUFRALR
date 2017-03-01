@@ -3,7 +3,7 @@ var streamCheckInterval;
 var caughtUp = false;
 var intervalReload;
 
-Template.jacky.onCreated(function() {
+Template.videoproj.onCreated(function() {
 
   //subscribe à la collection representations
   this.autorun(() => {
@@ -15,7 +15,7 @@ Template.jacky.onCreated(function() {
 });
 
 
-Template.jacky.onRendered(function () {
+Template.videoproj.onRendered(function () {
 
 
   this.autorun(() => {
@@ -25,7 +25,7 @@ Template.jacky.onRendered(function () {
     console.log("contnus", contnus, data);
     // data = ContenusEcran.findOne({name: "ce_jeudi_no_comment"}).data
     data = ContenusEcran.findOne({name: "data_test"}).data
-    console.log('srt spectacle jacky rendered');
+    console.log('srt spectacle videoproj rendered');
     console.log('data ?', data);
     console.log('ContenusEcran ?', ContenusEcran.find().fetch());
     if(data) {
@@ -38,6 +38,9 @@ Template.jacky.onRendered(function () {
     // zoupageJSON(dataFromDB, data);
     // autonext(2000);
   });
+
+
+  $(document.body).addClass('videoproj');
 
   function catchUpWithTheShow(){
     console.log('catchUpWithTheShow caughtUp?', caughtUp);
@@ -365,6 +368,8 @@ Template.jacky.onRendered(function () {
         // bootbox.alert(error, function() {
         //   window.location.reload();
         // });
+        /* no reload on error stream audio for videoproj */
+        /*
         var waitBeforeReload = 10 //secondes;
         $('#stream-error').append("Il semble que la connection avec le serveur a été perdue. La page va se recharger dans <span>"+waitBeforeReload+" secondes</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
         $('#stream-error a.reload').click(function(){
@@ -386,7 +391,7 @@ Template.jacky.onRendered(function () {
             window.location.reload();
           }
         }, 1000);
-
+        */
       },
       destroyed: function() {
         console.log("destroyed");
@@ -534,7 +539,7 @@ var nextEvent = function(){
   }
 }
 
-Template.jacky.events({
+Template.videoproj.events({
 
   'click #cuppasInc': function(){
   //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});

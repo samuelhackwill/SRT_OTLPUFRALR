@@ -15,7 +15,7 @@
     src: url('OfficeCodePro-Regular.ttf') format('truetype');
   }
 
-  span em{
+  #srt span em{
     font-style: italic;
     color:grey;
   }
