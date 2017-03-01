@@ -185,10 +185,8 @@
 <template name="showtime">
     showtime !<br />
 
-
-
     <div class="col-lg-6 col-md-6 col-xs-12 text-left">
-      <div id="containerAmbiance">
+<!--       <div id="containerAmbiance">
         <div id="ambiance1" class="divAmbiance">1</div>
         <div id="ambiance2" class="divAmbiance">2</div>
         <div id="ambiance3" class="divAmbiance">3</div>
@@ -197,7 +195,7 @@
         <div id="ambiance6" class="divAmbiance">6</div>
         <div id="ambiance7" class="divAmbiance">7</div>
         <div id="ambiance8" class="divAmbiance">8</div>
-      </div>
+      </div> -->
       Buches 
       <input type="button" id="top_midi1" value="1">
       <input type="button" id="top_midi2" value="2">
@@ -221,24 +219,18 @@
       {{/each}}
     </div>
 
-    <div class="col-lg-6 col-md-6 col-xs-12 switches small text-left">
-      <label for="josebove" title="ou prendre la main sur le déroulé des évènements">Prendre le pouvoir</label> 
-      <input id="josebove" title="aka José Bové!" type="checkbox" checked="{{isPowerToTheAdminChecked}}" /><br />
 
-      <label for="startSpectacle" title="ou démarrer le Spectacle">Démarrer/arrêter le spectacle</label>
-      <input id="startSpectacle" title="aka start the show!" type="checkbox" checked="{{isTheShowStarted}}" /><br />
+      <!--<label for="startSpectacle" title="ou démarrer le Spectacle">Démarrer/arrêter le spectacle</label>
+      <input id="startSpectacle" title="aka start the show!" type="checkbox" checked="{{isTheShowStarted}}" /><br />-->
       compteur = <span id="currentCompteur">{{compteurAdmin}}</span> <input id="adminCompteur" name="adminCompteur" placeholder="compteur" value="{{compteurAdmin}}" size="3" /><input type="button" id="setCompteur" value="change"><br />
 
       <!--<label for="SUPERinterrupt" title="ou mode parking pour les SALM pas jacky">SUPERinterrupt</label> 
       <input id="SUPERinterrupt" title="aka Parking SALM!" type="checkbox" checked="{{isSUPERinterruptChecked}}" /><br />-->
 
-      <label for="showmode" title="ou mettre le site en mode Spectacle">Mode Spectacle</label>
-      <input id="showmode" title="aka let's gro!" type="checkbox" checked="{{isModeSpectacleChecked}}" /><br />
-      <label for="forcehangup" title="ou forcer le raccrochage après la prochaine note">Raccrocher les tél</label>
+      <!--<label for="forcehangup" title="ou forcer le raccrochage après la prochaine note">Raccrocher les tél</label>
       <input id="forcehangup" title="aka hang up!" type="checkbox" checked="{{isForceHangupChecked}}" /><br />
-      <br />
-
-<!--       SUPERinterrupt = <br />
+      <br />-->
+      <!--SUPERinterrupt = <br />
       <button type="button" class="add-SUPERinterrupt" value="salm">parking ON salm</button>
       <button type="button" class="add-SUPERinterrupt" value="jacky_one">parking ON jacky_one</button>
       <button type="button" class="add-SUPERinterrupt" value="jacky_lt">parking ON jacky_lt</button><br />
@@ -246,12 +238,23 @@
       {{#each whoIsSUPERinterrupted}}
         {{this}} <button class="remove-SUPERinterrupt" type="submit" value="{{this}}">x</button>
       {{/each}}
-
-      <input type="button" id="resetSUPERinterrupt" value="reset SUPERinterrupt" />
+      -->
+      <input type="button" id="resetSUPERinterrupt" value="go to bookmark" title="reset SUPERinterrupt / go to bookmark" />
       <input type="text" id="whereSUPERinterrupt" placeholder="bookmark?" value="liaison_tel"/>
       <br />
+      <div class="autofill_bookmark">
+        <span>spectacle</span><br />
+        <span>lotterieONH</span><br />
+        <span>phoneNrLT</span><br />
+        <span>LT</span><br />
+        <span>lotterieCabane</span><br />
+        <span>showButtonsReady</span><br />
+        <span>ltCabanePhoneNumber</span><br />
+        <span>ltCabane</span><br />
+        <span>texteFin</span><br />
+      </div>
       <br />
- -->      <!--<h4 class="page-header">compteurs</h4>
+       <!--<h4 class="page-header">compteurs</h4>
 
         <table class="table table-bordered">
           <thead>
@@ -303,15 +306,49 @@
       <br />
       <br />
       <br />-->
+      <button id="next">next</button>
+
+      <button id="start-the-stream">start the stream</button><br />
+      
+      <button id="show-the-ONE">montrer boutons</button>
+      <button id="hide-the-ONE">cachez boutons</button><br />
+      <!--<div id="srt-the-one">
+        bienvenue,
+      </div>-->
+
+      Training <button data-toggle="collapse" data-target="#training-admin">▾</button><br />
+      <div id="training-admin" class="collapse">
+        <button id="show-the-ONE-single-training">montrer boutons training SINGLE</button><br />
+        <button id="show-the-ONE-multi-training">montrer boutons training MULTI</button><br />
+        <button id="hide-the-ONE-training">cachez boutons training</button>
+      </div>
     </div>
-    <button id="next">next</button>
 
 
-    
-    <button id="start-the-stream">start the stream</button>
+    <div class="col-lg-6 col-md-6 col-xs-12 text-left">
+      Buches 
+      <input type="button" id="top_midi1" value="1">
+      <input type="button" id="top_midi2" value="2">
+      <input type="button" id="top_midi3" value="3">
+      <input type="button" id="top_midi4" value="4">
+      <input type="button" id="top_midi5" value="5">
+      <input type="button" id="top_midi6" value="6">
+      <input type="button" id="kill_midi" value="KILL MIDI">
+      <br />
+      <strong>Thés</strong><br />
+      volontaires : {{cuppasCount}}<br />
+      tasses prêtes : {{nbCuppasFinished}}<br />
+      bûches à allumer : {{buchesCount}}<br />
+      next bûche in {{nextBucheAllumage}} cup(s).<br />
+      <input type="button" id="resetCuppas" value="reset cuppas">
+      <br />
+      <input type="button" id="fakeCuppasInc" value="inc cuppas">
+      <input type="button" id="fakeCuppasFinished" value="finish a cup"><br />
+      {{#each dataArray buchesArray}}
+        <img id="buche-{{@index}}" src="wooden-log{{#if equals this.value true}}-burning{{/if}}.svg" width="32" />
+      {{/each}}
+    </div>
 
-
-    
     <button id="show-the-ONE">montrer les boutons</button>
     <button id="hide-the-ONE">cachez moi ces boutons que je ne saurais voir</button>
     <!--<div id="srt-the-one">

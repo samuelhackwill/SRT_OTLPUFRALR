@@ -129,7 +129,8 @@ Template.waiting.helpers({
         $gte: todayStart
         // $lt: todayEnd
       },
-      "status": /(pending|running)/
+      "status": /(pending|running)/,
+      "name": { $not: /STEALTH/ }
     }, {sort: {date_start: 1}});
 
     console.log("router checkPhone - representation?", foundRepresentation);
@@ -176,5 +177,9 @@ Template.waiting.helpers({
       console.log("waiting - modeSpectacle??", modeSpectacle);
       // if(modeSpectacle) this.render('jacky');
       return modeSpectacle;
+  },
+  isStealth: function(name){
+    if(name == "STEALTH") return true;
+    else return false;
   }
 });

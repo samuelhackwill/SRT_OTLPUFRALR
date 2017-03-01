@@ -2,6 +2,10 @@ Template.registerHelper('equals', function (a, b) {
   return a == b;
 });
 
+
+
+var refreshedUp = false;
+
 // salut c'est sam
 
 Template.admin.onCreated(function() {
@@ -97,12 +101,15 @@ Template.admin.onRendered(function () {
     // zoupageJSON(dataFromDB, data);
     // autonext(2000);
     //refresh switches
-    var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
-    $('input#josebove').bootstrapSwitch('state', !isItPowerToThePeople, true);
-    var modeSpectacle = getSuperGlobal("modeSpectacle");
-    $('input#showmode').bootstrapSwitch('state', modeSpectacle, true);
-    var isTheShowStarted = getSuperGlobal("spectacleStarted", false);
-    $('input#startSpectacle').bootstrapSwitch('state', isTheShowStarted, true);
+    if(!refreshedUp) {
+      refreshedUp = true;
+      var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
+      $('input#josebove').bootstrapSwitch('state', !isItPowerToThePeople, true);
+      var modeSpectacle = getSuperGlobal("modeSpectacle");
+      $('input#showmode').bootstrapSwitch('state', modeSpectacle, true);
+      var isTheShowStarted = getSuperGlobal("spectacleStarted", false);
+      $('input#startSpectacle').bootstrapSwitch('state', isTheShowStarted, true);
+    }
   });
 
 
@@ -333,6 +340,20 @@ Template.admin.onRendered(function () {
     // em.emit('adminrefreshpage');
   });
 
+  $('#next').on('click', function(){
+
+    var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
+    if(!isItPowerToThePeople) {
+      if(compteur < data.length-1){
+        // window.clearTimeout(autonextcontainer)
+        // compteur +=1
+        adminNext();
+        console.log("click next, compteur = ", compteur);
+        // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
+        // ça avance tout seul avec un délai)
+      }
+    }
+  });
 
   // TO DO
 
@@ -646,6 +667,7 @@ Template.showtime.events({
     var bookmarkToGo = ($('#whereSUPERinterrupt').val() != "") ? $('#whereSUPERinterrupt').val() : 'spectacle';
     em.setClient({ bookmark: bookmarkToGo });
     em.emit('adminForceGoTo');
+      gotobookmark(bookmarkToGo);
     Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: []});
   },
 
@@ -749,6 +771,15 @@ Template.showtime.events({
       }
       // em.setClient({ value: isSUPERinterrupt });
       // em.emit('adminSUPERinterrupt');
+
+  },
+  'click div.autofill_bookmark span': function(event){
+
+      console.log('div.autofill_bookmark span', $(event.currentTarget).text());
+
+      $('#whereSUPERinterrupt').val($(event.currentTarget).text());
+
+
   }
 
 });

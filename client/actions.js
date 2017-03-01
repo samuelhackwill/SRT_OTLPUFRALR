@@ -155,7 +155,14 @@ action = function(type, params){
 sound = function(params){
   console.log("sound", params);
   if(params[0]=="start"){
-    em.emit('adminstartstream');
+    // em.emit('adminstartstream');
+    console.log("jacky startTheStream??", streaming);
+    // em.emit('salmstartstream');
+    if(streaming) {
+      var body = { "request": "watch", id: parseInt(1) };
+      streaming.send({"message": body});
+    }
+      
   }
 }
 
@@ -504,6 +511,20 @@ gotobookmark = function(where){
     if((data[i]["type"]=="bookmark")&&(data[i]["text"]==where)){
       //ça c'est la valeur de ton compteur mon ptit gars
       compteur = i
+
+      if(Roles.userIsInRole(Meteor.user(), "admin")==true){
+        
+        var modeSpectacle = getSuperGlobal("modeSpectacle");
+        var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
+        var compteurAdmin = getSuperGlobal("compteurAdmin");
+        console.log("ACTIONS adminNext modeSpectacle?", modeSpectacle, "isItPowerToThePeople?", isItPowerToThePeople, "compteurAdmin", compteurAdmin);
+        // if(modeSpectacle && !isItPowerToThePeople && parseInt(compteurAdmin) != compteur) {
+        if(modeSpectacle && parseInt(compteurAdmin) != compteur) {
+          console.log("ACTIONS admin next compteur set compteurAdmin", compteur)
+          // cookies.set('compteurAdmin', compteur);
+          Meteor.call('setSuperGlobal', {name: 'compteurAdmin', value: parseInt(compteur)});
+        }
+      }
       setTimeout(function(){
         next()
       },333)
@@ -538,7 +559,7 @@ replaceNext = function(params){
 
 addLotteryButtons = function(){
   console.log("addCuppasButtons yo yo yo yo yo")
-  newBoutton(["finishCuppa","Oui","addUserToLottery('oui-non-euh')", "destroy(id)"])
+  newBoutton(["iWantONH","Oui","addUserToLottery('oui-non-euh')", "destroy(id)"])
   newBoutton(["nonB","Non","replaceNext('2')", "destroy(id)"])
   $("#sacbouttons").addClass("visible")
   $("#sacbouttons").removeClass("invisible")
@@ -554,7 +575,7 @@ addLotteryButtons = function(){
 
 addCuppasButtons = function(){
   console.log("addCuppasButtons yo yo yo yo yo")
-  newBoutton(["finishCuppa","c'est_bon_mon_thé_est_prêt", "destroy(id)"])
+  newBoutton(["finishCuppa","c'est_bon_mon_thé_est_prêt","destroy(id)"])
   $("#cuppasInc").remove()
   $("#sacbouttons").addClass("visible")
   $("#sacbouttons").removeClass("invisible")

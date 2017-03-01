@@ -14,3 +14,10 @@ body.representations {
 .bootstrap-datetimepicker-widget {
   color: red !important;
 }
+
+div#stream-error {
+    position: absolute;
+    bottom: 0;
+    background: #fff;
+    color: #000;
+}
