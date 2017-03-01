@@ -196,6 +196,9 @@ Template.jacky.onRendered(function () {
               case 'showMeTheButtons':
                 showMeTheButtons();
                 break;
+              case 'addCuppasButtons':
+                addCuppasButtons();
+                break;
               case 'displayPhoneNumbers':
                 console.log("DISPLAY PHONE NUMBERS");
               default:
