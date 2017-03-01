@@ -201,8 +201,8 @@ data.splice(nextsrt, 0, addobject, [type="text"])
 */
 
 cue = function(params){
-      console.log("params du cue ", params)
-    if(Roles.userIsInRole(Meteor.user(), "admin")==true){
+      console.log("params du cue ", params, Router.current().route.getName())
+    if(Roles.userIsInRole(Meteor.user(), "admin")==true && Router.current().route.getName() == "admin"){
       var string = params[0]
       var stringpropre = string.replace(/\_/g, ' ');
       alert("CUE DU CUE, ",stringpropre)
@@ -528,7 +528,7 @@ replaceNext = function(params){
 }
 
 addLotteryButtons = function(){
-  console.log("addCuppasButtons yo yo yo yo yo")
+  console.log("addLotteryButtons yo yo yo yo yo")
   newBoutton(["iWantONH","Oui","addUserToLottery('oui-non-euh')", "destroy(id)"])
   newBoutton(["nonB","Non","replaceNext('2')", "destroy(id)"])
   $("#sacbouttons").addClass("visible")
@@ -545,7 +545,7 @@ addLotteryButtons = function(){
 
 addCuppasButtons = function(){
   console.log("addCuppasButtons yo yo yo yo yo")
-  newBoutton(["finishCuppa","c'est_bon_mon_thé_est_prêt","destroy(id)"])
+  newBoutton(["finishCuppa","ça_y'est_je_suis_installé","destroy(id)"])
   $("#cuppasInc").remove()
   $("#sacbouttons").addClass("visible")
   $("#sacbouttons").removeClass("invisible")
