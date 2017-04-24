@@ -27,17 +27,7 @@ etats = {
   ambiance7:["rain1","7"]
 }
 
-/*
-posanswers =["disponible", "à la maison", "tranquille", "son ok", "concentré"]
-neganswers =["occupé","en ville","pas seul", "mute", "distrait"]
-*/
-
 next = function(){
-  //TODO
-  //attention dans le cas actuel il est impossible d'avoir la div de texte vide. il faudrait avoir une balise
-  //action spécifique pour vider la div
-  //solution envisagée :
-  //au moment de parser data, il rajoute une balise #clear une ligne sur deux par exemple
   console.log('next', compteur, data[compteur]);
   var currentData = data[compteur]
   var type = currentData["type"]

@@ -34,7 +34,7 @@
 
   body{
     font-family: "typo", sans-serif;
-    font-size:20px;
+    font-size:1.8vw;
     text-align: center;
     margin: 0px;
     -webkit-transition: color 1s ease-in-out;
@@ -123,22 +123,21 @@
 
 
   #first_drawing{
-    width:27vw;
-    height:44vh;
-    bottom:1vh;
-    background: url(img/pelo.svg) no-repeat center;
-    background-size: contain;
-    margin-right: 41px;
-    float: left;
+    width: 34vw;
+    transform: translateX(50%)
       }  
 
+  #container_checkliste{
+    width:100%;
+  }
+
   #second_drawing{
-    width:600px;
-    height:600px;
+    width: 48%;
+    transform: translateX(45px);
+    float:right;
     /*background: url(img/check.svg) no-repeat center;
     background-size: contain;
     */
-    margin: auto;
   }
 
   #inscription{
@@ -178,12 +177,6 @@
     font-size: 1.8vw;
   }
 
-  .table{
-    text-align:left;
-    font-size:16px;
-    margin-bottom:150px;
-  }
-
   .button{
     box-shadow: 0px -5px 0px 0px #999999;
     border: solid 2px white;
@@ -221,6 +214,7 @@
 
   #liste{
     font-size:1.6vw;
+    width:57%;
   }
 
   ul#checklist{
