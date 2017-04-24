@@ -156,21 +156,24 @@ Template.jacky.onRendered(function () {
     startTheStream();
     //lancer le check du stream à interval régulier
     console.log("streamCheckInterval?", streamCheckInterval);
-
+    /*
     if (!streamCheckInterval) {
         console.log("starting streamCheckInterval 1");
         streamCheckInterval = setInterval(function(){checkTheStream();}, 5000); 
         console.log("starting streamCheckInterval 2", streamCheckInterval);
     }
+    */
   });
   em.addListener('salmpowerpeople', function(what) {
     console.log('salm people have the power!', what);
       console.log("le pouvoir est aux mains du peuple", streamCheckInterval);
+      /*
       //arretons le check du stream à interval régulier
       console.log("stopping streamCheckInterval 1", streamCheckInterval);
       clearInterval(streamCheckInterval); 
       streamCheckInterval = null;
       console.log("stopping streamCheckInterval 2", streamCheckInterval);
+      */
   }); 
   em.addListener('salmUnStop', function(what) {
     console.log('salm unstop', what);
@@ -478,10 +481,11 @@ Template.jacky.onRendered(function () {
       var body = { "request": "watch", id: parseInt(1) };
       streaming.send({"message": body});
     }
-
+    /*
     if (!streamCheckInterval) {
         streamCheckInterval = setInterval(function(){checkTheStream();}, 30000); 
     }
+    */
     // if($('#streamFrame').length == 0) {
 
     //   $('<iframe>', {
