@@ -183,7 +183,7 @@
 
 
 <template name="showtime">
-    showtime !<br />
+    <br />
 
     <div class="col-lg-6 col-md-6 col-xs-12 switches small text-left">
       <label for="showmode" title="ou mettre le site en mode Spectacle">Mode Pré-Spectacle</label>
@@ -318,6 +318,9 @@
       <input type="button" id="top_midi6" value="6">
       <input type="button" id="kill_midi" value="KILL MIDI">
       <br />
+
+      {{> boutonsAmbiance}}
+
       <strong>Thés</strong><br />
       volontaires : {{cuppasCount}}<br />
       tasses prêtes : {{nbCuppasFinished}}<br />
@@ -417,4 +420,18 @@
         </tbody>
         {{/each}}
     </table>
+</template>
+
+<template name="boutonsAmbiance">
+<h1> boutons d'ambiance ici </h1>
+    {{#each listAmbiances}}
+      <input type="button" class="top_ambiance" id="{{chemin}}" value="{{name}} {{value}}" t="{{value}}">
+      <h5>{{cue}}</h5>
+    {{/each}}
+
+    <!--       <input type="button" class="top_ambiance" id="lumiere_public" value="lumiere_public">
+      <input type="button" class="top_ambiance" id="noir" value="noir">
+      <input type="button" class="top_ambiance" id="lumiere_plateau" value="lumiere_plateau">
+      <input type="button" class="top_ambiance" id="crepuscule_plateau" value="crepuscule_plateau">
+ -->
 </template>

@@ -4,13 +4,15 @@
     <div class="row small">
 
 
-      <div class="col-lg-12 col-md-12 small center-block">
+      <div class="col-lg-12 col-md-12 col-lg-12 small center-block">
         <h1>Ambiances Lumineuses</h1>
         <table class="table table-condensed table-striped table-hover">
           <thead>
               <tr>
                   <th>Nom</th>
-                  <th>valeur</th>
+                  <th>Valeur</th>
+                  <th>Cue</th>
+                  <th>Chemin</th>
                   <th>X</th>
               </tr>
           </thead>
@@ -20,12 +22,16 @@
               <tr>
                 <td><input type="text" id="editItemName" value="{{name}}"><br />({{_id}})</td>
                 <td><input type="text" id="editItemValue" value="{{value}}"></td>
+                <td><input type="text" id="editItemcue" value="{{cue}}"></td>
+                <td><input type="text" id="editItemChemin" value="{{chemin}}"></td>
                 <td><button class="saveItem">save</button><button class="cancelItem">Cancel</button>{{#each errors}}<div>{{message}}</div>{{/each}}</td>
               </tr>
               {{else}}
               <tr>
                   <td>{{name}}<br />({{_id}})</td>
                   <td>{{value}}</td>
+                  <td>{{cue}}</td>
+                  <td>{{chemin}}</td>
                   <td><button class="editItem">Edit</button>{{> quickRemoveButton collection="ambiances" _id=this._id onError=quickRemoveButtonOnError onSuccess=quickRemoveButtonOnSuccess beforeRemove=quickRemoveButtonBeforeRemove class="btn btn-danger"}}</td>
               </tr>
               {{/if}}
@@ -35,6 +41,8 @@
               <tr>
                   <td><label for="ambiance-name">Nom :</label><input name="name" id="ambiance-name" /></td>
                   <td><label for="ambiance-value">Valeur :</label><input name="ambiance" id="ambiance-value" /></td>
+                  <td><label for="ambiance-value">Cue :</label><input name="cue" id="ambiance-cue" /></td>
+                  <td><label for="ambiance-value">Chemin :</label><input name="chemin" id="ambiance-chemin" /></td>
                   <td><button class="btn btn-primary" type="button" id="addAmbiance">Ajouter</button></td>
               </tr>
           </tfoot>

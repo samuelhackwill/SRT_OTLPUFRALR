@@ -412,16 +412,24 @@ Template.jacky.onRendered(function () {
   var alternanceStorm = false;
   var balayeur
 
-  em.addListener('new_ambiance_client', function() {
+  em.addListener('new_ambiance_client', function(what) {
+
+    console.log(what)
+    changeImg(what)
+
+    // SAM1
+
     // var ambiance = superGlobals.findOne({ whichAmbiance: { $exists: true}});
     // var whichAmbiance = (ambiance) ? ambiance.whichAmbiance : "e41";
-    var whichAmbiance = getSuperGlobal("whichAmbiance", "e41");
-    var newAmbiance = ambiances.findOne({name: whichAmbiance});
-    console.log("ambiance?", newAmbiance);
-    if(newAmbiance){
-      console.log("new Ambiance", newAmbiance.value)
-      changeImg(newAmbiance.value)
-    }
+    // var whichAmbiance = getSuperGlobal("whichAmbiance", "e41");
+
+    // var newAmbiance = ambiances.findOne({name: whichAmbiance});
+    // console.log("ambiance?", newAmbiance);
+    // if(newAmbiance){
+    //   console.log("new Ambiance", newAmbiance.value)
+    //   changeImg(newAmbiance.value)
+    // }
+
   });
 
   em.addListener('ca_va_peter_client', function(/* client */) {
@@ -438,39 +446,6 @@ Template.jacky.onRendered(function () {
         }
         balayeur = setTimeout(balayeurfunc,2500)
     });
-
-    alternanceImg = false;
-
-  function changeImg(params){
-
-    if($("#imgcontainerBACK").hasClass( "invisible")){
-      $('#imgcontainerBACK').removeClass('invisible');
-      $('#imgcontainerBACK').addClass('visible');
-    }
-
-    if (alternanceImg==true) {
-      $("#imgcontainerFRONT").css("background-image", "url(/img/"+params+".jpg");  
-      $('#imgcontainerFRONT').removeClass('invisible');
-      $('#imgcontainerFRONT').addClass('visible');
-    }else{
-      $("#imgcontainerBACK").css("background-image", "url(/img/rain3.jpg");  
-      $('#imgcontainerFRONT').addClass('invisible');
-      $('#imgcontainerFRONT').removeClass('visible');
-    }
-    alternanceImg =! alternanceImg
-  }
-
-
-  // $("#login").click(function(e) { 
-  //     if (!interval) {
-  //         interval = setInterval(function(){myFunction();}, 2000); 
-  //     }
-  // });
-
-  // $("#logout").click(function(e) { 
-  //     clearInterval(interval); 
-  //     interval = null;
-  // });
 
   em.addListener('salmstartstream', startTheStream);
 

@@ -201,6 +201,16 @@ Schemas.ambiances = new SimpleSchema({
           label: "Valeur",
           max: 200
     },
+    cue: {
+          type: String,
+          label: "Cue",
+          max: 200
+    },
+    chemin: {
+          type: String,
+          label: "Chemin",
+          max: 200
+    },
     "created": {
       type: Date,
       label: "Date de création",

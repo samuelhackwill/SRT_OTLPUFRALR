@@ -63,7 +63,9 @@ Template.ambiances.helpers({
 var saveItemAmbiance = function(){
   var editItem = {
     name: $("#editItemName").val(),
-    location: $("#editItemValue").val()
+    fadein: $("#editItemValue").val(),
+    cue: $("#editItemCue").val(),
+    chemin: $("#editItemChemin").val()
   }
   var args = {
     _id: Session.get('editAmbianceId'),
@@ -86,14 +88,17 @@ Template.ambiances.events({
       event.preventDefault();
       var ambianceNom = $('#ambiance-name').val();
       var ambianceValue = $('#ambiance-value').val();
+      var ambianceCue = $('#ambiance-cue').val();
+      var ambianceChemin = $('#ambiance-chemin').val();
       if(
-        ambianceNom != "" &&
-        ambianceValue != ""
+        ambianceNom != "" && ambianceValue != "" && ambianceCue != "" && ambianceChemin != ""
       ) {
         // var contenuData = $('#json-result').val();
         var args = {
           name: ambianceNom,
-          value: ambianceValue
+          value: ambianceValue,
+          cue: ambianceCue,
+          chemin: ambianceChemin
         };
         console.log('ambiance : ', args);
         Meteor.call('newAmbiance', args);

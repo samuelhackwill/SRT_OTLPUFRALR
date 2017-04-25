@@ -12,20 +12,11 @@ interrupt = false
 indeximg = 0
 alternance = false
 autonextcontainer = null
+nextBGcontainer = null
 flipbookstatus = false
 clock = null
 
 data = []
-
-etats = {
-  ambiance1:["rain1","1"],
-  ambiance2:["rain1","2"],
-  ambiance3:["rain2","3"],
-  ambiance4:["rain1","4"],
-  ambiance5:["rain2","5"],
-  ambiance6:["rain3","6"],
-  ambiance7:["rain1","7"]
-}
 
 next = function(){
   console.log('next', compteur, data[compteur]);
@@ -119,17 +110,6 @@ action = function(type, params){
     $("#sacbouttons").removeClass("invisible")
     newBoutton(params)
     break
-
-    case "img":
-    // IMAGE
-    // trigger pour enclencher un fadeout styled
-    if(alternance){
-      changeImg(params)
-    }else{
-      changeImg(params)
-    }
-    alternance =! alternance
-    break;
 
     case "fullscreen":
     fullscreen();
@@ -350,45 +330,55 @@ removeFiction = function(params){
 }
 
 changeImg = function(params){
+  console.log('%c'+'src, '+params[1]+' transition '+params[0], 'background: #222; color: #bada55')
 
-  console.log("tous les params, ",params)
+  chemin = params[1]
+  transition = params[0]
+  transitionms = transition * 1000
 
-  console.log("src, ",params[0])
-  console.log("transition, ",params[1])
-  console.log('opacity '+ params[1] +' ease-in-out')
+  if (chemin="panic.png") {
+    window.clearTimeout(nextBGcontainer)
+  }
 
-$("#imgcontainerFRONT").css({
-        WebkitTransition : 'opacity '+params[1]+'s ease-in-out',
-        MozTransition    : 'opacity '+params[1]+'s ease-in-out',
-        MsTransition     : 'opacity '+params[1]+'s ease-in-out',
-        OTransition      : 'opacity '+params[1]+'s ease-in-out',
-        transition       : 'opacity '+params[1]+'s ease-in-out'
+  $("#imgcontainerFRONT").css({
+    WebkitTransition : 'opacity '+transition+'s ease-in-out',
+    MozTransition    : 'opacity '+transition+'s ease-in-out',
+    MsTransition     : 'opacity '+transition+'s ease-in-out',
+    OTransition      : 'opacity '+transition+'s ease-in-out',
+    transition       : 'opacity '+transition+'s ease-in-out'
+  });
+
+  $("#imgcontainerBACK").css({
+    WebkitTransition : 'opacity 0.1s ease-in-out',
+    MozTransition    : 'opacity 0.1s ease-in-out',
+    MsTransition     : 'opacity 0.1s ease-in-out',
+    OTransition      : 'opacity 0.1s ease-in-out',
+    transition       : 'opacity 0.1s ease-in-out'
+  });
+
+  delaysecu0 = setTimeout(function(){
+    $("#imgcontainerFRONT").css("background-image", "url(/img/"+chemin+".png");
+  }, 50)
+
+  delaysecu = setTimeout(function(){
+    $("#imgcontainerFRONT").css("opacity", "1")
+  }, 100)
+
+  nextBGcontainer = setTimeout(function(){
+    $("#imgcontainerBACK").css("background-image", "url(/img/"+chemin+".png"); 
+    $("#imgcontainerFRONT").css({
+      WebkitTransition : 'opacity 0.1s ease-in-out',
+      MozTransition    : 'opacity 0.1s ease-in-out',
+      MsTransition     : 'opacity 0.1s ease-in-out',
+      OTransition      : 'opacity 0.1s ease-in-out',
+      transition       : 'opacity 0.1s ease-in-out'
     });
-
-  $("#imgcontainerFRONT").addClass("visible")
-  $("#imgcontainerFRONT").removeClass("invisible")
-  
-   // tu change le background-image de front 
-   // tu changes la durée de transition de front 
-   // tu rend visible back et front 
-   // avec un timout = a la durée de la transition de front
-   //    tu changes de lbackground-image de back
-   //    sans transition du fais disparaître front  
-
-
-
-  // if (alternance) {
-  //   $("#imgcontainerFRONT").css("background-image", "url(/img/"+params+".jpg");  
-  //   $("#imgcontainerFRONT").css("opacity", "1");  
-  // }else{
-  //   $("#imgcontainerBACK").css("background-image", "url(/img/"+params+".jpg");  
-  //   $("#imgcontainerFRONT").css("opacity", "0");  
-  // }
-  // console.log(alternance)
-  // console.log(params[0])
-
+    $("#imgcontainerFRONT").css("opacity", "0")
+      console.log('%c TRANSITION DE '+ transitionms+ ' FINISHED.','background: #222; color: #bada55')
+    },transitionms)
 
 }
+
 
 autonext = function(params){
   var wait = params

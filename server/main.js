@@ -87,10 +87,21 @@ if (Meteor.isServer) {
     em.emit('ca_va_peter_client')
   });
 
-  em.addListener('new_ambiance', function(params) {
-    console.log("new_ambiance cote serveur ", params);
-    Meteor.call('setSuperGlobal', {name: 'ambiance', value: params.key});
-    em.emit('new_ambiance_client')
+
+  em.addListener('new_ambiance', function() {
+    console.log('NEW AMBIANCE côté serveur tranquilou TRANSITION ', arguments[0]["newTransition"], ' PATH ', arguments[0]["newAmbiance"]);
+
+
+    // Meteor.call('setSuperGlobal', {name: 'ambiance', value: params.key});
+    // em.emit('new_ambiance_client')
+    // em.setClient({ reponse: arguments[0].reponse });
+     var newTransition = arguments[0]["newTransition"];
+     var newAmbiance = arguments[0]["newAmbiance"]
+     var args = [newTransition, newAmbiance]
+     
+     if(args){
+      em.emit('new_ambiance_client', args);
+     }
 
   });
 

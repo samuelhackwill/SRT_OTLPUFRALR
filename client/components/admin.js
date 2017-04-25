@@ -2,11 +2,7 @@ Template.registerHelper('equals', function (a, b) {
   return a == b;
 });
 
-
-
 var refreshedUp = false;
-
-// salut c'est sam
 
 Template.admin.onCreated(function() {
   console.log('Template admin created.');
@@ -16,9 +12,11 @@ Template.admin.onCreated(function() {
     this.subscribe('allRepresentations');
     this.subscribe('allContenusEcran');
     this.subscribe('allLoteries');
+    this.subscribe('allAmbiances');
   });
 
 });
+
 
 Template.showtime.onRendered(function () {
 });
@@ -558,6 +556,7 @@ Template.showtime.helpers({
   }
 });
 
+
 Template.phonesList.helpers({
   listPhoneNumbers:function(){
     console.log("PhoneNumbers??");
@@ -587,6 +586,7 @@ Template.phonesList.helpers({
     };
   }
 });
+
 Template.loteriesList.helpers({
   listLoteries:function(){
     console.log("loteries??");
@@ -619,7 +619,34 @@ Template.loteriesList.helpers({
   }
 });
 
+Template.boutonsAmbiance.helpers({
+  listAmbiances:function(){
+    console.log("listAmbiances??");
+    return ambiances.find();
+  }
+
+});
+
+
 Template.showtime.events({
+
+  'click .top_ambiance':function(event){
+      console.log("TU AS CLIQUE SUR UN BOUTON QUI SAPPELLE ", $(event.currentTarget).val())
+      console.log("TU AS CLIQUE SUR UN BOUTON QUI ID ", $(event.currentTarget).attr('id'))
+      console.log("TU AS CLIQUE SUR UN BOUTON QUI TRANSITIONNE DE ", $(event.currentTarget).attr('t'))
+
+      chemin = $(event.currentTarget).attr('id')
+      transition = $(event.currentTarget).attr('t')
+
+      // ATTENTION IL VAUT MIEUX CHANGER PAS MAL LA LOGIQUE DU TRUC :
+      // REFACTORER LA FONCTION CHANGE IMAGE AVEC DU JQUERY 
+      // POUR TOGGLE ET CROSSFADE DE MANIERE PLUS INTELLIGENTE
+      // + SUPERGLOBALE COMME LE COMPTEUR QUI EST MISE à JOUR A CHAQUE CALL DU CLIENT
+      // PUTAIN MAIS IL FAUT UN COOKIE ÇA VEUT DIRE?
+
+      em.setClient({ newAmbiance : chemin, newTransition : transition});
+      em.emit("new_ambiance")
+  },
 
   'click #top_midi1':function(){
     output.send([144, 84, 127]); // full velocity note on A4 on channel zero
@@ -792,10 +819,10 @@ Template.showtime.events({
 
 Template.admin.events({
 
-  'click .divAmbiance' : function(event){
-    var _id = event.currentTarget.id
-    changeImg([etats[_id][0], etats[_id][1]])
-  },
+  // 'click .divAmbiance' : function(event){
+  //   var _id = event.currentTarget.id
+  //   changeImg([etats[_id][0], etats[_id][1]])
+  // },
 
     'click #oui': function(){
     console.log('salmclick oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
