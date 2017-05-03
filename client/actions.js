@@ -494,16 +494,18 @@ fullscreen = function(){
   }
 }
 
-destroy = function(self){
+destroy = function(self, replaceActual = "ok"){
   // FUNCTION DESTROY
   // dans l'idéal faudrait lui passer un délai également
   var delay = 333
   var element = document.getElementById(self)
   var parentid = element.parentNode.id
 
+  var stringpropre = replaceActual.replace(/\_/g, ' ').replace(/\(/g, '\'');;
+
   $("#"+parentid).css("opacity","0")
 
-  $("#srt").html("ok")
+  $("#srt").html(stringpropre)
   // SAM2
   // SI LE BOUTON EST DE TYPE CUPPAS FINISH_ALT (tu utilises l'id)
   // DANS CE CAS LÀ TU FAIS APPARAÎTRE UN TEXTE CUSTOM
@@ -563,6 +565,10 @@ replaceNext = function(params){
 
   if(params=="3"){
     leReplace.text = "Excellent."
+  }
+
+  if(params=="4"){
+  leReplace.text = "Ok, si vous voyez les boutons apparaître, c'est à vous de répondre."
   }
 
   console.log("data next srt AVANT LIFTING ,",data[nextsrt])
