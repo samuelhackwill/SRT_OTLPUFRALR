@@ -15,9 +15,17 @@
     src: url('OfficeCodePro-Regular.ttf') format('truetype');
   }
 
+  .alreadyParticipating{
+    color:purple;  
+}
+
   #srt span em{
     font-style: italic;
     color:grey;
+  }
+
+  #nextTexte{
+    background-color:lightgreen;
   }
 
   html{
@@ -34,7 +42,7 @@
 
   body{
     font-family: "typo", sans-serif;
-    font-size:1.8vw;
+    font-size:1.6vw;
     text-align: center;
     margin: 0px;
     -webkit-transition: color 1s ease-in-out;
@@ -42,9 +50,6 @@
 
     width:100%;
     height:100%;
-  }
-
-  #dequoi{
   }
 
   #dateNextRepresentation{
@@ -242,6 +247,7 @@
 
 
   #gcontainer{
+    background-color: black;
     width:100%;
     height:100%;
   }
@@ -299,7 +305,8 @@
     background : no-repeat center center fixed; 
     -webkit-background-size: cover;
 
-    background-image: url("/img/f10.png");
+    background-image: url("/img/f-02.png");
+    background-color:black;
     position:absolute;
     width:100%;
     height:100%;
@@ -344,28 +351,32 @@
   }
 
   .posbot{
-    height : inherit;
+/*    height : inherit;
     width : inherit;
     background-color: white;
-    top: 90%;
+
+    pour SRT
+*/    top: -50%;
   }
 
   .postop{
     height : inherit;
     width : inherit;
     background-color: rgba(245, 245, 245, 0);
-    /*hum hum transparance*/
-    top : 12%;
+    /*hum hum 
+    pour BUTTON transparance*/
+
+    transform: translate(0%,100%);
   }
 
   #sacbouttons{
     margin-top:12px;
     z-index:11;
-
-    -webkit-transition: opacity .3s ease-in-out;
-    -moz-transition: opacity .3s ease-in-out;
-    -o-transition: opacity .3s ease-in-out;
-    transition: opacity .3s ease-in-out;
+    
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
     top :200%;
     position: absolute;
     left: 50%;
@@ -418,6 +429,8 @@ text-decoration: underline;
 
   #srt{
     color: white;
+
+    font-size:2.2vw;
 
     position: absolute;
     top: 50%;

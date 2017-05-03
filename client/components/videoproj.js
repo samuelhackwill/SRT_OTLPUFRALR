@@ -1,3 +1,8 @@
+// TODO
+// faire un bouton dans la vue ADMIN
+// qui fasse un shutter qui dit à la vue videoproj
+// de faire une rêgle CSS du cul
+
 
 var streamCheckInterval;
 var caughtUp = false;
@@ -427,6 +432,13 @@ Template.videoproj.onRendered(function () {
   });
 
   em.addListener('ca_va_peter_client', function(/* client */) {
+        // console.log("CHECK PATH ", Router.current().route.path())
+
+        if(Router.current().route.path()=="\/videoproj"){
+          // console.log("é ho t'es le videoproj vous vous barrez")
+          return
+        }
+
         if(alternanceStorm){
           clearTimeout(balayeur)
           $( ".eclair" ).remove();

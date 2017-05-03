@@ -63,6 +63,14 @@ if (Meteor.isServer) {
     }
   });
 
+    em.addListener('adminback', function(/* client */) {
+    console.log('ADMIN BACK', _.toArray(arguments), arguments[0]);
+    // em.setClient({ reponse: arguments[0].reponse });
+    var args = arguments[0];
+    if(args) {
+      em.emit('salmback', args);
+    }
+  });
 
 
   em.addListener('adminnext', function(/* client */) {
@@ -647,6 +655,18 @@ Meteor.methods({
     }
     console.log("editRepresentation", args);
     representations.update(args._id, 
+      { $set: args.obj },
+      { filter: false }
+    );
+  },
+    editAmbiance: function (args) {
+    var loggedInUser = Meteor.user()
+
+    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+      throw new Meteor.Error(403, "Access denied")
+    }
+    console.log("editAmbiance", args);
+    ambiances.update(args._id, 
       { $set: args.obj },
       { filter: false }
     );

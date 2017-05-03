@@ -63,7 +63,7 @@ Template.ambiances.helpers({
 var saveItemAmbiance = function(){
   var editItem = {
     name: $("#editItemName").val(),
-    fadein: $("#editItemValue").val(),
+    value: $("#editItemValue").val(),
     cue: $("#editItemCue").val(),
     chemin: $("#editItemChemin").val()
   }

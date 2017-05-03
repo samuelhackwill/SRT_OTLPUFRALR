@@ -16,6 +16,8 @@ nextBGcontainer = null
 flipbookstatus = false
 clock = null
 
+areYouSureYouAreComfy = false
+
 data = []
 
 next = function(){
@@ -31,6 +33,34 @@ next = function(){
         // euh alors ça je sais pas pourquoi ça marche mais ça permet d'éviter des situations où, arrivé à un bookmark
         // il sautait deux lignes au lieu d'une
         compteur+=1;
+        next();
+      }
+    }
+
+    if((type=="text")&&(params!="")){
+      document.getElementById("srt").innerHTML = params
+      // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
+      // bon ben c'est ici qu'il faudrait faire un truc
+      if(params=="***"){
+        // ça c'est pour caler des blancs
+        document.getElementById("srt").innerHTML = ""
+      }
+    }
+  }
+
+  back = function(){
+  console.log('next', compteur, data[compteur]);
+  var currentData = data[compteur]
+  var type = currentData["type"]
+  var params = currentData["text"]
+
+  while(data[compteur]["type"]!="text"){
+      // tant que data[compteur] est une balise, ben continue à executer les instructions s'il te plaît
+      action(type, params)
+      if((data[compteur]["type"]!="text")||(data[compteur]["text"]=="")){
+        // euh alors ça je sais pas pourquoi ça marche mais ça permet d'éviter des situations où, arrivé à un bookmark
+        // il sautait deux lignes au lieu d'une
+        compteur-=1;
         next();
       }
     }
@@ -336,7 +366,7 @@ changeImg = function(params){
   transition = params[0]
   transitionms = transition * 1000
 
-  if (chemin="panic.png") {
+  if (chemin=="panic.png") {
     window.clearTimeout(nextBGcontainer)
   }
 
@@ -474,6 +504,10 @@ destroy = function(self){
   $("#"+parentid).css("opacity","0")
 
   $("#srt").html("ok")
+  // SAM2
+  // SI LE BOUTON EST DE TYPE CUPPAS FINISH_ALT (tu utilises l'id)
+  // DANS CE CAS LÀ TU FAIS APPARAÎTRE UN TEXTE CUSTOM
+  // ET DE NOUVEAU BOUTONS (LE VRAI CUPPAS FINISH)
 
   setTimeout(function(){
     $("#"+parentid).empty()
@@ -528,7 +562,7 @@ replaceNext = function(params){
   }
 
   if(params=="3"){
-    leReplace.text = "Excellent. Et puis tenez, si c'est possible et que ça vous ferait plaisir, vous pouvez faire bouillir de l'eau pour vous faire une tisane, ou un chocolat chaud, quelque chose de chaud quoi..."
+    leReplace.text = "Excellent."
   }
 
   console.log("data next srt AVANT LIFTING ,",data[nextsrt])
@@ -555,41 +589,57 @@ addLotteryButtons = function(){
 
 addCuppasButtons = function(){
   console.log("addCuppasButtons yo yo yo yo yo")
-  newBoutton(["finishCuppa","ça_y'est_je_suis_installé","destroy(id)"])
+  newBoutton(["finishCuppa","OK_J\’AI_FINI_MA_CABANE", "finishCuppa(id)" ])
   $("#cuppasInc").remove()
   $("#sacbouttons").addClass("visible")
   $("#sacbouttons").removeClass("invisible")
 }
 
-finishCuppa = function(){
-  console.log("finishCuppa!");
+finishCuppa = function(e){
+
+  console.log("finishCuppa avant boucle");
+
+  if (!areYouSureYouAreComfy) {
+    areYouSureYouAreComfy=true
+    $("#srt").html("Attendez, vous êtes sûr·e d\’être vraiment bien installé·e, bien bien confortablement ? Vous avez fait une vraie cabane ? Vous avez une boisson chaude ? Des coussins à foison ? <br/> Vous avez encore le temps de parfaire votre installation avant de confirmer que vous avez bien terminé.")
+    $("#finishCuppa").attr('value', 'C\’EST BON CETTE FOIS JE ME SUIS VRAIMENT BIEN INSTALLÉ·E ET J\’AI MA BOISSON CHAUDE');
+    // la mettre du CSS
+    $("#srt").css("top", "-50%")
+    $("#sacbouttons").css("margin-top","50px")
+    //       $("#flipbookcontainer").css("display", "none")},1000)
+
+    console.log("finishCuppa interieur boucle");
+
+  }else{
+    destroy(e)
+    $("#srt").html("")
+
+    $("#srt").css("top", "50%")
+    $("#sacbouttons").css("margin-top","12px")
+
+    console.log("finishCuppa apres boucle");
+
   var buchesArray = getSuperGlobal("buchesCount", []);
   var buchesAllumees = buchesArray.filter(function(buche){ return buche; }).length;
   console.log("finishCuppa?",buchesAllumees);
-  if(buchesAllumees < 6) em.emit('salmFinishCuppa');
-
+  if(buchesAllumees < 6){
+   em.emit('salmFinishCuppa');
+   // changeImgDeBuches(buchesAllumees)
+  }
+ }
 }
+
+// changeImgDeBuches= function(howmany){
+//   src = "b-"+howmany
+//   console.log("changeImgDeBuches ", src)
+//   changeImg(["1",src])
+// }
 
 gotonext = function(params){
   var bonus = parseInt(params)
   compteur += bonus
   next()
   interrupt=false
-  console.log("gotonext, ", params)
-  console.log("gotonext, ", params)
-  console.log("gotonext, ", params)
-  console.log("gotonext, ", params)
-  console.log("gotonext, ", params)
-  console.log("gotonext, ", params)
-  console.log("gotonext, ", params)
-  console.log("gotonext, ", params)
-  console.log("gotonext, ", params)
-  console.log("gotonext, ", params)
-  console.log("gotonext, ", params)
-  console.log("gotonext, ", params)
-  console.log("gotonext, ", params)
-  console.log("gotonext, ", params)
-  console.log("gotonext, ", params)
   console.log("gotonext, ", params)
 }
 

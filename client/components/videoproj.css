@@ -15,10 +15,11 @@ ul.admin_menu li:last-child:after {
 }
 
 /* videoproj */
-body.videoproj #srt {
-  color: transparent;
-}
-body.videoproj #srt span.vp {
-  color: white;
+body.videoproj .shutter {
+  display:none !important;
+  background-color:purple;
 }
 
+body.videoproj #sacbouttons{
+	display:none;
+}

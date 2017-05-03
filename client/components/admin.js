@@ -151,57 +151,57 @@ Template.admin.onRendered(function () {
   console.log('em', em);
 
 
-  em.addListener('salmreponseoui', function(what) {
-    //console.log('salm euh!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    //output.send([144, 69, 91]);
-    //un_note = setTimeout(output.send([144, 52, 0]),1500)
-    console.log('salm oui!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    if(what.mode == 'singlePlayer') {
-      //mode single - play sound
-      var son = new Audio('oui.ogg');
-      son.addEventListener('playing', function(){
-       console.log('oui playing', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-      });
-      son.play();
-    } else if(what.mode == 'multiPlayer') {
-      //mode multi - send midi
-      output.send([144, 65, 91]);
-      un_note = setTimeout(function(){ output.send([144, 65, 0])},10)
-    }
-  }); 
+  // em.addListener('salmreponseoui', function(what) {
+  //   //console.log('salm euh!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  //   //output.send([144, 69, 91]);
+  //   //un_note = setTimeout(output.send([144, 52, 0]),1500)
+  //   console.log('salm oui!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  //   if(what.mode == 'singlePlayer') {
+  //     //mode single - play sound
+  //     var son = new Audio('oui.ogg');
+  //     son.addEventListener('playing', function(){
+  //      console.log('oui playing', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  //     });
+  //     son.play();
+  //   } else if(what.mode == 'multiPlayer') {
+  //     //mode multi - send midi
+  //     output.send([144, 65, 91]);
+  //     un_note = setTimeout(function(){ output.send([144, 65, 0])},10)
+  //   }
+  // }); 
 
-  em.addListener('salmreponsenon', function(what) {
-    console.log('salm non!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    if(what.mode == 'singlePlayer') {
-      //mode single - play sound
-      var son = new Audio('non.ogg');
-      son.addEventListener('playing', function(){
-       console.log('non playing', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-      });
-      son.play();
-    } else if(what.mode == 'multiPlayer') {
-      //mode multi - send midi
-      output.send([144, 67, 91]);
-      un_note = setTimeout(function(){ output.send([144, 67, 0])},10)
-    }
-  }); 
+  // em.addListener('salmreponsenon', function(what) {
+  //   console.log('salm non!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  //   if(what.mode == 'singlePlayer') {
+  //     //mode single - play sound
+  //     var son = new Audio('non.ogg');
+  //     son.addEventListener('playing', function(){
+  //      console.log('non playing', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  //     });
+  //     son.play();
+  //   } else if(what.mode == 'multiPlayer') {
+  //     //mode multi - send midi
+  //     output.send([144, 67, 91]);
+  //     un_note = setTimeout(function(){ output.send([144, 67, 0])},10)
+  //   }
+  // }); 
 
-  em.addListener('salmreponseeuh', function(what) {
-    console.log('salm euh!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  // em.addListener('salmreponseeuh', function(what) {
+  //   console.log('salm euh!', what, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
 
-    if(what.mode == 'singlePlayer') {
-      //mode single - play sound
-      var son = new Audio('euuuh.ogg');
-      son.addEventListener('playing', function(){
-       console.log('euh playing', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-      });
-      son.play();
-    } else if(what.mode == 'multiPlayer') {
-      //mode multi - send midi
-      output.send([144, 69, 91]);
-      un_note = setTimeout(function(){ output.send([144, 69, 0])},10)
-    }
-  }); 
+  //   if(what.mode == 'singlePlayer') {
+  //     //mode single - play sound
+  //     var son = new Audio('euuuh.ogg');
+  //     son.addEventListener('playing', function(){
+  //      console.log('euh playing', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  //     });
+  //     son.play();
+  //   } else if(what.mode == 'multiPlayer') {
+  //     //mode multi - send midi
+  //     output.send([144, 69, 91]);
+  //     un_note = setTimeout(function(){ output.send([144, 69, 0])},10)
+  //   }
+  // }); 
 
 
   em.addListener('adminnext', function(what) {
@@ -364,6 +364,7 @@ Template.admin.onRendered(function () {
 
   function adminNext(){
     console.log('adminNext', compteur);
+
     // if(compteur >= 75) compteur = 75;
 
     // var currentSub = data[compteur]
@@ -398,7 +399,58 @@ Template.admin.onRendered(function () {
       em.setClient({ compteur: compteur });
       em.emit('adminnext');
       next();
+
+      majNext();
     // }
+  }
+
+    function adminBack(){
+    console.log('adminBack', compteur);
+
+    // if(compteur >= 75) compteur = 75;
+
+    // var currentSub = data[compteur]
+    // document.getElementById("srt").innerHTML = currentSub
+
+    // if((type=="text")&&(params!="")){
+    //   document.getElementById("srt").innerHTML = params
+    //   // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
+    //   // bon ben c'est ici qu'il faudrait faire un truc
+    //   if(params=="***"){
+    //     // ça c'est pour caler des blancs
+    //     document.getElementById("srt").innerHTML = ""
+    //   }
+    // }
+    // ça c'est pour virer le focus des boutons oui et non histoire de pas les activer en appuyant sur espace
+    // Session.update("compteur", compteur);
+    // if(compteur < data.length-1){
+      window.clearTimeout(autonextcontainer)
+      compteur -=1
+      var modeSpectacle = getSuperGlobal("modeSpectacle");
+      var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
+      var compteurAdmin = getSuperGlobal("compteurAdmin");
+      console.log("adminNext modeSpectacle?", modeSpectacle, "isItPowerToThePeople?", isItPowerToThePeople, "compteurAdmin", compteurAdmin);
+      if(modeSpectacle && !isItPowerToThePeople && parseInt(compteurAdmin) != compteur) {
+        console.log("admin next compteur set compteurAdmin", compteur)
+        // cookies.set('compteurAdmin', compteur);
+        Meteor.call('setSuperGlobal', {name: 'compteurAdmin', value: parseInt(compteur)});
+      }
+      // $('#currentCompteur').text(compteur);
+      em.setClient({ compteur: compteur });
+      em.emit('adminback');
+      back();
+
+      majNext();
+    // }
+  }
+
+
+
+  majNext = function(){
+        $("#texteNow").html(data[compteur].text + " (" + data[compteur].type +")")
+        $("#texteNext").html(data[compteur+1].text + " (" + data[compteur+1].type +")")
+        $("#texteNextNext").html(data[compteur+2].text + " (" + data[compteur+2].type +")")
+        $("#texteNextNextNext").html(data[compteur+3].text + " (" + data[compteur+3].type +")")
   }
 
   document.onkeyup = function(e) {
@@ -425,6 +477,9 @@ Template.admin.onRendered(function () {
         // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
         // ça avance tout seul avec un délai)
       }
+      if(e.keyCode =='66' && compteur > 0){
+        adminBack();
+        console.log("keyup, ", compteur)
     }
     //CUES
 
@@ -438,6 +493,7 @@ Template.admin.onRendered(function () {
     }
     */
   }
+}
 
 });
 
@@ -452,6 +508,7 @@ Template.admin.helpers({
 });
 
 Template.showtime.helpers({
+
   isPowerToTheAdminChecked:function(){
     // var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
     // var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
@@ -629,6 +686,18 @@ Template.boutonsAmbiance.helpers({
 
 
 Template.showtime.events({
+
+  'click #Seb' : function(){
+    if(loteries.findOne()){
+      $('#Seb').val(loteries.findOne().ids.length + " SALMs")
+  }else{
+    $('#Seb').val("euh ben y'a personne pour le moment")
+  }
+  },
+
+  'click #testEclair' : function(event){
+    em.emit("ca_va_peter")
+  },
 
   'click .top_ambiance':function(event){
       console.log("TU AS CLIQUE SUR UN BOUTON QUI SAPPELLE ", $(event.currentTarget).val())
@@ -898,6 +967,7 @@ Template.loteriesList.events({
     console.log('click button.deliver-messages', $(event.currentTarget).val(), this);
 
     args = {_id: this._id, name: this.name}
+    console.log(args);
     em.setClient(args);
     em.emit('adminDeliverMessages');
   }

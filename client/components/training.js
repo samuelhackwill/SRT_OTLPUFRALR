@@ -14,6 +14,7 @@ Template.training.events({
   'click #finishCuppa': function(){
     Meteor.call('setSuperGlobal', {name: 'finishCuppa'});
   },
+  
   'click #oui': function(){
     console.log('salmclick oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
     em.setClient({ reponse: 'oui', mode: 'singlePlayer' });

@@ -47,7 +47,7 @@ Template.waiting.onRendered(function () {
 
 Template.waiting.events({
 
-  'click a.represent': function(e){
+  'click .represent': function(e){
     $("#success").show()
     $("#success").css("opacity", ".97")
 
@@ -169,16 +169,47 @@ Template.waiting.helpers({
     var checkCookie = cookies.get("user_represent");
     console.log('participating representation?', checkCookie, this._id);
     if(null != checkCookie && undefined != checkCookie && checkCookie == this._id) {
-      return " alreadyParticipating";
+      return "alreadyParticipating";
     } else return "";
+    // si tu participes déjà tu retrun le nom de la classe, sinon non
   },
+  jeMinscris: function(date_start){
+    var nowD = new Date().getDate()
+    var nowM = new Date().getMonth() + 1 //sisi january = 0 sinon et ça rend triste
+    var nowY = new Date().getFullYear()
+    var nowH = new Date().getHours()
+    var nowM = new Date().getMinutes()
+    
+    var dateD = date_start.getDate()
+    var dateM = date_start.getMonth() + 1
+    var dateY = date_start.getFullYear()
+    var dateH = date_start.getHours()
+    var dateM = date_start.getMinutes()
+
+
+    // console.log("LA DATE ", dateD, dateM, dateY)
+    // console.log("AJD ", nowD, nowM, nowY)
+
+    var checkCookie = cookies.get("user_represent");
+    console.log('participating representation?', checkCookie, this._id);
+      modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}}).modeSpectacle;
+    // if(modeSpectacle && nowD == dateD && nowM == dateM && nowY == dateY && nowH >= dateH && nowM >= dateM){
+    //   return("Représentation en cours!")
+    // }
+
+    if(null != checkCookie && undefined != checkCookie && checkCookie == this._id) {
+      return "inscription OK";
+    } else return "Je m'inscris";
+  },
+
   isModeSpectacle: function(){
-      // modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}}).modeSpectacle;
+      modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}}).modeSpectacle;
       console.log("waiting - modeSpectacle??", modeSpectacle);
       // if(modeSpectacle) this.render('jacky');
       return modeSpectacle;
   },
   isStealth: function(name){
+    console.log("NAME DE ISSTEALTH ", name)
     if(name == "STEALTH") return true;
     else return false;
   }

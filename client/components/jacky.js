@@ -107,6 +107,29 @@ Template.jacky.onRendered(function () {
 
   }
 
+    em.addListener('salmback', function(what) {
+    console.log('salm back!', what);
+    // compteur = what.compteur;
+    //enregistrons le compteur dans un cookie
+    // if(what.compteur && cookies.get('compteur') != what.compteur) cookies.set('compteur', what.compteur);
+    // var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
+    // var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : [];
+    var isSUPERinterrupt = getSuperGlobal("SUPERinterrupt", []);
+    var userRoles = Roles.getRolesForUser(Meteor.user());
+    if(userRoles.length == 0) userRoles.push("salm");
+    console.log("salm back : isSUPERinterrupt", isSUPERinterrupt, userRoles);
+    var found = jQuery.inArray(userRoles[0], isSUPERinterrupt);
+    if (found >= 0) {
+      //ce role est dans le parking !
+    } else {
+      //ce role n'est pas dans le parking, faisons un next
+      console.log('pas dans le parking, faisons un next')
+      window.clearTimeout(autonextcontainer) //clear auto next
+      // compteur += 1;
+      compteur = what.compteur; //changer le compteur depuis l'évènement admin (rattraper le spectacle)
+      next();
+    } 
+  });
 
   em.addListener('salmnext', function(what) {
     console.log('salm next!', what);
@@ -520,13 +543,14 @@ Template.jacky.events({
   Meteor.call('setSuperGlobal', {name: 'cuppasInc'});
   },
 
-  'click #cuppasDec': function(){
-    Meteor.call('setSuperGlobal', {name: 'cuppasDec'});
-  },
+  // 'click #cuppasDec': function(){
+  //   Meteor.call('setSuperGlobal', {name: 'cuppasDec'});
+  // },
 
-  'click #finishCuppa': function(){
-    Meteor.call('setSuperGlobal', {name: 'finishCuppa'});
-  },
+  // 'click #finishCuppa': function(){
+  //   Meteor.call('setSuperGlobal', {name: 'finishCuppa'});
+  // },
+  
   'click #oui': function(){
     console.log('salmclick oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
     em.setClient({ reponse: 'oui', mode: 'singlePlayer' });
