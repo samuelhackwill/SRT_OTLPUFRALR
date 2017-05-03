@@ -447,10 +447,10 @@ Template.admin.onRendered(function () {
 
 
   majNext = function(){
-        $("#texteNow").html(data[compteur].text + " (" + data[compteur].type +")")
-        $("#texteNext").html(data[compteur+1].text + " (" + data[compteur+1].type +")")
-        $("#texteNextNext").html(data[compteur+2].text + " (" + data[compteur+2].type +")")
-        $("#texteNextNextNext").html(data[compteur+3].text + " (" + data[compteur+3].type +")")
+        $("#texteNow").html(data[compteur-1].text + " (" + data[compteur].type +")")
+        $("#texteNext").html(data[compteur].text + " (" + data[compteur+1].type +")")
+        $("#texteNextNext").html(data[compteur+1].text + " (" + data[compteur+2].type +")")
+        $("#texteNextNextNext").html(data[compteur+2].text + " (" + data[compteur+3].type +")")
   }
 
   document.onkeyup = function(e) {
