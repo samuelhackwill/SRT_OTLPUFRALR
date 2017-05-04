@@ -9,7 +9,7 @@
  -->  {{> loginButtons}}
   <div class="container">
 
-<!--     <div class="row">
+    <div class="row">
       <div class="col-md-12 text-center">
         <ul class="small admin_menu">
           <li><a href="/data" target="_blank">data</a></li>
@@ -19,10 +19,10 @@
         </ul>
       </div>
     </div>
- -->
-    <div class="row">
-        <h5>Spectacle <button data-toggle="collapse" data-target="#showtime">▾</button></h5>
 
+    <div class="row">
+<!--         <h5>Spectacle <button data-toggle="collapse" data-target="#showtime">▾</button></h5>
+ -->
         <div id="showtime" class="collapse in">
 
           <div class="col-lg-12 col-md-12">
@@ -186,11 +186,11 @@
 <template name="showtime">
     <br />
 
-    <div class="col-lg-6 col-md-6 col-xs-12 switches small text-left">
-    <div><h5> > : <span id="texteNow"></span></h5></div>
-    <div id="nextTexte"> >> : <span id="texteNext"></span></div>
-    <div><h5> >>> : <span id="texteNextNext"></span></h5></div>
-    <div><h5> >>>> : <span id="texteNextNextNext"></span></h5></div>
+    <div class="col-lg-8 col-md-6 col-xs-12 switches small text-left">
+    <div class="scanSrt"><h5> > : <span id="texteNow"></span></h5></div>
+    <div class="scanSrt" id="nextTexte"> >> : <span id="texteNext"></span></div>
+    <div class="scanSrt"><h5> >>> : <span id="texteNextNext"></span></h5></div>
+    <div class="scanSrt"><h5> >>>> : <span id="texteNextNextNext"></span></h5></div>
     <br/><br/>
       <label for="showmode" title="ou mettre le site en mode Spectacle">Mode Pré-Spectacle</label>
       <input id="showmode" title="aka let's gro!" type="checkbox" checked="{{isModeSpectacleChecked}}" /><br />
@@ -305,10 +305,30 @@
         <button id="hide-the-ONE-training">cachez boutons training</button>
       </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-xs-12 text-left">
+    
 
-    <input type="button" id="Seb" value="ON EST COMBIEN AU FAIT?" style="background-color:yellow;">
-    <br/><br/><br/>
+    <div class="col-lg-4 col-md-6 col-xs-12 text-left">
+
+      <div class="dropdown">
+    <button id="actions" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Actions!
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a class="actions">Faire ça</a></li>
+      <li><a class="actions">Faire plutôt ça</a></li>
+      <li><a class="actions">Faire encore autre chose</a></li>
+    </ul>
+    </div>
+    <button class="btn btn-danger" id="boutonGo" type="button">GO</button>
+
+<br />
+<br />
+          <div id="cue">
+    CUE : Alors là par exemple c'est quand Arnaud sort du camion et se met à crier en enlevant son pantalon.
+    </div>
+
+      <br/><br/><br/>
+
+
     <input type="button" id="testEclair" value="BOOM">
      Buches 
       <input type="button" id="top_midi1" value="1">

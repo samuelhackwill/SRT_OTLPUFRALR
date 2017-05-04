@@ -687,12 +687,9 @@ Template.boutonsAmbiance.helpers({
 
 Template.showtime.events({
 
-  'click #Seb' : function(){
-    if(loteries.findOne()){
-      $('#Seb').val(loteries.findOne().ids.length + " SALMs")
-  }else{
-    $('#Seb').val("euh ben y'a personne pour le moment")
-  }
+  'click .actions' : function(event){
+    console.log(event.target.innerHTML)
+    $("#actions").html(event.target.innerHTML)
   },
 
   'click #testEclair' : function(event){

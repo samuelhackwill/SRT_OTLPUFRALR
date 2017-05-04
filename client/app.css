@@ -277,15 +277,35 @@
 
   .btn{
     width:100%;
-    height:100px;
+    height:40px;
     white-space: normal; 
     font-size:20px;
   }
 
+  .btn-primary {
+    color: black;
+    background-color: white;
+    border-color: #333333;
+  }
+
   .btn:focus{
-    background-color: #e2e2e2;
-    border-color: #e2e2e2;
-    color: #989898;
+    background-color: grey;
+  }
+
+  .btn:hover{
+    background-color: grey;
+  }
+
+  .open > .dropdown-toggle.btn-primary:focus{
+    background-color:grey;
+  }
+
+  .btn-primary:active:focus{
+    background-color:grey;
+  }
+
+  .scanSrt{
+    height:60px;
   }
 
   #listcontainer{
