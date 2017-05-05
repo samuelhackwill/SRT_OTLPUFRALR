@@ -1,0 +1,251 @@
+%%% tin si tu veux mettre un apostrophe dans un destroy(machin) ben faut mettre
+%%% une parenthese ( ouvrante à la place pour le moment faute de mieux
+
+#bookmark intro_auto_geree
+
+Voilà.
+Comme ça.
+Parfait.
+C’est Samuel qui vous parle.
+Je travaille avec l’équipe du projet
+Je me suis notamment occupé de la partie web
+avec Etienne et Guillaume.
+Bref.
+Là je suis dans la salle du spectacle,
+en régie,
+on est en train de préparer l’arrivée des spectateurs·trices
+et moi, je m’occupe de votre arrivée : celle des auditeurs·trices.
+Bienvenue.
+Je vais essayer de faire passer votre affichage en plein écran, parce que c’est mieux
+#fullscreen
+Hop.
+Ça a marché ?
+Au pire vous pouvez essayer de le faire vous même.
+Ça devrait pas être trop compliqué...
+Alors maintenant on va mettre du son
+#sound start
+Hop
+Vous devriez entendre quelque chose maintenant
+Si ça marche pas là par contre c’est embêtant.
+Attendez un petit peu, 
+Et puis le cas échéant, essayez éventuellement sur un autre navigateur.
+Autre chose, il est possible que parfois,
+ça coupe,
+que ce soit un peu haché,
+ce genre de truc.
+Pas d’inquiétude,
+ça peut arriver.
+Cependant,
+si jamais le son s'arrête totalement, il suffit juste de ré-actualiser la page web.
+Bon, en tout cas, avant que le spectacle ne commence,
+on va préparer deux-trois petites choses,
+et on va attendre que tous les auditeurs·trices soient là.
+Donc voilà, vous pouvez aller faire la vaisselle
+ou lire une bd,
+ou ranger le linge,
+comme vous voulez.
+Essayez de rester à portée de voix
+pour qu’on puisse vous appeler.
+N’hésitez pas à pousser le son pour continuer à écouter votre ordinateur de là où vous êtes.
+#stop
+On se retrouve vers 20h25.
+
+#bookmark spectacle
+
+#addclass srt shutter
+(les spectateurs ne sont pas encore entrés dans la salle)
+(entrée des spectateurs)
+***
+
+#bookmark lotterieONH
+
+#btn ouiSP1 Oui addUserToLottery('oui-non-euh') destroy(id,'Ok,_si_vous_voyez_les_boutons_apparaître,_c(est_à_vous_de_répondre.')
+#btn nonSP1 Non destroy(id)
+Est-ce que vous seriez volontaire pour répondre aux questions de Jacques ? (Il s'agira simplement de cliquer sur des boutons)
+#bookmark phoneNrLT
+
+***
+APPELEZ CE NUMÉRO POUR FAIRE LA LIAISON TÉLÉPHONIQUE SILENCIEUSE <br />: 00 33 7 81 89 76 86 <br />(Quand ça décroche : silence total. <br />Et coupez le son de votre ordinateur! Sinon ça va faire des sons bizarres). 
+
+#bookmark LT
+
+#removeclass srt shutter
+***
+Et donc voilà,
+***
+il n’y a plus rien d’autre que la connexion.
+***
+Nous, ici, dans la salle,
+***
+reliés à vous, chez vous.
+***
+Cette connexion est invisible,
+***
+imperceptible,
+***
+intangible.
+***
+Et pourtant,
+***
+elle est matériellement réalisée.
+***
+Elle s’effectue par l’intermédiaire de cet appareil téléphonique,
+***
+de câbles électriques, d’antennes relais, d’ondes électro-magnétiques.
+***
+Si on pouvait suivre son chemin,
+***
+on sortirait par les trous de l'écouteur du téléphone de cette personne.
+***
+Elle doit être en train de tendre l’oreille
+***
+pour vérifier si elle n’entend pas
+***
+les quelques bruits qui émaneraient du public,
+***
+les toussotements,
+***
+le grincement des sièges.
+***
+Et nous tendons l’oreille
+***
+pour essayer de l’entendre tendre l’oreille.
+
+#bookmark cabane_buche_the
+
+***
+... comment ça "à voix haute" ?
+***
+Donc là, je lis tout haut le texte qui s'affiche sur mon écran...
+***
+Oui mais... Il y a des gens qui m'entendent là ?
+***
+Ha vous m’entendez pas ?
+***
+Heuuu… oui.
+***
+ Oui, ça marche très bien
+***
+ Enfin là je peux pas vraiment donner mon avis puisque je dois lire le texte qui s'affiche
+***
+Ah tiens pourquoi pas
+***
+(vous pouvez maintenant vous exprimer librement)
+***
+[...]
+***
+...et donc c’est amusant parce que c’est effectivement l’inverse de tout à l’heure.
+***
+Hé beh tout à l’heure, au téléphone, on s’entendait mais on se parlait pas, 
+***
+et là on se parle mais on s’entend pas.
+***
+
+#bookmark jean_bourre
+
+#btn cuppasInc Oui addUserToLottery('cabane') destroy(id,'Excellent.')
+#btn boissonN Non destroy(id,'Bon,_tant_pis._Par_contre_vous_n(allez_rien_avoir_pour_vous_abriter_pendant_l(orage.')
+#addclass srt shutter 
+Est-ce que vous êtes partant·e pour faire une cabane ? <br/> (ou a minima un petit arrangement confortable et néanmoins inhabituel ?)
+***
+#removeclass srt shutter
+non, non, pas encore.
+***
+C’EST BON ON A FINI LES CABANES
+***
+#addclass srt shutter
+Quand vous avez fini votre cabane et que vous êtes bien installé·e, cliquez sur le bouton.
+#removeclass srt shutter
+
+#bookmark feuDeCamp
+
+***
+Avec plaisir… Faites comme chez vous.
+***
+On est bien là. 
+***
+J’ai un ami qui a grandi sous les tropiques et qui a vraiment besoin du bruit de la pluie tropicale pour s’endormir
+***
+Hé…
+***
+Imaginez qu’on continue la discussion comme ça, avec le bruit de la pluie…
+***
+et qu’au bout d’un moment on s’endorme
+***
+les spectateurs au théâtre s’endorment
+***
+les uns sur les autres
+***
+Et vous aussi, vous vous endormez, au gré de la conversation
+***
+Et puis ici à la maison je finis par m’endormir aussi,
+***
+et la nuit passe comme ça.
+***
+Miraculeusement, tout le monde dort.
+***
+Et puis au bout d’un moment
+***
+La pluie s’arrête
+***
+On sent poindre les premières lueurs de l’aube
+***
+C’est la fin de la nuit
+***
+Ça commence un peu à s’agiter,
+***
+quelqu’un bouge, quelqu’un tousse.
+***
+On s’extirpe de nos couvertures
+***
+Et puis finalement
+***
+Quelqu’un pointe le nez dehors
+***
+Bonjour
+***
+Mouiii, étonnamment bien.
+***
+Bonjour Samuel
+***
+Je sors de ma cabane là… Je peux rallumer les lumières ? Le jour est pas encore vraiment levé ici.
+#addclass srt shutter
+
+#bookmark texteFin
+
+***
+C’EST FINIIIII
+***
+Si vous êtes encore là, c’est que vous êtes resté·e·s jusqu’à la fin
+***
+Merci, bravo.
+***
+Mathilde, Arnaud et Sébastien sont en train de saluer les spectateurs.
+***
+Moi ici, depuis la régie, je vous salue aussi.
+***
+Bravo pour votre cabane,
+***
+Elle est magnifique.
+***
+Merci d'être venu.
+***
+Enfin plutôt d'être resté chez vous.
+***
+Enfin d'être là quoi.
+***
+Si vous avez des remarques, des avis, des suggestions, 
+***
+ou pour nous envoyer la photo de votre cabane (on les collectionne)
+***
+n'hésitez pas à nous envoyer un petit e-mail. <br /> <a href="mailto:ontraverseralepont@amicaledeproduction.com">ontraverseralepont@amicaledeproduction.com</a>
+***
+***
+***
+#cue cest_la_fin_du_spectacle_bravo_les_gars
+
+#bookmark noirPanic
+***
+***
+***
+***

@@ -1,0 +1,71 @@
+%%% avant le debut du spectacle
+MISE ET TEST ORDI PLATEAU (vue "Plateau")
+VERIFIER BRANCHEMENT MIDI (REGIE)
+DELETE LOTTERIES
+RESET CUPPAS
+ENREGISTREMENT NICECAST
+!!! SUPPRIMER STEALTH
+
+%%% à l'heure du rendez-vous
+START PRE-SPECTACLE
+%%% SEB COMMENCE A PARLER
+TU PRENDS LA MAIN
+
+%%% au moment de l'entrée public (fin du sas)
+NEXT (le public entre)
+	AMBIANCE 1
+
+%%% le public est assis
+NEXT (noir)
+%%% quand arnaud et math on fini avec les pancartes
+	AMBIANCE 2
+
+
+%%% là tu dors hyper longtemps
+AMBIANCES 
+
+%%% QUAND JACQUES NE PARLE PLUS QU'AUX SALM ET N'EST PLUS REPRIS DANS LA SALLE
+NEXT (BUTTONS LOTTERIE ONH)
+HIDE BUTTONS (30 SEC)
+NEXT (noir)
+CHOOSE RANDOM SALM
+%%% jacques sort de la voiture et on envoie tranquilou
+SHOW BUTTONS TO RANDOM SALM
+
+HIDE BUTTONS
+%%% jacques : "attendez à partir de maintenant on va afficher les boutons pour tous les auditeurs"
+START SHOW BUTTONS ONH MULTIPLAYER
+%%% la dernière question : c'est est ce que vous avez envie de participer à la LT
+HIDE BUTTONS
+
+%%% jacques : "alors voila on affiche le numéro" (ce qui est important c'est qu'il ait bien donné toutes les instructions aux SALM avant)
+NEXT (affiche le num)
+%%% ÇA DÉCROCHE
+NEXT (noir)
+%%% 15 secondes avant de commencer à faire défiler le texte de la LT
+NEXT (LT)
+	AMBIANCE LT
+
+%%%  JINGLE JEAN-BOURRÉ  
+NEXT ("est ce que CABANE?")
+HIDE BUTTONS 
+%%% Seb = "manche à balai"
+NEXT (excellent)
+NEXT (noir)
+NEXT ("non non pas encore")
+NEXT ("C'EST BON ON A FINI")
+NEXT (noir)
+
+%%% Seb = "y'a plus qu'a attendre"
+NEXT (quand vous avez fini votre cabane) + ENVOYER BOUTON!!!!
+
+%%% chanson terminée
+HIDE BUTTONS 
+NEXT (au noir)
+
+%%% CABANE ORAGE
+NEXT (avec plaisir)
+
+%%% direct après le noir final
+TEXTE DE FIN
+%%% faire un message d'excuse si ça a foiré
