@@ -1,8 +1,6 @@
 %%% tin si tu veux mettre un apostrophe dans un destroy(machin) ben faut mettre
 %%% une parenthese ( ouvrante à la place pour le moment faute de mieux
-
 #bookmark intro_auto_geree
-
 Voilà.
 Comme ça.
 Parfait.
@@ -49,26 +47,19 @@ pour qu’on puisse vous appeler.
 N’hésitez pas à pousser le son pour continuer à écouter votre ordinateur de là où vous êtes.
 #stop
 On se retrouve vers 20h25.
-
 #bookmark spectacle
-
 #addclass srt shutter
 (les spectateurs ne sont pas encore entrés dans la salle)
 (entrée des spectateurs)
 ***
-
 #bookmark lotterieONH
-
 #btn ouiSP1 Oui addUserToLottery('oui-non-euh') destroy(id,'Ok,_si_vous_voyez_les_boutons_apparaître,_c(est_à_vous_de_répondre.')
 #btn nonSP1 Non destroy(id)
 Est-ce que vous seriez volontaire pour répondre aux questions de Jacques ? (Il s'agira simplement de cliquer sur des boutons)
 #bookmark phoneNrLT
-
 ***
 APPELEZ CE NUMÉRO POUR FAIRE LA LIAISON TÉLÉPHONIQUE SILENCIEUSE <br />: 00 33 7 81 89 76 86 <br />(Quand ça décroche : silence total. <br />Et coupez le son de votre ordinateur! Sinon ça va faire des sons bizarres). 
-
 #bookmark LT
-
 #removeclass srt shutter
 ***
 Et donc voilà,
@@ -110,9 +101,7 @@ le grincement des sièges.
 Et nous tendons l’oreille
 ***
 pour essayer de l’entendre tendre l’oreille.
-
 #bookmark cabane_buche_the
-
 ***
 ... comment ça "à voix haute" ?
 ***
@@ -124,13 +113,13 @@ Ha vous m’entendez pas ?
 ***
 Heuuu… oui.
 ***
- Oui, ça marche très bien
+Oui, ça marche très bien
 ***
- Enfin là je peux pas vraiment donner mon avis puisque je dois lire le texte qui s'affiche
+Enfin là je peux pas vraiment donner mon avis puisque je dois lire le texte qui s'affiche
 ***
 Ah tiens pourquoi pas
 ***
-(vous pouvez maintenant vous exprimer librement)
+[vous pouvez maintenant vous exprimer librement]
 ***
 [...]
 ***
@@ -140,9 +129,7 @@ Hé beh tout à l’heure, au téléphone, on s’entendait mais on se parlait p
 ***
 et là on se parle mais on s’entend pas.
 ***
-
 #bookmark jean_bourre
-
 #btn cuppasInc Oui addUserToLottery('cabane') destroy(id,'Excellent.')
 #btn boissonN Non destroy(id,'Bon,_tant_pis._Par_contre_vous_n(allez_rien_avoir_pour_vous_abriter_pendant_l(orage.')
 #addclass srt shutter 
@@ -151,18 +138,16 @@ Est-ce que vous êtes partant·e pour faire une cabane ? <br/> (ou a minima un p
 #removeclass srt shutter
 non, non, pas encore.
 ***
-C’EST BON ON A FINI LES CABANES
+C’EST BON ON A PRESQUE FINI LES CABANES
 ***
 #addclass srt shutter
 Quand vous avez fini votre cabane et que vous êtes bien installé·e, cliquez sur le bouton.
 #removeclass srt shutter
-
 #bookmark feuDeCamp
-
 ***
-Avec plaisir… Faites comme chez vous.
+Oui, et on est bien installés mine de rien. Chacun dans sa cabane. 
 ***
-On est bien là. 
+Et au théâtre, les gens pourraient aussi se faire une petite cabane avec leurs manteaux. 
 ***
 J’ai un ami qui a grandi sous les tropiques et qui a vraiment besoin du bruit de la pluie tropicale pour s’endormir
 ***
@@ -170,49 +155,45 @@ Hé…
 ***
 Imaginez qu’on continue la discussion comme ça, avec le bruit de la pluie…
 ***
-et qu’au bout d’un moment on s’endorme
+et qu’au bout d’un moment on s’endorme.
 ***
-les spectateurs au théâtre s’endorment
+Les spectateurs au théâtre s’endorment,
 ***
-les uns sur les autres
+les uns sur les autres.
 ***
-Et vous aussi, vous vous endormez, au gré de la conversation
+Et vous aussi, vous vous endormez, au gré de la conversation.
 ***
-Et puis ici à la maison je finis par m’endormir aussi,
+Et puis ici à la maison je finis par m’endormir aussi.
 ***
-et la nuit passe comme ça.
+Et la nuit passe comme ça.
 ***
 Miraculeusement, tout le monde dort.
 ***
 Et puis au bout d’un moment
 ***
-La pluie s’arrête
+la pluie s’arrête,
 ***
-On sent poindre les premières lueurs de l’aube
+on sent poindre les premières lueurs de l’aube.
 ***
-C’est la fin de la nuit
+C’est la fin de la nuit.
 ***
 Ça commence un peu à s’agiter,
 ***
 quelqu’un bouge, quelqu’un tousse.
 ***
-On s’extirpe de nos couvertures
+On s’extirpe de nos couvertures.
 ***
 Et puis finalement
 ***
-Quelqu’un pointe le nez dehors
+quelqu’un pointe le nez dehors.
 ***
 Bonjour
 ***
 Mouiii, étonnamment bien.
 ***
-Bonjour Samuel
-***
-Je sors de ma cabane là… Je peux rallumer les lumières ? Le jour est pas encore vraiment levé ici.
+En fait je sors de ma cabane là... Je peux rallumer les lumières ? Le jour est pas encore vraiment levé ici.
 #addclass srt shutter
-
 #bookmark texteFin
-
 ***
 C’EST FINIIIII
 ***
@@ -243,7 +224,6 @@ n'hésitez pas à nous envoyer un petit e-mail. <br /> <a href="mailto:ontravers
 ***
 ***
 #cue cest_la_fin_du_spectacle_bravo_les_gars
-
 #bookmark noirPanic
 ***
 ***

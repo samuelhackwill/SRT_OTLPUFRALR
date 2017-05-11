@@ -28,6 +28,16 @@
     background-color:lightgreen;
   }
 
+  a {
+    color: indianred;
+    text-decoration: underline;
+}
+
+a:hover{
+      color: red;
+    text-decoration: underline;
+}
+
   html{
     width:100%;
     height:100%;

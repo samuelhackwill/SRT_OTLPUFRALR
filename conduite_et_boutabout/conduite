@@ -5,6 +5,7 @@ DELETE LOTTERIES
 RESET CUPPAS
 ENREGISTREMENT NICECAST
 !!! SUPPRIMER STEALTH
+OUVRIR LES LOGS (mup logs -f) DU SERVEUR
 
 %%% à l'heure du rendez-vous
 START PRE-SPECTACLE
@@ -50,13 +51,14 @@ NEXT (LT)
 NEXT ("est ce que CABANE?")
 HIDE BUTTONS 
 %%% Seb = "manche à balai"
-NEXT (excellent)
 NEXT (noir)
 NEXT ("non non pas encore")
+
+%%% Math = "signal"
 NEXT ("C'EST BON ON A FINI")
 NEXT (noir)
 
-%%% Seb = "y'a plus qu'a attendre"
+%%% ARN = "Who samuel t'es trop modeste"
 NEXT (quand vous avez fini votre cabane) + ENVOYER BOUTON!!!!
 
 %%% chanson terminée
@@ -64,7 +66,16 @@ HIDE BUTTONS
 NEXT (au noir)
 
 %%% CABANE ORAGE
-NEXT (avec plaisir)
+%%% ARN = "vous êtes dans la même situation que nous"
+NEXT (Oui on est bien installés.)
+NEXT (noir)
+NEXT (Et au théâtre, les gens pourraient cabane manteaux)
+NEXT (noir)
+(samuel et jacques parlent)
+NEXT (J'ai un ami...)
+
+%%% ARN = "En tout cas vous êtes encore avec nous"
+NEXT (En fait je suis en train de sortir...)
 
 %%% direct après le noir final
 TEXTE DE FIN

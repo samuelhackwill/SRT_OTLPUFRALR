@@ -231,7 +231,7 @@ Template.videoproj.onRendered(function () {
 
   // var host = window.location.hostname == "localhost" ? "www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com" : window.location.hostname;
   // var host = window.location.hostname == "localhost" ? "www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com" : window.location.hostname;
-  var host = "www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com";
+  var host = "http://www.ontraverseralepont.com";
   var server = null;
   if(window.location.protocol === 'http:')
       server = "http://" + host + ":8088/janus";
