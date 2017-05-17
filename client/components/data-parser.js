@@ -26,11 +26,17 @@ rawTextToJson = function (rawText) {
 
     var contentz = content.replace(/\n/gm, '');
     // pour virer les incohérences avec les newlines de mairde
-    var contentzarray = contentz.match(/[^# ][a-zA-Z0-9\u00E0-\u00FC().'\[\]\;,_!?\-\:]{0,}/gm)
-    var cleanbalise = contentzarray[0]
+    var regexBalise = new RegExp(/^#(\w{0,}) (.+)/gm)
+    var contentzarray = regexBalise.exec(contentz)
+      
+    var cleanbalise = contentzarray[1]
+    var cleantexte = contentzarray[2]
+
     contentzarray.shift()
 
-    return { text:contentzarray, type:cleanbalise}
+    console.log(" contentzarray " +contentzarray + "cleantexte ="+ cleantexte, " cleanbalise ="+ cleanbalise)
+
+    return {text:cleantexte, type:cleanbalise}
   });
 
   parser.addRule(/\n/gm, function(videur){
@@ -42,6 +48,53 @@ rawTextToJson = function (rawText) {
   });
 
   var parsed = parser.toTree(wordsz);
+  var cleanArray = []
+  // ici gros case avec les délimiteurs qui balance les trucs dans les bonnes collections?
+  SuperLineIndex = false
+
+  for(i=0;i<parsed.length;i++){
+    console.log("index actuel "+i+' = ', parsed[i], parsed[i]["text"])
+    // if (SuperLineIndex === false) {
+      if(parsed[i]["text"]=="***"){
+        SuperLineIndex = cleanArray.length
+        cleanArray.push({"type": "text", "text": []})
+        console.log("ici il y a un délimiteur "+SuperLineIndex)
+      }else{
+      // if(parsed[i]["text"]=="***"){
+      //   SuperLineIndex = false
+      //   console.log("c'est la fin du blob de texte "+SuperLineIndex)
+      // }
+
+      // if(SuperLineIndex==i-1){
+      //   console.log("c'est la ligne française ", i)
+
+      //   var WhichBalise = parsed[i]["type"]
+      //   console.log("WhichBalise ", WhichBalise)
+      //   var WhichText = parsed[i]["text"]
+      //   var objTemp = {}
+      //   objTemp[WhichBalise] = WhichText
+      //   cleanArray.push(objTemp)
+      // }else{
+        // nl ou en ? regex ? #NL_TEXT
+        console.log("PARSED i ", parsed[i])
+        var WhichBalise = parsed[i]["type"]
+        console.log("WhichBalise ", WhichBalise)
+        var WhichText = parsed[i]["text"]
+        var objTemp = {}
+        objTemp[WhichBalise] = WhichText
+
+        console.log("c'est la ligne estrangiere ou pas ", i, WhichText)
+        console.log(cleanArray, "salut je suis un cleanArray")
+        // if(cleanArray.length == 0 || cleanArray.length < SuperLineIndex) {
+        // console.log(cleanArray, "salut je rajoute un truc dans cleanArray")
+        //   cleanArray.push({"type": "text", "text": []})
+        // }
+        cleanArray[SuperLineIndex]["text"].push(objTemp)
+        // parsed.splice(i,1)
+      // }
+    }
+    console.log(cleanArray, " CleanArray ICI")
+  }
 
 
   console.log(JSON.stringify(parsed, null, 4));
@@ -67,6 +120,7 @@ rawTextToJson = function (rawText) {
   //fonction qui parse le JSON
   //et qui range dans un tableau numéroté
   //afin d'utiliser next() qui va faire défiler les textes/events du spectacle
+  
   zoupageJSON = function(response, obj) {
     // Parse JSON string into object
     console.log("zoupageJSON");
