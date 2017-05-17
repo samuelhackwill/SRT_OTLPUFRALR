@@ -1,0 +1,5 @@
+{
+    // directory for the translation files (without leading slash)
+    "languages_files_dir": "i18n",
+    "i18n_files_route": "/i18n"
+}
