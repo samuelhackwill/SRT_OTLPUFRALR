@@ -4,8 +4,8 @@ import lodash from 'lodash';
 _ = lodash;
 
 dataBalises = {
-  "dataPupitre": ["FR", "NL", "NL_SAT", "EN", "EN_SAT"],
-  "data": ["FR_SALM", "FR_SAT", "NL_SALM", "EN_SALM"]
+  "data": ["FR_SALM", "FR_CYCLO", "NL_CYCLO", "EN_CYCLO", "NL_SALM", "EN_SALM"],
+  "dataPupitre": ["FR", "NL", "NL_SAT", "EN", "EN_SAT"]
 }
 
 rawTextToJson = function (rawText) {
