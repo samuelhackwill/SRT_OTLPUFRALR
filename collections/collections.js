@@ -32,6 +32,15 @@ Schemas.ContenusEcran = new SimpleSchema({
         type: String,
         label: "Type du blob de donnée"
     },
+    "dataPupitre":{
+        type:[Object],
+        label: "Données Pupitre",
+        blackbox: true
+    },
+    "dataPupitre.$.type": {
+        type: String,
+        label: "Type du blob de donnée"
+    },
     "created": {
       type: Date,
       label: "Date de création",

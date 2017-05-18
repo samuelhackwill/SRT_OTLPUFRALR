@@ -1,4 +1,7 @@
 import Parser from 'simple-text-parser';
+import lodash from 'lodash';
+
+_ = lodash;
 
 rawTextToJson = function (rawText) {
 
@@ -97,10 +100,10 @@ rawTextToJson = function (rawText) {
   }
 
 
-  console.log(JSON.stringify(parsed, null, 4));
-  // $('#json-result').val(JSON.stringify(parsed, null, 4));
-  return JSON.stringify(parsed, null, 4);
-};
+  // console.log(JSON.stringify(parsed, null, 4));
+  //$('#json-result').val(JSON.stringify(parsed, null, 4));
+  return JSON.stringify(cleanArray, null, 4);
+}
 
 
 
@@ -120,28 +123,118 @@ rawTextToJson = function (rawText) {
   //fonction qui parse le JSON
   //et qui range dans un tableau numéroté
   //afin d'utiliser next() qui va faire défiler les textes/events du spectacle
-  
-  zoupageJSON = function(response, obj) {
+
+  zoupageJSON = function(sourceData) {
     // Parse JSON string into object
-    console.log("zoupageJSON");
-    console.log(response, response.length);
+    console.log("zoupageJSON", sourceData);
+    console.log("length", sourceData.length);
     // var actual_JSON = JSON.parse(response);
-    var actual_JSON = JSON.parse(response);
-    console.log("actual_JSON");
-    console.log(actual_JSON);
-    for(i=0; i<actual_JSON.length; i++){
-     // console.log(actual_JSON[i]["type"])
-     if((actual_JSON[i]["text"]=="") && (actual_JSON[i]["type"]=="text")){
-        console.log("cette ligne s'est fait zoupper ", actual_JSON[i])
-      }else{
-        obj.push(actual_JSON[i])
+    var actual_JSON = JSON.parse(sourceData);
+    // console.log("actual_JSON");
+    // console.log(actual_JSON);
+    var dataBalises = {
+      "dataPupitre": ["FR", "NL", "NL_SAT", "EN", "EN_SAT"],
+      "data": ["FR_SALM", "FR_SAT", "NL_SALM", "EN_SALM"]
+    }
+    var obj = []
+    for(i=actual_JSON.length - 1; i >= 0; i--){
+      if(Array.isArray(actual_JSON[i]["text"])){
+        console.log("text array?", actual_JSON[i]["text"])
+        for(j=actual_JSON[i]["text"].length-1; j >= 0; j--){
+          console.log("text?", actual_JSON[i]["text"][j])
+          if(actual_JSON[i]["text"][j].hasOwnProperty("text")){
+
+            actual_JSON[i]["text"].splice(j, 1)
+            console.log("une ligne a été zouppée ", actual_JSON[i])
+            if(actual_JSON[i]["text"].length == 0) actual_JSON.splice(i, 1)
+          }else{
+            // obj.push(actual_JSON[i])
+          }
+        }
       }
       // là tu mets une condition pour qu'il pushe pas les trucs de texte vide sa mère
     }
+    console.log('new actual_JSON = ', actual_JSON);
+    var dataObj = _.cloneDeep(actual_JSON);
+    var dataPupitreObj = _.cloneDeep(actual_JSON);
+     // console.log(obj[i]["type"])
+    console.log('ITERATION obj pour dataObj');
+
+    for(i=dataObj.length - 1; i >= 0; i--){
+      if(Array.isArray(dataObj[i]["text"])){
+        for(j=dataObj[i].text.length-1; j>=0; j--){
+          console.log(dataObj[i]["text"][j])
+            console.log("j?", j)
+          console.log("length de databalises data " + dataBalises.data.length)
+          var found = false
+          for(k=dataBalises.data.length-1; k>=0 ; k--){
+            console.log("j2?", j, dataObj[i]["text"])
+            console.log(dataBalises.data[k])
+            console.log(dataObj[i]["text"][j])
+            if (dataObj[i]["text"][j].hasOwnProperty(dataBalises.data[k])) {
+              console.log("ZOUPE MOI CETTE LIGNE FISSA ", dataBalises.data[k], dataObj[i]["text"][j][dataBalises.data[k]])
+              // dataObj.push(dataBalises.data[k], obj[i]["text"][j][dataBalises.data[k]])
+              found = true;
+            } else {
+
+            }
+          }
+          if(found == false) {
+            console.log("je splice cette ligne de texte", j, dataObj[i]["text"][j])
+            dataObj[i]["text"].splice(j, 1)
+          }
+        }
+        if(dataObj[i].text.length == 0) {
+          console.log("j'ai pas trouvé de balise qui m'intéresse, jartons cet objet")
+          dataObj.splice(i, 1)
+        }
+      }
+    }
+
+    console.log("dataObj", dataObj);
+    console.log('ITERATION obj pour dataPupitreObj');
+    console.log("dataPupitreObj", dataPupitreObj);
+
+    for(i=dataPupitreObj.length - 1; i >= 0; i--){
+      if(Array.isArray(dataPupitreObj[i]["text"])){
+        for(j=dataPupitreObj[i].text.length-1; j>=0; j--){
+          console.log(dataPupitreObj[i]["text"][j])
+            console.log("j?", j)
+          console.log("length de databalises dataPupitre " + dataBalises.dataPupitre.length)
+
+          var found = false
+          for(k=dataBalises.dataPupitre.length-1; k>=0 ; k--){
+            console.log(dataBalises.dataPupitre[k])
+            if (dataPupitreObj[i]["text"][j].hasOwnProperty(dataBalises.dataPupitre[k])) {
+              console.log("dataPupitre ZOUPE MOI CETTE LIGNE FISSA ", dataBalises.dataPupitre[k], dataPupitreObj[i]["text"][j][dataBalises.dataPupitre[k]])
+              // dataPupitreObj.push( dataPupitreObj[i]["text"][j][dataBalises.dataPupitre[k]])
+              found = true;
+            } else {
+
+            }
+          }
+          if(found == false) {
+            console.log("je splice cette ligne de texte", j, dataPupitreObj[i]["text"][j])
+            dataPupitreObj[i]["text"].splice(j, 1)
+          }
+        }
+        if(dataPupitreObj[i].text.length == 0) {
+          console.log("j'ai pas trouvé de balise qui m'intéresse, jartons cet objet")
+          dataPupitreObj.splice(i, 1)
+        }
+      }
+    }
+
+
+    console.log("dataPupitreObj", dataPupitreObj);
+
     // for(i=0; i<actual_JSON.length; i++){
     //   obj.push(actual_JSON[i])
     // }
-    console.log("demoData", obj, demoData);
-    console.log("demoCompteur", demoCompteur);
-    return obj;
-  };
+    // console.log("demoData", obj, demoData);
+    // console.log("demoCompteur", demoCompteur);
+    return {
+      data: dataObj, 
+      dataPupitre: dataPupitreObj
+    };
+  }

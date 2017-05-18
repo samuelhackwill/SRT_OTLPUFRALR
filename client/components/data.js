@@ -185,24 +185,30 @@ Template.data.events({
       Meteor.call('setSuperGlobal', {name: 'cuppasDec'});
     },
 
-    'click #text-to-json': function(event) {
-      console.log('text-to-json!');
-      event.preventDefault();
-      var jsonRaw = rawTextToJson($('#text-raw').val());
-      // $('#json-result').val( jsonRaw );
-      console.log(Template.instance());
-      $('#json-result').val( JSON.stringify(zoupageJSON(jsonRaw, data), null, 4) );
-    },
+    // 'click #text-to-json': function(event) {
+    //   console.log('text-to-json!');
+    //   event.preventDefault();
+    //   var jsonRaw = rawTextToJson($('#text-raw').val());
+    //   // $('#json-result').val( jsonRaw );
+    //   console.log(Template.instance());
+    //   $('#json-result').val( JSON.stringify(zoupageJSON(jsonRaw, data), null, 4) );
+
+
+    // },
     'click #save-json': function(event) {
       event.preventDefault();
+      var jsonRaw = rawTextToJson($('#text-raw').val());
+      var allData = zoupageJSON(jsonRaw, data)
       console.log('save-json!');
-      if($('#json-result').val() != "") {
+      console.log(allData);
+      if(allData != "") {
         console.log('saving json.');
         var contenuNom = $('#json-name').val();
         var contenuText = $('#text-raw').val();
-        var contenuData = $('#json-result').val();
-        console.log('nom', contenuNom, typeof contenuNom, 'data result', contenuData, typeof contenuData, contenuText, typeof contenuText);
-        Meteor.call('newContenuEcran', {name: contenuNom, data: contenuData, text: contenuText});
+        var contenuData = allData.data;
+        var contenuDataPupitre = allData.dataPupitre;
+        console.log('nom', contenuNom, typeof contenuNom, 'data result', contenuData, typeof contenuData, contenuDataPupitre, typeof contenuDataPupitre, contenuText, typeof contenuText);
+        Meteor.call('newContenuEcran', {name: contenuNom, data: contenuData, dataPupitre: contenuDataPupitre, text: contenuText});
       }
     },
     'click button.charger-contenu': function(event) {

@@ -269,14 +269,17 @@ Meteor.methods({
     if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
       throw new Meteor.Error(403, "Access denied")
     }
-    //check si deja enregistré
-    var data = tryParseJSON(obj.data);
-    if(data) {
+    var data = obj.data;
+    var dataPupitre = obj.dataPupitre;
+    if(data && dataPupitre) {
     
       console.log(typeof obj.name, obj.name);
-      console.log('valid JSON?'); 
+      console.log('is data valid JSON?'); 
       console.log(typeof data);
       console.log(data instanceof Object);
+      console.log('is dataPupitre valid JSON?'); 
+      console.log(typeof dataPupitre);
+      console.log(dataPupitre instanceof Object);
 
       var contenuEcran = ContenusEcran.findOne({name: obj.name});
       console.log("contenuEcran existe ?", contenuEcran);
@@ -286,7 +289,8 @@ Meteor.methods({
         ContenusEcran.update(contenuEcran._id, { 
           $set: {
             name: obj.name, 
-            data: data, 
+            data: data,  
+            dataPupitre: dataPupitre, 
             text: obj.text 
           }
         }, { filter: false });
@@ -298,7 +302,7 @@ Meteor.methods({
         // console.log(copie instanceof Object);
         // console.log(copie);
         // insertion du nouveau contenu écran
-        ContenusEcran.insert({name: obj.name, data: data, text: obj.text}, { filter: false });  
+        ContenusEcran.insert({name: obj.name, data: data, dataPupitre: dataPupitre, text: obj.text}, { filter: false });  
       }
       
     }
