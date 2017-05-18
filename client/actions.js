@@ -90,38 +90,13 @@ action = function(type, params){
     addclass(params)
     break
 
-    case "jacky":
-    jacky(params)
-    break
-
-    case "setdate":
-    nextspectacledate = params[0] + " " + params[1]
-    break
-
-    case "time":
-    time(params)
-    break
-
     case "removeclass":
     removeclass(params)
-    break
-
-    case "addlistelement":
-    addlistelement(params)
-    break
-
-    case "flipbook":
-    console.log(flipbookstatus)
-    flipbook()
     break
 
     case "autonext":
     autonext(params)
     break
-
-    // case "parking":
-    // parking(params)
-    // break
 
     case "stop":
     interrupt=true
@@ -144,11 +119,6 @@ action = function(type, params){
     case "fullscreen":
     fullscreen();
     break;
-
-    case "timer":
-    console.log("TIMER!!!!!")
-    timer()
-    break;
   }
 }
 
@@ -163,21 +133,6 @@ sound = function(params){
       streaming.send({"message": body});
     }
       
-  }
-}
-
-flipbook = function(){
-  if(flipbookstatus==true){
-    $("#flipbookcontainer").removeClass("visible")
-    $("#flipbookcontainer").addClass("invisible")
-    var zoupla = setTimeout(function(){
-      $("#flipbookcontainer").css("display", "none")},1000)
-  }else{
-    flipbookstatus = true
-    $("#flipbookcontainer").css("display", "inline-block")
-    var zoupla = setTimeout(function(){
-      $("#flipbookcontainer").removeClass("invisible")
-      $("#flipbookcontainer").addClass("visible")},1000)
   }
 }
 
@@ -210,154 +165,54 @@ cue = function(params){
     }
 }
 
+// get_time_diff = function(datetime){
+//   console.log("go GET TIME DIFF");
+//   $("#srt").html("zoupla")
+//   // euh alors y'a un bug de timezone là j'ai l'impression qu'il prend greenwitch
+//   var datetime = typeof datetime !== 'undefined' ? datetime : "2017-01-21 21:29:99.000000"
+//   var datetime = new Date(datetime).getTime();
 
-jacky = function(params){
-  console.log("etes vous bien le jacky que nous cherchons?", params[0], params[1])
-  if(Roles.userIsInRole(Meteor.user(), params[0])==true){
-    console.log("l'user est bien le jacky que nous cherchons", params[0], params[1])
-    gotobookmark(params[1])
-  }
-}
+//   console.log("datetime " + datetime)
+//   var now = new Date().getTime();
 
-parking = function(params){
-  // TO DO : A REFACTORER SALEMENT
-  console.log("parking : is admin?");
-
-  var fonctions = []
-  var on_off = params[0]
-  params.shift()
-
-  var howmany = params.length
-  for(i=0; i<howmany; i++){
-    fonctions.push(params[i])
-  }
-
-  console.log("fonctions", fonctions);
-
-  // if(Roles.userIsInRole(Meteor.user(), "admin")==true) {
-
-    // console.log("parking : is admin");
-    // var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
-    // var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : false;
-    var isSUPERinterrupt = getSuperGlobal("SUPERinterrupt", false);
-    console.log("parking : is isSUPERinterrupt", isSUPERinterrupt);
-    if(SUPERinterrupt !== false) {
-      var parkingRoles = fonctions;
-      if(on_off=="ON"){
-        console.log("parking : enable FOR ROLES -> ", parkingRoles);
-        //ajouter roles dans le tableau SUPERinterrupt si pas déjà dedans
-        for(i=0;i<parkingRoles.length;i++){
-          console.log("user is in role", parkingRoles[i], " ?", Roles.userIsInRole(Meteor.user(), parkingRoles[i]));
-          if((parkingRoles[i] == 'salm' && !Meteor.user()) || Roles.userIsInRole(Meteor.user(), parkingRoles[i])==true) {
-            var found = jQuery.inArray(parkingRoles[i], isSUPERinterrupt);
-            if (found >= 0) {
-              // Element was found, don't add it again.
-            } else {
-              // Element was not found, add it.
-              isSUPERinterrupt.push(parkingRoles[i]);
-              console.log("parking : enabling for ", parkingRoles[i]);
-            }
-          }
-        }
-        
-      //  SUPERinterrupt = true
-      } else if(on_off=="OFF"){
-        console.log("parking : disable FOR ROLES -> ", parkingRoles);
-        //retirer roles du tableau SUPERinterrupt (si déjà dedans)
-        for(i=0;i<parkingRoles.length;i++){
-          var found = jQuery.inArray(parkingRoles[i], isSUPERinterrupt);
-          if (found >= 0) {
-            // Element was found, remove it.
-            isSUPERinterrupt.splice(found, 1);
-            console.log("parking : disabling for ", parkingRoles[i]);
-          } else {
-            // Element was not found, don't remove it.
-          }
-        }
-      }
-      // em.setClient({ value: isSUPERinterrupt });
-      // em.emit('adminSUPERinterrupt');
-      console.log("parking : new SUPERinterrupt = ", isSUPERinterrupt);
-      Meteor.call('setSuperGlobal', {name: 'SUPERinterrupt', value: isSUPERinterrupt});
-    }
-  // } else {
-
-    //  SUPERinterrupt = false
-  // }
-}
-
-timer = function(){
-  // le timer ci-dessous
-  interrupt = true;
-  clock = setInterval(get_time_diff(), 1000)
-  console.log("go TIMER")
-}
-
-get_time_diff = function(datetime){
-  console.log("go GET TIME DIFF");
-  $("#srt").html("zoupla")
-  // euh alors y'a un bug de timezone là j'ai l'impression qu'il prend greenwitch
-  var datetime = typeof datetime !== 'undefined' ? datetime : "2017-01-21 21:29:99.000000"
-  var datetime = new Date(datetime).getTime();
-
-  console.log("datetime " + datetime)
-  var now = new Date().getTime();
-
-  if(isNaN(datetime)) return ""
+//   if(isNaN(datetime)) return ""
 
 
-  if (datetime < now) {
-    var milisec_diff = now - datetime
-  }else{
-    var milisec_diff = datetime - now
-  }
+//   if (datetime < now) {
+//     var milisec_diff = now - datetime
+//   }else{
+//     var milisec_diff = datetime - now
+//   }
 
-  var date_diff = new Date( milisec_diff )
+//   var date_diff = new Date( milisec_diff )
 
-  var days = Math.floor(milisec_diff / 1000 / 60 / (60 * 24))
-  var hours = date_diff.getHours()
-  var minutes = date_diff.getMinutes()
-  var secondes = date_diff.getSeconds()
+//   var days = Math.floor(milisec_diff / 1000 / 60 / (60 * 24))
+//   var hours = date_diff.getHours()
+//   var minutes = date_diff.getMinutes()
+//   var secondes = date_diff.getSeconds()
 
-  var difdif = ""
-  if(days>1) var difdif = difdif.concat(days.toString(), " jours et ")
-  if(days==1) var difdif = difdif.concat(days.toString(), " jour et ")
-  if(hours!=0) var difdif = difdif.concat(hours.toString(), ":")
-  if(minutes!=0) var difdif = difdif.concat(minutes.toString(), ":")
+//   var difdif = ""
+//   if(days>1) var difdif = difdif.concat(days.toString(), " jours et ")
+//   if(days==1) var difdif = difdif.concat(days.toString(), " jour et ")
+//   if(hours!=0) var difdif = difdif.concat(hours.toString(), ":")
+//   if(minutes!=0) var difdif = difdif.concat(minutes.toString(), ":")
 
-  var difdif = difdif.concat(secondes.toString(), " <br> avant le début du spectacle à la maison.")
+//   var difdif = difdif.concat(secondes.toString(), " <br> avant le début du spectacle à la maison.")
 
-  document.getElementById("srt").innerHTML = (difdif)
+//   document.getElementById("srt").innerHTML = (difdif)
 
-  if (datetime-now <= -1) {
-   console.log("TOOT TOOT TOOT c'est l'heure du spectacle")
-   gotobookmark('spectacle')
-   clearInterval(clock)
-   interrupt=true
-   gotonext(1)
-  }
+//   if (datetime-now <= -1) {
+//    console.log("TOOT TOOT TOOT c'est l'heure du spectacle")
+//    gotobookmark('spectacle')
+//    clearInterval(clock)
+//    interrupt=true
+//    gotonext(1)
+//   }
 
-  console.log("difdif " + difdif)
-  console.log("now " + now)
-  console.log("date_diff " + date_diff)
-}
-
-addFiction = function(params){
-  var ul = document.getElementById("elemfiction")
-  var li = document.createElement("li")
-  li.setAttribute("id", phrase)
-  li.appendChild(document.createTextNode(phrase))
-  ul.appendChild(li)
-}
-
-removeFiction = function(params){
-  var li = document.getElementById(phrase);
-  if(li!=null){
-    li.parentNode.removeChild(li);
-  }else{
-    console.log("ERR cannot find element '"+ phrase + "'")
-  }
-}
+//   console.log("difdif " + difdif)
+//   console.log("now " + now)
+//   console.log("date_diff " + date_diff)
+// }
 
 changeImg = function(params){
   console.log('%c'+'src, '+params[1]+' transition '+params[0], 'background: #222; color: #bada55')
@@ -406,9 +261,7 @@ changeImg = function(params){
     $("#imgcontainerFRONT").css("opacity", "0")
       console.log('%c TRANSITION DE '+ transitionms+ ' FINISHED.','background: #222; color: #bada55')
     },transitionms)
-
 }
-
 
 autonext = function(params){
   var wait = params
