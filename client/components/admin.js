@@ -444,13 +444,47 @@ Template.admin.onRendered(function () {
     // }
   }
 
-
-
   majNext = function(){
-        $("#texteNow").html(data[compteur-1].text + " (" + data[compteur].type +")")
-        $("#texteNext").html(data[compteur].text + " (" + data[compteur+1].type +")")
-        $("#texteNextNext").html(data[compteur+1].text + " (" + data[compteur+2].type +")")
-        $("#texteNextNextNext").html(data[compteur+2].text + " (" + data[compteur+3].type +")")
+    //previous
+      if($.isArray(data[compteur-1].text)){
+        for (var i = 0; i < data[compteur-1].text.length; i++) {
+          for(k=balisesVue.length-1; k>=0 ; k--){
+            if(data[compteur-1].text[i].hasOwnProperty(balisesVue[k])) $("#textePrevious").html(data[compteur-1].text[i][balisesVue[k]] + " (" + data[compteur].type +")")
+          }
+        }
+      } else $("#textePrevious").html(data[compteur-1].text + " (" + data[compteur-1].type +")")
+      //now
+    if (undefined != data[compteur]){
+      if($.isArray(data[compteur].text)){
+        for (var i = 0; i < data[compteur].text.length; i++) {
+          for(k=balisesVue.length-1; k>=0 ; k--){
+            console.log("balisesVue[k]", balisesVue[k])
+            console.log("data[compteur].text", data[compteur].text)
+            if(data[compteur].text[i].hasOwnProperty(balisesVue[k])) $("#texteNow").html(data[compteur].text[i][balisesVue[k]] + " (" + data[compteur].type +")")
+          }
+        }
+      } else $("#texteNow").html(data[compteur].text + " (" + data[compteur].type +")")
+    } 
+    //next
+    if (undefined != data[compteur+1]){
+      if($.isArray(data[compteur+1].text)){
+        for (var i = 0; i < data[compteur+1].text.length; i++) {
+          for(k=balisesVue.length-1; k>=0 ; k--){
+            if(data[compteur+1].text[i].hasOwnProperty(balisesVue[k])) $("#texteNext").html(data[compteur+1].text[i][balisesVue[k]] + " (" + data[compteur+1].type +")")
+          }
+        }
+      } else $("#texteNext").html(data[compteur+1].text + " (" + data[compteur+1].type +")")
+    } else $("#texteNext").html("")
+    //next next
+    if (undefined != data[compteur+2]){
+      if($.isArray(data[compteur+2].text)){
+        for (var i = 0; i < data[compteur+2].text.length; i++) {
+          for(k=balisesVue.length-1; k>=0 ; k--){
+            if(data[compteur+2].text[i].hasOwnProperty(balisesVue[k])) $("#texteNextNext").html(data[compteur+2].text[i][balisesVue[k]] + " (" + data[compteur+2].type +")")
+          }
+        }
+      } else $("#texteNextNext").html(data[compteur+2].text + " (" + data[compteur+2].type +")")
+    } else $("#texteNextNext").html("")
   }
 
   document.onkeyup = function(e) {

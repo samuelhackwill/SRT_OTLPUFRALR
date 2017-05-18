@@ -4,7 +4,6 @@
 // balises pour afficher du texte ailleurs que dans SRT (checklist, rubrique fiction)
 // pour les variables globales, virer le var avant
 // loadJSON = function(callback)
-
 compteurquest = -1
 compteur = -1
 // ça c'est pour commencer au 0 du tableau.
@@ -19,16 +18,25 @@ clock = null
 areYouSureYouAreComfy = false
 
 data = []
+dataPupitre = []
 
 next = function(){
-  console.log('next', compteur, data[compteur]);
-  var currentData = data[compteur]
-  var type = currentData["type"]
-  var params = currentData["text"]
+  if(undefined==data[compteur]){
+    console.log("tout va bien mais c'est fini, mais c'est ok c'est pas une erreur")
+  }else{
+    console.log('next', compteur, data[compteur]);
+    var currentData = data[compteur]
+    var type = currentData["type"]
+    var params = currentData["text"]
 
-  while(data[compteur]["type"]!="text"){
-      // tant que data[compteur] est une balise, ben continue à executer les instructions s'il te plaît
-      action(type, params)
+    while(data[compteur]["type"]!="text"){
+        // tant que data[compteur] est une balise, ben continue à executer les instructions s'il te plaît
+        
+      if(Roles.userIsInRole(Meteor.user(), "admin")==true && Router.current().route.getName() == "admin"){
+        console.log("un admin digne de ce nom ne fait pas d'actions en local")
+      }else{
+        action(type, params)
+      }
       if((data[compteur]["type"]!="text")||(data[compteur]["text"]=="")){
         // euh alors ça je sais pas pourquoi ça marche mais ça permet d'éviter des situations où, arrivé à un bookmark
         // il sautait deux lignes au lieu d'une
@@ -37,14 +45,30 @@ next = function(){
       }
     }
 
-    if((type=="text")&&(params!="")){
-      document.getElementById("srt").innerHTML = params
-      // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
-      // bon ben c'est ici qu'il faudrait faire un truc
-      if(params=="***"){
-        // ça c'est pour caler des blancs
-        document.getElementById("srt").innerHTML = ""
+    if((type=="text")&&($.isArray(params))){
+      console.log("params ", params)
+      $("#srt").html("")
+      for (var i = 0; i < params.length; i++) {
+        for(k=balisesVue.length-1; k>=0 ; k--){
+          console.log("balisesVue[k]", balisesVue[k])
+          console.log("data[compteur].text", params)
+          if(params[i].hasOwnProperty(balisesVue[k])) {
+            if(TAPi18n.getLanguage().toUpperCase() == balisesVue[k].substr(0,2)){
+              $("<div>"+params[i][balisesVue[k]]+"</div>").appendTo("#srt")
+            }
+          }
+        }
       }
+    }
+    // TODO: NOIRS
+        // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
+        // bon ben c'est ici qu'il faudrait faire un truc
+        
+        // if(params=="***"){
+        //   // ça c'est pour caler des blancs
+        //   document.getElementById("srt").innerHTML = ""
+
+        // }
     }
   }
 
@@ -347,14 +371,14 @@ fullscreen = function(params){
       i.msRequestFullscreen();
     }
   }else{
-    if (i.exitFullscreen) {
-      i.exitFullscreen();
-    } else if (i.webkitExitFullscreen) {
-      i.webkitExitFullscreen();
-    } else if (i.mozExitFullScreen) {
-      i.mozExitFullScreen();
-    } else if (i.msExitFullscreen) {
-      i.msExitFullscreen();
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozExitFullScreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
     }
   }
 }

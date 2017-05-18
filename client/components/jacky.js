@@ -1,4 +1,3 @@
-
 var streamCheckInterval;
 var caughtUp = false;
 var intervalReload;
@@ -30,6 +29,8 @@ Template.jacky.onRendered(function () {
     console.log('ContenusEcran ?', ContenusEcran.find().fetch());
     if(data) {
       catchUpWithTheShow();
+
+      console.log("tu parles quel langue camarade? ", TAPi18n.getLanguage())
     }
 
     //

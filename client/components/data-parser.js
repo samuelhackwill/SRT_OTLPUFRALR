@@ -167,7 +167,7 @@ rawTextToJson = function (rawText) {
         }
       } else {
         // là tu mets une condition pour qu'il pushe pas les trucs de texte vide sa mère
-        if(actual_JSON[i]["type"] == "text" && (undefined == actual_JSON[i]["text"] || actual_JSON[i]["text"].trim() == "")) { //c'est du texte vide
+        if(actual_JSON[i]["type"] == "text") { //c'est du texte vide
           actual_JSON.splice(i, 1)
         }
       }

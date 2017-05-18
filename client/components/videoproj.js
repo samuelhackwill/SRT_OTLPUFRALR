@@ -3,7 +3,6 @@
 // qui fasse un shutter qui dit à la vue videoproj
 // de faire une rêgle CSS du cul
 
-
 var streamCheckInterval;
 var caughtUp = false;
 var intervalReload;
