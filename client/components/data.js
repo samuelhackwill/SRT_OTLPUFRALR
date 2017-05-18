@@ -152,6 +152,9 @@ Template.data.helpers({
     }
     return arr;
   },
+  isArray: function (obj) {
+    return $.isArray(obj)
+  },
   quickRemoveButtonOnError: function () {
     return function (error) { alert("BOO!"); console.log(error); };
   },

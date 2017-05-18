@@ -72,7 +72,16 @@
                   {{#each dataArray data}}
                       {{this.key}}.
                       {{#each dataArray this.value}}
-                        {{this.key}}: {{this.value}}<br />
+                        {{#if isArray this.value}}
+                          {{this.key}}: <br />
+                          {{#each dataArray this.value}}
+                            {{#each dataArray this.value}}
+                              {{this.key}}: {{this.value}}<br />
+                            {{/each}}
+                          {{/each}}
+                        {{else}}
+                          {{this.key}}: {{this.value}}<br />
+                        {{/if}}
                       {{/each}}
                       <br />
                   {{/each}}
