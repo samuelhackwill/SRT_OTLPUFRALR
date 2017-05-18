@@ -117,7 +117,7 @@ action = function(type, params){
     break
 
     case "fullscreen":
-    fullscreen();
+    fullscreen(params);
     break;
   }
 }
@@ -334,16 +334,28 @@ newBoutton = function(params){
   $("#sacbouttons").css("opacity", "1");  
 }
 
-fullscreen = function(){
-  var i = document.getElementById("gcontainer");
-  if (i.requestFullscreen) {
-    i.requestFullscreen();
-  } else if (i.webkitRequestFullscreen) {
-    i.webkitRequestFullscreen();
-  } else if (i.mozRequestFullScreen) {
-    i.mozRequestFullScreen();
-  } else if (i.msRequestFullscreen) {
-    i.msRequestFullscreen();
+fullscreen = function(params){
+  if(params[0]=="on"){
+    var i = document.getElementById("gcontainer");
+    if (i.requestFullscreen) {
+      i.requestFullscreen();
+    } else if (i.webkitRequestFullscreen) {
+      i.webkitRequestFullscreen();
+    } else if (i.mozRequestFullScreen) {
+      i.mozRequestFullScreen();
+    } else if (i.msRequestFullscreen) {
+      i.msRequestFullscreen();
+    }
+  }else{
+    if (i.exitFullscreen) {
+      i.exitFullscreen();
+    } else if (i.webkitExitFullscreen) {
+      i.webkitExitFullscreen();
+    } else if (i.mozExitFullScreen) {
+      i.mozExitFullScreen();
+    } else if (i.msExitFullscreen) {
+      i.msExitFullscreen();
+    }
   }
 }
 

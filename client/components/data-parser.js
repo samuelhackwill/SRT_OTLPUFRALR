@@ -25,23 +25,26 @@ rawTextToJson = function (rawText) {
   var wordsz = words.replace(/^\n/gm, '');
   // vire toutes les lignes vides
 
-    parser.addRule(/%{3}.+/g, function(content){
+  parser.addRule(/%{3}.+/g, function(content){
     cleantext = content.substr(4)
     return{text:cleantext, type:"comment"}
   })
 
-  parser.addRule(/#.+/gm, function(content){
+  parser.addRule(/^(.+)?#(\w{0,})\s?(.+)?/gm, function(content){
 
     var contentz = content.replace(/\n/gm, '');
     // pour virer les incohérences avec les newlines de mairde
     var regexBalise = new RegExp(/^(.+)?#(\w{0,})\s?(.+)?/gm)
     var contentzarray = regexBalise.exec(contentz)
-      
-    var didascalie = contentzarray[1]
+      console.log('REGEX BRUN')
+      for (var i = 0; i < contentzarray.length; i++) {
+        console.log('REGEX BRUN '+i, contentzarray[i])
+      }
+    // var didascalie = contentzarray[1]
     var cleanbalise = contentzarray[2]
-    var cleantexte = (contentzarray.length == 3) ? null : contentzarray[3]
+    var cleantexte = contentzarray[3]
 
-    contentzarray.shift()
+    // contentzarray.shift()
 
     console.log(" contentzarray " +contentzarray + "cleantexte ="+ cleantexte, " cleanbalise ="+ cleanbalise)
 
@@ -60,7 +63,7 @@ rawTextToJson = function (rawText) {
   var cleanArray = []
   // ici gros case avec les délimiteurs qui balance les trucs dans les bonnes collections?
   SuperLineIndex = false
-
+  console.log("parsed = ", parsed)
   for(i=0;i<parsed.length;i++){
     console.log("index actuel "+i+' = ', parsed[i], parsed[i]["text"])
     // if (SuperLineIndex === false) {
