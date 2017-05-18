@@ -206,8 +206,8 @@ Template.data.events({
       console.log(allData);
       if(allData != "") {
         console.log('saving json.');
-        var contenuNom = $('#json-name').val();
-        var contenuText = $('#text-raw').val();
+        var contenuNom = $('#json-name').val().trim();
+        var contenuText = $('#text-raw').val().trim();
         var contenuData = allData.data;
         var contenuDataPupitre = allData.dataPupitre;
         console.log('nom', contenuNom, typeof contenuNom, 'data result', contenuData, typeof contenuData, contenuDataPupitre, typeof contenuDataPupitre, contenuText, typeof contenuText);

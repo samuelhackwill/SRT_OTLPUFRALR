@@ -3,6 +3,11 @@ import lodash from 'lodash';
 
 _ = lodash;
 
+dataBalises = {
+  "dataPupitre": ["FR", "NL", "NL_SAT", "EN", "EN_SAT"],
+  "data": ["FR_SALM", "FR_SAT", "NL_SALM", "EN_SALM"]
+}
+
 rawTextToJson = function (rawText) {
 
   console.log('rawTextToJson');
@@ -20,20 +25,21 @@ rawTextToJson = function (rawText) {
   var wordsz = words.replace(/^\n/gm, '');
   // vire toutes les lignes vides
 
-    parser.addRule(/\%{3}.+/g, function(content){
+    parser.addRule(/%{3}.+/g, function(content){
     cleantext = content.substr(4)
     return{text:cleantext, type:"comment"}
   })
 
-  parser.addRule(/\#.+/gm, function(content){
+  parser.addRule(/#.+/gm, function(content){
 
     var contentz = content.replace(/\n/gm, '');
     // pour virer les incohérences avec les newlines de mairde
-    var regexBalise = new RegExp(/^#(\w{0,}) (.+)/gm)
+    var regexBalise = new RegExp(/^(.+)?#(\w{0,})\s?(.+)?/gm)
     var contentzarray = regexBalise.exec(contentz)
       
-    var cleanbalise = contentzarray[1]
-    var cleantexte = contentzarray[2]
+    var didascalie = contentzarray[1]
+    var cleanbalise = contentzarray[2]
+    var cleantexte = (contentzarray.length == 3) ? null : contentzarray[3]
 
     contentzarray.shift()
 
@@ -78,26 +84,31 @@ rawTextToJson = function (rawText) {
       //   objTemp[WhichBalise] = WhichText
       //   cleanArray.push(objTemp)
       // }else{
-        // nl ou en ? regex ? #NL_TEXT
         console.log("PARSED i ", parsed[i])
         var WhichBalise = parsed[i]["type"]
         console.log("WhichBalise ", WhichBalise)
         var WhichText = parsed[i]["text"]
-        var objTemp = {}
-        objTemp[WhichBalise] = WhichText
+        //todo pas du texte multilingue
+        if(dataBalises.data.indexOf(WhichBalise) == -1 && dataBalises.dataPupitre.indexOf(WhichBalise) == -1) {
+          cleanArray.push({"type": WhichBalise, "text": WhichText})
+        } else {
+          // nl ou en ? regex ? #NL_TEXT
+          var objTemp = {}
+          objTemp[WhichBalise] = WhichText
 
-        console.log("c'est la ligne estrangiere ou pas ", i, WhichText)
-        console.log(cleanArray, "salut je suis un cleanArray")
-        // if(cleanArray.length == 0 || cleanArray.length < SuperLineIndex) {
-        // console.log(cleanArray, "salut je rajoute un truc dans cleanArray")
-        //   cleanArray.push({"type": "text", "text": []})
-        // }
-        cleanArray[SuperLineIndex]["text"].push(objTemp)
-        // parsed.splice(i,1)
+          console.log("c'est la ligne estrangiere ou pas ", i, WhichText)
+          console.log(cleanArray, "salut je suis un cleanArray")
+          // if(cleanArray.length == 0 || cleanArray.length < SuperLineIndex) {
+          // console.log(cleanArray, "salut je rajoute un truc dans cleanArray")
+          //   cleanArray.push({"type": "text", "text": []})
+          // }
+          cleanArray[SuperLineIndex]["text"].push(objTemp)
+          // parsed.splice(i,1)
+        }
       // }
     }
-    console.log(cleanArray, " CleanArray ICI")
   }
+  console.log(cleanArray, " CleanArray ICI")
 
 
   // console.log(JSON.stringify(parsed, null, 4));
@@ -132,10 +143,10 @@ rawTextToJson = function (rawText) {
     var actual_JSON = JSON.parse(sourceData);
     // console.log("actual_JSON");
     // console.log(actual_JSON);
-    var dataBalises = {
-      "dataPupitre": ["FR", "NL", "NL_SAT", "EN", "EN_SAT"],
-      "data": ["FR_SALM", "FR_SAT", "NL_SALM", "EN_SALM"]
-    }
+    // var dataBalises = {
+    //   "dataPupitre": ["FR", "NL", "NL_SAT", "EN", "EN_SAT"],
+    //   "data": ["FR_SALM", "FR_SAT", "NL_SALM", "EN_SALM"]
+    // }
     var obj = []
     for(i=actual_JSON.length - 1; i >= 0; i--){
       if(Array.isArray(actual_JSON[i]["text"])){
@@ -151,8 +162,12 @@ rawTextToJson = function (rawText) {
             // obj.push(actual_JSON[i])
           }
         }
+      } else {
+        // là tu mets une condition pour qu'il pushe pas les trucs de texte vide sa mère
+        if(actual_JSON[i]["type"] == "text" && (undefined == actual_JSON[i]["text"] || actual_JSON[i]["text"].trim() == "")) { //c'est du texte vide
+          actual_JSON.splice(i, 1)
+        }
       }
-      // là tu mets une condition pour qu'il pushe pas les trucs de texte vide sa mère
     }
     console.log('new actual_JSON = ', actual_JSON);
     var dataObj = _.cloneDeep(actual_JSON);
