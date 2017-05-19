@@ -6,6 +6,7 @@
 // loadJSON = function(callback)
 compteurquest = -1
 compteur = -1
+compteurPupitre = -1
 // ça c'est pour commencer au 0 du tableau.
 interrupt = false
 indeximg = 0
@@ -19,6 +20,95 @@ areYouSureYouAreComfy = false
 
 data = []
 dataPupitre = []
+
+// EST CE QU'IL FAUDRAIT PAS UN NEXT SPECIFIQUE POUR NLSAT? BEN OUIS EHEIN
+
+nlSatNext = function(){
+  if(undefined==dataPupitre[compteurPupitre]){
+    console.log("tout va bien mais c'est fini, mais c'est ok c'est pas une erreur")
+  }else{
+    console.log('next', compteurPupitre, dataPupitre[compteurPupitre]);
+    var currentData = dataPupitre[compteurPupitre]
+    var type = currentData["type"]
+    var params = currentData["text"]
+
+    while(dataPupitre[compteurPupitre]["type"]!="text"){
+        // tant que data[compteurPupitre] est une balise, ben continue à executer les instructions s'il te plaît
+        
+      if(Roles.userIsInRole(Meteor.user(), "admin")==true && Router.current().route.getName() == "admin"){
+        console.log("un admin digne de ce nom ne fait pas d'actions en local")
+      }else{
+        action(type, params)
+      }
+      if((dataPupitre[compteurPupitre]["type"]!="text")||(dataPupitre[compteurPupitre]["text"]=="")){
+        // euh alors ça je sais pas pourquoi ça marche mais ça permet d'éviter des situations où, arrivé à un bookmark
+        // il sautait deux lignes au lieu d'une
+        compteurPupitre+=1;
+        next();
+      }
+    }
+
+    if((type=="text")&&($.isArray(params))){
+      console.log("params ", params)
+      $("#srt").html("")
+      for (var i = 0; i < params.length; i++) {
+        for(k=balisesVue.length-1; k>=0 ; k--){
+          console.log("balisesVue[k]", balisesVue[k])
+          console.log("data[compteurPupitre].text", params)
+          if(params[i].hasOwnProperty(balisesVue[k])) {
+            if(Router.current().route.getName() != "videoproj"){
+              if(TAPi18n.getLanguage().toUpperCase() == balisesVue[k].substr(0,2)){
+                $("<div>"+params[i][balisesVue[k]]+"</div>").appendTo("#srt")
+              }
+            }else{
+              // ça c'est parce que videoproj il doit afficher deux langues en même temps
+                $("<div>"+params[i][balisesVue[k]]+"</div>").appendTo("#srt")
+            }
+          }
+        }
+      }
+    }
+    // TODO: NOIRS
+        // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
+        // bon ben c'est ici qu'il faudrait faire un truc
+        
+        // if(params=="***"){
+        //   // ça c'est pour caler des blancs
+        //   document.getElementById("srt").innerHTML = ""
+
+        // }
+    }
+  }
+
+  nlSatBack = function(){
+  console.log('next', compteurPupitre, data[compteurPupitre]);
+  var currentData = dataPupitre[compteurPupitre]
+  var type = currentData["type"]
+  var params = currentData["text"]
+
+  while(dataPupitre[compteurPupitre]["type"]!="text"){
+      // tant que data[compteurPupitre] est une balise, ben continue à executer les instructions s'il te plaît
+      action(type, params)
+      if((dataPupitre[compteurPupitre]["type"]!="text")||(data[compteurPupitre]["text"]=="")){
+        // euh alors ça je sais pas pourquoi ça marche mais ça permet d'éviter des situations où, arrivé à un bookmark
+        // il sautait deux lignes au lieu d'une
+        compteurPupitre-=1;
+        next();
+      }
+    }
+
+    if((type=="text")&&(params!="")){
+      document.getElementById("srt").innerHTML = params
+      // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
+      // bon ben c'est ici qu'il faudrait faire un truc
+      if(params=="***"){
+        // ça c'est pour caler des blancs
+        document.getElementById("srt").innerHTML = ""
+      }
+    }
+  }
+
+
 
 next = function(){
   if(undefined==data[compteur]){
@@ -53,8 +143,13 @@ next = function(){
           console.log("balisesVue[k]", balisesVue[k])
           console.log("data[compteur].text", params)
           if(params[i].hasOwnProperty(balisesVue[k])) {
-            if(TAPi18n.getLanguage().toUpperCase() == balisesVue[k].substr(0,2)){
-              $("<div>"+params[i][balisesVue[k]]+"</div>").appendTo("#srt")
+            if(Router.current().route.getName() != "videoproj"){
+              if(TAPi18n.getLanguage().toUpperCase() == balisesVue[k].substr(0,2)){
+                $("<div>"+params[i][balisesVue[k]]+"</div>").appendTo("#srt")
+              }
+            }else{
+              // ça c'est parce que videoproj il doit afficher deux langues en même temps
+                $("<div>"+params[i][balisesVue[k]]+"</div>").appendTo("#srt")
             }
           }
         }

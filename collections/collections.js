@@ -128,6 +128,12 @@ Schemas.superGlobals = new SimpleSchema({
       optional: true,
     },
 
+    compteurPupitreAdmin: {
+      type: Number,
+      label: "Le compteur quand quelqu'un a besoin de surtitre les comédiens ou quoi",
+      optional: true,
+    },
+
     compteurs: {
       type: [Object],
       label: "Les compteurs pour chaque role",

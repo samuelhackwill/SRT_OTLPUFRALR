@@ -81,6 +81,26 @@ if (Meteor.isServer) {
       em.emit('salmnext', args);
     }
   });
+
+    em.addListener('pupitreAdminBack', function(/* client */) {
+    console.log('PUPITRE ADMIN BACK', _.toArray(arguments), arguments[0]);
+    // em.setClient({ reponse: arguments[0].reponse });
+    var args = arguments[0];
+    if(args) {
+      em.emit('satBack', args);
+    }
+  });
+
+
+  em.addListener('pupitreAdminNext', function(/* client */) {
+    console.log('PUPITRE ADMIN NEXT', _.toArray(arguments), arguments[0]);
+    // em.setClient({ reponse: arguments[0].reponse });
+    var args = arguments[0];
+    if(args) {
+      em.emit('satNext', args);
+    }
+  });
+
   em.addListener('adminUnStop', function(/* client */) {
     console.log('ADMIN UNSTOP', _.toArray(arguments), arguments[0]);
     // em.setClient({ reponse: arguments[0].reponse });
@@ -624,6 +644,26 @@ Meteor.methods({
               console.log('compteurAdmin3 insert!');
               //création
               superGlobals.insert({compteurAdmin: obj.value}, { filter: false });
+
+            }
+            // superGlobals.upsert({modeSpectacle: obj.value}, { filter: false });
+          }
+          break;
+
+        case 'compteurPupitreAdmin':
+          console.log('compteurPupitreAdmin', obj.value);
+          if(typeof(obj.value) === "number") { //check si c'est un number
+          // if( Object.prototype.toString.call( obj.value ) === '[object Array]' ) { 
+            console.log('compteurPupitreAdmin2', obj.value, superGlobals.findOne({ compteurPupitreAdmin: { $exists: true}}));
+            var compteurPupitreAdmin = superGlobals.findOne({ compteurPupitreAdmin: { $exists: true}});
+            if(compteurPupitreAdmin) {
+              console.log('compteurPupitreAdmin3 mise a jour');
+              //mise à jour
+              superGlobals.update(compteurPupitreAdmin._id, { $set: {compteurPupitreAdmin: obj.value} }, { filter: false });
+            } else {
+              console.log('compteurPupitreAdmin3 insert!');
+              //création
+              superGlobals.insert({compteurPupitreAdmin: obj.value}, { filter: false });
 
             }
             // superGlobals.upsert({modeSpectacle: obj.value}, { filter: false });
