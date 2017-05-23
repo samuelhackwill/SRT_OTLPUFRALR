@@ -288,12 +288,15 @@ Template.admin.onRendered(function () {
     // var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
     // console.log("le pouvoir 2 ?", isPowerToThePeople);
 
+
+
     em.setClient({ powerToThePeople: !data });
     em.emit('adminswitchthepower');
     if(data == true) { //power admin
-      em.setClient({ bookmark: 'spectacle' });
+      em.setClient({ bookmark: 'introseb' });
       em.emit('adminForceGoTo');
-      gotobookmark('spectacle');
+      gotobookmark('introseb');
+
     } else if(data == false) { //power retourne aux SALM
       // em.setClient({ bookmark: 'fin-spectacle' });
       // em.emit('adminForceGoTo');
@@ -490,30 +493,27 @@ Template.admin.onRendered(function () {
   document.onkeyup = function(e) {
 
     e = e || window.event
-    /*
-    pour revenir en arrière
-      if(e.keyCode =='37' && compteur > 0){
-        compteur -=1
-        next();
-      }
-      */
-
-    //  KEYCODE 32 IS SPACEBAR
     // KEYCIODE 78 IS "n"
-
     var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
     if(!isItPowerToThePeople) {
       if(e.keyCode =='78' && compteur < data.length-1){
         // window.clearTimeout(autonextcontainer)
         // compteur +=1
-        adminNext();
-        console.log("keyup, ", compteur)
-        // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
-        // ça avance tout seul avec un délai)
+        if(nextIsBlackAdmin){
+          em.emit('displayBlackAdmin')
+          $('#texteNow').css("opacity", "0")
+        }else{
+          $('#texteNow').css("opacity", "1")
+          adminNext();
+          console.log("keyup, ", compteur)
+        }
+        nextIsBlackAdmin = !nextIsBlackAdmin
+        console.log("nextIsBlack? ",nextIsBlackAdmin)
       }
       if(e.keyCode =='66' && compteur > 0){
         adminBack();
         console.log("keyup, ", compteur)
+        em.emit('displayBlackAdmin')
     }
     //CUES
 
@@ -720,11 +720,21 @@ Template.boutonsAmbiance.helpers({
 
 
 Template.showtime.events({
-
   'click .actions' : function(event){
-    console.log(event.target.innerHTML)
-    $("#actions").html(event.target.innerHTML)
-  },
+    console.log("action button ", event.target.id)
+    if (event.target.id=="startONH") {
+      zoupla = document.getElementsByClassName("pick-random-one")
+      console.log("c'est toi le bouton que je veux ", zoupla)
+    }
+
+    if (event.target.id=="startFinishACup"){
+      console.log("hop hop il faut faire un truc côté serveur et après un truc côté client")
+    }
+
+    em.setClient({ whichaction: event.target.id});
+    em.emit('actionAdmin')
+    $('#'+event.target.id).css("opacity", "0.5")
+    },
 
   'click #testEclair' : function(event){
     em.emit("ca_va_peter")

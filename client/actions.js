@@ -4,6 +4,9 @@
 // balises pour afficher du texte ailleurs que dans SRT (checklist, rubrique fiction)
 // pour les variables globales, virer le var avant
 // loadJSON = function(callback)
+nextIsBlackPupitre = false
+nextIsBlackAdmin = false
+
 compteurquest = -1
 compteur = -1
 compteurPupitre = -1
@@ -44,13 +47,13 @@ nlSatNext = function(){
         // euh alors ça je sais pas pourquoi ça marche mais ça permet d'éviter des situations où, arrivé à un bookmark
         // il sautait deux lignes au lieu d'une
         compteurPupitre+=1;
-        next();
+        nlSatNext();
       }
     }
 
     if((type=="text")&&($.isArray(params))){
       console.log("params ", params)
-      $("#srt").html("")
+      $("#nlsrt").html("")
       for (var i = 0; i < params.length; i++) {
         for(k=balisesVue.length-1; k>=0 ; k--){
           console.log("balisesVue[k]", balisesVue[k])
@@ -58,11 +61,11 @@ nlSatNext = function(){
           if(params[i].hasOwnProperty(balisesVue[k])) {
             if(Router.current().route.getName() != "videoproj"){
               if(TAPi18n.getLanguage().toUpperCase() == balisesVue[k].substr(0,2)){
-                $("<div>"+params[i][balisesVue[k]]+"</div>").appendTo("#srt")
+                $("<div>"+params[i][balisesVue[k]]+"<br/</div>").appendTo("#nlsrt")
               }
             }else{
               // ça c'est parce que videoproj il doit afficher deux langues en même temps
-                $("<div>"+params[i][balisesVue[k]]+"</div>").appendTo("#srt")
+                $("<div>"+params[i][balisesVue[k]]+"<br/></div>").appendTo("#nlsrt")
             }
           }
         }
@@ -81,7 +84,7 @@ nlSatNext = function(){
   }
 
   nlSatBack = function(){
-  console.log('next', compteurPupitre, data[compteurPupitre]);
+  console.log('nlsatback', compteurPupitre, data[compteurPupitre]);
   var currentData = dataPupitre[compteurPupitre]
   var type = currentData["type"]
   var params = currentData["text"]
@@ -93,17 +96,17 @@ nlSatNext = function(){
         // euh alors ça je sais pas pourquoi ça marche mais ça permet d'éviter des situations où, arrivé à un bookmark
         // il sautait deux lignes au lieu d'une
         compteurPupitre-=1;
-        next();
+        nlSatBack();
       }
     }
 
     if((type=="text")&&(params!="")){
-      document.getElementById("srt").innerHTML = params
+      document.getElementById("nlsrt").innerHTML = params
       // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
       // bon ben c'est ici qu'il faudrait faire un truc
       if(params=="***"){
         // ça c'est pour caler des blancs
-        document.getElementById("srt").innerHTML = ""
+        document.getElementById("nlsrt").innerHTML = ""
       }
     }
   }
@@ -112,7 +115,8 @@ nlSatNext = function(){
 
 next = function(){
   if(undefined==data[compteur]){
-    console.log("tout va bien mais c'est fini, mais c'est ok c'est pas une erreur")
+    console.log("oulala je sais pas quoi faire avec cette balise ", data[compteur])
+    console.log("ça c'est la suivante ", data[compteur+1])
   }else{
     console.log('next', compteur, data[compteur]);
     var currentData = data[compteur]
@@ -125,6 +129,7 @@ next = function(){
       if(Roles.userIsInRole(Meteor.user(), "admin")==true && Router.current().route.getName() == "admin"){
         console.log("un admin digne de ce nom ne fait pas d'actions en local")
       }else{
+        console.log("ACTION de ", type, " avec params ", params)
         action(type, params)
       }
       if((data[compteur]["type"]!="text")||(data[compteur]["text"]=="")){
@@ -140,8 +145,8 @@ next = function(){
       $("#srt").html("")
       for (var i = 0; i < params.length; i++) {
         for(k=balisesVue.length-1; k>=0 ; k--){
-          console.log("balisesVue[k]", balisesVue[k])
-          console.log("data[compteur].text", params)
+          // console.log("balisesVue[k]", balisesVue[k])
+          // console.log("data[compteur].text", params)
           if(params[i].hasOwnProperty(balisesVue[k])) {
             if(Router.current().route.getName() != "videoproj"){
               if(TAPi18n.getLanguage().toUpperCase() == balisesVue[k].substr(0,2)){
@@ -242,8 +247,7 @@ action = function(type, params){
 }
 
 sound = function(params){
-  console.log("sound", params);
-  if(params[0]=="start"){
+  if(params=="start"){
     // em.emit('adminstartstream');
     console.log("jacky startTheStream??", streaming);
     // em.emit('salmstartstream');
@@ -454,7 +458,7 @@ newBoutton = function(params){
 }
 
 fullscreen = function(params){
-  if(params[0]=="on"){
+  if(params=="on"){
     var i = document.getElementById("gcontainer");
     if (i.requestFullscreen) {
       i.requestFullscreen();
@@ -500,17 +504,26 @@ destroy = function(self, replaceActual = "ok"){
   },delay)
 }
 
+gotobookmarkPUPITRE = function(where){
+  console.log("zorg ")
+}
+
 gotobookmark = function(where){
   console.log("gotobookmark1!!? where=", where);
+  reculeur = 1
+  if(where == "introseb"){
+      reculeur = 3
+  }
+
   if(typeof where !== 'string') where = where.toString();
   console.log("gotobookmark1b!!? where=", where);
   if(interrupt==true) interrupt=false
     howmuch = data.length
-  console.log("gotobookmark2 howmuch", howmuch);
+    console.log("gotobookmark2 howmuch", howmuch);
   for(i=0; i<howmuch; i++){
     if((data[i]["type"]=="bookmark")&&(data[i]["text"]==where)){
       //ça c'est la valeur de ton compteur mon ptit gars
-      compteur = i
+      compteur = i-reculeur
 
       if(Roles.userIsInRole(Meteor.user(), "admin")==true){
         
@@ -527,6 +540,10 @@ gotobookmark = function(where){
       }
       setTimeout(function(){
         next()
+        if(reculeur == 3){
+          nextIsBlackAdmin = false
+          $('#srt').html('')
+        }
       },333)
       console.log("gotobookmark, ", compteur)
       return

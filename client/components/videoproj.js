@@ -83,6 +83,12 @@ Template.videoproj.onRendered(function () {
   em.addListener('salmtheoneshow', showTheOneButtons);
   em.addListener('salmtheonehide', hideTheOneButtons);
 
+
+  em.addListener('displayBlackClient', function(){
+    console.log('displayBlackClient')
+    $('#srt').empty()
+  });
+
   function showTheOneButtons(){
 
     // if(Roles.userIsInRole(Meteor.user(), "jacky_one")==true) {
@@ -484,6 +490,11 @@ Template.videoproj.onRendered(function () {
   //     clearInterval(interval); 
   //     interval = null;
   // });
+
+    em.addListener('displayBlackSalm', function(){
+    console.log('displayBlackSalm')
+    $('#srt').empty()
+  });
 
   em.addListener('salmstartstream', startTheStream);
 

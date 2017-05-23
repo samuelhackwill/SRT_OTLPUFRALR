@@ -15,6 +15,16 @@
     src: url('OfficeCodePro-Regular.ttf') format('truetype');
   }
 
+  #srt div:nth-child(2){
+    margin-top:25px;
+    font-style: italic;
+  }
+
+  h5{
+    margin-top: 25px;
+  }
+
+
   .alreadyParticipating{
     color:purple;  
 }
@@ -255,7 +265,6 @@ a:hover{
     flex-direction: column-reverse;
   }
 
-
   #gcontainer{
     background-color: black;
     width:100%;
@@ -454,6 +463,32 @@ text-decoration: underline;
 
   #shows-list{
     margin-bottom: 100px;
+  }
+
+  #nlsrt{
+    color: white;
+
+    width:99%;
+    font-size:8.5vh;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    z-index:1000;
+
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;   
+    -khtml-user-select: none;    
+    -moz-user-select: none;      
+    -ms-user-select: none;      
+
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+
   }
 
 

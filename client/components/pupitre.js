@@ -155,9 +155,8 @@ Template.pupitre.onRendered(function () {
       // $('#currentCompteur').text(compteurPupitre);
       em.setClient({ compteurPupitre: compteurPupitre });
       em.emit('pupitreAdminBack');
+      majPupitreNext();
       nlSatBack();
-
-      majSatNext();
     // }
   }
 
@@ -207,29 +206,28 @@ Template.pupitre.onRendered(function () {
   document.onkeyup = function(e) {
 
     e = e || window.event
-    /*
-    pour revenir en arrière
-      if(e.keyCode =='37' && compteurPupitre > 0){
-        compteurPupitre -=1
-        next();
-      }
-      */
-
-    //  KEYCODE 32 IS SPACEBAR
     // KEYCIODE 78 IS "n"
     var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
     if(!isItPowerToThePeople) {
       if(e.keyCode =='78' && compteurPupitre < dataPupitre.length-1){
         // window.clearTimeout(autonextcontainer)
         // compteurPupitre +=1
-        pupitreAdminNext();
-        console.log("keyup, ", compteurPupitre)
-        // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
-        // ça avance tout seul avec un délai)
-      }
+        if(nextIsBlackPupitre){
+            em.emit('displayBlackPupitre')
+            $('#texteNow').css("opacity", "0")
+          }else{
+            $('#texteNow').css("opacity", "1")
+            pupitreAdminNext();
+            console.log("keyup, ", compteurPupitre)
+          }
+          nextIsBlackPupitre = !nextIsBlackPupitre
+          console.log("nextIsBlackPupitre? ",nextIsBlackPupitre)
+        }
+      
       if(e.keyCode =='66' && compteurPupitre > 0){
         pupitreAdminBack();
         console.log("keyup, ", compteurPupitre)
+        em.emit('displayBlackPupitre')
     }
     //CUES
 
@@ -250,5 +248,44 @@ Template.pupitre.onRendered(function () {
 Template.pupitre.helpers({
   compteurPupitreAdmin: function(){
     return getSuperGlobal('compteurPupitreAdmin');
-  }
+  },
 });
+
+Template.pupitre.events({
+    'click div.autofill_bookmark span': function(event){
+
+      console.log('div.autofill_bookmark span', $(event.currentTarget).text());
+      $('#whereSUPERinterrupt').val($(event.currentTarget).text());
+
+
+  },
+
+    'click #resetSUPERinterrupt': function(){
+    console.log("resetSUPERinterrupt!");
+    var bookmarkToGo = ($('#whereSUPERinterrupt').val() != "") ? $('#whereSUPERinterrupt').val() : 'spectacle';
+    em.setClient({ bookmark: bookmarkToGo });
+    em.emit('adminPupitreForceGoTo');
+      gotobookmarkPUPITRE(bookmarkToGo);
+  },
+
+  'click input#setCompteur': function(){
+    console.log('setCompteur', $('#adminCompteur').val());
+    compteurPupitre = parseInt($('#adminCompteur').val())-1;
+    //fake adminNext()
+    window.clearTimeout(autonextcontainer)
+    compteurPupitre +=1
+    var modeSpectacle = getSuperGlobal("modeSpectacle");
+    var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
+    var compteurPupitreAdmin = getSuperGlobal("compteurPupitreAdmin");
+    // console.log("adminNext modeSpectacle?", modeSpectacle, "isItPowerToThePeople?", isItPowerToThePeople, "compteurAdmin?", compteurAdmin);
+    if(modeSpectacle && !isItPowerToThePeople && parseInt(compteurPupitreAdmin) != compteur) {
+      console.log("admin next compteur set cookie", compteur)
+      // cookies.set('compteurAdmin', compteur);
+      Meteor.call('setSuperGlobal', {name: 'compteurPupitreAdmin', value: parseInt(compteur)});
+    }
+    // $('#currentCompteur').text(compteur);
+    em.setClient({ compteurPupitre: compteurPupitre });
+    em.emit('pupitreAdminNext');
+    next();
+  }
+})

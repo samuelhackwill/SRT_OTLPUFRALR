@@ -72,6 +72,21 @@ if (Meteor.isServer) {
     }
   });
 
+    em.addListener('actionAdmin', function(){
+      console.log("ACTIONS SERVER", arguments[0].whichaction+'Client')
+      em.emit(arguments[0].whichaction+'Client')
+    });
+
+  em.addListener('displayBlackAdmin', function(){
+    console.log('diplay black admin')
+    em.emit('displayBlackSalm')
+  });
+
+  em.addListener('displayBlackPupitre', function(){
+    console.log('diplay black pupitre')
+    em.emit('displayBlackSat')
+  });
+
 
   em.addListener('adminnext', function(/* client */) {
     console.log('ADMIN NEXT', _.toArray(arguments), arguments[0]);
@@ -151,15 +166,7 @@ if (Meteor.isServer) {
       em.emit('salmtheoneshow');
     // }
   });
-  em.addListener('adminhidetheone', function(/* client */) {
-    console.log('ADMIN HIDE THE ONE', _.toArray(arguments), arguments[0]);
-    // em.setClient({ reponse: arguments[0].reponse });
-    // var args = arguments[0];
-    // if(args) {
-      em.emit('salmtheonehide');
-    // }
-  });
-
+  
   em.addListener('adminshowtheone-single-training', function(/* client */) {
     console.log('ADMIN SHOW THE ONE', _.toArray(arguments), arguments[0]);
     // em.setClient({ reponse: arguments[0].reponse });
@@ -212,6 +219,15 @@ if (Meteor.isServer) {
     var args = arguments[0];
     if(args) {
       em.emit('salmForceGoTo', args);
+    }
+  });
+
+  em.addListener('adminPupitreForceGoTo', function(/* client */) {
+    console.log('ADMIN PUPITRE FORCE GO TO', _.toArray(arguments), arguments[0]);
+    // em.setClient({ reponse: arguments[0].reponse });
+    var args = arguments[0];
+    if(args) {
+      em.emit('satForceGoTo', args);
     }
   });
 

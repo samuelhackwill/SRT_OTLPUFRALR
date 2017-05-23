@@ -1,0 +1,14 @@
+/* videoproj */
+body.nlsat .shutter {
+  display:none !important;
+  background-color:purple;
+}
+
+body.nlsat #sacbouttons{
+	display:none;
+}
+
+body.nlsat #srt{
+  width:99%;
+  font-size: 8.5vh;
+}

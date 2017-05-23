@@ -24,6 +24,7 @@ Template.jacky.onRendered(function () {
     console.log("contnus", contnus, data);
     // data = ContenusEcran.findOne({name: "ce_jeudi_no_comment"}).data
     data = ContenusEcran.findOne({name: "data_test"}).data
+    dataPupitre = ContenusEcran.findOne({name: "data_test"}).dataPupitre
     console.log('srt spectacle jacky rendered');
     console.log('data ?', data);
     console.log('ContenusEcran ?', ContenusEcran.find().fetch());
@@ -72,30 +73,21 @@ Template.jacky.onRendered(function () {
       
     }
 
-  }
+  };
 
-  em.addListener('salmtheoneshow', showTheOneButtons);
-  em.addListener('salmtheonehide', hideTheOneButtons);
-
-  function showTheOneButtons(){
-
-    // if(Roles.userIsInRole(Meteor.user(), "jacky_one")==true) {
-      console.log('showTheOneButtons');
-      $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
+  em.addListener('showButtonsClient', function(){
+    console.log('showTheOneButtons');
+    $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
     $("#sacbouttons").css("opacity", "1")
-    // }
+    });
 
-  }
-
-
-  function hideTheOneButtons(){
+  em.addListener('hideButtonsClient', function(){
     $("#sacbouttons").css("opacity", "0")
       delayedEmpty = setTimeout(function(){
       $("#sacbouttons").empty()
       },333)
+  });
 
-    //$('#sacbouttons').clear();
-  }
 
 // });
   function showMeTheButtons(){
@@ -107,6 +99,13 @@ Template.jacky.onRendered(function () {
       // }
 
   }
+
+  em.addListener('startONHLotteryClient', function(){
+    console.log("début de la lotterie ONH les shlags!")
+    newBoutton(["ouiSP1","Oui","addUserToLottery('oui-non-euh')","destroy(id,'Ok,_si_vous_voyez_les_boutons_apparaître,_c(est_à_vous_de_répondre.')"])
+    newBoutton(["nonSP1","Non","destroy(id)"])
+
+  });
 
     em.addListener('salmback', function(what) {
     console.log('salm back!', what);
@@ -128,7 +127,7 @@ Template.jacky.onRendered(function () {
       window.clearTimeout(autonextcontainer) //clear auto next
       // compteur += 1;
       compteur = what.compteur; //changer le compteur depuis l'évènement admin (rattraper le spectacle)
-      next();
+      back();
     } 
   });
 
@@ -205,7 +204,16 @@ Template.jacky.onRendered(function () {
     } 
   }); 
 
+  em.addListener('satForceGoTo', function(what) {
+    console.log('sat salmForceGoTo!', what);
+    // compteur = what.compteur;
+    console.log("gotobookmarkPUPITRE(what.bookmark);")
+  }); 
 
+  em.addListener('displayBlackSalm', function(){
+    console.log('displayBlackSalm')
+    $('#srt').empty()
+  });
 
   em.addListener('salmForceGoTo', function(what) {
     console.log('salm salmForceGoTo!', what);
@@ -239,6 +247,12 @@ Template.jacky.onRendered(function () {
     }
     */
   });
+
+  em.addListener('displayBlackSat', function(){
+    console.log('displayBlackSat')
+    $('#nlsrt').empty()
+  });
+
   em.addListener('salmpowerpeople', function(what) {
     console.log('salm people have the power!', what);
       console.log("le pouvoir est aux mains du peuple", streamCheckInterval);
@@ -574,7 +588,7 @@ Template.jacky.onRendered(function () {
 });
 
 var nextEvent = function(){
-
+  console.log("NEXT EVENT")
   // var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
   var isItPowerToThePeople = getSuperGlobal("powerToThePeople", true);
   console.log('spectacle keyup compteur = ', compteur, 'interrupt = ', interrupt, 'isItPowerToThePeople = ', isItPowerToThePeople);

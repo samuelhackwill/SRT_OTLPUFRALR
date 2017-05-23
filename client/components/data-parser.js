@@ -4,7 +4,7 @@ import lodash from 'lodash';
 _ = lodash;
 
 dataBalises = {
-  "data": ["FR_SALM", "FR_CYCLO", "NL_CYCLO", "EN_CYCLO", "NL_SALM", "EN_SALM"],
+  "data": ["FR_SALM", "FR_CYCLO", "FR_DECR", "NL_CYCLO", "EN_CYCLO", "NL_SALM", "EN_SALM", "FR_INTR", "NL_INTR"],
   "dataPupitre": ["FR", "NL", "NL_SAT", "EN", "EN_SAT"]
 }
 
@@ -27,7 +27,7 @@ rawTextToJson = function (rawText) {
 
   parser.addRule(/%{3}.+/g, function(content){
     cleantext = content.substr(4)
-    return{text:cleantext, type:"comment"}
+    return{text:"", type:"text"}
   })
 
   parser.addRule(/^(.+)?#(\w{0,})\s?(.+)?/gm, function(content){

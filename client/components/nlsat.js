@@ -3,6 +3,12 @@
 // qui fasse un shutter qui dit à la vue videoproj
 // de faire une rêgle CSS du cul
 
+Template.registerHelper('equals', function (a, b) {
+  return a == b;
+});
+
+var refreshedUp = false;
+
 var streamCheckInterval;
 var caughtUp = false;
 var intervalReload;
@@ -11,29 +17,34 @@ Template.nlsat.onCreated(function() {
 
   //subscribe à la collection representations
   this.autorun(() => {
+    this.subscribe('allSuperGlobals');
     this.subscribe('allRepresentations');
     this.subscribe('allContenusEcran');
-    this.subscribe('allLoteries');
   });
 
 });
 
 
 Template.nlsat.onRendered(function () {
+  console.log('nlsat!');
+  $('#srt').html('')
 
 
   this.autorun(() => {
     let ready = Template.instance().subscriptionsReady();
     if (!ready){ return; }
     let contnus = ContenusEcran.find().fetch();
-    console.log("contnus", contnus, dataPupitre);
+    // console.log("contnus", contnus, dataPupitre);
     // data = ContenusEcran.findOne({name: "ce_jeudi_no_comment"}).data
     dataPupitre = ContenusEcran.findOne({name: "data_test"}).dataPupitre
-    console.log('srt spectacle nlsat rendered');
-    console.log('data ?', dataPupitre);
-    console.log('ContenusEcran ?', ContenusEcran.find().fetch());
+    // console.log('srt spectacle nlsat rendered');
+    // console.log('data ?', dataPupitre);
+    // console.log('ContenusEcran ?', ContenusEcran.find().fetch());
     if(dataPupitre) {
       catchUpWithTheShow();
+      console.log("initialement tu parles quel langue camarade? ", TAPi18n.getLanguage())
+      TAPi18n.setLanguage("nl");
+      console.log("et mainteantn tu parles quel langue camarade? ", TAPi18n.getLanguage())
     }
 
     //
@@ -44,7 +55,7 @@ Template.nlsat.onRendered(function () {
   });
 
 
-  $(document.body).addClass('videoproj');
+  $(document.body).addClass('nlsat');
 
   function catchUpWithTheShow(){
     console.log('catchUpWithTheShow caughtUp?', caughtUp);
@@ -61,7 +72,7 @@ Template.nlsat.onRendered(function () {
         if(null !== compteurPupitreAdmin) compteurPupitre= parseInt(compteurPupitreAdmin);
         if(compteurPupitre!= -1) {
           //revenir où on était dans le spectacle
-          next();
+          satNext();
         }
 
         //ambiance?
@@ -75,9 +86,7 @@ Template.nlsat.onRendered(function () {
           }
         }
       }
-      
     }
-
   }
 
   em.addListener('salmtheoneshow', showTheOneButtons);
@@ -429,6 +438,18 @@ Template.nlsat.onRendered(function () {
       changeImg(newAmbiance.value)
     }
   });
+  
+
+  em.addListener('displayBlackSat', function(){
+    console.log('displayBlackSat')
+    $('#nlsrt').empty()
+  });
+
+  em.addListener('displayBlackSalm', function(){
+    console.log('displayBlackSalm')
+    $('#srt').empty()
+  });
+
 
   em.addListener('ca_va_peter_client', function(/* client */) {
         // console.log("CHECK PATH ", Router.current().route.path())
@@ -485,6 +506,7 @@ Template.nlsat.onRendered(function () {
   //     interval = null;
   // });
 
+
   em.addListener('salmstartstream', startTheStream);
 
   function startTheStream(what) {
@@ -536,7 +558,6 @@ Template.nlsat.onRendered(function () {
 });
 
 var nextEvent = function(){
-
   // var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
   var isItPowerToThePeople = getSuperGlobal("powerToThePeople", true);
   console.log('spectacle keyup compteurPupitre= ', compteurPupitre, 'interrupt = ', interrupt, 'isItPowerToThePeople = ', isItPowerToThePeople);
@@ -547,6 +568,8 @@ var nextEvent = function(){
     console.log("keyup, ", compteurPupitre)
     // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
     // ça avance tout seul avec un délai)
+    nextIsBlackPupitre = false
+
   }
 }
 
