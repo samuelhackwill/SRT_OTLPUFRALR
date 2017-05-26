@@ -18,7 +18,8 @@
       {{/if}}
         {{#with nextRepresentation}}
       <div id="nextshow">
-        La prochaine représentation commence le <br /> <span id="dateNextRepresentation" title="{{location}}">{{formatDateLeFrenchStyle date_start}}</span>.
+        {{_ "prochaine_repres"}}
+         <br /> <span id="dateNextRepresentation" title="{{location}}">{{formatDateLeFrenchStyle date_start}}</span>.
       </div>
         {{/with}}
             
@@ -35,7 +36,7 @@
 
       <p>
       <br /><br />
-      Vous serez chez vous, le soir de la représentation, et vous entendrez ce qui se passe sur scène. C’est un spectacle qui a été écrit pour vous (enfin, pas seulement pour vous, aussi pour ceux·celles qui sont venu·e·s au théâtre, mais disons : pas seulement pour eux·elles)
+          {{_ "text_home_2"}}      
       </p>
 
       <p id="dequoi">
@@ -1637,25 +1638,25 @@
 
 
   <div id="liste">
-        <input type="checkbox" id="wifi" class="liste"> D’une connexion internet correcte<br />
-        <input type="checkbox" id="pelo" class="liste"> D’être chez vous, seul<br />
-        <input type="checkbox" id="son" class="liste"> De pouvoir diffuser le son à un bon petit volume<br />
-        <input type="checkbox" id="laptop" class="liste"> D'avoir un ordinateur portable pour pouvoir vous déplacer avec <br />
-        <input type="checkbox" id="dispo" class="liste"> Et bien sûr d’être disponible à ce moment là<br />
-        <input type="checkbox" id="checkboxRTC" class="liste"> <span id="zob">D'un navigateur compatible WEB-RTC (test automatique)</span>
+        <input type="checkbox" id="wifi" class="liste"> {{_ "checklist1"}}<br />
+        <input type="checkbox" id="pelo" class="liste"> {{_ "checklist2"}} <br />
+        <input type="checkbox" id="son" class="liste"> {{_ "checklist3"}} <br />
+        <input type="checkbox" id="laptop" class="liste">  {{_ "checklist4"}} <br />
+        <input type="checkbox" id="dispo" class="liste"> {{_ "checklist5"}} <br />
+        <input type="checkbox" id="checkboxRTC" class="liste"> <span id="zob">{{_ "checklist6"}} </span>
         <br /><br /><br />
   </div>
 </div>
 
 <p>
     <br /><br /><br />
-    Pour réserver une place du spectacle-à-la-maison, cliquez sur une des dates ci-dessous. C'est gratuit, et ça ne vous engage à rien, mais c'est nécessaire pour que vous puissiez accéder au spectacle.
+    {{_ "text_home_4"}}
     <br /><br/><br />
 </p>
 
       <p>
-      LES PROCHAINES DATES :
-      <br />
+        {{_ "dates"}}
+        <br />
 
       <ul id="shows-list" class="">
         {{#each listRepresentations}}
@@ -1677,17 +1678,16 @@
  -->  <div id="success">
 
     <div id="sucesstext">
-      Okay, vous êtes bien inscrit à la représentation du <p id="date_choisie"></p>
+      {{_ "text_home_5"}} <p id="date_choisie"></p>
       <br /><br />
-      On se donne rendez-vous à ce moment-là, ici même, sur <br />
+      {{_ "text_home_6"}} <br />
       http://www.ontraverseralepont.com/.
 <!--       Okay, vous êtes bien inscrit à la représentation du <br />
       <p id="date_choisie">{{formatDateLeFrenchStyle date_start}}.</p>
       <p id="warning"> <br /></p>   
       On se donne rendez-vous ici même, sur <br />http://www.on-traversera-le-pont-une-fois-rendus-a-la-riviere.com/. -->
       <br /><br />
-      Par ailleurs si vous changez d'avis et voulez participer à un autre moment, n'hésitez pas à revenir sur ce site et cliquer sur une autre date.
-    </div>
+{{_ "text_home_7"}}    </div>
     <button id="close" onclick="closeSplash()"> OK </button>
   </div>
 <!--   {{/with}}

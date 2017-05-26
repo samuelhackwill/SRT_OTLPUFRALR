@@ -12,3 +12,8 @@ body.nlsat #srt{
   width:99%;
   font-size: 8.5vh;
 }
+
+body.nlsat #nlsrt{
+  width:99%;
+  font-size: 8.5vh;
+}

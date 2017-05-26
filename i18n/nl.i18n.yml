@@ -1,2 +1,18 @@
 Hello: Hallo
-text_home_1: is een radio-uitzending toont. Aan te melden voor een voorstelling, dank aan het volgende te lezen
+text_home_1: wordt ook simultaan op de radio uitgezonden. Wil je je inschrijven voor een voorstelling, lees dan wat volgt.
+prochaine_repres: De volgende voorstelling begint om
+text_home_2: Op de avond van de opvoering ben je thuis, en hoor je wat zich op het toneel afspeelt. De voorstelling is geschreven met jou in gedachten (nou ja, niet alleen voor jou, ook voor de mensen die naar het theater komen, maar laten we dus zeggen : niet alleen voor hen).
+text_home_3: Bovendien geven we je onderstaande checklist mee, zodat je kan nagaan of je helemaal klaar bent om van de voorstelling te genieten. Vink de vakjes aan die voor jou van toepassing zijn; als je op de tekening vijf groene cirkels ziet, dan zou het in orde moeten zijn, maar uiteindelijk zie je zelf wel.
+bon_sang_de_bois : TRADUCTION EN COURS
+revenez : TRADUCTION EN COURS
+checklist1 : Beschik je over een werkende internetverbinding?
+checklist2 : Ben je alleen thuis?
+checklist3 : Kun je de volumeknop lekker doordraaien?
+checklist4 : Heb je een laptop om ermee rond te lopen?
+checklist5 : En natuurlijk, ben je op dat moment ontvankelijk? 
+checklist6 : En is je browser WEB-RTC-compatible? (automatische test)
+text_home_4 : Wil je een plaats reserveren voor de thuisvoorstelling, klik dan op een van de data hieronder.  Het is gratis en je verbindt je nergens toe, maar het is nodig om toegang te krijgen tot de voorstelling.
+dates : DE KOMENDE DATA :
+text_home_4 : Okee, je bent nu aangemeld voor de voorstelling van
+text_home_5 : We spreken op dat tijdstip af, hier op deze zelfde plek
+text_home_6 : Goed om te weten : heb je ineens andere plannen en wil je op een ander moment deelnemen, klik dan gerust een andere datum aan. 

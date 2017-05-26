@@ -15,10 +15,25 @@
     src: url('OfficeCodePro-Regular.ttf') format('truetype');
   }
 
+  .tap-i18n-dropdown option[value="en"] {display:none;}
+
   #srt div:nth-child(2){
     margin-top:25px;
     font-style: italic;
   }
+
+  .tap-i18n-dropdown{
+
+  }
+
+  .form-control{
+
+  }
+
+  #warning{
+    background-color: red;
+  }
+
 
   h5{
     margin-top: 25px;
@@ -468,8 +483,7 @@ text-decoration: underline;
   #nlsrt{
     color: white;
 
-    width:99%;
-    font-size:8.5vh;
+    font-size:2.2vw;
 
     position: absolute;
     top: 50%;
@@ -488,8 +502,35 @@ text-decoration: underline;
     -moz-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
+  }
+
+    #phoneNumberSrt{
+    color: white;
+
+    width:80%;
+
+    font-size:2.2vw;
+
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,150px);
+
+    z-index:1000;
+
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;   
+    -khtml-user-select: none;    
+    -moz-user-select: none;      
+    -ms-user-select: none;      
+
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
 
   }
+
 
 
   #srt{

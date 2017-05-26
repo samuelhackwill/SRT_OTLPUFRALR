@@ -158,15 +158,35 @@ if (Meteor.isServer) {
     }
   });
 
-  em.addListener('adminshowtheone', function(/* client */) {
+  em.addListener('showLTNumberServer', function(){
+    em.emit('showLTNumberClient');
+  });
+
+  em.addListener('hideLTNumberServer', function(){
+    em.emit('hideLTNumberClient')
+  });
+
+  em.addListener('hideCabaneLotteryServer', function(){
+    em.emit('hideCabaneLotteryClient')
+  });
+
+  em.addListener('showButtonsServer', function(/* client */) {
     console.log('ADMIN SHOW THE ONE', _.toArray(arguments), arguments[0]);
     // em.setClient({ reponse: arguments[0].reponse });
     // var args = arguments[0];
     // if(args) {
-      em.emit('salmtheoneshow');
+      em.emit('showButtonsClient');
     // }
   });
-  
+  em.addListener('hideButtonsServer', function(/* client */) {
+    console.log('ADMIN HIDE THE ONE', _.toArray(arguments), arguments[0]);
+    // em.setClient({ reponse: arguments[0].reponse });
+    // var args = arguments[0];
+    // if(args) {
+      em.emit('hideButtonsClient');
+    // }
+  });
+
   em.addListener('adminshowtheone-single-training', function(/* client */) {
     console.log('ADMIN SHOW THE ONE', _.toArray(arguments), arguments[0]);
     // em.setClient({ reponse: arguments[0].reponse });

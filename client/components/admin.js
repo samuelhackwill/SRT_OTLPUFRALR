@@ -722,15 +722,7 @@ Template.boutonsAmbiance.helpers({
 Template.showtime.events({
   'click .actions' : function(event){
     console.log("action button ", event.target.id)
-    if (event.target.id=="startONH") {
-      zoupla = document.getElementsByClassName("pick-random-one")
-      console.log("c'est toi le bouton que je veux ", zoupla)
-    }
-
-    if (event.target.id=="startFinishACup"){
-      console.log("hop hop il faut faire un truc côté serveur et après un truc côté client")
-    }
-
+    
     em.setClient({ whichaction: event.target.id});
     em.emit('actionAdmin')
     $('#'+event.target.id).css("opacity", "0.5")
@@ -822,10 +814,10 @@ Template.showtime.events({
     console.log('adminstartstream emmited');
   },
   'click #show-the-ONE': function(){
-      em.emit('adminshowtheone');
+      em.emit('showButtonsServer');
   },
   'click #hide-the-ONE': function(){
-      em.emit('adminhidetheone');
+      em.emit('hideButtonsServer');
   },
   'click #show-the-ONE-single-training': function(){
       em.emit('adminshowtheone-single-training');

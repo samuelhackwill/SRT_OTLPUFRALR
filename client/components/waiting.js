@@ -197,9 +197,22 @@ Template.waiting.helpers({
     //   return("Représentation en cours!")
     // }
 
+    messageButtonOK = ""
+    messageButton = ""
+    if (TAPi18n.getLanguage()=="fr"){
+      messageButton = "Je m'inscris"
+      messageButtonOK = "Inscription OK"
+    }
+
+    if (TAPi18n.getLanguage()=="nl"){
+      messageButton = "Ik meld me aan"
+      messageButtonOK = "Aanmelding geslaagd"
+    }
+
+
     if(null != checkCookie && undefined != checkCookie && checkCookie == this._id) {
-      return "inscription OK";
-    } else return "Je m'inscris";
+      return messageButtonOK;
+    } else return messageButton;
   },
 
   isModeSpectacle: function(){

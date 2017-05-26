@@ -14,6 +14,7 @@ Template.videoproj.onCreated(function() {
     this.subscribe('allRepresentations');
     this.subscribe('allContenusEcran');
     this.subscribe('allLoteries');
+    TAPi18n.setLanguage("fr");
   });
 
 });

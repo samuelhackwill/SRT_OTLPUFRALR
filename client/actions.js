@@ -1,9 +1,3 @@
-// actions - fonctions pour le spectacle textes images questions/reponses etc...
-
-// TO DO
-// balises pour afficher du texte ailleurs que dans SRT (checklist, rubrique fiction)
-// pour les variables globales, virer le var avant
-// loadJSON = function(callback)
 nextIsBlackPupitre = false
 nextIsBlackAdmin = false
 
@@ -269,8 +263,8 @@ var stringdeb = params[0]
 var stringfin = params[1] || ""
 // bam pseudo-argument optionnel dans ta face
 
-var stringdebpropre = stringdeb.replace(/\_/g, ' ');
-var stringfinpropre = stringfin.replace(/\_/g, ' ');
+var stringdebpropre = stringdeb.replace(/\ /g, ' ');
+var stringfinpropre = stringfin.replace(/\ /g, ' ');
 
 var phrase = stringdebpropre + " le " + nextspectacledate + " à " + nextspectacletime + " " + stringfinpropre
 var addobject = {text:phrase, type: "text"}
@@ -283,12 +277,12 @@ cue = function(params){
       console.log("params du cue ", params, Router.current().route.getName())
     if(Roles.userIsInRole(Meteor.user(), "admin")==true && Router.current().route.getName() == "admin"){
       var string = params[0]
-      var stringpropre = string.replace(/\_/g, ' ');
+      var stringpropre = string.replace(/\ /g, ' ');
       alert("CUE DU CUE, ",stringpropre)
     }
 }
 
-// get_time_diff = function(datetime){
+// get time diff = function(datetime){
 //   console.log("go GET TIME DIFF");
 //   $("#srt").html("zoupla")
 //   // euh alors y'a un bug de timezone là j'ai l'impression qu'il prend greenwitch
@@ -302,17 +296,17 @@ cue = function(params){
 
 
 //   if (datetime < now) {
-//     var milisec_diff = now - datetime
+//     var milisec diff = now - datetime
 //   }else{
-//     var milisec_diff = datetime - now
+//     var milisec diff = datetime - now
 //   }
 
-//   var date_diff = new Date( milisec_diff )
+//   var date diff = new Date( milisec diff )
 
-//   var days = Math.floor(milisec_diff / 1000 / 60 / (60 * 24))
-//   var hours = date_diff.getHours()
-//   var minutes = date_diff.getMinutes()
-//   var secondes = date_diff.getSeconds()
+//   var days = Math.floor(milisec diff / 1000 / 60 / (60 * 24))
+//   var hours = date diff.getHours()
+//   var minutes = date diff.getMinutes()
+//   var secondes = date diff.getSeconds()
 
 //   var difdif = ""
 //   if(days>1) var difdif = difdif.concat(days.toString(), " jours et ")
@@ -334,7 +328,7 @@ cue = function(params){
 
 //   console.log("difdif " + difdif)
 //   console.log("now " + now)
-//   console.log("date_diff " + date_diff)
+//   console.log("date diff " + date diff)
 // }
 
 changeImg = function(params){
@@ -427,7 +421,7 @@ addlistelement = function(params){
   var label = params[1]
   var status = params[2]
 
-  var labelpropre = label.replace(/\_/g, ' ');
+  var labelpropre = label.replace(/\ /g, ' ');
 
   var newListel = $('<li class='+ status +'>'+ labelpropre +'</li>')
   newListel.appendTo($("#"+where))
@@ -441,7 +435,7 @@ newBoutton = function(params){
   var nom = params[0]
   params.shift()
   var label = params[0]
-  var labelpropre = label.replace(/\_/g, ' ');
+  var labelpropre = label.replace(/\ /g, ' ');
 
   params.shift()
 
@@ -482,20 +476,20 @@ fullscreen = function(params){
   }
 }
 
-destroy = function(self, replaceActual = "ok"){
+destroy = function(self, replaceActual = ""){
   // FUNCTION DESTROY
   // dans l'idéal faudrait lui passer un délai également
   var delay = 333
   var element = document.getElementById(self)
   var parentid = element.parentNode.id
 
-  var stringpropre = replaceActual.replace(/\_/g, ' ').replace(/\(/g, '\'');;
-
   $("#"+parentid).css("opacity","0")
 
-  $("#srt").html(stringpropre)
+  // var stringpropre = replaceActual.replace(/\ /g, ' ').replace(/\(/g, '\'');;
+  // $("#srt").html(stringpropre)
+
   // SAM2
-  // SI LE BOUTON EST DE TYPE CUPPAS FINISH_ALT (tu utilises l'id)
+  // SI LE BOUTON EST DE TYPE CUPPAS FINISH ALT (tu utilises l'id)
   // DANS CE CAS LÀ TU FAIS APPARAÎTRE UN TEXTE CUSTOM
   // ET DE NOUVEAU BOUTONS (LE VRAI CUPPAS FINISH)
 
@@ -557,19 +551,19 @@ replaceNext = function(params){
   var leReplace = {"text":" ", "type":"text"}
 
   if(params=="1"){
-    leReplace.text = "Bon,tant pis. Par contre vous n’allez rien avoir pour vous abriter pendant l’orage."
+    leReplace.text = ""
   }
 
   if(params=="2"){
-    leReplace.text = " "
+    leReplace.text = ""
   }
 
   if(params=="3"){
-    leReplace.text = "Excellent."
+    leReplace.text = ""
   }
 
   if(params=="4"){
-  leReplace.text = "Ok, si vous voyez les boutons apparaître, c'est à vous de répondre."
+  leReplace.text = ""
   }
 
   console.log("data next srt AVANT LIFTING ,",data[nextsrt])
@@ -579,12 +573,19 @@ replaceNext = function(params){
 }
 
 addLotteryButtons = function(){
-  console.log("addLotteryButtons yo yo yo yo yo")
-  newBoutton(["iWantONH","Oui","addUserToLottery('oui-non-euh')", "destroy(id)"])
-  newBoutton(["nonB","Non","replaceNext('2')", "destroy(id)"])
+  switch(TAPi18n.getLanguage()){
+    case "fr" :
+      newBoutton(["iWantONH","Oui","addUserToLottery('oui-non-euh')","destroy(id)"])
+      newBoutton(["nonB","Non","destroy(id)"])
+      break
+
+    case "nl" :
+      newBoutton(["iWantONH","Ja","addUserToLottery('oui-non-euh')","destroy(id)"])
+      newBoutton(["nonB","Nee","destroy(id)"])
+      break
+  }
   $("#sacbouttons").addClass("visible")
   $("#sacbouttons").removeClass("invisible")
-
 }
 
 // SHOW BUTTONS READY!
@@ -596,7 +597,15 @@ addLotteryButtons = function(){
 
 addCuppasButtons = function(){
   console.log("addCuppasButtons yo yo yo yo yo")
-  newBoutton(["finishCuppa","OK_J\’AI_FINI_MA_CABANE", "finishCuppa(id)" ])
+  switch(TAPi18n.getLanguage()){
+    case "fr":
+      newBoutton(["finishCuppa","OK J\’AI FINI MA CABANE", "finishCuppa(id)" ])
+    break
+
+    case "nl":
+      newBoutton(["finishCuppa","OK IK BEN KLAAR MET MIJN HUT", "finishCuppa(id)" ])
+    break
+  }
   $("#cuppasInc").remove()
   $("#sacbouttons").addClass("visible")
   $("#sacbouttons").removeClass("invisible")
@@ -608,9 +617,18 @@ finishCuppa = function(e){
 
   if (!areYouSureYouAreComfy) {
     areYouSureYouAreComfy=true
-    $("#srt").html("Attendez, vous êtes sûr·e d\’être vraiment bien installé·e, bien bien confortablement ? Vous avez fait une vraie cabane ? Vous avez une boisson chaude ? Des coussins à foison ? <br/> Vous avez encore le temps de parfaire votre installation avant de confirmer que vous avez bien terminé.")
-    $("#finishCuppa").attr('value', 'C\’EST BON CETTE FOIS JE ME SUIS VRAIMENT BIEN INSTALLÉ·E ET J\’AI MA BOISSON CHAUDE');
-    // la mettre du CSS
+    switch(TAPi18n.getLanguage()){
+      case "fr":
+        $("#srt").html("Attendez, vous êtes sûr·e d\’être vraiment bien installé·e, bien bien confortablement ? Vous avez fait une vraie cabane ? Vous avez une boisson chaude ? Des coussins à foison ? <br/> Vous avez encore le temps de parfaire votre installation avant de confirmer que vous avez bien terminé.")
+        $("#finishCuppa").attr('value', 'C\’EST BON CETTE FOIS JE ME SUIS VRAIMENT BIEN INSTALLÉ·E ET J\’AI MA BOISSON CHAUDE');
+      break
+
+      case "nl":
+        $("#srt").html("Wacht\, ben je zeker dat je goed geïnstalleerd bent\, lekker comfortabel \? Je hebt een echte hut gemaakt \? Je hebt een warme drank \? Lekker veel kussens \? <br/> Je hebt namelijk nog de tijd om alles op punt te stellen vooraleer je bevestigd dat je klaar bent.")
+        $("#finishCuppa").attr('value', 'OK\, DEZE KEER BEN IK GOED GEÏNSTALLEERD EN IK HEB MIJN WARME DRANK.');
+      break
+
+  }
     $("#srt").css("top", "-50%")
     $("#sacbouttons").css("margin-top","50px")
     //       $("#flipbookcontainer").css("display", "none")},1000)
@@ -652,11 +670,11 @@ gotonext = function(params){
 
 // m'ajouter à un pool de loterie
 addUserToLottery = function(params){
-  console.log('user?', Meteor.connection._lastSessionId, params);
+  console.log('user?', Meteor.connection. lastSessionId, params);
   var lotteryName = params;
   if(lotteryName != "") {
-    cookies.set(lotteryName, Meteor.connection._lastSessionId);
-    em.setClient({ lotteryName: lotteryName, sessionId: Meteor.connection._lastSessionId });
+    cookies.set(lotteryName, Meteor.connection. lastSessionId);
+    em.setClient({ lotteryName: lotteryName, sessionId: Meteor.connection. lastSessionId });
     em.emit('salmAddMeToLottery');
   }
 

@@ -75,13 +75,37 @@ Template.jacky.onRendered(function () {
 
   };
 
+    em.addListener('showLTNumberClient', function(){
+      switch(TAPi18n.getLanguage()){
+        case "fr":
+          $("<div>"+"Appelez ce numéro : <br /> + 33 (0)7 81 89 76 86 <br />(Et coupez le son de votre ordinateur! Sinon ça va faire des sons bizarres)."+"<br/</div>").appendTo("#phoneNumberSrt")
+          break
+
+        case "nl":
+          $("<div>"+"Bel dit nummer : <br /> +33 7 81 89 76 86 <br/> (En schakel het geluid van jullie computer uit! Anders horen we allerlei rare geluiden)."+"<br/</div>").appendTo("#phoneNumberSrt")
+          break
+
+        case "en":
+          $("<div>"+"Call this number : <br /> +33 7 81 89 76 86 <br/> (And please turn the volume of your computer off! Or else it might cause strange sound phenomens)."+"<br/</div>").appendTo("#phoneNumberSrt")
+          break
+      }
+});
+
   em.addListener('showButtonsClient', function(){
     console.log('showTheOneButtons');
-    $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
-    $("#sacbouttons").css("opacity", "1")
+    switch(TAPi18n.getLanguage()){
+      case "fr":
+        $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
+        break
+      case "nl":
+        $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
+        break
+        }
+      $("#sacbouttons").css("opacity", "1")
     });
 
   em.addListener('hideButtonsClient', function(){
+    $("#phoneNumberSrt").empty()
     $("#sacbouttons").css("opacity", "0")
       delayedEmpty = setTimeout(function(){
       $("#sacbouttons").empty()
@@ -90,6 +114,7 @@ Template.jacky.onRendered(function () {
 
 
 // });
+
   function showMeTheButtons(){
 
       // if(Roles.userIsInRole(Meteor.user(), "jacky_one")==true) {
@@ -102,9 +127,47 @@ Template.jacky.onRendered(function () {
 
   em.addListener('startONHLotteryClient', function(){
     console.log("début de la lotterie ONH les shlags!")
-    newBoutton(["ouiSP1","Oui","addUserToLottery('oui-non-euh')","destroy(id,'Ok,_si_vous_voyez_les_boutons_apparaître,_c(est_à_vous_de_répondre.')"])
-    newBoutton(["nonSP1","Non","destroy(id)"])
+    newBoutton(["ouiSP1","Oui","addUserToLottery('oui-non-euh')","destroy(id)", "$('#phoneNumberSrt').empty()"])
+    newBoutton(["nonSP1","Non","destroy(id)", "$('#phoneNumberSrt').empty()"])
 
+            switch(TAPi18n.getLanguage()){
+        case "fr":
+          $("<div>Est-ce que vous êtes partant·e pour répondre aux questions de Jacques ?</div>").appendTo("#phoneNumberSrt")
+          break
+ // <br/> (ou a minima un petit arrangement confortable et néanmoins inhabituel ?)
+
+        case "nl":
+          $("<div>Heb je zin om de vragen van Jacques te beantwoorden?</div>").appendTo("#phoneNumberSrt")
+          break
+        }
+  });
+
+  em.addListener('hideLTNumberClient', function(){
+    $("#phoneNumberSrt").empty()
+  });
+
+  em.addListener('hideCabaneLotteryClient', function(){
+    $("#phoneNumberSrt").empty()
+    $("#sacbouttons").css("opacity", "0")
+      delayedEmpty = setTimeout(function(){
+      $("#sacbouttons").empty()
+      },333)
+  });
+
+  em.addListener('startCabaneLotteryClient', function(){
+    console.log("début de la lotterie Cabane les shlags!")
+    newBoutton(["cuppasInc","Oui","addUserToLottery('cabane')","destroy(id)", "$('#phoneNumberSrt').empty()"])
+    newBoutton(["boissonN","Non","destroy(id)", "$('#phoneNumberSrt').empty()"])
+        switch(TAPi18n.getLanguage()){
+        case "fr":
+          $("<div>Est-ce que vous êtes partant·e pour faire une cabane ?</div>").appendTo("#phoneNumberSrt")
+          break
+ // <br/> (ou a minima un petit arrangement confortable et néanmoins inhabituel ?)
+
+        case "nl":
+          $("<div>Heb je zin om een hut te bouwen?</div>").appendTo("#phoneNumberSrt")
+          break
+        }
   });
 
     em.addListener('salmback', function(what) {

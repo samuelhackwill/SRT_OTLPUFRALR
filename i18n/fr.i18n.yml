@@ -1,2 +1,18 @@
 Hello: Bonjour
 text_home_1: est un spectacle radio-diffusé. Pour vous inscrire à une représentation, merci de lire ce qui suit
+prochaine_repres: La prochaine représentation commence le
+text_home_2: Vous serez chez vous, le soir de la représentation, et vous entendrez ce qui se passe sur scène. C’est un spectacle qui a été écrit pour vous (enfin, pas seulement pour vous, aussi pour ceux·celles qui sont venu·e·s au théâtre, mais disons : pas seulement pour eux·elles)
+text_home_3: Par ailleurs on vous met à disposition cette petite checklist ci-dessous pour vérifier que vous avez tout ce qu'il vous faut pour profiter du spectacle. Cochez les cases en fonction de votre situation, si vous avez plus de 5 cercles verts sur le dessin ça devrait être ok, mais en définitive c'est vous qui voyez.
+bon_sang_de_bois: Bon sang de bois, nous détectons que vous utilisez un navigateur non-compatible avec notre web-app. À priori le flux audio ne fonctionnera pas du tout, et ben du coup il se passera pas grand-chose de votre côté. La bonne nouvelle, c'est qu'il existe une solution à ce problème : installez
+revenez : et revenez sur cette page. Normalement ce texte devrait avoir disparu. 
+checklist1 : D’une connexion internet correcte
+checklist2 : D’être chez vous, seul
+checklist3 : De pouvoir diffuser le son à un bon petit volume
+checklist4 : D'avoir un ordinateur portable pour pouvoir vous déplacer avec
+checklist5 : Et bien sûr d’être disponible à ce moment là
+checklist6 : D'un navigateur compatible WEB-RTC (test automatique)
+text_home_4 : Pour réserver une place du spectacle-à-la-maison, cliquez sur une des dates ci-dessous. C'est gratuit, et ça ne vous engage à rien, mais c'est nécessaire pour que vous puissiez accéder au spectacle.
+dates : LES PROCHAINES DATES :
+text_home_5 : Okay, vous êtes bien inscrit à la représentation du
+text_home_6 : On se donne rendez-vous à ce moment-là, ici même, sur
+text_home_7 : Par ailleurs si vous changez d'avis et voulez participer à un autre moment, n'hésitez pas à revenir sur ce site et cliquer sur une autre date.
