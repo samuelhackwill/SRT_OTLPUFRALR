@@ -1,0 +1,19 @@
+/* videoproj */
+body.ensat .shutter {
+  display:none !important;
+  background-color:purple;
+}
+
+body.ensat #sacbouttons{
+	display:none;
+}
+
+body.ensat #srt{
+  width:75%;
+  font-size: 2.2vh;
+}
+
+body.ensat #nlsrt{
+  width:75%;
+  font-size: 2.2vh;
+}

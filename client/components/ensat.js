@@ -1,37 +1,50 @@
+// TODO
+// faire un bouton dans la vue ADMIN
+// qui fasse un shutter qui dit à la vue videoproj
+// de faire une rêgle CSS du cul
+
+Template.registerHelper('equals', function (a, b) {
+  return a == b;
+});
+
+var refreshedUp = false;
+
 var streamCheckInterval;
 var caughtUp = false;
 var intervalReload;
 
-Template.jacky.onCreated(function() {
+Template.ensat.onCreated(function() {
 
   //subscribe à la collection representations
   this.autorun(() => {
+    this.subscribe('allSuperGlobals');
     this.subscribe('allRepresentations');
     this.subscribe('allContenusEcran');
-    this.subscribe('allLoteries');
   });
 
 });
 
 
-Template.jacky.onRendered(function () {
+Template.ensat.onRendered(function () {
+  console.log('ensat!');
+  $('#srt').html('')
 
 
   this.autorun(() => {
     let ready = Template.instance().subscriptionsReady();
     if (!ready){ return; }
     let contnus = ContenusEcran.find().fetch();
-    console.log("contnus", contnus, data);
+    // console.log("contnus", contnus, dataPupitre);
     // data = ContenusEcran.findOne({name: "ce_jeudi_no_comment"}).data
-    data = ContenusEcran.findOne({name: "data_test"}).data
     dataPupitre = ContenusEcran.findOne({name: "data_test"}).dataPupitre
-    console.log('srt spectacle jacky rendered');
-    console.log('data ?', data);
-    console.log('ContenusEcran ?', ContenusEcran.find().fetch());
-    if(data) {
+    // console.log('srt spectacle nlsat rendered');
+    // console.log('data ?', dataPupitre);
+    // console.log('ContenusEcran ?', ContenusEcran.find().fetch());
+    if(dataPupitre) {
       catchUpWithTheShow();
-
-      console.log("tu parles quel langue camarade? ", TAPi18n.getLanguage())
+      console.log("initialement tu parles quel langue camarade? ", TAPi18n.getLanguage())
+      TAPi18n.setLanguage("en");
+      console.log("et mainteantn tu parles quel langue camarade? ", TAPi18n.getLanguage())
     }
 
     //
@@ -41,6 +54,9 @@ Template.jacky.onRendered(function () {
     // autonext(2000);
   });
 
+
+  $(document.body).addClass('ensat');
+
   function catchUpWithTheShow(){
     console.log('catchUpWithTheShow caughtUp?', caughtUp);
     if(!caughtUp) {
@@ -49,14 +65,14 @@ Template.jacky.onRendered(function () {
       //si on est en mode spectacle, que l'admin a le pouvoir
       var isPowerToThePeople = getSuperGlobal('powerToThePeople');
       if(modeSpectacle && !isPowerToThePeople) {
-        //et si il y a un compteur enregistré
-        var compteurAdmin = getSuperGlobal('compteurAdmin');
-        console.log("checking compteurAdmin", compteurAdmin);
+        //et si il y a un compteurPupitreenregistré
+        var compteurPupitreAdmin = getSuperGlobal('compteurPupitreAdmin');
+        console.log("checking compteurPupitreAdmin", compteurPupitreAdmin);
 
-        if(null !== compteurAdmin) compteur = parseInt(compteurAdmin);
-        if(compteur != -1) {
+        if(null !== compteurPupitreAdmin) compteurPupitre= parseInt(compteurPupitreAdmin);
+        if(compteurPupitre!= -1) {
           //revenir où on était dans le spectacle
-          next();
+          satNext();
         }
 
         //ambiance?
@@ -70,184 +86,49 @@ Template.jacky.onRendered(function () {
           }
         }
       }
-      
     }
+  }
 
-  };
+  em.addListener('salmtheoneshow', showTheOneButtons);
+  em.addListener('salmtheonehide', hideTheOneButtons);
 
-    em.addListener('showLTNumberClient', function(){
-      switch(TAPi18n.getLanguage()){
-        case "fr":
-          $("<div>"+"Appelez ce numéro : <br /> + 33 (0)7 81 89 76 86 <br />(Et coupez le son de votre ordinateur! Sinon ça va faire des sons bizarres)."+"<br/</div>").appendTo("#phoneNumberSrt")
-          break
-
-        case "nl":
-          $("<div>"+"Bel dit nummer : <br /> +33 7 81 89 76 86 <br/> (En schakel het geluid van jullie computer uit! Anders horen we allerlei rare geluiden)."+"<br/</div>").appendTo("#phoneNumberSrt")
-          break
-
-        case "en":
-          $("<div>"+"Call this number : <br /> +33 7 81 89 76 86 <br/> (And please turn the volume of your computer off! Or else it might cause strange sound phenomens)."+"<br/</div>").appendTo("#phoneNumberSrt")
-          break
-      }
-});
-
-  em.addListener('showButtonsClient', function(){
-    console.log('showTheOneButtons');
-    switch(TAPi18n.getLanguage()){
-      case "fr":
-        $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
-        break
-      case "nl":
-        $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
-        break
-        }
-      $("#sacbouttons").css("opacity", "1")
-    });
-
-  em.addListener('hideButtonsClient', function(){
-    $("#phoneNumberSrt").empty()
-    $("#sacbouttons").css("opacity", "0")
-      delayedEmpty = setTimeout(function(){
-      $("#sacbouttons").empty()
-      },333)
-  });
-
-
-// });
-
-function showMeTheButtons(){
+  function showTheOneButtons(){
 
     // if(Roles.userIsInRole(Meteor.user(), "jacky_one")==true) {
-  console.log('showMeTheButtons');
-  $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
-  $("#sacbouttons").css("opacity", "1")
+      console.log('showTheOneButtons');
+      $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
+    $("#sacbouttons").css("opacity", "1")
     // }
 
-}
+  }
 
-  em.addListener('startONHLotteryClient', function(){
-    console.log("début de la lotterie ONH les shlags!")
-    newBoutton(["ouiSP1","Oui","addUserToLottery('oui-non-euh')","destroy(id)", "$('#phoneNumberSrt').empty()"])
-    newBoutton(["nonSP1","Non","destroy(id)", "$('#phoneNumberSrt').empty()"])
 
-            switch(TAPi18n.getLanguage()){
-        case "fr":
-          $("<div>Est-ce que vous êtes partant·e pour répondre aux questions de Jacques ?</div>").appendTo("#phoneNumberSrt")
-          break
- // <br/> (ou a minima un petit arrangement confortable et néanmoins inhabituel ?)
-
-        case "nl":
-          $("<div>Heb je zin om de vragen van Jacques te beantwoorden?</div>").appendTo("#phoneNumberSrt")
-          break
-        }
-  });
-
-  em.addListener('hideLTNumberClient', function(){
-    $("#phoneNumberSrt").empty()
-  });
-
-  em.addListener('hideCabaneLotteryClient', function(){
-    $("#phoneNumberSrt").empty()
+  function hideTheOneButtons(){
     $("#sacbouttons").css("opacity", "0")
       delayedEmpty = setTimeout(function(){
       $("#sacbouttons").empty()
       },333)
-  });
 
-  em.addListener('startCabaneLotteryClient', function(){
-    console.log("début de la lotterie Cabane les shlags!")
-    newBoutton(["cuppasInc","Oui","addUserToLottery('cabane')","destroy(id)", "$('#phoneNumberSrt').empty()"])
-    newBoutton(["boissonN","Non","destroy(id)", "$('#phoneNumberSrt').empty()"])
-        switch(TAPi18n.getLanguage()){
-        case "fr":
-          $("<div>Est-ce que vous êtes partant·e pour faire une cabane ?</div>").appendTo("#phoneNumberSrt")
-          break
- // <br/> (ou a minima un petit arrangement confortable et néanmoins inhabituel ?)
+    //$('#sacbouttons').clear();
+  }
 
-        case "nl":
-          $("<div>Heb je zin om een hut te bouwen?</div>").appendTo("#phoneNumberSrt")
-          break
-        }
-  });
+// });
+  function showMeTheButtons(){
 
-    em.addListener('salmback', function(what) {
-    console.log('salm back!', what);
-    // compteur = what.compteur;
-    //enregistrons le compteur dans un cookie
-    // if(what.compteur && cookies.get('compteur') != what.compteur) cookies.set('compteur', what.compteur);
-    // var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
-    // var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : [];
-    var isSUPERinterrupt = getSuperGlobal("SUPERinterrupt", []);
-    var userRoles = Roles.getRolesForUser(Meteor.user());
-    if(userRoles.length == 0) userRoles.push("salm");
-    console.log("salm back : isSUPERinterrupt", isSUPERinterrupt, userRoles);
-    var found = jQuery.inArray(userRoles[0], isSUPERinterrupt);
-    if (found >= 0) {
-      //ce role est dans le parking !
-    } else {
-      //ce role n'est pas dans le parking, faisons un next
-      console.log('pas dans le parking, faisons un next')
-      window.clearTimeout(autonextcontainer) //clear auto next
-      // compteur += 1;
-      compteur = what.compteur; //changer le compteur depuis l'évènement admin (rattraper le spectacle)
-      back();
-    } 
-  });
+      // if(Roles.userIsInRole(Meteor.user(), "jacky_one")==true) {
+    console.log('showMeTheButtons');
+    $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
+    $("#sacbouttons").css("opacity", "1")
+      // }
 
-  em.addListener('salmnext', function(what) {
-    console.log('salm next!', what);
-    // compteur = what.compteur;
-    //enregistrons le compteur dans un cookie
-    // if(what.compteur && cookies.get('compteur') != what.compteur) cookies.set('compteur', what.compteur);
-    // var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
-    // var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : [];
-    var isSUPERinterrupt = getSuperGlobal("SUPERinterrupt", []);
-    var userRoles = Roles.getRolesForUser(Meteor.user());
-    if(userRoles.length == 0) userRoles.push("salm");
-    console.log("salm next : isSUPERinterrupt", isSUPERinterrupt, userRoles);
-    var found = jQuery.inArray(userRoles[0], isSUPERinterrupt);
-    if (found >= 0) {
-      //ce role est dans le parking !
-    } else {
-      //ce role n'est pas dans le parking, faisons un next
-      console.log('pas dans le parking, faisons un next')
-      window.clearTimeout(autonextcontainer) //clear auto next
-      // compteur += 1;
-      compteur = what.compteur; //changer le compteur depuis l'évènement admin (rattraper le spectacle)
-      next();
-    } 
-  }); 
+  }
 
-
-    em.addListener('satBack', function(what) {
-    console.log('sat back!', what);
-    // compteur = what.compteur;
-    //enregistrons le compteur dans un cookie
-    // if(what.compteur && cookies.get('compteur') != what.compteur) cookies.set('compteur', what.compteur);
-    // var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
-    // var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : [];
-    var isSUPERinterrupt = getSuperGlobal("SUPERinterrupt", []);
-    var userRoles = Roles.getRolesForUser(Meteor.user());
-    if(userRoles.length == 0) userRoles.push("salm");
-    console.log("salm back : isSUPERinterrupt", isSUPERinterrupt, userRoles);
-    var found = jQuery.inArray(userRoles[0], isSUPERinterrupt);
-    if (found >= 0) {
-      //ce role est dans le parking !
-    } else {
-      //ce role n'est pas dans le parking, faisons un next
-      console.log('pas dans le parking, faisons un next')
-      window.clearTimeout(autonextcontainer) //clear auto next
-      // compteur += 1;
-      compteurPupitre = what.compteurPupitre; //changer le compteur depuis l'évènement admin (rattraper le spectacle)
-      nlSatBack();
-    } 
-  });
 
   em.addListener('satNext', function(what) {
     console.log('sat next!', what);
-    // compteur = what.compteur;
-    //enregistrons le compteur dans un cookie
-    // if(what.compteur && cookies.get('compteur') != what.compteur) cookies.set('compteur', what.compteur);
+    // compteurPupitre= what.compteur;
+    //enregistrons le compteurPupitredans un cookie
+    // if(what.compteurPupitre&& cookies.get('compteur') != what.compteur) cookies.set('compteur', what.compteur);
     // var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
     // var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : [];
     var isSUPERinterrupt = getSuperGlobal("SUPERinterrupt", []);
@@ -261,26 +142,15 @@ function showMeTheButtons(){
       //ce role n'est pas dans le parking, faisons un next
       console.log('pas dans le parking, faisons un next')
       window.clearTimeout(autonextcontainer) //clear auto next
-      // compteur += 1;
-      compteurPupitre = what.compteurPupitre; //changer le compteur depuis l'évènement admin (rattraper le spectacle)
+      // compteurPupitre+= 1;
+      compteurPupitre= what.compteurPupitre; //changer le compteurPupitredepuis l'évènement admin (rattraper le spectacle)
       nlSatNext();
     } 
   }); 
 
-  em.addListener('satForceGoTo', function(what) {
-    console.log('sat salmForceGoTo!', what);
-    // compteur = what.compteur;
-    console.log("gotobookmarkPUPITRE(what.bookmark);")
-  }); 
-
-  em.addListener('displayBlackSalm', function(){
-    console.log('displayBlackSalm')
-    $('#srt').empty()
-  });
-
   em.addListener('salmForceGoTo', function(what) {
     console.log('salm salmForceGoTo!', what);
-    // compteur = what.compteur;
+    // compteurPupitre= what.compteur;
     gotobookmark(what.bookmark);
   }); 
 
@@ -302,30 +172,21 @@ function showMeTheButtons(){
     startTheStream();
     //lancer le check du stream à interval régulier
     console.log("streamCheckInterval?", streamCheckInterval);
-    /*
+
     if (!streamCheckInterval) {
         console.log("starting streamCheckInterval 1");
         streamCheckInterval = setInterval(function(){checkTheStream();}, 5000); 
         console.log("starting streamCheckInterval 2", streamCheckInterval);
     }
-    */
   });
-
-  em.addListener('displayBlackSat', function(){
-    console.log('displayBlackSat')
-    $('#nlsrt').empty()
-  });
-
   em.addListener('salmpowerpeople', function(what) {
     console.log('salm people have the power!', what);
       console.log("le pouvoir est aux mains du peuple", streamCheckInterval);
-      /*
       //arretons le check du stream à interval régulier
       console.log("stopping streamCheckInterval 1", streamCheckInterval);
       clearInterval(streamCheckInterval); 
       streamCheckInterval = null;
       console.log("stopping streamCheckInterval 2", streamCheckInterval);
-      */
   }); 
   em.addListener('salmUnStop', function(what) {
     console.log('salm unstop', what);
@@ -378,7 +239,7 @@ function showMeTheButtons(){
 
   // var host = window.location.hostname == "localhost" ? "www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com" : window.location.hostname;
   // var host = window.location.hostname == "localhost" ? "www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com" : window.location.hostname;
-  var host = "ontraverseralepont.com";
+  var host = "http://www.ontraverseralepont.com";
   var server = null;
   if(window.location.protocol === 'http:')
       server = "http://" + host + ":8088/janus";
@@ -520,6 +381,8 @@ function showMeTheButtons(){
         // bootbox.alert(error, function() {
         //   window.location.reload();
         // });
+        /* no reload on error stream audio for videoproj */
+        /*
         var waitBeforeReload = 10 //secondes;
         $('#stream-error').append("Il semble que la connection avec le serveur a été perdue. La page va se recharger dans <span>"+waitBeforeReload+" secondes</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
         $('#stream-error a.reload').click(function(){
@@ -541,7 +404,7 @@ function showMeTheButtons(){
             window.location.reload();
           }
         }, 1000);
-
+        */
       },
       destroyed: function() {
         console.log("destroyed");
@@ -564,27 +427,38 @@ function showMeTheButtons(){
   var alternanceStorm = false;
   var balayeur
 
-  em.addListener('new_ambiance_client', function(what) {
-
-    console.log(what)
-    changeImg(what)
-
-    // SAM1
-
+  em.addListener('new_ambiance_client', function() {
     // var ambiance = superGlobals.findOne({ whichAmbiance: { $exists: true}});
     // var whichAmbiance = (ambiance) ? ambiance.whichAmbiance : "e41";
-    // var whichAmbiance = getSuperGlobal("whichAmbiance", "e41");
+    var whichAmbiance = getSuperGlobal("whichAmbiance", "e41");
+    var newAmbiance = ambiances.findOne({name: whichAmbiance});
+    console.log("ambiance?", newAmbiance);
+    if(newAmbiance){
+      console.log("new Ambiance", newAmbiance.value)
+      changeImg(newAmbiance.value)
+    }
+  });
+  
 
-    // var newAmbiance = ambiances.findOne({name: whichAmbiance});
-    // console.log("ambiance?", newAmbiance);
-    // if(newAmbiance){
-    //   console.log("new Ambiance", newAmbiance.value)
-    //   changeImg(newAmbiance.value)
-    // }
-
+  em.addListener('displayBlackSat', function(){
+    console.log('displayBlackSat')
+    $('#nlsrt').empty()
   });
 
+  em.addListener('displayBlackSalm', function(){
+    console.log('displayBlackSalm')
+    $('#srt').empty()
+  });
+
+
   em.addListener('ca_va_peter_client', function(/* client */) {
+        // console.log("CHECK PATH ", Router.current().route.path())
+
+        if(Router.current().route.path()=="\/ensat"){
+          // console.log("é ho t'es le videoproj vous vous barrez")
+          return
+        }
+
         if(alternanceStorm){
           clearTimeout(balayeur)
           $( ".eclair" ).remove();
@@ -599,6 +473,40 @@ function showMeTheButtons(){
         balayeur = setTimeout(balayeurfunc,2500)
     });
 
+    alternanceImg = false;
+
+  function changeImg(params){
+
+    if($("#imgcontainerBACK").hasClass( "invisible")){
+      $('#imgcontainerBACK').removeClass('invisible');
+      $('#imgcontainerBACK').addClass('visible');
+    }
+
+    if (alternanceImg==true) {
+      $("#imgcontainerFRONT").css("background-image", "url(/img/"+params+".jpg");  
+      $('#imgcontainerFRONT').removeClass('invisible');
+      $('#imgcontainerFRONT').addClass('visible');
+    }else{
+      $("#imgcontainerBACK").css("background-image", "url(/img/rain3.jpg");  
+      $('#imgcontainerFRONT').addClass('invisible');
+      $('#imgcontainerFRONT').removeClass('visible');
+    }
+    alternanceImg =! alternanceImg
+  }
+
+
+  // $("#login").click(function(e) { 
+  //     if (!interval) {
+  //         interval = setInterval(function(){myFunction();}, 2000); 
+  //     }
+  // });
+
+  // $("#logout").click(function(e) { 
+  //     clearInterval(interval); 
+  //     interval = null;
+  // });
+
+
   em.addListener('salmstartstream', startTheStream);
 
   function startTheStream(what) {
@@ -608,11 +516,10 @@ function showMeTheButtons(){
       var body = { "request": "watch", id: parseInt(1) };
       streaming.send({"message": body});
     }
-    /*
+
     if (!streamCheckInterval) {
         streamCheckInterval = setInterval(function(){checkTheStream();}, 30000); 
     }
-    */
     // if($('#streamFrame').length == 0) {
 
     //   $('<iframe>', {
@@ -651,80 +558,20 @@ function showMeTheButtons(){
 });
 
 var nextEvent = function(){
-  console.log("NEXT EVENT")
   // var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
   var isItPowerToThePeople = getSuperGlobal("powerToThePeople", true);
-  console.log('spectacle keyup compteur = ', compteur, 'interrupt = ', interrupt, 'isItPowerToThePeople = ', isItPowerToThePeople);
-  if(compteur < data.length-1 && interrupt==false && isItPowerToThePeople == true){
+  console.log('spectacle keyup compteurPupitre= ', compteurPupitre, 'interrupt = ', interrupt, 'isItPowerToThePeople = ', isItPowerToThePeople);
+  if(compteurPupitre< dataPupitre.length-1 && interrupt==false && isItPowerToThePeople == true){
     window.clearTimeout(autonextcontainer)
-    compteur +=1
-    next();
-    console.log("keyup, ", compteur)
+    compteurPupitre+=1
+    nlSatNext();
+    console.log("keyup, ", compteurPupitre)
     // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
     // ça avance tout seul avec un délai)
+    nextIsBlackPupitre = false
+
   }
 }
-
-Template.jacky.events({
-
-  'click #cuppasInc': function(){
-  //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
-  Meteor.call('setSuperGlobal', {name: 'cuppasInc'});
-  },
-
-  // 'click #cuppasDec': function(){
-  //   Meteor.call('setSuperGlobal', {name: 'cuppasDec'});
-  // },
-
-  // 'click #finishCuppa': function(){
-  //   Meteor.call('setSuperGlobal', {name: 'finishCuppa'});
-  // },
-  
-  'click #oui': function(){
-    console.log('salmclick oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    em.setClient({ reponse: 'oui', mode: 'singlePlayer' });
-    em.emit('salmclick');
-    console.log('salmclick emmited');
-    console.log('salmclick emmited oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-  },
-  'click #non': function(){
-    console.log('salmclick non', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    em.setClient({ reponse: 'non', mode: 'singlePlayer' });
-    em.emit('salmclick');
-    console.log('salmclick emmited non', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-  },
-  'click #euh': function(){
-    console.log('salmclick euh', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    em.setClient({ reponse: 'euh', mode: 'singlePlayer' });
-    em.emit('salmclick');
-    console.log('salmclick emmited euh', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-  },
-  'click #ouiMP': function(){
-    console.log('salmclick oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    em.setClient({ reponse: 'oui', mode: 'multiPlayer' });
-    em.emit('salmclick');
-    console.log('salmclick emmited');
-    console.log('salmclick emmited oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-  },
-  'click #nonMP': function(){
-    console.log('salmclick non', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    em.setClient({ reponse: 'non', mode: 'multiPlayer' });
-    em.emit('salmclick');
-    console.log('salmclick emmited non', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-  },
-  'click #euhMP': function(){
-    console.log('salmclick euh', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-    em.setClient({ reponse: 'euh', mode: 'multiPlayer' });
-    em.emit('salmclick');
-    console.log('salmclick emmited euh', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
-  },
-
-  'touchstart #gcontainer': function(){
-    // alert('touchstart #gcontainer');
-    nextEvent();
-  }
-
-})
 
   function balayeurfunc(){
           $( ".eclair" ).remove();

@@ -43,7 +43,7 @@ Template.nlsat.onRendered(function () {
     if(dataPupitre) {
       catchUpWithTheShow();
       console.log("initialement tu parles quel langue camarade? ", TAPi18n.getLanguage())
-      TAPi18n.setLanguage("nl");
+      // TAPi18n.setLanguage("nl");
       console.log("et mainteantn tu parles quel langue camarade? ", TAPi18n.getLanguage())
     }
 
