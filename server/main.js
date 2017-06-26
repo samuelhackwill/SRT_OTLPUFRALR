@@ -1,7 +1,10 @@
+// This code only runs on the server
 
-// ContenusEcran.before.insert(function (userId, doc) {
-//   doc.createdAt = new Date();
-// });
+// superGlobals pour le routeur
+Meteor.publish('superGlobals', function tasksPublication() {
+  return superGlobals.find();
+});
+
 
 Meteor.publish('allContenusEcran', function () {
   return ContenusEcran.find();
@@ -32,8 +35,9 @@ Meteor.publish( 'users', function() {
   }
 });
 
-// ICI TOUS LES EVENEMENTS DE DDP
 if (Meteor.isServer) {
+
+  // user status
   process.env.HTTP_FORWARDED_COUNT = 1;
   Meteor.publish(null, function() {
     return [
@@ -51,6 +55,8 @@ if (Meteor.isServer) {
 
   UserStatus.events.on("connectionLogin", function(fields) { console.log("connectionLogin", fields); });
 
+
+  // ICI TOUS LES EVENEMENTS DE DDP
   em.addListener('salmclick', function(/* client */) {
     console.log('HELLO', _.toArray(arguments), arguments[0].reponse, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
     // em.setClient({ reponse: arguments[0].reponse });
@@ -63,7 +69,7 @@ if (Meteor.isServer) {
     }
   });
 
-    em.addListener('adminback', function(/* client */) {
+  em.addListener('adminback', function(/* client */) {
     console.log('ADMIN BACK', _.toArray(arguments), arguments[0]);
     // em.setClient({ reponse: arguments[0].reponse });
     var args = arguments[0];
@@ -72,10 +78,10 @@ if (Meteor.isServer) {
     }
   });
 
-    em.addListener('actionAdmin', function(){
-      console.log("ACTIONS SERVER", arguments[0].whichaction+'Client')
-      em.emit(arguments[0].whichaction+'Client')
-    });
+  em.addListener('actionAdmin', function(){
+    console.log("ACTIONS SERVER", arguments[0].whichaction+'Client')
+    em.emit(arguments[0].whichaction+'Client')
+  });
 
   em.addListener('displayBlackAdmin', function(){
     console.log('diplay black admin')
@@ -97,7 +103,7 @@ if (Meteor.isServer) {
     }
   });
 
-    em.addListener('pupitreAdminBack', function(/* client */) {
+  em.addListener('pupitreAdminBack', function(/* client */) {
     console.log('PUPITRE ADMIN BACK', _.toArray(arguments), arguments[0]);
     // em.setClient({ reponse: arguments[0].reponse });
     var args = arguments[0];
@@ -285,28 +291,8 @@ if (Meteor.isServer) {
   
 
 
-  
-  // This code only runs on the server
-  Meteor.publish('superGlobals', function tasksPublication() {
-    return superGlobals.find();
-  });
-
-  Meteor.methods({
-    startTheStream: function(){
-      // superGlobals.upsert('streamStarted', { $set: { value: true, time: Date.now() } });
-    },
-    isTheStreamStarted: function(){
-      return superGlobals.find();
-    },
-  });
-
   console.log('SERVER', this.UserConnections, UserStatus, UserStatus.connections);
 
-  // UserStatus.connections.before.upsert(function (userId, selector, modifier, options) {
-  //   console.log("before upsert", userId, selector, modifier, options);
-  //   // modifier.$set = modifier.$set || {};
-  //   // modifier.$set.modifiedAt = Date.now();
-  // });
 }
 
 
@@ -739,18 +725,6 @@ Meteor.methods({
       { filter: false }
     );
   },
-    editAmbiance: function (args) {
-    var loggedInUser = Meteor.user()
-
-    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
-      throw new Meteor.Error(403, "Access denied")
-    }
-    console.log("editAmbiance", args);
-    ambiances.update(args._id, 
-      { $set: args.obj },
-      { filter: false }
-    );
-  },
   addUserToRepresentation: function (obj) {
     console.log("addUserToRepresentation", obj);
     if(obj._id) {
@@ -802,7 +776,7 @@ Meteor.methods({
     console.log("newAmbiance", obj);
     ambiances.insert(obj, { filter: false });
   },
-  editAmbiances: function (args) {
+  editAmbiance: function (args) {
     var loggedInUser = Meteor.user()
 
     if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
@@ -844,31 +818,8 @@ Meteor.methods({
       Roles.addUsersToRoles(id, [role]);
     }
   },
-  /*createCompteurFromAdmin: function(compteurName){
-    console.log('createCompteurFromAdmin', compteurName);
+  
 
-
-    var compteurs = superGlobals.findOne({ compteurs: { $exists: true}});
-    if(compteurs) {
-      console.log('spectacleStarted3 mise a jour');
-      //mise à jour
-      superGlobals.update(spectacleStarted._id, { $set: {spectacleStarted: obj.value} }, { filter: false });
-    } else {
-      console.log('spectacleStarted3 insert!');
-      //création
-      superGlobals.insert({spectacleStarted: obj.value}, { filter: false });
-
-    }
-
-    var id = Accounts.createUser({ email: email, password: password });
-    console.log('Accounts.createUser', id);
-    if (role != '' && role != 'admin') {
-      // Need _id of existing user record so this call must come
-      // after `Accounts.createUser` or `Accounts.onCreate`
-      console.log('addUsersToRoles', role);
-      Roles.addUsersToRoles(id, [role]);
-    }
-  }*/
   addUserToLottery: function(args){
 
     console.log("addUserToLottery server", args);
@@ -896,16 +847,6 @@ Meteor.methods({
       }
       
     }
-    // var phoneNumber = PhoneNumbers.findOne(obj);
-    // console.log("phoneNumber exists ?", phoneNumber);
-    // if(phoneNumber) {
-    //   console.log("it exists already. increment number of calls");
-    //   PhoneNumbers.update(phoneNumber._id, {
-    //     $inc: { calls: 1 },
-    //   });
-    // } else {
-    //   PhoneNumbers.insert(obj, { filter: false });
-    // }
   },
 
 
@@ -939,8 +880,6 @@ Meteor.methods({
           );
         }
 
-        // return Collection.find({_id: random && random._id}
-        // var lotteryId = lottery._id;
       }
       
     }
@@ -975,8 +914,6 @@ Meteor.methods({
           );
         }
 
-        // return Collection.find({_id: random && random._id}
-        // var lotteryId = lottery._id;
       }
       
     }
@@ -1080,8 +1017,6 @@ Meteor.methods({
           }
         }
 
-        // return Collection.find({_id: random && random._id}
-        // var lotteryId = lottery._id;
       }
       
     }
@@ -1100,13 +1035,13 @@ Meteor.methods({
         if(theMessage) {
           return theMessage[userCookie];
         }
-        // if(lottery.messages[userCookie] && lottery.messages[userCookie] != "") {
 
-          // return 
-        // }
-        // var messageToReturn = lottery.messages
       }
     }
-  }
+  },
+  // encore utile ?
+  isTheStreamStarted: function(){
+    return superGlobals.find();
+  },
 
 });

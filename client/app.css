@@ -15,6 +15,31 @@
     src: url('OfficeCodePro-Regular.ttf') format('truetype');
   }
 
+  tr.bold > td {
+      font-weight: bold;
+      text-decoration: underline;
+  }
+  h1 {
+      color:blue;
+  }
+
+
+  body.representations {
+      font-size: 14px;
+  }
+
+  .bootstrap-datetimepicker-widget {
+    color: red !important;
+  }
+
+  div#stream-error {
+      position: absolute;
+      z-index: 10;
+      bottom: 0;
+      background: #fff;
+      color: #000;
+  }
+
   .tap-i18n-dropdown option[value="en"] {display:none;}
 
   #srt div:nth-child(2){

@@ -8,10 +8,17 @@ console.log("cookyHOME", cookies);
 
 if (Meteor.isClient) {
 
+
+  // initialisation de la console
+  // debug(WARN|ERROR|DEBUG);
+  debug(FULL);
+
+  // initialisation cookies
   this.cookies = cookies;
-console.log("cooky2", cookies);
+
   Meteor.subscribe('superGlobals');
 
+  // user status - real time stats
   this.UserConnections = new Mongo.Collection("user_status_sessions");
   relativeTime = function(timeAgo) {
     var ago, days, diff, time;
@@ -30,19 +37,6 @@ console.log("cooky2", cookies);
     loggedIn: function() {
       return Meteor.userId();
     }
-  });
-  
-  console.log('client', this.UserConnections);
-  this.UserConnections.before.upsert(function (userId, selector, modifier, options) {
-    console.log("before upsert", userId, selector, modifier, options);
-    // modifier.$set = modifier.$set || {};
-    // modifier.$set.modifiedAt = Date.now();
-  });
-  this.UserConnections.after.insert(function (userId, doc) {
-      console.log("after insert", userId, doc);
-  });
-  this.UserConnections.after.update(function (userId, doc) {
-      console.log("after update", userId, doc);
   });
 
   Template.status.events = {
@@ -139,22 +133,11 @@ console.log("cooky2", cookies);
       return new Date(this.loginTime).toLocaleString();
     },
     currentRoute: function() {
+      //TODO ne marche pas
       return Router.current().route.path();
     }
   });
-  // Template.login.events = {
-  //   "submit form": function(e, tmpl) {
-  //     var input;
-  //     e.preventDefault();
-  //     input = tmpl.find("input[name=username]");
-  //     input.blur();
-  //     return Meteor.insecureUserLogin(input.value, function(err, res) {
-  //       if (err) {
-  //         return console.log(err);
-  //       }
-  //     });
-  //   }
-  // };
+  
   Deps.autorun(function(c) {
     try {
       UserStatus.startMonitor({
