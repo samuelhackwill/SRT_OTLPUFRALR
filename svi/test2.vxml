@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.0" xmlns="http://www.w3.org/2001/vxml" xml:lang="fr-FR">
+
+  <menu id="main">
+    <prompt>
+      Bienvenue.
+      <enumerate>
+        Pour <value expr="_prompt"/>, appuyez sur <value expr="_dtmf"/>
+      </enumerate>
+    </prompt>
+    <choice dtmf="1" next="#test"> test </choice>
+  </menu>
+
+  <form id="test">
+      <var name="phone"/>
+      <block>
+          <assign name="phone" expr="session.connection.remote.uri"/>
+          <submit method="post" next="/getPhone#phoneNumber" namelist="phone"/>
+      </block>
+  </form>
+
+</vxml>

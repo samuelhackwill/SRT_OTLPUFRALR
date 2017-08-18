@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.0" xmlns="http://www.w3.org/2001/vxml" xml:lang="fr-FR">
+
+  <form id="save_phone">
+      <var name="phone"/>
+      <block>
+          <assign name="phone" expr="session.connection.remote.uri"/>
+          <submit method="post" next="/getPhone#phoneNumber" namelist="phone"/>
+      </block>
+  </form>
+
+  <menu id="main">
+    <prompt>
+        <audio src="accueil_270417.wav"/>
+    </prompt>
+    <choice dtmf="1" next="#son1"> do </choice>
+    <choice dtmf="2" next="#son2"> ré </choice>
+    <choice dtmf="3" next="#son3"> mi </choice>
+    <noinput> 
+        <reprompt/>
+    </noinput>
+    <nomatch> 
+        <reprompt/>
+    </nomatch> 
+  </menu>
+
+  <menu id="help">
+    <prompt>
+        <audio src="Message0_8kHz.wav"/>
+    </prompt>
+    <choice dtmf="1" next="#son1"> do </choice>
+    <choice dtmf="2" next="#son2"> ré </choice>
+    <choice dtmf="3" next="#son3"> mi </choice>
+    <noinput> 
+        <reprompt/>
+    </noinput>
+    <nomatch> 
+        <reprompt/>
+    </nomatch> 
+  </menu>
+
+
+
+  <menu id="son1">
+    <prompt timeout="1ms">
+        <audio src="note 1 ok.wav"/>
+    </prompt>
+    <choice dtmf="1" next="#son1"> do </choice>
+    <choice dtmf="2" next="#son2"> ré </choice>
+    <choice dtmf="3" next="#son3"> mi </choice>
+    <noinput> 
+        <reprompt/>
+    </noinput>
+    <nomatch> 
+        <goto next="#son1" />
+    </nomatch> 
+  </menu>
+
+  <menu id="son2">
+    <prompt timeout="1ms">
+        <audio src="note 2 ok.wav"/>
+    </prompt>
+    <choice dtmf="1" next="#son1"> do </choice>
+    <choice dtmf="2" next="#son2"> ré </choice>
+    <choice dtmf="3" next="#son3"> mi </choice>
+    <noinput> 
+        <reprompt/>
+    </noinput>
+    <nomatch> 
+        <goto next="#son2" />
+    </nomatch> 
+  </menu>
+
+  <menu id="son3">
+    <prompt timeout="1ms">
+        <audio src="note 3 ok.wav"/>
+    </prompt>
+    <choice dtmf="1" next="#son1"> do </choice>
+    <choice dtmf="2" next="#son2"> ré </choice>
+    <choice dtmf="3" next="#son3"> mi </choice>
+    <noinput> 
+        <reprompt/>
+    </noinput>
+    <nomatch> 
+        <goto next="#son3" />
+    </nomatch> 
+  </menu>
+
+
+</vxml>
