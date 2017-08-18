@@ -71,12 +71,6 @@ Schemas.superGlobals = new SimpleSchema({
       optional: true
     },
 
-    SUPERinterrupt: {
-      type: [String],
-      label: "bloquer l'action next (barre espace) pour les SALM selon leur role",
-      optional: true
-    },
-
     modeSpectacle: {
       type: Boolean,
       label: "Quand le spectacle va commencer ou commence",
@@ -88,11 +82,12 @@ Schemas.superGlobals = new SimpleSchema({
       label: "Quand le spectacle a commencé",
       optional: true
     },
-    forceHangup: {
-      type: Boolean,
-      label: "Quand le serveur vocal force à raccrocher après la prochaine note",
-      optional: true
-    },
+
+    // forceHangup: {
+    //   type: Boolean,
+    //   label: "Quand le serveur vocal force à raccrocher après la prochaine note",
+    //   optional: true
+    // },
 
     cuppasCount: {
       type: Number,
@@ -105,6 +100,7 @@ Schemas.superGlobals = new SimpleSchema({
       label: "bonne ambiance en cours",
       optional: true
     },
+
     nbCuppasFinished: {
       type: Number,
       label: "Le nombre de tasses de thé qui sont prêtes",
@@ -116,6 +112,7 @@ Schemas.superGlobals = new SimpleSchema({
       label: "Le nombre de bûches allumées ou pas (true/false)",
       optional: true
     },
+
     nextBucheAllumage: {
       type: Number,
       label: "Le prochain nombre de tasses restantes avant d'allumer la prochaine bûche",
@@ -132,14 +129,7 @@ Schemas.superGlobals = new SimpleSchema({
       type: Number,
       label: "Le compteur quand quelqu'un a besoin de surtitre les comédiens ou quoi",
       optional: true,
-    },
-
-    compteurs: {
-      type: [Object],
-      label: "Les compteurs pour chaque role",
-      optional: true,
     }
-
 });
 
 
@@ -219,7 +209,8 @@ Schemas.ambiances = new SimpleSchema({
     cue: {
           type: String,
           label: "Cue",
-          max: 200
+          max: 200,
+          optional: true
     },
     chemin: {
           type: String,
@@ -337,9 +328,27 @@ PhoneNumbers.attachSchema(Schemas.phoneNumbers);
 
 
 //permissions
+// TODO : stop la redondance
+// comment appeler Roles en dehors du fichier collection? problème de scope
 ContenusEcran.allow({
-  insert: function () { return true; },
-  update: function () { return true; },
+  insert: function (){
+
+    var loggedInUser = Meteor.user()
+
+    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+      throw new Meteor.Error(403, "Access denied")
+    }
+    return true; 
+  },
+  update: function () { 
+
+    var loggedInUser = Meteor.user()
+
+    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+      throw new Meteor.Error(403, "Access denied")
+    }
+    return true; 
+  },
   remove: function () {
 
     var loggedInUser = Meteor.user()

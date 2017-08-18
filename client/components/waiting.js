@@ -13,36 +13,12 @@ Template.waiting.onCreated(function() {
 })
 
 Template.waiting.onRendered(function () {
-
-
-    console.log("splash")
-
-    autonextcontainer = setTimeout(function(){
+  // SPLASHSCREEN
+  autonextcontainer = setTimeout(function(){
     $("#inscription").css("opacity", "1")
     $("#bonjour").css("opacity", "0")
-     },1500)
-
-
-    console.log("waiting", new Date());
-/*
-    this.autorun(() => {
-      console.log("waiting autorun", Template.instance());
-      let ready = Template.instance().subscriptionsReady();
-      if (!ready){ return; }
-      let representationz = representations.find().fetch();
-      console.log("representationz", representationz);
-      // data = ContenusEcran.findOne({name: "ce_jeudi_no_comment"}).data
-      // console.log('srt spectacle rendered');
-      // console.log('data ?', data);
-      // console.log('ContenusEcran ?', ContenusEcran.find().fetch());
-      // var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
-      // console.log("isItPowerToThePeople", isItPowerToThePeople);
-      // rawTextToJson();
-    // console.log(Template.instance());
-      // zoupageJSON(dataFromDB, data);
-      // autonext(2000);
-    });*/
-  });
+  },1500)
+});
 
 
 Template.waiting.events({
@@ -86,12 +62,8 @@ Template.waiting.events({
     }
     $("#date_choisie").html(moment(this.date_start).format('dddd Do MMM YYYY à HH[h]mm'))
 
-    if (this.name=="Répétition générale") {
-      $("#warning").html("(notez bien que la date que vous avez choisi est une répétition générale.)")
-}else{
-      $("#warning").html("<br />")
+    $("#warning").html("<br />") 
   }
-}
 });
 
 
@@ -104,30 +76,19 @@ Template.waiting.helpers({
     return representations.find({ 
         date_start: { 
           $gte: todayStart
-          // ,
-          // $lt: todayEnd
         },
       "status": /(pending|running)/
     }, {sort: {date_start: 1}});
   },
   nextRepresentation:function(){
-    //var now = new Date('2017-03-02T00:00:00.000Z');
     var currentRepresentation = null;
-    // modeSpectacle = getSuperGlobal("modeSpectacle");
-    // if(modeSpectacle) { //le spectacle va bientôt commencer ou a déjà commencé
-      //récupérons la representation du jour
     var now = new Date();
-    // var yesterday = new Date();
-    // yesterday.setDate(now.getDate() - 1);
-    // console.log("NOW ", now)
-    // console.log("YESTERDAY ",yesterday)
     var todayStart = new Date(now.setHours(0,0,0,0));
     var todayEnd = new Date(now.setHours(24,0,0,0));
     console.log("router checkPhone - today is between", todayStart, todayEnd);
     var foundRepresentation = representations.findOne({ 
       date_start: { 
         $gte: todayStart
-        // $lt: todayEnd
       },
       "status": /(pending|running)/,
       "name": { $not: /STEALTH/ }
@@ -141,9 +102,6 @@ Template.waiting.helpers({
       return theNextRepresentation
     }
   },
-// <<<<<<< HEAD
-
-// =======
   chosenRepresentation:function(){
 
     var checkCookie = cookies.get("user_represent");
@@ -163,7 +121,7 @@ Template.waiting.helpers({
       } else return null;
     } else return null;
   },
-// >>>>>>> da32dacf5a3c9a7a1090c7f3f7d38e41ae73f5bf
+
   alreadyParticipating: function(){
 
     var checkCookie = cookies.get("user_represent");
@@ -173,6 +131,7 @@ Template.waiting.helpers({
     } else return "";
     // si tu participes déjà tu retrun le nom de la classe, sinon non
   },
+
   jeMinscris: function(date_start){
     var nowD = new Date().getDate()
     var nowM = new Date().getMonth() + 1 //sisi january = 0 sinon et ça rend triste
@@ -186,19 +145,13 @@ Template.waiting.helpers({
     var dateH = date_start.getHours()
     var dateM = date_start.getMinutes()
 
-
-    // console.log("LA DATE ", dateD, dateM, dateY)
-    // console.log("AJD ", nowD, nowM, nowY)
-
     var checkCookie = cookies.get("user_represent");
     console.log('participating representation?', checkCookie, this._id);
-      modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}}).modeSpectacle;
-    // if(modeSpectacle && nowD == dateD && nowM == dateM && nowY == dateY && nowH >= dateH && nowM >= dateM){
-    //   return("Représentation en cours!")
-    // }
+    modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}}).modeSpectacle;
 
     messageButtonOK = ""
     messageButton = ""
+    // TODO implémenter anglais etc
     if (TAPi18n.getLanguage()=="fr"){
       messageButton = "Je m'inscris"
       messageButtonOK = "Inscription OK"
@@ -221,6 +174,7 @@ Template.waiting.helpers({
       // if(modeSpectacle) this.render('jacky');
       return modeSpectacle;
   },
+  
   isStealth: function(name){
     console.log("NAME DE ISSTEALTH ", name)
     if(name == "STEALTH") return true;

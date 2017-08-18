@@ -2,7 +2,6 @@
 <template name="waiting">
 
     {{> i18n_dropdown}}
-  <!--<iframe src="http://on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com/stream/"></iframe>-->
     <div id="bonjour">
     {{_ "Hello"}}
     </div>
@@ -1674,150 +1673,72 @@
       </div>
   </div>
 
-<!--   //{{#with chosenRepresentation}}
- -->  <div id="success">
+  <div id="success">
 
     <div id="sucesstext">
       {{_ "text_home_5"}} <p id="date_choisie"></p>
       <br /><br />
       {{_ "text_home_6"}} <br />
       http://www.ontraverseralepont.com/.
-<!--       Okay, vous êtes bien inscrit à la représentation du <br />
-      <p id="date_choisie">{{formatDateLeFrenchStyle date_start}}.</p>
-      <p id="warning"> <br /></p>   
-      On se donne rendez-vous ici même, sur <br />http://www.on-traversera-le-pont-une-fois-rendus-a-la-riviere.com/. -->
       <br /><br />
-{{_ "text_home_7"}}    </div>
+      {{_ "text_home_7"}}    
+    </div>
+    
     <button id="close" onclick="closeSplash()"> OK </button>
   </div>
-<!--   {{/with}}
- -->
-<script>
+  
+  <script>
 
-// AHHH la honte bon ben voila c'est la honte quoi
-
-// var tas_de_listes = document.getElementsByClassName("liste");
-// // ici c'est sur la checklist
-// var hidethis = function() {
-//   this.clickstatus = !this.clickstatus
-//   var otherguy = document.getElementById(this.id+"C")
-//   if(otherguy.clickstatus==undefined){
-//     otherguy.clickstatus=true
-//   }else{
-//   otherguy.clickstatus != otherguy.clickstatus
-// }
-//   console.log("CLIC CHECKBOX, ",this.clickstatus)
-//   console.log("CLIC CHECKBOX, ",otherguy.clickstatus)
-
-//   if(this.clickstatus==true || otherguy.clickstatus==true){
-//     $("#"+this.id+"C").css("opacity", "0")
-//   }else{
-//     $("#"+this.id+"C").css("opacity", "1")
-//   }
-// };
-
-// for (var i = 0; i < tas_de_listes.length; i++) {
-//     tas_de_listes[i].addEventListener('click', hidethis, false);
-// }
-
-// var tas_de_Clistes = document.getElementsByClassName("listeC");
-// // ici c'est sur le dessin
-// var hidethisC = function() {
-//   var str = this.id;
-//   this.clickstatus = !this.clickstatus
-//   console.log("CLIC DESSIN, ",this.clickstatus)
-//   var ok = str.substring(0, str.length - 1)
-//   var otherguy2 = document.getElementById(ok)
-//   otherguy2.clickstatus != otherguy2.clickstatus
-//   console.log("CLIC DESSIN, ",otherguy2.clickstatus)
-
-//   if (this.clickstatus==true || otherguy2.clickstatus==true) {
-//   $("#"+ok).prop('checked', true)
-//   $("#"+this.id).css("opacity", "0")
-// }else{
-//   $("#"+ok).prop('checked', false)
-//   $("#"+this.id).css("opacity", "1")
-// }
-// };
-
-// for (var i = 0; i < tas_de_Clistes.length; i++) {
-//     tas_de_Clistes[i].addEventListener('click', hidethisC, false);
-// }
+    $('#wifi').on('change', function(){
+      if($('#wifiSVG').css("opacity") == "0"){
+        $('#wifiSVG').css("opacity","1");
+        console.log("change ", this.id);
+          }else{
+        $('#wifiSVG').css("opacity","0")
+        console.log("change ", this.id)
+      }
+    });$('#son').on('change', function(){
+      if($('#sonSVG').css("opacity") == "0"){
+        $('#sonSVG').css("opacity","1")
+        console.log("change ", this.id)
+          }else{
+        $('#sonSVG').css("opacity","0")
+        console.log("change ", this.id)
+      }
+    });$('#pelo').on('change', function(){
+      if($('#peloSVG').css("opacity") == "0"){
+        $('#peloSVG').css("opacity","1")
+        console.log("change ", this.id)
+          }else{
+        $('#peloSVG').css("opacity","0")
+        console.log("change ", this.id)
+      }
+    });$('#laptop').on('change', function(){
+      if($('#laptopSVG').css("opacity") == "0"){
+        $('#laptopSVG').css("opacity","1")
+        console.log("change ", this.id)
+          }else{
+        $('#laptopSVG').css("opacity","0")
+        console.log("change ", this.id)
+      }
+    });$('#dispo').on('change', function(){
+      if($('#dispoSVG').css("opacity") == "0"){
+        $('#dispoSVG').css("opacity","1")
+        console.log("change ", this.id)
+          }else{
+        $('#dispoSVG').css("opacity","0")
+        console.log("change ", this.id)
+      }
+    });
 
 
+    function closeSplash(){
+       $("#success").css("opacity", "0")
+       console.log("close splash please.")
+       var waitandclear = setTimeout(function() {
+        $("#success").hide()
+       }, 333);
+    };
 
-$('#wifi').on('change', function(){
-  if($('#wifiSVG').css("opacity") == "0"){
-    $('#wifiSVG').css("opacity","1");
-    console.log("change ", this.id);
-      }else{
-    $('#wifiSVG').css("opacity","0")
-    console.log("change ", this.id)
-  }
-});$('#son').on('change', function(){
-  if($('#sonSVG').css("opacity") == "0"){
-    $('#sonSVG').css("opacity","1")
-    console.log("change ", this.id)
-      }else{
-    $('#sonSVG').css("opacity","0")
-    console.log("change ", this.id)
-  }
-});$('#pelo').on('change', function(){
-  if($('#peloSVG').css("opacity") == "0"){
-    $('#peloSVG').css("opacity","1")
-    console.log("change ", this.id)
-      }else{
-    $('#peloSVG').css("opacity","0")
-    console.log("change ", this.id)
-  }
-});$('#laptop').on('change', function(){
-  if($('#laptopSVG').css("opacity") == "0"){
-    $('#laptopSVG').css("opacity","1")
-    console.log("change ", this.id)
-      }else{
-    $('#laptopSVG').css("opacity","0")
-    console.log("change ", this.id)
-  }
-});$('#dispo').on('change', function(){
-  if($('#dispoSVG').css("opacity") == "0"){
-    $('#dispoSVG').css("opacity","1")
-    console.log("change ", this.id)
-      }else{
-    $('#dispoSVG').css("opacity","0")
-    console.log("change ", this.id)
-  }
-});
-
-
-function closeSplash(){
-   $("#success").css("opacity", "0")
-   console.log("close splash please.")
-   var waitandclear = setTimeout(function() {
-    $("#success").hide()
-   }, 333);
- };
-
-// var classname = document.getElementsByClassName("shows-list-a");
-
-// var myFunction = function() {
-//     $("#success").show()
-//     $("#success").css("opacity", ".97")
-//     console.log("zoupla boum")
-// };
-
-// for (var i = 0; i < classname.length; i++) {
-//     classname[i].addEventListener('click', myFunction, false);
-// }
-
-
-// var closediv = document.getElementById("close")
-// closediv.addEventListener('click', closeSplash())
-
-
-
-</script>
-
-
-  <!-- fin #inscription -->
-
+  </script>
 </template>

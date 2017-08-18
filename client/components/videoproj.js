@@ -1,8 +1,3 @@
-// TODO
-// faire un bouton dans la vue ADMIN
-// qui fasse un shutter qui dit à la vue videoproj
-// de faire une rêgle CSS du cul
-
 var streamCheckInterval;
 var caughtUp = false;
 var intervalReload;
@@ -28,7 +23,6 @@ Template.videoproj.onRendered(function () {
     if (!ready){ return; }
     let contnus = ContenusEcran.find().fetch();
     console.log("contnus", contnus, data);
-    // data = ContenusEcran.findOne({name: "ce_jeudi_no_comment"}).data
     data = ContenusEcran.findOne({name: "data_test"}).data
     console.log('srt spectacle videoproj rendered');
     console.log('data ?', data);
@@ -36,12 +30,6 @@ Template.videoproj.onRendered(function () {
     if(data) {
       catchUpWithTheShow();
     }
-
-    //
-    // rawTextToJson();
-  // console.log(Template.instance());
-    // zoupageJSON(dataFromDB, data);
-    // autonext(2000);
   });
 
 
@@ -64,21 +52,8 @@ Template.videoproj.onRendered(function () {
           //revenir où on était dans le spectacle
           next();
         }
-
-        //ambiance?
-        var whichAmbiance = getSuperGlobal("whichAmbiance", "");
-        if(whichAmbiance != "") { //il y a une ambiance en cours
-          //passons à cette ambiance
-          var newAmbiance = ambiances.findOne({name: whichAmbiance});
-          if(newAmbiance) {
-            console.log("set Ambiance", newAmbiance.value)
-            changeImg(newAmbiance.value)
-          }
-        }
       }
-      
     }
-
   }
 
   em.addListener('salmtheoneshow', showTheOneButtons);

@@ -4,7 +4,7 @@ import lodash from 'lodash';
 _ = lodash;
 
 dataBalises = {
-  "data": ["FR_SALM", "FR_CYCLO", "FR_DECR", "NL_CYCLO", "EN_CYCLO", "NL_SALM", "EN_SALM", "FR_INTR", "NL_INTR"],
+  "data": ["FR_SALM", "FR_CYCLO", "FR_DECR", "NL_CYCLO", "EN_CYCLO", "NL_SALM", "EN_SALM", "FR_INTR", "EN_INTR", "NL_INTR"],
   "dataPupitre": ["FR", "NL", "NL_SAT", "EN", "EN_SAT"]
 }
 

@@ -1,16 +1,6 @@
-Template.registerHelper('formatDateHeure', function(date) {
-  return moment(date).format('dddd D MMM YYYY à HH:mm');
-});
-
-
-Template.data.onCreated(function() {
-
-  //subscribe à la collection contenus écran + representations
-  this.autorun(() => {
-    this.subscribe('superGlobals');
-  });
-
-});
+var streamCheckInterval;
+var caughtUp = false;
+var intervalReload;
 
 Template.spectacle.onCreated(function() {
 
@@ -18,60 +8,209 @@ Template.spectacle.onCreated(function() {
   this.autorun(() => {
     this.subscribe('allRepresentations');
     this.subscribe('allContenusEcran');
+    this.subscribe('allLoteries');
   });
 
 });
-Template.spectacle.helpers({
 
-  doYouHavePower:function(){
-    var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
-    console.log(powerToThePeople);
-    return powerToThePeople.powerToThePeople ? 'powerToThePeople' : 'powerToTheAdmin';
-  },
-  listRepresentations:function(){
-    console.log("listRepresentations??", representations.find().fetch());
-    return representations.find();
-  }
-});
 
 Template.spectacle.onRendered(function () {
 
 
   this.autorun(() => {
-    console.log("spectacle autorun admin", Template.instance());
     let ready = Template.instance().subscriptionsReady();
     if (!ready){ return; }
     let contnus = ContenusEcran.find().fetch();
     console.log("contnus", contnus, data);
-    data = ContenusEcran.findOne({name: "ce_jeudi_no_comment"}).data
-    console.log('srt spectacle rendered');
+    // data = ContenusEcran.findOne({name: "ce_jeudi_no_comment"}).data
+    data = ContenusEcran.findOne({name: "data_test"}).data
+    dataPupitre = ContenusEcran.findOne({name: "data_test"}).dataPupitre
+    console.log('srt spectacle spectacle rendered');
     console.log('data ?', data);
     console.log('ContenusEcran ?', ContenusEcran.find().fetch());
-    var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
-    console.log("isItPowerToThePeople", isItPowerToThePeople);
+    if(data) {
+      catchUpWithTheShow();
+
+      console.log("tu parles quel langue camarade? ", TAPi18n.getLanguage())
+    }
+
+    //
     // rawTextToJson();
   // console.log(Template.instance());
     // zoupageJSON(dataFromDB, data);
     // autonext(2000);
   });
 
+  function catchUpWithTheShow(){
+    console.log('catchUpWithTheShow caughtUp?', caughtUp);
+    if(!caughtUp) {
+      caughtUp = true;
+      console.log("checking compteur", compteur, "cookie.compteur", cookies.get('compteur'), modeSpectacle);
+      //si on est en mode spectacle, que l'admin a le pouvoir
+      var isPowerToThePeople = getSuperGlobal('powerToThePeople');
+      if(modeSpectacle && !isPowerToThePeople) {
+        //et si il y a un compteur enregistré
+        var compteurAdmin = getSuperGlobal('compteurAdmin');
+        console.log("checking compteurAdmin", compteurAdmin);
+
+        if(null !== compteurAdmin) compteur = parseInt(compteurAdmin);
+        if(compteur != -1) {
+          //revenir où on était dans le spectacle
+          next();
+        }
+
+        // AMBIANCE
+        // TODO : ça marche ça?
+        var whichAmbiance = getSuperGlobal("whichAmbiance", "");
+        if(whichAmbiance != "") { //il y a une ambiance en cours
+          //passons à cette ambiance
+          var newAmbiance = ambiances.findOne({name: whichAmbiance});
+          if(newAmbiance) {
+            console.log("set Ambiance", newAmbiance.value)
+            changeImg(newAmbiance.value)
+          }
+        }
+      }
+      
+    }
+
+  };
+
+    em.addListener('showLTNumberClient', function(){
+      switch(TAPi18n.getLanguage()){
+        case "fr":
+          $("<div>"+"Appelez ce numéro : <br /> + 33 (0)7 81 89 76 86 <br />(Et coupez le son de votre ordinateur! Sinon ça va faire des sons bizarres)."+"<br/</div>").appendTo("#phoneNumberSrt")
+          break
+
+        case "nl":
+          $("<div>"+"Bel dit nummer : <br /> +33 7 81 89 76 86 <br/> (En schakel het geluid van jullie computer uit! Anders horen we allerlei rare geluiden)."+"<br/</div>").appendTo("#phoneNumberSrt")
+          break
+
+        case "en":
+          $("<div>"+"Call this number : <br /> +33 7 81 89 76 86 <br/> (And please turn the volume of your computer off! Or else it might cause strange sound phenomens)."+"<br/</div>").appendTo("#phoneNumberSrt")
+          break
+      }
+});
+
+  em.addListener('showButtonsClient', function(){
+    console.log('showTheOneButtons');
+    switch(TAPi18n.getLanguage()){
+      case "fr":
+        $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
+        break
+      case "nl":
+        $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
+        break
+        }
+      $("#sacbouttons").css("opacity", "1")
+    });
+
+  em.addListener('hideButtonsClient', function(){
+    $("#phoneNumberSrt").empty()
+    $("#sacbouttons").css("opacity", "0")
+      delayedEmpty = setTimeout(function(){
+      $("#sacbouttons").empty()
+      },333)
+  });
+
+
+// });
+
+function showMeTheButtons(){
+
+    // if(Roles.userIsInRole(Meteor.user(), "spectacle_one")==true) {
+  console.log('showMeTheButtons');
+  $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
+  $("#sacbouttons").css("opacity", "1")
+    // }
+
+}
+
+  em.addListener('startONHLotteryClient', function(){
+    console.log("début de la lotterie ONH les shlags!")
+    newBoutton(["ouiSP1","Oui","addUserToLottery('oui-non-euh')","destroy(id)", "$('#phoneNumberSrt').empty()"])
+    newBoutton(["nonSP1","Non","destroy(id)", "$('#phoneNumberSrt').empty()"])
+
+            switch(TAPi18n.getLanguage()){
+        case "fr":
+          $("<div>Est-ce que vous êtes partant·e pour répondre aux questions de Jacques ?</div>").appendTo("#phoneNumberSrt")
+          break
+ // <br/> (ou a minima un petit arrangement confortable et néanmoins inhabituel ?)
+
+        case "nl":
+          $("<div>Heb je zin om de vragen van Jacques te beantwoorden?</div>").appendTo("#phoneNumberSrt")
+          break
+        }
+  });
+
+  em.addListener('hideLTNumberClient', function(){
+    $("#phoneNumberSrt").empty()
+  });
+
+  em.addListener('hideCabaneLotteryClient', function(){
+    $("#phoneNumberSrt").empty()
+    $("#sacbouttons").css("opacity", "0")
+      delayedEmpty = setTimeout(function(){
+      $("#sacbouttons").empty()
+      },333)
+  });
+
+  em.addListener('startCabaneLotteryClient', function(){
+    console.log("début de la lotterie Cabane les shlags!")
+    newBoutton(["cuppasInc","Oui","addUserToLottery('cabane')","destroy(id)", "$('#phoneNumberSrt').empty()"])
+    newBoutton(["boissonN","Non","destroy(id)", "$('#phoneNumberSrt').empty()"])
+        switch(TAPi18n.getLanguage()){
+        case "fr":
+          $("<div>Est-ce que vous êtes partant·e pour faire une cabane ?</div>").appendTo("#phoneNumberSrt")
+          break
+ // <br/> (ou a minima un petit arrangement confortable et néanmoins inhabituel ?)
+
+        case "nl":
+          $("<div>Heb je zin om een hut te bouwen?</div>").appendTo("#phoneNumberSrt")
+          break
+        }
+  });
+
+  em.addListener('salmback', function(what) {
+  console.log('salm back!', what);
+    window.clearTimeout(autonextcontainer) //clear auto next
+    // compteur += 1;
+    compteur = what.compteur; //changer le compteur depuis l'évènement admin (rattraper le spectacle)
+    back(); 
+  });
 
   em.addListener('salmnext', function(what) {
-    console.log('salm next!', what);
-    // compteur = what.compteur;
-    var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
-    var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : [];
-    console.log("salm next : isSUPERinterrupt", isSUPERinterrupt);
-    var found = jQuery.inArray('salm', isSUPERinterrupt);
-    if (found >= 0) {
-      //ce role est dans le parking !
-    } else {
-      //ce role n'est pas dans le parking, faisons un next
-      console.log('pas dans le parking, faisons un next')
-      compteur += 1;
-      next();
-    } 
+    window.clearTimeout(autonextcontainer) //clear auto next
+    // compteur += 1;
+    compteur = what.compteur; //changer le compteur depuis l'évènement admin (rattraper le spectacle)
+    next();
   }); 
+
+
+  em.addListener('satBack', function(what) {
+    window.clearTimeout(autonextcontainer) //clear auto next
+    // compteur += 1;
+    compteurPupitre = what.compteurPupitre; //changer le compteur depuis l'évènement admin (rattraper le spectacle)
+    nlSatBack();
+  });
+
+  em.addListener('satNext', function(what) {
+    window.clearTimeout(autonextcontainer) //clear auto next
+    // compteur += 1;
+    compteurPupitre = what.compteurPupitre; //changer le compteur depuis l'évènement admin (rattraper le spectacle)
+    nlSatNext();
+  }); 
+
+  em.addListener('satForceGoTo', function(what) {
+    console.log('sat salmForceGoTo!', what);
+    // compteur = what.compteur;
+    console.log("gotobookmarkPUPITRE(what.bookmark);")
+  }); 
+
+  em.addListener('displayBlackSalm', function(){
+    console.log('displayBlackSalm')
+    $('#srt').empty()
+  });
 
   em.addListener('salmForceGoTo', function(what) {
     console.log('salm salmForceGoTo!', what);
@@ -79,21 +218,81 @@ Template.spectacle.onRendered(function () {
     gotobookmark(what.bookmark);
   }); 
 
+  em.addListener('salmrefreshpage', function(what) {
+    console.log('salm refresh page!', what);
+    location.reload();
+  }); 
 
-  /*em.addListener('salmswitchthepower', function(what) {
-    console.log('salm switch the power!', what);
-    // compteur = what.compteur;
-    var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
-    console.log('salm doYouHavePower ?', isItPowerToThePeople);
-    console.log('salm interrupt ?', interrupt);
-    // interrupt = !isItPowerToThePeople;
-    switchThePower(!isItPowerToThePeople);
-  }); */
 
-  // var streamStarted = Meteor.superGlobals.findOne({}, {fields: {name: 1, _id: 0}}).name;
-  Meteor.call('isTheStreamStarted', function(result){
-    console.log(result);
+  em.addListener('salmpoweradmin', function(what) {
+    console.log('salm admin has the power!', what);
+    console.log("le pouvoir est aux mains de l'admin", streamCheckInterval);
+    //faire des trucs quand l'admin prend le pouvoir
+    startTheStream();
+    //lancer le check du stream à interval régulier
+    console.log("streamCheckInterval?", streamCheckInterval);
+    /*
+    if (!streamCheckInterval) {
+        console.log("starting streamCheckInterval 1");
+        streamCheckInterval = setInterval(function(){checkTheStream();}, 5000); 
+        console.log("starting streamCheckInterval 2", streamCheckInterval);
+    }
+    */
   });
+
+  em.addListener('displayBlackSat', function(){
+    console.log('displayBlackSat')
+    $('#nlsrt').empty()
+  });
+
+  em.addListener('salmpowerpeople', function(what) {
+    console.log('salm people have the power!', what);
+      console.log("le pouvoir est aux mains du peuple", streamCheckInterval);
+      /*
+      //arretons le check du stream à interval régulier
+      console.log("stopping streamCheckInterval 1", streamCheckInterval);
+      clearInterval(streamCheckInterval); 
+      streamCheckInterval = null;
+      console.log("stopping streamCheckInterval 2", streamCheckInterval);
+      */
+  }); 
+  em.addListener('salmUnStop', function(what) {
+    console.log('salm unstop', what);
+    console.log('salm unstop - interrupt?', interrupt);
+    unstop();
+  }); 
+
+
+  em.addListener('salmGetMessage', function(what) {
+    console.log('salm get message', what);
+    if(what.name != "") { //checkons le nom de la loterie
+      var lotteryCookie = cookies.get(what.name);
+      if(lotteryCookie) { //le cookie de cette loterie est bien là
+        console.log('salm get message lotteryCookie', lotteryCookie);
+        Meteor.call('retrieveMessage', what._id, lotteryCookie, function(error, result) {
+          // 'result' is the method return value
+          if(error) console.log("error", error);
+          if(result) {
+            console.log("result", result);
+            var resultParsed = result.replace(/(\w+)\(?.*/, '$1');
+            console.log("resultParsed", resultParsed);
+            switch(resultParsed) {
+              case 'showMeTheButtons':
+                showMeTheButtons();
+                break;
+              case 'addCuppasButtons':
+                addCuppasButtons();
+                break;
+              case 'displayPhoneNumbers':
+                console.log("DISPLAY PHONE NUMBERS");
+              default:
+                break;
+            }
+          }
+        });
+      }
+    }
+  }); 
   // console.log()
   // superGlobals.find({});
     //   {},{fields: {'source':"SourceOne", 'currency': "USD"}}
@@ -106,7 +305,9 @@ Template.spectacle.onRendered(function () {
   // else
   //     server = "https://" + window.location.hostname + ":8089/janus";
 
-  var host = window.location.hostname == "localhost" ? "ontraverseralepont.com" : window.location.hostname;
+  // var host = window.location.hostname == "localhost" ? "www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com" : window.location.hostname;
+  // var host = window.location.hostname == "localhost" ? "www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com" : window.location.hostname;
+  var host = "ontraverseralepont.com";
   var server = null;
   if(window.location.protocol === 'http:')
       server = "http://" + host + ":8088/janus";
@@ -114,7 +315,8 @@ Template.spectacle.onRendered(function () {
       server = "https://" + host + ":8089/janus";
 
   var janus = null;
-  var streaming = null;
+  // var streaming = null;
+  streaming = null;
   var started = false;
   var spinner = null;
 
@@ -155,6 +357,14 @@ Template.spectacle.onRendered(function () {
             // $('#update-streams').click(updateStreamsList);
             // updateStreamsList();
             //janus.destroy();
+              //si le pouvoir est déjà aux mains de l'admin lancons le stream au chargement de la page
+              // var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
+              // var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
+              var isPowerToThePeople = getSuperGlobal("powerToThePeople", false); // par défaut false, admin a le pouvoir -> donc lancer le stream (?)
+              if(!isPowerToThePeople) {
+                console.log("le pouvoir est déjà aux mains de l'admin lancons le stream au chargement de la page");
+                startTheStream();
+              }
 
           },
           error: function(error) {
@@ -231,10 +441,36 @@ Template.spectacle.onRendered(function () {
       },
       error: function(error) {
         Janus.error(error);
-        console.log(error);
+        console.log("ERROR !!! :"+error);
+        // var body = { "request": "stop" };
+        // streaming.send({"message": body});
+        // streaming.hangup();
+        //TODO setTimeout hangup + setTimeout request watch à nouveau? à tester en régie avec lieven
         // bootbox.alert(error, function() {
         //   window.location.reload();
         // });
+        var waitBeforeReload = 10 //secondes;
+        $('#stream-error').append("Il semble que la connection avec le serveur a été perdue. La page va se recharger dans <span>"+waitBeforeReload+" secondes</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
+        $('#stream-error a.reload').click(function(){
+          console.log("Manual page reload.");
+          window.location.reload();
+        });
+        $('#stream-error a.cancel').click(function(){
+          console.log("cancelling auto page reload.");
+          clearInterval(intervalReload);
+          $('#stream-error').empty(); //vider l'élément d'erreur
+        });
+        var count = waitBeforeReload;
+        intervalReload = setInterval(function(){
+          $('#stream-error').find('span').text(count == 1 ? count+" seconde" : count+" secondes");
+          count -= 1;
+          if (count === 0){
+            clearInterval(intervalReload); // Stopping the counter when reaching 0.
+            console.log("Stream error reloading");
+            window.location.reload();
+          }
+        }, 1000);
+
       },
       destroyed: function() {
         console.log("destroyed");
@@ -243,113 +479,146 @@ Template.spectacle.onRendered(function () {
     });
   }});
 
-
+  
   $(document.body).on('keyup', function(e) {
 
     e = e || window.event
+
+
     // KEYCODE 32 IS SPACEBAR
     // KEYCIODE 78 IS "n"
-    var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
-    var SUPERinterrupt = superGlobals.findOne({ SUPERinterrupt: { $exists: true}});
-    var isSUPERinterrupt = (SUPERinterrupt) ? SUPERinterrupt.SUPERinterrupt : false
-    console.log('spectacle keyup compteur = ', compteur, 'interrupt = ', interrupt, 'isItPowerToThePeople = ', isItPowerToThePeople, 'isSUPERinterrupt = ', isSUPERinterrupt);
-    if(e.keyCode =='32' && compteur < data.length-1 && interrupt==false && isItPowerToThePeople == true && isSUPERinterrupt == false){
-      window.clearTimeout(autonextcontainer)
-      compteur +=1
-      next();
-      console.log("keyup, ", compteur)
-      // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
-      // ça avance tout seul avec un délai)
-    }
+    if(e.keyCode == '32') nextEvent();
+  });
+
+  var alternanceStorm = false;
+  var balayeur
+
+  em.addListener('new_ambiance_client', function(what) {
+
+    console.log(what)
+    changeImg(what)
+
+    // SAM1
+
+    // var ambiance = superGlobals.findOne({ whichAmbiance: { $exists: true}});
+    // var whichAmbiance = (ambiance) ? ambiance.whichAmbiance : "e41";
+    // var whichAmbiance = getSuperGlobal("whichAmbiance", "e41");
+
+    // var newAmbiance = ambiances.findOne({name: whichAmbiance});
+    // console.log("ambiance?", newAmbiance);
+    // if(newAmbiance){
+    //   console.log("new Ambiance", newAmbiance.value)
+    //   changeImg(newAmbiance.value)
+    // }
 
   });
 
+  em.addListener('ca_va_peter_client', function(/* client */) {
+        if(alternanceStorm){
+          clearTimeout(balayeur)
+          $( ".eclair" ).remove();
+          $('#gcontainer').prepend('<div class="eclair2"></div>');
+          alternanceStorm = false;
+        }else{
+          clearTimeout(balayeur)
+          $( ".eclair2" ).remove();
+          $('#gcontainer').prepend('<div class="eclair"></div>');
+          alternanceStorm = true;
+        }
+        balayeur = setTimeout(balayeurfunc,2500)
+    });
 
   em.addListener('salmstartstream', startTheStream);
 
   function startTheStream(what) {
 
     console.log('salm startstream!', what, streaming);
+    if(streaming) {
+      var body = { "request": "watch", id: parseInt(1) };
+      streaming.send({"message": body});
+    }
 
-    var body = { "request": "watch", id: parseInt(1) };
-    streaming.send({"message": body});
-    // if($('#streamFrame').length == 0) {
-
-    //   $('<iframe>', {
-    //   'src': 'http://www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com/stream/',
-    //    id:  'streamFrame',
-    //    frameborder: 0,
-    //    scrolling: 'no'
-    //   }).appendTo('#stream-ifr');
-
-
-    //   setTimeout(function(){
-    //     console.log('streamFrame', $("#streamFrame").contents().find('#start'));
-    //     var startButton = $("#streamFrame").contents().find('#start');
-    //     if(startButton.length > 0) {
-    //       startButton.trigger('click');
-    //     }
-    //   }, 2000);
-    //   // $('streamFrame').on('load', function(){
-    //   //   console.log('streamFrame loaded');
-    //   // });
-    //   // console.log('streamFrame added');
-    //   // $('streamFrame').attr();
-    //   // console.log('streamFrame src', $('streamFrame').attr('src'));
-    // }
-
-
-
-  }
-
-
-  function chooseTheShow(what) {
-
-    console.log('salm chooseTheShow!', what);
-    $('#shows-list').removeClass('hidden');
   }
 
 });
 
-switchThePower = function(toWhat){
-
-  console.log('salm switchThePower toWhat', toWhat);
-  console.log('salm interrupt is ', interrupt);
-  interrupt = toWhat;
-  console.log('salm interrupt is ', interrupt);
+var nextEvent = function(){
+  console.log("NEXT EVENT")
+  // var isItPowerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}}).powerToThePeople;
+  var isItPowerToThePeople = getSuperGlobal("powerToThePeople", true);
+  console.log('spectacle keyup compteur = ', compteur, 'interrupt = ', interrupt, 'isItPowerToThePeople = ', isItPowerToThePeople);
+  if(compteur < data.length-1 && interrupt==false && isItPowerToThePeople == true){
+    window.clearTimeout(autonextcontainer)
+    compteur +=1
+    next();
+    console.log("keyup, ", compteur)
+    // ça c'est pour virer le autonext si il y en avait un en cours (c'est quand
+    // ça avance tout seul avec un délai)
+  }
 }
 
 Template.spectacle.events({
 
-    'click #cuppasInc': function(){
-    //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
-    Meteor.call('setSuperGlobal', {name: 'cuppasInc'});
-    },
+  'click #cuppasInc': function(){
+  //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});
+  Meteor.call('setSuperGlobal', {name: 'cuppasInc'});
+  },
 
-    'click #cuppasDec': function(){
-      Meteor.call('setSuperGlobal', {name: 'cuppasDec'});
-    },
+  // 'click #cuppasDec': function(){
+  //   Meteor.call('setSuperGlobal', {name: 'cuppasDec'});
+  // },
 
-    'touchstart #gcontainer': function(){
-      compteur+=1;
-      next();
-    }
+  // 'click #finishCuppa': function(){
+  //   Meteor.call('setSuperGlobal', {name: 'finishCuppa'});
+  // },
+  
+  'click #oui': function(){
+    console.log('salmclick oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+    em.setClient({ reponse: 'oui', mode: 'singlePlayer' });
+    em.emit('salmclick');
+    console.log('salmclick emmited');
+    console.log('salmclick emmited oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  },
+  'click #non': function(){
+    console.log('salmclick non', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+    em.setClient({ reponse: 'non', mode: 'singlePlayer' });
+    em.emit('salmclick');
+    console.log('salmclick emmited non', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  },
+  'click #euh': function(){
+    console.log('salmclick euh', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+    em.setClient({ reponse: 'euh', mode: 'singlePlayer' });
+    em.emit('salmclick');
+    console.log('salmclick emmited euh', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  },
+  'click #ouiMP': function(){
+    console.log('salmclick oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+    em.setClient({ reponse: 'oui', mode: 'multiPlayer' });
+    em.emit('salmclick');
+    console.log('salmclick emmited');
+    console.log('salmclick emmited oui', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  },
+  'click #nonMP': function(){
+    console.log('salmclick non', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+    em.setClient({ reponse: 'non', mode: 'multiPlayer' });
+    em.emit('salmclick');
+    console.log('salmclick emmited non', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  },
+  'click #euhMP': function(){
+    console.log('salmclick euh', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+    em.setClient({ reponse: 'euh', mode: 'multiPlayer' });
+    em.emit('salmclick');
+    console.log('salmclick emmited euh', moment().format('YYYYMMDD-HH:mm:ss.SSS'));
+  },
+
+  'touchstart #gcontainer': function(){
+    // alert('touchstart #gcontainer');
+    nextEvent();
+  }
 
 })
 
-// TO DO
-// balises pour afficher du texte ailleurs que dans SRT (checklist, rubrique fiction)
-
-// var compteurquest = -1
-// var compteur = -1
-// // ça c'est pour commencer au 0 du tableau.
-// var interrupt = false
-// var indeximg = 0
-// var alternance = false
-// var autonextcontainer
-// var flipbookstatus = false
-
-// // var data = data;
-
-// var posanswers =["disponible", "à la maison", "tranquille", "son ok", "concentré"]
-// var neganswers =["occupé","en ville","pas seul", "mute", "distrait"]
+  function balayeurfunc(){
+          $( ".eclair" ).remove();
+          $( ".eclair2" ).remove();
+  }

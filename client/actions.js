@@ -1,24 +1,20 @@
 nextIsBlackPupitre = false
 nextIsBlackAdmin = false
 
-compteurquest = -1
 compteur = -1
 compteurPupitre = -1
-// ça c'est pour commencer au 0 du tableau.
+
 interrupt = false
-indeximg = 0
+
 alternance = false
+
 autonextcontainer = null
 nextBGcontainer = null
-flipbookstatus = false
-clock = null
 
 areYouSureYouAreComfy = false
 
 data = []
 dataPupitre = []
-
-// EST CE QU'IL FAUDRAIT PAS UN NEXT SPECIFIQUE POUR NLSAT? BEN OUIS EHEIN
 
 nlSatNext = function(){
   if(undefined==dataPupitre[compteurPupitre]){
@@ -37,6 +33,7 @@ nlSatNext = function(){
       }else{
         action(type, params)
       }
+
       if((dataPupitre[compteurPupitre]["type"]!="text")||(dataPupitre[compteurPupitre]["text"]=="")){
         // euh alors ça je sais pas pourquoi ça marche mais ça permet d'éviter des situations où, arrivé à un bookmark
         // il sautait deux lignes au lieu d'une
@@ -65,45 +62,36 @@ nlSatNext = function(){
         }
       }
     }
-    // TODO: NOIRS
-        // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
-        // bon ben c'est ici qu'il faudrait faire un truc
-        
-        // if(params=="***"){
-        //   // ça c'est pour caler des blancs
-        //   document.getElementById("srt").innerHTML = ""
-
-        // }
-    }
   }
+}
 
-  nlSatBack = function(){
+nlSatBack = function(){
   console.log('nlsatback', compteurPupitre, data[compteurPupitre]);
   var currentData = dataPupitre[compteurPupitre]
   var type = currentData["type"]
   var params = currentData["text"]
 
   while(dataPupitre[compteurPupitre]["type"]!="text"){
-      // tant que data[compteurPupitre] est une balise, ben continue à executer les instructions s'il te plaît
-      action(type, params)
-      if((dataPupitre[compteurPupitre]["type"]!="text")||(data[compteurPupitre]["text"]=="")){
-        // euh alors ça je sais pas pourquoi ça marche mais ça permet d'éviter des situations où, arrivé à un bookmark
-        // il sautait deux lignes au lieu d'une
-        compteurPupitre-=1;
-        nlSatBack();
-      }
-    }
-
-    if((type=="text")&&(params!="")){
-      document.getElementById("nlsrt").innerHTML = params
-      // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
-      // bon ben c'est ici qu'il faudrait faire un truc
-      if(params=="***"){
-        // ça c'est pour caler des blancs
-        document.getElementById("nlsrt").innerHTML = ""
-      }
+    // tant que data[compteurPupitre] est une balise, ben continue à executer les instructions s'il te plaît
+    action(type, params)
+    if((dataPupitre[compteurPupitre]["type"]!="text")||(data[compteurPupitre]["text"]=="")){
+      // euh alors ça je sais pas pourquoi ça marche mais ça permet d'éviter des situations où, arrivé à un bookmark
+      // il sautait deux lignes au lieu d'une
+      compteurPupitre-=1;
+      nlSatBack();
     }
   }
+
+  if((type=="text")&&(params!="")){
+    document.getElementById("nlsrt").innerHTML = params
+    // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
+    // bon ben c'est ici qu'il faudrait faire un truc
+    if(params=="***"){
+      // ça c'est pour caler des blancs
+      document.getElementById("nlsrt").innerHTML = ""
+    }
+  }
+}
 
 
 
@@ -154,51 +142,42 @@ next = function(){
         }
       }
     }
-    // TODO: NOIRS
-        // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
-        // bon ben c'est ici qu'il faudrait faire un truc
-        
-        // if(params=="***"){
-        //   // ça c'est pour caler des blancs
-        //   document.getElementById("srt").innerHTML = ""
-
-        // }
-    }
   }
+}
 
-  back = function(){
+back = function(){
   console.log('next', compteur, data[compteur]);
   var currentData = data[compteur]
   var type = currentData["type"]
   var params = currentData["text"]
 
   while(data[compteur]["type"]!="text"){
-      // tant que data[compteur] est une balise, ben continue à executer les instructions s'il te plaît
-      action(type, params)
-      if((data[compteur]["type"]!="text")||(data[compteur]["text"]=="")){
-        // euh alors ça je sais pas pourquoi ça marche mais ça permet d'éviter des situations où, arrivé à un bookmark
-        // il sautait deux lignes au lieu d'une
-        compteur-=1;
-        next();
-      }
-    }
-
-    if((type=="text")&&(params!="")){
-      document.getElementById("srt").innerHTML = params
-      // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
-      // bon ben c'est ici qu'il faudrait faire un truc
-      if(params=="***"){
-        // ça c'est pour caler des blancs
-        document.getElementById("srt").innerHTML = ""
-      }
+    // tant que data[compteur] est une balise, ben continue à executer les instructions s'il te plaît
+    action(type, params)
+    if((data[compteur]["type"]!="text")||(data[compteur]["text"]=="")){
+      // euh alors ça je sais pas pourquoi ça marche mais ça permet d'éviter des situations où, arrivé à un bookmark
+      // il sautait deux lignes au lieu d'une
+      compteur-=1;
+      next();
     }
   }
 
+  if((type=="text")&&(params!="")){
+    document.getElementById("srt").innerHTML = params
+    // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
+    // bon ben c'est ici qu'il faudrait faire un truc
+    if(params=="***"){
+      // ça c'est pour caler des blancs
+      document.getElementById("srt").innerHTML = ""
+    }
+  }
+}
+
 action = function(type, params){
   switch(type){
-    case "cue":
-    cue(params)
-    break
+    // case "cue":
+    // cue(params)
+    // break
 
     case "sound":
     sound(params)
@@ -253,82 +232,13 @@ sound = function(params){
   }
 }
 
-/*
-ça je m'en servais avant dans l'inscription pour donner rendez-vous aux gens 
-
-time = function(params){
-var nextsrt = compteur + 1
-
-var stringdeb = params[0]
-var stringfin = params[1] || ""
-// bam pseudo-argument optionnel dans ta face
-
-var stringdebpropre = stringdeb.replace(/\ /g, ' ');
-var stringfinpropre = stringfin.replace(/\ /g, ' ');
-
-var phrase = stringdebpropre + " le " + nextspectacledate + " à " + nextspectacletime + " " + stringfinpropre
-var addobject = {text:phrase, type: "text"}
-
-data.splice(nextsrt, 0, addobject, [type="text"])
-}
-*/
-
-cue = function(params){
-      console.log("params du cue ", params, Router.current().route.getName())
-    if(Roles.userIsInRole(Meteor.user(), "admin")==true && Router.current().route.getName() == "admin"){
-      var string = params[0]
-      var stringpropre = string.replace(/\ /g, ' ');
-      alert("CUE DU CUE, ",stringpropre)
-    }
-}
-
-// get time diff = function(datetime){
-//   console.log("go GET TIME DIFF");
-//   $("#srt").html("zoupla")
-//   // euh alors y'a un bug de timezone là j'ai l'impression qu'il prend greenwitch
-//   var datetime = typeof datetime !== 'undefined' ? datetime : "2017-01-21 21:29:99.000000"
-//   var datetime = new Date(datetime).getTime();
-
-//   console.log("datetime " + datetime)
-//   var now = new Date().getTime();
-
-//   if(isNaN(datetime)) return ""
-
-
-//   if (datetime < now) {
-//     var milisec diff = now - datetime
-//   }else{
-//     var milisec diff = datetime - now
-//   }
-
-//   var date diff = new Date( milisec diff )
-
-//   var days = Math.floor(milisec diff / 1000 / 60 / (60 * 24))
-//   var hours = date diff.getHours()
-//   var minutes = date diff.getMinutes()
-//   var secondes = date diff.getSeconds()
-
-//   var difdif = ""
-//   if(days>1) var difdif = difdif.concat(days.toString(), " jours et ")
-//   if(days==1) var difdif = difdif.concat(days.toString(), " jour et ")
-//   if(hours!=0) var difdif = difdif.concat(hours.toString(), ":")
-//   if(minutes!=0) var difdif = difdif.concat(minutes.toString(), ":")
-
-//   var difdif = difdif.concat(secondes.toString(), " <br> avant le début du spectacle à la maison.")
-
-//   document.getElementById("srt").innerHTML = (difdif)
-
-//   if (datetime-now <= -1) {
-//    console.log("TOOT TOOT TOOT c'est l'heure du spectacle")
-//    gotobookmark('spectacle')
-//    clearInterval(clock)
-//    interrupt=true
-//    gotonext(1)
-//   }
-
-//   console.log("difdif " + difdif)
-//   console.log("now " + now)
-//   console.log("date diff " + date diff)
+// cue = function(params){
+//       console.log("params du cue ", params, Router.current().route.getName())
+//     if(Roles.userIsInRole(Meteor.user(), "admin")==true && Router.current().route.getName() == "admin"){
+//       var string = params[0]
+//       var stringpropre = string.replace(/\ /g, ' ');
+//       alert("CUE DU CUE, ",stringpropre)
+//     }
 // }
 
 changeImg = function(params){
@@ -339,6 +249,7 @@ changeImg = function(params){
   transitionms = transition * 1000
 
   if (chemin=="panic.png") {
+    // si tu appelles le fond d'écran qui s'appelle panic.png ça clear toutes les transitions en cours
     window.clearTimeout(nextBGcontainer)
   }
 
@@ -400,34 +311,6 @@ removeclass = function(params){
   $("#"+params[0]).removeClass(params[1])
 }
 
-answernext = function(params){
-  compteurquest += 1
-  console.log("answernext, "+params+ "compteurq ="+compteurquest)
-  if(params=="ok") addlistelement(['checklist',posanswers[compteurquest], params])
-  if(params=="nope") addlistelement(['checklist',neganswers[compteurquest], params])
-  if(compteurquest<4){
-    interrupt=true
-  }else{
-    interrupt=false
-    destroy("seqoui")
-  }
-}
-
-
-addlistelement = function(params){
-
-  console.log("les params chelous ", params)
-  var where = params[0]
-  var label = params[1]
-  var status = params[2]
-
-  var labelpropre = label.replace(/\ /g, ' ');
-
-  var newListel = $('<li class='+ status +'>'+ labelpropre +'</li>')
-  newListel.appendTo($("#"+where))
-
-}
-
 newBoutton = function(params){
   interrupt=true
 
@@ -477,7 +360,6 @@ fullscreen = function(params){
 }
 
 destroy = function(self, replaceActual = ""){
-  // FUNCTION DESTROY
   // dans l'idéal faudrait lui passer un délai également
   var delay = 333
   var element = document.getElementById(self)
@@ -485,27 +367,22 @@ destroy = function(self, replaceActual = ""){
 
   $("#"+parentid).css("opacity","0")
 
-  // var stringpropre = replaceActual.replace(/\ /g, ' ').replace(/\(/g, '\'');;
-  // $("#srt").html(stringpropre)
-
-  // SAM2
-  // SI LE BOUTON EST DE TYPE CUPPAS FINISH ALT (tu utilises l'id)
-  // DANS CE CAS LÀ TU FAIS APPARAÎTRE UN TEXTE CUSTOM
-  // ET DE NOUVEAU BOUTONS (LE VRAI CUPPAS FINISH)
-
   setTimeout(function(){
     $("#"+parentid).empty()
   },delay)
 }
 
 gotobookmarkPUPITRE = function(where){
-  console.log("zorg ")
+  console.log("to do! ")
+  // TODO
+  // implémenter les bails pour que le pupitre puisse aussi faire un compteur change
 }
 
 gotobookmark = function(where){
   console.log("gotobookmark1!!? where=", where);
   reculeur = 1
   if(where == "introseb"){
+    // ?
       reculeur = 3
   }
 
@@ -525,10 +402,8 @@ gotobookmark = function(where){
         var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
         var compteurAdmin = getSuperGlobal("compteurAdmin");
         console.log("ACTIONS adminNext modeSpectacle?", modeSpectacle, "isItPowerToThePeople?", isItPowerToThePeople, "compteurAdmin", compteurAdmin);
-        // if(modeSpectacle && !isItPowerToThePeople && parseInt(compteurAdmin) != compteur) {
         if(modeSpectacle && parseInt(compteurAdmin) != compteur) {
           console.log("ACTIONS admin next compteur set compteurAdmin", compteur)
-          // cookies.set('compteurAdmin', compteur);
           Meteor.call('setSuperGlobal', {name: 'compteurAdmin', value: parseInt(compteur)});
         }
       }
@@ -546,6 +421,7 @@ gotobookmark = function(where){
 }
 
 replaceNext = function(params){
+  // est ce que ça sert encore ça?
   console.log("replace next ", params)
   var nextsrt = compteur + 1
   var leReplace = {"text":" ", "type":"text"}
@@ -574,6 +450,7 @@ replaceNext = function(params){
 
 addLotteryButtons = function(){
   switch(TAPi18n.getLanguage()){
+    // TODO implémenter anglais etc
     case "fr" :
       newBoutton(["iWantONH","Oui","addUserToLottery('oui-non-euh')","destroy(id)"])
       newBoutton(["nonB","Non","destroy(id)"])
@@ -588,16 +465,9 @@ addLotteryButtons = function(){
   $("#sacbouttons").removeClass("invisible")
 }
 
-// SHOW BUTTONS READY!
-// il faut qu'il cale un texte dans la div qui sinon est vide
-// Quand vous avez fini vote cabane / installation, appuyez sur le bouton.
-// LE BOUTON DIT : ça y est je suis installé.
-
-// euh c'est un replaceNext() en fait
-
 addCuppasButtons = function(){
-  console.log("addCuppasButtons yo yo yo yo yo")
   switch(TAPi18n.getLanguage()){
+    // IDEM
     case "fr":
       newBoutton(["finishCuppa","OK J\’AI FINI MA CABANE", "finishCuppa(id)" ])
     break
@@ -612,6 +482,8 @@ addCuppasButtons = function(){
 }
 
 finishCuppa = function(e){
+
+  //TODO hé ho il serait temps que les buches s'allument toutes seules nan? regarder dans l'admin ça le fait déjà
 
   console.log("finishCuppa avant boucle");
 
@@ -631,7 +503,6 @@ finishCuppa = function(e){
   }
     $("#srt").css("top", "-50%")
     $("#sacbouttons").css("margin-top","50px")
-    //       $("#flipbookcontainer").css("display", "none")},1000)
 
     console.log("finishCuppa interieur boucle");
 
@@ -649,16 +520,10 @@ finishCuppa = function(e){
   console.log("finishCuppa?",buchesAllumees);
   if(buchesAllumees < 6){
    em.emit('salmFinishCuppa');
-   // changeImgDeBuches(buchesAllumees)
   }
  }
 }
 
-// changeImgDeBuches= function(howmany){
-//   src = "b-"+howmany
-//   console.log("changeImgDeBuches ", src)
-//   changeImg(["1",src])
-// }
 
 gotonext = function(params){
   var bonus = parseInt(params)

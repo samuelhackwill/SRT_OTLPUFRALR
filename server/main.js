@@ -1038,10 +1038,6 @@ Meteor.methods({
 
       }
     }
-  },
-  // encore utile ?
-  isTheStreamStarted: function(){
-    return superGlobals.find();
-  },
+  }
 
 });
