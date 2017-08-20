@@ -1,231 +1,4157 @@
-%%% tin si tu veux mettre un apostrophe dans un destroy(machin) ben faut mettre
-%%% une parenthese ( ouvrante à la place pour le moment faute de mieux
-#bookmark intro_auto_geree
-Voilà.
-Comme ça.
-Parfait.
-C’est Samuel qui vous parle.
-Je travaille avec l’équipe du projet
-Je me suis notamment occupé de la partie web
-avec Etienne et Guillaume.
-Bref.
-Là je suis dans la salle du spectacle,
-en régie,
-on est en train de préparer l’arrivée des spectateurs·trices
-et moi, je m’occupe de votre arrivée : celle des auditeurs·trices.
-Bienvenue.
-Je vais essayer de faire passer votre affichage en plein écran, parce que c’est mieux
-#fullscreen
-Hop.
-Ça a marché ?
-Au pire vous pouvez essayer de le faire vous même.
-Ça devrait pas être trop compliqué...
-Alors maintenant on va mettre du son
+%%%                        
+%%% 01_OUVERTURE SALM      
+%%%                        
+***
+#FR_INTR Voilà.
+#NL_INTR Ja.
+#EN_INTR 
+***
+#FR_INTR Comme ça.
+#NL_INTR Precies zo.
+#EN_INTR 
+***
+#FR_INTR Parfait.
+#NL_INTR Perfect.
+#EN_INTR 
+***
+#FR_INTR C’est Samuel qui vous parle.
+#NL_INTR Ik hier ben Samuel.
+#EN_INTR 
+***
+#FR_INTR Je travaille avec l’équipe du projet
+#NL_INTR Ik werk met het team van dit project
+#EN_INTR 
+***
+#FR_INTR Je me suis notamment occupé de la partie web
+#NL_INTR Ik heb me onder andere beziggehouden met het webaspect,
+#EN_INTR 
+***
+#FR_INTR avec Etienne et Guillaume.
+#NL_INTR samen met Etienne en Guillaume.
+#EN_INTR 
+***
+#FR_INTR Bref.
+#NL_INTR Goed.
+#EN_INTR 
+***
+#FR_INTR Là je suis dans la salle du spectacle,
+#NL_INTR Nu ben ik in de theaterzaal
+#EN_INTR 
+***
+#FR_INTR en régie,
+#NL_INTR achter de regietafel,
+#EN_INTR 
+***
+#FR_INTR on est en train de préparer l’arrivée des spectateurs·trices
+#NL_INTR we zijn de aankomst van de toeschouwers aan het voorbereiden
+#EN_INTR 
+***
+#FR_INTR et moi, je m’occupe de votre arrivée : celle des auditeurs·trices.
+#NL_INTR en ik hou me bezig met de jullie aankomst: die van de luisteraars.
+#EN_INTR 
+***
+#FR_INTR Bienvenue.
+#NL_INTR Welkom.
+#EN_INTR 
+***
+#fullscreen on
+#FR_INTR Je vais essayer de faire passer votre affichage en plein écran, parce que c’est mieux
+#NL_INTR Ik probeer je beeld op volle schermweergave in te stellen, want dat is beter zo
+#EN_INTR 
+***
+#FR_INTR Hop.
+#NL_INTR Hupsakee.
+#EN_INTR 
+***
+#FR_INTR Ça a marché ?
+#NL_INTR Is het gelukt?
+#EN_INTR 
+***
+#FR_INTR Au pire vous pouvez essayer de le faire vous même.
+#NL_INTR In het ergste geval kun je dat zelf nog doen.
+#EN_INTR 
+***
+#FR_INTR Ça devrait pas être trop compliqué...
+#NL_INTR Dat zou niet al te ingewikkeld moeten zijn ...
+#EN_INTR 
+***
 #sound start
-Hop
-Vous devriez entendre quelque chose maintenant
-Si ça marche pas là par contre c’est embêtant.
-Attendez un petit peu, 
-Et puis le cas échéant, essayez éventuellement sur un autre navigateur.
-Autre chose, il est possible que parfois,
-ça coupe,
-que ce soit un peu haché,
-ce genre de truc.
-Pas d’inquiétude,
-ça peut arriver.
-Cependant,
-si jamais le son s'arrête totalement, il suffit juste de ré-actualiser la page web.
-Bon, en tout cas, avant que le spectacle ne commence,
-on va préparer deux-trois petites choses,
-et on va attendre que tous les auditeurs·trices soient là.
-Donc voilà, vous pouvez aller faire la vaisselle
-ou lire une bd,
-ou ranger le linge,
-comme vous voulez.
-Essayez de rester à portée de voix
-pour qu’on puisse vous appeler.
-N’hésitez pas à pousser le son pour continuer à écouter votre ordinateur de là où vous êtes.
-#stop
-On se retrouve vers 20h25.
-#bookmark spectacle
-#addclass srt shutter
-(les spectateurs ne sont pas encore entrés dans la salle)
-(entrée des spectateurs)
-***
-#bookmark lotterieONH
-#btn ouiSP1 Oui addUserToLottery('oui-non-euh') destroy(id,'Ok,_si_vous_voyez_les_boutons_apparaître,_c(est_à_vous_de_répondre.')
-#btn nonSP1 Non destroy(id)
-Est-ce que vous seriez volontaire pour répondre aux questions de Jacques ? (Il s'agira simplement de cliquer sur des boutons)
-#bookmark phoneNrLT
-***
-APPELEZ CE NUMÉRO POUR FAIRE LA LIAISON TÉLÉPHONIQUE SILENCIEUSE <br />: 00 33 7 81 89 76 86 <br />(Quand ça décroche : silence total. <br />Et coupez le son de votre ordinateur! Sinon ça va faire des sons bizarres). 
-#bookmark LT
-#removeclass srt shutter
-***
-Et donc voilà,
-***
-il n’y a plus rien d’autre que la connexion.
-***
-Nous, ici, dans la salle,
-***
-reliés à vous, chez vous.
-***
-Cette connexion est invisible,
-***
-imperceptible,
-***
-intangible.
-***
-Et pourtant,
-***
-elle est matériellement réalisée.
-***
-Elle s’effectue par l’intermédiaire de cet appareil téléphonique,
-***
-de câbles électriques, d’antennes relais, d’ondes électro-magnétiques.
-***
-Si on pouvait suivre son chemin,
-***
-on sortirait par les trous de l'écouteur du téléphone de cette personne.
-***
-Elle doit être en train de tendre l’oreille
-***
-pour vérifier si elle n’entend pas
-***
-les quelques bruits qui émaneraient du public,
-***
-les toussotements,
-***
-le grincement des sièges.
-***
-Et nous tendons l’oreille
-***
-pour essayer de l’entendre tendre l’oreille.
-#bookmark cabane_buche_the
-***
-... comment ça "à voix haute" ?
-***
-Donc là, je lis tout haut le texte qui s'affiche sur mon écran...
-***
-Oui mais... Il y a des gens qui m'entendent là ?
-***
-Ha vous m’entendez pas ?
-***
-Heuuu… oui.
-***
-Oui, ça marche très bien
-***
-Enfin là je peux pas vraiment donner mon avis puisque je dois lire le texte qui s'affiche
-***
-Ah tiens pourquoi pas
-***
-[vous pouvez maintenant vous exprimer librement]
-***
-[...]
-***
-...et donc c’est amusant parce que c’est effectivement l’inverse de tout à l’heure.
-***
-Hé beh tout à l’heure, au téléphone, on s’entendait mais on se parlait pas, 
-***
-et là on se parle mais on s’entend pas.
-***
-#bookmark jean_bourre
-#btn cuppasInc Oui addUserToLottery('cabane') destroy(id,'Excellent.')
-#btn boissonN Non destroy(id,'Bon,_tant_pis._Par_contre_vous_n(allez_rien_avoir_pour_vous_abriter_pendant_l(orage.')
-#addclass srt shutter 
-Est-ce que vous êtes partant·e pour faire une cabane ? <br/> (ou a minima un petit arrangement confortable et néanmoins inhabituel ?)
-***
-#removeclass srt shutter
-non, non, pas encore.
-***
-C’EST BON ON A PRESQUE FINI LES CABANES
-***
-#addclass srt shutter
-Quand vous avez fini votre cabane et que vous êtes bien installé·e, cliquez sur le bouton.
-#removeclass srt shutter
-#bookmark feuDeCamp
-***
-Oui, et on est bien installés mine de rien. Chacun dans sa cabane. 
-***
-Et au théâtre, les gens pourraient aussi se faire une petite cabane avec leurs manteaux. 
-***
-J’ai un ami qui a grandi sous les tropiques et qui a vraiment besoin du bruit de la pluie tropicale pour s’endormir
-***
-Hé…
-***
-Imaginez qu’on continue la discussion comme ça, avec le bruit de la pluie…
-***
-et qu’au bout d’un moment on s’endorme.
-***
-Les spectateurs au théâtre s’endorment,
-***
-les uns sur les autres.
-***
-Et vous aussi, vous vous endormez, au gré de la conversation.
-***
-Et puis ici à la maison je finis par m’endormir aussi.
-***
-Et la nuit passe comme ça.
-***
-Miraculeusement, tout le monde dort.
-***
-Et puis au bout d’un moment
-***
-la pluie s’arrête,
-***
-on sent poindre les premières lueurs de l’aube.
-***
-C’est la fin de la nuit.
-***
-Ça commence un peu à s’agiter,
-***
-quelqu’un bouge, quelqu’un tousse.
-***
-On s’extirpe de nos couvertures.
-***
-Et puis finalement
-***
-quelqu’un pointe le nez dehors.
-***
-Bonjour
-***
-Mouiii, étonnamment bien.
-***
-En fait je sors de ma cabane là... Je peux rallumer les lumières ? Le jour est pas encore vraiment levé ici.
-#addclass srt shutter
-#bookmark texteFin
-***
-C’EST FINIIIII
-***
-Si vous êtes encore là, c’est que vous êtes resté·e·s jusqu’à la fin
-***
-Merci, bravo.
-***
-Mathilde, Arnaud et Sébastien sont en train de saluer les spectateurs.
-***
-Moi ici, depuis la régie, je vous salue aussi.
-***
-Bravo pour votre cabane,
-***
-Elle est magnifique.
-***
-Merci d'être venu.
-***
-Enfin plutôt d'être resté chez vous.
-***
-Enfin d'être là quoi.
-***
-Si vous avez des remarques, des avis, des suggestions, 
-***
-ou pour nous envoyer la photo de votre cabane (on les collectionne)
-***
-n'hésitez pas à nous envoyer un petit e-mail. <br /> <a href="mailto:ontraverseralepont@amicaledeproduction.com">ontraverseralepont@amicaledeproduction.com</a>
-***
-***
-***
-#cue cest_la_fin_du_spectacle_bravo_les_gars
-#bookmark noirPanic
-***
-***
-***
+#FR_INTR Alors maintenant on va mettre du son
+#NL_INTR Dan gaan we nu het geluid aanzetten
+#EN_INTR 
+***
+#FR_INTR Hop
+#NL_INTR Voilà
+#EN_INTR 
+***
+#FR_INTR Vous devriez entendre quelque chose maintenant
+#NL_INTR Nu zou je dus iets moeten horen
+#EN_INTR 
+***
+#FR_INTR Si ça marche pas là par contre c’est embêtant.
+#NL_INTR Als dat niet het geval is hebben we een probleem.
+#EN_INTR 
+***
+#FR_INTR Attendez un petit peu,
+#NL_INTR Wacht even,
+#EN_INTR 
+***
+#FR_INTR Et puis le cas échéant, essayez éventuellement sur un autre navigateur.
+#NL_INTR En, indien nodig, kun je opnieuw proberen met een andere browser.
+#EN_INTR 
+***
+#FR_INTR Autre chose, il est possible que parfois,
+#NL_INTR Iets anders: het kan gebeuren, soms, dat
+#EN_INTR 
+***
+#FR_INTR ça coupe,
+#NL_INTR de verbinding wegvalt,
+#EN_INTR 
+***
+#FR_INTR que ce soit un peu haché,
+#NL_INTR dat er haperingen zijn,
+#EN_INTR 
+***
+#FR_INTR ce genre de truc.
+#NL_INTR dat soort dingen.
+#EN_INTR 
+***
+#FR_INTR Pas d’inquiétude,
+#NL_INTR Geen paniek,
+#EN_INTR 
+***
+#FR_INTR ça peut arriver.
+#NL_INTR dat kan gebeuren.
+#EN_INTR 
+***
+#FR_INTR Cependant,
+#NL_INTR Maar,
+#EN_INTR 
+***
+#FR_INTR si jamais le son s’arrête totalement, il suffit juste de ré-actualiser la page web.
+#NL_INTR als het geluid helemaal wegvalt, dan volstaat het om je webpagina te verversen.
+#EN_INTR 
+***
+#FR_INTR Bon, en tout cas, avant que le spectacle ne commence,
+#NL_INTR Goed, hoe dan ook, voordat de voorstelling begint,
+#EN_INTR 
+***
+#FR_INTR on va préparer deux-trois petites choses,
+#NL_INTR gaan we twee-drie dingetjes voorbereiden,
+#EN_INTR 
+***
+#FR_INTR et on va attendre que tous les auditeurs·trices soient là.
+#NL_INTR en wachten tot alle luisteraars er zijn.
+#EN_INTR 
+***
+#FR_INTR Donc voilà, vous pouvez aller faire la vaisselle
+#NL_INTR Dus kijk, je kan nog even snel de afwas doen
+#EN_INTR 
+***
+#FR_INTR ou lire une bd,
+#NL_INTR of een strip lezen,
+#EN_INTR 
+***
+#FR_INTR ou ranger le linge,
+#NL_INTR of de was opvouwen,
+#EN_INTR 
+***
+#FR_INTR comme vous voulez.
+#NL_INTR wat je zelf wilt.
+#EN_INTR 
+***
+#FR_INTR Essayez de rester à portée de voix
+#NL_INTR Zorg er wel voor dat je ons blijft horen,
+#EN_INTR 
+***
+#FR_INTR pour qu’on puisse vous appeler.
+#NL_INTR zodat we je kunnen oproepen.
+#EN_INTR 
+***
+#stop on
+#FR_INTR N’hésitez pas à pousser le son pour continuer à écouter votre ordinateur de là où vous êtes.
+#NL_INTR Aarzel niet om het geluid luider te zetten zodat je naar de computer kunt blijven luisteren waar je ook bent.
+#EN_INTR 
+***
+// l’heure _XXX_
+#FR_INTR On se retrouve vers 20h25.
+#NL_INTR We spreken opnieuw af rond 20u25.
+#EN_INTR 
+***
+
+#bookmark introseb
+%%% INTRO SEB   
+
+#FR_SALM Bonsoir à vous, chers auditeurs,
+#NL_SALM Goedenavond, beste luisteraars,
+#EN_SALM 
+***
+#FR_SALM bienvenue pour cette  représentation de” On traversera le pont une fois rendus à la rivière”.
+#NL_SALM welkom op deze voorstelling van ‘On traversera le pont une fois rendus à la rivière’.
+#EN_SALM 
+***
+#FR_SALM Je me trouve actuellement dans à _XXX_ dans la salle _XXX_, qui est encore vide.
+#NL_SALM Ik bevind me op dit moment in Brussel, in de zaal van de Varia, die nog leeg is.
+#EN_SALM 
+***
+#FR_SALM Les portes ne vont pas tarder à s’ouvrir.
+#NL_SALM De deuren kunnen elk moment opengaan.
+#EN_SALM 
+***
+#FR_SALM Oui alors, merci à vous d’avoir bien voulu participer à cette expérience,
+#NL_SALM Ja, dus, allemaal bedankt om aan dit experiment te willen deelnemen,
+#EN_SALM 
+***
+#FR_SALM je vais vous parler dans quelques instants des conditions optimales pour que votre soirée se passe au mieux,
+#NL_SALM ik praat jullie zo meteen bij over de optimale omstandigheden om van deze avond te kunnen genieten,
+#EN_SALM 
+***
+#FR_SALM mais avant ça je me rapproche de la régie pour savoir si tout va bien,
+#NL_SALM maar ik kijk eerst even richting de regietafel om te weten of alles in orde is,
+#EN_SALM 
+***
+#FR_SALM Oui c’est ok
+#NL_SALM Ja, het is oké,
+#EN_SALM 
+***
+#FR_SALM je reçois des signes positifs, tout semble prêt,
+#NL_SALM ik krijg positieve signalen, alles lijkt gereed,
+#EN_SALM 
+***
+#FR_SALM donc je vais me diriger vers la cabine insonorisée qui se trouve sur scène, pour continuer ces explications….
+#NL_SALM dus ik begeef me nu naar de geluidsdichte cabine die op het toneel staat, om door te gaan met de uitleg…
+#EN_SALM 
+***
+#FR_SALM Et voilà, c’est pratique, à présent plus personne ne m’entend dans le théâtre.
+#NL_SALM Wel, wel, is dat niet handig? Nu kan niemand in het theater me nog horen.
+#EN_SALM 
+***
+#FR_SALM Voilà les premiers spectateurs vont entrer dans la salle d’un moment à lautre
+#NL_SALM Aha, de eerste toeschouwers komen straks de zaal binnen
+#EN_SALM 
+***
+#FR_SALM et vous allez les entendre puisqu’il y a des micros installés de part et d’autre des gradins.
+#NL_SALM en trouwens jullie zullen ze horen, want aan weerszijden van de tribune zijn microfoons aangebracht.
+#EN_SALM 
+***
+#FR_SALM Voilà, nous sommes très contents bien sûr de vous savoir parmi nous,
+#NL_SALM Zo, we zijn natuurlijk heel blij dat jullie bij ons zijn,
+#EN_SALM 
+***
+#FR_SALM on sait que vous êtes _XXX_ auditeurs-auditrices pour le moment.
+#NL_SALM we weten dat jullie op dit moment ... luisteraars zijn.
+#EN_SALM 
+***
+#FR_SALM Vous m’entendez ce soir par l’intermédiaire d’un flux audio, qui est encore une version en évaluation,
+#NL_SALM Jullie horen me vanavond via audiostreaming, het is nog een testversie,
+#EN_SALM 
+***
+#FR_SALM c’est à dire qu’on travaille continuellement pour améliorer la connexion qui nous relie.
+#NL_SALM ik bedoel dus dat we constant werken aan de verbetering van deze verbinding tussen jullie en mij.
+#EN_SALM 
+***
+#FR_SALM S’il y a un décrochage ce soir, ne vous inquiétez pas, généralement ça revient tout de suite après.
+#NL_SALM Geen zorg als het geluid vanavond wegvalt, meestal komt het onmiddellijk terug.
+#EN_SALM 
+***
+#FR_SALM Vous n’avez rien de spécial à faire ca peut arriver, c’est arrivé en tout cas par le passé,
+#NL_SALM Jullie kunnen niks bijzonders doen, het kan gebeuren, het is in ieder geval al eerder voorgekomen
+#EN_SALM 
+***
+#FR_SALM qu’il y ait des petits décrochages d’une seconde, deux secondes, pas de panique le son va revenir juste après.
+#NL_SALM dat het geluid soms voor een seconde of twee wegvalt, geen paniek dus, het geluid komt snel terug.
+#EN_SALM 
+***
+#FR_SALM Si vraiment la coupure se prolonge, vous pouvez tout simplement rafraîchir la page.
+#NL_SALM Als de onderbreking echt lang duurt, ververs dan eenvoudigweg de pagina.
+#EN_SALM 
+***
+#FR_SALM En tout cas, j’espère que pour l’instant vous m’entendez bien et en principe c’est le cas.
+#NL_SALM In elk geval hoop ik dat jullie me nu horen en in principe is dat het geval.
+#EN_SALM 
+***
+#FR_SALM Alors, premier conseil: nous sommes ensemble pendant un moment,
+#NL_SALM Dan is het nu tijd voor een eerste advies: we brengen straks een behoorlijke poos met elkaar door,
+#EN_SALM 
+***
+#FR_SALM donc n’hésitez pas à vous installer confortablement ,sur votre canapé, sur votre chaise,sur votre lit...
+#NL_SALM dus aarzel niet om er comfortabel bij te gaan zitten, op je sofa, op je stoel, in bed…
+#EN_SALM 
+***
+#FR_SALM moi je ne sais pas où vous vous trouvez...
+#NL_SALM ik weet niet waar jullie nu precies zijn…
+#EN_SALM 
+***
+#FR_SALM Ici les sièges du théâtre sont assez confortables, mais vous, vous ce soir, contrairement aux spectateurs du théâtre,
+#NL_SALM De zetels hier in het theater zijn best comfortabel, maar jullie, jullie thuis,
+#EN_SALM 
+***
+#FR_SALM vous avez la chance de pouvoir vous créer votre parfait espace de réception, alors profitez-en.
+#NL_SALM hebben de kans om de omstandigheden voor de ontvangst helemaal zelf in te richten, dus profiteer ervan.  
+#EN_SALM 
+***
+#FR_SALM Choisissez bien vos coussins par exemple, trouvez une position confortable.
+#NL_SALM Kies bijvoorbeeld goed je zitkussens uit, vind een comfortabele houding.
+#EN_SALM 
+***
+#FR_SALM Vous pouvez garder l’ordinateur près de vous pour le regarder, mais vous pouvez aussi vous en servir comme ambiance lumineuse.
+#NL_SALM Jullie kunnen de computer dichtbij houden om het scherm te bekijken, maar hem ook gebruiken om een sfeervol licht in de ruimte te creëren.
+#EN_SALM 
+***
+#FR_SALM Ce soir, vous n’aurez aucune image de la représentation, c’est un principe, notre connexion est essentiellement basée sur des éléments sonores.
+#NL_SALM Vanavond krijgen jullie geen beeld te zien van de voorstelling, dat is een uitganspunt, onze verbinding bestaat vooral uit geluid.
+#EN_SALM 
+***
+#FR_SALM Vous aurez également des éléments textuels,
+#NL_SALM Jullie krijgen ook tekst te zien,
+#EN_SALM 
+***
+#FR_SALM mais surtout, comme je vous le disais, vous aurez de la lumière sur votre écran,
+#NL_SALM maar vooral, zoals ik eerder al zei, krijgen jullie licht te zien op jullie scherm,
+#EN_SALM 
+***
+#FR_SALM qui correspond peu ou prou à la lumière qu’on trouve ici sur scène.
+#NL_SALM licht dat min of meer overeenkomt met het licht hier op het toneel.
+#EN_SALM 
+***
+#FR_SALM D’ailleurs, on s’est déjà amusé à renverser l’ordinateur en mettant l’écran à l’horizontal et le clavier à la verticale, vous voyez?
+#NL_SALM Trouwens, we hebben voor de grap al geprobeerd om de computer te kantelen, met het scherm horizontaal en het toetsenbord rechtop. Zien jullie wat ik bedoel?
+#EN_SALM 
+***
+#FR_SALM le clavier devient les gradins, et l’écran devient un peu la scène,
+#NL_SALM Het toetsenbord wordt de tribune en het scherm doet een beetje denken aan het toneel,
+#EN_SALM 
+***
+#FR_SALM et donc les dégradés lumineux correspondent assez fidèlement à l’ambiance lumineuse qu’il y a sur scène;
+#NL_SALM en dus geven de lichtschakeringen een best getrouw beeld van de lichtsfeer op het toneel;
+#EN_SALM 
+***
+#FR_SALM ça peut vous donner des informations de couleurs, de tonalités...
+#NL_SALM zo krijgen jullie dus informatie over de kleuren, de kleurintensiteit…
+#EN_SALM 
+***
+#FR_SALM Je vous conseille aussi de faire cette expérience seul.
+#NL_SALM Ik raad jullie ook aan om deze ervaring alleen te beleven.
+#EN_SALM 
+***
+#FR_SALM Alors c’est un conseil hein, c’est à dire que évidemment si vous êtes en famille, si vous êtes avec des amis,
+#NL_SALM Nu, dat is enkel een suggestie natuurlijk, met andere woorden, als jullie als gezin of onder vrienden samen zijn,
+#EN_SALM 
+***
+#FR_SALM vous pouvez également suivre le spectacle y a pas de souci,
+#NL_SALM dan kun je ook de voorstelling volgen, geen zorg,
+#EN_SALM 
+***
+#FR_SALM mais si vous êtes seul vous aurez certainement une expérience un petit peu plus riche,
+#NL_SALM maar als je alleen bent, beleef je zeker een iets rijkere ervaring,
+#EN_SALM 
+***
+#FR_SALM vous pourrez vous plonger plus facilement dans la représentation.
+#NL_SALM kun je je makkelijker in de voorstelling onderdompelen.
+#EN_SALM 
+***
+#FR_SALM C’est un peu tard pour vous dire ça, mais l’idéal ce serait d’être chez vous,
+#NL_SALM Ik kom er een beetje laat mee, maar idealiter zijn jullie nu thuis;
+#EN_SALM 
+***
+#FR_SALM nous allons évoquer l’habitat ce soir, l’habitat de chacun chacune d’entre nous
+#NL_SALM we gaan het vanavond over de woning hebben, de woning van ieder onder ons;
+#EN_SALM 
+***
+#FR_SALM et si vous êtes chez vous, les mots, l’histoire dont on va vous parler raisonneront certainement d’autant plus.
+#NL_SALM en als je thuis bent, spreken de woorden, het verhaal dat we gaan vertellen je ongetwijfeld des te meer aan.
+#EN_SALM 
+***
+#FR_SALM Je vais donc vous parler maintenant de quelques conditions techniques qui pourront vous aider ce soir.
+#NL_SALM Nu wil ik het dus even hebben over enkele technische omstandigheden die ons vanavond kunnen helpen.
+#EN_SALM 
+***
+#FR_SALM Je vais commencer par les conditions sonores:
+#NL_SALM Ik begin met de geluidsomstandigheden:
+#EN_SALM 
+***
+#FR_SALM là actuellement je parle avec un niveau tout à fait convenable, dans un micro, dans une cabine.
+#NL_SALM op dit moment spreek ik redelijk goed hoorbaar, met een microfoon, in een cabine.
+#EN_SALM 
+***
+#FR_SALM Si vous m’entendez bien là maintenant, au moment où je prononce ces mots
+#NL_SALM Als jullie me op dit moment duidelijk kunnen horen, terwijl ik deze woorden uitspreek,
+#EN_SALM 
+***
+#FR_SALM c’est que sans doute vous allez pouvoir suivre aisément tout le spectacle,
+#NL_SALM dan kunnen jullie de voorstelling in principe makkelijk volgen,
+#EN_SALM 
+***
+#FR_SALM ne vous inquiétez pas il n’y aura pas de pics sonores donc n’hésitez pas à bien ajuster votre volume.
+#NL_SALM maak je geen zorgen, er zijn geen geluidspieken, dus aarzel niet om het volume goed af te stellen.
+#EN_SALM 
+***
+#FR_SALM Evidemment je ne peux que vous inviter, si vous êtes à la maison et que vous avez le dispositif adéquat,
+#NL_SALM Natuurlijk kan ik jullie alleen maar aanraden, als jullie thuis zijn en over een geschikte installatie beschikken,
+#EN_SALM 
+***
+#FR_SALM à vous brancher sur une paire d’enceintes, ou à porter votre casque audio favori,
+#NL_SALM om de computer op een paar goede luidsprekers aan te sluiten of je favoriete koptelefoon op te zetten.
+#EN_SALM 
+***
+#FR_SALM ce qui vous permettra d’avoir un son plus riche et de vous plonger dans l’ambiance.
+#NL_SALM Je krijgt een voller geluid te horen en je kan in de sfeer proeven.
+#EN_SALM 
+***
+#FR_SALM Voilà, ensuite je vais vous donner quelques petits éléments que vous pouvez préparer à la maison.
+#NL_SALM Zo, nu nog wat kleine dingetjes die jullie thuis kunnen voorbereiden.
+#EN_SALM 
+***
+#FR_SALM Le premier qui est assez important, c’est une plante verte,
+#NL_SALM Het eerste is nogal belangrijk: dat is een sierplant,
+#EN_SALM 
+***
+#FR_SALM je ne sais pas ou vous vous trouvez, si vous êtes dans le salon, dans la cuisine, la chambre, la salle de bain qu’importe,
+#NL_SALM ik weet niet waar jullie je bevinden, of jullie in de woonkamer, de keuken, de slaapkamer, de badkamer of waar dan ook zijn,
+#EN_SALM 
+***
+#FR_SALM en tout cas, ce serait bien que vous ayez à portée de main une plante verte,
+#NL_SALM in ieder geval is het goed om een sierplant binnen handbereik te hebben,
+#EN_SALM 
+***
+#FR_SALM alors ça peut être n’importe quelle plante, verte ou pas d’ailleurs, votre plante préférée comme celle que vous n’arrosez jamais,
+#NL_SALM en dat mag echt om het even welke plant zijn, een sierplant of een andere plant, jullie lievelingsplant, of de plant die jullie nooit besproeien,
+#EN_SALM 
+***
+#FR_SALM en tout cas, ce serait bien de la ramener proche de vous, elle vous servira tout à l’heure..
+#NL_SALM in elk geval zou het goed zijn om haar bij de hand te hebben, want ze komt straks nog van pas.
+#EN_SALM 
+***
+#FR_SALM Autre élément, c’est le téléphone, voilà si vous pouvez le garder à côté de vous.
+#NL_SALM Een ander element is de telefoon, dus als je die binnen handbereik hebt, prima.
+#EN_SALM 
+***
+#FR_SALM Vérifiez que vous avez assez de batterie, pour qu’il puisse tenir pendant l’heure ou l’heure et quart qui va suivre...
+#NL_SALM Kijk wel even of je batterij voldoende opgeladen is, zodat je gsm het komende uur of uur en een kwart beschikbaar is...
+#EN_SALM 
+***
+#FR_SALM Autre indication, un petit plus amusante, je vais vous proposer de partir en collecte dans la maison.
+#NL_SALM Een andere aanwijzing, die wat grappiger is: ik stel jullie voor om huisspullen te verzamelen.
+#EN_SALM 
+***
+#FR_SALM Voilà, je vous explique: tout à l’heure nous allons vous proposer de mettre en place une construction.
+#NL_SALM Oké, ik leg dit even uit: straks zullen we jullie voorstellen om een constructie te maken,
+#EN_SALM 
+***
+#FR_SALM Assez élémentaire ne vous inquiétez pas, qu’on pourrait appeler cabane..
+#NL_SALM heel rudimentair, wees gerust, die we de hut zouden kunnen noemen.
+#EN_SALM 
+***
+#FR_SALM Le petit jeu que je vous propose maintenant, dans les quelques minutes qui suivent,
+#NL_SALM Nu, voor de komende minuten stel ik jullie een spelletje voor:
+#EN_SALM 
+***
+#FR_SALM c’est d’aller collecter, d’aller chercher les différents éléments qui pourraient vous servir à la construire.
+#NL_SALM ga op zoek en verzamel verschillende spullen waarmee je die hut zou kunnen bouwen.
+#EN_SALM 
+***
+#FR_SALM Alors il y a tout un tas de type de cabanes différentes evidemment, si je vous donne des exemples classiques,
+#NL_SALM Er zijn natuurlijk allerlei verschillende soorten hutten, ik geef jullie enkele alom bekende voorbeelden,
+#EN_SALM 
+***
+#FR_SALM on va trouver des draps par exemple, des chaises, ça peut être tout type de structure, si vous avez un étendoir à linge,
+#NL_SALM je kunt bijvoorbeeld denken aan lakens, stoelen, het mag om het even welke structuur zijn, als je een droogrek hebt,
+#EN_SALM 
+***
+#FR_SALM un dessous de table, un dessous de bureau, un manche à balai, que sais-je n’importe quoi.
+#NL_SALM of een onderstel voor een tafel of bureau, of een bezemsteel, weet ik veel, om het even wat.
+#EN_SALM 
+***
+#FR_SALM Voilà, je vous laisse quelques instants pour récupérer tout ça.
+#NL_SALM Zo, ik laat jullie even de tijd om dat te verzamelen.
+#EN_SALM 
+***
+#FR_SALM Donc je précise qu’il ne s’agit pas de construire la cabane maintenant,
+#NL_SALM Dus, voor de duidelijkheid, het is niet de bedoeling om de hut nu al te bouwen,
+#EN_SALM 
+***
+#FR_SALM l’idée c’est simplement de réunir les matériaux pour pouvoir la construire tout à l’heure.
+#NL_SALM de bedoeling is gewoon om alle spullen bij elkaar te brengen, om straks te kunnen bouwen.
+#EN_SALM 
+***
+#FR_SALM Vous pouvez aussi trouver l’endroit où vous voulez l’installer par exemple...
+#NL_SALM En jullie kunnen bijvoorbeeld ook al de plek kiezen waar jullie de hut willen opstellen…
+#EN_SALM 
+***
+#FR_SALM Voilà, pendant ce temps là, je vais vous expliquer un circuit, un système qu’on va installer dans la deuxième partie du spectacle,
+#NL_SALM Zo, ondertussen vertel ik jullie meer over een circuit, een elektrisch systeem dat we in het tweede deel van de voorstelling gaan opstellen.
+#EN_SALM 
+***
+#FR_SALM je me permets de vous l’expliquer à l’avance car les choses vont se passer un petit peu vite finalement
+#NL_SALM Ik neem de vrijheid om een en ander op voorhand uit te leggen, omdat alles straks uiteindelijk redelijk snel zal verlopen
+#EN_SALM 
+***
+#FR_SALM donc c’est pas inintéressant pour vous, à votre position à la maison, que vous ayez déjà un point de vue technique sur c’qui va se passer :
+#NL_SALM en het is dus best interessant dat jullie, die thuis zitten, al wat technisch inzicht hebben in wat er zal gebeuren:
+#EN_SALM 
+***
+#FR_SALM Il s’agit d’un système d’allumage de bûches.
+#NL_SALM Het betreft een haardvuur.
+#EN_SALM 
+***
+#FR_SALM Heu, quand je dis bûches, je pense à des buches electriques hein,
+#NL_SALM Eh, als ik haardvuur zeg, dan bedoel ik wel een elektrisch haardvuur, hè,
+#EN_SALM 
+***
+#FR_SALM vous savez que les théâtres répondent à des conditions de sécurité extrêmement strictes.
+#NL_SALM jullie weten dat in theaters heel strenge veiligheidsnormen gelden.
+#EN_SALM 
+***
+#FR_SALM A la maison, vous allez déclencher un signal qui va être envoyé dans un serveur,
+#NL_SALM Straks versturen jullie van thuis uit een signaal naar een server,
+#EN_SALM 
+***
+#FR_SALM retransmis au client admin, à l’ordinateur ici qui va gérer un peu toutes les infos et le transformer en un message midi,
+#NL_SALM die het commando doorseint naar de ‘admin client’, dus de computer hier die alle data gaat verwerken en omzetten in een midi-signaal,
+#EN_SALM 
+***
+#FR_SALM qui va être transmis à la console lumière, qui elle va le renvoyer en dmx aux gradateurs,
+#NL_SALM dat naar de lichttafel gaat, waar het in DMX-protocol naar de wisselstroomschakelaars wordt gestuurd,
+#EN_SALM 
+***
+#FR_SALM qui eux vont le renvoyer en 220 v aux bûches électriques, et déclencher ainsi l’allumage.
+#NL_SALM die op hun beurt een 220 V-signaal naar de elektrische haarden stuurt, waardoor de ontsteking plaatsvindt.
+#EN_SALM 
+***
+#FR_SALM Voilà, informations très techniques, mais tout à l’heure quand vous aurez le bouton de déclenchement,
+#NL_SALM Zo, dat was even een erg technische uitleg, maar als jullie straks allemaal op de startknop drukken,
+#EN_SALM 
+***
+#FR_SALM le détonateur en quelque sorte, vous aurez comme ça déjà en tête toute l’onde de choc qui va suivre le petit clic que vous ferez sur votre souris.
+#NL_SALM het ontstekingsmechanisme als het ware, dan hebben jullie alvast een beeld van de schokgolf die jullie simpele muisklik veroorzaakt.
+#EN_SALM 
+***
+#FR_SALM Voilà et puis,  tout comme je vous expliquais tout à l’heure que vous nous n’allez pas nous voir,
+#NL_SALM Zo, en nog iets: zoals ik daarnet al uitlegde dat jullie ons niet kunnen zien,
+#EN_SALM 
+***
+#FR_SALM nous nous n’allons pas vous voir non plus,
+#NL_SALM wel wij zien jullie dus ook niet,
+#EN_SALM 
+***
+#FR_SALM il n’y a pas de système de caméra avec tel ou tel auditeur ou quoi, vous êtes d’ailleurs tous sur le même plan,
+#NL_SALM er is geen systeem met een cameralink naar de ene of de andere luisteraar of zo, jullie hebben trouwens allemaal dezelfde status.
+#EN_SALM 
+***
+%%%                        
+%%% 02 _ TCPUD PANCARTES   
+%%%                        
+// TEXTE PANCARTES
+#FR Bonsoir,
+#NL_SAT Goedenavond,
+#EN_SAT Good evening,
+***
+#FR Bienvenue.
+#NL_SAT Welkom.
+#EN_SAT Welcome.
+***
+#FR Vous le savez probablement déjà,
+#NL_SAT Jullie weten het waarschijnlijk al,
+#EN_SAT As you probably already know 
+***
+#FR le spectacle de ce soir est radio-diffusé.
+#NL_SAT de voorstelling van vanavond wordt op de radio uitgezonden.
+#EN_SAT tonight's performance is radio broadcasted.
+***
+#FR Aujourd’hui, il y a environ _XXX_ auditeurs.
+#NL_SAT Vandaag zijn er ongeveer ... luisteraars.
+#EN_SAT Today there's approximately ... listeners.
+***
+#FR Ils sont chez eux,
+#NL_SAT Ze zijn thuis,
+#EN_SAT They are home,
+***
+#FR Ils ne nous voient pas,
+#NL_SAT Ze zien ons niet,
+#EN_SAT They can't see us,
+***
+#FR Mais ils nous entendent.
+#NL_SAT Maar ze horen ons.
+#EN_SAT But they do hear us.
+***
+#FR Enfin là, ils entendent surtout Sébastien
+#NL_SAT Nou ja, op dit moment horen ze vooral Sébastien
+#EN_SAT Well, now they hear mostly Sébastien
+***
+#FR Qui leur parle depuis une cabine insonorisée
+#NL_SAT Die hen toespreekt vanuit een geluidsdichte cabine
+#EN_SAT Who is speaking to them from a soundproof booth
+***
+#FR Juste derrière nous.
+#NL_SAT Hier net achter ons.
+#EN_SAT Just behind us.
+***
+#FR D’ailleurs,
+#NL_SAT Trouwens,
+#EN_SAT By the way
+***
+#FR En ce moment-même,
+#NL_SAT Op dit moment,
+#EN_SAT At this very moment,
+***
+#FR Il doit être en train de leur expliquer
+#NL_SAT Is hij waarschijnlijk aan het uitleggen
+#EN_SAT He's probably explaining
+***
+#FR qu’on vous montre des pancartes.
+#NL_SAT dat we jullie deze bordjes laten zien.
+#EN_SAT that we are showing you placards
+***
+#bookmark entreematharn
+#FR_SALM Sébastien Ah voilà, je vois mes deux collègues, Arnaud et Mathilde, arriver sur le plateau.
+#NL_SALM Aha, kijk daar komen mijn twee collega’s Arnaud en Mathilde het toneel opgelopen.
+#EN_SALM 
+***
+#FR_SALM Ils sont munis de pancartes, pour donner quelques informations aux spectateurs du théâtre.
+#NL_SALM Ze hebben bordjes bij zich, om de toeschouwers in het theater wat informatie te geven.
+#EN_SALM 
+***
+#FR_SALM Donc, ils vont essentiellement leur expliquer que vous êtes là ce soir,
+#NL_SALM Dus, het komt erop neer dat ze hun uitleggen dat jullie er vanavond bij zijn,
+#EN_SALM 
+***
+#FR_SALM que vous nous entendez, mais que vous ne nous voyez pas...
+#NL_SALM dat jullie ons horen, maar dat jullie ons niet kunnen zien…
+#EN_SALM 
+***
+#FR_SALM voilà, c’est important que tout le monde soit à peu près au même niveau d’informations..
+#NL_SALM want het is belangrijk dat iedereen min of meer over dezelfde informatie beschikt.
+#EN_SALM 
+***
+#FR_SALM Et donc là ils arrivent à leurs dernières pancartes, avec lesquelles ils expliquent certainement
+#NL_SALM En nu laten ze hun laatste bordjes zien, waarop ongetwijfeld staat
+#EN_SALM 
+***
+#FR_SALM que je suis en train de vous expliquer qu’ils sont en train de montrer des pancartes. <div id=warning> - STOOOP ! - </div>
+#NL_SALM dat ik aan het uitleggen ben dat zij nu de bordjes laten zien.
+#EN_SALM 
+***
+// (fade in voix de sébastien dans la salle)
+#FR ...ils viennent de terminer, ils ramassent leur petit matériel, 
+#NL ...ze zijn net klaar, ze rapen hun spulletjes op 
+#EN ... and they’ve just finished, they are picking up their equipment
+***
+#FR et ressortent par la porte par laquelle ils sont entrés
+#NL en ze vertrekken weer door de deur waarlangs ze zijn binnengekomen
+#EN and are going out through the same door they entered...
+***
+#FR ...Ah voilà ça y est j’entends ma voix,
+#NL ...Aha, goed zo, ik hoor mijn stem,
+#EN ...Here we go, I can hear my voice,
+***
+#FR donc les spectateurs au théâtre m’entendent à leur tour.  
+#NL dus de toeschouwers in het theater horen mij nu ook.
+#EN so the audience in the theatre can hear me as well.
+***
+#FR Et on se rapproche là du début de la représentation
+#NL En het moment nadert dus waarop de voorstelling gaat beginnen,
+#EN We’re getting closer to the beginning of the performance 
+***
+#FR puisque je vois les gradins qui sont progressivement plongés dans le noir,
+#NL want ik zie dat de tribune langzaamaan in het duister gedompeld wordt,
+#EN as I can see it’s getting darker in the auditorium.
+***
+#FR tandis que la scène, elle, n’est pas encore éclairée.
+#NL terwijl het toneel nog niet verlicht is.
+#EN Though on the stage, the lights haven’t been turned on yet.
+***
+#FR On est vraiment à ce moment bien particulier où on est prêt à basculer dans la représentation. <div id=warning> - PAUSE - </div>
+#NL We beleven nu echt dat bijzondere moment waarop we op het punt staan in de voorstelling te kantelen.  
+#EN We are right at this very special moment when the show is about to start.
+***
+// SILENCE
+#FR D’ailleurs ce qui est amusant, 
+#NL Het is trouwens grappig 
+#EN Funny enough,
+***
+#FR c’est que ce moment d’obscurité totale est simultanément vécu par plein d’autres spectateurs,...
+#NL dat massa’s andere toeschouwers tegelijkertijd dit moment van totale verduistering beleven.  
+#EN we are sharing this very special moment, in the dark, with many other spectators.
+***
+// SILENCE
+#FR Je veux dire, il y a toujours d’autres spectacles 
+#NL Ik bedoel, er zijn altijd andere voorstellingen 
+#EN I mean, there are always many other performances
+***
+#FR qui commencent au même moment dans d’autres endroit du monde,...
+#NL die op hetzelfde moment beginnen op andere plekken in de wereld.
+#EN starting at the same time in other venues in the world
+***
+// SILENCE
+#FR Par exemple, ce soir commence _XXX_, un spectacle de _XXX_..
+#NL Bijvoorbeeld, vanavond begint de voorstelling “Médée Matériau” van Valérie Dréville
+#EN Tonight, for instance, begins Médée Matériau”, a performance by Valérie Dréville
+***
+#FR à _XXX_, au théâtre _XXX_,
+#NL in Paris in het Théâtre des Bouffes du Nord
+#EN in Paris in the Théâtre des Bouffes du Nord
+***
+#FR C’était annoncé à _XXX_
+#NL Het begin van de voorstelling was aangekondigd om 20u30.
+#EN It was annouced to start at ..:..
+***
+#FR Bon, là il est _XXX_
+#NL Oké, nu is het dus ..u..
+#EN Well, the time is now ..x..
+***
+// SILENCE
+#FR Ca a probablement commencé un peu en retard comme c’est l’usage,  
+#NL Ze zijn waarschijnlijk met een beetje vertraging begonnen, zoals gebruikelijk is,
+#EN It has probably started a bit late, as usual,
+***
+#FR et bien il est tout à fait possible que maintenant,
+#NL en het is heel goed mogelijk dat precies op dit ogenblik,
+#EN And it's very likely that now
+***
+#FR mais exactement maintenant,
+#NL maar echt terwijl 
+#EN at this very moment
+***
+#FR au moment où je prononce ces mots,
+#NL ik deze woorden uitspreek,
+#EN as I'm saying this,
+***
+#FR les spectateurs du _XXX_ (nom du théâtre) soient plongés dans la même obscurité,
+#NL de toeschouwers in het Théâtre des Bouffes du Nord eveneens in een volkomen donkere zaal zitten,
+#EN the spectators in the Théâtre des Bouffes du Nord are in the dark as well,
+***
+#FR qu’ils soient eux aussi prêts à basculer dans la représentation.
+#NL en dat ook zij op het punt staan om in de voorstelling te kantelen.
+#EN that they are aslo ready to step into the performance.
+***
+// SILENCE
+#FR Imaginez, vous êtes _XXX_,
+#NL Stel je voor, je bent in Paris,
+#EN Let's imagine : you are in Paris,
+***
+#FR il y a eu le fondu au noir dans la salle,  
+#NL de zaal is verduisterd,
+#EN the light have been fade to black
+***
+#FR vous vous calez dans votre siège, vous vous retranchez progressivement...
+#NL je gaat op je gemak in je zetel zitten…
+#EN you're putting yourself at ease in your seat...
+***
+#FR Y’a probablement quelqu’un qui tousse,
+#NL Er is waarschijnlijk iemand die begint te kuchen,
+#EN There's probably someone coughing next to you,
+***
+#FR et donc y’a quelqu’un d’autre qui en profite pour tousser aussi
+#NL en meteen maakt iemand van de gelegenheid gebruik om ook te kuchen,
+#EN and then somebody else is coughing too
+***
+#FR parce qu’il se dit “ah oui je vais tousser moi aussi au cas où”
+#NL want die denkt, ‘o ja, ik ga ook maar even kuchen voor het geval dat…’
+#EN thinking "I'm gonna cough just in case"
+***
+#FR et comme souvent ça fait plein de gens qui toussent en même temps…
+#NL en zoals vaak gebeurt slaan plots een heleboel mensen aan het kuchen…
+#EN and as there you go there's a coughing audience.
+***
+#FR Donc voilà, ça commence.
+#NL En de voorstelling begint.
+#EN So, here we are, it begins.
+***
+#FR Que va-t’il se passer?
+#NL Wat gaat er gebeuren?
+#EN What's going to happen ?
+***
+#FR Tout est possible.
+#NL Alles is mogelijk.
+#EN Everything's possible.
+***
+#FR Par où vont arriver les comédiens, que vont-ils faire ?
+#NL Van welke kant gaan de acteurs opkomen, wat gaan ze doen?
+#EN From which side will enter ther performers ? What are they going to do ?
+***
+#FR Et parmi des milliards de possibilités,
+#NL Er zijn miljarden mogelijkheden,
+#EN And among billions of possibilities,
+***
+#FR ça paraît incroyable mais après tout pourquoi pas,
+#NL het lijkt onvoorstelbaar maar uiteindelijk waarom niet?
+#EN it sounds totally incredible, but after all why not?
+***
+#FR il se pourrait bien qu’ils commencent par un petit exercice de projection mentale,
+#NL zou het zomaar kunnen dat ze beginnen met een korte denkoefening
+#EN they may start with an exercice of mental projection,
+***
+#FR par vous inviter à imaginer ce que sont en train de vivre d’autres spectateurs dans d’autres salles au même moment,
+#NL en jullie uitnodigen om je voor te stellen wat andere toeschouwers in andere zalen op datzelfde moment beleven,
+#EN they might suggest you to imagine how the others spectators in other theaters are feeling at the same time.
+***
+#FR Ils auraient fait une recherche sur internet,
+#NL Ze zouden opzoekingen gedaan hebben op Internet
+#EN They would have looked on the Internet
+***
+#FR ils seraient peut-être tombés sur le notre ici, qui commence ici,
+#NL en zouden misschien verwijzen naar deze voorstelling hier, die begint hier,
+#EN and would have found our performance, that begins here and now, 
+***
+#FR et vous seriez en train de nous imaginer ici,
+#NL en jullie zouden je nu een voorstelling van ons maken,
+#EN and you would be imagining us,
+***
+#FR de vous représenter que la lumière s’allume tout doucement
+#NL jullie zouden je indenken dat het licht zachtjes aangaat
+#EN imgagining the lights being slowly illuminating
+***
+#FR sur une scène, presque vide,
+#NL op een bijna lege toneelvloer,
+#EN a stage almost empty, 
+***
+
+%%%                     
+%%% 03 _ SALUT BRUITAGE 
+%%%                     
+#FR Sébastien —  et que ça commencerait, tout simplement, par quelqu’un qui marche sur le plateau. <div id=warning> - ATTENDS ! -</div>
+#NL en dat het zou beginnen, simpelweg, met iemand die over het toneel wandelt.
+#EN and that the performance would begin, simply, with someone walking on stage.
+***
+(mathilde entre sur le plateau)
+#FR Sébastien — En l’occurrence c’est Mathilde.
+#NL In dit geval gaat het om Mathilde.
+#EN In this case it's Mathilde
+***
+#FR Elle arpente le plateau de long en large...
+#NL Ze stapt heen en weer over het toneel ...
+#EN She is pacing up and down the space.
+***
+#FR Mathilde — Alors, à noter qu’Arnaud et Sébastien s’y trouvent également, sur scène.
+#NL Nu ja, let wel dat Arnaud en Sébastien er al staan, op het toneel.
+#EN We can see that Arnaud and Sebastien are on stage as well
+***
+#FR Arnaud — Oui mais nous on est légèrement en retrait…
+#NL Ja, maar wij staan een beetje op de achtergrond…
+#EN Yes, but we are slightly recessed... 
+***
+#FR On commente.
+#NL We geven commentaar.
+#EN Commenting.
+***
+#FR Arnaud — D’ailleurs on remarque qu’on entend assez distinctement le bruit de tes pas.
+#NL Trouwens, we merken dat het geluid van je voetstappen nogal duidelijk te horen is.
+#EN By the way, we could note that we can hear very distinctely the sound of your footsteps.
+***
+#FR Mathilde — Oui. Mais alors il faut certainement préciser
+#NL Ja. Maar dan moeten we er wel bij vertellen 
+#EN Yeah, but I have to tell
+***
+#FR que ce n’est pas le vrai bruit de mes pas.
+#NL dat het niet het echte geluid van mijn voetstappen is.
+#EN that these are not the real sound of my footsteps
+***
+#FR Sébastien — Ah bon ?
+#NL Hoezo?
+#EN Really?
+***
+#FR Mathilde — Bah non. En fait on voulait vraiment le faire avec le vrai bruit des vrais pas,
+#NL Wel, eigenlijk wilden we het echte geluid van mijn echte voetstappen laten horen,
+#EN Well no. Actually we wanted to have the real sound,
+***
+#FR mais c’était trop compliqué avec la moquette,
+#NL maar het was te ingewikkeld omwille van het tapijt,
+#EN but it was too complicated with the carpet,
+***
+#FR il fallait monter le niveau des micros, ça partait tout de suite en larsen...
+#NL het niveau van de microfoons moest omhoog maar dan was er meteen feedback…
+#EN we had to raise the level of the mics and it was generating feedback
+***
+#FR Sébastien — Ah ok.
+#NL Aha oké.
+#EN Ah ok.
+***
+#FR Ben tu fais bien de préciser parce que….
+#NL Wel, goed dat je dat meldt want…
+#EN Well, good that point that out because...
+***
+#FR c’est peut-être pas le vrai bruit, par contre ce sont de vrais pas.
+#NL het is misschien niet het echte geluid, maar het zijn echt wel jouw voetstappen.
+#EN it may not be the real sound but it's real steps.
+***
+#FR Je veux dire, tu marches vraiment,
+#NL Ik bedoel, je stapt echt,
+#EN I mean, you are walking for real.
+***
+#FR l’illusion est assez convaincante.
+#NL en vanaf hier is de illusie best overtuigend.
+#EN and from here the illusion is pretty convincing.
+***
+#FR … Enfin, t’es sûre que c’est pas le vrai bruit ?
+#NL … Wel eh, weet je wel zeker dat het niet het echte geluid is?
+#EN ... Are you sure it's not the real sound ?
+***
+#FR Mathilde — Bah oui. Regarde.
+#NL Wel ja. Kijk.
+#EN Well yes. Look.
+***
+#FR Donc là Mathilde vient de s’arrêter de marcher et pourtant les bruits de pas continuent.
+#NL Dus nu is Mathilde gestopt met stappen, maar het geluid van haar voetstappen gaat door.
+#EN So here Mathilde has just stopped walking, and the stepping sound goes on.
+***
+#FR Là ce sont donc des faux bruits et des faux pas.
+#NL Dat is nu nepgeluid van nepvoetstappen.
+#EN So there we have fake sounds and fake steps.
+***
+#FR Sébastien — Ah elle est repartie, 
+#NL Aha, ze is weer vertrokken, 
+#EN Now she's started again
+***
+#FR donc on est revenu à la même configuration que tout à l’heure
+#NL dus we zijn terug bij dezelfde configuratie als daarstraks,
+#EN and we're back to the previous set,
+***
+#FR avec des vrais pas mais des faux bruits.
+#NL met echte voetstappen maar met nepgeluid.
+#EN with true steps but false sounds
+***
+#FR Mathilde (s’arrête de nouveau) — Voilà, après je peux aussi vous montrer ce que ça aurait donné si on n’avait pas mis de moquette.
+#NL Kijk, ik kan nu ook laten zien wat het resultaat zou zijn als we geen tapijt hadden gelegd.
+#EN That's it. And now I can show you how it would have been if we hadn't put on a carpet
+***
+#FR Arnaud — Ah ouais donc à partir de là on peut faire un peu ce qu’on veut quoi
+#NL Dus, vanaf nu kunnen we zo een beetje doen wat we willen dus.
+#EN Ok, now that means we can do whatever we want.
+***
+#FR Mathilde — Bah ouais, à partir de là, on peut explorer le registre du bruitage...
+#NL Wel ja! Vanaf nu kunnen we het register van de geluidseffecten verkennen...
+#EN Yeah, from now on, we can explore all the varied range of sound effect...
+***
+#FR Par exemple, à partir de maintenant, je marche sur du gravier
+#NL Bijvoorbeeld, vanaf nu stap ik op kiezels.
+#EN For example, let's say that I'm walking on gravel.
+***
+#FR Ou sur du bitume.
+#NL Of op asfalt.
+#EN Or on asphalt.
+***
+#FR Voilà, là je marche sur du bitume.
+#NL Voilà, nu stap ik op asfalt.
+#EN There, I'm walking on asphalt.
+***
+#FR Arnaud — Hé imagine... Là en fait t’es en train de marcher sur une route…
+#NL Hé stel je voor... Nu ben je dus eigenlijk op een weg aan het stappen…
+#EN Hey, imagine, you're walking on a road...
+***
+#FR Mathilde — Une route ?
+#NL Een weg?
+#EN A road?
+***
+#FR Ah ouais…. je marche sur le bord de l’autoroute.
+#NL Ah oké… ik stap op de rand van de snelweg.
+#EN Ah ok... I'm walking on the edge of the motorway
+***
+#FR Sur la bande d’arrêt d’urgence.
+#NL Op de pechstrook.
+#EN On the hard shoulder
+***
+#FR Sébastien — Oui t’es sur l’autoroute… Et il fait nuit.
+#NL Ja, je bent op de snelweg… En het is nacht.
+#EN Yes, you're on the motorway... And it's night.
+***
+#FR Mathilde — Ah ouais, il fait nuit ?
+#NL Ah oké, het is nacht…
+#EN Night ? Really ?
+***
+#FR Sébastien — Ouais, la nuit est tombée,
+#NL Jep, de nacht is gevallen,
+#EN Yeah, night has fallen
+***
+#FR mais c’est une nuit d’été tu vois donc il fait doux quand même
+#NL maar het is een zomernacht, dus, zie je, het is toch zacht weer
+#EN but it's a summer night. The weather's nice.
+***
+#FR Mathilde — D’accord, nuit d’été, d’accord.
+#NL Oké, zomernacht, oké.
+#EN Ok, summer night...
+***
+#FR Et donc je marche sur le bord de l’autoroute parce que je viens de tomber en panne à l’instant.
+#NL En dus stap ik langs de rand van de snelweg omdat ik net autopech heb gehad.
+#EN I’m walking on the edge of the motorway because my car’s just broke down
+***
+#FR J’ai essayé de redémarrer plusieurs fois mais y a plus rien qui fonctionne.
+#NL Zojuist probeerde ik meermaals de motor opnieuw op te starten, maar niets doet het nog.
+#EN I’ve just tried several times to start again but nothing works anymore
+***
+#FR Et là mon téléphone se mettrait à sonner.
+#NL En nu zou mijn telefoon overgaan.
+#EN And now my phone rings
+***
+// sonnerie de téléphone  // Mathilde - fait semblant - de sortir un téléphone de sa poche
+#FR Allo ?
+#NL Hallo?
+#EN Hello ?
+***
+#FR Ah tu tombes super bien parce que figure toi que là je viens de tomber en p..
+#NL Wat komt dat goed uit, zeg, want, stel je voor, ik heb net autop…
+#EN It's good you call me now, my car has just broke down... 
+***
+#FR Allo ?
+#NL Hallo?
+#EN Hello ?
+***
+#FR Ah ouais, super…
+#NL Jaaaa, net wat ik nodig had…
+#EN Ok, great.
+***
+#FR Okay… Donc plus de téléphone... En panne..
+#NL Oké… Dus geen telefoon, autopech…
+#EN So : no more phone, car broken down...
+***
+#FR Bon. Bon mais ça va aller, je vais pas paniquer, je vais marcher,
+#NL Goed. Goed, maar het komt wel goed, ik ga niet panikeren, ik ga beginnen stappen,
+#EN Wel, everything's gonna be fine, I won't panick, I'm going to walk down the road
+***
+#FR je vais bien tomber sur quelqu’un, ou sur une station service…
+#NL ik kom wel iemand tegen, of een benzinestation…
+#EN and I'll probably meet someone or find a gas station...
+***
+%%%                             
+%%% 04 _ BRUIT DES COMBRAILLES  
+%%%                             
+#FR Arnaud — Ah non en fait attends...
+#NL O, nee, wacht...
+#EN Wait...
+***
+#FR Mettons que t’es pas sur une autoroute, t’es sur une départementale déserte.
+#NL Eigenlijk ben je niet op een snelweg, maar op een verlaten steenweg.
+#EN Let's say that actually you're not on a motorway but on a deserted country road. 
+***
+#FR Ça fait déjà bien 20 minutes que tu marches et ya pas une bagnole qui est passée.
+#NL Je bent al zeker 20 minuten aan het stappen en er is nog geen enkele auto voorbijgereden.
+#EN You've been walking for 20 minutes and not a single car has passed by.
+***
+#FR Math — Ha ouais je suis en pleine cambrousse quoi.
+#NL Oké, ik ben dus ergens in het hol van Pluto.
+#EN I see, I'm in the middle of nowhere, basically.
+***
+#FR En plus je sais pas vraiment où je suis parce que tout à l’heure je suivais le GPS, j’ai pas fait gaffe...
+#NL En daarbij weet ik niet goed waar ik ben, want daarstraks volgde ik de GPS, ik heb niet opgelet… 
+#EN Besides, I don't know where I am, I was following the GPS, I wasn't paying attention
+***
+#FR Séb — Mettons que tu sois quelque part en Auvergne par exemple….
+#NL Laten we zeggen dat je ergens in Auvergne bent, bijvoorbeeld…
+#EN Let's say you're somewhere in Auvergne.
+***
+#FR Math — En Auvergne ? T’es sûr ?
+#NL In Auvergne? Ben je zeker?
+#EN In Auvergne? Are you sure?
+***
+#FR Séb — Ouais.
+#NL Ja
+#EN Yeah.
+***
+#FR Ok... Je pense avoir passé Montluçon y’a pas très longtemps….
+#NL Oké... Ik denk dat ik niet lang geleden Montluçon voorbijgereden ben…
+#EN Ok... I think I've passed by Montluçon not long ago...
+***
+#FR Pour le reste... 
+#NL Voor de rest ... 
+#EN Besides that...
+***
+#FR Ah si, je sais, je pense bien être dans ce qu’on appelle le massif des Combrailles.
+#NL Ah ja, ik denk wel dat ik in het zogenoemde Combrailles-massief ben.
+#EN Ho yes, I think I'm somewhere in the so called "Combrailles massif"
+***
+#FR Arnaud — Ah oui c’est pas mal les Combrailles…
+#NL Ah ja, niet mis, de Combrailles…
+#EN Yeah, not bad, the Combrailles...
+***
+#FR Hé… attends, imagine, là maintenant en plus il fait nuit noire...
+#NL Hé… wacht, beeld je in, het is nu een maanloze nacht op de koop toe ...
+#EN Hey... Imagine, now, this is a moonless night
+***
+#FR Mathilde —  Nuit noire ? 
+#NL Een maanloze nacht? 
+#EN Moonless?
+***
+#FR Mathilde —  Heu… Attends mais ça commence à devenir compliqué, je vois pas du tout où je mets les pieds.
+#NL Eh… Wacht even, het begint nu echt wel ingewikkeld te worden, ik zie niet waar ik heen ga.
+#EN Err... Wait, it's getting complicated, I can't see anything.
+***
+//(s’arrête)
+#FR Arnaud — En plus il commence à faire un peu frais
+#NL En dan begint de lucht ook nog af te koelen
+#EN And now it's also getting colder
+***
+#FR Mathilde — ....Ah oui, et puis moi tout à l’heure j’ai laissé mon pull dans la voiture
+#NL ... Oké, en daarnet heb ik mijn trui in de wagen achtergelaten
+#EN ... yeah, and I’ve left my sweater in my car 
+***
+#FR parce que j’étais un petit peu échauffée avec l’histoire de la panne donc je suis sortie comme ça,  
+#NL omdat ik het een beetje warm kreeg met die autopech en al, dus ik ben zo uitgestapt,
+#EN because I got warm with the breakdown. So I came out like this. I told myself “ at least, it’s summer, it’s warm”
+***
+#FR je me suis dit, voilà tout, c’est déjà ça, 
+#NL ik zei tegen mezelf, maar het is een begin, 
+#EN I thought, ok,
+***
+#FR au moins c’est l’été, il va faire bon dehors...
+#NL het is tenminste zomer, het is buiten mooi weer…
+#EN at least it's summer, the weather's good,
+***
+#FR Mais là bon, on voit rien du tout, ya pas un chat, 
+#NL Maar goed, het is nu pikkedonker, geen levende ziel te zien, 
+#EN but now, I can't see shit, there's no one around,
+***
+#FR je sais pas où je suis, j’ai plus de téléphone….
+#NL ik weet niet waar ik ben, ik heb geen telefoon…
+#EN I don't know where I am, I have no phone anymore...
+***
+#FR Ça devient légèrement flippant cette histoire…
+#NL Ik begin hier nu wel een beetje van te flippen…
+#EN It's getting creepy...
+***
+#FR Arnaud — Bon, allez, on va dire qu’il y a quand même la lune 
+#NL Laten we zeggen dat er toch een flauw maanlicht
+#EN Ok, let's put back the moon
+***
+#FR qui éclaire faiblement la campagne alentours.
+#NL over het platteland om je heen schijnt.
+#EN casting a feeble light on the countryside
+***
+#FR Mathilde — Ah quand même
+#NL Aha, toch…
+#EN Ah, 
+***
+#FR Arnaud — Et sur les côtés de la route, tu distingues des champs et des pâtures à perte de vue,
+#NL En aan weerszijden van de weg onderscheid je akkers en weides,
+#EN 
+***
+#FR délimités par ce qui semble être des haies et des bosquets.
+#NL ze lijken afgebakend door hagen en bosjes.
+#EN 
+***
+#FR Mathilde — T’es sûr que c’est pas des bêtes sauvages genre sangliers ce genre de trucs ?
+#NL Weet je zeker dat het geen wilde dieren zijn, zoals everzwijnen, dat soort dingen?
+#EN 
+***
+#FR Arnaud — Mais non mathilde, c’est des bosquets. <div id=warning> - PAUUUSE - </div>
+#NL Maar nee, Mathilde, ‘t zijn bosjes.
+#EN 
+***
+// Arnaud allume la lumière
+#FR Math — Ah attends
+#NL Ah wacht even
+#EN 
+***
+// elle s’arrête mais les bruits de pas continuent
+#FR Arnaud — Quoi ?
+#NL Wat?
+#EN 
+***
+#FR Math — J’aperçois une lumière là-bas,
+#NL Ik zie daar een lichtschijnsel, 
+#EN 
+***
+#FR ça a l’air de venir d’une pâture un peu plus loin.
+#NL het lijkt vanuit een veld een beetje verderop te komen.
+#EN 
+***
+#FR Bon bah je vais aller voir…  
+#NL Nu, oké, ik ga maar even kijken…
+#EN 
+***
+#FR Y aura peut-être quelqu’un là-bas pour m’aider à régler mon problème de durite.
+#NL Daar is misschien iemand die me kan helpen mijn radiatorslang te vervangen.
+#EN 
+***
+#FR Brigade — Donc voilà j’y vais, je passe une clôture, 
+#NL Ja dus, ik ga ernaartoe, ik klauter over een hek, 
+#EN 
+***
+#FR voilà, je marche dans l’herbe,
+#NL en nu stap ik in het gras,
+#EN 
+***
+#FR ça monte un peu, 
+#NL het gaat een beetje omhoog,
+#EN 
+***
+#FR et au fond de la pâture je distingue une sorte de petit bois...
+#NL en op het einde van de weide zie ik een soort klein bos…
+#EN 
+***
+#FR et à la lisière du bois… ya un tracteur…
+#NL en aan de rand van het bos … een tractor…
+#EN 
+***
+#FR Ouais, c’est ça, enfin une sorte de petit engin agricole.
+#NL Ja dat is het, nu ja, een soort klein landbouwvoertuig.
+#EN 
+***
+#FR Ça doit être un agriculteur qui travaille tout seul, aux champs, la nuit,
+#NL Waarschijnlijk een landbouwer die in zijn eentje in het veld aan het werken is,
+#EN 
+***
+#FR comme on en voit parfois quand on passe sur l’autoroute…
+#NL zoals je’s nachts soms kan zien als je over de snelweg rijdt…
+#EN 
+***
+#FR Bon, je continue, j’avance encore...
+#NL Goed, ik ga door, ik stap nog wat verder…
+#EN 
+***
+#FR Et j’entends de la musique….
+#NL En ik hoor muziek…
+#EN 
+***
+#FR Ouais, c’est ça, il y a de la musique qui sort du tracteur.
+#NL Ja, dat is het, er klinkt muziek uit die tractor,
+#EN 
+***
+#FR Donc là je m’avance un peu plus…. Voilà… Je suis plus très loin…
+#NL dus nu kom ik een beetje dichterbij … Kijk … Ik ben nu niet ver meer…
+#EN 
+***
+#FR Ah… Y’a un type tout seul dans le tracteur et...
+#NL Ah… Daar is een kerel in de tractor en…
+#EN 
+***
+#FR on dirait qu’il parle tout seul…
+#NL het lijkt wel alsof hij tegen zichzelf praat…
+#EN 
+***
+#FR Ouais c’est ça il parle tout seul, on l’entend assez fort en fait,
+#NL Ja, hij praat tegen zichzelf, je kunt hem eigenlijk goed horen,
+#EN 
+***
+#FR mais qu’est-ce qu’il fait, il parle dans un micro ?
+#NL maar wat doet hij, praat hij in een microfoon?
+#EN 
+***
+#FR Jacques — Another time, another place, 
+#NL ‘Another time, another place’, 
+#EN 
+***
+#FR des paroles de Dire Straits qu’on croirait écrites sur mesure pour notre émission.
+#NL woorden van de Dire Straits die op maat geschreven lijken voor onze uitzending.
+#EN 
+***
+#FR Brigade — Une émission…  ?
+#NL Een uitzending…?
+#EN 
+***
+#FR Jacques — Vous écoutez le bruit des combrailles, 
+#NL U luistert naar ‘De stem van de Combrailles’, 
+#EN 
+***
+#FR c’est Jacques au micro et je suis très heureux de vous retrouver .
+#NL Jacques hier achter de microfoon, ik ben heel blij dat u er weer bij bent.
+#EN 
+***
+#FR Brigade — Mais quoi ? Il fait une émission de radio ? Dans son tracteur ?
+#NL Wat? Maakt hij een radio-uitzending? In zijn tractor?
+#EN 
+***
+#FR Jacques — Another time, aujourd’hui le _XXX_ il est _XXX_
+#NL ‘Another time’, vandaag zijn we de 26ste mei 2017, het is ongeveer 21u
+#EN 
+***
+#FR Brigade — Bon je fais quoi,  j’y vais ?
+#NL Oké, wat doe ik nu? Stap ik erop af?
+#EN 
+***
+// elle fait deux pas
+#FR Jacques — Et another place, et bien devant moi une vallée qui dévale, 
+#NL En ‘another place’, wel voor mij een vallei die zich uitspreidt, 
+#EN 
+***
+#FR derrière moi un bois qui déboise,
+#NL achter mij een lieflijk bos,
+#EN 
+***
+#FR nous sommes en direct perdus au beau milieu du massif des combrailles
+#NL we zenden live uit vanuit een verloren plek ergens in het Combrailles-massief.
+#EN 
+***
+#FR Brigade (en marchant) — Bon allez tant pis j’y vais.
+#NL Nou, vooruit met de geit. Ik stap er toch maar op af.
+#EN 
+***
+#FR Jacques — Et j’en profite pour remercier chaleureusement Monsieur Claude Lengrand qui nous a permis de...
+#NL En ik wens de heer Claude Lengrand hartelijk te bedanken, hij gaf ons toestemming…
+#EN 
+***
+// elle y va  tape au carreau, il l’entend pas, elle ouvre la porte
+#FR Brigade — Excusez moi ! Je suis désolée, je ne voulais vraiment pas vous faire peur, je viens de tomber en panne et…
+#NL Excuseer! Sorry, ik wou u helemaal niet laten schrikken, maar ik had zojuist autopech en…
+#EN 
+***
+#FR Jacques — Alors attendez figurez-vous que je viens de voir surgir de l’obscurité
+#NL Nou, stel u voor dat ik net iemand uit het duister zag opdoemen
+#EN 
+***
+#FR ce qui semble être l’invitée surprise de la semaine,
+#NL die kennelijk onze verrassingsgast van deze week is,
+#EN 
+***
+#FR “surprise” c’est le cas de le dire, comme vous avez pu l’entendre.
+#NL een ‘verrassing’ mag je het wel noemen, dat hebt u zonet wel gehoord.
+#EN 
+***
+#FR Venez, entrez, entrez, asseyez-vous, n’ayez-pas peur, asseyez-vous.
+#NL Kom, kom binnen, wees niet bang, neem plaats.  
+#EN 
+***
+#FR J’imagine, que comme moi vous vous demandez ce qui nous vaut l’honneur de cette visite,
+#NL Ik neem aan dat u zich, net als ik, afvraagt waar we dit bezoek aan te danken hebben.
+#EN 
+***
+#FR et bien commençons peut-être par faire un peu connaissance.
+#NL Wel laten we beginnen met een beetje kennis te maken.
+#EN 
+***
+#FR Vous vous appelez comment?
+#NL Hoe heet u?
+#EN 
+***
+#FR Jacques — Par contre il faut parler dans le micro.
+#NL Maar dan moet u wel in de microfoon praten.
+#EN 
+***
+#FR Brigade — Brigade
+#NL Brigade
+#EN 
+***
+#FR Jacques —  Bienvenue Brégade ! Moi c’est Jacques.
+#NL Welkom Brégade! Ik ben Jacques.
+#EN 
+***
+#FR Et alors, qu’est ce qui nous vaut cette visite au beau milieu de la pâture de monsieur Lengrand ?
+#NL En, vertel, waar hebben we dit bezoek midden in de weide van mijnheer Lengrand aan te danken?
+#EN 
+***
+#FR Brigade — Bah en fait je viens de tomber en panne sur la nationale en contrebas. Donc je cherchais de l’aide...
+#NL Eigenlijk heb ik net autopech gehad op de grote baan iets verderop.
+#EN 
+***
+#FR Jacques — Ah il semblerait que Brégade soit tombée en panne sur la départementale 86.
+#NL Ah, kennelijk kreeg Brégade autopech op de steenweg.
+#EN 
+***
+#FR Quel est le problème exactement avec la voiture ?
+#NL Wat is er precies aan de hand met de wagen?
+#EN 
+***
+#FR Brigade — Bah je sais pas bien mais je soupçonne que ce soit un problème de durite,
+#NL Nou, ik denk dat het te maken kan hebben met een defecte radiatorslang,
+#EN 
+***
+#FR parce que j’ai déjà eu le même souci l’année passée, 
+#NL want ik heb vorig jaar al hetzelfde voorgehad, 
+#EN 
+***
+#FR mais il me manque juste une pince collier de serrage pour faire un petit manchon, 
+#NL maar ik mis alleen maar een slangklemtang om een verbindingsmofje te maken, 
+#EN 
+***
+#FR j’en avais une dans mon coffre mais il se trouve que je l’ai prêtée à une amie
+#NL ik had er een in mijn kofferbak, maar ik hem aan een vriendin heb uitgeleend,
+#EN 
+***
+#FR c’est vraiment pas de chance...
+#NL het zit me echt niet mee…
+#EN 
+***
+#FR Jacques — Effectivement c’est vraiment pas de chance, le problème de durite, toujours délicat.
+#NL Inderdaad, een probleem met de radiatorslang, altijd lastig.
+#EN 
+***
+#FR Bah écoutez malheureusement je n’ai pas de pince collier de serrage…  
+#NL Maar luister, ik heb helaas geen slangklemtang…
+#EN 
+***
+#FR Mais j’ai presque envie de remercier cette durite
+#NL Maar ik wil die radiatorslang bijna bedanken,
+#EN 
+***
+#FR parce c’est grâce à elle que j’ai la chance d’avoir un peu de compagnie ce soir dans cette émission.
+#NL want zo krijg ik onverwachts een beetje gezelschap in deze uitzending.  
+#EN 
+***
+#FR Chers auditeurs, accordez moi deux minutes,
+#NL Beste luisteraars, geef mij twee minuten
+#EN 
+***
+#FR le temps qu’il me faut pour accueillir comme il se doit notre invitée de ce soir.
+#NL de tijd om onze gast op een fatsoenlijke manier te verwelkomen.
+#EN 
+***
+#FR Jacques —  Fermez la porte  
+#NL Doe de deur dicht
+#EN 
+***
+#FR Jacques — Et bien, quelle histoire !
+#NL Wel, wel, wat een toestand!
+#EN 
+***
+#FR Brigade — mais quoi… vous faites une émission de radio là dans votre tracteur ?
+#NL Maar hoezo… maakt u nu een radio-uitzending vanuit uw tractor?
+#EN 
+***
+#FR Jacques — Ouais ! Oui c’est ça, c’est une webradio quoi. 
+#NL Ja! Eigenlijk is het een web-radio.
+#EN 
+***
+#FR Nous on a une liaison satellite là, voilà,
+#NL We hebben hier een satellietverbinding, zie je,
+#EN 
+***
+#FR comme ça on peut s’installer où on veut dans la région.
+#NL en zo kunnen we dus in de hele streek uitzenden waar we willen.
+#EN 
+***
+#FR Brigade - Mais là on est en direct là ?
+#NL Maar zijn we nu live dan?
+#EN 
+***
+#FR Jacques - Absolument ! Enfin là on est hors-antenne hein.
+#NL Absoluut! Nu ja, op dit moment zijn we niet op antenne.
+#EN 
+***
+#FR Mais l’émission, elle, est en direct.
+#NL Maar de uitzending is live, ja.
+#EN 
+***
+#FR Brigade — Et quoi vous faites ça régulièrement, à droite à gauche, dans des endroits différents ?
+#NL En hoezo, doet u dit regelmatig, hier en daar, op verschillende plekken?
+#EN 
+***
+#FR Jacques — Ah bah l’idée c’est vraiment d’essayer de trouver les coins les plus paumés.
+#NL Ach ja, het idee is echt om de meest verloren uithoeken op te zoeken.
+#EN 
+***
+#FR C’est quand même marrant de se dire qu’au milieu de nulle part on fait une émission de radio non ?
+#NL Het is toch grappig om in een of ander gat een radio-uitzending te maken. Niet?
+#EN 
+***
+#FR Brigade — Ah ouais c’est dingue. Mais d’ailleurs on est où exactement,
+#NL Ja, te gek. Maar trouwens, waar zijn we precies ?
+#EN 
+***
+#FR parce que moi je suis pas du tout du coin, on est dans le massif des Combrailles c’est ça  ?
+#NL We zijn toch in het Combrailles-massief, hé?
+#EN 
+***
+#FR Jacques — Ah c’est marrant ça ! 
+#NL Ha, dat is grappig!
+#EN 
+***
+#FR Vous connaissez pas le nom de l’émission ?
+#NL Kent u de naam van de uitzending niet?
+#EN 
+***
+#FR Ah bah alors attendez ça tombe à pic, regardez ...
+#NL Wel, wacht even, dat komt goed uit, kijk…
+#EN 
+***
+// reprend l’émission
+#FR Jacques — reprenons l’antenne pour la séquence qui donne son nom à l’émission,
+#NL we zijn terug op antenne voor het onderdeel waar de naam van de uitzending naar verwijst,
+#EN 
+***
+#FR mesdames et messieurs, je vous propose d’écouter un instant le bruit des combrailles,
+#NL ik stel u voor om even te luisteren naar de stem van de Combrailles,
+#EN 
+***
+#FR et qui sait, peut-être allez-vous réussir à deviner là où nous nous sommes cachés ce soir
+#NL en wie weet slaagt u er misschien in om te raden waar we vanavond postgevat hebben
+#EN 
+***
+… silence ...
+#FR Ce que vous percevez dans le lointain, ce sont les vrombissements d’un trafic autoroutier peu dense, <div id=warning> - ATTENDRE 1 C’EST... - </div>
+#NL In de verte hoort u het gezoem van niet al te druk snelwegverkeer,
+#EN 
+***
+#FR c’est c’est c’est,
+#NL het is het is het is, en ja!
+#EN 
+***
+#FR et oui c’est bien elle c’est notre chère A71
+#NL het is onze ouwe getrouwe A71,
+#EN 
+***
+#FR car nous émettons ce soir, attention allumez vos google earth,
+#NL want vanavond zenden we uit, let op, zet Google Earth op,
+#EN 
+***
+#FR nous émettons depuis la parcelle cultivable 388 de Lonzais,
+#NL we zenden uit vanaf het perceel 388 in Lonzais,
+#EN 
+***
+#FR entre Bizeneuille et Givarlais, pour les connaisseurs !
+#NL tussen Bizeneuille en Givarlais, voor de kenners!
+#EN 
+***
+#FR Et s’il prend à l’un ou l’une d’entre vous l’envie de nous rejoindre,
+#NL En mocht een van jullie zin krijgen om naar ons toe te komen,
+#EN 
+***
+#FR peut-être pour apporter à Brigade cette fameuse clef collier de serrage
+#NL misschien om Brégade die bewuste beugelklem te brengen
+#EN 
+***
+#FR dont elle aurait bien besoin pour reprendre la route,
+#NL die ze nodig heeft om weer weg te kunnen rijden,
+#EN 
+***
+#FR et bien c’est très facile, de Bizeneuille c’est direction Givarlais,
+#NL vanuit Bizeneuilles is het richting Givarlais
+#EN 
+***
+#FR et passé Lonzais il faudra prendre le petit chemin en terre qui descend à travers champs,
+#NL en voorbij Lonzais moet je de aardenweg volgen die door de velden loopt,
+#EN 
+***
+#FR mais alors attention il a plu c’est boueux, il faudra peut-être finir à pied.
+#NL maar let op, het is modderig, het laatste stuk moet u misschien te voet afleggen.
+#EN 
+***
+#FR Brigade — et vous faites cette émission depuis longtemps ?
+#NL en maakt u die uitzending al lang?
+#EN 
+***
+#FR Jacques — Ça fait un peu plus de trois ans maintenant.
+#NL Nu al iets meer dan drie jaar.
+#EN 
+***
+#FR Bon là maintenant je suis en retraite mais à l’époque j’étais en activité.
+#NL Nu, op dit moment ben ik met pensioen maar toen werkte ik nog,
+#EN 
+***
+#FR Donc bon, déjà, c’était un vieux rêve,
+#NL en dus om te beginnen was het een oude droom
+#EN 
+***
+#FR et puis avec Samuel, mon neveu, qui est quand même un habile technicien,
+#NL en dan, samen met Samuel, mijn neef, die toch best goed is in techniek,
+#EN 
+***
+#FR on a commencé à installer tout le système,
+#NL zijn we begonnen het hele systeem op te zetten,
+#EN 
+***
+#FR et puis c’était parti, j’ai commencé faire des petites émissions
+#NL en toen, hupsakee, begon ik korte uitzendingen te maken
+#EN 
+***
+#FR dans mon tracteur tout en travaillant quoi.
+#NL vanuit mijn tractor terwijl ik aan het werken was.
+#EN 
+***
+#FR Brigade — Ah d’accord. Mais y’a des gens qui vous écoutent ?
+#NL Ah oké. Maar zijn er mensen die luisteren?
+#EN 
+***
+#FR Enfin, je veux dire, qui sont les gens qui vous écoutent ?
+#NL Ik bedoel, wie zijn de mensen die naar u luisteren?
+#EN 
+***
+#FR Jacques — Au début, c’était surtout des amis, des collègues paysans,
+#NL In het begin waren het vooral vrienden, collega-landbouwers,
+#EN 
+***
+#FR après, voilà, c’est sur internet, donc moi je sais pas…
+#NL daarna, nu ja, het is op internet, dus weet ik veel…
+#EN 
+***
+#FR Bien sûr, il y a beaucoup de gens de Villefranche d’Allier,
+#NL Natuurlijk zijn er veel mensen uit Villefranche d’Allier,
+#EN 
+***
+#FR la semaine dernière j’ai reçu un très beau courrier d’une personne de Montmarault.
+#NL vorige week kreeg ik een heel mooie brief van iemand uit Montmarault.
+#EN 
+***
+#FR Mais moi je sais pas, c’est internet, les gens sont partout...
+#NL Maar ik weet het verder niet, het is internet, de mensen zijn overal…
+#EN 
+***
+#FR si ça se trouve il y a des gens qui nous écoutent de Montluçon en ce moment ! C’est dingue !
+#NL wie weet zijn er mensen uit Montluçon die nu zitten te luisteren! Ongelooflijk!
+#EN 
+***
+#FR Brigade — Ah ouais c’est dingue
+#NL O ja, ongelooflijk!
+#EN 
+***
+#FR Jacques — Bon, par contre on va passer à la rubrique suivante
+#NL Goed, maar nu gaan we wel over tot het volgende segment.
+#EN 
+***
+#FR Mais attendez j’ai une idée là…
+#NL Maar wacht ik krijg nu een idee…
+#EN 
+***
+#FR Brégade, vous allez présenter la prochaine rubrique !
+#NL Brégade, u gaat het volgende segment presenteren!
+#EN 
+***
+#FR Brigade — Ah non mais moi j’ai jamais fait de radio
+#NL O nee maar ik ben nog nooit op de radio geweest.
+#EN 
+***
+#FR Jacques — Mais profitez-en, c’est l’occasion
+#NL Maar profiteer ervan, het is de gelegenheid.
+#EN 
+***
+#FR Regardez, c’est une chronique sur les enjeux d’internet, il suffit de le lire
+#NL Kijk, het is een segment over de uitdagingen van internet, u hoeft het alleen maar te lezen.
+#EN 
+***
+#FR Jacques — Faut juste préciser que c’est un partenariat avec ces gens là
+#NL U moet er alleen bij zeggen dat het een partnership is met die mensen
+#EN 
+***
+#FR Jacques — et que c’est un truc qu’on fait toutes les semaines…
+#NL en dat het iets is wat we elke week doen…
+#EN 
+***
+#FR Allez, c’est à vous... Trois, deux, un...
+#NL Kom, klaar? <br/> Drie, twee, een…
+#EN 
+***
+#FR Brigade — Et c’est donc l’heure de notre chronique hebdomadaire en partenariat avec le site Internet Actu,
+#NL En nu is het dus tijd voor onze wekelijkse kroniek met onze partner, de website Internet Actu,
+#EN 
+***
+#FR aujourd’hui : “Les images sont-elles encore produites pour être regardées par les humains ?”
+#NL vandaag hebben we het over: ‘Worden afbeeldingen nog wel gemaakt om door mensen bekeken te worden?’
+#EN 
+***
+#FR Pour l’artiste Trevor Paglen, qui s’intéresse depuis longtemps à la surveillance de masse,
+#NL De kunstenaar Trevor Paglen onderzoekt al lang het fenomeen massacontrole.
+#EN 
+***
+#FR la culture visuelle, radicalement transformée par le numérique, 
+#NL Volgens hem onttrekt de beeldcultuur, die door de digitalisering een radicale transformatie onderging,
+#EN 
+***
+#FR est pourtant en grande partie devenue invisible.
+#NL zich niettemin grotendeels aan ons zicht.
+#EN 
+***
+#FR « Une majorité écrasante d’images sont désormais faites par des machines pour d’autres machines, 
+#NL ‘Machines maken tegenwoordig het overgrote merendeel van de beelden voor andere machines,
+#EN 
+***
+#FR mettant rarement des humains dans la boucle »
+#NL daar komen zelden nog mensen aan te pas.’
+#EN 
+***
+#FR Nous entrons dans l’ère des images invisibles !
+#NL We staan aan het begin van het tijdperk van de onzichtbare beelden!
+#EN 
+***
+#FR Les spécialistes de la culture visuelle pensent que la relation entre les humains et les images ... <div id=warning> ATTENDRE YETI </div>
+#NL Experts op het gebied van de beeldcultuur menen dat de digitalisering de verhouding tussen mens en beeld ...
+#EN 
+***
+...
+#FR Brigade — AH C’EST QUOI C’EST QUOI C’EST QUOI
+#NL AAH WAT IS DAT WAT IS DAT WAT IS DAT
+#EN 
+***
+#FR Jacques — Tout va bien, calmez-vous! C’est mon neveu Samuel ! Il est gentil !
+#NL Niets aan de hand! Dat is mijn neef Samuel! Hij is ongevaarlijk!
+#EN 
+***
+#FR Brigade — Mais pourquoi il est déguisé ?
+#NL Maar waaron heeft hij zich verkleed ?
+#EN 
+***
+#FR Jacques — Mais il est pas déguisé! C’est mon neveu.
+#NL Maar hij heeft zich niet verkleed!
+#EN 
+***
+#FR Bon mais on est en direct, sortez s’il vous plait Brégade 
+#NL Stap uit, alstublieft, Brégade, ik moet nu weer op antenne
+#EN 
+***
+#FR Samuel — Bonsoir, excusez moi, je suis Samuel, je suis le neveu de Jacques…
+#NL Goedenavond, sorry, ik ben Samuel, ik ben Jacques’ neef…
+#EN 
+***
+#FR Brigade — Ohlala mais vous m’avez fait super peur… j’ai cru que c’était un sanglier un truc comme ça
+#NL Amai ! Ik dacht dat het een everzwijn was.
+#EN 
+***
+#FR Samuel — Non non c’est pas un sanglier.
+#NL Nee, het is geen everzwijn.
+#EN 
+***
+#FR Et en fait j’écoutais l’émission, et c’est incroyable cette histoire,
+#NL Ik was naar de uitzending aan het luisteren
+#EN 
+***
+#FR j’ai cherché dans les outils, je crois que j’ai trouvé la pince collier de serrage
+#NL en ik denk dat ik de slangklemtang heb gevonden in mijn gereedschapskist
+#EN 
+***
+#FR Brigade — ah oui merci ah non mais ça c’est une pince circlips, c’est trop petit ça n’ira pas.
+#NL Ach nee dat is een circlipstang, dat is te klein.
+#EN 
+***
+#FR Mais pourquoi vous êtes déguisé ?
+#NL Maar waarom ben je verkleed?
+#EN 
+***
+#FR Samuel — bah je suis pas déguisé (Brigade : Baaah)
+#NL Moh, ik ben niet verkleed
+#EN 
+***
+#FR Oh ça c’est mon costume folklorique, c’est pour fêter les connex...
+#NL O, maar dat is mijn folklorekostuum, we vieren de verbin…
+#EN 
+***
+#FR Jacques — Samuel ! Va préparer la projection mentale !
+#NL Samuel! Bereid de mentale projectie voor!
+#EN 
+***
+%%%                   
+%%% 05 _ OUI NON HEU  
+%%%                   
+#FR Samuel — Ah ouais ok.
+#NL O, ja, oké.
+#EN 
+***
+#FR Bah venez Brigade vous allez pouvoir m’aider on va installer le circuit
+#NL Ach kom Brigade je kunt me helpen om het circuit klaar te zetten
+#EN 
+***
+#FR Brigade — Le circuit ?
+#NL Het circuit?
+#EN 
+***
+#FR Samuel — Ah bah c’est un petit bricolage que j’ai fait pour la suite,
+#NL Ach ja, het is een kleinigheid die ik in elkaar heb geknutseld voor het vervolg,
+#EN 
+***
+#FR holala c’est pas incroyable c’est un petit truc sur le site internet de l’émission…
+#NL ‘t is niks, ‘t is iets kleins op de website van de uitzending…
+#EN 
+***
+#FR Jacques — Une émission décidément bien riche en émotions,
+#NL Wel, dit is beslist een uitzending met veel emoties,
+#EN 
+***
+#FR alors peut-être pour essayer de retrouver un peu de calme et de sérénité
+#NL dus misschien om te proberen een beetje tot rust te komen
+#EN 
+***
+#FR je vous propose de passser à une toute nouvelle rubrique,
+#NL stel ik u nu een volledig nieuw segment voor,
+#EN 
+***
+#FR un dispositif imaginé par Samuel,
+#NL het is iets wat Samuel bedacht heeft,
+#EN 
+***
+#FR une expérience de projection mentale dans un espace domestique.
+#NL een experiment in mentale projectie in een huiselijke omgeving.
+#EN 
+***
+#FR Et donc voilà, chers auditeurs, chères auditrices,
+#NL En dus, beste luisteraars,
+#EN 
+***
+#FR vous nous écoutez depuis tout à l’heure,  
+#NL u luistert al een poos naar ons,
+#EN 
+***
+#FR vous vous projetez ici par les oreilles,
+#NL u projecteert zich hiernaartoe via de oren,
+#EN 
+***
+#FR vous tentez peut-être de vous représenter l’espace <div id=warning> - FADE OUT JACQUES -</div>
+#NL u probeert zich misschien de ruimte voor te stellen,
+#EN 
+***
+//AUDITEURS SEULEMENT====
+#FR_DECR ...d’imaginer notre répartition, les positions dans lesquelles on se trouve,
+#NL_SALM ... zich een beeld te vormen van onze situatie, van de posities die we hier innemen,
+#EN_SALM 
+***
+#FR_DECR vous tâtez l’ambiance.
+#NL_SALM jullie tasten de sfeer af.
+#EN_SALM 
+***
+#FR_DECR D’ailleurs il faut que je vous précise que je vous parle maintenant uniquement à vous,
+#NL_SALM Trouwens, voor de duidelijkheid meld ik dat ik nu alleen jullie toespreek.
+#EN_SALM 
+***
+#FR_DECR les spectateurs au théâtre ne m’entendent plus.
+#NL_SALM De toeschouwers in het theater horen me niet meer.
+#EN_SALM 
+***
+#FR_DECR Mais donc pour l’instant tout ça ne va que dans un sens,
+#NL_SALM Maar voorlopig is dat dus allemaal eenrichtingsverkeer,
+#EN_SALM 
+***
+#FR_DECR et j’ai bien envie de vous proposer d’essayer d’inverser la projection,
+#NL_SALM en ik wil jullie graag voorstellen om te proberen de richting van de projectie om te keren,
+#EN_SALM 
+***
+#FR_DECR et que maintenant nous essayions nous ici de vous imaginer, vous là bas,
+#NL_SALM namelijk dat wij hier proberen ons een beeld te vormen van jullie, thuis,
+#EN_SALM 
+***
+#FR_DECR qu’on remonte le flux, un peu comme des saumons qui remontent une rivière.
+#NL_SALM en dat we stroomopwaarts gaan, een beetje zoals de zalmen die tegen de stroom van de rivier in zwemmen.
+#EN_SALM 
+***
+#FR_DECR Comment allons-nous procéder.
+#NL_SALM Hoe gaan we dat doen?
+#EN_SALM 
+***
+#FR_DECR Hé bien on va d’abord vous proposer de vous inscrire à l’expérience,
+#NL_SALM Wel we beginnen met het voorstel om jullie aan te melden voor het experiment,
+#EN_SALM 
+***
+#FR_DECR et nous allons sélectionner au hasard l’un ou l’une d’entre vous parmi les volontaires
+#NL_SALM en dan selecteren we een willekeurige vrijwilliger
+#EN_SALM 
+***
+#FR_DECR et l’un ou l’une d’entre vous va pouvoir répondre à des questions toutes simples que je vais poser
+#NL_SALM en ik stel dan een reeks eenvoudige vragen, die iemand onder jullie kan beantwoorden
+#EN_SALM 
+***
+#FR_DECR juste en cliquant sur des boutons qui vont s’afficher sur votre écran.
+#NL_SALM door op knoppen te klikken die op jullie scherm verschijnen.  
+#EN_SALM 
+***
+#FR_DECR Donc voilà une personne choisie au hasard dans un premier temps
+#NL_SALM Zo, dus eerst een willekeurig geselecteerde persoon
+#EN_SALM 
+***
+#FR_DECR et très vite vous verrez tout le monde pourra participer.
+#NL_SALM en heel snel zullen jullie merken dat iedereen kan meedoen.
+#EN_SALM 
+***
+#FR_DECR Voilà on se retrouve dans un instant.
+#NL_SALM Oké, tot zo meteen.
+#EN_SALM 
+***
+//SPECTATEURS SEULEMENT ====
+#FR Brigade — C’est quoi ce principe de projection mentale ?
+#NL_SAT Wat is dat principe van mentale projectie?
+#EN_SAT 
+***
+#FR Samuel — Ah ça c’est la fixation de Jacques depuis un moment
+#NL_SAT Aha, Jacques is daar al een tijdje op gefixeerd,
+#EN_SAT 
+***
+#FR Samuel — il voudrait absolument essayer d’inverser les flux…
+#NL_SAT hij wil per se proberen de stroomrichting te veranderen…
+#EN_SAT 
+***
+//(fade out)
+#FR B (voix off, pour elle même) — D’accord… 
+#NL_SAT Oké...
+#EN_SAT 
+***
+#FR D’accord, donc là ils sont partis là.
+#NL_SAT Oké, dus daar gaan ze nu.
+#EN_SAT 
+***
+#FR Ils sont complètement transporté tous les deux,
+#NL_SAT Ze zijn allebei volkomen bezeten,
+#EN_SAT 
+***
+#FR enfin en fait ils sont en train d’expliquer la même chose,
+#NL_SAT nu ja in feite zijn ze hetzelfde aan het uitleggen,
+#EN_SAT 
+***
+#FR ils parlent d’inversion des flux, 
+#NL_SAT ze praten over het omkeren van stroomrichtingen, 
+#EN_SAT 
+***
+#FR comme quoi y’a un flux de représentation mentale,
+#NL_SAT want blijkbaar is er zoiets als een mentale beeldvormingsstroom,
+#EN_SAT 
+***
+#FR que depuis tout à l’heure c’est seulement les auditeurs 
+#NL_SAT en sinds daarstraks zijn het de luisteraars 
+#EN_SAT 
+***
+#FR qui se représentent notre réalité,
+#NL_SAT die zich een beeld vormen van onze realiteit,
+#EN_SAT 
+***
+#FR qui se projettent ici,
+#NL_SAT die zich hierheen projecteren, 
+#EN_SAT 
+***
+#FR et que maintenant ils voudraient inverser la direction de la projection
+#NL_SAT en nu willen ze de richting van de projectie omkeren,
+#EN_SAT 
+***
+#FR ils voudraient remonter le flux de projection 
+#NL_SAT ze willen tegen de projectiestroom in gaan 
+#EN_SAT 
+***
+#FR comme un saumon remonte une rivière
+#NL_SAT zoals een zalm tegen de rivierstroom ingaat,
+#EN_SAT 
+***
+#FR dans un souci de rééquilibrer la connexion...
+#NL_SAT met de bedoeling de evenwicht in de verbinding te herstellen…
+#EN_SAT 
+***
+#FR Et dons là ce qu’on va faire c’est qu’on va aller se projeter
+#NL_SAT En dus wat gaan we nu doen? We gaan ons projecteren
+#EN_SAT 
+***
+#FR chez un auditeur qui a été selectionné au hasard,
+#NL_SAT op een willekeurig geselecteerde luisteraar
+#EN_SAT 
+***
+#FR qui va être directement connecté à l’ordinateur de Samuel....
+#NL_SAT die rechtstreeks in verbinding komt te staan met Samuels computer…
+#EN_SAT 
+***
+#FR Et alors comment ça marche techniquement ? Et bien samuel est en train de m’expliquer...
+#NL_SAT En hoe gaat dat technisch in zijn werk? Wel, Samuel is het aan het uitleggen…
+#EN_SAT 
+***
+#FR qu’est-ce qu’il dit ?
+#NL_SAT Wat zegt hij?
+#EN_SAT 
+***
+#FR Samuel —….et c’est renvoyé sur l’interface admin.
+#NL_SAT…en het wordt doorgestuurd naar de admin interface.
+***
+#FR Et donc voilà, Brigade, vous voyez, les gens cliquent,
+#NL_SAT En dus, je ziet het, Brigade, de mensen klikken,
+#EN_SAT 
+***
+#FR et moi j’entends les réponses
+#NL_SAT en ik hoor de antwoorden
+#EN_SAT 
+***
+#FR et juste, je les répète.
+#NL_SAT en ik herhaal ze alleen maar.
+#EN_SAT 
+***
+#FR après on a mis un petit effet sur ma voix, mais c’est pour aller avec le costume..
+#NL_SAT en dan geven we m’n stem ook een geluidseffect mee, om bij m’n kostuum te passen…
+#EN_SAT 
+***
+// DE NOUVEAU TOUS ENSEMBLE ====
+#FR Jacques — C’est bon samuel c’est prêt ?
+#NL Oké, Samuel, is alles klaar?
+#EN 
+***
+#FR Brigade — Euh, Jacques, je vais peut-être y aller moi…
+#NL Eh, Jacques, ik ga er misschien maar vandoor…
+#EN 
+***
+#FR Jacques — Non, non Brigade, restez avec nous:
+#NL Neen nee, Brégade, blijf bij ons:
+#EN 
+***
+#FR vous allez voir, c’est la meilleure séquence de l’émission.
+#NL wacht maar af, dit is het beste segment van de uitzending.
+#EN 
+***
+#FR Jacques — Bon. Nous sommes donc connectés avec un auditeur sélectionné au hasard.
+#NL Goed. We staan dus in verbinding met een willekeurig geselecteerde luisteraar.
+#EN 
+***
+#FR Bon alors par contre on va pas pouvoir surtitrer cette séquence
+#NL Maar ja, deze scene zullen we niet kunnen ondertitelen 
+#EN
+***
+#FR parce qu’on ne sait tout simplement pas ce qui va s’y passer. <div id=warning> -- PAUSE QUESTIONS ONH -- </div>
+#NL want we weten natuurlijk niet wat er precies gaat gebeuren
+#EN
+***
+#FR Brigade — Et est-ce que ça vous est déjà arrivé :
+#NL En is u dat al overkomen:
+#EN
+***
+#FR vous êtes devant de votre ordinateur, vous ouvrez un moteur de recherche, Google ou autre,
+#NL je zit achter je computer, je start een zoekmachine op, Google of een andere,
+#EN
+***
+#FR et là vous êtes prêt à entrer un mot dans l’espace dédié,
+#NL en nu sta je op het punt om een woord in het zoekveld te typen,
+#EN
+***
+#FR vous avez les doigts en suspens au dessus du clavier,
+#NL je vingers hangen boven het toetsenbord,
+#EN
+***
+#FR il y a le curseur de saisie qui clignote,
+#NL de cursor knippert op het scherm,
+#EN
+***
+#FR et là vous vous dites que peut-être la requête que vous allez entrer
+#NL en dan bedenk je dat de zoekopdracht die je gaat intypen
+#EN
+***
+#FR va changer le cours de votre vie ?
+#NL misschien je levensloop gaat veranderen?
+#EN
+***
+#FR Ça vous est déjà arrivé ?
+#NL Is u dat al overkomen?
+#EN
+***
+//Questions du oui non heu
+#FR Jacques — Est-ce que vous avez un téléphone sous la main ?
+#NL Hebt u een telefoon bij de hand?
+#EN 
+***
+#FR Est-ce que ça vous intéresserait d’essayer un autre type de connexion avec nous ?
+#NL Zou u het interessant vinden om een ander type verbinding met ons uit te proberen?
+#EN 
+***
+#FR Je vous propose de jouer au jeu de la liaison téléphonique silencieuse.
+#NL Ik stel u voor om het spel van de stille telefoonverbinding met ons mee te spelen.
+#EN 
+***
+#FR Je vous explique le principe.
+#NL Ik leg u het principe uit.
+#EN 
+***
+#FR Nous aussi on a un téléphone ici, c’est celui de Samuel.
+#NL Wij hebben hier ook een telefoon, het is die van Samuel.
+#EN 
+***
+#FR On va afficher le numéro de téléphone chez vous.
+#NL Over enkele ogenblikken verschijnt het telefoonnummer bij u op het scherm.
+#EN 
+***
+#FR Vous allez nous appeler, on va prendre le premier appel,
+#NL U belt ons, wij nemen de eerste oproep aan
+#EN 
+***
+#FR et lorsqu’on va décrocher, que se passera-t-il ?
+#NL en wanneer we verbinding maken, wat zal er dan gebeuren?
+#EN 
+***
+#FR et bien nous ne nous dirons rien,
+#NL wel we zeggen elkaar niets.
+#EN 
+***
+#FR nous allons faire le silence total
+#NL We houden het absoluut stil
+#EN 
+***
+#FR afin de goûter à l’essence même de la connexion.
+#NL zodat we de essentie zelf van de verbinding kunnen smaken.
+#EN 
+***
+#FR On va établir une connexion d’une pureté absolue.
+#NL We brengen een verbinding van een absolute puurheid tot stand.
+#EN 
+***
+#FR Samuel tu affiches le numéro chez les gens ?
+#NL Samuel, laat je het nummer aan de mensen zien?
+#EN 
+***
+#FR Samuel — C’est fait.
+#NL Is gebeurd.
+#EN 
+***
+#FR Jacques — Ça y est, le numéro s’est affiché, vous pouvez nous appeler, 
+#NL We zijn zover, het nummer is op uw scherm verschenen, u kunt ons bellen,
+#EN 
+***
+#FR je rappel la règle : on ne se dit rien du tout,
+#NL ik herhaal de afspraak: we zeggen helemaal niets,
+#EN 
+***
+#FR même pas allo, rien.
+#NL zelfs niet hallo, niets.
+#EN 
+***
+#FR Allez-y.
+#NL Ga uw gang.
+#EN 
+***
+
+%%%                   
+%%% 06 _ LIAISON TEL  
+%%%                   
+#FR_CYCLO Et donc voilà,
+#NL_CYCLO Hoor nu eens,
+#EN_CYCLO 
+***
+#FR_CYCLO il n’y a plus rien d’autre que la connexion.
+#NL_CYCLO er is niets anders meer dan de verbinding.
+#EN_CYCLO 
+***
+#FR_CYCLO Nous, ici, dans la salle,
+#NL_CYCLO Wij, hier in de zaal,
+#EN_CYCLO 
+***
+#FR_CYCLO reliés à vous, chez vous.
+#NL_CYCLO verbonden met jullie thuis.
+#EN_CYCLO 
+***
+#FR_CYCLO Cette connexion est invisible,
+#NL_CYCLO Deze verbinding is onzichtbaar,
+#EN_CYCLO 
+***
+#FR_CYCLO imperceptible,
+#NL_CYCLO onhoorbaar,
+#EN_CYCLO 
+***
+#FR_CYCLO intangible.
+#NL_CYCLO ontastbaar.
+#EN_CYCLO 
+***
+#FR_CYCLO Et pourtant,
+#NL_CYCLO En toch,
+#EN_CYCLO 
+***
+#FR_CYCLO elle est matériellement réalisée.
+#NL_CYCLO bestaat ze in materieel opzicht.
+#EN_CYCLO 
+***
+#FR_CYCLO Elle s’effectue par l’intermédiaire de cet appareil téléphonique,
+#NL_CYCLO Ze vindt plaats via dit telefoontoestel,
+#EN_CYCLO 
+***
+#FR_CYCLO de câbles électriques, d’antennes relais, d’ondes électro-magnétiques.
+#NL_CYCLO via elektrische leidingen, straalzenders, elektromagnetische golven.
+#EN_CYCLO 
+***
+#FR_CYCLO Si on pouvait suivre son chemin,
+#NL_CYCLO Als we haar spoor konden volgen,
+#EN_CYCLO 
+***
+#FR_CYCLO on sortirait par les trous de l’écouteur du téléphone de cette personne.
+#NL_CYCLO zouden we uit de luidsprekergaatjes van de telefoon van die persoon kruipen.
+#EN_CYCLO 
+***
+#FR_CYCLO Elle doit être en train de tendre l’oreille
+#NL_CYCLO Die spitst nu wellicht de oren
+#EN_CYCLO 
+***
+#FR_CYCLO pour vérifier si elle n’entend pas
+#NL_CYCLO om te controleren of er toch niet wat te horen valt
+#EN_CYCLO 
+***
+#FR_CYCLO les quelques bruits qui émaneraient du public,
+#NL_CYCLO her en der een geluid uit het publiek,
+#EN_CYCLO 
+***
+#FR_CYCLO les toussotements,
+#NL_CYCLO de kuchjes,
+#EN_CYCLO 
+***
+#FR_CYCLO le grincement des sièges.
+#NL_CYCLO het piepen van de zetels.
+#EN_CYCLO 
+***
+#FR_CYCLO Et nous tendons l’oreille
+#NL_CYCLO En wij spitsen de oren
+#EN_CYCLO 
+***
+#FR_CYCLO pour essayer de l’entendre tendre l’oreille.
+#NL_CYCLO om te proberen hem of haar de oren te horen spitsen.
+#EN_CYCLO 
+***
+#FR Jacques — Merci. vous pouvez raccrocher.
+#NL Dank u wel. U mag ophangen.
+#EN 
+***
+#FR Jacques — Ça vous a plu Brégade ?
+#NL En hoe vond u het, Brégade?
+#EN 
+***
+#FR Brigade — C’était magique, Jacques.
+#NL Het was magisch, Jacques.
+#EN 
+***
+#FR Brigade — Mais je me demandais, vous avez déjà essayé de faire l’inverse ?
+#NL Maar ik vroeg me af, Jacques… hebt u al geprobeerd om de situatie om te keren?
+#EN 
+***
+#FR Jacques — Comment ça, l’inverse ?
+#NL Hoezo, de situatie omkeren?
+#EN 
+***
+#FR Brigade — Bah moi ça me donnerait envie de faire l’inverse là...
+#NL Wel, ik krijg nu wel zin om nu het omgekeerde uit te proberen.
+#EN 
+***
+#FR Jacques — Oui d’accord Brégade, je suis tout ouïe à une nouvelle proposition pour l’émission,
+#NL Oké, Brégade, ik ben een en al oor voor een nieuw voorstel voor de uitzending,
+#EN 
+***
+#FR mais par contre, l’inverse de quoi ?
+#NL maar wat bedoelt u precies? Het omgekeerde waarvan?
+#EN 
+***
+#FR Brigade — Bah, je sais pas, le texte qui s’affiche là,
+#NL Nou, ik weet het niet, bijvoorbeeld de tekst daar, 
+#EN 
+***
+#FR il s’affiche en même temps chez les auditeurs, sur leurs écrans, c’est bien ça ?
+#NL die verschijnt tegelijktertijd bij de luisteraars, op hun scherm, niet?
+#EN 
+***
+#FR Samuel — Ouais... et ?
+#NL Ja... en?
+#EN 
+***
+#FR Brigade — Bah, là ce qu’on pourrait faire c’est
+#NL Wel, wat we dan nu kunnen doen is:
+#EN 
+***
+#FR leur afficher des répliques pour entrer en dialogue avec eux.
+#NL zinnen op hun scherm laten verschijnen om met hen in dialoog te treden.
+#EN 
+***
+#FR Brigade — Regardez, on va essayer, voir si ça marche.
+#NL Kijk, laten we zien of het werkt.
+#EN 
+***
+#FR Vous, à la maison, à partir de maintenant,
+#NL Jullie allen, thuis, jullie zouden vanaf nu kunnen lezen
+#EN 
+***
+#FR est-ce que vous pourriez lire ce qui s’affiche à l’écran, mais cette fois-ci, à voix haute ?
+#NL wat er op jullie computerscherm staat, maar deze keer luidop.
+#EN 
+***
+#FR_CYCLO ... comment ça “à voix haute” ?
+#NL_CYCLO ... Hoezo ‘luidop’?
+#EN_CYCLO 
+***
+#FR Brigade — Bah oui allez-y, lisez mais en parlant tout haut quoi,
+#NL Wel ja, doe maar, lees het, maar nu met luide stem,
+#EN 
+***
+#FR comme si vous discutiez avec quelqu’un.
+#NL alsof je met iemand aan het praten bent…  
+#EN 
+***
+#FR_CYCLO Donc là... je lis tout haut ce texte qui s’affiche sur mon écran…
+#NL_CYCLO Dus nu ... lees ik luidop de tekst die op mijn scherm verschijnt…
+#EN_CYCLO 
+***
+#FR Brigade — Oui voilà et puis vous pouvez prendre l’intonation que vous voulez,
+#NL Ja inderdaad, en nu kunnen jullie zelf de intonatie kiezen,
+#EN 
+***
+#FR parler fort, doucement enfin c’est comme vous voulez…
+#NL luid praten, of zacht, zoals jullie zelf willen…
+#EN 
+***
+#FR_CYCLO Oui mais... Il y a des gens qui m’entendent là ?
+#NL_CYCLO Ja maar ... Kunnen de mensen mij daar horen?
+#EN_CYCLO 
+***
+#FR Brigade — Non non, vous vous entendez tout seul,
+#NL Nee nee, je hoort jezelf in je eentje,
+#EN 
+***
+#FR ici on ne vous entend pas, ni nous ni personne dans les gradins.
+#NL hier horen we je niet, noch wij noch de mensen in de zaal.
+#EN 
+***
+#FR_CYCLO Ha vous m’entendez pas ?
+#NL_CYCLO Ah, jullie horen me niet ? 
+#EN_CYCLO 
+***
+#FR Brigade — Bah… Non.
+#NL Ehm… Nee.
+#EN 
+***
+#FR Enfin, disons, comme on vous imagine le dire,
+#NL Wel, aangezien we ons inbeelden dat jij het zegt,
+#EN 
+***
+#FR derrière votre ordinateur en train de lire ce texte qu’on vous propose, d’une certaine manière
+#NL terwijl je op je computer de teskt leest die we je voorstellen,
+#EN 
+***
+#FR enfin voilà c’est comme si on vous entendait, mais dans notre tête…
+#NL is het alsof we je horen, maar in ons hoofd,
+#EN 
+***
+#FR Vous voyez ce que je veux dire ?
+#NL begrijp je?
+#EN 
+***
+#FR_CYCLO Heuuu… oui.
+#NL_CYCLO Ehm… ja.
+#EN_CYCLO 
+***
+#FR Brigade — Tiens. Je me demande.
+#NL Hé. Ik vraag me iets af.
+#EN 
+***
+#FR Est-ce que vous aussi, ça vous donne vraiment l’impression de participer au dialogue,
+#NL Krijg je ook echt de indruk dat je deelneemt aan een dialoog,
+#EN 
+***
+#FR comme si on parlait ensemble, qu’on était ici, ensemble, au même endroit ?
+#NL alsof we nu samen aan het spreken zijn, alsof we hier zijn, samen, op dezelfde plek?
+#EN 
+***
+#FR_CYCLO Oui, ça marche très bien
+#NL_CYCLO Ja, het werkt heel goed
+#EN_CYCLO 
+***
+#FR Brigade — bon bah super
+#NL O ja, wel, super
+#EN 
+***
+#FR_CYCLO Enfin là je peux pas vraiment donner mon avis puisque je dois lire le texte qui s’affiche.
+#NL_CYCLO Nu ja, op dit moment kan ik niet echt mijn mening geven want ik moet de tekst oplezen die op het scherm verschijnt
+#EN_CYCLO 
+***
+#FR Brigade — Ah bah oui c’est vrai….
+#NL O ja, dat is waar
+#EN 
+***
+#FR Samuel — Bah vous savez nous aussi on dit un texte préparé.
+#NL Wel weet je, wij zeggen ook een voorbereide tekst.
+#EN 
+***
+#FR Jacques — Préparé…?
+#NL Voorbereid…?
+#EN 
+***
+#FR Samuel — Bah c’est déjà écrit, tout ce qu’on dit c’est écrit, tu le sais bien <div id=warning> (Jacques marmonne)</div>
+#NL Welja, het is al geschreven, alles wat we zeggen is geschreven, dat weet je toch.
+#EN 
+***
+#FR Jacques — Écrit…?
+#NL Geschreven…?
+#EN 
+***
+#FR Brigade — Jacques ?
+#NL Jacques ?
+#EN 
+***
+#FR Samuel — Allez…  tu fais semblant là, de pas comprendre ?
+#NL Komaan, nu doe je toch alsof je het niet begrijpt, niet?
+#EN 
+***
+#FR Jacques — Je fais semblant... Je fais semblant?
+#NL Ik doe alsof... Doe ik alsof?
+#EN 
+***
+#FR Jacques — Ah oui, je fais semblant.
+#NL Ah ja, ik doe alsof.
+#EN 
+***
+#FR Bon mais Brigade, peut-être que ce qu’on pourrait faire maintenant,
+#NL Brégade, wat we nu misschien zouden kunnen doen,
+#EN 
+***
+#FR c’est les laisser les auditeurs répondre librement à certaines questions ?
+#NL is de luisteraars de gelegenheid geven sommige vragen vrijuit te beantwoorden…
+#EN 
+***
+#FR_CYCLO Ah tiens pourquoi pas
+#NL_CYCLO Ah ja, waarom niet?
+#EN_CYCLO 
+***
+#FR Brigade — bah donc voilà alors voilà vous pouvez nous expliquer, avec vos mots à vous,
+#NL Wel, oké, dus, ja, dan kunnen jullie ons uitleggen, met jullie eigen woorden,
+#EN 
+***
+#FR ce qui se passe, qu’est ce que ça génère cette expérience de dialogue distribué ?
+#NL wat er gebeurt, wat dat veroorzaakt, dit experiment van gedistribueerde dialoog…
+#EN 
+***
+#FR Allez-y, on vous écoute.
+#NL Begin maar, we luisteren.
+#EN 
+***
+#FR_CYCLO (vous pouvez maintenant vous exprimer librement)
+#NL_CYCLO (Je mag je nu vrijuit uitdrukken)
+#EN_CYCLO 
+***
+#FR_CYCLO [...]
+#NL_CYCLO [...]
+#EN_CYCLO 
+***
+#FR_CYCLO ...et donc c’est amusant parce que c’est effectivement l’inverse de tout à l’heure.
+#NL_CYCLO ...en dat is dus grappig, want het is inderdaad het omgekeerde van daarstraks.
+#EN_CYCLO 
+***
+#FR Jacques — heuuu, c’est… c’est… c’est à dire ?
+#NL Eeeehm, wat bedoelt u?
+#EN 
+***
+#FR_CYCLO Hé beh tout à l’heure, au téléphone, on s’entendait mais on se parlait pas,
+#NL_CYCLO Wel ja, daarstraks, over de telefoon, konden we elkaar horen maar we spraken niet,
+#EN_CYCLO 
+***
+#FR_CYCLO et là on se parle mais on s’entend pas.
+#NL_CYCLO en nu spreken we maar horen we elkaar niet.
+#EN_CYCLO 
+***
+#FR Jacques — Ah tiens Samuel, ça ça rejoint ta théorie du tétraèdre, non ?
+#NL Ja zeg ! Wel, Samuel, dat strookt met de theorie van de tetraëder, niet?  
+#EN 
+***
+#FR Brigade — Qu’est ce que c’est ?
+#NL Wat is dat?
+#EN 
+***
+#FR Samuel — Attends… On a le flux… Inversion… Anti-flux… Cabane.
+#NL Wacht… Ja. We hebben de stroom … Omkering… Anti-stroom… Hut.
+#EN 
+***
+#FR Brigade — La cabane ?
+#NL De hut?
+#EN 
+***
+%%%                                     
+%%% 07 _ BÛCHES + THÉ + CHANSON VOITURE
+%%%                                       
+#FR Jacques — La cabane, Brégade, une transition toute trouvée
+#NL Ja, Brégade, de hut. Dat is een perfect bruggetje
+#EN 
+***
+#FR pour passer à notre prochaine séquence dite du petit jamboree....
+#NL naar ons volgende segment, die we ‘kleine jamboree’ noemen…  
+#EN 
+***
+#FR Jacques — Voici venu le moment pour vous lancer, chez vous dans la construction de votre petite cabane.
+#NL Het moment is aangebroken om bij u thuis te beginnen met de opstelling van uw hut.
+#EN 
+***
+#FR Pendant ce temps là de notre côté nous allons installer notre traditionnel petit feu de camp.
+#NL Ondertussen gaan we van onze kant ons traditionele kampvuur klaar maken.
+#EN 
+***
+#FR Vous allez où Brégade ?
+#NL Waar gaat u naartoe, Brégade?
+#EN 
+***
+#FR Brigade — Chercher du bois ?
+#NL Hout sprokkelen?
+#EN 
+***
+#FR Jacques — Ah non mais attendez, c’est pas du vrai bois.
+#NL O nee, wacht even, het is geen echt hout.
+#EN 
+***
+#FR Samuel, tu veux bien prendre en charge le... <div id=warning> - PAUSE - </div>
+#NL Samuel, wil jij je even zorg dragen voor de…
+#EN 
+***
+#FR Samuel — Oui alors à la maison, ils ont récupéré des matériaux.
+#NL Ja, dus thuis hebben ze spullen verzameld.
+#EN 
+***
+#FR parce que c’qui faut que vous sachiez, c’est qu’avec eux, on a commencé l’émission avant votre entrée dans la salle,
+#NL Want we waren met hen de uitzending al begonnen voordat jullie de zaal binnenkwamen,
+#EN 
+***
+#FR et on leur a demandé de réunir des matériaux.
+#NL en we vroegen hen om materiaal te verzamelen.
+#EN 
+***
+#FR Et donc là ils se construisent un abri, une petite cahute,
+#NL En nu zijn ze dus een hokje aan het bouwen, een hutje,
+#EN 
+***
+#FR bon c’est rudimentaire, ils font avec ce qu’ils ont chez eux,
+#NL nu ja het is rudimentair, ze behelpen zich met wat ze in huis hebben,
+#EN 
+***
+#FR la classique c’est un drap tendu entre deux chaises,
+#NL een klassieker is het laken dat je tussen twee stoelen spant,
+#EN 
+***
+#FR on peut rajouter un manche à balai au milieu par exemple pour avoir un petit peu plus d’espace,
+#NL en je kunt bijvoorbeeld een bezemsteel in het midden toevoegen om wat meer ruimte te hebben,
+#EN 
+***
+#FR ok donc là vous êtes en train de les construire les cabanes mais
+#NL oké, dus nu zijn jullie de hutten aan het opstellen,
+#EN 
+***
+#FR c’est pas terminé c’est bien ça ?
+#NL het is nog niet klaar, begrijp ik dat goed?
+#EN 
+***
+#FR_CYCLO Non non pas encore
+#NL_CYCLO Nee nee nog niet
+#EN_CYCLO 
+***
+#FR Samuel — Parfait... Quand à vous, vous allez pouvoir ouvrir l’enveloppe que vous avez reçu tout à l’heure…
+#NL Heel goed... Nu wat jullie betreft, het is tijd om de envelop open te maken die jullie daarstraks hebben ontvangen…
+#EN 
+***
+#FR Jacques — Tenez, brigade, une enveloppe.
+#NL Pak aan, Brégade, een envelop voor u.
+#EN 
+***
+#FR Brigade —  Ah ouais… ok.
+#NL  Aha ja, oké.
+#EN 
+***
+#FR Oulà, il a l’air compliqué ce schéma.
+#NL Wow, dat schema ziet er ingewikkeld uit.
+#EN 
+***
+#FR_CYCLO C’EST BON ON A PRESQUE FINI LES CABANES
+#NL_CYCLO OKEE WE ZIJN BIJNA KLAAR MET DE HUTTEN
+#EN_CYCLO 
+***
+#FR Samuel — Ah ben parfait, vous vous avez presque fini les cabanes,
+#NL Aha wel prachtig, jullie zijn bijna klaar met de hutten
+#EN 
+***
+#FR nous, on va s’installer autour du feu.
+#NL en wij gaan rond het vuur zitten.
+#EN 
+***
+#FR Jacques — le feu qui est encore éteint.
+#NL Het vuur is nog niet aan.
+#EN 
+***
+#FR Brigade — Il est éteint.
+#NL Het is nog niet aan.
+#EN 
+***
+#FR Et les bûches, c’est des fausses bûches, c’est des bûches électriques.
+#NL En de houtblokken, dat zijn geen echte… het is een elektrisch haardvuur.
+#EN 
+***
+#FR J’imagine que la question, c’est : qui va les allumer ?
+#NL Ik neem aan dat de vraag is: wie gaat het aansteken?
+#EN 
+***
+#FR Samuel —  Et la réponse c’est : les auditeurs.
+#NL En het antwoord is: de luisteraars.
+#EN 
+***
+#FR Et ils vont pouvoir le faire une fois qu’ils auront terminé de préparer le dernier élément qui leur manque…
+#NL En dat kunnen ze doen zodra ze klaar zijn met de bereiding van het laatste element dat hen nog ontbreekt…
+#EN 
+***
+#FR Jacques — La boisson chaude.
+#NL De warme drank.
+#EN 
+***
+#FR Voyez Brégade, pour parfaire la représentation mentale qu’on va avoir des gens dans leur cabane,
+#NL Ziet u, Brégade, we willen het mentale beeld verbeteren dat we ons straks gaan vormen van de mensen in hun hut,
+#EN 
+***
+#FR ce qu’il nous faut, c’est une boisson chaude.
+#NL en daarvoor hebben we een warme drank nodig.
+#EN 
+***
+#FR Voyez un peu la scène ?
+#NL Ziet u het al een beetje voor u?
+#EN 
+***
+#FR Les gens, dans leur cocon, dans leur tanière,
+#NL De mensen, in hun cocon, in hun schuilplaats,
+#EN 
+***
+#FR avec en plus une tasse de thé fumante ?
+#NL met een kop stomende thee?
+#EN 
+***
+#FR Séb — Donc, là, c’est parti,
+#NL Oké, dus daar gaan we dan,
+#EN 
+***
+#FR à la maison vous allez pouvoir vous lever,
+#NL jullie thuis kunnen opstaan,
+#EN 
+***
+#FR partir en cuisine, faire bouillir l’eau,
+#NL naar de keuken gaan, water aan de kook brengen,
+#EN 
+***
+#FR ici nous on vous attend,
+#NL wij hier wachten op jullie,
+#EN 
+***
+#FR et quand vous avez votre tasse à la main 
+#NL en als jullie je kop in de hand hebben komen 
+#EN 
+***
+#FR vous revenez vous installer confortablement dans votre cabane,
+#NL jullie terug om comfortabel in jullie hut te gaan zitten,
+#EN 
+***
+#FR et c’est là que vous cliquez sur le bouton
+#NL en dan klikken jullie op de knop
+#EN 
+***
+#FR “c’est bon j’ai fini de préparer ma boisson chaude”.
+#NL ‘oké, ik ben klaar met het bereiden van mijn warme drank’.
+#EN 
+***
+#FR Vous cliquez, et c’est ça qui va déclencher les bûches.
+#NL Jullie klikken, en dat is wat het haardvuur aansteekt.
+#EN 
+***
+#FR Et voilà, y a plus qu’à attendre...
+#NL En nu begint dus het wachten…
+#EN 
+***
+#FR Mathilde — C’est excitant...
+#NL Het is spannend ...
+#EN 
+***
+#FR Samuel — Oh, faut pas s’attendre forcément à un truc incroyable.
+#NL O, verwacht nu ook niet iets uitzonderlijks.
+#EN 
+***
+#FR Jacques — Samuel, t’es trop modeste.
+#NL Samuel, je bent te bescheiden.
+#EN 
+***
+#FR Samuel — enfin je veux dire c’est juste une bûche électrique qui s’allume...
+#NL Ik bedoel, het is gewoon een elektrisch haardvuur dat aangaat…
+#EN 
+***
+#FR mais bon on dit ça quand on sait pas ce que ça représente...
+#NL maar ja, dat zegt wie niet weet wat het voorstelt…
+#EN 
+***
+#FR Beh c’est pas juste une bûche…
+#NL Het is niet zomaar een elektrisch haardvuur…
+#EN 
+***
+#FR Au bout du circuit y a des gens... (ATTENTE BÛCHE)
+#NL Aan de andere kant van het elektrisch circuit zijn er mensen.
+#EN 
+***
+//(une bûche s’allume)
+#FR Samuel  — Brigade ! Vous avez vu ?
+#NL Brigade! Zag u dat?
+#EN 
+***
+#FR Ya quelqu’un !
+#NL D’er is iemand!
+#EN 
+***
+#FR Ah voilà, ben bonjour j’ai envie de dire,
+#NL Ha, wel, hallo, wil ik zeggen,
+#EN 
+***
+#FR bienvenue dans votre cabane,
+#NL welkom in je hut.
+#EN 
+***
+#FR Ben, la dernière chose qui vous manque là, c’est la musique,
+#NL Wel, de laatste laag die nu nog ontbreekt is de muziek,
+#EN 
+***
+#FR c’est la dernière couche que nous allons générer tous ensemble ici au théâtre
+#NL die we nu hier met z’n allen gaan produceren
+#EN 
+***
+#FR pour vous accompagner dans votre cabane,
+#NL om jullie te begeleiden in jullie hut,
+#EN 
+***
+#FR Jacques, toi tu fais de la guitare,
+#NL Jacques, jij speelt gitaar, ja,
+#EN 
+***
+#FR et nous ici on va se servir de notre téléphone comme d'un instrument de musique
+#NL en wij zullen hier onze telefoon gebruiken als muziekinstrument
+#EN 
+***
+#FR donc pour ça il faut appeler le numéro qui est en bas du schéma.
+#NL daarvoor moeten jullie dus het nummer beneden op het schema bellen.
+#EN 
+***
+#FR Brigade — Ah le numéro là ? J’appelle ?
+#NL Ah, dat nummer? Bel ik?
+#EN 
+***
+#FR Sébastien — Oui allez y appelez !
+#NL Ja, ja, doe maar!
+#EN 
+***
+#FR Brigade — Mais... C'est un numéro français non ?
+#NL Maar... dat is een frans nummer, toch?
+#EN 
+***
+#FR Jacques — Oui mais c'est un numéro fixe, ça coûte quasi rien.
+#NL Ja, maar het is een vaste lijn, dat kost bijna niks tegenwoordig. 
+#EN 
+***
+//CHANSON
+#FR Samuel — Je regarde une bûche, c’est vraiment comme si je vous voyais.
+#NL Ik kijk naar een haardvuur, en het is echt alsof ik jullie kan zien.
+#EN 
+***
+#FR C’est vraiment pas que des branchements là,
+#NL Dit is echt wel meer dan gewoon maar een reeks aansluitingen.
+#EN 
+***
+#FR Vous êtes là, en fait.
+#NL Jullie zijn hier, eigenlijk.
+#EN 
+***
+#FR ok je pars de la bûche, 
+#NL Oké, ik vertrek van het haardvuur,
+#EN 
+***
+#FR j’arrive à son câble d’alimentation, 
+#NL ik volg de voedingskabel, 
+#EN 
+***
+#FR puis au gradateur,
+#NL ga door de wisselstroomschakelaar,
+#EN 
+***
+#FR qui est relié à la console lumière,
+#NL die verbonden is met de lichttafel,
+#EN 
+***
+#FR qui elle, est reliée à l’ordinateur,
+#NL die op haar beurt gelinkt is aan de computer,
+#EN 
+***
+#FR qui lui, est relié au serveur,
+#NL die dan weer in verbinding staat met de server,
+#EN 
+***
+#FR qui permet de nous connecter au site web de l’émission,
+#NL die ons in staat stelt contact te maken met de site van de uitzending,
+#EN 
+***
+#FR et derrière ce site y a une main,
+#NL en voor die site is er een hand,
+#EN 
+***
+#FR qui est reliée à une personne,
+#NL verbonden aan iemand,
+#EN 
+***
+#FR qui est dans une toute autre réalité,
+#NL in een heel andere realiteit,
+#EN 
+***
+#FR et qui observe le contraste.
+#NL en die neemt het contrast waar.
+#EN 
+***
+#FR Parce que là c’est sacrément contrasté quand même entre notre réalité,
+#NL Want dat is toch een contrast om u tegen te zeggen: tussen onze realiteit,
+#EN 
+***
+#FR nous ici sur scène, avec les spectateurs assis là dans les gradins,
+#NL hier op het toneel, met toeschouwers die op de tribune zitten,
+#EN 
+***
+#FR et de l’autre côté, y a quelqu’un, tout seul,
+#NL en aan het andere eind zit er iemand,
+#EN 
+***
+#FR tranquillement installé dans sa cabane avec son petit bol d’eau chaude,
+#NL helemaal alleen in zijn of haar hut met een kop warm water.
+#EN 
+***
+#FR ça se frotte, ce sont deux réalités qui se frottent en fait,
+#NL Eigenlijk zijn het twee realiteiten die elkaar overlappen.
+#EN 
+***
+#FR et qu’est-ce qui fait se frotter ces deux réalités?
+#NL En wat zorgt ervoor dat die twee realiteiten elkaar overlappen?
+#EN 
+***
+#FR Ben c’est une bûche…
+#NL Een haardvuur…
+#EN 
+***
+#FR Ben c’est juste une bûche électrique…
+#NL Gewoon een elektrisch haardvuur…
+#EN 
+***
+
+
+%%%                    
+%%% 08 _ FEU DE CAMP   
+%%%                    
+
+#FR Brigade — Mmh.. par contre ça reste des fausses bûches et il commence à faire un peu frais…
+#NL Maar het blijft een namaakhaardvuur en ik begin het hier toch wel koeltjes te vinden…
+#EN 
+***
+#FR Vous n’auriez pas une couverture dans votre truck ?
+#NL Hebt u toevallig geen deken in uw truck?
+#EN 
+***
+#FR Samuel — Ah si attendez je vais la chercher
+#NL O ja, wacht even, ik ga het halen.
+#EN 
+***
+#FR Jacques — Bon alors Brégade, vous allez où en voiture comme ça ?
+#NL Nu dan, Brégade, waar gaat u zoal naartoe met uw auto?
+#EN 
+***
+#FR Brigade — Dans le sud. En camargue.
+#NL Naar het zuiden. De Camargue.
+#EN 
+***
+#FR Jacques — Ah c’est joli la Camargue.
+#NL Ah ja, de Camargue, da’s mooi
+#EN 
+***
+#FR Brigade — Par contre Jacques, il faut que je vous dise,
+#NL Maar eh, Jacques, ik moet iets kwijt, 
+#EN 
+***
+#FR c’est pas Brégade, c’est Brigade, avec un “i”.
+#NL het is niet Brégade, het is Brigade, met een ‘i’.
+#EN 
+***
+#FR Jacques — AAaaaah c’est Briiiiigade,
+#NL Ahaaaaa, ‘t is Briiiiigade,
+#EN 
+***
+#FR ah je suis confus, j’avais mal compris!
+#NL och het spijt me, ik had het verkeerd begrepen!
+#EN 
+***
+#FR T’avais compris toi Samuel ?
+#NL Had jij het goed begrepen, Samuel?
+#EN 
+***
+#FR Samuel — euh oui
+#NL Eh, ja.
+#EN 
+***
+#FR Jacques — Ah d’accord mais alors c’est… c’est ton nom de famille ?
+#NL Aha, oké, maar is dat dan… is dat dan je familienaam?
+#EN 
+***
+#FR Brigade — Nan, nan, c’est mon prénom
+#NL Nee hoor, het is mijn voornaam
+#EN 
+***
+#FR Jacques — C’est un peu dur à porter non?
+#NL Geen makkelijke voornaam, toch?
+#EN 
+***
+#FR Brigade —  Oui, mais y’a un truc qui fonctionne très bien,
+#NL Jawel hoor, maar er is een trucje dat heel goed werkt,
+#EN 
+***
+#FR c’est que si tu le répètes plein de fois, au bout d’un moment,
+#NL dat is namelijk als je het heel vaak herhaalt,
+#EN 
+***
+#FR ça se transforme, ça devient joli.
+#NL dan verandert het na een tijd en dan klinkt het mooi.
+#EN 
+***
+#FR Vas-y essaye, tu vas voir. <div id=warning> (Brigade pas surtitré) </div>
+#NL Probeer maar, je merkt het dan wel. 
+#EN 
+***
+// Jacques — “brigade brigade brigade x 5 “… Mmm mmh
+#FR Brigade — Vazy vazy, encore, encore.
+#NL Ga door, nog, nog.
+#EN 
+***
+//Brigade brigade brigade brigade ...
+#FR Brigade — allez-y Samuel, faites le aussi.
+#NL Komaan Samuel, doe maar mee.
+#EN 
+***
+//Brigade brigade brigade brigade ...
+#FR Brigade — Bon ok, ok c’est bon là stop, vous pouvez arrêter !
+#NL Oké, oké, het is goed zo, stop maar!
+#EN 
+***
+#FR Samuel  — Ah c’est vrai, c’est joli….
+#NL Ah ‘t is waar, het klinkt mooi…
+#EN 
+***
+#FR Jacques — Ah oui moi j’étais parti.
+#NL Haha, ja, ik was goed bezig.
+#EN 
+***
+#FR Samuel — Et heu… Tu vas faire quoi en Camargue, Brigade ?
+#NL Enne… Wat ga je zo doen, in de Camargue, Brigade?
+#EN 
+***
+#FR Brigade — Moi? Oh, je vais faire un stage.
+#NL Ik? O, ik ga daar een stage volgen.
+#EN 
+***
+#FR Jacques — Ah bon… Et un stage de quoi ?
+#NL Ach zo… En wat voor stage?
+#EN 
+***
+#FR Brigade — Un stage de poney aquatique
+#NL Een stage waterpony
+#EN 
+***
+#FR J & Samuel — pardon ???
+#NL Pardon?
+#EN 
+***
+#FR Brigade — Mais non, c’est pas vrai !
+#NL Maar nee, ik maak een grapje!
+#EN 
+***
+#FR Brigade — Alors mon stage, bah c’est un mélange de plusieurs trucs,
+#NL Kijk, mijn stage, wel het is een mengeling van allerlei dingen,
+#EN 
+***
+#FR je connais bien la formatrice, elle est super.
+#NL ik ken goed de begeleidster, ze is fantastisch.
+#EN 
+***
+#FR D’ailleurs, ça me fait vraiment penser à des choses que vous faites dans votre émission…
+#NL Trouwens, dat doet me denken aan dingen die jullie in de uitzending doen…
+#EN 
+***
+#FR En fait nous aussi on travaille principalement à la dissociation.
+#NL In feite werken wij ook voornamelijk met dissociatie.
+#EN 
+***
+#FR Samuel —  Ah non, nous on fait pas ça, la dissociation.
+#NL O neen hoor, wij doen niet aan dissociatie.
+#EN 
+***
+#FR Brigade —  Quoi ? Mais c’est exactement ce que vous fait hein.
+#NL Wat? Maar dat is precies wat jullie doen, hoor.
+#EN 
+***
+#FR Vous savez pas ce que c’est ?
+#NL Weten jullie niet wat dat is?
+#EN 
+***
+#FR B- C’est vraiment tout simple, 
+#NL ‘t Is echt heel eenvoudig, 
+#EN 
+***
+#FR c’est quand on essaye de maintenir son attention 
+#NL het is wanneer men probeert om zijn aandacht te richten
+#EN 
+***
+#FR sur deux choses différentes en même temps.
+#NL op twee verschillende zaken, tegelijkertijd.
+#EN 
+***
+#FR Brigade — Regardez, par exemple, on peut fermer les yeux,
+#NL Kijk, bijvoorbeeld, we kunnen onze ogen dichtdoen,
+#EN 
+***
+#FR et concentrez vous sur une des bûches, là, une bûche qui rougeoie.
+#NL en concentreer je op een van de haardvuren, daar, op dat haardvuur dat rood opflakkert.
+#EN 
+***
+#FR Concentrez-vous sur elle.
+#NL Concentreer je daarop.
+#EN 
+***
+#FR voilà et maintenant, on se concentre sur...la tasse de thé.
+#NL Goed, en nu, concentreren we ons op… de kop thee.
+#EN 
+***
+#FR Une tasse de thé fumante chez quelqu’un.  
+#NL Een kop stomende thee bij iemand.  
+#EN 
+***
+#FR et maintenant essayez de vraiment de vous concentrer sur les deux en même temps.
+#NL en probeer nu je te concentreren op de twee tegelijk.
+#EN 
+***
+#FR Samuel — je l’ai
+#NL Ik heb ‘m
+#EN 
+***
+#FR Brigade — Tu l’as ? ça marche ?
+#NL Heb je ‘m? Lukt ‘t?
+#EN 
+***
+#FR Samuel — Ouais je l’ai
+#NL Ja, ik heb ‘m.
+#EN 
+***
+#FR Brigade — voilà bah t’es dissocié.
+#NL Wel, kijk, je bent gedissocieerd.
+#EN 
+***
+#FR Jacques ?
+#NL Jacques?
+#EN 
+***
+#FR Jacques — Ah ouais ça marche.
+#NL Ha, ja, ik ook. Het lukt.
+#EN 
+***
+#FR Brigade — voilà bah tu t’es dissocié. C’est agréable ?
+#NL Wel, kijk, je hebt je gedissocieerd. Is het aangenaam?
+#EN 
+***
+#FR Jacques — Très.
+#NL Zeer.
+#EN 
+***
+#FR Brigade — Moi j’adore, je pourrais faire ça pendant des heures
+#NL Ik ben er dol op, ik zou het uren aan een stuk door kunnen doen
+#EN 
+***
+#FR Jacques — oui alors oui... peut-être pas maintenant…
+#NL Ja, oké maar… misschien niet nu…
+#EN 
+***
+#FR regardez, le vent se lève…
+#NL Kijk, de wind steekt op…
+#EN 
+***
+#FR il va y avoir un gros orage,
+#NL er is hevig onweer op komst,
+#EN 
+***
+#FR Samuel, faudra qu’on range le matos là…
+#NL Samuel, we gaan het materiaal moeten opbergen, nu…
+#EN 
+***
+%%%                       
+%%% 09 _ CABANE / ORAGE   
+%%%                       
+#FR Samuel — Ah oui ça va pas tarder à tomber,
+#NL O ja, dat duurt niet lang meer,
+#EN 
+***
+#FR Jacques, tu t’occupes des instruments? Tu rajoutes la guitare?
+#NL Jacques, zorg jij voor de instrumenten?
+#EN 
+***
+#FR Brigade — Faut débrancher les bûches ?
+#NL Moeten we de haardvuren loskoppelen?
+#EN 
+***
+#FR Samuel — C’est bon, je m’en occupe.
+#NL Laat maar, dat doe ik wel,
+#EN 
+***
+#FR Brigade, y’a des bâches au fond là bas, à droite, tu peux aller les chercher ?
+#NL Er zijn dekzeilen daar helemaal achterin, kun je die even halen?
+#EN 
+***
+#FR Jacques — Ton costume samuel !
+#NL Je kostuum, Samuel!
+#EN 
+***
+#FR Samuel — On va le mettre sur la brouette !
+#NL Laten we het op de kruiwagen leggen!
+#EN 
+***
+#FR Brigade — Je bâche les bûches ?
+#NL Zal ik alle zeilen bijzetten?
+#EN 
+***
+#FR Samuel — oui !
+#NL Ja !
+#EN 
+***
+#FR Jacques — Alors, les auditeurs là, 
+#NL En dan nu, voor de luisteraars: 
+#EN 
+***
+#FR ce qui serait bien, c’est que vous fassiez le noir complet chez vous.
+#NL het zou goed zijn als jullie de ruimte nu helemaal verduisterden.
+#EN 
+***
+#FR Donc allez-y sortez de votre cabane, éteignez les lumières,
+#NL Dus, verlaat even jullie hut, doof de lichten,
+#EN 
+***
+#FR tirez les rideaux, baissez le volets
+#NL trek de gordijnen dicht, haal de rolluiken naar beneden
+#EN 
+***
+#FR et retournez dans votre cabane
+#NL en keer terug naar jullie hut,
+#EN 
+***
+#FR avec juste l’écran de votre ordinateur comme source lumineuse.
+#NL met jullie computerscherm als enige lichtbron.
+#EN 
+***
+#FR Brigade — Ton ordinateur Samuel !
+#NL Je computer, Samuel!
+#EN 
+***
+#FR Samuel — Ok c’est bon je m’en occupe !
+#NL Oké, ik ben ermee bezig!
+#EN 
+***
+#FR Brigade — Samuel, venez vous abriter, vite !
+#NL Samuel, kom schuilen, snel!
+#EN 
+***
+#FR Samuel — J’arrive !
+#NL Ik kom eraan!
+#EN 
+***
+// (ils sont tous les trois dans la cabane)
+#FR Jacques — Alors pour tout vous expliquer,
+#NL Nu dan, even uitleggen,
+#EN 
+***
+#FR ici, on s’est abrités sous une bâche géante qu’on a tendu au dessus du tracteur;
+#NL wij schuilen hier onder een gigantisch dekzeil dat we over de tractor hebben gespannen,
+#EN 
+***
+#FR on a ouvert la portière, pour agrandir un peu l’espace…
+#NL we hebben de deur opengezet om wat meer ruimte te hebben…
+#EN 
+***
+#FR un peu comme une tonnelle, un auvent, enfin vous voyez quoi
+#NL het lijkt een beetje op een prieel, een luifel...
+#EN 
+***
+#FR Samuel — Ouais enfin pas tout à fait Jacques, c’est plus qu’un auvent, la bâche nous recouvre complètement.
+#NL Ja, Jacques, het is meer dan een luifel, het zeil schermt ons helemaal af.
+#EN 
+***
+#FR On est cachés quoi, on ne voit plus du tout les spectateurs.  
+#NL We zijn verborgen, we kunnen de toeschouwers helemaal niet meer zien.
+#EN 
+***
+#FR Brigade — Si je m’amuse à faire un petit exercice de projection mentale :
+#NL Laat ik voor de lol nu even een oefening in mentale projectie doen:
+#EN 
+***
+#FR de l’extérieur ça doit plutôt ressembler à une sorte de rocher géant.
+#NL van buitenaf lijkt dit wellicht meer op een soort reuzegrot.
+#EN 
+***
+#FR C’est comme si on était dans une grotte en quelque sorte.
+#NL Het is dus in zekere zin alsof we in een grot zijn.
+#EN 
+***
+#FR Jacques — Ah ! Ah ! Une grotte !
+#NL Haha! Een grot!
+#EN 
+***
+#FR Mais quelle soirée mes amis ! Quelle émission !
+#NL Maar wat een avond toch, beste vrienden! Wat een uitzending!
+#EN 
+***
+#FR Voilà Brégade qui nous fait de la projection mentale !
+#NL Zie Brigade eens aan mentale projectie doen!
+#EN 
+***
+#FR Et qu’elle nous projette dans une grotte
+#NL En ons in een grot projecteren.
+#EN 
+***
+#FR Vous savez ce qui se passe là ? Hein ?
+#NL Weet u wat er nu gebeurt? 
+#EN 
+***
+#FR Et bien on se retrouve dans la même situation que vous à la maison.
+#NL Wel, we bevinden ons in precies dezelfde situatie als jullie thuis.
+#EN 
+***
+#FR_CYCLO Oui, et on est bien installés mine de rien. Chacun dans sa cabane.
+#NL_CYCLO Ja, en wij zijn ondertussen discreet in onze hutten gekropen. Iedereen in de zijne.
+#EN_CYCLO 
+***
+#FR_CYCLO Et au théâtre, les gens pourraient aussi se faire une petite cabane avec leurs manteaux.
+#NL_CYCLO En in het theater zouden de mensen ook hun eigen hutje kunnen maken met hun jassen.
+#EN_CYCLO 
+***
+#FR Samuel — Ah oui, s’ils veulent quoi…
+#NL Ja ja, als ze willen hé…
+#EN 
+***
+#FR ‘fin, parce que, bon sinon, la salle ici, c’est déjà une sorte de grosse cabane...
+#NL want, ik bedoel, de zaal hier is al een soort grote hut ...
+#EN 
+***
+#FR Jacques — Hmm hmm pas faux Samuel.
+#NL Hmmm, je hebt een punt, Samuel.
+#EN 
+***
+#FR En tout cas, ce qui est apaisant là, c’est le bruit de la pluie,
+#NL In ieder geval, wat hier nu rustgevend is, dat is het geluid van de regen,
+#EN 
+***
+#FR le bruit de la pluie qui frappe contre la toile.
+#NL het geluid van de regen tegen het zeil.
+#EN 
+***
+#FR_CYCLO J’ai un ami qui a grandi sous les tropiques et qui a vraiment besoin du bruit de la pluie tropicale pour s’endormir
+#NL_CYCLO Een vriend van mij die opgroeide in de tropen kan echt niet in slaap vallen zonder het geluid van de tropische regen.
+#EN_CYCLO 
+***
+#FR Samuel — ah oui… C’est vrai que ça marche bien là.
+#NL Ach ja… Het klopt dat het goed werkt nu.
+#EN 
+***
+#FR_CYCLO Hé…
+#NL_CYCLO  Hé…
+#EN_CYCLO 
+***
+#FR Jacques — Oui ? Allez-y, vous avez la parole.
+#NL Ja? Zeg maar, het woord is aan u.
+#EN 
+***
+#FR_CYCLO Imaginez qu’on continue la discussion comme ça, avec le bruit de la pluie…
+#NL_CYCLO Stel jullie voor dat we het gesprek zo zouden voortzetten, met het geluid van de regen…
+#EN_CYCLO 
+***
+#FR_CYCLO et qu’au bout d’un moment on s’endorme
+#NL_CYCLO en dat na verloop van tijd iedereen in slaap valt
+#EN_CYCLO 
+***
+#FR Samuel — voix un peu ensommeillée) Ah oui j’imagine bien oui <div id=warning> - GROS BREAK NUIT - </div>
+#NL O ja, dat kan ik me goed voorstellen, ja
+#EN 
+***
+#FR_CYCLO les spectateurs au théâtre s’endorment
+#NL_CYCLO de toeschouwers in het theater vallen in slaap
+#EN_CYCLO 
+***
+#FR_CYCLO les uns sur les autres.
+#NL_CYCLO over elkaar heen.
+#EN_CYCLO 
+***
+#FR_CYCLO Et vous aussi, vous vous endormez, au gré de la conversation
+#NL_CYCLO En jullie vallen ook in slaap, tijdens het gesprek
+#EN_CYCLO 
+***
+#FR_CYCLO Et puis ici à la maison je finis par m’endormir aussi,
+#NL_CYCLO En hier thuis val ik uiteindelijk ook in slaap,
+#EN_CYCLO 
+***
+#FR_CYCLO et la nuit passe comme ça.
+#NL_CYCLO en zo verstrijkt de nacht.
+#EN_CYCLO 
+***
+#FR_CYCLO Miraculeusement, tout le monde dort.
+#NL_CYCLO Als bij wonder, slaapt iedereen.
+#EN_CYCLO 
+***
+// (pause)
+#FR_CYCLO Et puis au bout d’un moment
+#NL_CYCLO En na een tijdje
+#EN_CYCLO 
+***
+#FR_CYCLO La pluie s’arrête
+#NL_CYCLO Stopt de regen
+#EN_CYCLO 
+***
+#FR_CYCLO On sent poindre les premières lueurs de l’aube
+#NL_CYCLO We zien de eerste zonnestralen van de dageraad
+#EN_CYCLO 
+***
+#FR_CYCLO C’est la fin de la nuit
+#NL_CYCLO Het is het einde van de nacht
+#EN_CYCLO 
+***
+#FR_CYCLO Ça commence un peu à s’agiter,
+#NL_CYCLO Er roert zich hier en daar iets,
+#EN_CYCLO 
+***
+#FR_CYCLO quelqu’un bouge, quelqu’un tousse.
+#NL_CYCLO de één beweegt, een ander kucht.
+#EN_CYCLO 
+***
+#FR_CYCLO On s’extirpe de nos couvertures
+#NL_CYCLO We komen van onder onze dekens vandaan
+#EN_CYCLO 
+***
+#FR_CYCLO Et puis finalement
+#NL_CYCLO En uiteindelijk
+#EN_CYCLO 
+***
+#FR_CYCLO Quelqu’un pointe le nez dehors
+#NL_CYCLO Komt iemand naar buiten
+#EN_CYCLO 
+***
+// Brigade sort, pointe le nez dehors.
+#FR Brigade — Bonjour
+#NL Goedemorgen
+#EN 
+***
+#FR_CYCLO Bonjour
+#NL_CYCLO Goedemorgen
+#EN_CYCLO 
+***
+#FR Brigade — Bien dormi ?
+#NL Goed geslapen?
+#EN 
+***
+#FR_CYCLO Mouiii, étonnamment bien.
+#NL_CYCLO Mjaaa, verrassend goed.
+#EN_CYCLO 
+***
+#FR Brigade — Oui moi aussi, enfin Jacques a ronflé un peu.
+#NL Ja, ik ook, nu ja, Jacques snurkte wel een beetje.
+#EN 
+***
+// Samuel sort
+#FR Samuel — Ah bonjour Brigade,
+#NL Ha goedemorgen, Brigade.
+#EN 
+***
+#FR Brigade — Salut Samuel
+#NL  Hallo, Samuel.
+#EN 
+***
+#FR Ah je vais faire un petit café tiens
+#NL Wel, ik ga een lekkere koffie klaarmaken, zie
+#EN 
+***
+#FR Jacques — Bah où est-ce qu’ils sont passés ?
+#NL Euh, waar zijn ze nu naartoe?
+#EN 
+***
+#FR Jacques — Et mais, ça émet encore… 
+#NL Hé, maar, het zendt nog uit… 
+#EN 
+***
+#FR C’est pas vrai...
+#NL Het is niet waar...
+#EN 
+***
+#FR Et bien nous sommes toujours à l’antenne,
+#NL Wel, we zijn nog steeds op antenne,
+#EN 
+***
+#FR c’est fou c’est la première fois que cette émission se poursuit jusqu’au petit matin.
+#NL het is te gek, dit is de eerste keer dat de uitzending doorgaat tot in de vroege ochtend.
+#EN 
+***
+#FR J’imagine que vous avez dû vous assoupir dans votre canapé…
+#NL Ik neem aan dat u op uw sofa ingedommeld bent…
+#EN 
+***
+#FR ou même en boule dans votre cabane…
+#NL of zelfs in uw hut geslapen hebt…
+#EN 
+***
+#FR En tout cas, vous nous faites le plaisir d’être toujours avec nous
+#NL In ieder geval, u bent zo vriendelijk om ons nog steeds gezelschap te houden.
+#EN 
+***
+#FR_CYCLO En fait, je sors de ma cabane là… Je peux rallumer les lumières ? Le jour est pas encore vraiment levé ici.
+#NL_CYCLO Eigenlijk kom ik nu mijn hut uit… Mag ik het licht weer aandoen? Het is hier nog niet echt dag.
+#EN_CYCLO 
+***
+#FR Samuel — Alors, non non attendez, laissez juste la lumière de votre ordinateur pour l’instant,
+#NL Eh, nee, nee, wacht, laat voorlopig alleen het licht van uw computer aan,
+#EN 
+***
+#FR le jour ne va pas tarder à se lever ici aussi, vous verrez.
+#NL de zon komt hier zo meteen ook op, <br/> wacht maar af.
+#EN 
+***
+#FR Jacques — Samuel !
+#NL Samuel !
+#EN 
+***
+#FR Samuel — Ouais ?
+#NL Ja ?
+#EN 
+***
+#FR Jacques — On émet encore là !
+#NL We zijn nog aan het uitzenden!
+#EN 
+***
+#FR Samuel — Hein ?
+#NL Wat?
+#EN 
+***
+#FR Jacques — On émet encore !
+#NL We zijn nog live!
+#EN 
+***
+#FR Samuel — Bah ouais je sais...
+#NL Ja, ik weet het...
+#EN 
+***
+#FR Jacques — On est en direct, là, il faut qu’on lance un truc...
+#NL We moeten iets doen, nu ...
+#EN 
+***
+#FR Samuel — Euh, ouais bah je sais pas...
+#NL Euh ja, kweenie... 
+#EN 
+***
+%%%                       
+%%% 10_CHANSON PLANTE     
+%%%                       
+
+#FR Brigade — Bah, si vous voulez, je peux vous montrer, 
+#NL Ach, als jullie willen, kan ik jullie iets laten zien. 
+#EN 
+***
+#FR au stage on fait une sorte d’exercice tous les matins.
+#NL Tijdens de stage doen we elke ochtend een soort oefening.
+#EN 
+***
+#FR C’est un petit rituel qui consiste à choisir un truc de chez soi et à aller lui dire bonjour.
+#NL Het is een kort ritueel waarbij je een voorwerp van thuis uitkiest en het gaat begroeten.
+#EN 
+***
+#FR Jacques — C’est parfait, ça.
+#NL Perfect
+#EN 
+***
+#FR Brigade — Voilà donc on va choisir un truc de chez soi.
+#NL Oké, we gaan dus een voorwerp van thuis uitkiezen.
+#EN 
+***
+#FR Par exemple, sa plante verte.
+#NL Bijvoorbeeld een sierplant.
+#EN 
+***
+#FR Voilà, si vous voulez, chez vous, vous pouvez vous lever,
+#NL Kijk, als jullie willen, kunnen jullie thuis opstaan
+#EN 
+***
+#FR vous rapprocher d’une de vos plantes vertes, 
+#NL en naar een van jullie planten gaan
+#EN 
+***
+#FR et nous ici, on va imaginer.
+#NL en wij gaan ons dat hier inbeelden.
+#EN 
+***
+#FR Voilà, vous y êtes ?
+#NL Klaar?
+#EN 
+***
+#FR Bonjour
+#NL Goedendag
+#EN 
+***
+#FR Bon, c’est une plante,
+#NL Wel, het is een plant,
+#EN 
+***
+#FR c’est votre plante.
+#NL het is uw plant.
+#EN 
+***
+#FR Elle a sa taille, son volume, ses feuilles,
+#NL Van een bepaalde omvang, een bepaald volume, met bepaalde bladeren,
+#EN 
+***
+#FR sa couleur, son pot, sa couleur de pot….
+#NL van een bepaalde kleur, in een pot, een pot van een bepaalde kleur…
+#EN 
+***
+#FR On peut dire que vous la connaissez.  
+#NL We kunnen zeggen dat je haar kent.
+#EN 
+***
+#FR Et en fait elle vous connaît aussi.
+#NL En eigenlijk kent zij je ook.
+#EN 
+***
+#FR Vous vous connaissez.
+#NL Jullie kennen elkaar.
+#EN 
+***
+#FR Et là, ce matin, vous prenez un petit moment tous les deux, vous vous regardez.
+#NL En nu, vanmorgen, nemen jullie even de tijd voor elkaar, jullie bekijken elkaar.
+#EN 
+***
+#FR C’est Plante.
+#NL Het is Plant.
+#EN 
+***
+#FR Tenez ce qu’on va faire; c’est qu’on va l’appeler comme ça, on va l’appeler Plante.
+#NL Kijk wat we gaan doen: we gaan haar zo noemen, we gaan haar Plant noemen.
+#EN 
+***
+#FR Et cette plante, Plante, 
+#NL En die plant, Plant dus,
+#EN 
+***
+#FR on pourrait se dire que c’est votre petit morceau de nature à domicile.
+#NL laten we zeggen dat ze je stukje natuur bij je thuis is.
+#EN 
+***
+#FR C’est un petit émissaire sauvage d’intérieur, 
+#NL Ze is een kleine wilde gezant voor thuis, 
+#EN 
+***
+#FR un petit Talisman Photosynthétique.
+#NL en kleine Fotosynthese-talisman.
+#EN 
+***
+#FR C’est comme si Nature vous avait envoyé Plante 
+#NL Het is alsof Natuur je Plant had gestuurd 
+#EN 
+***
+#FR pour veiller sur votre territoire, sur vous.
+#NL om over jou, over jouw territorium te waken.
+#EN 
+***
+#FR Et ce bout de plante en pot là, qui trône sans rien dire dans votre salon ou votre cuisine,
+#NL En dat stukje potplant hier, dat in alle stilte in je woonkamer of keuken prijkt,
+#EN 
+***
+#FR qui vous attend tous les soirs et qui est là tous les matins,
+#NL dat je elke avond opwacht en er elke ochtend weer is,
+#EN 
+***
+#FR c’est un veilleur de la tribu Organismes-Autotrophes de la dynastie des Eucaryotes,
+#NL dat is een bewaker van de stam der Autotrofe organismen van de dynastie der Eucaryoten,
+#EN 
+***
+#FR c’est une espèce parmi 400 000 autres, dont 369 000 espèces à fleurs.
+#NL een van 400.000 soorten, waaronder 369.000 soorten bloemdragend zijn.
+#EN 
+***
+#FR Ici c’est chez vous, c’est votre intérieur, 
+#NL We zijn hier nu bij je thuis, het is je intérieur, 
+#EN 
+***
+#FR c’est votre territoire, sur lequel règnent des règles.
+#NL het is je territorium, waar regels gelden.
+#EN 
+***
+#FR Ce sont les vôtres, celles que vous avez décidé d’instaurer 
+#NL Het zijn jouw regels, die je ooit besloot in te voeren  
+#EN 
+***
+#FR ou peut-être pas vraiment décidé, on ne sait plus très bien, mais voilà :
+#NL of misschien niet echt besloot :
+#EN 
+***
+#FR Frigo est là, Bouilloire s’est installée ici,
+#NL Koelkast staat daar, Waterketel heeft daar postgevat,
+#EN 
+***
+#FR Bibliothèque contient des trucs qui ne sont pas censée la concerner ? Coupe-ongles, tire-bouchon.
+#NL Bibliotheek bevat dingen die in principe niets met haar te maken hebben: nagelknipper, kurkentrekker.
+#EN 
+***
+#FR Buffet se tient bien droit.
+#NL Buffetkast staat zoals altijd mooi rechtop.
+#EN 
+***
+#FR Quelqu’un s’est assis sur Chaise, ici,
+#NL Iemand is hier op Stoel gaan zitten.
+#EN 
+***
+#FR quelqu’un d’autre là, dans Fauteuil.
+#NL Iemand anders daar in Zetel.
+#EN 
+***
+#FR Vous avez discuté.
+#NL Jullie hebben gediscussieerd.
+#EN 
+***
+#FR Et Plante était là.
+#NL En Plant was er ook bij.
+#EN 
+***
+#FR Et depuis tout ce temps qu’elle est là,
+#NL En sinds al die tijd dat ze daar aanwezig is,
+#EN 
+***
+#FR elle participe à tout un tas d’événements de votre vie quotidienne,
+#NL neemt ze deel aan een heleboel gebeurtenissen van je dagelijks leven,
+#EN 
+***
+#FR elle était à vos côtés,
+#NL ze houdt je gezelschap
+#EN 
+***
+#FR alors qu’il se tramait ici tout un tas de scénarios, de réalisations, 
+#NL terwijl hier van alles wordt bekokstoofd, allerlei scenario’s, realisaties,
+#EN 
+***
+#FR de cadrages plus ou moins resserrés et de surprises plus ou moins géantes.
+#NL min of meer strakke kaders, grote en minder grote verrassingen.
+#EN 
+***
+#FR Par exemple :
+#NL Bij voorbeeld:
+#EN 
+***
+#FR Vous êtes tout seul ou toute seule chez vous.
+#NL Je bent alleen thuis.
+#EN 
+***
+#FR Vous mangez une tartine.
+#NL Je eet een boterham.
+#EN 
+***
+#FR Vous éternuez.
+#NL Je niest.
+#EN 
+***
+#FR Et Plante est là.  
+#NL En Plant is erbij.
+#EN 
+***
+#FR C’est l’hiver, vous appelez votre père pour lui demander sa recette de pâte à pizza.
+#NL Het is winter en je belt je vader om naar zijn recept voor pizzadeeg te vragen.
+#EN 
+***
+#FR Vous patinez machinalement, artistiquement, dans votre salon pendant que vous téléphonez à votre père.
+#NL Je schaatst onbewust, kunstzinnig door je woonkamer terwijl je met je vader belt.
+#EN 
+***
+#FR Vous vous cognez dans un meuble et vous poussez un cri de mouette un peu ridicule.
+#NL Je stoot je tegen een meubel en je slaakt een ietwat belachelijke kreet, net een meeuw.
+#EN 
+***
+#FR Vous ouvrez Frigo, et vous tombez nez à nez avec...4 yaourts périmés depuis 4 jours
+#NL Je opent Koelkast en je oog valt op… 4 potjes yoghurt die al vier dagen over de datum zijn
+#EN 
+***
+#FR que vous vous résignez à jeter à la poubelle
+#NL en die je met tegenzin in de vuilnisbak gooit,
+#EN 
+***
+#FR en vous disant “quel gâchis, si ça se trouve c’est encore bon”
+#NL met de gedachte ‘Wat jammer toch, wie weet zijn ze gewoon nog goed’,
+#EN 
+***
+#FR ou alors vous décidez de les manger quand même
+#NL of anders besluit je om ze toch op te eten,
+#EN 
+***
+#FR en vous disant “ce serait du gâchis, si ça se trouve c’est encore bon”.
+#NL met de gedachte ‘Het zou toch zonde zijn, wie weet zijn nog goed’.
+#EN 
+***
+#FR Et Plante est là.
+#NL En Plant is erbij.
+#EN 
+***
+#FR Vous dansez tout seul dans votre salon.
+#NL Je danst in je eentje in de woonkamer.
+#EN 
+***
+#FR Vous avez une mélodie qui vous revient cycliquement en tête au réveil
+#NL Je wordt op gezette tijden wakker met hetzelfde deuntje in je hoofd
+#EN 
+***
+#FR et vous avez la certitude étrange que ça coïncide avec la pleine Lune.
+#NL en je bent er vreemd genoeg van overtuigd dat dat samenvalt met de volle maan.
+#EN 
+***
+#FR Vous faites des grands projets, vous prenez des décisions, 
+#NL Je hebt grootse plannen, je neemt beslissingen, 
+#EN 
+***
+#FR vous regrettez quelque chose, vous passez le balai.
+#NL je hebt ergens spijt van, je veegt de vloer.
+#EN 
+***
+#FR Et Plante est là.
+#NL En Plant is erbij.
+#EN 
+***
+#FR Vous avez voulu être autre chose. Vous avez voulu être votre ordinateur.
+#NL Je wilde een keer iets anders zijn. Je wilde je computer zijn.
+#EN 
+***
+#FR Et Plante est là.
+#NL En Plant is erbij.
+#EN 
+***
+#FR Plante est le témoin silencieux de tout cet océan d’affects, d’états et rouli-roula d’émotions
+#NL Plant is de stille getuige van die immense oceaan aan affecten, toestanden en de holderdebolder van emoties
+#EN 
+***
+#FR auxquelles vous avez été sujet les derniers jours, les dernières semaines, les dernières années.
+#NL die je de afgelopen dagen, weken, jaren in hun greep hadden.
+#EN 
+***
+#FR Comme des noms de chefs indiens, qui vous traversent tour à tour.
+#NL Ze klinken als de namen van opperhoofden van indianenstammen.
+#EN 
+***
+#FR Certains jours - les chefs indiens Petit-Colère, 
+#NL De ene dag heten de opperhoofden Kleine Woede, 
+#EN 
+***
+#FR Surexcitation inexpliquée,
+#NL Onverklaarbare Overspannenheid,
+#EN 
+***
+#FR Sommeil-Perdu, 
+#NL Verloren Slaap, 
+#EN 
+***
+#FR Joie-timide,
+#NL Bedeesde Vreugde,
+#EN 
+***
+#FR Grand-calme.
+#NL Grote Rust.
+#EN 
+***
+#FR D’autres jours - les chefs indiens Grande-Colère, 
+#NL Op andere dagen heten ze Grote Woede, 
+#EN 
+***
+#FR Branle-Bas-de-Combat-intérieur,
+#NL Interne Alle-hens-aan-dek,
+#EN 
+***
+#FR Sommeil-Retrouvé, 
+#NL Herwonnen Slaap, 
+#EN 
+***
+#FR Joie-palpable, 
+#NL Voelbare Vreugde, 
+#EN 
+***
+#FR Soulagement-Inespéré, 
+#NL Onverhoopte Opluchting, 
+#EN 
+***
+#FR Euphorie-Fugace.
+#NL Vluchtige Euforie.
+#EN 
+***
+#FR Et Plante est là.
+#NL En Plant is erbij.
+#EN 
+***
+#FR Plante a chaud parce qu’il fait chaud, comme vous peut-être,
+#NL Plant heeft het warm omdat het warm is, net als jij misschien,
+#EN 
+***
+#FR Plante a froid parce qu’il fait froid, comme vous peut-être
+#NL Plant heeft het koud omdat het koud is, net als jij misschien,
+#EN 
+***
+#FR Plante a soif, Plante se repose. Comme vous peut-être.
+#NL Plant heeft dorst, Plant rust uit. Net als jij misschien.
+#EN 
+***
+#FR Il a plu, il a neigé, il a grêlé.
+#NL Het heeft geregend, het heeft gesneeuwd, gehageld.
+#EN 
+***
+#FR Vous avez eu des problèmes avec des appareils électroménagers.
+#NL Je hebt het aan de stok gehad met je huishoudtoestellen.
+#EN 
+***
+#FR Et Plante est là.
+#NL En Plant is erbij.
+#EN 
+***
+#FR Elle, elle le sait qu’elle est là.
+#NL Zij, zij weet dat ze er is.
+#EN 
+***
+#FR Et vous le savez.
+#NL En jij weet het.
+#EN 
+***
+#FR Et nous le savons aussi.
+#NL En wij weten het ook.
+#EN 
+***
+#FR Voilà…
+#NL Daar…
+#EN 
+***
+#FR Vous bougez un pied.
+#NL Je verzet een voet.
+#EN 
+***
+#FR Vous pouvez bouger un pied, l’autre pied.
+#NL Je kunt een voet verzetten, de andere voet.
+#EN 
+***
+#FR Vous vous dirigez vers la fenêtre, 
+#NL Je gaat naar het venster, 
+#EN 
+***
+#FR vous ouvrez le rideau, 
+#NL je opent het gordijn, 
+#EN 
+***
+#FR vous regardez au dehors.
+#NL je kijkt naar buiten.
+#EN 
+***
+#FR Vous respirez un grand coup.
+#NL Je haalt diep adem.
+#EN 
+***
+#FR Vous vous sentez observé.
+#NL Je voelt dat iemand je observeert.
+#EN 
+***
+#FR Ça vient de l’intérieur...
+#NL Het komt van binnenuit...
+#EN 
+***
+#FR vous vous retournez…
+#NL Je kijkt om…
+#EN 
+***
+#FR C’est Plante.
+#NL Het is Plant.
+#EN 
+***
+%%%                        
+%%% 11_VOYAGE EN CAMARGUE  
+%%%                        
+#FR Ah le café est prêt
+#NL Aha, de koffie is klaar
+#EN 
+***
+#FR Donc voilà, ce serait la fin de la chanson…
+#NL Dus kijk, dat zou het einde van het liedje zijn…
+#EN 
+***
+#FR On prendrait un petit café, tous les trois,
+#NL En dan zouden we een kopje koffie drinken, alle drie,
+#EN 
+***
+#FR au soleil, en silence…
+#NL in het zonnetje, in stilte…
+#EN 
+***
+#FR En échangeant de petits hochement de têtes complices..
+#NL En we zouden veelzeggend naar elkaar knikken.
+#EN 
+***
+#FR Et puis viendrait le moment où Jacques dirait à Brigade :
+#NL En dan zou het moment komen waarop Jacques tegen Brigade zegt:
+#EN 
+***
+#FR “...Il serait pas  temps de reprendre la route là ?
+#NL “... Wordt het geen tijd om er vandoor te gaan?
+#EN 
+***
+#FR Vous allez être en retard à votre stage...“”
+#NL U gaat te laat op uw stage aankomen…”
+#EN 
+***
+#FR Brigade — Alors Brigade descendrait la pâture
+#NL Dus Brigade zou de weide uitwandelen
+#EN 
+***
+#FR Jacques — Bah nous on t’accompagnerait quand même jusqu’à la bagnole
+#NL We zouden toch met je meegaan tot aan de wagen
+#EN 
+***
+#FR Brigade — Là on reviendrait sur la route nationale,
+#NL Dan zouden we weer op de grote baan uitkomen,
+#EN 
+***
+#FR Jacques —  la départementale
+#NL De steenweg.
+#EN 
+***
+#FR Brigade — ah oui oui, la départementale 86
+#NL O ja, juist.
+#EN 
+***
+// bruit de pas bitume
+#FR Brigade — on arriverait à la voiture de Brigade
+#NL We zouden bij de wagen van Brigade aankomen
+#EN 
+***
+#FR Samuel — Toi tu ferais ta réparation. Tu ferais ton manchon
+#NL Jij zou de reparatie uitvoeren. Je verbindingsmofje
+#EN 
+***
+// A et S débâche un peu le camtard
+#FR Brigade — oui je ferais mon manchon.
+#NL Ja ik zou mijn verbindingsmofje maken.
+#EN 
+***
+#FR Finalement on s’en sortirait très bien avec la pince circlips.
+#NL En al bij al zouden we ons kunnen behelpen met de circliptang.
+#EN 
+***
+#FR La voiture serait réparée.
+#NL De wagen zou gerepareerd zijn.
+#EN 
+***
+#FR Jacques — Bon voilà, ce serait le moment des grands adieux
+#NL Goed zo, en nu zou dus het aandoenlijke afscheid plaatsvinden
+#EN 
+***
+#FR Brigade — Salut les gars
+#NL Tot ziens, mannen!
+#EN 
+***
+#FR Samuel — Salut !
+#NL Tot ziens!
+#EN 
+***
+#FR Jacques — Salut Brigade
+#NL Tot ziens, Brigade
+#EN 
+***
+#FR Samuel — Bon bah ce serait un peu émouvant.
+#NL Wel, eh, het zou nu even een pakkend moment zijn.
+#EN 
+***
+#FR là, Brigade démarrerait sa voiture et puis elle partirait.
+#NL Brigade zou de auto starten en wegrijden.
+#EN 
+***
+// Brigade traverse le plateau, J et S débâchent
+#FR Jacques — Bah attends nan mais tu partirais pas comme ça,
+#NL Hé, wacht, nee, je zou toch niet op die manier weggaan,
+#EN 
+***
+#FR on prendrait encore 5 minutes pour se repasser la soirée d’hier,
+#NL we zouden nog 5 minuutjes uitrekken om de afgelopen avond nog even te overlopen,
+#EN 
+***
+#FR On s’échangerait nos emails
+#NL We zouden mailadressen uitwisselen
+#EN 
+***
+#FR Brigade — t’as un email toi Jacques ?
+#NL Heb jij een mailadres, dan, Jacques?
+#EN 
+***
+#FR Jacques — oui, oui, lebruitdescombrailles@gmail.com
+#NL Jazeker, lebruitdescombrailles @gmail.com
+#EN 
+***
+#FR Samuel — on pourrait faire une petite photo pour le site de l’émission
+#NL We zouden een fotootje kunnen maken voor de website van de uitzending
+#EN 
+***
+#FR Jacques — Ah oui excellente idée
+#NL O ja, uitstekend idee
+#EN 
+***
+#FR Brigade — et puis on discuterait encore quelques minutes, la vitre baissée, et hop  
+#NL En dan zouden we nog enkele ogenblikken praten, door het opengedraaide raampje en hupsakee
+#EN 
+***
+#FR je klaxonnerais un coup joyeux et pis hop me vlà partie pour de bon.
+#NL ik zou even goed toeteren en dan stuif ik echt weg.
+#EN 
+***
+#FR Jacques — Et nous, on resterait là sur le bord de la route.
+#NL Ja en wij, wij zouden daar aan de rand van de weg achterblijven.
+#EN 
+***
+#FR Et puis là Jacques il regarderait Samuel
+#NL En dan zou Jacques Samuel aankijken
+#EN 
+***
+#FR Jacques — Pis là il lui dirait : “Hé… On y va ?”
+#NL En dan zou hij hem zeggen: ‘Hé… Gaan we ernaartoe?’
+#EN 
+***
+#FR Samuel — Donc là Samuel il dirait “bah où?”
+#NL Dus dan zou Samuel zeggen: ‘Eh, waarnaartoe?’
+#EN 
+***
+#FR Jacques — À son stage… En camargue ?
+#NL Naar haar stage… In de Camargue?
+#EN 
+***
+#FR Samuel — Hein ? Mais comment ?
+#NL Wat? Maar hoe?
+#EN 
+***
+#FR Jacques — Beh on prend le tracteur
+#NL Wel, we gaan met de tractor.
+#EN 
+***
+#FR Samuel — Mais oui ! 
+#NL Maar ja!
+#EN 
+***
+#FR Et donc là Jacques proposerait à Samuel de partir en tracteur,
+#NL En dus zou Jacques nu aan Samuel voorstellen om met de tractor te vertrekken,
+#EN 
+***
+#FR en lui disant “bon les Combrailles, on en a fait le tour, maintenant j’ai envie de voir du pays,
+#NL met de woorden ‘Goed, we hebben de Combrailles nu wel gezien, ik heb nu wel zin om op reis te gaan,
+#EN 
+***
+#FR et puis l’émission, bah voilà, on va faire la faire en camargue, ce sera le bruit de la camargue”
+#NL en de uitzending, wel die kunnen we in de Camargue doen, dan noemen we het ‘De stem van de Camargue’
+#EN 
+***
+#FR Jacques — Ouais ! Très bien ça !
+#NL Jep! Uitstekend, dat!
+#EN 
+***
+#FR Et voilà ils partiraient tous les deux rejoindre Brigade.
+#NL En dus zouden ze zich alle twee bij Brigade voegen.
+#EN 
+***
+#FR Samuel — Voilà et ça se finirait comme ça.
+#NL Ja, en dat zou dan het einde zijn.
+#EN 
+***
+#FR Et bien voilà, écoutez, je pense qu’on y est,
+#NL Wel, eh, luister, ik denk dat we er zijn,
+#EN 
+***
+#FR on est à ce moment particulier de bascule
+#NL we zijn op dit zo bijzondere kantelmoment aangekomen,
+#EN 
+***
+#FR où on s’apprête à s’extraire de la représentation pour revenir dans le réel
+#NL waarop we klaar zijn om uit de voorstelling te stappen en terug te komen in de werkelijkheid  
+#EN 
+***
+#FR Et d’ailleurs, à _XXX_, on pourrait tout à fait imaginer que les spectateurs
+#NL En trouwens, we kunnen ons ook heel goed voorstellen dat de toeschouwers in Paris
+#EN 
+***
+#FR sont eux aussi arrivés à ce moment bien particulier de la fin de leur représentation.
+#NL ook dat bijzondere moment van de het einde van hun voorstelling hebben bereikt.
+#EN 
+***
+#FR Ici, Mathilde revient sur le plateau avec des pancartes à destination des spectateurs
+#NL Hier bij ons, komt Mathilde het toneel weer op met bordjes voor de toeschouwers in de zaal,
+#EN 
+***
+#FR parce que justement, la fin, comme le début, c’est un moment qui suit en général un protocole, assez précis.
+#NL want, net zoals het begin, is het einde een moment waarvoor een nogal nauwkeurig protocol geldt.
+#EN 
+***
+#FR Là pour le coup ce qu’on vous propose <div id=warning> - PANCARTES ! - </div>
+#NL Nu, wat we jullie ditmaal voorstellen,
+#EN 
+***
+//SALM ONLY
+#FR_DECR c’est de rallumer les lumières chez vous,
+#NL_SALM is om bij jullie thuis het licht aan te doen,
+#EN_SALM 
+***
+#FR_DECR au même moment où nous, ici,
+#NL_SALM op het moment waarop wij, hier, 
+#EN_SALM 
+***
+#FR_DECR nous allons faire le noir dans la salle
+#NL_SALM het licht doven in de zaal.
+#EN_SALM 
+***
+#FR_DECR alors allez y, rendez-vous près d’un interrupteur,
+#NL_SALM Dus ga maar, we spreken af bij een lichtschakelaar.
+#EN_SALM 
+***
+#FR_DECR on se synchronise,
+#NL_SALM Synchronisatie...
+#EN_SALM 
+***
+#FR_DECR attention :
+#NL_SALM Opgelet:
+#EN_SALM 
+***
+#FR_DECR 3
+#NL_SALM 3
+#EN_SALM 
+***
+#FR_DECR 2
+#NL_SALM 2
+#EN_SALM 
+***
+#FR_DECR 1
+#NL_SALM 1
+#EN_SALM 
+***
+#FR_DECR top
+#NL_SALM Nu
+#EN_SALM 
+***
+// PANCARTES (SAT ONLY):
+#FR c’est qu’on fasse
+#NL_SAT is, ter afsluiting,
+#EN_SAT 
+***
+#FR le noir final
+#NL_SAT de lichten te doven
+#EN_SAT 
+***
+#FR au moment où les auditeurs
+#NL_SAT op het moment dat de luisteraars
+#EN_SAT 
+***
+#FR rallument la lumière chez eux
+#NL_SAT thuis het licht weer aandoen.
+#EN_SAT 
+***
+#FR attention
+#NL_SAT Opgelet:
+#EN_SAT 
+***
+#FR * noir *
+#NL_SAT 
+#EN_SAT 
+***
+// Sous titres uniquement pour les auditeurs
+#FR_INTR C’EST FINIIIII
+#NL_SALM HET IS AFGELOPEN!!!
+#EN_SALM 
+***
+#FR_INTR Si vous êtes encore là, c’est que vous êtes resté·e·s jusqu’à la fin
+#NL_SALM Als jullie er nog zijn, dan zijn jullie dus tot het einde gebleven
+#EN_SALM 
+***
+#FR_INTR Merci, bravo.
+#NL_SALM Bedankt, proficiat.
+#EN_SALM 
+***
+#FR_INTR Mathilde, Arnaud et Sébastien sont en train de saluer les spectateurs.
+#NL_SALM Mathilde, Arnaud en Sébastien zijn nu de toeschouwers aan het groeten.
+#EN_SALM 
+***
+#FR_INTR Moi ici, depuis la régie, je vous salue aussi.
+#NL_SALM Vanaf de regietafel groet ik jullie eveneens.
+#EN_SALM 
+***
+#FR_INTR Bravo pour votre cabane,
+#NL_SALM Proficiat voor jullie hut,
+#EN_SALM 
+***
+#FR_INTR elle est magnifique.
+#NL_SALM ze is prachtig.
+#EN_SALM 
+***
+#FR_INTR Merci d’être venu·e.
+#NL_SALM Bedankt dat jullie er waren.
+#EN_SALM 
+***
+#FR_INTR Enfin plutôt d’être resté·e chez vous.
+#NL_SALM Of eerder, dat jullie thuis gebleven zijn.
+#EN_SALM 
+***
+#FR_INTR Enfin d’être là quoi.
+#NL_SALM nu ja, dat jullie daar waren, dus.
+#EN_SALM 
+***
+#FR_INTR Si vous avez des remarques, des avis, des suggestions,
+#NL_SALM Als jullie opmerkingen, meningen, suggesties kwijt willen,
+#EN_SALM 
+***
+#FR_INTR ou pour nous envoyer la photo de votre cabane (on les collectionne)
+#NL_SALM of als jullie een foto van jullie hut willen inzenden (we verzamelen ze)
+#EN_SALM 
+***
+#FR_INTR n’hésitez pas à nous envoyer un petit e-mail à <br/>ontraverseralepont@amicaledeproduction.com
+#NL_SALM stuur ons dan zeker een e-mailberichtje naar <br/>ontraverseralepont@amicaledeproduction.com
+#EN_SALM 
 ***

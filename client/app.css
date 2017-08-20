@@ -23,7 +23,13 @@
       color:blue;
   }
 
-
+/*
+ATTENTION HACK TOUT LAID POUR VIRER LE CHOIX ANGLAIS DE SAFARI
+euh mais on dirait que ça marche pas en fait tin
+  .tap-i18n-dropdown option[value="en"] {
+    display: none;
+}
+*/
   body.representations {
       font-size: 14px;
   }
