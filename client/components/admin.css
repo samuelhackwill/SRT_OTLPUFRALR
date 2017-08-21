@@ -13,3 +13,7 @@ ul.admin_menu li:after {
 ul.admin_menu li:last-child:after {
   content: "";
 }
+
+#warning{
+	background-color:red;
+}

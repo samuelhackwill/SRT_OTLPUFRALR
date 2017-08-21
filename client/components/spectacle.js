@@ -31,9 +31,7 @@ Template.spectacle.onRendered(function () {
     if(data) {
       catchUpWithTheShow();
 
-      console.log("tu parles quel langue camarade? ", TAPi18n.getLanguage())
     }
-
     //
     // rawTextToJson();
   // console.log(Template.instance());

@@ -1,0 +1,20 @@
+Titre: We'll cross the bridge once we get to the river
+Hello: Hi
+text_home_1: is a radio-broadcasted show. Please read this page before subscribing 
+prochaine_repres: The next show starts on the
+text_home_2: On the evening of the show, you'll be at home, and you will hear what's happening at the theatre. This show was written for you (well, not only you, we also considered the audience at the theatre of course, but at any rate : we didn't only have them in mind)
+text_home_3: Par ailleurs on vous met à disposition cette petite checklist ci-dessous pour vérifier que vous avez tout ce qu'il vous faut pour profiter du spectacle. Cochez les cases en fonction de votre situation, si vous avez plus de 5 cercles verts sur le dessin ça devrait être ok, mais en définitive c'est vous qui voyez.
+text_home_3: Moreover we made a short checklist below you can use to make sure you have everything you need to enjoy the show. Check the items acording to your situation, if you end up with more that 5 green ticks on the drawing everything should be ok, but at the end of the day it's up to you.
+bon_sang_de_bois: Holy moly, apparently the browser you are using isn't compatible with our webapp. Theoreticaly, the audio stream won't work at all, so nothing much is going to happen on your computer. The good news is, we have a solution : all you have to do is to install
+revenez : and come back on this page. This text should not appear again. 
+checklist1 : I have a good internet connexion
+checklist2 : I'll be alone that night
+checklist3 : I have loud speakers
+checklist4 : I have a laptop which i can move around
+checklist5 : Last but not least : i'm available on the night of the show
+checklist6 : I have a web-RTC-ready browser (automatic test)
+text_home_4 : To book a ticket for the show (at home), click on one of these dates. it's free and doesn't commit you to anything concrete, but is necessary to connect to the show.
+dates : UPCOMING SHOWS :
+text_home_5 : Okay, you've subscribed to the night of
+text_home_6 : Let's meet then, at this address 
+text_home_7 : Besides if you change your mind and want to come another day, you can click on another date anytime you want.

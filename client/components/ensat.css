@@ -13,7 +13,10 @@ body.ensat #srt{
   font-size: 2.2vh;
 }
 
-body.ensat #nlsrt{
-  width:75%;
-  font-size: 2.2vh;
+body.ensat #eclair{
+display : none;
+}
+
+body.ensat #eclair2{
+display : none;
 }

@@ -62,7 +62,7 @@ euh mais on dirait que ça marche pas en fait tin
   }
 
   #warning{
-    background-color: red;
+    background-color: red !important;
   }
 
 

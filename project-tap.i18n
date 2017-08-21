@@ -1,7 +1,7 @@
 {
     "helper_name": "_",
-    "supported_languages": ["fr"],
+    "supported_languages": ["fr", "nl"],
     "i18n_files_route": "/tap-i18n",
     "cdn_path": null,
-    "preloaded_langs": []
+    "preloaded_langs": ["nl"]
 }

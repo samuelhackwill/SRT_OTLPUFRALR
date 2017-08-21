@@ -18,6 +18,11 @@ Template.waiting.onRendered(function () {
     $("#inscription").css("opacity", "1")
     $("#bonjour").css("opacity", "0")
   },1500)
+
+    console.log("tu parles quel langue camarade? ", TAPi18n.getLanguage())
+    TAPi18n.setLanguage("nl")
+    console.log("et maintenant tu parles quel langue? ", TAPi18n.getLanguage())
+
 });
 
 

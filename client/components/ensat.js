@@ -28,6 +28,7 @@ Template.ensat.onCreated(function() {
 Template.ensat.onRendered(function () {
   console.log('ensat!');
   $('#srt').html('')
+  $('#nlsrt').html("Put your browser in full screen mode (try to zoom in the page a bit and pull it upward), and adjust the display brightness so that it's not too bright.")
 
 
   this.autorun(() => {

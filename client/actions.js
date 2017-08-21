@@ -535,11 +535,11 @@ gotonext = function(params){
 
 // m'ajouter à un pool de loterie
 addUserToLottery = function(params){
-  console.log('user?', Meteor.connection. lastSessionId, params);
+  console.log('user?', Meteor.connection._lastSessionId, params);
   var lotteryName = params;
   if(lotteryName != "") {
-    cookies.set(lotteryName, Meteor.connection. lastSessionId);
-    em.setClient({ lotteryName: lotteryName, sessionId: Meteor.connection. lastSessionId });
+    cookies.set(lotteryName, Meteor.connection._lastSessionId);
+    em.setClient({ lotteryName: lotteryName, sessionId: Meteor.connection._lastSessionId });
     em.emit('salmAddMeToLottery');
   }
 
