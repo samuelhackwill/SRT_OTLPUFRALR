@@ -6,11 +6,6 @@
 %%% 01_OUVERTURE SALM      
 %%%                        
 ***
-#FR_INTR Est-ce que vous pouvez appuyer sur la barre espace s’il vous plaît ? (ou toucher votre écran si vous êtes sur une tablette)
-#NL_INTR 
-#EN_INTR 
-#DE_INTR Könnten Sie bitte auf die Leertaste drücken? (Falls Sie ein Tablet haben: Berühren Sie den Bildschirm)
-***
 #FR_INTR Voilà.
 #NL_INTR Ja.
 #EN_INTR Ok.
@@ -606,113 +601,113 @@
 ***
 #FR_SALM Voilà, pendant ce temps là, je vais vous expliquer un circuit, un système qu’on va installer dans la deuxième partie du spectacle,
 #NL_SALM Zo, ondertussen vertel ik jullie meer over een circuit, een elektrisch systeem dat we in het tweede deel van de voorstelling gaan opstellen.
-#EN_SALM In the time being, i'm going to explain 
+#EN_SALM In the time being, i'm going to explain a circuit we're going to put together in the second part of the show,
 #DE_SALM Gut. Ich werde Ihnen währenddessen einen Schaltkreis erklären, eine Anlage, die wir im zweiten Teil der Vorstellung aufbauen. 
 ***
 #FR_SALM je me permets de vous l’expliquer à l’avance car les choses vont se passer un petit peu vite finalement
 #NL_SALM Ik neem de vrijheid om een en ander op voorhand uit te leggen, omdat alles straks uiteindelijk redelijk snel zal verlopen
-#EN_SALM 
+#EN_SALM I'm taking a moment to explain it now because things are going to go pretty fast later on.
 #DE_SALM Ich erläutere Ihnen das schon jetzt, weil das ganze ziemlich schnell gehen wird.
 ***
 #FR_SALM donc c’est pas inintéressant pour vous, à votre position à la maison, que vous ayez déjà un point de vue technique sur c’qui va se passer :
 #NL_SALM en het is dus best interessant dat jullie, die thuis zitten, al wat technisch inzicht hebben in wat er zal gebeuren:
-#EN_SALM 
+#EN_SALM so it's not a bad idea that you already have an idea of what's going on behind the scenes.
 #DE_SALM Für Sie zuhause ist es sicher interessant, bereits den technischen Ablauf zu kennen:
 ***
 #FR_SALM Il s’agit d’un système d’allumage de bûches.
 #NL_SALM Het betreft een haardvuur.
-#EN_SALM 
+#EN_SALM It's a device to light camp fires.
 #DE_SALM Es handelt sich um eine Holzscheit-Zündanlage.
 ***
 #FR_SALM Heu, quand je dis bûches, je pense à des buches electriques hein,
 #NL_SALM Eh, als ik haardvuur zeg, dan bedoel ik wel een elektrisch haardvuur, hè,
-#EN_SALM 
+#EN_SALM Uh, electrical camp fires that is
 #DE_SALM Also, natürlich für Deko-Holzscheite mit Lampen.
 ***
 #FR_SALM vous savez que les théâtres répondent à des conditions de sécurité extrêmement strictes.
 #NL_SALM jullie weten dat in theaters heel strenge veiligheidsnormen gelden.
-#EN_SALM 
+#EN_SALM as you know, theatres have to comply with very strict security rules.
 #DE_SALM Sie wissen ja, wie streng die Sicherheitsvorschriften im Theater sind.
 ***
 #FR_SALM A la maison, vous allez déclencher un signal qui va être envoyé dans un serveur,
 #NL_SALM Straks versturen jullie van thuis uit een signaal naar een server,
-#EN_SALM 
+#EN_SALM From home, you are going to launch a signal sent to a server,
 #DE_SALM Sie zuhause werden ein Signal schalten. Das kommt auf einem Server an,
 ***
 #FR_SALM retransmis au client admin, à l’ordinateur ici qui va gérer un peu toutes les infos et le transformer en un message midi,
 #NL_SALM die het commando doorseint naar de ‘admin client’, dus de computer hier die alle data gaat verwerken en omzetten in een midi-signaal,
-#EN_SALM 
+#EN_SALM which will transfer it to the admin client - that is, a computer in the technical desk which will turn that signal into a MIDI signal,
 #DE_SALM geht weiter zum Admin Client, dann auf den hiesigen Computer, der dann alle Daten generiert und als Midi-Signal ausgibt,
 ***
 #FR_SALM qui va être transmis à la console lumière, qui elle va le renvoyer en dmx aux gradateurs,
 #NL_SALM dat naar de lichttafel gaat, waar het in DMX-protocol naar de wisselstroomschakelaars wordt gestuurd,
-#EN_SALM 
+#EN_SALM and send that MIDI signal to the light desk, which is going to convert it into DMX, into the dimmers,
 #DE_SALM ans Lichtpult, das es als DMX-Signal an die Dimmer schickt,
 ***
 #FR_SALM qui eux vont le renvoyer en 220 v aux bûches électriques, et déclencher ainsi l’allumage.
 #NL_SALM die op hun beurt een 220 V-signaal naar de elektrische haarden stuurt, waardoor de ontsteking plaatsvindt.
-#EN_SALM 
+#EN_SALM which will send 220v into the electrical camp fires, effectively turning them on.
 #DE_SALM die geben es mit 220 V weiter an die Elektro-Holzscheite, die daraufhin aufleuchten.
 ***
 #FR_SALM Voilà, informations très techniques, mais tout à l’heure quand vous aurez le bouton de déclenchement,
 #NL_SALM Zo, dat was even een erg technische uitleg, maar als jullie straks allemaal op de startknop drukken,
-#EN_SALM 
+#EN_SALM Very technical considerations, which you can bear in mind when you click on the launch button
 #DE_SALM Ja. So viel zur reinen Technik. Später, wenn der Schalt-Button bei Ihnen erscheint,
 ***
 #FR_SALM le détonateur en quelque sorte, vous aurez comme ça déjà en tête toute l’onde de choc qui va suivre le petit clic que vous ferez sur votre souris.
 #NL_SALM het ontstekingsmechanisme als het ware, dan hebben jullie alvast een beeld van de schokgolf die jullie simpele muisklik veroorzaakt.
-#EN_SALM 
+#EN_SALM the trigger one could say, so you are conscious of the shockwave following the little click you make with your mouse.
 #DE_SALM sozusagen der Zünder, dann haben Sie bereits eine Vorstellung von der Schockwelle, die Ihr kleiner Mausklick lostritt.
 ***
 #FR_SALM Voilà et puis, tout comme je vous expliquais tout à l’heure que vous nous n’allez pas nous voir,
 #NL_SALM Zo, en nog iets: zoals ik daarnet al uitlegde dat jullie ons niet kunnen zien,
-#EN_SALM 
+#EN_SALM What's more, as I told you earlier, you aren't going to see us
 #DE_SALM Ja, und ich sagte ja schon, dass Sie uns nicht sehen werden.
 ***
 #FR_SALM nous nous n’allons pas vous voir non plus,
 #NL_SALM wel wij zien jullie dus ook niet,
-#EN_SALM 
+#EN_SALM but we won't see you either.
 #DE_SALM Und auch wir werden Sie nicht sehen.
 ***
 #FR_SALM il n’y a pas de système de caméra avec tel ou tel auditeur ou quoi, vous êtes d’ailleurs tous sur le même plan,
 #NL_SALM er is geen systeem met een cameralink naar de ene of de andere luisteraar of zo, jullie hebben trouwens allemaal dezelfde status.
-#EN_SALM 
+#EN_SALM there won't be any video-streaming of any kind, all listeners are considered equal in that regard
 #DE_SALM Keiner unserer Hörer hat eine Kameraschaltung oder so. Sie haben alle die gleichen Ausgangsbedingungen.
 ***
 #bookmark entreematharn
 #FR_SALM Sébastien Ah voilà, je vois mes deux collègues, Arnaud et Mathilde, arriver sur le plateau.
 #NL_SALM Aha, kijk daar komen mijn twee collega’s Arnaud en Mathilde het toneel opgelopen.
-#EN_SALM 
+#EN_SALM And here come my collegues Arnaud and Mathilde, arriving on stage.
 #DE_SALM Ah, da sehe ich meine Kollegen Arnaud und Mathilde. Sie kommen jetzt auf die Bühne.
 ***
 #FR_SALM Ils sont munis de pancartes, pour donner quelques informations aux spectateurs du théâtre.
 #NL_SALM Ze hebben bordjes bij zich, om de toeschouwers in het theater wat informatie te geven.
-#EN_SALM 
+#EN_SALM They have posts, on which is written information for the audience.
 #DE_SALM Sie tragen Schilder mit Infos für die Zuschauer hier im Theater.
 ***
 #FR_SALM Donc, ils vont essentiellement leur expliquer que vous êtes là ce soir,
 #NL_SALM Dus, het komt erop neer dat ze hun uitleggen dat jullie er vanavond bij zijn,
-#EN_SALM 
+#EN_SALM They are explaining that you are with us tonight,
 #DE_SALM Darauf steht im Wesentlichen, dass Sie heute mit dabei sind, 
 ***
 #FR_SALM que vous nous entendez, mais que vous ne nous voyez pas...
 #NL_SALM dat jullie ons horen, maar dat jullie ons niet kunnen zien...
-#EN_SALM 
+#EN_SALM that you can hear us, but that you can't see us...
 #DE_SALM dass Sie uns hören, aber nicht sehen können ...
 ***
 #FR_SALM voilà, c’est important que tout le monde soit à peu près au même niveau d’informations..
 #NL_SALM want het is belangrijk dat iedereen min of meer over dezelfde informatie beschikt.
-#EN_SALM 
+#EN_SALM it's important that we all have the same amount of information.
 #DE_SALM Denn es ist wichtig, dass alle ungefähr gleich gut informiert sind.
 ***
 #FR_SALM Et donc là ils arrivent à leurs dernières pancartes, avec lesquelles ils expliquent certainement
 #NL_SALM En nu laten ze hun laatste bordjes zien, waarop ongetwijfeld staat
-#EN_SALM 
+#EN_SALM And they are almost finished with the posts, the last of which probably stating
 #DE_SALM Jetzt zeigen sie gerade die letzten Schilder, wahrscheinlich die, auf denen erklärt steht,
 ***
 #FR_SALM que je suis en train de vous expliquer qu’ils sont en train de montrer des pancartes. <div id=‘warning’> - STOOOP ! - </div>
 #NL_SALM dat ik aan het uitleggen ben dat zij nu de bordjes laten zien.
-#EN_SALM 
+#EN_SALM that i'm curently telling you that they are showing posts.
 #DE_SALM dass ich Ihnen gerade erkläre, dass die beiden gerade Schilder zeigen.
 ***
 // (fade in voix de sébastien dans la salle)
@@ -5054,66 +5049,66 @@ etc.
 // Sous titres uniquement pour les auditeurs — (ECRIT)
 #FR_INTR C’EST FINIIIII
 #NL_SALM HET IS AFGELOPEN!!!
-#EN_SALM 
+#EN_SALM THAT'S IT!
 #DE_SALM DAS WAR’S.
 ***
 #FR_INTR Si vous êtes encore là, c’est que vous êtes resté·e·s jusqu’à la fin
 #NL_SALM Als jullie er nog zijn, dan zijn jullie dus tot het einde gebleven
-#EN_SALM 
+#EN_SALM If you are still with us, it's that you stayed until the end.
 #DE_SALM Wenn Sie noch da sind, dann sind Sie bis zum Ende geblieben.
 ***
 #FR_INTR Merci, bravo.
 #NL_SALM Bedankt, proficiat.
-#EN_SALM 
+#EN_SALM Thank you, well done.
 #DE_SALM Danke. Bravo!
 ***
 #FR_INTR Mathilde, Arnaud et Sébastien sont en train de saluer les spectateurs.
 #NL_SALM Mathilde, Arnaud en Sébastien zijn nu de toeschouwers aan het groeten.
-#EN_SALM 
+#EN_SALM Mathilde, Arnaud and Sebastian are taking a bow on the edge of the stage.
 #DE_SALM Mathilde, Arnaud und Sébastien verbeugen sich vor den Zuschauern.
 ***
 #FR_INTR Moi ici, depuis la régie, je vous salue aussi.
 #NL_SALM Vanaf de regietafel groet ik jullie eveneens.
-#EN_SALM 
+#EN_SALM I'm also taking a bow in the technical desk.
 #DE_SALM Ich verbeuge mich vor Ihnen, hier, in der Regie.
 ***
 #FR_INTR Bravo pour votre cabane,
 #NL_SALM Proficiat voor jullie hut,
-#EN_SALM 
+#EN_SALM Congratulations for you hut,
 #DE_SALM Applaus für Ihre Hütte.
 ***
 #FR_INTR elle est magnifique.
 #NL_SALM ze is prachtig.
-#EN_SALM 
+#EN_SALM it's beautifull.
 #DE_SALM Die ist großartig.
 ***
 #FR_INTR Merci d’être venu·e.
 #NL_SALM Bedankt dat jullie er waren.
-#EN_SALM 
+#EN_SALM Thank you for coming.
 #DE_SALM Danke fürs Kommen.
 ***
 #FR_INTR Enfin plutôt d’être resté·e chez vous.
 #NL_SALM Of eerder, dat jullie thuis gebleven zijn.
-#EN_SALM 
+#EN_SALM Or rather for staying home.
 #DE_SALM Also, nein: Fürs Zuhausebleiben.
 ***
 #FR_INTR Enfin d’être là quoi.
 #NL_SALM nu ja, dat jullie daar waren, dus.
-#EN_SALM 
+#EN_SALM I mean, for being with us.
 #DE_SALM Also, fürs Dabeisein eben.
 ***
 #FR_INTR Si vous avez des remarques, des avis, des suggestions,
 #NL_SALM Als jullie opmerkingen, meningen, suggesties kwijt willen,
-#EN_SALM 
+#EN_SALM If you have remarks, ideas, suggestions,
 #DE_SALM Wenn Sie Kommentare, Meinungen, Vorschläge haben,
 ***
 #FR_INTR ou pour nous envoyer la photo de votre cabane (on les collectionne)
 #NL_SALM of als jullie een foto van jullie hut willen inzenden (we verzamelen ze)
-#EN_SALM 
+#EN_SALM or to send us a picture of your hut (we're making a collection)
 #DE_SALM oder ein Foto von Ihrer Hütte (die sammeln wir nämlich),
 ***
 #FR_INTR n’hésitez pas à nous envoyer un petit e-mail à <br/>ontraverseralepont@amicaledeproduction.com
 #NL_SALM stuur ons dan zeker een e-mailberichtje naar <br/>ontraverseralepont@amicaledeproduction.com
-#EN_SALM 
+#EN_SALM please send an e-mail to <br/>ontraverseralepont@amicaledeproduction.com
 #DE_SALM schicken Sie uns gern eine E-Mail an <br/>ontraverseralepont@amicaledeproduction.com
 ***
