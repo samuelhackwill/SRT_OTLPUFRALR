@@ -511,102 +511,102 @@
 ***
 #FR_SALM Le premier qui est assez important, c’est une plante verte,
 #NL_SALM Het eerste is nogal belangrijk: dat is een sierplant,
-#EN_SALM The first, which is somewhat
+#EN_SALM The first, which is somewhat important, is a plant
 #DE_SALM Die erste ist recht wichtig: eine Grünpflanze.
 ***
 #FR_SALM je ne sais pas ou vous vous trouvez, si vous êtes dans le salon, dans la cuisine, la chambre, la salle de bain qu’importe,
 #NL_SALM ik weet niet waar jullie je bevinden, of jullie in de woonkamer, de keuken, de slaapkamer, de badkamer of waar dan ook zijn,
-#EN_SALM 
+#EN_SALM i don't know where you are, in the living room, in the kitchen, in your bedroom, in the bathroom, whichever
 #DE_SALM Ich weiß nicht, wo Sie gerade sind — Wohnzimmer, Küche, Schlafzimmer, Bad, wo auch immer.
 ***
 #FR_SALM en tout cas, ce serait bien que vous ayez à portée de main une plante verte,
 #NL_SALM in ieder geval is het goed om een sierplant binnen handbereik te hebben,
-#EN_SALM 
+#EN_SALM in any case, it would be good that you have a plant handy,
 #DE_SALM Es wäre jedenfalls gut, wenn Sie eine Grünpflanze griffbereit hätten.
 ***
 #FR_SALM alors ça peut être n’importe quelle plante, verte ou pas d’ailleurs, votre plante préférée comme celle que vous n’arrosez jamais,
 #NL_SALM en dat mag echt om het even welke plant zijn, een sierplant of een andere plant, jullie lievelingsplant, of de plant die jullie nooit besproeien,
-#EN_SALM 
+#EN_SALM it can be any kind of plant, your favourite plant or the one which you always forget to water,
 #DE_SALM Irgendeine Pflanze, eigentlich egal, ob sie grün ist oder nicht, verhätschelt oder vertrocknet.
 ***
 #FR_SALM en tout cas, ce serait bien de la ramener proche de vous, elle vous servira tout à l’heure..
 #NL_SALM in elk geval zou het goed zijn om haar bij de hand te hebben, want ze komt straks nog van pas.
-#EN_SALM 
+#EN_SALM it would be good to bring it next to you, we will use it later on.
 #DE_SALM Auf jeden Fall sollten Sie sie bei sich haben. Sie brauchen sie später.
 ***
 #FR_SALM Autre élément, c’est le téléphone, voilà si vous pouvez le garder à côté de vous.
 #NL_SALM Een ander element is de telefoon, dus als je die binnen handbereik hebt, prima.
-#EN_SALM 
+#EN_SALM Another element is the phone, if you could keep it close also
 #DE_SALM Das nächste ist das Telefon. Das sollte neben Ihnen liegen.
 ***
 #FR_SALM Vérifiez que vous avez assez de batterie, pour qu’il puisse tenir pendant l’heure ou l’heure et quart qui va suivre...
 #NL_SALM Kijk wel even of je batterij voldoende opgeladen is, zodat je gsm het komende uur of uur en een kwart beschikbaar is...
-#EN_SALM 
+#EN_SALM Please make sure it has enough battery to stay turned on during the next one and a quarter hour...
 #DE_SALM Schauen Sie, dass der Akku für die nächsten 60 bis 75 Minuten reicht.
 ***
 #FR_SALM Autre indication, un petit plus amusante, je vais vous proposer de partir en collecte dans la maison.
 #NL_SALM Een andere aanwijzing, die wat grappiger is: ik stel jullie voor om huisspullen te verzamelen.
-#EN_SALM 
+#EN_SALM Last indication, which is more amusing : i'm going to ask you to go and collect stuff in your house.
 #DE_SALM Noch eine Anweisung, etwas lustiger: Sie können zuhause eine Sammelaktion starten.
 ***
 #FR_SALM Voilà, je vous explique: tout à l’heure nous allons vous proposer de mettre en place une construction.
 #NL_SALM Oké, ik leg dit even uit: straks zullen we jullie voorstellen om een constructie te maken,
-#EN_SALM 
+#EN_SALM What this is about, is that later in the show we're going to build something,
 #DE_SALM Folgendermaßen: Wir werden Ihnen später vorschlagen, etwas zu bauen.
 ***
 #FR_SALM Assez élémentaire ne vous inquiétez pas, qu’on pourrait appeler cabane..
 #NL_SALM heel rudimentair, wees gerust, die we de hut zouden kunnen noemen.
-#EN_SALM 
+#EN_SALM a very simple construction, don't worry, that we could call a "hut".
 #DE_SALM Etwas ganz einfaches, keine Sorge, etwas, das man Hütte nennen könnte.
 ***
 #FR_SALM Le petit jeu que je vous propose maintenant, dans les quelques minutes qui suivent,
 #NL_SALM Nu, voor de komende minuten stel ik jullie een spelletje voor:
-#EN_SALM 
+#EN_SALM The small game that you can do now if you feel like it, during the next 5 minutes,
 #DE_SALM Jetzt schlage ich Ihnen für die nächsten Minuten ein kleines Spiel vor:
 ***
 #FR_SALM c’est d’aller collecter, d’aller chercher les différents éléments qui pourraient vous servir à la construire.
 #NL_SALM ga op zoek en verzamel verschillende spullen waarmee je die hut zou kunnen bouwen.
-#EN_SALM 
+#EN_SALM is to go and collect the elements with which you could make this hut.
 #DE_SALM Sammeln Sie Dinge, mit denen Sie eine Hütte bauen können.
 ***
 #FR_SALM Alors il y a tout un tas de type de cabanes différentes evidemment, si je vous donne des exemples classiques,
 #NL_SALM Er zijn natuurlijk allerlei verschillende soorten hutten, ik geef jullie enkele alom bekende voorbeelden,
-#EN_SALM 
+#EN_SALM So of course, there are many kind of huts, but i can give you a couple of examples,
 #DE_SALM Es gibt ja ganz verschiedene Hütten, wenn ich mal die klassischen Beispiele nenne,
 ***
 #FR_SALM on va trouver des draps par exemple, des chaises, ça peut être tout type de structure, si vous avez un étendoir à linge,
 #NL_SALM je kunt bijvoorbeeld denken aan lakens, stoelen, het mag om het even welke structuur zijn, als je een droogrek hebt,
-#EN_SALM 
+#EN_SALM you can use sheets for instance, and chairs, but you can use any kind of structure, like a towel rail,
 #DE_SALM die bestehen z.B. aus Laken, Stühlen — als Grundgerüst taugt alles mögliche, ein Wäscheständer,
 ***
 #FR_SALM un dessous de table, un dessous de bureau, un manche à balai, que sais-je n’importe quoi.
 #NL_SALM of een onderstel voor een tafel of bureau, of een bezemsteel, weet ik veel, om het even wat.
-#EN_SALM 
+#EN_SALM a table, a desk, a broomstick, or whatever.
 #DE_SALM der Unterbau eines Tisches, ein Besenstiel, was auch immer.
 ***
 #FR_SALM Voilà, je vous laisse quelques instants pour récupérer tout ça.
 #NL_SALM Zo, ik laat jullie even de tijd om dat te verzamelen.
-#EN_SALM 
+#EN_SALM Ok, so you still have some time to fetch these things.
 #DE_SALM Gut, ich gebe Ihnen etwas Zeit, um das alles zu besorgen.
 ***
 #FR_SALM Donc je précise qu’il ne s’agit pas de construire la cabane maintenant,
 #NL_SALM Dus, voor de duidelijkheid, het is niet de bedoeling om de hut nu al te bouwen,
-#EN_SALM 
+#EN_SALM Let me make clear that it's not yet time to make the hut,
 #DE_SALM Wie gesagt, die Hütte wird jetzt noch nicht gebaut.
 ***
 #FR_SALM l’idée c’est simplement de réunir les matériaux pour pouvoir la construire tout à l’heure.
 #NL_SALM de bedoeling is gewoon om alle spullen bij elkaar te brengen, om straks te kunnen bouwen.
-#EN_SALM 
+#EN_SALM but just to collect the materials so we're ready later on.
 #DE_SALM Sie sollen erst einmal nur Ihre Bauteile zusammenstellen.
 ***
 #FR_SALM Vous pouvez aussi trouver l’endroit où vous voulez l’installer par exemple...
 #NL_SALM En jullie kunnen bijvoorbeeld ook al de plek kiezen waar jullie de hut willen opstellen...
-#EN_SALM 
+#EN_SALM You can also pick the spot on which you will build the hut.
 #DE_SALM Sie können auch schon einmal den passenden Ort für die Hütte finden.
 ***
 #FR_SALM Voilà, pendant ce temps là, je vais vous expliquer un circuit, un système qu’on va installer dans la deuxième partie du spectacle,
 #NL_SALM Zo, ondertussen vertel ik jullie meer over een circuit, een elektrisch systeem dat we in het tweede deel van de voorstelling gaan opstellen.
-#EN_SALM 
+#EN_SALM In the time being, i'm going to explain 
 #DE_SALM Gut. Ich werde Ihnen währenddessen einen Schaltkreis erklären, eine Anlage, die wir im zweiten Teil der Vorstellung aufbauen. 
 ***
 #FR_SALM je me permets de vous l’expliquer à l’avance car les choses vont se passer un petit peu vite finalement
