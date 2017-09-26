@@ -136,6 +136,7 @@ next = function(){
               }
             }else{
               // ça c'est parce que videoproj il doit afficher deux langues en même temps
+              // euh là faudrait peut être prepend
                 $("<div>"+params[i][balisesVue[k]]+"</div>").appendTo("#srt")
             }
           }
@@ -460,6 +461,17 @@ addLotteryButtons = function(){
       newBoutton(["iWantONH","Ja","addUserToLottery('oui-non-euh')","destroy(id)"])
       newBoutton(["nonB","Nee","destroy(id)"])
       break
+
+    case "en" :
+      newBoutton(["iWantONH","Yes","addUserToLottery('oui-non-euh')","destroy(id)"])
+      newBoutton(["nonB","No","destroy(id)"])
+      break
+    
+    case "de" :
+      newBoutton(["iWantONH","Ja","addUserToLottery('oui-non-euh')","destroy(id)"])
+      newBoutton(["nonB","Nein","destroy(id)"])
+      break
+
   }
   $("#sacbouttons").addClass("visible")
   $("#sacbouttons").removeClass("invisible")
@@ -474,6 +486,14 @@ addCuppasButtons = function(){
 
     case "nl":
       newBoutton(["finishCuppa","OK IK BEN KLAAR MET MIJN HUT", "finishCuppa(id)" ])
+    break
+
+    case "en":
+      newBoutton(["finishCuppa","OK I'M DONE WITH MY HUT", "finishCuppa(id)" ])
+    break
+
+    case "de":
+      newBoutton(["finishCuppa","OK MEINE HÜTTE IST FERTIG", "finishCuppa(id)" ])
     break
   }
   $("#cuppasInc").remove()
@@ -498,6 +518,16 @@ finishCuppa = function(e){
       case "nl":
         $("#srt").html("Wacht\, ben je zeker dat je goed geïnstalleerd bent\, lekker comfortabel \? Je hebt een echte hut gemaakt \? Je hebt een warme drank \? Lekker veel kussens \? <br/> Je hebt namelijk nog de tijd om alles op punt te stellen vooraleer je bevestigd dat je klaar bent.")
         $("#finishCuppa").attr('value', 'OK\, DEZE KEER BEN IK GOED GEÏNSTALLEERD EN IK HEB MIJN WARME DRANK.');
+      break
+
+      case "en":
+        $("#srt").html("Wait\, are you really comfy\?\, have you really made a hut \? Do you have a warm drink handy \? Heaps of cushions \? <br/> You still have a bit of time to do some fine tuning.")
+        $("#finishCuppa").attr('value', 'OK\, THIS TIME I\'M REALLY COMFY AND I HAVE MY WARM DRINK');
+      break
+
+      case "de":
+        $("#srt").html("Moment\. Sind Sie sicher\, dass Sie es wirklich gemütlich haben\? So richtig kuschelig \? Haben Sie eine Hütte gebaut \? Haben Sie ein Heißgetränk \? Ganz viele Kissen \? <br/> Sie haben noch Zeit\. Sie können Ihr kleines Bauwerk vervollkommnen\, bevor Sie bestätigen\, dass Sie fertig sind\.")
+        $("#finishCuppa").attr('value', 'OK JETZT IST ES HIER RICHTIG GEMÜTLICH UND DAS HEISSGETRÄNK HABE ICH AUCH.');
       break
 
   }

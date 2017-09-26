@@ -1,6 +1,8 @@
 var streamCheckInterval;
 var caughtUp = false;
 var intervalReload;
+headerOpen = false;
+
 
 Template.spectacle.onCreated(function() {
 
@@ -18,6 +20,10 @@ Template.spectacle.onRendered(function () {
 
 
   this.autorun(() => {
+    indexlang = 0;
+    langtab = TAPi18n.getLanguages()
+    howmanylang = Object.keys(langtab).length
+
     let ready = Template.instance().subscriptionsReady();
     if (!ready){ return; }
     let contnus = ContenusEcran.find().fetch();
@@ -30,7 +36,7 @@ Template.spectacle.onRendered(function () {
     console.log('ContenusEcran ?', ContenusEcran.find().fetch());
     if(data) {
       catchUpWithTheShow();
-
+      // TAPi18n.setLanguage("nl");
     }
     //
     // rawTextToJson();
@@ -75,6 +81,7 @@ Template.spectacle.onRendered(function () {
   };
 
     em.addListener('showLTNumberClient', function(){
+      // DEPRECATED
       switch(TAPi18n.getLanguage()){
         case "fr":
           $("<div>"+"Appelez ce numéro : <br /> + 33 (0)7 81 89 76 86 <br />(Et coupez le son de votre ordinateur! Sinon ça va faire des sons bizarres)."+"<br/</div>").appendTo("#phoneNumberSrt")
@@ -82,6 +89,10 @@ Template.spectacle.onRendered(function () {
 
         case "nl":
           $("<div>"+"Bel dit nummer : <br /> +33 7 81 89 76 86 <br/> (En schakel het geluid van jullie computer uit! Anders horen we allerlei rare geluiden)."+"<br/</div>").appendTo("#phoneNumberSrt")
+          break
+
+        case "de":
+          $("<div>"+"Rufen Sie unter dieser Nummer an : <br /> +33 7 81 89 76 86 <br/> (Und schalten Sie Ihren Computer stumm! Sonst gibt es komische Geräusche.)"+"<br/</div>").appendTo("#phoneNumberSrt")
           break
 
         case "en":
@@ -95,6 +106,12 @@ Template.spectacle.onRendered(function () {
     switch(TAPi18n.getLanguage()){
       case "fr":
         $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
+        break
+      case "de":
+        $('<button id="oui" class="button">ja</button><button id="non" class="button">nein</button><button id="euh" class="button">ääähm</button>').appendTo('#sacbouttons');
+        break
+      case "en":
+        $('<button id="oui" class="button">yes</button><button id="non" class="button">no</button><button id="euh" class="button">uhh</button>').appendTo('#sacbouttons');
         break
       case "nl":
         $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
@@ -118,7 +135,22 @@ function showMeTheButtons(){
 
     // if(Roles.userIsInRole(Meteor.user(), "spectacle_one")==true) {
   console.log('showMeTheButtons');
-  $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
+
+      switch(TAPi18n.getLanguage()){
+      case "fr":
+        $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
+        break
+      case "de":
+        $('<button id="oui" class="button">ja</button><button id="non" class="button">nein</button><button id="euh" class="button">ääähm</button>').appendTo('#sacbouttons');
+        break
+      case "en":
+        $('<button id="oui" class="button">yes</button><button id="non" class="button">no</button><button id="euh" class="button">uhh</button>').appendTo('#sacbouttons');
+        break
+      case "nl":
+        $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
+        break
+        }
+
   $("#sacbouttons").css("opacity", "1")
     // }
 
@@ -126,17 +158,30 @@ function showMeTheButtons(){
 
   em.addListener('startONHLotteryClient', function(){
     console.log("début de la lotterie ONH les shlags!")
-    newBoutton(["ouiSP1","Oui","addUserToLottery('oui-non-euh')","destroy(id)", "$('#phoneNumberSrt').empty()"])
-    newBoutton(["nonSP1","Non","destroy(id)", "$('#phoneNumberSrt').empty()"])
 
             switch(TAPi18n.getLanguage()){
         case "fr":
           $("<div>Est-ce que vous êtes partant·e pour répondre aux questions de Jacques ?</div>").appendTo("#phoneNumberSrt")
+          newBoutton(["ouiSP1","Oui","addUserToLottery('oui-non-euh')","destroy(id)", "$('#phoneNumberSrt').empty()"])
+          newBoutton(["nonSP1","Non","destroy(id)", "$('#phoneNumberSrt').empty()"])
           break
- // <br/> (ou a minima un petit arrangement confortable et néanmoins inhabituel ?)
+
+        case "de":
+          $("<div>Hätten Sie Lust, auf Jacques’ Fragen zu antworten?</div>").appendTo("#phoneNumberSrt")
+          newBoutton(["ouiSP1","Ja","addUserToLottery('oui-non-euh')","destroy(id)", "$('#phoneNumberSrt').empty()"])
+          newBoutton(["nonSP1","Nein","destroy(id)", "$('#phoneNumberSrt').empty()"])          
+          break
+
+        case "en":
+          $("<div>Would you like to answer Jacques?</div>").appendTo("#phoneNumberSrt")
+          newBoutton(["ouiSP1","Yes","addUserToLottery('oui-non-euh')","destroy(id)", "$('#phoneNumberSrt').empty()"])
+          newBoutton(["nonSP1","No","destroy(id)", "$('#phoneNumberSrt').empty()"])          
+          break
 
         case "nl":
           $("<div>Heb je zin om de vragen van Jacques te beantwoorden?</div>").appendTo("#phoneNumberSrt")
+          newBoutton(["ouiSP1","Ja","addUserToLottery('oui-non-euh')","destroy(id)", "$('#phoneNumberSrt').empty()"])
+          newBoutton(["nonSP1","Nee","destroy(id)", "$('#phoneNumberSrt').empty()"])          
           break
         }
   });
@@ -155,15 +200,28 @@ function showMeTheButtons(){
 
   em.addListener('startCabaneLotteryClient', function(){
     console.log("début de la lotterie Cabane les shlags!")
-    newBoutton(["cuppasInc","Oui","addUserToLottery('cabane')","destroy(id)", "$('#phoneNumberSrt').empty()"])
-    newBoutton(["boissonN","Non","destroy(id)", "$('#phoneNumberSrt').empty()"])
         switch(TAPi18n.getLanguage()){
         case "fr":
           $("<div>Est-ce que vous êtes partant·e pour faire une cabane ?</div>").appendTo("#phoneNumberSrt")
+          newBoutton(["cuppasInc","Oui","addUserToLottery('cabane')","destroy(id)", "$('#phoneNumberSrt').empty()"])
+          newBoutton(["boissonN","Non","destroy(id)", "$('#phoneNumberSrt').empty()"])
           break
- // <br/> (ou a minima un petit arrangement confortable et néanmoins inhabituel ?)
+
+        case "en":
+          $("<div>Would you feel like making a small hut ?</div>").appendTo("#phoneNumberSrt")
+          newBoutton(["cuppasInc","Yes","addUserToLottery('cabane')","destroy(id)", "$('#phoneNumberSrt').empty()"])
+          newBoutton(["boissonN","No","destroy(id)", "$('#phoneNumberSrt').empty()"])
+          break        
+
+        case "de":
+          newBoutton(["cuppasInc","Ja","addUserToLottery('cabane')","destroy(id)", "$('#phoneNumberSrt').empty()"])
+          newBoutton(["boissonN","Nein","destroy(id)", "$('#phoneNumberSrt').empty()"])
+          $("<div>Hätten Sie Lust, eine Hütte zu bauen?</div>").appendTo("#phoneNumberSrt")
+          break
 
         case "nl":
+          newBoutton(["cuppasInc","Ja","addUserToLottery('cabane')","destroy(id)", "$('#phoneNumberSrt').empty()"])
+          newBoutton(["boissonN","Nee","destroy(id)", "$('#phoneNumberSrt').empty()"])
           $("<div>Heb je zin om een hut te bouwen?</div>").appendTo("#phoneNumberSrt")
           break
         }
@@ -556,6 +614,28 @@ var nextEvent = function(){
 }
 
 Template.spectacle.events({
+
+  'click #menu' : function(){
+    headerOpen=!headerOpen
+
+    if(headerOpen){
+      document.getElementById("header").style.transform = "translateY(0%)"
+      document.getElementById("menu").innerHTML = "X"
+    }else{
+      document.getElementById("header").style.transform = "translateY(-100%)" 
+      document.getElementById("menu").innerHTML = "?"
+    }
+  },
+
+  'click #flag' : function(){
+    console.log(Object.keys(langtab)[indexlang])
+    if (indexlang==howmanylang-1) {
+        indexlang=0
+    }else{
+        indexlang+=1
+    }
+    TAPi18n.setLanguage(Object.keys(langtab)[indexlang])
+    },
 
   'click #cuppasInc': function(){
   //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});

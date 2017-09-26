@@ -1,0 +1,22 @@
+Status : If the sound stream hasn't started or is broken, you can reload the page. If nothing seems to be working please help us by reporting a bug here >HELP!<
+Bug : -> Hum this is broken
+Lan : DE
+Titre: We'll cross the bridge once we get to the river
+Hello: Hallo
+text_home_1: ist ein Theaterstück mit Audio-Livestream. Zum Mithören bitte weiterlesen.
+prochaine_repres: Die nächste Vorstellung beginnt am
+text_home_2: Am Abend der Vorstellung bleiben Sie einfach zuhause und hören per Livestream, was auf der Bühne passiert. Dieses Stück wurde für Sie geschrieben (na ja, nicht für Sie allein, auch für diejenigen, die ins Theater gekommen sind - aber eben auch nicht allein für die).
+text_home_3: Schauen Sie kurz auf unserer Checkliste nach, was Sie zum Mithören brauchen. Klicken Sie an, was auf Sie zutrifft. Wenn fünf grüne Häkchen auf der Zeichnung zu sehen sind, sollte alles soweit ok sein. Gehen Sie aber noch einmal sicher, dass Sie alles haben.
+bon_sang_de_bois: Ach, du lieber Himmel - Ihr Browser ist anscheinend nicht mit unserer Web-App kompatibel. Das heißt, dass der Audio-Stream nicht funktionieren kann und deshalb auf Ihrem Rechner nicht viel passieren wird. Die gute Nachricht: Es gibt eine Lösung für dieses Problem. Installieren Sie
+revenez : und rufen Sie dann wieder diese Seite auf. Dieser Text sollte dann verschwunden sein. 
+checklist1 : Ich habe eine gute Internet-Verbindung.
+checklist2 : Ich bin an dem Abend zuhause, allein (wenn möglich).
+checklist3 : Ich habe Lautsprecher oder Kopfhörer.
+checklist4 : Ich habe einen Rechner, den ich mit mir herumtragen kann.
+checklist5 : Und, klar, ich kann mir für die Dauer der Vorstellung Zeit nehmen.
+checklist6 : Mein Browser unterstützt WebRTC (automatischer Test).
+text_home_4 : Um zuhause eine Vorstellung live mitzuhören, reservieren Sie per Mausklick einen der folgenden Termine. Die Anmeldung ist kostenlos und an keine Verpflichtungen gebunden. Sie ist lediglich notwendig, damit Sie sich zur Vorstellung einloggen können.
+dates : NÄCHSTE VORSTELLUNGEN:
+text_home_5 : Ok, Sie sind jetzt angemeldet für die Vorstellung am
+text_home_6 : Wir treffen uns zu diesem Termin wieder hier, auf
+text_home_7 : Übrigens: Falls sich Ihre Pläne ändern und Sie lieber an einem anderen Abend mithören möchten, reservieren Sie einfach einen neuen Termin.

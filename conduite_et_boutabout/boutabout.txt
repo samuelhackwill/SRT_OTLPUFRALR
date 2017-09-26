@@ -225,7 +225,7 @@
 %%%             
 %%% INTRO SEB   
 %%%             
-#FR_SALM Bonsoir à vous, chers auditeurs,
+#FR_SALM Bonsoir à vous, chers auditeurs·trices,
 #NL_SALM Goedenavond, beste luisteraars,
 #EN_SALM 
 #DE_SALM 
@@ -776,7 +776,7 @@
 #DE 
 ***
 #FR à _XXX_, au théâtre _XXX_,
-#NL in Paris in het Théâtre du café de la Gare
+#NL in Parijs in het Théâtre du café de la Gare
 #EN in Paris at the Théâtre du café de la Gare
 #DE 
 ***
@@ -823,7 +823,7 @@
 ***
 // SILENCE
 #FR Imaginez, vous êtes _XXX_,
-#NL Stel je voor, je bent in Paris,
+#NL Stel je voor, je bent in Parijs,
 #EN Let's imagine : you are in Paris,
 #DE 
 ***
@@ -1233,7 +1233,7 @@
 ***
 #FR Ah si, je sais, je pense bien être dans ce qu’on appelle le massif des Combrailles.
 #NL Ah ja, ik denk wel dat ik in het zogenoemde Combrailles-massief ben.
-#EN Ho yes, I think I'm somewhere in the so called "Combrailles massif"
+#EN Ho yes, I think I'm somewhere in the so called "Combrailles range"
 #DE 
 ***
 #FR Arnaud — Ah oui c’est pas mal les Combrailles…
@@ -2214,135 +2214,136 @@
 #DE_SALM 
 ***
 //SPECTATEURS SEULEMENT ====
+%%% ATTENTION OULALALALALAA IL FAUT RECHANGER LES BALISES "EN" ICI SINON ON VA PASSER POUR DES DEBILES
 #FR Brigade — C’est quoi ce principe de projection mentale ?
 #NL_SAT Wat is dat principe van mentale projectie?
-#EN_SAT What's the thing with "mental projection"?
+#EN What's the thing with "mental projection"?
 #DE_SAT 
 ***
 #FR Samuel — Ah ça c’est la fixation de Jacques depuis un moment
 #NL_SAT Aha, Jacques is daar al een tijdje op gefixeerd,
-#EN_SAT Well, it’s been Jacques obsession for quite a time. 
+#EN Well, it’s been Jacques obsession for quite a time. 
 #DE_SAT 
 ***
-#FR Samuel — il voudrait absolument essayer d’inverser les flux…
+#FR Samuel — il voudrait absolument essayer d’inverser les flux… <div id='warning'> - FADE OUT SEB -</div>
 #NL_SAT hij wil per se proberen de stroomrichting te veranderen…
-#EN_SAT He wanted to try to reverse the flows...
+#EN He wanted to try to reverse the flows...
 #DE_SAT 
 ***
 //(fade out)
 #FR B (voix off, pour elle même) — D’accord… 
 #NL_SAT Oké...
-#EN_SAT Okay…
+#EN Okay…
 #DE_SAT 
 ***
 #FR D’accord, donc là ils sont partis là.
 #NL_SAT Oké, dus daar gaan ze nu.
-#EN_SAT They’re totally gone... 
+#EN They’re totally gone... 
 #DE_SAT 
 ***
 #FR Ils sont complètement transporté tous les deux,
 #NL_SAT Ze zijn allebei volkomen bezeten,
-#EN_SAT They are both completely elated. 
+#EN They are both completely elated. 
 #DE_SAT 
 ***
 #FR enfin en fait ils sont en train d’expliquer la même chose,
 #NL_SAT nu ja in feite zijn ze hetzelfde aan het uitleggen,
-#EN_SAT They’re now explaining the same thing; 
+#EN They’re now explaining the same thing; 
 #DE_SAT 
 ***
 #FR ils parlent d’inversion des flux, 
 #NL_SAT ze praten over het omkeren van stroomrichtingen, 
-#EN_SAT talking about reversing the flows. 
+#EN talking about reversing the flows. 
 #DE_SAT 
 ***
 #FR comme quoi y’a un flux de représentation mentale,
 #NL_SAT want blijkbaar is er zoiets als een mentale beeldvormingsstroom,
-#EN_SAT As if there was a flow of mental projection. 
+#EN As if there was a flow of mental projection. 
 #DE_SAT 
 ***
 #FR que depuis tout à l’heure c’est seulement les auditeurs 
 #NL_SAT en sinds daarstraks zijn het de luisteraars 
-#EN_SAT Until now, only the listeners 
+#EN Until now, only the listeners 
 #DE_SAT 
 ***
 #FR qui se représentent notre réalité,
 #NL_SAT die zich een beeld vormen van onze realiteit,
-#EN_SAT have been picturing our reality here,
+#EN have been picturing our reality here,
 #DE_SAT 
 ***
 #FR qui se projettent ici,
 #NL_SAT die zich hierheen projecteren, 
-#EN_SAT have been projecting themselves. 
+#EN have been projecting themselves. 
 #DE_SAT 
 ***
 #FR et que maintenant ils voudraient inverser la direction de la projection
 #NL_SAT en nu willen ze de richting van de projectie omkeren,
-#EN_SAT And now they would like to change the direction of the projection, 
+#EN And now they would like to change the direction of the projection, 
 #DE_SAT 
 ***
 #FR ils voudraient remonter le flux de projection 
 #NL_SAT ze willen tegen de projectiestroom in gaan 
-#EN_SAT to go back up the flow 
+#EN to go back up the flow 
 #DE_SAT 
 ***
 #FR comme un saumon remonte une rivière
 #NL_SAT zoals een zalm tegen de rivierstroom ingaat,
-#EN_SAT like salmons go back up a river 
+#EN like salmons go back up a river 
 #DE_SAT 
 ***
 #FR dans un souci de rééquilibrer la connexion...
 #NL_SAT met de bedoeling het evenwicht in de verbinding te herstellen…
-#EN_SAT in order to reach a balance with the connection...
+#EN in order to reach a balance with the connection...
 #DE_SAT 
 ***
 #FR Et dons là ce qu’on va faire c’est qu’on va aller se projeter
 #NL_SAT En dus wat gaan we nu doen? We gaan ons projecteren
-#EN_SAT So, we are going to project ourselves 
+#EN So, we are going to project ourselves 
 #DE_SAT 
 ***
 #FR chez un auditeur qui a été selectionné au hasard,
 #NL_SAT op een willekeurig geselecteerde luisteraar
-#EN_SAT at a listener’s place, who’s been randomly selected 
+#EN at a listener’s place, who’s been randomly selected 
 #DE_SAT 
 ***
 #FR qui va être directement connecté à l’ordinateur de Samuel....
 #NL_SAT die rechtstreeks in verbinding komt te staan met Samuels computer…
-#EN_SAT and who will be connected to Samuel’s computer. 
+#EN and who will be connected to Samuel’s computer. 
 #DE_SAT 
 ***
 #FR Et alors comment ça marche techniquement ? Et bien samuel est en train de m’expliquer...
 #NL_SAT En hoe gaat dat technisch in zijn werk? Wel, Samuel is het aan het uitleggen…
-#EN_SAT So, how does it work technically speaking? Samuel is explaining…
+#EN So, how does it work technically speaking? Samuel is explaining…
 #DE_SAT 
 ***
 #FR qu’est-ce qu’il dit ?
 #NL_SAT Wat zegt hij?
-#EN_SAT What is he saying?
+#EN What is he saying?
 #DE_SAT 
 ***
 #FR Samuel —….et c’est renvoyé sur l’interface admin.
 #NL_SAT…en het wordt doorgestuurd naar de admin interface.
-#EN_SAT ...and is sent back to the admin interface.
+#EN ...and is sent back to the admin interface.
 #DE_SAT 
 ***
 #FR Et donc voilà, Brigade, vous voyez, les gens cliquent,
 #NL_SAT En dus, je ziet het, Brigade, de mensen klikken,
-#EN_SAT Here you are Brigade, see, people click on the buttons, 
+#EN Here you are Brigade, see, people click on the buttons, 
 #DE_SAT 
 ***
 #FR et moi j’entends les réponses
 #NL_SAT en ik hoor de antwoorden
-#EN_SAT I hear the answers 
+#EN I hear the answers 
 #DE_SAT 
 ***
 #FR et juste, je les répète.
 #NL_SAT en ik herhaal ze alleen maar.
-#EN_SAT and I just repeat them. 
+#EN and I just repeat them. 
 #DE_SAT 
 ***
 #FR après on a mis un petit effet sur ma voix, mais c’est pour aller avec le costume..
 #NL_SAT en dan geven we m’n stem ook een geluidseffect mee, om bij m’n kostuum te passen…
-#EN_SAT Then, we’ve added a sound effect on my voice, to fit my costume…
+#EN Then, we’ve added a sound effect on my voice, to fit my costume…
 #DE_SAT 
 ***
 // DE NOUVEAU TOUS ENSEMBLE ====
@@ -2431,7 +2432,7 @@
 #EN Thanks so much Brigade, I think we can thank once again this hose. 
 #DE 
 ***
-#FR Jacques - bon, allons-y, c’est parti.
+#FR Jacques - bon, allons-y, c’est parti. <div id='warning'> - OUI NON EUH -</div>
 #NL Ok, we gaan beginnen. 
 #EN Ok, let’s go. 
 #DE 
@@ -2783,7 +2784,7 @@ etc.
 #EN You, at home, from now on, 
 #DE 
 ***
-#FR est-ce que vous pourriez lire ce qui s’affiche à l’écran, mais cette fois-ci, à voix haute ?
+#FR est-ce que vous pourriez lire ce qui s’affiche à l’écran, mais cette fois-ci, à voix haute ? <div id='warning'> - comment ça -</div>
 #NL wat er op jullie computerscherm staat, maar deze keer luidop.
 #EN you’re going to read what is displayed on your screen, but aloud this time.
 #DE 
@@ -2798,7 +2799,7 @@ etc.
 #EN Well, say it loudly 
 #DE 
 ***
-#FR comme si vous discutiez avec quelqu’un.
+#FR comme si vous discutiez avec quelqu’un. <div id='warning'> - donc là... -</div>
 #NL alsof je met iemand aan het praten bent…  
 #EN as if you were talking to somebody
 #DE 
@@ -2813,7 +2814,7 @@ etc.
 #EN That’s it, and you can change intonation,
 #DE 
 ***
-#FR parler fort, doucement enfin c’est comme vous voulez…
+#FR parler fort, doucement enfin c’est comme vous voulez…<div id='warning'> - on m entend -</div>
 #NL luid praten, of zacht, zoals jullie zelf willen…
 #EN speak loudly, or softly, as you want...
 #DE 
@@ -2828,7 +2829,7 @@ etc.
 #EN No, no, you’re hearing yourself, 
 #DE 
 ***
-#FR ici on ne vous entend pas, ni nous ni personne dans les gradins.
+#FR ici on ne vous entend pas, ni nous ni personne dans les gradins. <div id='warning'> - vous entendez pas -</div>
 #NL hier horen we je niet, noch wij noch de mensen in de zaal.
 #EN but we can’t hear you, neither the spectators.
 #DE 
@@ -2858,7 +2859,7 @@ etc.
 #EN it’s like we could hear you but in our head. 
 #DE 
 ***
-#FR Vous voyez ce que je veux dire ?
+#FR Vous voyez ce que je veux dire ? <div id='warning'> - heu oui -</div>
 #NL begrijp je?
 #EN Do you see what I mean?
 #DE 
@@ -2878,7 +2879,7 @@ etc.
 #EN Do you feel you’re part of a conversation? 
 #DE 
 ***
-#FR comme si on parlait ensemble, qu’on était ici, ensemble, au même endroit ?
+#FR comme si on parlait ensemble, qu’on était ici, ensemble, au même endroit ? <div id='warning'> - ouais super -</div>
 #NL alsof we nu samen aan het spreken zijn, alsof we hier zijn, samen, op dezelfde plek?
 #EN As if we were together, talking with each other, in the same place?
 #DE 
@@ -2888,7 +2889,7 @@ etc.
 #EN_CYCLO Yes, it works really well.
 #DE_CYCLO 
 ***
-#FR Brigade — bon bah super
+#FR Brigade — bon bah super <div id='warning'> - enfin là -</div>
 #NL O ja, wel, super
 #EN Great!
 #DE 
@@ -2948,7 +2949,7 @@ etc.
 #EN Well, Brigade, what about
 #DE 
 ***
-#FR c’est les laisser les auditeurs répondre librement à certaines questions ?
+#FR c’est les laisser les auditeurs répondre librement à certaines questions ? <div id='warning'> - pourquoi pas -</div>
 #NL is de luisteraars de gelegenheid geven sommige vragen vrijuit te beantwoorden…
 #EN we letting the listeners answering freely the questions?
 #DE 
@@ -2968,7 +2969,7 @@ etc.
 #EN what is happening at home, how you're experiencing this shared dialogue?
 #DE 
 ***
-#FR Allez-y, on vous écoute.
+#FR Allez-y, on vous écoute. <div id='warning'> - expr libre -</div>
 #NL Begin maar, we luisteren.
 #EN Go on, we're listening
 #DE 
@@ -2988,7 +2989,7 @@ etc.
 #EN_CYCLO ....and it’s funny it's actually the other way round.
 #DE_CYCLO 
 ***
-#FR Jacques — heuuu, c’est… c’est… c’est à dire ?
+#FR Jacques — heuuu, c’est… c’est… c’est à dire ? <div id='warning'> - inversion -</div>
 #NL Eeeehm, wat bedoelt u?
 #EN Er... What... what do you mean ?
 #DE 
@@ -3991,6 +3992,7 @@ etc.
 #EN the sound of the rain pounding on the protective tarp.
 #DE 
 ***
+#bookmark MeisterText
 #FR_CYCLO J’ai un ami qui a grandi sous les tropiques et qui a vraiment besoin du bruit de la pluie tropicale pour s’endormir
 #NL_CYCLO Een vriend van mij die opgroeide in de tropen kan echt niet in slaap vallen zonder het geluid van de tropische regen.
 #EN_CYCLO I have a friend who grew up under the tropics. He needs the sound of tropical rain to fall asleep.
@@ -5015,7 +5017,7 @@ etc.
 ***
 #FR on est à ce moment particulier de bascule
 #NL we zijn op dit zo bijzondere kantelmoment aangekomen,
-#EN at that tipping poing, 
+#EN at that tipping point, 
 #DE 
 ***
 #FR où on s’apprête à s’extraire de la représentation pour revenir dans le réel
@@ -5024,7 +5026,7 @@ etc.
 #DE 
 ***
 #FR Et d’ailleurs, à _XXX_, on pourrait tout à fait imaginer que les spectateurs
-#NL En trouwens, we kunnen ons ook heel goed voorstellen dat de toeschouwers in Paris
+#NL En trouwens, we kunnen ons ook heel goed voorstellen dat de toeschouwers in Parijs
 #EN By the way, in Paris we could imagine that the audience 
 #DE 
 ***

@@ -34,7 +34,7 @@ CHOOSE RANDOM SALM
 SHOW BUTTONS TO RANDOM SALM
 
 HIDE BUTTONS
-%%% jacques : "attendez à partir de maintenant on va afficher les boutons pour tous les auditeurs"
+%%% jacques : "on va ouvrir le flux"
 START SHOW BUTTONS ONH MULTIPLAYER
 %%% la dernière question : c'est est ce que vous avez envie de participer à la LT
 HIDE BUTTONS
@@ -54,7 +54,7 @@ HIDE BUTTONS
 NEXT (noir)
 NEXT ("non non pas encore")
 
-%%% Math = "signal"
+%%% Seb revient avec sa brouette
 NEXT ("C'EST BON ON A FINI")
 NEXT (noir)
 

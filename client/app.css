@@ -15,6 +15,83 @@
     src: url('OfficeCodePro-Regular.ttf') format('truetype');
   }
 
+  @font-face{
+    font-family: "bodoni";
+    src : url('ROMAINBP.otf') format("opentype");
+  }
+
+  #menu{
+    transition: transform .3s;
+    z-index: 100;
+    transform: translateY(-4px);
+    font-size: 27px;
+   }
+
+  #header {
+    -webkit-transition: transform .7s;
+    -moz-transition: transform .7s;
+    -o-transition: transform .7s;
+    transition: transform .7s;
+
+    transform: translateY(-100%);
+
+    width:100%;
+    background-color:white;
+    height:83px;
+    position:fixed;
+    z-index:99;
+    line-height: 83px;
+  }
+
+  #headerTxt {
+    padding-right:90px;
+
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+
+    margin-left: 90px;    
+    text-align:left !important;
+    font-size: 14px;
+  }
+
+  #flag {
+    font-family: "bodoni", sans-serif;
+
+    z-index:1000;
+    position:absolute;
+    vertical-align: middle;
+    line-height: 83px;
+    margin-left: 93%;
+    font-size: 30px;
+  }
+
+  #flag::-moz-selection { background-color: black }
+  
+  #flag::selection { background-color: black }
+
+  #probleme{
+    padding-bottom: 28px;
+    margin-left: 30px;
+    margin-top: 21px;
+    font-size: 23px;
+    position: absolute;
+    width: 33px;
+    height: 20px;
+    z-index: 100;
+    border-radius: 50%;
+    border: solid;
+    border-width: 2px;
+
+    vertical-align: middle;
+    line-height: normal;
+
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+  }
+
   tr.bold > td {
       font-weight: bold;
       text-decoration: underline;
@@ -34,6 +111,25 @@ euh mais on dirait que ça marche pas en fait tin
       font-size: 14px;
   }
 
+  #probleme:hover{
+    background-color:grey;
+    color:white;
+    border-color:grey;
+    cursor: pointer;
+  }
+
+  #\?{
+    margin-top:-2px;
+  }
+
+  #flag{
+    cursor: pointer;
+  }
+
+  #flag:hover{
+    text-decoration: underline;
+  }
+
   .bootstrap-datetimepicker-widget {
     color: red !important;
   }
@@ -47,6 +143,16 @@ euh mais on dirait que ça marche pas en fait tin
   }
 
   .tap-i18n-dropdown option[value="en"] {display:none;}
+
+  .tap-i18n-dropdown{
+    display:none;
+  }
+
+  #headerTxt span:nth-child(1):hover{
+    background-color:red;
+    cursor: pointer;
+    text-decoration: underline;
+  }
 
   #srt div:nth-child(2){
     margin-top:25px;
@@ -230,18 +336,21 @@ a:hover{
     background: url(img/patate1.svg) no-repeat center;
     background-size: contain;
     margin: -127px;
-    margin-top:-90px;
     padding: 150px;
+    background-position-y: 60%;
+  }
 
+  #titre::selection{
+    background-color: white;
   }
 
   #nextshow{
     float:right;
-    background: url(img/patate2.svg) no-repeat center;
+/*    background: url(img/patate2.svg) no-repeat center;
     background-position: 0px 25px;
     background-size: contain;
-    margin: -80px;
-    margin-top:10px;
+*/    margin: -80px;
+    margin-top:1px;
 
     padding: 80px;
 

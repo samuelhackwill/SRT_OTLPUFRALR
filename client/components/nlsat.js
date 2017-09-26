@@ -43,7 +43,7 @@ Template.nlsat.onRendered(function () {
     if(dataPupitre) {
       catchUpWithTheShow();
       console.log("initialement tu parles quel langue camarade? ", TAPi18n.getLanguage())
-      // TAPi18n.setLanguage("nl");
+      TAPi18n.setLanguage("de");
       console.log("et mainteantn tu parles quel langue camarade? ", TAPi18n.getLanguage())
     }
 
@@ -72,7 +72,7 @@ Template.nlsat.onRendered(function () {
         if(null !== compteurPupitreAdmin) compteurPupitre= parseInt(compteurPupitreAdmin);
         if(compteurPupitre!= -1) {
           //revenir où on était dans le spectacle
-          satNext();
+          nlsatNext();
         }
 
         //ambiance?

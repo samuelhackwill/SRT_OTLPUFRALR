@@ -20,13 +20,27 @@ Template.waiting.onRendered(function () {
   },1500)
 
     console.log("tu parles quel langue camarade? ", TAPi18n.getLanguage())
-    TAPi18n.setLanguage("nl")
+    TAPi18n.setLanguage("en")
     console.log("et maintenant tu parles quel langue? ", TAPi18n.getLanguage())
+
+    indexlang = 0;
+    langtab = TAPi18n.getLanguages()
+    howmanylang = Object.keys(langtab).length
 
 });
 
 
 Template.waiting.events({
+
+  'click #flag' : function(){
+    console.log(Object.keys(langtab)[indexlang])
+    if (indexlang==howmanylang-1) {
+        indexlang=0
+    }else{
+        indexlang+=1
+    }
+    TAPi18n.setLanguage(Object.keys(langtab)[indexlang])
+    },
 
   'click .represent': function(e){
     $("#success").show()
@@ -165,6 +179,16 @@ Template.waiting.helpers({
     if (TAPi18n.getLanguage()=="nl"){
       messageButton = "Ik meld me aan"
       messageButtonOK = "Aanmelding geslaagd"
+    }
+
+    if (TAPi18n.getLanguage()=="en"){
+      messageButton = "Book"
+      messageButtonOK = "Booked"
+    }
+
+    if (TAPi18n.getLanguage()=="de"){
+      messageButton = "ANMELDEN"
+      messageButtonOK = "ANMELDUNG OK"
     }
 
 

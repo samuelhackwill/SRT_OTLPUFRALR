@@ -15,8 +15,10 @@ body.ensat #srt{
 
 body.ensat #eclair{
 display : none;
+opacity:0;
 }
 
 body.ensat #eclair2{
 display : none;
+opacity:0;
 }
