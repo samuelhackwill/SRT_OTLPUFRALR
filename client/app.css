@@ -28,10 +28,10 @@
    }
 
   #header {
-    -webkit-transition: transform .7s;
-    -moz-transition: transform .7s;
-    -o-transition: transform .7s;
-    transition: transform .7s;
+    -webkit-transition: transform .35s;
+    -moz-transition: transform .35s;
+    -o-transition: transform .35s;
+    transition: transform .35s;
 
     transform: translateY(-100%);
 
@@ -55,7 +55,7 @@
     font-size: 14px;
   }
 
-  #flag {
+  #lan {
     font-family: "bodoni", sans-serif;
 
     z-index:1000;
@@ -66,9 +66,16 @@
     font-size: 30px;
   }
 
-  #flag::-moz-selection { background-color: black }
+  #flag{
+    position:fixed;
+    font-size:38px;
+    right:30px;
+    top:28px;
+  }
+
+  #lan::-moz-selection { background-color: black }
   
-  #flag::selection { background-color: black }
+  #lan::selection { background-color: black }
 
   #probleme{
     padding-bottom: 28px;
@@ -121,6 +128,14 @@ euh mais on dirait que ça marche pas en fait tin
   #\?{
     margin-top:-2px;
   }
+
+  #lan{
+    cursor: pointer;
+  }
+
+  #lan:hover{
+    text-decoration: underline;
+  }  
 
   #flag{
     cursor: pointer;

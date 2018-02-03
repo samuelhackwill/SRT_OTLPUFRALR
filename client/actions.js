@@ -337,7 +337,7 @@ newBoutton = function(params){
 
 fullscreen = function(params){
   if(params=="on"){
-    var i = document.getElementById("gcontainer");
+    var i = document.body;
     if (i.requestFullscreen) {
       i.requestFullscreen();
     } else if (i.webkitRequestFullscreen) {
@@ -489,7 +489,7 @@ addCuppasButtons = function(){
     break
 
     case "en":
-      newBoutton(["finishCuppa","OK I'M DONE WITH MY HUT", "finishCuppa(id)" ])
+      newBoutton(["finishCuppa","OK, I\’VE FINISHED MY HUT", "finishCuppa(id)" ])
     break
 
     case "de":
@@ -521,9 +521,10 @@ finishCuppa = function(e){
       break
 
       case "en":
-        $("#srt").html("Wait\, are you really comfy\?\, have you really made a hut \? Do you have a warm drink handy \? Heaps of cushions \? <br/> You still have a bit of time to do some fine tuning.")
-        $("#finishCuppa").attr('value', 'OK\, THIS TIME I\'M REALLY COMFY AND I HAVE MY WARM DRINK');
+        $("#srt").html("Wait\, are you sure you\’re really all set\, very comfortably installed\? Have you made a real hut\? Do you have a hot drink\? Lots of cushions\? <br/> You still have time to perfect your installation before confirming that you’ve well and truly finished.")
+        $("#finishCuppa").attr('value', 'RIGHTO\, THIS TIME I\’VE REALLY SETTLED IN COMFORTABLY WITH MY HOT DRINK');
       break
+
 
       case "de":
         $("#srt").html("Moment\. Sind Sie sicher\, dass Sie es wirklich gemütlich haben\? So richtig kuschelig \? Haben Sie eine Hütte gebaut \? Haben Sie ein Heißgetränk \? Ganz viele Kissen \? <br/> Sie haben noch Zeit\. Sie können Ihr kleines Bauwerk vervollkommnen\, bevor Sie bestätigen\, dass Sie fertig sind\.")

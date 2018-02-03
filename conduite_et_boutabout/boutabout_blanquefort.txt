@@ -1,0 +1,258 @@
+%%% 01_OUVERTURE SALM      
+%%%                        
+***
+#FR_INTR Voilà.
+***
+#FR_INTR Comme ça.
+***
+#FR_INTR Parfait.
+***
+#FR_INTR C’est Samuel qui vous parle.
+***
+#FR_INTR Je travaille avec l’équipe du projet
+***
+#FR_INTR Je me suis notamment occupé <br/> de la partie web
+***
+#FR_INTR avec Etienne et Guillaume.
+***
+#FR_INTR Bref.
+***
+#FR_INTR Là je suis dans la salle <br/>du spectacle,
+***
+#FR_INTR en régie,
+***
+#FR_INTR on est en train de préparer l’arrivée des spectateurs·trices
+***
+#FR_INTR et moi, je m’occupe de votre <br/>arrivée : celle des auditeurs·trices.
+***
+#FR_INTR Bienvenue.
+***
+#fullscreen on
+#FR_INTR Je vais essayer de faire passer votre affichage en plein écran, parce que c’est mieux
+***
+#FR_INTR Hop.
+***
+#FR_INTR Ça a marché ?
+***
+#FR_INTR Au pire vous pouvez essayer de le faire vous même.
+***
+#FR_INTR Ça devrait pas être trop compliqué ...
+***
+#sound start
+#FR_INTR Alors maintenant on va mettre du son
+***
+#FR_INTR Hop
+***
+#FR_INTR Vous devriez entendre quelque chose maintenant
+***
+#FR_INTR Si ça marche pas là par contre c’est embêtant.
+***
+#FR_INTR Attendez un petit peu,
+***
+#FR_INTR Et puis le cas échéant, essayez éventuellement sur un autre navigateur.
+***
+#FR_INTR Autre chose, il est possible <br/>que parfois,
+***
+#FR_INTR ça coupe,
+***
+#FR_INTR que ce soit un peu haché,
+***
+#FR_INTR ce genre de truc.
+***
+#FR_INTR Pas d’inquiétude,
+***
+#FR_INTR ça peut arriver.
+***
+#FR_INTR Cependant,
+***
+#FR_INTR si jamais le son s’arrête totalement, il suffit juste de ré-actualiser <br/>la page web.
+***
+#FR_INTR Bon, en tout cas, avant que le spectacle ne commence,
+***
+#FR_INTR on va préparer deux-trois <br/>petites choses,
+***
+#FR_INTR et on va attendre que tous les auditeurs·trices soient là.
+***
+#FR_INTR Donc voilà, vous pouvez aller <br/>faire la vaisselle
+***
+#FR_INTR ou lire une bd,
+***
+#FR_INTR ou ranger le linge,
+***
+#FR_INTR comme vous voulez.
+***
+#FR_INTR Essayez de rester à portée de voix
+***
+#FR_INTR pour qu’on puisse vous appeler.
+***
+#stop on
+#FR_INTR N’hésitez pas à pousser le son pour continuer à écouter votre ordinateur de là où vous êtes.
+***
+// l’heure _XXX_
+#FR_INTR On se retrouve vers 20h17.
+***
+#bookmark introseb
+#FR_INTR  
+%%%             
+%%% INTRO SEB   
+%%%             
+***
+%%%                   
+%%% 06 _ LIAISON TEL  
+%%%                   
+#bookmark lt
+#FR_CYCLO Et donc voilà,
+***
+#FR_CYCLO il n’y a plus rien d’autre <br/>que la connexion.
+***
+#FR_CYCLO Nous, ici, dans la salle,
+***
+#FR_CYCLO reliés à vous, chez vous.
+***
+#FR_CYCLO Cette connexion est invisible,
+***
+#FR_CYCLO imperceptible,
+***
+#FR_CYCLO intangible.
+***
+#FR_CYCLO Et pourtant,
+***
+#FR_CYCLO elle est matériellement réalisée.
+***
+#FR_CYCLO Elle s’effectue par l’intermédiaire de cet appareil téléphonique,
+***
+#FR_CYCLO de câbles électriques, d’antennes relais, d’ondes électro-magnétiques.
+***
+#FR_CYCLO Si on pouvait suivre son chemin,
+***
+#FR_CYCLO on sortirait par les trous de l’écouteur du téléphone <br/>de cette personne.
+***
+#FR_CYCLO Elle doit être en train <br/>de tendre l’oreille
+***
+#FR_CYCLO pour vérifier si elle n’entend pas
+***
+#FR_CYCLO les quelques bruits <br/>qui émaneraient du public,
+***
+#FR_CYCLO les toussotements,
+***
+#FR_CYCLO le grincement des sièges.
+***
+#FR_CYCLO Et nous tendons l’oreille
+***
+#FR_CYCLO pour essayer de l’entendre <br/>tendre l’oreille.
+***
+// BREGAD : et vous, ça vous a plu?
+#FR_CYCLO  Oui, oui, c’était super de partager ce moment avec vous ! 
+***
+// JACQUES : aaaah ok (après longue explication de mathilde)
+#FR_CYCLO Donc voilà Jacques... <br/>tu vois, là je suis en train <br>de lire tout haut ce texte qui s’affiche sur mon écran...
+***
+#FR_CYCLO JE LIS LE TEXTE ! <br/>JE LIS LE TEXTE ! <br/>YOUHOU JE LIS LE TEXTE ! 
+***
+// BREGAD c'est totalement improvisé
+#FR_CYCLO Oui, mais, euh, attendez, <br/>en fait... Il y a des gens <br/>qui m'entendent là ?
+***
+// BREGAD
+#FR_CYCLO Heuuu... oui.
+***
+// JACQUES demande si ça marche bien en somme
+#FR_CYCLO Oui, ça marche très bien
+***
+#FR_CYCLO Enfin là je peux pas vraiment donner mon avis puisque je dois lire le texte qui s'affiche.
+***
+#FR_CYCLO Ah tiens pourquoi pas
+***
+#FR_CYCLO (vous pouvez maintenant <br/>vous exprimer librement) 
+***
+#FR_CYCLO [...] 
+***
+#FR_CYCLO ...et donc c’est amusant parce que c’est effectivement l’inverse de tout à l’heure.
+***
+#FR_CYCLO Hé beh tout à l’heure, au téléphone, on s’entendait <br/>mais on se parlait pas, 
+***
+#FR_CYCLO et là on se parle <br/>mais on s’entend pas.
+***
+// SEB eee vous avez pas encore fini les cabanes c'est ça?
+#FR_CYCLO Non non pas encore
+***
+// BREGAD fiou il est compliqué votre schema ou alors rangement de la berouette
+#FR_CYCLO C’EST BON ON A PRESQUE <br/>FINI LES CABANES
+***
+#FR_CYCLO Oui, et on est bien installés mine de rien. Chacun dans sa cabane.
+***
+#FR_CYCLO Hé...
+***
+#FR_CYCLO Imaginez qu’on continue la discussion comme ça, avec le bruit de la pluie...
+***
+#FR_CYCLO et qu’au bout d’un moment <br/>on s’endorme
+***
+#FR_CYCLO les spectateurs au théâtre s’endorment
+***
+#FR_CYCLO les uns sur les autres.
+***
+#FR_CYCLO Et vous aussi, vous vous endormez, au gré de la conversation
+***
+#FR_CYCLO Et puis ici à la maison je finis <br/>par m’endormir aussi,
+***
+#FR_CYCLO et la nuit passe comme ça.
+***
+#FR_CYCLO Miraculeusement, tout le monde dort.
+***
+// (pause)
+#FR_CYCLO Et puis au bout d’un moment
+***
+#FR_CYCLO La pluie s’arrête
+***
+#FR_CYCLO On sent poindre les premières <br/>lueurs de l’aube
+***
+#FR_CYCLO Ça commence un peu à s’agiter,
+***
+#FR_CYCLO quelqu’un bouge, quelqu’un tousse.
+***
+#FR_CYCLO Et puis finalement
+***
+#FR_CYCLO Quelqu’un pointe le nez dehors
+***
+#FR_CYCLO Bonjour
+***
+#FR_CYCLO Mouiii, étonnamment bien.
+***
+// Sous titres uniquement pour les auditeurs — (ECRIT)
+#FR_INTR C’EST FINIIIII
+***
+#FR_INTR Si vous êtes encore là, c’est que vous êtes resté·e·s jusqu’à la fin
+***
+#FR_INTR Merci, bravo.
+***
+#FR_INTR Mathilde, Arnaud et Sébastien sont en train de saluer les spectateurs.
+***
+#FR_INTR Moi ici, depuis la régie, <br/>je vous salue aussi.
+***
+#FR_INTR Bravo pour votre cabane,
+***
+#FR_INTR elle est magnifique.
+***
+#FR_INTR Merci d’être venu·e.
+***
+#FR_INTR Enfin plutôt d’être resté·e <br/>chez vous.
+***
+#FR_INTR Enfin d’être là quoi.
+***
+#FR_INTR Si vous avez des remarques, des avis, des suggestions,
+***
+#FR_INTR ou pour nous envoyer la photo de votre cabane (on les collectionne)
+***
+#FR_INTR n’hésitez pas à nous <br/>envoyer un petit e-mail à <br/>ontraverseralepont@amicaledeproduction.com
+***
+#FR_INTR et alors si ça vous dit, d'ici quelques minutes va avoir lieu une rencontre avec l'équipe du spectacle ici au théâtre, 
+***
+#FR_INTR ce qu'on va faire c'est qu'on va laisser le flux audio ouvert alors si vous avez envie de nous envoyer des questions ou remarques par SMS au numéro de Jacques, 
+***
+#FR_INTR il se chargera de nous les transmettre et on vous répondra en direct ! 
+***
+#FR_INTR Numéro de Jacques pour nous envoyer vos questions : +33 (0)7 81 89 76 86
+***
+#FR_INTR voilà c'est fini pour de vrai
+***
+#FR_INTR et donc si vous avez encore envie de nous envoyer des remarques ou photos de vos cabanes, vous pouvez le faire à cette adresse : ontraverseralepont@amicaledeproduction.com
+***

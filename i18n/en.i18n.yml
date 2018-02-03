@@ -1,22 +1,23 @@
-Status : If the sound stream hasn't started or is broken, you can reload the page. If nothing seems to be working please help us by reporting a bug here >HELP!<
+Status : If the sound stream hasn't started or is broken, you can reload the page. If nothing seems to be working please help us by reporting a bug here
 Bug : -> Hum this is broken
-Lan : EN (!WIP!)
-Titre: We'll cross the bridge once we get to the river
-Hello: Hi
-text_home_1: is a radio-broadcasted show. Please read this page before subscribing 
-prochaine_repres: The next show starts on the
-text_home_2: On the evening of the show, you'll be at home, and you will hear what's happening at the theatre. This show was written for you (well, not only you, we also considered the audience at the theatre of course, but at any rate : we didn't only have them in mind)
-text_home_3: Moreover we made a short checklist below you can use to make sure you have everything you need to enjoy the show. Check the items acording to your situation, if you end up with more that 5 green ticks on the drawing everything should be ok, but at the end of the day it's up to you.
-bon_sang_de_bois: Holy moly, apparently the browser you are using isn't compatible with our webapp. Theoreticaly, the audio stream won't work at all, so nothing much is going to happen on your computer. The good news is, we have a solution : all you have to do is to install
-revenez : and come back on this page. This text should not appear again. 
-checklist1 : I have a good internet connexion
-checklist2 : I'll be alone that night
-checklist3 : I have loud speakers
-checklist4 : I have a laptop which i can move around
-checklist5 : Last but not least : i'm available on the night of the show
-checklist6 : I have a web-RTC-ready browser (automatic test)
-text_home_4 : To book a ticket for the show (at home), click on one of these dates. it's free and doesn't commit you to anything concrete, but is necessary to connect to the show.
-dates : UPCOMING SHOWS :
-text_home_5 : Okay, you've subscribed to the night of
-text_home_6 : Let's meet then, at this address 
-text_home_7 : Besides if you change your mind and want to come another day, you can click on another date anytime you want.
+Lan : EN
+Flag : 🇬🇧
+Titre: We’ll Cross the Bridge Once We’ve Reached the River
+Hello: Hello
+text_home_1: is a radio-transmitted show. To subscribe to a show, please read the following information.
+prochaine_repres: The next show starts on
+text_home_2: You will be at home on the evening of the show and you will hear what happens on stage. This show was written for you (well, not just for you, but also for those who came to the theatre, but let’s just say it was not designed for them alone).
+text_home_3: In addition, we are providing you with this little checklist below to ensure you have everything you need to fully enjoy the show. Tick the boxes that apply to your situation, if you have more than 5 green circles on the drawing then it should be fine, but basically it’s up to you.
+bon_sang_de_bois: Goodness grapefruit! We detect that you are using a browser that is incompatible with our web-app. It’s highly likely that the audio won’t work at all, so not much will happen on your end. The good news is that there’s a solution to this problem: install
+revenez : and return to this page. This text should have disappeared, all going to plan. 
+checklist1 : Ensure you have a good internet connection
+checklist2 : Be at home, alone
+checklist3 : Be able to turn the sound up a bit
+checklist4 : Use a laptop, to be able to move with your computer
+checklist5 : And of course, be available at that time
+checklist6 : Have a WEB-RTC-compatible browser (automatic test)
+text_home_4 : To reserve your ticket to an at-home show, click on one of the dates below. It’s free and obligation-free, but you have to do this to be able to access the show.
+dates : UPCOMING DATES:
+text_home_5 : Okay, you have been registered for the show on
+text_home_6 : Let’s meet back at that time, here, on
+text_home_7 : If you change your mind and would like to participate at another time, feel free to return to this website and click on another date.

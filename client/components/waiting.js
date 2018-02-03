@@ -20,7 +20,7 @@ Template.waiting.onRendered(function () {
   },1500)
 
     console.log("tu parles quel langue camarade? ", TAPi18n.getLanguage())
-    TAPi18n.setLanguage("en")
+    TAPi18n.setLanguage("fr")
     console.log("et maintenant tu parles quel langue? ", TAPi18n.getLanguage())
 
     indexlang = 0;
@@ -182,8 +182,8 @@ Template.waiting.helpers({
     }
 
     if (TAPi18n.getLanguage()=="en"){
-      messageButton = "Book"
-      messageButtonOK = "Booked"
+      messageButton = "Register me"
+      messageButtonOK = "Registration OK"
     }
 
     if (TAPi18n.getLanguage()=="de"){

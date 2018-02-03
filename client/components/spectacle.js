@@ -36,7 +36,7 @@ Template.spectacle.onRendered(function () {
     console.log('ContenusEcran ?', ContenusEcran.find().fetch());
     if(data) {
       catchUpWithTheShow();
-      // TAPi18n.setLanguage("nl");
+       TAPi18n.setLanguage("fr");
     }
     //
     // rawTextToJson();
@@ -84,7 +84,7 @@ Template.spectacle.onRendered(function () {
       // DEPRECATED
       switch(TAPi18n.getLanguage()){
         case "fr":
-          $("<div>"+"Appelez ce numéro : <br /> + 33 (0)7 81 89 76 86 <br />(Et coupez le son de votre ordinateur! Sinon ça va faire des sons bizarres)."+"<br/</div>").appendTo("#phoneNumberSrt")
+          $("<div>"+"Appelez ce numéro : <br /> + 33 (0)7 81 89 76 86 <br />(Et coupez le son de votre ordinateur! <br/>Sinon ça va faire des sons bizarres)."+"<br/</div>").appendTo("#phoneNumberSrt")
           break
 
         case "nl":
@@ -96,10 +96,11 @@ Template.spectacle.onRendered(function () {
           break
 
         case "en":
-          $("<div>"+"Call this number : <br /> +33 7 81 89 76 86 <br/> (And please turn the volume of your computer off! Or else it might cause strange sound phenomens)."+"<br/</div>").appendTo("#phoneNumberSrt")
+          $("<div>"+"Call this number : <br /> +33 7 81 89 76 86 <br/> (And cut the sound on your computer\! Otherwise it\’ll make weird noises)"+"<br/</div>").appendTo("#phoneNumberSrt")
           break
       }
 });
+
 
   em.addListener('showButtonsClient', function(){
     console.log('showTheOneButtons');
@@ -111,7 +112,7 @@ Template.spectacle.onRendered(function () {
         $('<button id="oui" class="button">ja</button><button id="non" class="button">nein</button><button id="euh" class="button">ääähm</button>').appendTo('#sacbouttons');
         break
       case "en":
-        $('<button id="oui" class="button">yes</button><button id="non" class="button">no</button><button id="euh" class="button">uhh</button>').appendTo('#sacbouttons');
+        $('<button id="oui" class="button">yes</button><button id="non" class="button">no</button><button id="euh" class="button">um...</button>').appendTo('#sacbouttons');
         break
       case "nl":
         $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
@@ -144,7 +145,7 @@ function showMeTheButtons(){
         $('<button id="oui" class="button">ja</button><button id="non" class="button">nein</button><button id="euh" class="button">ääähm</button>').appendTo('#sacbouttons');
         break
       case "en":
-        $('<button id="oui" class="button">yes</button><button id="non" class="button">no</button><button id="euh" class="button">uhh</button>').appendTo('#sacbouttons');
+        $('<button id="oui" class="button">yes</button><button id="non" class="button">no</button><button id="euh" class="button">um...</button>').appendTo('#sacbouttons');
         break
       case "nl":
         $('<button id="oui" class="button">oui</button><button id="non" class="button">non</button><button id="euh" class="button">euh</button>').appendTo('#sacbouttons');
@@ -173,7 +174,7 @@ function showMeTheButtons(){
           break
 
         case "en":
-          $("<div>Would you like to answer Jacques?</div>").appendTo("#phoneNumberSrt")
+          $("<div>Are you ready to answer Jacques\’ questions\?</div>").appendTo("#phoneNumberSrt")
           newBoutton(["ouiSP1","Yes","addUserToLottery('oui-non-euh')","destroy(id)", "$('#phoneNumberSrt').empty()"])
           newBoutton(["nonSP1","No","destroy(id)", "$('#phoneNumberSrt').empty()"])          
           break
@@ -208,7 +209,7 @@ function showMeTheButtons(){
           break
 
         case "en":
-          $("<div>Would you feel like making a small hut ?</div>").appendTo("#phoneNumberSrt")
+          $("<div>Are you willing to build a hut ?</div>").appendTo("#phoneNumberSrt")
           newBoutton(["cuppasInc","Yes","addUserToLottery('cabane')","destroy(id)", "$('#phoneNumberSrt').empty()"])
           newBoutton(["boissonN","No","destroy(id)", "$('#phoneNumberSrt').empty()"])
           break        
@@ -627,7 +628,7 @@ Template.spectacle.events({
     }
   },
 
-  'click #flag' : function(){
+  'click #lan' : function(){
     console.log(Object.keys(langtab)[indexlang])
     if (indexlang==howmanylang-1) {
         indexlang=0
