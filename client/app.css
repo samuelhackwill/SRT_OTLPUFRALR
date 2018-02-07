@@ -20,6 +20,14 @@
     src : url('ROMAINBP.otf') format("opentype");
   }
 
+  #loading{
+    left:50%;
+    position:absolute;
+    top:50%;
+    font-size:40px;
+    transform:translate(-50%,-50%);
+  }
+
   #menu{
     transition: transform .3s;
     z-index: 100;

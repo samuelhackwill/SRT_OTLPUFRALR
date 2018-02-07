@@ -19,13 +19,39 @@ Template.waiting.onRendered(function () {
     $("#bonjour").css("opacity", "0")
   },1500)
 
-    console.log("tu parles quel langue camarade? ", TAPi18n.getLanguage())
-    TAPi18n.setLanguage("fr")
-    console.log("et maintenant tu parles quel langue? ", TAPi18n.getLanguage())
+  currentLang = cookies.get("user_lan")
+  allLang = TAPi18n.getLanguages()
 
-    indexlang = 0;
-    langtab = TAPi18n.getLanguages()
-    howmanylang = Object.keys(langtab).length
+
+  if(currentLang){
+    TAPi18n.setLanguage(currentLang)
+    for (var i=0; i<Object.keys(allLang).length; i++){
+      console.log("look for the lan index with lan ", currentLang)
+      if(Object.keys(allLang)[i]==currentLang){
+        console.log("foud the lan index! ", i)
+        currentLangIndex = i
+      }
+    }
+  }else{
+    $.getJSON("http://ip-api.com/json/?callback=?", function(data) {
+    // console.log("COUNTRY IS ",data.countryCode)
+    localCountry = data.countryCode
+    // console.log("CITY IS ",data.city)
+    // console.log("REGION NAME IS ",data.regionName)
+    currentLang = localCountry.toLowerCase()
+    cookies.set("user_lan", currentLang)
+    TAPi18n.setLanguage(currentLang)
+
+    for (var i=0; i<Object.keys(allLang).length; i++){
+      console.log("look for the lan index with lan ", currentLang)
+      if(Object.keys(allLang)[i]==currentLang){
+        console.log("foud the lan index! ", i)
+        currentLangIndex = i
+      }
+    }
+    })
+  }
+
 
 });
 
@@ -33,14 +59,16 @@ Template.waiting.onRendered(function () {
 Template.waiting.events({
 
   'click #flag' : function(){
-    console.log(Object.keys(langtab)[indexlang])
-    if (indexlang==howmanylang-1) {
-        indexlang=0
+
+    if(currentLangIndex < Object.keys(allLang).length-1){
+      currentLangIndex += 1
+      TAPi18n.setLanguage(Object.keys(allLang)[currentLangIndex])
     }else{
-        indexlang+=1
+      currentLangIndex=0
+      TAPi18n.setLanguage(Object.keys(allLang)[currentLangIndex])
     }
-    TAPi18n.setLanguage(Object.keys(langtab)[indexlang])
-    },
+    cookies.set("user_lan", Object.keys(allLang)[currentLangIndex])
+  },
 
   'click .represent': function(e){
     $("#success").show()
@@ -60,28 +88,29 @@ Template.waiting.events({
       var args = {
         _id: this._id
       };
+      
       if(loggedInUser) args.userId = loggedInUser._id;
-      console.log('representation : ', args);
-      Meteor.call('addUserToRepresentation', args);
-      cookies.set("user_represent", this._id);
-    } else if(checkCookie != this._id) {
-      console.log("already user change representation");
+        console.log('representation : ', args);
+        Meteor.call('addUserToRepresentation', args);
+        cookies.set("user_represent", this._id);
+      } else if(checkCookie != this._id) {
+       
+        console.log("already user change representation");
 
-      var args = {
-        _id: this._id,
-        old_representation: checkCookie
-      };
-      if(loggedInUser) args.userId = loggedInUser._id;
-      console.log('representation : ', args);
-      Meteor.call('addUserToRepresentation', args);
-      cookies.set("user_represent", this._id);
-    } else {
-      console.log("already chosen this", cookies.get("user_represent"));
+        var args = {
+          _id: this._id,
+          old_representation: checkCookie
+        };
+        if(loggedInUser) args.userId = loggedInUser._id;
+          console.log('representation : ', args);
+          Meteor.call('addUserToRepresentation', args);
+          cookies.set("user_represent", this._id);
+        } else {
+          console.log("already chosen this", cookies.get("user_represent"));
+        }
 
-    }
-    $("#date_choisie").html(moment(this.date_start).format('dddd Do MMM YYYY à HH[h]mm'))
-
-    $("#warning").html("<br />") 
+        $("#date_choisie").html(moment(this.date_start).format('dddd Do MMM YYYY à HH[h]mm'))
+        $("#warning").html("<br />") 
   }
 });
 
@@ -187,8 +216,8 @@ Template.waiting.helpers({
     }
 
     if (TAPi18n.getLanguage()=="de"){
-      messageButton = "ANMELDEN"
-      messageButtonOK = "ANMELDUNG OK"
+      messageButton = "Anmelden"
+      messageButtonOK = "Anmeldung OK"
     }
 
 

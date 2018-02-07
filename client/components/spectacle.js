@@ -18,11 +18,18 @@ Template.spectacle.onCreated(function() {
 
 Template.spectacle.onRendered(function () {
 
+  allLang = TAPi18n.getLanguages()
+  currentLang = TAPi18n.getLanguage()
+
+
+  for (var i=0; i<Object.keys(allLang).length; i++){
+    if(Object.keys(allLang)[i]==currentLang){
+      currentLangIndex = i
+    }
+  }
+
 
   this.autorun(() => {
-    indexlang = 0;
-    langtab = TAPi18n.getLanguages()
-    howmanylang = Object.keys(langtab).length
 
     let ready = Template.instance().subscriptionsReady();
     if (!ready){ return; }
@@ -36,7 +43,6 @@ Template.spectacle.onRendered(function () {
     console.log('ContenusEcran ?', ContenusEcran.find().fetch());
     if(data) {
       catchUpWithTheShow();
-       TAPi18n.setLanguage("fr");
     }
     //
     // rawTextToJson();
@@ -629,14 +635,17 @@ Template.spectacle.events({
   },
 
   'click #lan' : function(){
-    console.log(Object.keys(langtab)[indexlang])
-    if (indexlang==howmanylang-1) {
-        indexlang=0
+
+    if(currentLangIndex < Object.keys(allLang).length-1){
+      currentLangIndex += 1
+      TAPi18n.setLanguage(Object.keys(allLang)[currentLangIndex])
     }else{
-        indexlang+=1
+      currentLangIndex=0
+      TAPi18n.setLanguage(Object.keys(allLang)[currentLangIndex])
     }
-    TAPi18n.setLanguage(Object.keys(langtab)[indexlang])
-    },
+    cookies.set("user_lan", Object.keys(allLang)[currentLangIndex])
+    next()
+  },
 
   'click #cuppasInc': function(){
   //Meteor.call('setSuperGlobal', {name: 'cuppasCount', value: +=1});

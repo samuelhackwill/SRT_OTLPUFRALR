@@ -125,19 +125,25 @@ next = function(){
     if((type=="text")&&($.isArray(params))){
       console.log("params ", params)
       $("#srt").html("")
+
+
+// VERSION BILINGUE
       for (var i = 0; i < params.length; i++) {
         for(k=balisesVue.length-1; k>=0 ; k--){
           // console.log("balisesVue[k]", balisesVue[k])
           // console.log("data[compteur].text", params)
           if(params[i].hasOwnProperty(balisesVue[k])) {
+            
+
             if(Router.current().route.getName() != "videoproj"){
               if(TAPi18n.getLanguage().toUpperCase() == balisesVue[k].substr(0,2)){
                 $("<div>"+params[i][balisesVue[k]]+"</div>").appendTo("#srt")
               }
             }else{
-              // ça c'est parce que videoproj il doit afficher deux langues en même temps
-              // euh là faudrait peut être prepend
+              // VERSION BILINGUE
                 $("<div>"+params[i][balisesVue[k]]+"</div>").appendTo("#srt")
+              // VERSION FR
+               // $("#srt").html(params[i]["FR_CYCLO"])
             }
           }
         }
