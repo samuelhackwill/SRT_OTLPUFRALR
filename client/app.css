@@ -568,12 +568,11 @@ a:hover{
   }
 
   .posbot{
-/*    height : inherit;
-    width : inherit;
-    background-color: white;
+  top: -50%;
+  left:100px;
+  position:absolute;
+  bottom:0px;
 
-    pour SRT
-*/    top: -50%;
   }
 
   .postop{
@@ -635,8 +634,8 @@ a:hover{
   }
 
   #date_choisie{
-font-size: 2.2vw;
-text-decoration: underline;
+    font-size: 2.2vw;
+    text-decoration: underline;
   }
 
   #shows-list{
@@ -644,12 +643,12 @@ text-decoration: underline;
   }
 
   #nlsrt{
-    color: white;
+    color: yellow;
 
     font-size:2.2vw;
 
     position: absolute;
-    top: 50%;
+    top: 85%;
     left: 50%;
     transform: translate(-50%,-50%);
 

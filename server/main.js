@@ -36,7 +36,6 @@ Meteor.publish( 'users', function() {
 });
 
 if (Meteor.isServer) {
-
   // user status
   process.env.HTTP_FORWARDED_COUNT = 1;
   Meteor.publish(null, function() {
@@ -55,6 +54,22 @@ if (Meteor.isServer) {
 
   UserStatus.events.on("connectionLogin", function(fields) { console.log("connectionLogin", fields); });
 
+
+  em.addListener('bugClick', function(/* client */) {
+    console.log("QUELQU'UN EST DANS LA GALÈRE");
+    console.log("QUELQU'UN EST DANS LA GALÈRE");
+    console.log("QUELQU'UN EST DANS LA GALÈRE");
+    console.log("QUELQU'UN EST DANS LA GALÈRE");
+    console.log("QUELQU'UN EST DANS LA GALÈRE");
+    console.log("QUELQU'UN EST DANS LA GALÈRE");
+    console.log("QUELQU'UN EST DANS LA GALÈRE");
+    console.log("QUELQU'UN EST DANS LA GALÈRE");
+    console.log("QUELQU'UN EST DANS LA GALÈRE");
+    console.log("QUELQU'UN EST DANS LA GALÈRE");
+    console.log("QUELQU'UN EST DANS LA GALÈRE");
+    console.log("QUELQU'UN EST DANS LA GALÈRE");
+    console.log("QUELQU'UN EST DANS LA GALÈRE");
+  });
 
   // ICI TOUS LES EVENEMENTS DE DDP
   em.addListener('salmclick', function(/* client */) {

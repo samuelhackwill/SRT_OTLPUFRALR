@@ -21,18 +21,21 @@ Template.waiting.onRendered(function () {
 
   currentLang = cookies.get("user_lan")
   allLang = TAPi18n.getLanguages()
+  currentLangIndex = null
 
 
   if(currentLang){
+    console.log("found a cookie, looking for index now")
     TAPi18n.setLanguage(currentLang)
     for (var i=0; i<Object.keys(allLang).length; i++){
       console.log("look for the lan index with lan ", currentLang)
       if(Object.keys(allLang)[i]==currentLang){
-        console.log("foud the lan index! ", i)
+        console.log("found the lan index! ", i)
         currentLangIndex = i
       }
     }
   }else{
+        console.log("didn't find a cookie, asking the API")
     $.getJSON("http://ip-api.com/json/?callback=?", function(data) {
     // console.log("COUNTRY IS ",data.countryCode)
     localCountry = data.countryCode
@@ -43,14 +46,26 @@ Template.waiting.onRendered(function () {
     TAPi18n.setLanguage(currentLang)
 
     for (var i=0; i<Object.keys(allLang).length; i++){
+      console.log("OK, thank you API, looking for the index now")
       console.log("look for the lan index with lan ", currentLang)
       if(Object.keys(allLang)[i]==currentLang){
-        console.log("foud the lan index! ", i)
+        console.log("found the lan index! ", i)
         currentLangIndex = i
       }
     }
     })
   }
+
+  if(currentLangIndex==null){
+    console.log("fuck this shit, couldn't find your country so i'm switching to english")
+    currentLang = 'en'
+    cookies.set("user_lan", currentLang)
+    TAPi18n.setLanguage(currentLang)
+    currentLangIndex = 0
+  }
+
+  //hum faudrait peut être faire un truc au cas où le get JSON marche pas hein
+  // pis régler cette histoire de laide redite
 
 
 });

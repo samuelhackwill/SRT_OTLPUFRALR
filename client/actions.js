@@ -342,26 +342,28 @@ newBoutton = function(params){
 }
 
 fullscreen = function(params){
-  if(params=="on"){
-    var i = document.body;
-    if (i.requestFullscreen) {
-      i.requestFullscreen();
-    } else if (i.webkitRequestFullscreen) {
-      i.webkitRequestFullscreen();
-    } else if (i.mozRequestFullScreen) {
-      i.mozRequestFullScreen();
-    } else if (i.msRequestFullscreen) {
-      i.msRequestFullscreen();
-    }
-  }else{
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    } else if (document.mozCancelFullScreen) {
-      document.mozExitFullScreen();
-    } else if (document.msExitFullscreen) {
-      document.msExitFullscreen();
+  if(Router.current().route.getName() != "pupitre"){
+    if(params=="on"){
+      var i = document.body;
+      if (i.requestFullscreen) {
+        i.requestFullscreen();
+      } else if (i.webkitRequestFullscreen) {
+        i.webkitRequestFullscreen();
+      } else if (i.mozRequestFullScreen) {
+        i.mozRequestFullScreen();
+      } else if (i.msRequestFullscreen) {
+        i.msRequestFullscreen();
+      }
+    }else{
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozExitFullScreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
     }
   }
 }

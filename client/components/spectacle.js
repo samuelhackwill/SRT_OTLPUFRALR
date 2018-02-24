@@ -513,7 +513,24 @@ function showMeTheButtons(){
         //   window.location.reload();
         // });
         var waitBeforeReload = 10 //secondes;
-        $('#stream-error').append("Il semble que la connection avec le serveur a été perdue. La page va se recharger dans <span>"+waitBeforeReload+" secondes</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
+        switch(currentLang){
+          case "fr":
+          $('#stream-error').append("Il semble que la connection avec le serveur a été perdue. La page va se recharger dans <span>"+waitBeforeReload+" seconde(s)</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
+          break;
+
+          case "en":
+          $('#stream-error').append("It looks like we've lost connection with the server. Page reloading in <span>"+waitBeforeReload+" second(s)</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
+          break;
+
+          case "de":
+          $('#stream-error').append("It looks like we've lost connection with the server. Page reloading in <span>"+waitBeforeReload+" second(s)</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
+          break;
+
+          case "nl":
+          $('#stream-error').append("It looks like we've lost connection with the server. Page reloading in <span>"+waitBeforeReload+" second(s)</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
+          break;
+        }
+
         $('#stream-error a.reload').click(function(){
           console.log("Manual page reload.");
           window.location.reload();
@@ -622,6 +639,11 @@ var nextEvent = function(){
 
 Template.spectacle.events({
 
+  'click #Bug' : function(){
+    alert("Nous sommes désolés que ça ne fonctionne pas! Le problème peut venir de plusieurs endroits : de la connection internet du théâtre (auquel cas vous ne pouvez pas faire grand chose!), de votre machine, de votre navigateur web, ou de votre connection internet. \n\n PROBLEME 1. Je n'ai jamais entendu le moindre son \n SOLUTIONS POSSIBLES : rechargez la page, mettez à jour votre navigateur web, essayez sur une autre machine, ou même sur un téléphone. \n\n PROBLEME 2. Le son est haché \n SOLUTIONS POSSIBLES : rapprochez-vous de votre box, essayez de vous connecter en filaire, si vous en avez les moyens essayez en partage de connection 4G avec votre téléphone.");
+    em.emit('bugClick');
+  },
+
   'click #menu' : function(){
     headerOpen=!headerOpen
 
@@ -644,7 +666,10 @@ Template.spectacle.events({
       TAPi18n.setLanguage(Object.keys(allLang)[currentLangIndex])
     }
     cookies.set("user_lan", Object.keys(allLang)[currentLangIndex])
-    next()
+
+    if(getSuperGlobal("powerToThePeople")==true){
+      next()
+    }
   },
 
   'click #cuppasInc': function(){
