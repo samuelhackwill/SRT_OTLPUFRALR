@@ -1,3 +1,6 @@
+Session.setDefault('moreInfoClicked', false)
+
+
 Template.registerHelper('formatDateLeFrenchStyle', function(date) {
   console.log("formatDateLeFrenchStyle?", date, date.getDate());
   // if(date.getDate() == "1")
@@ -15,9 +18,11 @@ Template.waiting.onCreated(function() {
 Template.waiting.onRendered(function () {
   // SPLASHSCREEN
   autonextcontainer = setTimeout(function(){
-    $("#inscription").css("opacity", "1")
-    $("#bonjour").css("opacity", "0")
-  },1500)
+  document.getElementById("infotainment").style.opacity="1"
+  document.getElementById("flag").style.opacity="1"
+  },1000)
+
+
 
   currentLang = cookies.get("user_lan")
   allLang = TAPi18n.getLanguages()
@@ -72,6 +77,18 @@ Template.waiting.onRendered(function () {
 
 
 Template.waiting.events({
+  
+  'click #XMLID_8_' : function(){
+    if (Session.get('moreInfoClicked')==false) {
+      Session.set('moreInfoClicked', true)  
+      document.getElementById("txt1").style.display = "none"
+      document.getElementById("txt2").style.display = "initial"
+    }else{
+      Session.set('moreInfoClicked', false)  
+      document.getElementById("txt2").style.display = "none"
+      document.getElementById("txt1").style.display = "initial"
+    }
+  },
 
   'click #flag' : function(){
 
@@ -85,9 +102,12 @@ Template.waiting.events({
     cookies.set("user_lan", Object.keys(allLang)[currentLangIndex])
   },
 
-  'click .represent': function(e){
+  'click #pastille': function(e){
     $("#success").show()
     $("#success").css("opacity", ".97")
+
+    // quand tu cliques sur la pastille en vrai faut juste chopper l'heure
+    // pis tu fais mourrir le cookie allez, 3H plus tard max
 
     console.log(e, 'choose represent!', this);
     e.stopPropagation();
@@ -99,7 +119,7 @@ Template.waiting.events({
     var checkCookie = cookies.get("user_represent");
 
     if(null == checkCookie || undefined == checkCookie) {
-      console.log("new user chose representation");
+      console.log("new cookie");
       var args = {
         _id: this._id
       };
@@ -241,6 +261,16 @@ Template.waiting.helpers({
     } else return messageButton;
   },
 
+  clientHasClickedOnButton: function(){
+    if(Session.get('moreInfoClicked')==true){
+      console.log("clientHasClickedOnButton true")
+      return true
+    }else{
+      console.log("clientHasClickedOnButton false")
+      return false
+    }
+  },
+
   isModeSpectacle: function(){
       modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}}).modeSpectacle;
       console.log("waiting - modeSpectacle??", modeSpectacle);
@@ -254,3 +284,21 @@ Template.waiting.helpers({
     else return false;
   }
 });
+
+  $(document.body).on('keyup', function(e) {
+
+    e = e || window.event
+
+
+    // KEYCODE 32 IS SPACEBAR
+    // KEYCIODE 78 IS "n"
+    if(e.keyCode == '78'){
+      document.getElementById("peloDay").style.opacity="0"
+      document.getElementById("peloNight").style.opacity="1"
+      document.body.style.backgroundColor="#221F2D"
+    };    if(e.keyCode == '74'){
+      document.getElementById("peloDay").style.opacity="1"
+      document.getElementById("peloNight").style.opacity="0"
+      document.body.style.backgroundColor="white"
+    };
+  });

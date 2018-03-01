@@ -10,6 +10,12 @@
   width:25%;
   margin:20px;
 }*/
+
+/*
+la couleur du fond night #221F2D
+*/
+
+
   @font-face {
     font-family: "typo";
     src: url('OfficeCodePro-Regular.ttf') format('truetype');
@@ -75,15 +81,27 @@
   }
 
   #flag{
+    opacity:0;
+
     position:fixed;
-    font-size:38px;
-    right:30px;
-    top:28px;
+    font-size:60px;
+    right:2vw;
+    top:2vh;
+
+    transition:opacity .3s;
   }
 
-  #lan::-moz-selection { background-color: black }
+  #flag::selection {
+    background-color:rgba(0,0,0,0);
+}
+
+  #flag::-moz-selection {
+    background-color:rgba(0,0,0,0);
+}
+
+  #lan::-moz-selection { background-color:rgba(0,0,0,0) }
   
-  #lan::selection { background-color: black }
+  #lan::selection { background-color:rgba(0,0,0,0) }
 
   #probleme{
     padding-bottom: 28px;
@@ -241,7 +259,7 @@ a:hover{
     text-align: center;
     margin: 0px;
     -webkit-transition: color 1s ease-in-out;
-    -webkit-transition: background-color 1s ease-in-out;
+    -webkit-transition: background-color 5s ease-in-out;
 
     width:100%;
     height:100%;
@@ -322,22 +340,47 @@ a:hover{
   }
 
 
-  #first_drawing{
-    width: 34vw;
-    transform: translateX(50%)
-      }  
+  #peloDay{
+  position:absolute;
+  top:0px;
+  left:0px;
 
-  #container_checkliste{
-    width:100%;
-  }
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 
-  #second_drawing{
-    width: 48%;
-    transform: translateX(45px);
-    float:right;
-    /*background: url(img/check.svg) no-repeat center;
-    background-size: contain;
-    */
+   height: 100%;
+  z-index: -10;
+
+  width: 67%;
+  margin-left: 32%;
+
+  transition: all 5s;
+      }
+
+ #peloNight{
+  position:absolute;
+  top:0px;
+  left:0px;
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+
+  height: 100%;
+  z-index: -11;
+
+  width: 67%;
+  margin-left: 32%;
+
+  opacity:0;
+
+    transition: all 5s;
+
   }
 
   #inscription{
@@ -354,14 +397,77 @@ a:hover{
     transition: opacity 1s ease-in-out;
   }
 
-  #titre{
-    font-size: 5vw;
-    background: url(img/patate1.svg) no-repeat center;
-    background-size: contain;
-    margin: -127px;
-    padding: 150px;
-    background-position-y: 60%;
+  #shows-list{
+    text-align:left;
+    padding-left:13px;
+
+    margin-top:13px;
   }
+
+  #pastille{
+    position:fixed;
+    width:100px;
+    height:100px;
+    background-color:blue;
+    z-index:10000;
+    left:37%;
+    top:10%;
+  }
+
+  #infotainment{
+    opacity: 0;
+
+text-align: left;
+background-color: #fff4ce;
+position: absolute;
+top: 0vh;
+width: 32%;
+height: 100%;
+padding-top: 2vh;
+padding-left: 1vw;
+
+transition: opacity .3s ease-in-out
+
+  }
+
+  #titre{
+    width:100%;
+    color: black;
+    font-size: 5.4vh;
+    padding:13px;
+}
+
+#infoAccueil{
+  text-align:left;
+}
+
+#XMLID_8_:hover{
+fill:orange;
+cursor:pointer;
+}
+
+#moreInfo{
+margin-top: 10px;
+  width:88%;
+}
+
+#txt2{
+  display:none;
+}
+
+
+#infoContainer{
+/*  height:50vh;
+*/  
+
+  max-height:45vh;
+  color: black;
+  font-size: 2vh;
+  padding:5px;
+  padding-left:15px;
+
+  width:100%;
+}
 
   #titre::selection{
     background-color: white;
@@ -638,10 +744,6 @@ a:hover{
     text-decoration: underline;
   }
 
-  #shows-list{
-    margin-bottom: 100px;
-  }
-
   #nlsrt{
     color: yellow;
 
@@ -797,20 +899,15 @@ div.login input {
     #nextshow{
       background-position: 0px 32px;
       }
-    #first_drawing{
+/*    #first_drawing{
       display:none;
-    }
+    }*/
     #inscription{
       text-align: center;
     }
     #success{
       font-size:15px;
     }
-    /* #second_drawing{
-      margin-left: -85px;
-    transform: translateX(-15%);
-    }
-    */
   }
 
     @media (max-width:500px) {
