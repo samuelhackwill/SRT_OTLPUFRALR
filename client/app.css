@@ -412,6 +412,8 @@ a:hover{
     z-index:10000;
     left:37%;
     top:10%;
+
+    transition: opacity 2s;
   }
 
   #infotainment{
@@ -447,8 +449,31 @@ cursor:pointer;
 }
 
 #moreInfo{
-margin-top: 10px;
   width:88%;
+  font-size:2vh;
+  text-align:center;
+
+  padding:10px;
+
+   -webkit-animation: plusinfo 1s infinite;
+   -moz-animation: plusinfo 1s infinite;
+   -o-animation: plusinfo 1s infinite;
+    animation: plusinfo 1s infinite;
+}
+
+#moreInfo:hover{
+  text-decoration: underline;
+  color:blue;
+  transition: all, .3s;
+  cursor:pointer;
+}
+
+#moreInfo::selection{
+  background-color:#fff4ce;
+}
+
+#moreInfo::-moz-selection{
+  background-color:#fff4ce;
 }
 
 #txt2{
@@ -656,12 +681,11 @@ margin-top: 10px;
     position: absolute;
   }
 
-  .invisible{
-    opacity: 0;
-
+  .invisibleO{
+    display:none;
   }
 
-  .visible{
+  .visibleO{
     opacity: 1;
   }
 
@@ -883,6 +907,45 @@ div.login input {
   100% {background: rgba(255,255,255,0);}
 }
 
+@-o-keyframes nuitjour {
+  0%, 100% {background: black;}
+  1% {background: grey;}
+  3% {background: rgba(255,255,255,0);}
+  4% {background: blue;}
+  6% {background: white;}
+  15% {background: grey;}
+  16% {background: white;}
+  30% {background: rgba(255,255,255,0);}
+  31% {background: white;} 
+  100% {background: rgba(255,255,255,0);}
+}
+
+@-moz-keyframes nuitjour {
+  0%, 100% {background: black;}
+  1% {background: grey;}
+  3% {background: rgba(255,255,255,0);}
+  4% {background: blue;}
+  6% {background: white;}
+  15% {background: grey;}
+  16% {background: white;}
+  30% {background: rgba(255,255,255,0);}
+  31% {background: white;} 
+  100% {background: rgba(255,255,255,0);}
+}
+
+@-webkit-keyframes nuitjour {
+  0%, 100% {background: black;}
+  1% {background: grey;}
+  3% {background: rgba(255,255,255,0);}
+  4% {background: blue;}
+  6% {background: white;}
+  15% {background: grey;}
+  16% {background: white;}
+  30% {background: rgba(255,255,255,0);}
+  31% {background: white;} 
+  100% {background: rgba(255,255,255,0);}
+}
+
 @keyframes nuitjourd {
   0%, 100% {background: rgba(255,255,255,0);}
   3% {background: grey;}
@@ -892,6 +955,76 @@ div.login input {
   30% {background: rgba(255,255,255,0);}
   31% {background: white;}
   100% {background: rgba(255,255,255,0);}
+}
+@-o-keyframes nuitjourd {
+  0%, 100% {background: rgba(255,255,255,0);}
+  3% {background: grey;}
+  6% {background: red;}
+  15% {background: grey;}
+  16% {background: white;}
+  30% {background: rgba(255,255,255,0);}
+  31% {background: white;}
+  100% {background: rgba(255,255,255,0);}
+}
+@-moz-keyframes nuitjourd {
+  0%, 100% {background: rgba(255,255,255,0);}
+  3% {background: grey;}
+  6% {background: red;}
+  15% {background: grey;}
+  16% {background: white;}
+  30% {background: rgba(255,255,255,0);}
+  31% {background: white;}
+  100% {background: rgba(255,255,255,0);}
+}
+@keyframes nuitjourd {
+  0%, 100% {background: rgba(255,255,255,0);}
+  3% {background: grey;}
+  6% {background: red;}
+  15% {background: grey;}
+  16% {background: white;}
+  30% {background: rgba(255,255,255,0);}
+  31% {background: white;}
+  100% {background: rgba(255,255,255,0);}
+}
+
+@keyframes plusinfo {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@-o-keyframes plusinfo {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@-moz-keyframes plusinfo {
+  0%, 100% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@-webkit-keyframes plusinfo {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
 }
 
 

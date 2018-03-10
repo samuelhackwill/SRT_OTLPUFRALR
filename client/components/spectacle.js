@@ -35,7 +35,6 @@ Template.spectacle.onRendered(function () {
     if (!ready){ return; }
     let contnus = ContenusEcran.find().fetch();
     console.log("contnus", contnus, data);
-    // data = ContenusEcran.findOne({name: "ce_jeudi_no_comment"}).data
     data = ContenusEcran.findOne({name: "data_test"}).data
     dataPupitre = ContenusEcran.findOne({name: "data_test"}).dataPupitre
     console.log('srt spectacle spectacle rendered');
@@ -85,6 +84,26 @@ Template.spectacle.onRendered(function () {
     }
 
   };
+
+  em.addListener('showBordPlateauClient', function(){
+      switch(TAPi18n.getLanguage()){
+        case "fr":
+          $("<div>"+"Si vous voulez rester avec nous, ce soir il y a un bord plateau : <br/> Vous pouvez envoyer des questions / remarques au numéro de Jacques <br/> +33 7 81 89 76 86"+"<br/</div>").appendTo("#phoneNumberSrt")
+          break
+
+        case "nl":
+          $("<div>"+"Bel dit nummer : <br /> +33 7 81 89 76 86 <br/> (En schakel het geluid van jullie computer uit! Anders horen we allerlei rare geluiden)."+"<br/</div>").appendTo("#phoneNumberSrt")
+          break
+
+        case "de":
+          $("<div>"+"Rufen Sie unter dieser Nummer an : <br /> +33 7 81 89 76 86 <br/> (Und schalten Sie Ihren Computer stumm! Sonst gibt es komische Geräusche.)"+"<br/</div>").appendTo("#phoneNumberSrt")
+          break
+
+        case "en":
+          $("<div>"+"Call this number : <br /> +33 7 81 89 76 86 <br/> (And cut the sound on your computer\! Otherwise it\’ll make weird noises)"+"<br/</div>").appendTo("#phoneNumberSrt")
+          break
+      }
+  });
 
     em.addListener('showLTNumberClient', function(){
       // DEPRECATED
@@ -640,7 +659,23 @@ var nextEvent = function(){
 Template.spectacle.events({
 
   'click #Bug' : function(){
-    alert("Nous sommes désolés que ça ne fonctionne pas! Le problème peut venir de plusieurs endroits : de la connection internet du théâtre (auquel cas vous ne pouvez pas faire grand chose!), de votre machine, de votre navigateur web, ou de votre connection internet. \n\n PROBLEME 1. Je n'ai jamais entendu le moindre son \n SOLUTIONS POSSIBLES : rechargez la page, mettez à jour votre navigateur web, essayez sur une autre machine, ou même sur un téléphone. \n\n PROBLEME 2. Le son est haché \n SOLUTIONS POSSIBLES : rapprochez-vous de votre box, essayez de vous connecter en filaire, si vous en avez les moyens essayez en partage de connection 4G avec votre téléphone.");
+    switch(currentLang){
+      case "fr":
+        alert("Nous sommes désolés que ça ne fonctionne pas! Le problème peut venir de plusieurs endroits : de la connection internet du théâtre (auquel cas vous ne pouvez pas faire grand chose), de votre machine, de votre navigateur web, ou de votre connection internet. \n\n PROBLEME 1. Je n'ai jamais entendu le moindre son \n SOLUTIONS POSSIBLES : rechargez la page, mettez à jour votre navigateur web, essayez sur une autre machine, ou même sur un téléphone. \n\n PROBLEME 2. Le son est haché \n SOLUTIONS POSSIBLES : rapprochez-vous de votre box, essayez de vous connecter en filaire, si vous en avez les moyens essayez en partage de connection 4G avec votre téléphone.");
+      break;
+
+      case "en":
+        alert("Nous sommes désolés que ça ne fonctionne pas! Le problème peut venir de plusieurs endroits : de la connection internet du théâtre (auquel cas vous ne pouvez pas faire grand chose), de votre machine, de votre navigateur web, ou de votre connection internet. \n\n PROBLEME 1. Je n'ai jamais entendu le moindre son \n SOLUTIONS POSSIBLES : rechargez la page, mettez à jour votre navigateur web, essayez sur une autre machine, ou même sur un téléphone. \n\n PROBLEME 2. Le son est haché \n SOLUTIONS POSSIBLES : rapprochez-vous de votre box, essayez de vous connecter en filaire, si vous en avez les moyens essayez en partage de connection 4G avec votre téléphone.");
+      break;
+
+      case "de":
+        alert("Nous sommes désolés que ça ne fonctionne pas! Le problème peut venir de plusieurs endroits : de la connection internet du théâtre (auquel cas vous ne pouvez pas faire grand chose), de votre machine, de votre navigateur web, ou de votre connection internet. \n\n PROBLEME 1. Je n'ai jamais entendu le moindre son \n SOLUTIONS POSSIBLES : rechargez la page, mettez à jour votre navigateur web, essayez sur une autre machine, ou même sur un téléphone. \n\n PROBLEME 2. Le son est haché \n SOLUTIONS POSSIBLES : rapprochez-vous de votre box, essayez de vous connecter en filaire, si vous en avez les moyens essayez en partage de connection 4G avec votre téléphone.");
+      break;
+
+      case "nl":
+        alert("Nous sommes désolés que ça ne fonctionne pas! Le problème peut venir de plusieurs endroits : de la connection internet du théâtre (auquel cas vous ne pouvez pas faire grand chose), de votre machine, de votre navigateur web, ou de votre connection internet. \n\n PROBLEME 1. Je n'ai jamais entendu le moindre son \n SOLUTIONS POSSIBLES : rechargez la page, mettez à jour votre navigateur web, essayez sur une autre machine, ou même sur un téléphone. \n\n PROBLEME 2. Le son est haché \n SOLUTIONS POSSIBLES : rapprochez-vous de votre box, essayez de vous connecter en filaire, si vous en avez les moyens essayez en partage de connection 4G avec votre téléphone.");
+      break;
+    }
     em.emit('bugClick');
   },
 

@@ -1,5 +1,5 @@
 Session.setDefault('moreInfoClicked', false)
-
+Session.setDefault('pastilleClicked', false)
 
 Template.registerHelper('formatDateLeFrenchStyle', function(date) {
   console.log("formatDateLeFrenchStyle?", date, date.getDate());
@@ -12,6 +12,7 @@ Template.waiting.onCreated(function() {
   //subscribe à la collection representations
   this.autorun(() => {
     this.subscribe('allRepresentations');
+    this.subscribe('allSuperGlobals')
   });
 })
 
@@ -22,6 +23,10 @@ Template.waiting.onRendered(function () {
   document.getElementById("flag").style.opacity="1"
   },1000)
 
+  //   em.addListener('salmrefreshpage', function() {
+  //     // bon c'est pas beau mais au moins ça marche fuck
+  //   console.log('salm refresh page! but who cares im bob');
+  // }); 
 
 
   currentLang = cookies.get("user_lan")
@@ -30,12 +35,12 @@ Template.waiting.onRendered(function () {
 
 
   if(currentLang){
-    console.log("found a cookie, looking for index now")
+    // console.log("found a cookie, looking for index now")
     TAPi18n.setLanguage(currentLang)
     for (var i=0; i<Object.keys(allLang).length; i++){
-      console.log("look for the lan index with lan ", currentLang)
+      // console.log("look for the lan index with lan ", currentLang)
       if(Object.keys(allLang)[i]==currentLang){
-        console.log("found the lan index! ", i)
+        // console.log("found the lan index! ", i)
         currentLangIndex = i
       }
     }
@@ -51,8 +56,8 @@ Template.waiting.onRendered(function () {
     TAPi18n.setLanguage(currentLang)
 
     for (var i=0; i<Object.keys(allLang).length; i++){
-      console.log("OK, thank you API, looking for the index now")
-      console.log("look for the lan index with lan ", currentLang)
+      // console.log("OK, thank you API, looking for the index now")
+      // console.log("look for the lan index with lan ", currentLang)
       if(Object.keys(allLang)[i]==currentLang){
         console.log("found the lan index! ", i)
         currentLangIndex = i
@@ -62,36 +67,25 @@ Template.waiting.onRendered(function () {
   }
 
   if(currentLangIndex==null){
-    console.log("fuck this shit, couldn't find your country so i'm switching to english")
+    // console.log("fuck this shit, couldn't find your country so i'm switching to english")
     currentLang = 'en'
     cookies.set("user_lan", currentLang)
     TAPi18n.setLanguage(currentLang)
     currentLangIndex = 0
   }
 
-  //hum faudrait peut être faire un truc au cas où le get JSON marche pas hein
-  // pis régler cette histoire de laide redite
-
-
 });
 
 
 Template.waiting.events({
-  
-  'click #XMLID_8_' : function(){
-    if (Session.get('moreInfoClicked')==false) {
-      Session.set('moreInfoClicked', true)  
-      document.getElementById("txt1").style.display = "none"
-      document.getElementById("txt2").style.display = "initial"
-    }else{
-      Session.set('moreInfoClicked', false)  
-      document.getElementById("txt2").style.display = "none"
-      document.getElementById("txt1").style.display = "initial"
-    }
+
+  'click #moreInfo' : function(){
+    var isClicked = Session.get("moreInfoClicked")
+    isClicked = !isClicked
+    Session.set("moreInfoClicked", isClicked)
   },
 
   'click #flag' : function(){
-
     if(currentLangIndex < Object.keys(allLang).length-1){
       currentLangIndex += 1
       TAPi18n.setLanguage(Object.keys(allLang)[currentLangIndex])
@@ -99,58 +93,46 @@ Template.waiting.events({
       currentLangIndex=0
       TAPi18n.setLanguage(Object.keys(allLang)[currentLangIndex])
     }
+
+    console.log('I LAUNCH ONCE')
     cookies.set("user_lan", Object.keys(allLang)[currentLangIndex])
+
   },
 
   'click #pastille': function(e){
     $("#success").show()
     $("#success").css("opacity", ".97")
 
-    // quand tu cliques sur la pastille en vrai faut juste chopper l'heure
-    // pis tu fais mourrir le cookie allez, 3H plus tard max
+    var checkCookie = cookies.get("get_me_in");
 
-    console.log(e, 'choose represent!', this);
-    e.stopPropagation();
-    e.preventDefault();
+    if(null == checkCookie || undefined == checkCookie){
+    now = new Date();
+    // console.log("now ", now)
+    nowHours = now.getHours()
+    // console.log("nowHours ", nowHours)
+    now.setHours(nowHours+3, 59, 59)
+    // console.log("later ", now)
+    // hum a voir si on va pas se faire bite in the ass par les fuseaux horaires
+    // bon c'est mignon mais j'arrive pas à le récupérer le petit batard
 
-    var loggedInUser = Meteor.user();
-    console.log("loggedInUser", loggedInUser);
 
-    var checkCookie = cookies.get("user_represent");
+    // document.cookie='get_me_in=true;expires='+now.toGMTString()+';path=/';
 
-    if(null == checkCookie || undefined == checkCookie) {
-      console.log("new cookie");
-      var args = {
-        _id: this._id
-      };
-      
-      if(loggedInUser) args.userId = loggedInUser._id;
-        console.log('representation : ', args);
-        Meteor.call('addUserToRepresentation', args);
-        cookies.set("user_represent", this._id);
-      } else if(checkCookie != this._id) {
-       
-        console.log("already user change representation");
+    cookies.set("get_me_in", true)
 
-        var args = {
-          _id: this._id,
-          old_representation: checkCookie
-        };
-        if(loggedInUser) args.userId = loggedInUser._id;
-          console.log('representation : ', args);
-          Meteor.call('addUserToRepresentation', args);
-          cookies.set("user_represent", this._id);
-        } else {
-          console.log("already chosen this", cookies.get("user_represent"));
-        }
+    Session.set('pastilleClicked', true)
 
-        $("#date_choisie").html(moment(this.date_start).format('dddd Do MMM YYYY à HH[h]mm'))
-        $("#warning").html("<br />") 
+    console.log("new cookie");
+    }else{
+    console.log("cookie already exists")
+    return
+    }
   }
 });
 
 
 Template.waiting.helpers({
+
   listRepresentations:function(){
     var now = new Date();
     var todayStart = new Date(now.setHours(0,0,0,0));
@@ -163,103 +145,113 @@ Template.waiting.helpers({
       "status": /(pending|running)/
     }, {sort: {date_start: 1}});
   },
-  nextRepresentation:function(){
-    var currentRepresentation = null;
-    var now = new Date();
-    var todayStart = new Date(now.setHours(0,0,0,0));
-    var todayEnd = new Date(now.setHours(24,0,0,0));
-    console.log("router checkPhone - today is between", todayStart, todayEnd);
-    var foundRepresentation = representations.findOne({ 
-      date_start: { 
-        $gte: todayStart
-      },
-      "status": /(pending|running)/,
-      "name": { $not: /STEALTH/ }
-    }, {sort: {date_start: 1}});
 
-    console.log("router checkPhone - representation?", foundRepresentation);
-    if(foundRepresentation) { //representation du jour trouvée
-      console.log("router checkPhone - representation du jour trouvée");
-      theNextRepresentation = foundRepresentation;
-      console.log("nextRepresentation=",theNextRepresentation);
-      return theNextRepresentation
-    }
-  },
-  chosenRepresentation:function(){
+  // DEPRECATED 
 
-    var checkCookie = cookies.get("user_represent");
-    console.log("chosenRepresentation - checkCookie?", checkCookie);
-    if(checkCookie) {
-      var chosenRepresentation = null;
-      var foundRepresentation = representations.findOne({ 
-        _id: checkCookie
-      });
+  // nextRepresentation:function(){
+  //   var currentRepresentation = null;
+  //   var now = new Date();
+  //   var todayStart = new Date(now.setHours(0,0,0,0));
+  //   var todayEnd = new Date(now.setHours(24,0,0,0));
+  //   console.log("router checkPhone - today is between", todayStart, todayEnd);
+  //   var foundRepresentation = representations.findOne({ 
+  //     date_start: { 
+  //       $gte: todayStart
+  //     },
+  //     "status": /(pending|running)/,
+  //     "name": { $not: /STEALTH/ }
+  //   }, {sort: {date_start: 1}});
 
-      console.log("chosenRepresentation - foundRepresentation?", foundRepresentation);
-      if(foundRepresentation) { //representation du jour trouvée
-        console.log("chosenRepresentation - representation choisie trouvée");
-        chosenRepresentation = foundRepresentation;
-        console.log("chosenRepresentation =", chosenRepresentation);
-        return chosenRepresentation
-      } else return null;
-    } else return null;
-  },
+  //   console.log("router checkPhone - representation?", foundRepresentation);
+  //   if(foundRepresentation) { //representation du jour trouvée
+  //     console.log("router checkPhone - representation du jour trouvée");
+  //     theNextRepresentation = foundRepresentation;
+  //     console.log("nextRepresentation=",theNextRepresentation);
+  //     return theNextRepresentation
+  //   }
+  // },
 
-  alreadyParticipating: function(){
+  // DEPRECATED
 
-    var checkCookie = cookies.get("user_represent");
-    console.log('participating representation?', checkCookie, this._id);
-    if(null != checkCookie && undefined != checkCookie && checkCookie == this._id) {
-      return "alreadyParticipating";
-    } else return "";
-    // si tu participes déjà tu retrun le nom de la classe, sinon non
-  },
+  // chosenRepresentation:function(){
 
-  jeMinscris: function(date_start){
-    var nowD = new Date().getDate()
-    var nowM = new Date().getMonth() + 1 //sisi january = 0 sinon et ça rend triste
-    var nowY = new Date().getFullYear()
-    var nowH = new Date().getHours()
-    var nowM = new Date().getMinutes()
+  //   var checkCookie = cookies.get("user_represent");
+  //   console.log("chosenRepresentation - checkCookie?", checkCookie);
+  //   if(checkCookie) {
+  //     var chosenRepresentation = null;
+  //     var foundRepresentation = representations.findOne({ 
+  //       _id: checkCookie
+  //     });
+
+  //     console.log("chosenRepresentation - foundRepresentation?", foundRepresentation);
+  //     if(foundRepresentation) { //representation du jour trouvée
+  //       console.log("chosenRepresentation - representation choisie trouvée");
+  //       chosenRepresentation = foundRepresentation;
+  //       console.log("chosenRepresentation =", chosenRepresentation);
+  //       return chosenRepresentation
+  //     } else return null;
+  //   } else return null;
+  // },
+
+  // DEPRECATED 
+
+  // alreadyParticipating: function(){
+
+  //   var checkCookie = cookies.get("user_represent");
+  //   console.log('participating representation?', checkCookie, this._id);
+  //   if(null != checkCookie && undefined != checkCookie && checkCookie == this._id) {
+  //     return "alreadyParticipating";
+  //   } else return "";
+  // },
+
+  // DEPRECATED
+
+  // jeMinscris: function(date_start){
+
+  //   var nowD = new Date().getDate()
+  //   var nowM = new Date().getMonth() + 1 //sisi january = 0 sinon et ça rend triste
+  //   var nowY = new Date().getFullYear()
+  //   var nowH = new Date().getHours()
+  //   var nowM = new Date().getMinutes()
     
-    var dateD = date_start.getDate()
-    var dateM = date_start.getMonth() + 1
-    var dateY = date_start.getFullYear()
-    var dateH = date_start.getHours()
-    var dateM = date_start.getMinutes()
+  //   var dateD = date_start.getDate()
+  //   var dateM = date_start.getMonth() + 1
+  //   var dateY = date_start.getFullYear()
+  //   var dateH = date_start.getHours()
+  //   var dateM = date_start.getMinutes()
 
-    var checkCookie = cookies.get("user_represent");
-    console.log('participating representation?', checkCookie, this._id);
-    modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}}).modeSpectacle;
+  //   var checkCookie = cookies.get("user_represent");
+  //   console.log('participating representation?', checkCookie, this._id);
+  //   modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}}).modeSpectacle;
 
-    messageButtonOK = ""
-    messageButton = ""
-    // TODO implémenter anglais etc
-    if (TAPi18n.getLanguage()=="fr"){
-      messageButton = "Je m'inscris"
-      messageButtonOK = "Inscription OK"
-    }
+  //   messageButtonOK = ""
+  //   messageButton = ""
+  //   // TODO implémenter anglais etc
+  //   if (TAPi18n.getLanguage()=="fr"){
+  //     messageButton = "Je m'inscris"
+  //     messageButtonOK = "Inscription OK"
+  //   }
 
-    if (TAPi18n.getLanguage()=="nl"){
-      messageButton = "Ik meld me aan"
-      messageButtonOK = "Aanmelding geslaagd"
-    }
+  //   if (TAPi18n.getLanguage()=="nl"){
+  //     messageButton = "Ik meld me aan"
+  //     messageButtonOK = "Aanmelding geslaagd"
+  //   }
 
-    if (TAPi18n.getLanguage()=="en"){
-      messageButton = "Register me"
-      messageButtonOK = "Registration OK"
-    }
+  //   if (TAPi18n.getLanguage()=="en"){
+  //     messageButton = "Register me"
+  //     messageButtonOK = "Registration OK"
+  //   }
 
-    if (TAPi18n.getLanguage()=="de"){
-      messageButton = "Anmelden"
-      messageButtonOK = "Anmeldung OK"
-    }
+  //   if (TAPi18n.getLanguage()=="de"){
+  //     messageButton = "Anmelden"
+  //     messageButtonOK = "Anmeldung OK"
+  //   }
 
 
-    if(null != checkCookie && undefined != checkCookie && checkCookie == this._id) {
-      return messageButtonOK;
-    } else return messageButton;
-  },
+  //   if(null != checkCookie && undefined != checkCookie && checkCookie == this._id) {
+  //     return messageButtonOK;
+  //   } else return messageButton;
+  // },
 
   clientHasClickedOnButton: function(){
     if(Session.get('moreInfoClicked')==true){
@@ -271,11 +263,27 @@ Template.waiting.helpers({
     }
   },
 
+  moreInfoClicked : function(){
+    if (Session.get('moreInfoClicked')==false) {
+      return TAPi18n.__('moreInfo')
+      }else{
+      return TAPi18n.__('lessInfo')
+    }
+  },
+
   isModeSpectacle: function(){
       modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}}).modeSpectacle;
       console.log("waiting - modeSpectacle??", modeSpectacle);
       // if(modeSpectacle) this.render('jacky');
       return modeSpectacle;
+  },
+
+  showTrigger: function(){
+    if(getSuperGlobal("modeSpectacle")){
+      return "visibleO";
+    }else{
+      return "invisibleO";
+    }
   },
   
   isStealth: function(name){
@@ -302,3 +310,4 @@ Template.waiting.helpers({
       document.body.style.backgroundColor="white"
     };
   });
+

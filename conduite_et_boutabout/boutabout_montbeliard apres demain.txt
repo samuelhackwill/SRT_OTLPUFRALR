@@ -238,10 +238,11 @@
 #EN_SALM welcome to this rendition of We’ll Cross the Bridge Once We’ve Reached the River.
 #DE_SALM herzlich willkommen zu „Wir gehen über die Brücke, wenn wir an den Fluss gelangen“.
 ***
-#FR_SALM Je me trouve actuellement dans à Francfort dans la salle du Mousonturm, qui est encore vide.
-#NL_SALM Ik bevind me op dit moment in Frankfurt, in de zaal van De Mousonturm, die nog leeg is.
-#EN_SALM I am currently in Frankfurt at the Mousonturm theatre, which is still empty.
-#DE_SALM Ich bin gerade in Frankfurt, im Mousonturm. Der Saal ist noch leer.
+_XXX_
+#FR_SALM Je me trouve actuellement à Montbéliard dans la salle de MA Scène nationale, qui est encore vide.
+#NL_SALM Ik bevind me op dit moment in Montbéliard, in de zaal van De MA Scène nationale, die nog leeg is.
+#EN_SALM I am currently in Montbéliard at the MA Scène nationale theatre, which is still empty.
+#DE_SALM Ich bin gerade in Montbéliard, im MA Scène nationale. Der Saal ist noch leer.
 ***
 #FR_SALM Les portes ne vont pas tarder à s’ouvrir.
 #NL_SALM De deuren kunnen elk moment opengaan.
@@ -304,15 +305,21 @@
 #EN_SALM we know that there are ... listeners present so far.
 #DE_SALM Wir sehen: Sie sind derzeit ... Hörer·innen.
 ***
-#FR_SALM Vous m’entendez ce soir par l’intermédiaire d’un flux audio, qui est encore une version en évaluation,
+#FR_SALM Vous m’entendez ce soir par l’intermédiaire d’un flux audio, qui fonctionne aujourd'hui
 #NL_SALM Jullie horen me vanavond via audiostreaming, het is nog een testversie,
 #EN_SALM You are hearing me tonight by way of an audio channel, which is still under evaluation,
 #DE_SALM Sie hören mich heute Abend per Audiostream. Es handelt sich um eine Testversion.
 ***
-#FR_SALM c’est à dire qu’on travaille continuellement pour améliorer la connexion qui nous relie.
-#NL_SALM ik bedoel dus dat we constant werken aan de verbetering van deze verbinding tussen jullie en mij.
-#EN_SALM meaning that we are continually working to improve our connection.
-#DE_SALM D.h. wir arbeiten ständig daran, die Verbindung zwischen Ihnen und uns zu verbessern.
+%%% TRAD DEBUT
+#FR_SALM avec une latence quasi-inexistante, de l'ordre du 20e de seconde dans le meilleur des cas
+#NL_SALM 
+#EN_SALM 
+#DE_SALM 
+***
+#FR_SALM mais qui reste tributaire de la qualité de notre connexion internet
+#NL_SALM 
+#EN_SALM 
+#DE_SALM 
 ***
 #FR_SALM S’il y a un décrochage ce soir, ne vous inquiétez pas, généralement ça revient tout de suite après.
 #NL_SALM Geen zorg als het geluid vanavond wegvalt, meestal komt het onmiddellijk terug.
@@ -333,6 +340,37 @@
 #NL_SALM Als de onderbreking echt lang duurt, ververs dan eenvoudigweg de pagina.
 #EN_SALM If the break starts to drag on, you can simply refresh the page.
 #DE_SALM Falls doch mal eine längere Unterbrechung auftritt, aktualisieren Sie einfach die Seite.
+***
+#FR_SALM si les décrochages sont trop fréquents ou trop longs, c'est que :
+#NL_SALM
+#EN_SALM
+#DE_SALM
+***
+#FR_SALM soit la connexion est mauvaise de notre côté,
+#NL_SALM
+#EN_SALM
+#DE_SALM
+***
+#FR_SALM dans ce cas-là il n'y a rien à faire hélas,
+#NL_SALM
+#EN_SALM
+#DE_SALM
+***
+#FR_SALM soit la connexion est mauvaise de votre côté, 
+#NL_SALM
+#EN_SALM
+#DE_SALM
+***
+#FR_SALM et dans ce cas là je vous conseille de vous brancher en filaire
+#NL_SALM
+#EN_SALM
+#DE_SALM
+***
+#FR_SALM ou de vous rapprocher de votre box si vous êtes en wifi.
+#NL_SALM
+#EN_SALM
+#DE_SALM
+%%% TRAD FIN °
 ***
 #FR_SALM En tout cas, j’espère que pour l’instant vous m’entendez bien et en principe c’est le cas.
 #NL_SALM In elk geval hoop ik dat jullie me nu horen en in principe is dat het geval.
@@ -768,7 +806,7 @@
 #EN I mean, there are always other shows 
 #DE Denn es gibt ja immer noch andere Vorstellungen,
 ***
-#FR qui commencent au même moment dans d’autres endroit du monde...
+#FR qui commencent au même moment dans d’autres endroit du monde,...
 #NL die op hetzelfde moment beginnen op andere plekken in de wereld.
 #EN starting at the same time in other places in the world...
 #DE die zur gleichen Zeit irgendwo auf dieser Welt beginnen.
@@ -776,8 +814,8 @@
 // SILENCE
 #FR Par exemple, ce soir commence _XXX_, un spectacle de _XXX_..
 #NL Bijvoorbeeld, vanavond begint de voorstelling “Un ennemi du peuple” van Sébastien Bournac
-#EN For instance, tonight "Un ennmi du peuple" is starting, a show by Sébastien Bournac
-#DE Z.B. beginnt heute Abend „Un ennmi du peuple”, ein Stück von Sébastien Bournac
+#EN For instance, tonight "Un ennemi du peuple" is starting, a show by Sébastien Bournac
+#DE Z.B. beginnt heute Abend „Un ennemi du peuple”, ein Stück von Sébastien Bournac
 ***
 #FR à _XXX_, au théâtre _XXX_,
 #NL in Toulouse in het Sorano Theater.
@@ -2639,7 +2677,7 @@ etc.
 #EN_CYCLO there’s nothing but the connection.
 #DE_CYCLO jetzt gibt es nur die Verbindung, nichts anderes.
 #FR_CYCLO il n’y a plus rien d’autre que la connexion qui nous relie.
-%%% TRAD FIN
+%%% TRAD FIN °
 ***
 #NL_CYCLO Deze verbinding is onzichtbaar,
 #EN_CYCLO This connection is invisible,
@@ -2721,6 +2759,7 @@ etc.
 #DE_CYCLO horchen, wie er oder sie die Ohren spitzt.
 #FR_CYCLO pour essayer de l’entendre tendre l’oreille.
 ***
+%%% TRAD DEBUT
 #FR Jacques —  Merci. vous pouvez raccrocher.
 #NL
 #EN Thank you. You can hang up.
@@ -2736,17 +2775,83 @@ etc.
 #EN Yes, it was magical, Jacques.
 #DE Oh ja, das war pure Magie, Jacques.
 ***
-#FR Brigade — (aux SALM) Et vous, ça vous a plu ?
-#NL 
-#EN And did you like it?
-#DE Und Ihnen?
-***
-#FR_CYCLO Oui, oui, c’était super de partager ce moment avec vous ! 
+Geste dynamique de Jacques qui lance le jingle
+#FR Jacques - Hé bien après cette expérience troublante et magique, nous allons marquer une petite pause.
 #NL
-#EN_CYCLO Yeah, yes, it was great sharing this experience with you! 
-#DE_CYCLO Ja! Diesen Moment mit Ihnen gemeinsam zu erleben, das war toll!
+#EN
+#DE
 ***
-#FR Jacques —  ... euh, pardon mais vous êtes en train de faire quoi Brégade ? 
+#FR Une petite pause pour préparer la prochaine séquence.
+#NL
+#EN
+#DE
+***
+Arnaud est dans le camion.
+#FR Et oui chers auditeurs ça y est c'est le moment, chez vous à la maison
+#NL
+#EN
+#DE
+***
+#FR de commencer la fabrication de votre cabane
+#NL
+#EN
+#DE
+***
+#FR samuel vous avait demandé tout à l'heure de réunir de réunir des matériaux
+#NL
+#EN
+#DE
+***
+#FR et donc ça y est, vous pouvez vous lancer, hop hop hop go, go, go... on y va
+#NL
+#EN
+#DE
+***
+#FR et ici pendant ce temps là, nous allons préparer notre traditionnel feu de camp
+#NL
+#EN
+#DE
+***
+#FR et on se retrouvera dans quelques instants réunis tous ensemble autour du feu.
+#NL
+#EN
+#DE
+***
+// jacques sort, brigade revient direct, samuel commence à installer le feu
+#FR Brigade — (aux SALM) vous êtes encore là? vous m'entendez?
+#NL
+#EN
+#DE
+***
+// répondre à la seconde question
+#FR_CYCLO Oui oui
+#NL_CYCLO
+#DE_CYCLO
+#EN_CYCLO
+***
+#FR tiens, vous voyez le texte qui s'affiche sur votre écran?
+#NL
+#EN
+#DE
+***
+// et cette fois ci juste laisser le temps que les gens lisent
+#FR_CYCLO Oui...
+#NL_CYCLO
+#DE_CYCLO
+#EN_CYCLO
+***
+#FR ah, j'ai une petite idée. Ça vous dirait de lire le texte, à voix haute, quand il s'affiche?
+#NL
+#EN
+#DE
+***
+// petiteu pause... attendre que jacques ait vu pour enlever le d'accord (en même temps que le son)
+#FR_CYCLO D'accord
+#NL_CYCLO
+#DE_CYCLO
+#EN_CYCLO
+***
+#FR Jacques —  Attendez, mais vous faites quoi là Brégade?
 #NL
 #EN ...uh, sorry, but what are you doing Brégade? 
 #DE Ähm, Brégade? Was machen Sie da?
@@ -2817,17 +2922,7 @@ etc.
 #EN_CYCLO Like, look, Jacques... right now I’m reading all these lines that are appearing on my screen...
 #DE_CYCLO Also Jacques ... Ich lese jetzt den Text auf meinem Bildschirm vor, laut und deutlich ...
 ***
-#FR_CYCLO JE ... LIS ..... LE ... TEXTE....... 
-#NL_CYCLO
-#EN_CYCLO I’M... READING... THE... TEXT...
-#DE_CYCLO ICH ... LESE .... DEN ... TEXT .........
-***
-#FR Brigade — Voilà, et puis ils peuvent prendre l’intonation qu’ils veulent, c’est de l'interprétation libre quoi, c’est improvisé.
-#NL
-#EN You see? And they can use the intonation they want, it’s open to interpretation, like improv.
-#DE Ja. Und die Hörer können das betonen, wie sie wollen. Frei interpretieren, improvisieren.
-***
-#FR_CYCLO JE LIS LE TEXTE ! JE LIS LE TEXTE ! YOUHOU JE LIS LE TEXTE ! 
+#FR_CYCLO JE LIS LE TEXTE ! JE LIS LE TEXTE ! YOUHOU JE LIS LE TEXTE ! 
 #NL_CYCLO 
 #EN_CYCLO I’M READING THE TEXT! I’M READING THE TEXT! YOOHOO I’M READING THE TEXT! 
 #DE_CYCLO ICH LESE DEN TEXT! ICH LESE DEN TEXT! JUHU! ICH LESE DEN TEXT!
@@ -2837,7 +2932,12 @@ etc.
 #EN oh yeah, OK, that’s convenient  
 #DE Ah, ok. Wie praktisch.
 ***
-#FR_CYCLO Oui, mais, euh, attendez, en fait .. Il y a des gens qui m'entendent là ?
+#FR Brigade — Voilà, et puis ils peuvent prendre l’intonation qu’ils veulent, c’est de l'interprétation libre quoi, c’est improvisé.
+#NL
+#EN You see? And they can use the intonation they want, it’s open to interpretation, like improv.
+#DE Ja. Und die Hörer können das betonen, wie sie wollen. Frei interpretieren, improvisieren.
+***
+#FR_CYCLO Oui, mais, euh, attendez, en fait... Il y a des gens <br/> qui m'entendent là ?
 #NL_CYCLO
 #EN_CYCLO Yeah, but, uh, wait a second... Can anybody hear me?
 #DE_CYCLO Ja, aber, ähm, Moment ... Kann mich jetzt jemand hören, oder was?
@@ -2847,15 +2947,10 @@ etc.
 #EN Oh no, no, you can hear yourselves but we can’t hear you here. 
 #DE Nein, Sie hören sich. Aber wir hören Sie nicht.
 ***
-#FR Brigade — Personne ne vous entend, ni nous ni personne dans les gradins. 
+#FR Brigade —Personne ne vous entend, ni nous ni personne dans les gradins. 
 #NL
 #EN No one can hear you, not us and not the people in the audience. 
 #DE Niemand hört Sie hier. Wir nicht, und auch nicht das Publikum im Saal.
-***
-#FR_CYCLO Ha vous m’entendez pas ?
-#NL_CYCLO
-#EN_CYCLO Ha you can’t hear me?
-#DE_CYCLO Ha! Sie können mich nicht hören?
 ***
 #FR Brigade — Enfin, disons, on vous imagine, derrière votre ordinateur en train de lire ce texte qu’on vous propose, en train de le dire d’une certaine manière
 #NL
@@ -2877,7 +2972,7 @@ etc.
 #EN Hey. I’ve been asking myself. Do you also feel like this really makes you feel like you’re taking part in the dialogue? 
 #DE Hm. Was ich mich frage: Haben Sie dabei auch das Gefühl, ein Gespräch zu führen?
 ***
-#FR Brigade — Comme si on parlait ensemble, qu’on était ici, ensemble, au même endroit ? 
+#FR Brigade —Comme si on parlait ensemble, qu’on était ici, ensemble, au même endroit ? 
 #NL
 #EN Like that we’re speaking, that we’re here, together in the same place?  
 #DE Ganz so, als würden wir, hier, miteinander sprechen?
@@ -2902,27 +2997,27 @@ etc.
 #EN Oh yeah, that’s true... 
 #DE Hm, ja, stimmt ...
 ***
-#FR Samuel — Bah vous savez nous aussi on dit un texte préparé.
+#FR Samuel —Bah vous savez nous aussi on dit un texte préparé.
 #NL
 #EN And I mean, we also have to say a prepared text, too.
 #DE Allerdings sprechen wir gerade auch einen vorbereiteten Text.
 ***
-#FR Jacques — Quoi... quoi quoi... Préparé ...? 
+#FR Jacques —   Quoi... quoi quoi... Préparé ...? 
 #NL
 #EN What? What? Prepared...? 
 #DE Wie ... Was? Einen vorbereiteten ...?
 ***
-#FR Samuel — Bah c’est déjà écrit, tout ce qu’on dit c’est écrit, tu le sais bien
+#FR Samuel —Bah c’est déjà écrit, tout ce qu’on dit c’est écrit, tu le sais bien
 #NL
 #EN Yeah, everything’s been written down, everything we’re saying, you know that
 #DE Das wurde alles vorher geschrieben, was wir sagen. Das weißt du doch.
 ***
-#FR Jacques — heu ... ? 
+#FR Jacques —   heu ... ? 
 #NL
 #EN Huh... ? 
 #DE Hä ...?
 ***
-#FR Brigade — Jacques ? 
+#FR Brigade —Jacques ? 
 #NL
 #EN Jacques? 
 #DE Jacques?
@@ -2932,12 +3027,12 @@ etc.
 #EN Come on, you’re pretending to not understand, right? 
 #DE Jetzt komm ... Du spielst doch jetzt den Dummen, oder?
 ***
-#FR Jacques — Je fais semblant ? je fais semblant ? 
+#FR Jacques —  Je fais semblant ? je fais semblant ? 
 #NL
 #EN I’m pretending? I’m pretending?  
 #DE Ich spiele?
 ***
-#FR Jacques — Ah mais oui,  je fais semblant, bien sûr qu’on fait semblant. 
+#FR Jacques —   Ah mais oui,  je fais semblant, bien sûr qu’on fait semblant. 
 #NL
 #EN Oh yeah, I’m pretending, of course we’re pretending. 
 #DE Ach, natürlich. Das war nur gespielt. Das ist alles gespielt.
@@ -2993,174 +3088,81 @@ etc.
 #EN_CYCLO an now we’re speaking but we can’t hear each other.
 #DE_CYCLO Und jetzt sprechen wir, aber wir hören uns nicht.
 ***
-#FR Jacques — Ah tiens Samuel, ça ça rejoint ta théorie du tétraèdre, non ?
-#NL
-#EN Oh yeah Samuel, that goes with your tetrahedron theory, right?
-#DE Ach, Samuel, das passt doch in deine Tetraeder-Theorie.
-***
-#FR Brigade — Qu’est ce que c’est ? un triangle ? 
-#NL
-#EN What’s that? A triangle? 
-#DE Was ist das denn? Ein Dreieck?
-***
-#FR Samuel — Attends... On a le flux... l’ inversion, l’anti-flux... la cabane. 
-#NL
-#EN Wait... We’ve got the flow... the inversion, the counter-flow... The hut. 
-#DE Moment ... Wir haben: den Strom ... die Umkehrung, also den Gegenstrom ... und die Hütte.
-***
-#FR Samuel — Ah mais ouais : flux, anti-flux, cabane !
-#NL
-#EN Oh yeah: flow, counter-flow, hut!
-#DE Na klar! Strom, Gegenstrom, Hütte!
-***
-#FR Brigade — La cabane ?
-#NL
-#EN The hut?
-#DE Die Hütte?
-***
 %%%                                     
 %%% 07 _ BÛCHES + THÉ + CHANSON VOITURE
-%%% 
-***
-#FR Jacques —   La cabane, Brégade, une transition toute trouvée pour passer à notre prochaine séquence dite du petit jamboree....
+#FR Jacques - Ah ben vous savez quoi : ça rejoint exactement ce qui va se passer ici
 #NL
-#EN The hut, Brégade: it’s a transition perfectly suited to moving on to our next sequence known as the little jamboree...
-#DE Die Hütte, Brégade. Das ist ein guter Übergang für den nächsten Teil unserer Sendung: „Das kleine Jamboree“.
+#EN
+#DE
 ***
-#FR Jacques —Le petit jamboree, c’est le RA-SSEM-BLE-MENT
+#FR tout à l'heure on était rassemblés mais pas au même endroit
+#NL
+#EN
+#DE
+***
+#FR et maintenant, on va se rassembler tout en étant à des endroits différents
+#NL
+#EN
+#DE
+***
+#FR Samuel - c'est le petit jamboree
 #NL
 #EN The little jamboree is about COM-ING TO-GE-THER
 #DE „Das kleine Jamboree“, das heißt: die VERSAMMLUNG.
 ***
-#FR Jacques  —c’est le moment où nous allons tous et toutes nous retrouver symboliquement autour de notre traditionnel petit feu de camp
+#FR Jacques - Voilà, c'est le moment où nous allons faire converger les flux autour d'un point précis,
 #NL
-#EN It’s the time when we all symbolically get together around our traditional little campfire
-#DE Da treffen wir uns alle symbolisch an unserem traditionellen Lagerfeuer.
+#EN
+#DE
 ***
-#FR Jacques  —c’est la partie chaleur de l’émission, c’est le moment où nous allons faire converger les flux,
+#FR le feu de camp : c'est la partie chaleur de l'émission.
 #NL
-#EN It’s the “cosy” part of the show, the moment where we bring all the flows together, 
-#DE Da bringen wir Wärme in unsere Sendung, lassen die Ströme zusammenfließen.
+#EN
+#DE
 ***
-#FR Jacques  —où nous allons tous et toutes porter toute notre attention et mettre toutes nos forces à un endroit :  AUTOUR DU FEU. 
+#FR Samuel - Tout le monde a reçu un schéma
 #NL
-#EN where we focus our attention and all of our energy on a single place:  THE FIRE 
-#DE Wir richten alle gemeinsam unsere Aufmerksamkeit, all unsere Kräfte auf einen Ort: DAS LAGERFEUER.
+#EN
+#DE
 ***
-#FR Jacques —   Voici venu le moment ... pour vous.... de vous lancer.... chez vous... dans la construction de votre petite cabane. 
+#FR tenez Brégade, regardez, tout est expliqué,
 #NL
-#EN The time has come... for those at home... to begin... to build their little huts. 
-#DE Jetzt ... können Sie ... zuhause ... Ihre Hütte bauen.
+#EN
+#DE
 ***
-#FR Jacques — Allez-y !  Et pendant ce temps là de notre côté nous allons donc installer notre traditionnel petit feu de camp. 
+#FR là chez eux les auditeurs sont sans doute en train de se construire un petit abri, une petite cahute.
 #NL
-#EN Go!   And during this time, on our end, we’re going to install our traditional little campfire. 
-#DE Los geht’s! Wir bereiten in der Zeit unser traditionelles Lagerfeuer vor.
-***
-#FR Jacques —Et écoutez, c’est émouvant mais voilà : on se retrouve tout à l’heure ici sur scène ! 
-#NL
-#EN And listen, this is all very moving, but: see you a bit later here on stage! 
-#DE Und, hören Sie, das kann einem echt nahe gehen: Wir treffen uns gleich wieder, hier, auf der Bühne!
-***
-#FR Jacques —   Euh, Vous allez où Brégade ?
-#NL
-#EN Um, where are you going, Brégade?
-#DE Ähm, wohin gehen Sie, Brégade?
-***
-#FR Brigade — Chercher du bois ?
-#NL
-#EN To look for some wood?
-#DE Holz sammeln?
-***
-#FR Jacques —   Ah non mais attendez, c’est pas du vrai bois. Samuel, tu veux bien prendre en charge le...
-#NL
-#EN No but wait, it’s not real wood. Samuel, do you want to take over...
-#DE Ach so, nein, wir nehmen kein echtes Holz. Samuel, würdest du bitte ...
-***
-#FR Samuel — Oui alors à la maison, ils ont récupéré des matériaux...
-#NL
-#EN Yes, so, at home, they’ve gotten their materials together...
-#DE Ja, also, die Leute, die zuhause mithören, haben da etwas vorbereitet.
-***
-#FR parce que c’qui faut que vous sachiez, c’est qu’avec eux, on a commencé l’émission avant votre entrée dans la salle,
-#NL Want we waren met hen de uitzending al begonnen voordat jullie de zaal binnenkwamen,
-#EN since what you should know is that with them, we started the show before you came into the room,
-#DE Denn dort hatte die Sendung schon vor dem Einlass hier im Theater begonnen.
-***
-#FR et on leur a demandé de réunir des matériaux.
-#NL en we vroegen hen om materiaal te verzamelen.
-#EN and we asked them to get some materials together.
-#DE Wir baten die Menschen zuhause, Baumaterial zu sammeln.
-***
-#FR Et donc là ils se construisent un abri, une petite cahute,
-#NL En nu zijn ze dus een hokje aan het bouwen, een hutje,
-#EN And so now they’re building a shelter, a little shack,
-#DE Und jetzt bauen sie sich eine kleine Hütte.
+#EN 
+#DE 
+%%% TRAD FIN °
 ***
 #FR bon c’est rudimentaire, ils font avec ce qu’ils ont chez eux,
 #NL nu ja het is rudimentair, ze behelpen zich met wat ze in huis hebben,
 #EN it’s rudimentary, they’re using what they’ve got at home,
 #DE Ganz einfach mit Sachen, die sie zuhause haben.
 ***
-#FR la classique c’est un drap tendu entre deux chaises,
+#FR Bridgade - Ah ouais une cabane?!
+***
+#FR Jacques - la classique étant celle avec un drap tendu entre deux chaises,
 #NL een klassieker is het laken dat je tussen twee stoelen spant,
 #EN a basic one is a sheet hung between two chairs,
 #DE Der Klassiker wäre ein Laken zwischen zwei Stühlen.
 ***
-#FR on peut rajouter un manche à balai au milieu par exemple pour avoir un petit peu plus d’espace,
+#FR ils peuvent rajouter un manche à balai au milieu pour avoir un petit peu plus d’espace,
 #NL en je kunt bijvoorbeeld een bezemsteel in het midden toevoegen om wat meer ruimte te hebben,
 #EN you can add a broom handle in the middle, for example, to have a little more space,
 #DE Man kann einen Besenstiel in die Mitte stecken, dann wird die Hütte etwas größer.
 ***
-#FR ok donc là vous êtes en train de les construire les cabanes 
-#NL oké, dus nu zijn jullie de hutten aan het opstellen,
-#EN ok so now you’re building the huts 
-#DE Ok, Sie bauen jetzt gerade Ihre Hütten.
+#FR Samuel - Sinon y'a le dessous de table, ou l'étendoir à linge, enfin c'est eux qui décident
+#NL
+#EN
+#DE
 ***
-#FR mais c’est pas terminé c’est bien ça ?
-#NL het is nog niet klaar, begrijp ik dat goed?
-#EN but you’re not done, right?
-#DE Aber Sie sind noch nicht fertig, oder?
-***
-#FR_CYCLO Non non pas encore
-#NL_CYCLO Nee nee nog niet
-#EN_CYCLO No, not yet
-#DE_CYCLO Nein, nein, noch nicht.
-***
-#FR Samuel — Parfait... Quand à vous, vous allez pouvoir ouvrir l’enveloppe que vous avez reçu tout à l’heure...
-#NL Heel goed... Nu wat jullie betreft, het is tijd om de envelop open te maken die jullie daarstraks hebben ontvangen...
-#EN Perfect... As for you, you can open the envelope you received earlier
-#DE Sehr gut. Sie hier im Theater können jetzt den Umschlag öffnen, den Sie vorhin bekommen haben.
-***
-#FR Jacques — Tenez, brégade, une enveloppe.
-#NL Pak aan, Brégade, een envelop voor u.
-#EN Here, Brégade, an envelope.
-#DE Hier, Brégade, ein Umschlag.
-***
-#FR Brigade —  Ah ouais... ok.
-#NL Aha ja, oké.
-#EN Oh, yeah... ok.
-#DE Ah ja ... Ok.
-***
-#FR Oulà, il a l’air compliqué ce schéma.
-#NL Wow, dat schema ziet er ingewikkeld uit.
-#EN Oh no, this diagram seems complicated.
-#DE Ganz schön kompliziert, dieses Schema.
-***
-#FR_CYCLO C’EST BON ON A PRESQUE FINI LES CABANES
-#NL_CYCLO OKEE WE ZIJN BIJNA KLAAR MET DE HUTTEN
-#EN_CYCLO ALL RIGHT, WE’VE ALMOST FINISHED THE HUTS
-#DE_CYCLO OK WIR SIND FAST FERTIG MIT DER HÜTTE
-***
-#FR Samuel — Ah ben parfait, vous vous avez presque fini les cabanes,
-#NL Aha wel prachtig, jullie zijn bijna klaar met de hutten
-#EN Oh perfect, you’ve nearly finished the huts
-#DE Ah, sehr schön. Sie haben Ihre Hütten fast fertig.
-***
-#FR nous, on va s’installer autour du feu.
+#FR tenez, venez, pendant qu'ils finissent leur installation, nous on va s'asseoir autour du feu
 #NL en wij gaan rond het vuur zitten.
 #EN we’re going to get set up around the fire.
 #DE Und wir setzen uns ans Feuer.
+%%% TRAD FIN °
 ***
 #FR Jacques — le feu qui est encore éteint.
 #NL Het vuur is nog niet aan.
@@ -3212,25 +3214,37 @@ etc.
 #EN Can you picture the scene a bit?
 #DE Sehen Sie es vor sich?
 ***
-#FR Les gens, dans leur cocon, dans leur tanière,
+%%% TRAD DEBUT
+#FR Jacques - Les gens, ils ont terminé leurs cabanes
+#NL
+#EN
+#DE
+***
+#FR ils sont dans leur cocon, dans leur tanière,
 #NL De mensen, in hun cocon, in hun schuilplaats,
 #EN People all cosy in their cocoons, in their little hideaways
 #DE Die Menschen in ihrem Unterschlupf,
 ***
-#FR avec en plus une tasse de thé fumante ?
-#NL met een kop stomende thee?
-#EN with a steaming mug of tea to boot?
-#DE mit einer dampfenden Tasse Tee?
+#FR avec en plus une tasse de thé fumante
+#NL met een kop stomende thee
+#EN with a steaming mug of tea to boot
+#DE mit einer dampfenden Tasse Tee
 ***
-#FR Séb — Donc, là, c’est parti,
+#FR Samuel — Donc, là, chez vous, ça y est, le compte à rebours a commencé
 #NL Oké, dus daar gaan we dan,
 #EN So, let’s go,
 #DE Also los.
 ***
-#FR à la maison vous allez pouvoir vous lever,
+#FR à la maison vous terminez votre cabane le plus vite possible,
 #NL jullie thuis kunnen opstaan,
 #EN those at home can get up,
 #DE Sie zuhause können jetzt aufstehen,
+***
+#FR et dès que c'est fait, vous allez pouvoir vous lever
+#NL
+#EN
+#DE
+%%% TRAD FIN °
 ***
 #FR partir en cuisine, faire bouillir l’eau,
 #NL naar de keuken gaan, water aan de kook brengen,
@@ -3272,7 +3286,7 @@ etc.
 #EN So there you go, now we just have to wait...
 #DE Jetzt müssen wir nur noch warten ...
 ***
-#FR Mathilde — C’est excitant...
+#FR Brigade — C’est excitant...
 #NL Het is spannend ...
 #EN It’s so exciting...
 #DE Das ist echt spannend.
@@ -3313,6 +3327,7 @@ etc.
 #EN Brigade!  Did you see it?
 #DE Brigade! Haben Sie das gesehen?
 ***
+%%% TRAD DEBUT
 #FR Brigade — Heu oui, oui Samuel
 #NL
 #EN Um, yeah, yes Samuel 
@@ -3328,7 +3343,7 @@ etc.
 #EN Uh, yeah I see it...
 #DE Äh, ja, ich seh’s ...
 ***
-#FR  Ca c’est quelqu’un, y a quelqu’un !
+#FR Ça c’est quelqu’un, y a quelqu’un !
 #NL D’er is iemand!
 #EN That’s someone, there’s someone there! 
 #DE Das bedeutet, da ist jemand!
@@ -3382,6 +3397,7 @@ etc.
 #NL
 #EN Um, ok, why not, 
 #DE Äh, ok, warum nicht.
+%%% TRAD FIN °
 ***
 //CHANSON
 #FR Samuel — Je regarde une bûche, c’est vraiment comme si je vous voyais.
@@ -4681,47 +4697,54 @@ etc.
 %%%                        
 %%% 11_VOYAGE EN CAMARGUE  
 %%%                        
+// bruit du café "brolololololo"
 #FR Ah le café est prêt
 #NL Aha, de koffie is klaar
 #EN Ah the coffee is ready
 #DE Ah, der Kaffee ist fertig.
+// bruit d'une cuillère dans une tasse gling gling
 ***
-#FR Donc voilà, ce serait la fin de la chanson...
+#FR Donc voilà, ce serait la fin de la chanson, on prendrait un petit café
 #NL Dus kijk, dat zou het einde van het liedje zijn...
 #EN So, there you are, that would be the end of the song...
 #DE So, das wäre das Ende vom Lied ...
 ***
-#FR On prendrait un petit café, tous les trois,
-#NL En dan zouden we een kopje koffie drinken, alle drie,
-#EN The three of us would have a little coffee,
-#DE Wir würden einen Kaffee trinken, wir drei,
+// bruit de la bâche qui se replie froutch
+%%% TRAD DEBUT
+#FR On déplierait la bâche sur l'herbe au soleil pour la faire sêcher et on s'installerait,
+#NL
+#EN
+#DE
 ***
-#FR au soleil, en silence...
-#NL in het zonnetje, in stilte...
-#EN in the sunlight, in silence...
-#DE in der Sonne, schweigend ...
+#FR tous les trois, en silence... 
+#NL
+#EN
+#DE
 ***
+// bruits d'oiseaux cui cui cui
 #FR En échangeant de petits hochement de têtes complices..
 #NL En we zouden veelzeggend naar elkaar knikken.
 #EN While sharing knowing little nods
 #DE Würden einander zunicken.
 ***
-#FR Et puis viendrait le moment où Jacques dirait à Brigade :
-#NL En dan zou het moment komen waarop Jacques tegen Brigade zegt:
-#EN And then the moment would come when Jacques says to Brigade:
-#DE Und schließlich würde Jacques zu Brigade sagen:
-***
-#FR “...Il serait pas  temps de reprendre la route là ?
+// début musique
+#FR Jacques - Mais dites Bridage, il serait pas  temps de reprendre la route là ?
 #NL “... Wordt het geen tijd om er vandoor te gaan?
 #EN “Maybe it’s time to get back on the road?”
 #DE Müssen Sie nicht langsam los?
 ***
-#FR Vous allez être en retard à votre stage...“”
+#FR Vous allez être en retard à votre stage...
 #NL U gaat te laat op uw stage aankomen...”
 #EN You’re going to be late for your training course...”
 #DE Nicht dass Sie zu Ihrem Workshop zu spät kommen.
 ***
-#FR Brigade — Alors Brigade descendrait la pâture
+#FR Brigade - Ah oui voilà Jacques demandrait ça à Brigade
+#NL
+#EN
+#DE
+%%% TRAD FIN °
+***
+#FR Alors je descendrais la pâture
 #NL Dus Brigade zou de weide uitwandelen
 #EN And so Brigade would walk down the pasture... 
 #DE Dann würde Brigade die Weide hinunter laufen.
@@ -4798,23 +4821,12 @@ etc.
 #EN Um, it would be a bit moving.
 #DE Na ja, es wär schon ein bisschen emotional.
 ***
-#FR là, Brigade démarrerait sa voiture et puis elle partirait.
-#NL Brigade zou de auto starten en wegrijden.
-#EN then Brigade would start her car and she would leave.
-#DE Brigade würde ihr Auto starten und losfahren.
-***
-// Brigade traverse le plateau, J et S débâchent
 #FR Jacques — Bah attends nan mais tu partirais pas comme ça,
 #NL Hé, wacht, nee, je zou toch niet op die manier weggaan,
 #EN Well wait, no, you wouldn’t leave like that,
 #DE Nee, warte, du würdest doch nicht einfach so fahren.
 ***
-#FR on prendrait encore 5 minutes pour se repasser la soirée d’hier,
-#NL we zouden nog 5 minuutjes uitrekken om de afgelopen avond nog even te overlopen,
-#EN we would take another 5 minutes to go over last night,
-#DE Wir würden noch 5 Minuten reden, uns an gestern Abend erinnern.
-***
-#FR On s’échangerait nos emails
+#FR On s’échangerait nos emails pour garder contact
 #NL We zouden mailadressen uitwisselen
 #EN We would exchange email addresses,
 #DE E-Mails austauschen.
@@ -4829,22 +4841,12 @@ etc.
 #EN yes, yes I do, lebruitdescombrailles@gmail.com
 #DE Ja, sicher, lebruitdescombrailles@gmail.com
 ***
-#FR Samuel — on pourrait faire une petite photo pour le site de l’émission
-#NL We zouden een fotootje kunnen maken voor de website van de uitzending
-#EN we could take a quick photo for the show’s website
-#DE Wir könnten ein Foto machen für die Radio-Website.
-***
-#FR Jacques — Ah oui excellente idée
-#NL O ja, uitstekend idee
-#EN Oh yeah, excellent idea
-#DE Wunderbare Idee!
-***
 #FR Brigade — et puis on discuterait encore quelques minutes, la vitre baissée, et hop  
 #NL En dan zouden we nog enkele ogenblikken praten, door het opengedraaide raampje en hupsakee
 #EN and then we’d chat for a few minutes with the window down, and then it would be time  
 #DE Und dann würden wir noch ein paar Minuten reden, durchs geöffnete Autofenster.
 ***
-#FR je klaxonnerais un coup joyeux et pis hop me vlà partie pour de bon.
+#FR je klaxonnerais un coup joyeux et pis hop me voilà c'est le départ.
 #NL ik zou even goed toeteren en dan stuif ik echt weg.
 #EN I’d give you a happy honk and then off I’d go for good.
 #DE Dann würde ich fröhlich hupen — und losfahren.
@@ -4859,15 +4861,62 @@ etc.
 #EN And then Jacques would look at Samuel
 #DE Dann würde Jacques Samuel ansehen
 ***
-#FR Jacques — Pis là il lui dirait : “Hé...”
-#NL En dan zou hij hem zeggen: ‘Hé...’
-#EN and he’d say: “Hey...”
-#DE und sagen: Na ...
+#FR Jacques — Pis là il lui dirait,
+#NL En dan zou hij hem zeggen,
+#EN and he’d say,
+#DE und sagen,
 ***
-#FR “On y va ?”
-#NL ‘Gaan we ernaartoe?’
-#EN “Let’s go, then?”
-#DE Wollen wir?
+%%% TRAD DEBUT
+#FR tu vois, Samuel, avant l'émission de radio,
+#NL
+#EN
+#DE
+***
+#FR quand je bossais tout seul dans mon tracteur au milieu de la nuit,
+#NL
+#EN
+#DE
+***
+#FR et que je voyais au loin toutes ces voitures sur l'autoroute,
+#NL
+#EN
+#DE
+***
+#FR je me demandais bien, qui étaient ces voitures et ces gens dedans, tous ces gens
+#NL
+#EN
+#DE
+***
+#FR où est-ce qu'ils allaient, ce qu'ils faisaient, combien ils étaient...
+#NL
+#EN
+#DE
+***
+#FR leur vie quoi.
+#NL
+#EN
+#DE
+***
+#FR Et un jour je me suis dit  peut-être qu'on pourrait se parler
+#NL
+#EN
+#DE
+***
+#FR peut-être qu'il y aurait moyen que je leur parle, moi qui suis tout seul dans mon tracteur à bosser là
+#NL
+#EN
+#DE
+***
+#FR hé...
+#NL
+#EN
+#DE
+***
+#FR Jacques - tu sais ce qu'il dirait Jacques là? Il dirait : "on y va?"
+#NL
+#EN
+#DE
+%%% TRAD FIN °
 ***
 #FR Samuel — Donc là Samuel il dirait “bah où?”
 #NL Dus dan zou Samuel zeggen: ‘Eh, waarnaartoe?’
@@ -4894,37 +4943,22 @@ etc.
 #EN Of course! 
 #DE Ach ja!
 ***
-#FR Et donc là Jacques proposerait à Samuel de partir en tracteur,
-#NL En dus zou Jacques nu aan Samuel voorstellen om met de tractor te vertrekken,
-#EN And so Jacques would suggest to Samuel that they take the tractor,
-#DE Und dann würde Jacques Samuel eine Reise mit dem Traktor vorschlagen.
-***
-#FR en lui disant “bon les Combrailles, on en a fait le tour, maintenant j’ai envie de voir du pays,
+#FR ah ouais tu dirais : "Merci chers auditeurs, cheres auditrices, les combrailles on en a fait le tour, j'ai envie de voir du pays,
 #NL met de woorden ‘Goed, we hebben de Combrailles nu wel gezien, ik heb nu wel zin om op reis te gaan,
 #EN saying, “we’ve done enough of Combrailles, now I want to see more of the country”
 #DE Er würde sagen: Die Combrailles kennen wir in- und auswendig. Ich will ein bisschen rumkommen.
 ***
-#FR et puis l’émission, bah voilà, on va faire la faire en camargue, ce sera le bruit de la camargue”
+#FR l’émission, ça serait plus le bruit des combrailles mais le bruit de la camargue.
 #NL en de uitzending, wel die kunnen we in de Camargue doen, dan noemen we het ‘De stem van de Camargue’
 #EN and the show, well, we’ll do it in the Camargue, it will be “The Sound of the Camargue”
 #DE Und die Sendung heißt dort dann einfach „Der Klang der Camargue“.
 ***
-#FR Jacques — Ouais ! Très bien ça !
-#NL Jep! Uitstekend, dat!
-#EN Yeah!  That’s really good!
-#DE Ja, das klingt gut!
-***
-#FR Et voilà ils partiraient tous les deux rejoindre Brigade.
-#NL En dus zouden ze zich alle twee bij Brigade voegen.
-#EN And then they would go to be with Brigade.
-#DE Und so würden die beiden Brigade nachfahren.
-***
-#FR Samuel — Voilà et ça se finirait comme ça.
+#FR Jacques — Voilà et ça se finirait comme ça.
 #NL Ja, en dat zou dan het einde zijn.
 #EN Yeah, and it would finish like that.
 #DE Ja, und so würde es enden.
 ***
-#FR Et bien voilà, écoutez, je pense qu’on y est,
+#FR Samuel - Et bien voilà, écoutez, je pense qu’on y est,
 #NL Wel, eh, luister, ik denk dat we er zijn,
 #EN So, listen, I think we’re there,
 #DE Ich glaube, jetzt ist er da:

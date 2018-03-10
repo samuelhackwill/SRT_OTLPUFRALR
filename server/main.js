@@ -181,6 +181,10 @@ if (Meteor.isServer) {
 
   em.addListener('showLTNumberServer', function(){
     em.emit('showLTNumberClient');
+  });  
+
+  em.addListener('showBordPlateauServer', function(){
+    em.emit('showBordPlateauClient');
   });
 
   em.addListener('hideLTNumberServer', function(){
@@ -740,47 +744,50 @@ Meteor.methods({
       { filter: false }
     );
   },
-  addUserToRepresentation: function (obj) {
-    console.log("addUserToRepresentation", obj);
-    if(obj._id) {
 
-      if(obj.userId) {
-        participants = representations.findOne({ "_id": obj._id, "participants.userId": obj.userId});
-        //logged user
-        console.log("logged user", participants);
+  // DEPRECATED
 
-        // participants.push({userId: obj.userId});
-      } else {
-        anonParticipants = representations.findOne(
-          { "_id": obj._id },
-          { "anonymousParticipants": 1 }
-        );
-        console.log("anonymous user", anonParticipants);
-        if(anonParticipants) {
-          representations.update(
-            { "_id": obj._id }, 
-            { $inc: { "anonymousParticipants": 1 }}
-          );
-        } else {
-          representations.updateOne(obj._id, 
-            { "_id": obj._id, "participants.anonymous": {$exists: false}}, 
-            { $set: { "participants.anonymous": 1 }}, { filter: false }
-          );
-        }
+  // addUserToRepresentation: function (obj) {
+  //   console.log("addUserToRepresentation", obj);
+  //   if(obj._id) {
 
-      }
-      if(obj.old_representation) {
-        console.log("remove from old representation", obj.old_representation);
-        representations.update(
-          { "_id": obj.old_representation }, 
-          { $inc: { "anonymousParticipants": -1 }}
-        );
-      }
-      representations.update(obj._id, {
-        $set: { checked: ! this.checked },
-      });
-    }
-  },
+  //     if(obj.userId) {
+  //       participants = representations.findOne({ "_id": obj._id, "participants.userId": obj.userId});
+  //       //logged user
+  //       console.log("logged user", participants);
+
+  //       // participants.push({userId: obj.userId});
+  //     } else {
+  //       anonParticipants = representations.findOne(
+  //         { "_id": obj._id },
+  //         { "anonymousParticipants": 1 }
+  //       );
+  //       console.log("anonymous user", anonParticipants);
+  //       if(anonParticipants) {
+  //         representations.update(
+  //           { "_id": obj._id }, 
+  //           { $inc: { "anonymousParticipants": 1 }}
+  //         );
+  //       } else {
+  //         representations.updateOne(obj._id, 
+  //           { "_id": obj._id, "participants.anonymous": {$exists: false}}, 
+  //           { $set: { "participants.anonymous": 1 }}, { filter: false }
+  //         );
+  //       }
+
+  //     }
+  //     if(obj.old_representation) {
+  //       console.log("remove from old representation", obj.old_representation);
+  //       representations.update(
+  //         { "_id": obj.old_representation }, 
+  //         { $inc: { "anonymousParticipants": -1 }}
+  //       );
+  //     }
+  //     representations.update(obj._id, {
+  //       $set: { checked: ! this.checked },
+  //     });
+  //   }
+  // },
 
   newAmbiance: function (obj) {
     var loggedInUser = Meteor.user()
@@ -804,24 +811,28 @@ Meteor.methods({
     );
   },
 
-  addPhoneNumber: function (obj) {
-    // var loggedInUser = Meteor.user()
+  // DEPRECATED
 
-    // if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
-    //   throw new Meteor.Error(403, "Access denied")
-    // }
-    console.log("addPhoneNumber", obj);
-    var phoneNumber = PhoneNumbers.findOne(obj);
-    console.log("phoneNumber exists ?", phoneNumber);
-    if(phoneNumber) {
-      console.log("it exists already. increment number of calls");
-      PhoneNumbers.update(phoneNumber._id, {
-        $inc: { calls: 1 },
-      });
-    } else {
-      PhoneNumbers.insert(obj, { filter: false });
-    }
-  },
+  // addPhoneNumber: function (obj) {
+  //   // var loggedInUser = Meteor.user()
+
+  //   // if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+  //   //   throw new Meteor.Error(403, "Access denied")
+  //   // }
+  //   console.log("addPhoneNumber", obj);
+  //   var phoneNumber = PhoneNumbers.findOne(obj);
+  //   console.log("phoneNumber exists ?", phoneNumber);
+  //   if(phoneNumber) {
+  //     console.log("it exists already. increment number of calls");
+  //     PhoneNumbers.update(phoneNumber._id, {
+  //       $inc: { calls: 1 },
+  //     });
+  //   } else {
+  //     PhoneNumbers.insert(obj, { filter: false });
+  //   }
+  // },
+
+
   createUserFromAdmin: function(email,password,role){
     console.log('createUserFromAdmin', email,password,role);
     var id = Accounts.createUser({ email: email, password: password });
@@ -899,6 +910,7 @@ Meteor.methods({
       
     }
   },
+
   chooseEverybodyTea: function(args){
 
     console.log("chooseEverybodyTea server", args);
@@ -934,108 +946,109 @@ Meteor.methods({
     }
   },
 
+  // DEPRECATED
 
-  assignRandomPhoneNumbers: function(args){
+  // assignRandomPhoneNumbers: function(args){
 
-    console.log("assignRandomPhoneNumbers server", args);
-    // var nbPeopleToChoose = 1;
-    var lotteryId = args._id;
-    if(lotteryId != "") {
+  //   console.log("assignRandomPhoneNumbers server", args);
+  //   // var nbPeopleToChoose = 1;
+  //   var lotteryId = args._id;
+  //   if(lotteryId != "") {
 
-      var lottery = loteries.findOne({_id: lotteryId});
-      console.log("lottery", lottery);
-      if(!lottery) {
-        //y'a pas cette loterie
-        console.log("couldn't find lottery");
-      } else {
+  //     var lottery = loteries.findOne({_id: lotteryId});
+  //     console.log("lottery", lottery);
+  //     if(!lottery) {
+  //       //y'a pas cette loterie
+  //       console.log("couldn't find lottery");
+  //     } else {
 
 
-        //mélanger les ids des participants pour avoir un ordre aléatoire
-        var random = _.shuffle(lottery.ids);
-        console.log("random", random);
+  //       //mélanger les ids des participants pour avoir un ordre aléatoire
+  //       var random = _.shuffle(lottery.ids);
+  //       console.log("random", random);
 
-        //récupérer les numéros des SAT qui ont appelés
-        var currentRepresentation = null;
-        modeSpectacle = getSuperGlobal("modeSpectacle");
-        if(modeSpectacle) { //le spectacle va bientôt commencer ou a déjà commencé
-          //récupérons la representation du jour
-          var now = new Date();
-          todayStart = new Date(now.setHours(0,0,0,0));
-          todayEnd = new Date(now.setHours(24,0,0,0));
-          console.log("router checkPhone - today is between", todayStart, todayEnd);
-          var foundRepresentation = representations.findOne({ 
-            date_start: { 
-              $gte: todayStart,
-              $lt: todayEnd
-            },
-            "status": /(pending|running)/
-          }, {sort: {date_start: 1}});
-          console.log("router checkPhone - representation?", foundRepresentation);
-          if(foundRepresentation) { //representation du jour trouvée
-            console.log("router checkPhone - representation du jour trouvée");
-            var currentRepresentation = foundRepresentation._id;
-            console.log("router checkPhone - representation?", currentRepresentation);
-          }
-          if(currentRepresentation) {
+  //       //récupérer les numéros des SAT qui ont appelés
+  //       var currentRepresentation = null;
+  //       modeSpectacle = getSuperGlobal("modeSpectacle");
+  //       if(modeSpectacle) { //le spectacle va bientôt commencer ou a déjà commencé
+  //         //récupérons la representation du jour
+  //         var now = new Date();
+  //         todayStart = new Date(now.setHours(0,0,0,0));
+  //         todayEnd = new Date(now.setHours(24,0,0,0));
+  //         console.log("router checkPhone - today is between", todayStart, todayEnd);
+  //         var foundRepresentation = representations.findOne({ 
+  //           date_start: { 
+  //             $gte: todayStart,
+  //             $lt: todayEnd
+  //           },
+  //           "status": /(pending|running)/
+  //         }, {sort: {date_start: 1}});
+  //         console.log("router checkPhone - representation?", foundRepresentation);
+  //         if(foundRepresentation) { //representation du jour trouvée
+  //           console.log("router checkPhone - representation du jour trouvée");
+  //           var currentRepresentation = foundRepresentation._id;
+  //           console.log("router checkPhone - representation?", currentRepresentation);
+  //         }
+  //         if(currentRepresentation) {
 
-            console.log("representation en cours = ", currentRepresentation);
-            var phones = PhoneNumbers.find({representation: currentRepresentation}).fetch();
-            if(phones) {
-              var messages = [];
-              var phonesRandom = _.shuffle(phones);
-              console.log("numeros de tél trouvés pour cette representation", phones, phonesRandom);
-              //TODO + de num -> envoyer plusieurs num a chaque SALM (max 4)
-              if(phones.length > random.length) {
-                console.log("+ de nums de tél que de SALM volontaires pour appeler");
-                var nbPhonesToSend = Math.ceil(phones.length/random.length);
-                console.log("nbPhonesToSend", phones.length, random.length, phones.length/random.length, nbPhonesToSend);
+  //           console.log("representation en cours = ", currentRepresentation);
+  //           var phones = PhoneNumbers.find({representation: currentRepresentation}).fetch();
+  //           if(phones) {
+  //             var messages = [];
+  //             var phonesRandom = _.shuffle(phones);
+  //             console.log("numeros de tél trouvés pour cette representation", phones, phonesRandom);
+  //             //TODO + de num -> envoyer plusieurs num a chaque SALM (max 4)
+  //             if(phones.length > random.length) {
+  //               console.log("+ de nums de tél que de SALM volontaires pour appeler");
+  //               var nbPhonesToSend = Math.ceil(phones.length/random.length);
+  //               console.log("nbPhonesToSend", phones.length, random.length, phones.length/random.length, nbPhonesToSend);
 
-                var groupSize = nbPhonesToSend > 4 ? 4 : nbPhonesToSend;
+  //               var groupSize = nbPhonesToSend > 4 ? 4 : nbPhonesToSend;
 
-                var phoneGroups = _.map(phonesRandom, function(item, index){
-                  return index % groupSize === 0 ? phonesRandom.slice(index, index + groupSize) : null; 
-                }).filter(function(item){ 
-                  return item; 
-                });
-                console.log("phones groups", phoneGroups);
-                for(i=0;i<random.length;i++){
-                  if(phoneGroups.length>i) {
-                    var obj = {};
-                    var numbers = _.map(phoneGroups[i], function(a) {return "'"+a.number+"'";});
-                    console.log("numbers", numbers, numbers.join(','));
-                    obj[random[i]] = 'displayPhoneNumbers(['+numbers.join(',')+'])';
-                    messages.push(obj);
-                  }
-                }
+  //               var phoneGroups = _.map(phonesRandom, function(item, index){
+  //                 return index % groupSize === 0 ? phonesRandom.slice(index, index + groupSize) : null; 
+  //               }).filter(function(item){ 
+  //                 return item; 
+  //               });
+  //               console.log("phones groups", phoneGroups);
+  //               for(i=0;i<random.length;i++){
+  //                 if(phoneGroups.length>i) {
+  //                   var obj = {};
+  //                   var numbers = _.map(phoneGroups[i], function(a) {return "'"+a.number+"'";});
+  //                   console.log("numbers", numbers, numbers.join(','));
+  //                   obj[random[i]] = 'displayPhoneNumbers(['+numbers.join(',')+'])';
+  //                   messages.push(obj);
+  //                 }
+  //               }
 
-              } else if(phones.length <= random.length){
-                // - de num (ou pareil)-> envoyer 1 à chaque SALM tant que y'a des nums 
+  //             } else if(phones.length <= random.length){
+  //               // - de num (ou pareil)-> envoyer 1 à chaque SALM tant que y'a des nums 
                 
-                for(i=0;i<random.length;i++){
-                  if(phonesRandom.length>i) {
-                    var obj = {};
-                    obj[random[i]] = "displayPhoneNumbers(['"+phonesRandom[i].number+"']);";
-                    messages.push(obj);
-                  }
-                }
-              }
-              //TODO et sinon envoyer message 'désolé y'avait pas assez de numéros à distribuer'
-              if(messages.length>0){
-                console.log('update lottery messages', messages);
-                loteries.update(lottery._id, 
-                  {  $set: { messages: messages} },
-                  { filter: false }
-                );
-              }
+  //               for(i=0;i<random.length;i++){
+  //                 if(phonesRandom.length>i) {
+  //                   var obj = {};
+  //                   obj[random[i]] = "displayPhoneNumbers(['"+phonesRandom[i].number+"']);";
+  //                   messages.push(obj);
+  //                 }
+  //               }
+  //             }
+  //             //TODO et sinon envoyer message 'désolé y'avait pas assez de numéros à distribuer'
+  //             if(messages.length>0){
+  //               console.log('update lottery messages', messages);
+  //               loteries.update(lottery._id, 
+  //                 {  $set: { messages: messages} },
+  //                 { filter: false }
+  //               );
+  //             }
 
-            }
-          }
-        }
+  //           }
+  //         }
+  //       }
 
-      }
+  //     }
       
-    }
-  },
+  //   }
+  // },
 
   retrieveMessage: function(lotteryId, userCookie){
     if(lotteryId && userCookie) {

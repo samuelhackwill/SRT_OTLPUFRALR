@@ -11,14 +11,20 @@ text_home_2: You will be at home on the evening of the show and you will hear wh
 text_home_3: In addition, we are providing you with this little checklist below to ensure you have everything you need to fully enjoy the show. Tick the boxes that apply to your situation, if you have more than 5 green circles on the drawing then it should be fine, but basically it’s up to you.
 bon_sang_de_bois: Goodness grapefruit! We detect that you are using a browser that is incompatible with our web-app. It’s highly likely that the audio won’t work at all, so not much will happen on your end. The good news is that there’s a solution to this problem: install
 revenez : and return to this page. This text should have disappeared, all going to plan. 
-checklist1 : Ensure you have a good internet connection
-checklist2 : Be at home, alone
-checklist3 : Be able to turn the sound up a bit
-checklist4 : Use a laptop, to be able to move with your computer
-checklist5 : And of course, be available at that time
-checklist6 : Have a WEB-RTC-compatible browser (automatic test)
+checklist1 : ✅ Ensure you have a good internet connection
+checklist2 : ✅ Be at home, alone
+checklist3 : ✅ Be able to turn the sound up a bit
+checklist4 : ✅ Use a laptop, to be able to move with your computer
+checklist5 : ✅ And of course, be available at that time
 text_home_4 : To reserve your ticket to an at-home show, click on one of the dates below. It’s free and obligation-free, but you have to do this to be able to access the show.
 dates : UPCOMING DATES:
 text_home_5 : Okay, you have been registered for the show on
 text_home_6 : Let’s meet back at that time, here, on
 text_home_7 : If you change your mind and would like to participate at another time, feel free to return to this website and click on another date.
+
+
+InfoAccueil : is a radio-transmitted show. The next show will start here, on this website, on the following evenings :
+InfoAccueil2 : You will be at home on the evening of the show and you will hear what happens on stage. In addition, we are providing you with this little checklist below to ensure you have everything you need to fully enjoy the show.
+
+moreInfo : ↓ More info ↓
+lessInfo : ↑ Show Tour Dates ↑
