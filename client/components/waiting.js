@@ -79,6 +79,14 @@ Template.waiting.onRendered(function () {
 
 Template.waiting.events({
 
+  'mouseenter #flyingText' : function(){
+    console.log("SUCE MON FLYING TEXT")
+  },
+
+  'click #flyingText' : function(){
+    console.log("SUCE MON FLYING TEXT")
+  },
+
   'click #moreInfo' : function(){
     var isClicked = Session.get("moreInfoClicked")
     isClicked = !isClicked
@@ -301,12 +309,12 @@ Template.waiting.helpers({
     // KEYCODE 32 IS SPACEBAR
     // KEYCIODE 78 IS "n"
     if(e.keyCode == '78'){
-      document.getElementById("peloDay").style.opacity="0"
-      document.getElementById("peloNight").style.opacity="1"
+      setTimeout(function(){
+      document.getElementById("LUMIERE").style.opacity="1"
+      },4000)
       document.body.style.backgroundColor="#221F2D"
     };    if(e.keyCode == '74'){
-      document.getElementById("peloDay").style.opacity="1"
-      document.getElementById("peloNight").style.opacity="0"
+      document.getElementById("LUMIERE").style.opacity="0"
       document.body.style.backgroundColor="white"
     };
   });
