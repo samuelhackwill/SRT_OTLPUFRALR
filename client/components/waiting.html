@@ -3,8 +3,11 @@
 
 <!--     {{> i18n_dropdown}}
  -->
+ <body style="background-color:{{showTriggerBackground}};">
 
   <div id="flag"> {{_ "Flag"}} </div>
+
+  <div id="stream-error"></div>
 
 
   <div id="infotainment">
@@ -38,10 +41,12 @@
           {{_ "checklist4"}}<br/>
           {{_ "checklist5"}}
           {{else}}
-          {{_ "InfoAccueil"}}
+          {{_ "InfoAccueil1a"}}
+          <br/><br/>
+          {{_ "InfoAccueil1b"}}
             <ul id="shows-list" class="">
             {{#each listRepresentations}}
-              <li class="shows-list-a"> le {{formatDateLeFrenchStyle date_start}}, {{location}}
+              <li class="shows-list-a">{{formatDateLeFrenchStyle date_start}}, {{location}}
               </li> 
             {{/each}}
             </ul>
@@ -57,8 +62,7 @@
   </div>
 
 
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="800px"
-   height="561px" viewBox="0 0 800 561" style="enable-background:new 0 0 800 561;" xml:space="preserve">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 800 561" style="enable-background:new 0 0 800 561;" xml:space="preserve">
 <style type="text/css">
   .st0{fill:#221F2D;stroke:#221F2D;stroke-width:0.967;stroke-miterlimit:10;}
   .st1{fill:url(#XMLID_119_);}
@@ -70,7 +74,7 @@
   .st7{opacity:0;}
 </style>
 
-<g id="LUMIERE" class="st7">
+<g id="LUMIERE" style=" opacity : {{showTrigger}};">
   <linearGradient id="XMLID_119_" gradientUnits="userSpaceOnUse" x1="568.4993" y1="410.4872" x2="436.7676" y2="227.9025">
     <stop  offset="0" style="stop-color:#FFFFAB"/>
     <stop  offset="1" style="stop-color:#FFFFAB;stop-opacity:0"/>
@@ -720,17 +724,16 @@
   <path id="ZONZ1" class="st6" d="M372.7,182c0,0,115.3-3.5,156.7,79.1"/>
 </g>
 
-    <text class="flyingText {{showTrigger}}" id='pastille'>
-        <textPath xlink:href="#ZONZ1">{{_ "cliquezIci"}}</textPath>
-        <animate attributeName="dx" dur="5s" values="-300;-620" repeatCount="indefinite"></animate>
+    <text class="flyingText" id='pastille' style=" opacity :{{showTrigger}};">
+        <textPath xlink:href="#ZONZ1">{{_ "cliquezIci"}} {{_ "cliquezIci"}} {{_ "cliquezIci"}}</textPath>
+        <animate attributeName="dx" dur="{{_ 'joinAnimationTime'}}" values="{{_ 'joinAnimationVal'}}" repeatCount="indefinite"></animate>
     </text>
 
-    <text class="flyingText {{showTrigger}}">
-        <textPath xlink:href="#ZONZ2">{{_ "showStatus"}}</textPath>
-        <animate attributeName="dx" dur="8s" values="-600;-920" repeatCount="indefinite"></animate>
+    <text class="flyingText" id='zeb' style=" opacity :{{showTrigger}};">
+        <textPath xlink:href="#ZONZ2">{{topFlyingText}}</textPath>
+        <animate attributeName="dx" dur="{{_ 'statusAnimationTime'}}" values="{{_ 'statusAnimationVal'}}" repeatCount="indefinite"></animate>
     </text>
-
-<!-- hééé oui là faudra aussi i18n la temporalité des transitions. i'm in for some fun -->
 
 </svg>
+</body>
 </template>

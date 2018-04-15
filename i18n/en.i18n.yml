@@ -9,7 +9,8 @@ text_home_1: is a radio-transmitted show. To subscribe to a show, please read th
 prochaine_repres: The next show starts on
 text_home_2: You will be at home on the evening of the show and you will hear what happens on stage. This show was written for you (well, not just for you, but also for those who came to the theatre, but let’s just say it was not designed for them alone).
 text_home_3: In addition, we are providing you with this little checklist below to ensure you have everything you need to fully enjoy the show. Tick the boxes that apply to your situation, if you have more than 5 green circles on the drawing then it should be fine, but basically it’s up to you.
-bon_sang_de_bois: Goodness grapefruit! We detect that you are using a browser that is incompatible with our web-app. It’s highly likely that the audio won’t work at all, so not much will happen on your end. The good news is that there’s a solution to this problem: install
+bon_sang_de_bois: ❌ Goodness grapefruit! We detect that you are using a browser that is incompatible with our web-app. It’s highly likely that the audio won’t work at all, so not much will happen on your end. The good news is that there’s a solution to this problem: install
+ou : or 
 revenez : and return to this page. This text should have disappeared, all going to plan. 
 checklist1 : ✅ Ensure you have a good internet connection
 checklist2 : ✅ Be at home, alone
@@ -23,11 +24,20 @@ text_home_6 : Let’s meet back at that time, here, on
 text_home_7 : If you change your mind and would like to participate at another time, feel free to return to this website and click on another date.
 
 
-InfoAccueil : is a radio-transmitted show. The next show will start here, on this website, on the following evenings :
+InfoAccueil1a : is a radio-transmitted show, which means that you can listen to the performance while staying at home, every evening that we perform somewhere.
+InfoAccueil1b : If you want to join in, all you have to do is come back on this website, on one of the following evenings :
 InfoAccueil2 : You will be at home on the evening of the show and you will hear what happens on stage. In addition, we are providing you with this little checklist below to ensure you have everything you need to fully enjoy the show.
 
 moreInfo : ↓ More info ↓
 lessInfo : ↑ Show Tour Dates ↑
 
 cliquezIci : Click this text to join us. Click this text to join us. Click this text to join us.
-showStatus : It is currently 19:32. At the Halle au Grains, Blois, the show will start shortly. It is currently 19:32. At the Halle au Grains, Blois, the show will start shortly. It is currently 19:32. At the Halle au Grains, Blois, the show will start shortly. 
+
+itsTime : It's currently 
+venueOnTime : At the Charles Dullin theatre, Chambéry (France), the show is going to start shortly.
+venueUrLate : At the Charles Dullin theatre, Chambéry (France), we've been on stage for 
+
+joinAnimationTime : 5s
+joinAnimationVal : -360;-760
+statusAnimationTime : 15s
+statusAnimationVal : -600;-1620

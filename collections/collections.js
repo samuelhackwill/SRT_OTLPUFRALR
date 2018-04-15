@@ -93,7 +93,7 @@ Schemas.superGlobals = new SimpleSchema({
       type: Number,
       label: "Le nombre de volontaires PALM pour préparer une tasses de thé",
       optional: true,
-    },
+    },    
     
     whichAmbiance:{
       type: String,
@@ -122,6 +122,12 @@ Schemas.superGlobals = new SimpleSchema({
     compteurAdmin: {
       type: Number,
       label: "Le compteur quand l'admin prend le pouvoir",
+      optional: true,
+    },
+
+    countJoined: {
+      type: Number,
+      label: "le nombre de pélos qui ont joint le bail",
       optional: true,
     },
 

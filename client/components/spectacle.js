@@ -70,15 +70,17 @@ Template.spectacle.onRendered(function () {
 
         // AMBIANCE
         // TODO : ça marche ça?
-        var whichAmbiance = getSuperGlobal("whichAmbiance", "");
-        if(whichAmbiance != "") { //il y a une ambiance en cours
-          //passons à cette ambiance
-          var newAmbiance = ambiances.findOne({name: whichAmbiance});
-          if(newAmbiance) {
-            console.log("set Ambiance", newAmbiance.value)
-            changeImg(newAmbiance.value)
-          }
-        }
+        // euh ben non on dirait pas
+
+        // var whichAmbiance = getSuperGlobal("whichAmbiance", "");
+        // if(whichAmbiance != "") { //il y a une ambiance en cours
+        //   //passons à cette ambiance
+        //   var newAmbiance = ambiances.findOne({name: whichAmbiance});
+        //   if(newAmbiance) {
+        //     console.log("set Ambiance", newAmbiance.value)
+        //     changeImg(newAmbiance.value)
+        //   }
+        // }
       }
       
     }

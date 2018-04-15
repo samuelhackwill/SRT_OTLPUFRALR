@@ -1,12 +1,13 @@
-%%% rdv SALM 19h45
-%%% rdv n°2 20H02
+%%% Mon nom est une fiction 
+%%% Yannick Haenel et Arthur Nauzyciel
+%%% théâtre national de bretagne (TNB), Rennes
 
-%%% Tendres fragments de Cornelia Sno 
-%%% Jean François Auguste et Loo Hui Phang
-%%% théâtre de saint-nazaire
+%%% Arlequin poli par l'amour
+%%% Thomas Joly
+%%% Theâtre national de Bordeaux
 
-%%% 19H15
-%%% 19H32
+%%% 19H45 RDV SALM
+%%% 20H02 +17 (RDV 2)
 
 %%% 01_OUVERTURE SALM      
 %%%                        
@@ -225,10 +226,10 @@
 #DE_INTR Drehen Sie den Ton ruhig lauter, falls Sie weiter weg sind, damit Sie Ihren Computer auch da hören.
 ***
 // l’heure _XXX_
-#FR_INTR On se retrouve vers 19h32.
-#NL_INTR We spreken opnieuw af rond 19u32.
-#EN_INTR We’ll meet back here around 7:32 pm.
-#DE_INTR Wir sprechen uns gegen 19:32 wieder.
+#FR_INTR On se retrouve vers 20h02.
+#NL_INTR We spreken opnieuw af rond 20u02.
+#EN_INTR We’ll meet back here around 8:02 pm.
+#DE_INTR Wir sprechen uns gegen 20:02 wieder.
 ***
 %%%             
 %%% INTRO SEB   
@@ -245,10 +246,10 @@
 #DE_SALM herzlich willkommen zu „Wir gehen über die Brücke, wenn wir an den Fluss gelangen“.
 ***
 _XXX_
-#FR_SALM Je me trouve actuellement à Blois dans la salle de la Halle au grains, qui est encore vide.
-#NL_SALM Ik bevind me op dit moment in Blois, in de zaal van la Halle au grains, die nog leeg is.
-#EN_SALM I am currently in Blois at the la Halle au grains theatre, which is still empty.
-#DE_SALM Ich bin gerade in Blois, im la Halle au grains. Der Saal ist noch leer.
+#FR_SALM Je me trouve actuellement à Chambéry dans la salle du theatre Charles Dullin, qui est encore vide.
+#NL_SALM Ik bevind me op dit moment in Chambéry, in de zaal van Charles Dullin, die nog leeg is.
+#EN_SALM I am currently in Chambéry at the Charles Dullin theatre, which is still empty.
+#DE_SALM Ich bin gerade in Chambéry, im Charles Dullin. Der Saal ist noch leer.
 ***
 #FR_SALM Les portes ne vont pas tarder à s’ouvrir.
 #NL_SALM De deuren kunnen elk moment opengaan.
@@ -819,19 +820,19 @@ _XXX_
 ***
 // SILENCE
 #FR Par exemple, ce soir commence _XXX_, un spectacle de _XXX_..
-#NL Bijvoorbeeld, vanavond begint de voorstelling “Tendre fragments de Cornelia Sno” van Jean-François Auguste & Loo Hui Phang
-#EN For instance, tonight "Tendre fragments de Cornelia Sno" is starting, a show by Jean-François Auguste & Loo Hui Phang
-#DE Z.B. beginnt heute Abend „Tendre fragments de Cornelia Sno”, ein Stück von Jean-François Auguste & Loo Hui Phang
+#NL Bijvoorbeeld, vanavond begint de voorstelling “Arlequin poli par l'amour” van Thomas Joly
+#EN For instance, tonight "Arlequin poli par l'amour" is starting, a show by Thomas Joly
+#DE Z.B. beginnt heute Abend „Arlequin poli par l'amour”, ein Stück von Thomas Joly
 ***
 #FR à _XXX_, au théâtre _XXX_,
-#NL in Saint-Nazaire in het Saint-Nazaire Theater.
-#EN in Saint-Nazaire, at the Saint-Nazaire theatre,
-#DE in Saint-Nazaire, im Theater „Le Théâtre”.
+#NL in Bordeaux in het Theatre National de Bordeaux.
+#EN in Bordeaux, at the Theatre National de Bordeaux,
+#DE in Bordeaux, im Theater „Theatre National de Bordeaux”.
 ***
 #FR C’était annoncé à _XXX_
-#NL Het begin van de voorstelling was aangekondigd om 19u30.
-#EN It was scheduled for 7:30 pm
-#DE Auf dem Programm stand 19:30.
+#NL Het begin van de voorstelling was aangekondigd om 20u00.
+#EN It was scheduled for 8:00 pm
+#DE Auf dem Programm stand 20:00.
 ***
 #FR Bon, là il est _XXX_
 #NL Oké, nu is het ...
@@ -860,9 +861,9 @@ _XXX_
 #DE in dem ich diese Worte ausspreche,
 ***
 #FR les spectateurs du _XXX_ (nom du théâtre) soient plongés dans la même obscurité,
-#NL de toeschouwers in het Saint-Nazaire Theatre eveneens in een volkomen donkere zaal zitten,
-#EN the spectators of the Saint-Nazaire Theatre are plunged in the same obscurity,
-#DE die Zuschauer im Theater „Le théâtre” im Dunkeln sitzen, wie wir,
+#NL de toeschouwers in het Theatre National de Bordeaux eveneens in een volkomen donkere zaal zitten,
+#EN the spectators of the Theatre National de Bordeaux are plunged in the same obscurity,
+#DE die Zuschauer im Theater „Theatre National de Bordeaux” im Dunkeln sitzen, wie wir,
 ***
 #FR qu’ils soient eux aussi prêts à basculer dans la représentation.
 #NL en dat ook zij op het punt staan om in de voorstelling te kantelen.
@@ -871,9 +872,9 @@ _XXX_
 ***
 // SILENCE
 #FR Imaginez, vous êtes _XXX_,
-#NL Stel je voor, je bent in het Saint-Nazaire Theater,
-#EN Imagine it, you are in the Saint-Nazaire Theater,
-#DE Stellen Sie sich vor, Sie wären im Theater „Le théâtre”,
+#NL Stel je voor, je bent in het Theatre National de Bordeaux,
+#EN Imagine it, you are in the Theatre National de Bordeaux,
+#DE Stellen Sie sich vor, Sie wären im Theater „Theatre National de Bordeaux”,
 ***
 #FR il y a eu le fondu au noir dans la salle,  
 #NL de zaal is verduisterd,
@@ -1010,7 +1011,7 @@ _XXX_
 #EN Arnaud — We’ve also noticed that we can quite distinctly hear the sound of your footsteps.
 #DE Ja, übrigens ist uns aufgefallen, dass deine Schritte recht deutlich zu hören sind.
 ***
-#FR Mathilde — Oui. Mais alors il faut certainement préciser
+#FR Mathilde — Oui, c'est vrai... Mais alors il faut certainement préciser
 #NL Ja. Maar dan moeten we er wel bij vertellen 
 #EN Mathilde — Yes. But it would be a good idea to specify
 #DE Stimmt. Aber wir sollten dazu sagen, 
@@ -1025,7 +1026,7 @@ _XXX_
 #EN Sébastien — Really?
 #DE Ach so?
 ***
-#FR Mathilde — Bah non. En fait on voulait vraiment le faire avec le vrai bruit des vrais pas,
+#FR Mathilde — Bah non. En fait on voulait vraiment vous faire écouter le vrai bruit de mes pas,
 #NL Wel, eigenlijk wilden we het echte geluid van mijn echte voetstappen laten horen,
 #EN Mathilde — No, actually. We really wanted to use the actual sound of actual footsteps,
 #DE Wir wollten eigentlich das echte Geräusch meiner echten Schritte,
@@ -1070,7 +1071,7 @@ _XXX_
 #EN ... I mean, are you sure that that’s not the real sound?
 #DE ... Bist du dir sicher, dass das Geräusch nicht echt ist?
 ***
-#FR Mathilde — Bah oui. Regarde.
+#FR Mathilde — Bah oui, je suis sûre. Regarde.
 #NL Wel ja. Kijk.
 #EN Mathilde — Of course. Look.
 #DE Ja, klar. Schau mal.
@@ -1085,7 +1086,7 @@ _XXX_
 #EN Now it’s fake sounds and fake footsteps.
 #DE Wir haben jetzt also unechte Geräusche und unechte Schritte.
 ***
-#FR Sébastien — Ah elle est repartie, 
+#FR Sébastien — Et la voilà repartie, 
 #NL Aha, ze is weer vertrokken, 
 #EN Sébastien — She’s started again, 
 #DE Und jetzt läuft sie wieder.
@@ -1105,7 +1106,7 @@ _XXX_
 #EN Mathilde (stops again) — Right, I can also show you what would happen without the carpet.
 #DE So. Ich kann euch auch zeigen, wie es sich anhören würde, wenn hier kein Teppich läge.
 ***
-#FR Arnaud — Ah ouais donc à partir de là on peut faire un peu ce qu’on veut quoi
+#FR Arnaud — Ah ouais attendez mais ça, ça veut dire qu'on peut faire un peu ce qu’on veut quoi
 #NL Dus, vanaf nu kunnen we zo een beetje doen wat we willen dus.
 #EN Arnaud — Ah yeah, so from there, we can kind of do what we like.
 #DE Ok! Das heißt: Ab jetzt können wir uns damit austoben.
@@ -1155,7 +1156,7 @@ _XXX_
 #EN Sébastien — Yes, you’re on the motorway... And it’s nighttime.
 #DE Ja, du bist auf der Autobahn ... Und es ist Nacht.
 ***
-#FR Mathilde — Ah ouais, il fait nuit ?
+#FR Mathilde — Ah, il fait nuit ?
 #NL Ah oké, het is nacht...
 #EN Mathilde — Oh yeah, it’s dark?
 #DE Ach so, es ist Nacht?
@@ -1175,7 +1176,7 @@ _XXX_
 #EN Mathilde — All right, a summer’s night. Got it.
 #DE Ok, Sommernacht.
 ***
-#FR Et donc je marche sur le bord de l’autoroute parce que je viens de tomber en panne à l’instant.
+#FR Et donc je marche sur le bord de l’autoroute parce que...je viens de tomber en panne, à l’instant.
 #NL En dus stap ik langs de rand van de snelweg omdat ik net autopech heb gehad.
 #EN I’m walking on the side of the motorway because my car just broke down.
 #DE Und ich laufe an einer Autobahn entlang, weil ich eine Panne habe.
@@ -1523,9 +1524,9 @@ _XXX_
 #DE Wie? Der macht Radio? In seinem Traktor?
 ***
 #FR Jacques — Another time, aujourd’hui le _XXX_
-#NL ‘Another time’: vandaag zijn we de 21ste maart
-#EN Jacques — Another time, today, on the 21st of march
-#DE „Another time“: Heute ist der 21ste märz
+#NL ‘Another time’: vandaag zijn we de 5 april
+#EN Jacques — Another time, today, on the 5th of April
+#DE „Another time“: Heute ist der 5 April
 ***
 #FR Brigade — Bon je fais quoi,  j’y vais ?
 #NL Oké, wat doe ik nu? Stap ik erop af?
@@ -1574,7 +1575,7 @@ _XXX_
 #EN What appears to be the surprise guest of the week.
 #DE Das ist wohl unser Überraschungsgast der Woche.
 ***
-#FR “surprise” c’est le cas de le dire, comme vous avez pu l’entendre.
+#FR “surprise” c’est le cas de le dire, comme vous avez pu l’entendre à l'instant.
 #NL een ‘verrassing’ mag je het wel noemen, dat hebt u zonet wel gehoord.
 #EN “Surprise” being the operative word, as you will have heard.
 #DE „Überraschung“ passt hier wirklich gut, wie Sie gerade hörten.
@@ -1614,7 +1615,7 @@ _XXX_
 #EN Jacques —  Welcome Brégade! I’m Jacques.
 #DE Herzlich willkommen, Brégade! Ich bin Jacques.
 ***
-#FR Et alors, qu’est ce qui nous vaut cette visite au beau milieu de la pâture de monsieur Lengrand ?
+#FR Et alors, qu’est ce qui nous vaut cette visite à cette heure tardive au beau milieu de la pâture de monsieur Lengrand ?
 #NL En, vertel, waar hebben we dit bezoek midden in de weide van mijnheer Lengrand aan te danken?
 #EN So, what brings you to visit us in the middle of Mr. Lengrand’s field?
 #DE Ja, und was bringt Sie zu uns, auf die Weide von Herrn Lengrand?
@@ -1623,6 +1624,13 @@ _XXX_
 #NL Eigenlijk heb ik net autopech gehad op de grote baan iets verderop.
 #EN Brigade — Well, actually my car just broke down on the road down below. So I was looking for help...
 #DE Ja, also, ich hatte da unten auf der National-Straße eine Panne und suche Hilfe.
+***
+%%% TRAD DEBUT
+#FR Et je suis tombée sur vous, tout simplement.
+#NL
+#EN And i came across you.
+#DE
+%%% TRAD FIN
 ***
 #FR Jacques — Ah il semblerait que Brégade soit tombée en panne sur la départementale 86.
 #NL Ah, kennelijk kreeg Brégade autopech op de steenweg.
@@ -1644,7 +1652,7 @@ _XXX_
 #EN because I had the same issue last year. 
 #DE Das hatte ich letztes Jahr schon mal.
 ***
-#FR mais il me manque juste une pince collier de serrage pour faire un petit manchon, 
+#FR mais il me manque juste une pince collier de serrage pour faire un petit manchon, vous voyez ?
 #NL maar ik mis alleen maar een slangklemtang om een verbindingsmofje te maken, 
 #EN But I just need a clamping collar to make a little socket.
 #DE Ich brauche nur eine Schlauchklemmen-Zange, um eine Muffe zu basteln.
@@ -1856,7 +1864,7 @@ _XXX_
 #EN you might have to finish on foot.
 #DE Vielleicht müssen Sie das letzte Stück laufen.
 ***
-#FR Brigade — et vous faites cette émission depuis longtemps ?
+#FR Brigade — et quoi, vous faites cette émission depuis longtemps ?
 #NL en maakt u die uitzending al lang?
 #EN Brigade — Have you been doing this show long?
 #DE Und ... Machen Sie die Sendung schon lange?
@@ -1986,52 +1994,51 @@ _XXX_
 #EN Here, your turn... Three, two, one...
 #DE So, Sie sind dran ... Drei, zwei, eins ...
 ***
-#FR Brigade — Et c’est donc l’heure de notre chronique hebdomadaire en partenariat avec le site Internet Actu,
+#FR Brigade — Et c’est donc l’heure de notre prochaine rubrique en partenariat avec le site Internet Actu,
 #NL En nu is het dus tijd voor onze wekelijkse kroniek met onze partner, de website Internet Actu,
 #EN Brigade — So now it’s time for our weekly report in association with the website Internet Actu,
 #DE Es ist wieder Zeit für unsere wöchentliche Kolumne, in Zusammenarbeit mit der Website „Internet Actu“.
 ***
-#FR aujourd’hui : “Les images sont-elles encore produites pour être regardées par les humains ?”
-#NL vandaag hebben we het over: ‘Worden afbeeldingen nog wel gemaakt om door mensen bekeken te worden?’
-#EN today: “Are images still being produced to be looked at by humans?”
-#DE Heute: „Werden Bilder noch für Menschen gemacht?“
+#FR ce soir : “Pourquoi voulons-nous des objets intelligents?”
+#NL 
+#EN tonight : "Why do we want a world of intelligent objects?"
+#DE 
 ***
-#FR Pour l’artiste Trevor Paglen, qui s’intéresse depuis longtemps à la surveillance de masse,
-#NL De kunstenaar Trevor Paglen onderzoekt al lang het fenomeen massacontrole.
-#EN For artist Trevor Paglen, who has long been interested in mass surveillance,
-#DE Der Künstler Trevor Paglen widmet sich seit langem der Massenüberwachung.
+#FR Soudainement tout est devenu ordinateur.
+#NL 
+#EN Suddently everything's a computer.
+#DE 
 ***
-#FR la culture visuelle, radicalement transformée par le numérique, 
-#NL Volgens hem onttrekt de beeldcultuur, die door de digitalisering een radicale transformatie onderging,
-#EN visual culture, radically transformed in the digital age, 
-#DE Er beobachtet, dass sich die Bildkultur durch die Digitalisierung radikal verändert hat,
+#FR Des téléphones aux télévisions en passant par les serrures aux grilles-pain, 
+#NL 
+#EN From telephones to TVs, keylocks and toasters
+#DE 
 ***
-#FR est pourtant en grande partie devenue invisible.
-#NL zich niettemin grotendeels aan ons zicht.
-#EN has nonetheless largely become invisible.
-#DE vor allem aber oft unsichtbar geworden ist.
+#FR l'informatisation du quotidien a gagné.
+#NL 
+#EN digitalisation has become the new norm.
+#DE 
 ***
-#FR « Une majorité écrasante d’images sont désormais faites par des machines pour d’autres machines, 
-#NL ‘Machines maken tegenwoordig het overgrote merendeel van de beelden voor andere machines,
-#EN “An overwhelming majority of images are now made by machines for other machines, 
-#DE „Die meisten Bilder werden jetzt von Maschinen für Maschinen erzeugt,
+#FR personne n'a pourtant besoin d'un cadenas connecté, mais visiblement les gens en veulent.
+#NL 
+#EN no one needs a lock to be connected to the internet, but apparently that's what people want
+#DE 
 ***
-#FR mettant rarement des humains dans la boucle »
-#NL daar komen zelden nog mensen aan te pas.’
-#EN rarely bringing humans into the loop.”
-#DE ohne dass Menschen daran beteiligt sind.“
+#FR On pourrait croire que c'est lié au fait que les consommateurs achètent ce qu'on leur offre,
+#NL 
+#EN one could think that's because people buy what can be sold, 
+#DE 
 ***
-#FR Nous entrons dans l’ère des images invisibles !
-#NL We staan aan het begin van het tijdperk van de onzichtbare beelden!
-#EN We are entering the era of invisible images!
-#DE Wir treten in ein Zeitalter der unsichtbaren Bilder ein.
+#FR mais pour le concepteur de jeu et essayiste Ian Bogost ce ne peut être une explication suffisante.
+#NL 
+#EN but for Ian Bogost, game designer and essayist, it can't be the only reason.
+#DE 
 ***
-#FR Les spécialistes de la culture visuelle pensent que la relation entre les humains et les images ... <div id='warning'> ATTENDRE YETI </div>
-#NL Experts op het gebied van de beeldcultuur menen dat de digitalisering de verhouding tussen mens en beeld ...
-#EN Visual culture experts think that the relationship between humans and images... 
-#DE Bildtheoretiker sind der Auffassung, dass die Beziehung zwischen Menschen und Bildern ...
+#FR Rendre les objets ordinaires informatisés est devenu un but en soi ... <div id='warning'> ATTENDRE YETI </div>
+#NL 
+#EN Turning everyday obects into computers has become an aim in itself ...
+#DE 
 ***
-...
 #FR Brigade — AH C’EST QUOI C’EST QUOI C’EST QUOI
 #NL AAH WAT IS DAT WAT IS DAT WAT IS DAT
 #EN Brigade — AH WHAT’S THAT WHAT’S THAT WHAT’S THAT?
@@ -2072,7 +2079,7 @@ _XXX_
 #EN Samuel — No, no, I’m not a boar.
 #DE Nein, kein Wildschwein.
 ***
-#FR Et en fait j’écoutais l’émission, et c’est incroyable cette histoire,
+#FR Et en fait j’écoutais l’émission, et c’est incroyable cette histoire, bah bienvenue à vous ! 
 #NL Ik was naar de uitzending aan het luisteren
 #EN Actually, I was listening to the show, and it’s the darnedest thing,
 #DE Ich hab’ gerade zugehört. Was für eine Story.
@@ -2160,6 +2167,11 @@ _XXX_
 #EN a mental projection experiment in domestic space.
 #DE ein Experiment mit einer Inneren Vorstellung, für zuhause.
 ***
+#FR Chers auditeurs, la prochaine séquence ne peut être surtitrée car elle est improvisée. Le surtitrage reprendra bientôt. <div id='warning'> - DISCLAIMER -</div>
+#NL 
+#EN Dear listeners, there aren't any subtitles for the next sequence as it is improvised. We will resume subtitling shortly.
+#DE 
+***
 #FR Et donc voilà, chers auditeurs, chères auditrices,
 #NL En dus, beste luisteraars,
 #EN So here we are, dear listeners.
@@ -2202,10 +2214,10 @@ _XXX_
 #DE_SALM die Zuschauer im Theater hören mich jetzt nicht.
 ***
 %%% TRAD DEBUT
-#FR_DECR Donc depuis tout à l'heure vous vous projetez par les oreilles
-#NL_DECR
-#EN_DECR So since the beggining you are listening to us,
-#DE_DECR
+#FR_DECR Donc depuis tout à l'heure vous vous projetez,
+#NL_SALM
+#EN_SALM So since the beggining you are listening to us,
+#DE_SALM
 %%% TRAD FIN
 ***
 #FR_DECR Mais donc pour l’instant tout ça ne va que dans un sens,
@@ -2310,7 +2322,7 @@ _XXX_
 #EN_SAT they’re talking about inverting flows, 
 #DE_SAT reden von der Umkehrung der Strömung,
 ***
-#FR comme quoi y’a un flux de représentation mentale,
+#FR comme quoi y’a un flux de projection mentale,
 #NL_SAT want blijkbaar is er zoiets als een mentale beeldvormingsstroom,
 #EN_SAT as if there were a flow of mental projection,
 #DE_SAT als gäbe es so etwas wie einen Strom der Inneren Vorstellung.
@@ -2421,107 +2433,25 @@ _XXX_
 #EN you’ll see, it’s the best part of the show.
 #DE Jetzt kommt der beste Teil der Sendung.
 ***
-#FR Jacques - et d’ailleurs, je vais sûrement avoir besoin de vous.
-#NL Oh ja en misschien heb ik je nog nodig voor dit moment 
-#EN and by the way I will definitely be needing you.
-#DE Und eigentlich brauche ich sogar Ihre Hilfe.
+#FR Jacques - Alors voilà, nous sommes en ce moment connectés à un auditeur ou une auditrice
+#NL 
+#EN Ok so we're currently connected to a listener
+#DE 
 ***
-#FR Jacques - Vous parlez allemand par hasard? 
-#NL spreekt u Nederlands?
-#EN Do you speak German by any chance? 
-#DE Sprechen Sie zufällig Deutsch?
+#FR que nous ne connaissons pas, qui a été selectionné au hasard
+#NL 
+#EN whom we don't know, and who was chosen at random
+#DE 
 ***
-#FR Jacques - C’est pas allemand, ça Brégade ? 
-#NL Is dat niet een Nederlandse naam, Brégade ?
-#EN Brégade is German, right? 
-#DE Brégade ist ein deutscher Name, oder?
+#FR On va commencer par faire un petit test pour s'assurer que tout fonctionne
+#NL 
+#EN We're going to start with a test to ensure everything is working :
+#DE 
 ***
-#FR Brigade - Non, pas du tout...
-#NL Nee maar, ik bedoel, ja, ik spreek alleen een paar woordjes Vlaams
-#EN No, not at all...
-#DE Nein, überhaupt nicht.
-***
-#FR Jacques — Alors, vous parlez anglais peut-être ?
-#NL U spreekt misschien Engels?
-#EN So, maybe you speak English?
-#DE Sprechen Sie vielleicht Englisch?
-***
-#FR Brigade — Oui, enfin, ça va, je me débrouille 
-#NL Ja, een beetje.
-#EN Yes, I mean, I get by well enough... 
-#DE Ja. Also ... ich kann mich verständigen.
-***
-#FR Jacques - Sûrement mieux que moi. C’est parfait.
-#NL Zeker better dan mij. Dat komt wel goed !  
-#EN Certainly better than I do. That’s perfect.
-#DE Ganz bestimmt besser als ich. Sehr schön.
-***
-#FR Jacques- Bon, ok alors écoutez moi bien tous et toutes . 
-#NL Dus, luister maar naar mij, iedereen. 
-#EN Ok, well listen to me, everybody. 
-#DE Ok. Dann aufgepasst, ein kleiner Hinweis an alle.
-***
-#FR Jacques - Ce qui va se passer, c’est que nous n’allons pas pouvoir surtitrer la prochaine séquence.
-#NL Deze scene zullen we NIET kunnen ondertitelen. 
-#EN What’s going to happen is that we aren’t going to be able to surtitle the next sequence.
-#DE Für den nächsten Teil gibt es keine Übertitel.
-***
-#FR Jacques- parce qu’on ne sait tout simplement pas ce qui va se passer.
-#NL Waarom ? Want we weten eigenlijk niet wat er precies gaat gebeuren. 
-#EN because we just don’t know what’s going to happen.
-#DE Ganz einfach, weil wir nicht wissen, was passiert.
-***
-#FR  Jacques - Alors, pour permettre à tout le monde la compréhension de l’expérience, 
-#NL Oké, dus, om dit experiment makkelijker te kunnen begrijpen, 
-#EN So, in order for everyone to understand the experience, 
-#DE Damit alle unser Experiment verstehen,
-***
-#FR Jacques - Brégade va traduire mes questions en direct. 
-#NL zal Brégade mijn vragen vertalen in het Engels.
-#EN Brégade is going to directly translate my questions. 
-#DE wird Brégade meine Fragen live dolmetschen.
-***
-#FR Jacques - Merci Brégade, décidément, on peut de nouveau remercier cette durite... 
-#NL Dank u wel Brégade, ik denk dat we deze radiatorslang weer kunnen bedanken... 
-#EN Thanks, Brégade, and clearly thanks once again to that radiator hose... 
-#DE Danke, Brégade. Wir können Ihrem Auto-Schlauch wirklich dankbar sein ...
-***
-#FR Jacques - bon, allons-y, c’est parti. <div id='warning'> - OUI NON EUH -</div>
-#NL Ok, we gaan beginnen. 
-#EN OK, let’s go, it’s on. 
-#DE Ok. Es geht los.
-***
-
-(PLUS TRADUIT) 
-
-Jacques-  Alors...nous sommes donc connectés avec un auditeur sélectionné au hasard.
-Brigade traduit en anglais :
-Brigade - So, we are now connected to someone, a random listener
-
-Jacques — On va procéder à un petit test, est-ce que ça marche ? 
-Brigade : Can you actually hear us ?
-
-Jacques- euh, ça vous vous comprenez l’anglais que parle Brégade? 
-Brigade : euh can you understand me ? Do you understand english ? 
-
-Jacques — Ok. Donc vous venez de cliquer sur le bouton oui,
-Brigade - so you pushed right now on a YES button
-
-Jacques - Et donc évidemment, on devine que vous avez également un second bouton.. 
-Brigade - so we can imagine you also have a NO button ? 
-
-Jacques- et vous également un troisième choix vous pourriez nous le montrer ?
-Brigade  - you also have a third choice. Could you push this button so we know ? 
-
-Jacques — Donc là vous êtes chez vous, vous nous écoutez depuis tout à l’heure
-
-Jacques — Vous le savez, ici nous sommes dans une pâture au milieu des combrailles,
-
-Jacques- mais en pratique, très concrètement, tout ça se passe à la Machine Fabriek, à Groningen
-
-Jacques - Est-ce que vous aussi vous diriez que vous êtes à Groningen ? 
-etc.
-
+#FR Est-ce que vous m'entendez en ce moment, est-ce que ça fonctionne ? <div id='warning'> (FIN DE SURTITRAGE JUSQUA LA QUESTION DE BRIGAD) </div>
+#NL 
+#EN can you hear me at the moment, is everything working fine?
+#DE 
 ***
 #FR Brigade — Et est-ce que ça vous est déjà arrivé :
 #NL En is u dat al overkomen:
@@ -2790,7 +2720,7 @@ etc.
 Geste dynamique de Jacques qui lance le jingle
 #FR Jacques - Hé bien après cette expérience troublante et magique, nous allons marquer une petite pause.
 #NL
-#EN
+#EN Jacques - After this stirring and mesmerizing experience, let's do a short break
 #DE
 ***
 #FR Une petite pause pour préparer la prochaine séquence.
@@ -2801,66 +2731,81 @@ Geste dynamique de Jacques qui lance le jingle
 Arnaud est dans le camion.
 #FR Et oui chers auditeurs ça y est c'est le moment, chez vous à la maison
 #NL
-#EN
+#EN Dear listeners, now is the time, at home,
 #DE
 ***
 #FR de commencer la fabrication de votre cabane
 #NL
-#EN
+#EN to start making your hut
 #DE
 ***
 #FR samuel vous avait demandé tout à l'heure de réunir de réunir des matériaux
 #NL
-#EN
+#EN samuel asked you to gather things earlier in the show
 #DE
 ***
 #FR et donc ça y est, vous pouvez vous lancer, hop hop hop go, go, go... on y va
 #NL
-#EN
+#EN so you can start now, let's go!
 #DE
 ***
 #FR et ici pendant ce temps là, nous allons préparer notre traditionnel feu de camp
 #NL
-#EN
+#EN on stage, in the time being, we're going to kindle or traditional campfire
 #DE
 ***
 #FR et on se retrouvera dans quelques instants réunis tous ensemble autour du feu.
 #NL
-#EN
+#EN and in a short while we'll all gather around this fire.
 #DE
 ***
 // jacques sort, brigade revient direct, samuel commence à installer le feu
-#FR Brigade — (aux SALM) vous êtes encore là? vous m'entendez?
+#FR Brigade — (aux SALM) vous m'entendez?
 #NL
-#EN
+#EN Can you hear me?
 #DE
 ***
-#FR ah ben tenez pour me répondre vous pouvez lire le texte qui s'affiche sur votre écran?
+#FR vous êtes encore là? 
 #NL
-#EN
+#EN Are you still here?
+#DE
+***
+#FR ah ben tenez, le texte qui s'affiche sur l'écran ici, il s'affiche aussi chez vous, sur votre ordinateur?
+#NL
+#EN ah, and the text which is displayed on the screen here at the theatre, it's also displayed on your computer screen right?
 #DE
 ***
 // et cette fois ci juste laisser le temps que les gens lisent
 #FR_CYCLO Oui oui
 #NL_CYCLO
 #DE_CYCLO
-#EN_CYCLO
+#EN_CYCLO Yes Yes
 ***
-#FR_CYCLO OUI OUI!
+#FR Brigade - Et ce texte, vous pourriez le lire à voix haute pour voir?
+#NL
+#DE
+#EN So, this text, could you try reading it aloud?
+***
+#FR_CYCLO oui oui
 #NL_CYCLO
 #DE_CYCLO
-#EN_CYCLO
+#EN_CYCLO yes yes
 ***
-#FR Et même on pourrait jouer au jeu du théâtre, vous n'avez qu'à le lire mais à voix haute
+#FR Brigade - en parlant un peu plus fort maintenant?
 #NL
-#EN
+#EN and could you try a little louder now?
 #DE
 ***
 // petiteu pause... attendre que jacques ait vu pour enlever le d'accord (en même temps que le son)
-#FR_CYCLO Alors voilà, je lis à voix haute
+#FR_CYCLO VOILÀÀÀÀ JE PARLE PLUS FORT
 #NL_CYCLO
 #DE_CYCLO
-#EN_CYCLO
+#EN_CYCLO OKKK I'M READING LOUDER
+***
+#FR Brigade - allez-y continuez ...
+#NL
+#EN interesting ...
+#DE
 ***
 #FR Jacques —  Attendez, mais vous faites quoi là Brégade?
 #NL
@@ -2948,7 +2893,7 @@ Arnaud est dans le camion.
 #EN You see? And they can use the intonation they want, it’s open to interpretation, like improv.
 #DE Ja. Und die Hörer können das betonen, wie sie wollen. Frei interpretieren, improvisieren.
 ***
-#FR_CYCLO Oui, mais, euh, attendez, en fait... Il y a des gens <br/> qui m'entendent là ?
+#FR_CYCLO Oui, mais, euh, attendez, en fait... Il y a des gens qui m'entendent là ?
 #NL_CYCLO
 #EN_CYCLO Yeah, but, uh, wait a second... Can anybody hear me?
 #DE_CYCLO Ja, aber, ähm, Moment ... Kann mich jetzt jemand hören, oder was?
@@ -4985,9 +4930,9 @@ Arnaud est dans le camion.
 #DE Wir machen uns bereit, aus der Vorstellung in die Wirklichkeit zurückzukehren.
 ***
 #FR Et d’ailleurs, à _XXX_, on pourrait tout à fait imaginer que les spectateurs
-#NL En trouwens, we kunnen ons ook heel goed voorstellen dat de toeschouwers in Saint-Nazaire
-#EN And by the way, in Saint-Nazaire, we can totally picture how the audience
-#DE Übrigens ist es gut vorstellbar, dass die Zuschauer im Saint-Nazaire 
+#NL En trouwens, we kunnen ons ook heel goed voorstellen dat de toeschouwers in Bordeaux
+#EN And by the way, in Bordeaux, we can totally picture how the audience
+#DE Übrigens ist es gut vorstellbar, dass die Zuschauer im Bordeaux
 ***
 #FR sont eux aussi arrivés à ce moment bien particulier de la fin de leur représentation.
 #NL ook dat bijzondere moment van de het einde van hun voorstelling hebben bereikt.
@@ -5096,6 +5041,10 @@ Arnaud est dans le camion.
 #EN_SAT 
 ***
 // Sous titres uniquement pour les auditeurs — (ECRIT)
+
+// euh attends hé ho c'est NL_INTR ou NL_SALM la balise là? voir en intro
+// parce que y'a eu un mec pour qui les subtitles étaient qu'en anglais mvoyez
+
 #FR_INTR C’EST FINIIIII
 #NL_SALM HET IS AFGELOPEN!!!
 #EN_SALM IT’S OVERRR

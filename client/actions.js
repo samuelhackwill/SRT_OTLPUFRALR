@@ -20,7 +20,7 @@ nlSatNext = function(){
   if(undefined==dataPupitre[compteurPupitre]){
     console.log("tout va bien mais c'est fini, mais c'est ok c'est pas une erreur")
   }else{
-    console.log('next', compteurPupitre, dataPupitre[compteurPupitre]);
+    // console.log('next', compteurPupitre, dataPupitre[compteurPupitre]);
     var currentData = dataPupitre[compteurPupitre]
     var type = currentData["type"]
     var params = currentData["text"]
@@ -29,7 +29,7 @@ nlSatNext = function(){
         // tant que data[compteurPupitre] est une balise, ben continue à executer les instructions s'il te plaît
         
       if(Roles.userIsInRole(Meteor.user(), "admin")==true && Router.current().route.getName() == "admin"){
-        console.log("un admin digne de ce nom ne fait pas d'actions en local")
+        // console.log("un admin digne de ce nom ne fait pas d'actions en local")
       }else{
         action(type, params)
       }
@@ -43,12 +43,12 @@ nlSatNext = function(){
     }
 
     if((type=="text")&&($.isArray(params))){
-      console.log("params ", params)
+      // console.log("params ", params)
       $("#nlsrt").html("")
       for (var i = 0; i < params.length; i++) {
         for(k=balisesVue.length-1; k>=0 ; k--){
-          console.log("balisesVue[k]", balisesVue[k])
-          console.log("data[compteurPupitre].text", params)
+          // console.log("balisesVue[k]", balisesVue[k])
+          // console.log("data[compteurPupitre].text", params)
           if(params[i].hasOwnProperty(balisesVue[k])) {
             if(Router.current().route.getName() != "videoproj"){
               if(TAPi18n.getLanguage().toUpperCase() == balisesVue[k].substr(0,2)){
@@ -66,7 +66,7 @@ nlSatNext = function(){
 }
 
 nlSatBack = function(){
-  console.log('nlsatback', compteurPupitre, data[compteurPupitre]);
+  // console.log('nlsatback', compteurPupitre, data[compteurPupitre]);
   var currentData = dataPupitre[compteurPupitre]
   var type = currentData["type"]
   var params = currentData["text"]
@@ -97,10 +97,10 @@ nlSatBack = function(){
 
 next = function(){
   if(undefined==data[compteur]){
-    console.log("oulala je sais pas quoi faire avec cette balise ", data[compteur])
-    console.log("ça c'est la suivante ", data[compteur+1])
+    // console.log("oulala je sais pas quoi faire avec cette balise ", data[compteur])
+    // console.log("ça c'est la suivante ", data[compteur+1])
   }else{
-    console.log('next', compteur, data[compteur]);
+    // console.log('next', compteur, data[compteur]);
     var currentData = data[compteur]
     var type = currentData["type"]
     var params = currentData["text"]
@@ -109,9 +109,9 @@ next = function(){
         // tant que data[compteur] est une balise, ben continue à executer les instructions s'il te plaît
         
       if(Roles.userIsInRole(Meteor.user(), "admin")==true && Router.current().route.getName() == "admin"){
-        console.log("un admin digne de ce nom ne fait pas d'actions en local")
+        // console.log("un admin digne de ce nom ne fait pas d'actions en local")
       }else{
-        console.log("ACTION de ", type, " avec params ", params)
+        // console.log("ACTION de ", type, " avec params ", params)
         action(type, params)
       }
       if((data[compteur]["type"]!="text")||(data[compteur]["text"]=="")){
@@ -123,7 +123,7 @@ next = function(){
     }
 
     if((type=="text")&&($.isArray(params))){
-      console.log("params ", params)
+      // console.log("params ", params)
       $("#srt").html("")
 
 
@@ -153,7 +153,7 @@ next = function(){
 }
 
 back = function(){
-  console.log('next', compteur, data[compteur]);
+  // console.log('next', compteur, data[compteur]);
   var currentData = data[compteur]
   var type = currentData["type"]
   var params = currentData["text"]
@@ -248,6 +248,7 @@ sound = function(params){
 //     }
 // }
 
+
 changeImg = function(params){
   console.log('%c'+'src, '+params[1]+' transition '+params[0], 'background: #222; color: #bada55')
 
@@ -301,20 +302,20 @@ changeImg = function(params){
 autonext = function(params){
   var wait = params
 
-  console.log("DÉBUT autonext "+wait)
+  // console.log("DÉBUT autonext "+wait)
   autonextcontainer = setTimeout(function(){
     gotonext(1)
-    console.log("FIN autonext ")
+    // console.log("FIN autonext ")
   },wait)
 }
 
 addclass = function(params){
-  console.log("addclass, ", params[0], params[1])
+  // console.log("addclass, ", params[0], params[1])
   $("#"+params[0]).addClass(params[1])
 }
 
 removeclass = function(params){
-  console.log("removeclass, ", params[0], params[1])
+  // console.log("removeclass, ", params[0], params[1])
   $("#"+params[0]).removeClass(params[1])
 }
 
@@ -385,10 +386,11 @@ gotobookmarkPUPITRE = function(where){
   console.log("to do! ")
   // TODO
   // implémenter les bails pour que le pupitre puisse aussi faire un compteur change
+  // note circa 2010
 }
 
 gotobookmark = function(where){
-  console.log("gotobookmark1!!? where=", where);
+  // console.log("gotobookmark1!!? where=", where);
   reculeur = 1
   if(where == "introseb"){
     // ?
@@ -396,10 +398,10 @@ gotobookmark = function(where){
   }
 
   if(typeof where !== 'string') where = where.toString();
-  console.log("gotobookmark1b!!? where=", where);
+  // console.log("gotobookmark1b!!? where=", where);
   if(interrupt==true) interrupt=false
     howmuch = data.length
-    console.log("gotobookmark2 howmuch", howmuch);
+    // console.log("gotobookmark2 howmuch", howmuch);
   for(i=0; i<howmuch; i++){
     if((data[i]["type"]=="bookmark")&&(data[i]["text"]==where)){
       //ça c'est la valeur de ton compteur mon ptit gars
@@ -410,9 +412,9 @@ gotobookmark = function(where){
         var modeSpectacle = getSuperGlobal("modeSpectacle");
         var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
         var compteurAdmin = getSuperGlobal("compteurAdmin");
-        console.log("ACTIONS adminNext modeSpectacle?", modeSpectacle, "isItPowerToThePeople?", isItPowerToThePeople, "compteurAdmin", compteurAdmin);
+        // console.log("ACTIONS adminNext modeSpectacle?", modeSpectacle, "isItPowerToThePeople?", isItPowerToThePeople, "compteurAdmin", compteurAdmin);
         if(modeSpectacle && parseInt(compteurAdmin) != compteur) {
-          console.log("ACTIONS admin next compteur set compteurAdmin", compteur)
+          // console.log("ACTIONS admin next compteur set compteurAdmin", compteur)
           Meteor.call('setSuperGlobal', {name: 'compteurAdmin', value: parseInt(compteur)});
         }
       }
@@ -423,7 +425,7 @@ gotobookmark = function(where){
           $('#srt').html('')
         }
       },333)
-      console.log("gotobookmark, ", compteur)
+      // console.log("gotobookmark, ", compteur)
       return
     }
   }
@@ -431,7 +433,7 @@ gotobookmark = function(where){
 
 replaceNext = function(params){
   // est ce que ça sert encore ça?
-  console.log("replace next ", params)
+  // console.log("replace next ", params)
   var nextsrt = compteur + 1
   var leReplace = {"text":" ", "type":"text"}
 
@@ -451,9 +453,9 @@ replaceNext = function(params){
   leReplace.text = ""
   }
 
-  console.log("data next srt AVANT LIFTING ,",data[nextsrt])
+  // console.log("data next srt AVANT LIFTING ,",data[nextsrt])
   data.splice(nextsrt, 1, leReplace)
-  console.log("data next srt APRé LIFTING ,",data[nextsrt])
+  // console.log("data next srt APRé LIFTING ,",data[nextsrt])
 
 }
 
@@ -569,7 +571,7 @@ gotonext = function(params){
   compteur += bonus
   next()
   interrupt=false
-  console.log("gotonext, ", params)
+  // console.log("gotonext, ", params)
 }
 
 // m'ajouter à un pool de loterie

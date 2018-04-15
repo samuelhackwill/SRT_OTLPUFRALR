@@ -311,6 +311,7 @@ Template.admin.onRendered(function () {
     // event.preventDefault();
     console.log('activer le mode spectacle? ', data, $(this).val());
     Meteor.call('setSuperGlobal', {name: 'modeSpectacle', value: data});
+    Meteor.call('setSuperGlobal', {name: 'countJoinedReset'})
     em.emit('adminrefreshpage');
   });
   //démarrer le spectacle
@@ -532,6 +533,11 @@ Template.admin.onRendered(function () {
 });
 
 Template.admin.helpers({
+  countJoined:function(){
+    console.log("what's the number of pélos? ",getSuperGlobal("countJoined"))
+    return(getSuperGlobal("countJoined"))
+  },
+
   usersOnline:function(){
     return Meteor.users.find();
   },

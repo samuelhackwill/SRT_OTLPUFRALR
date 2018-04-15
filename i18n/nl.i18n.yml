@@ -3,13 +3,14 @@ Spacebar : Please press on your spacebar (or touch your screen if you're on a mo
 Bug : -> Hum is dit kapot
 Lan : NL
 Flag : 🇳🇱
-Titre: We'll cross the bridge once we get to the river
+Titre: Men kan de brug pas oversteken wanneer men de rivier bereikt
 Hello: Hallo
 text_home_1: wordt ook simultaan op de radio uitgezonden. Wil je je inschrijven voor een voorstelling, lees dan wat volgt.
 prochaine_repres: De volgende voorstelling begint om
 text_home_2: Op de avond van de opvoering ben je thuis, en hoor je wat zich op het toneel afspeelt. De voorstelling is geschreven met jou in gedachten (nou ja, niet alleen voor jou, ook voor de mensen die naar het theater komen, maar laten we dus zeggen : niet alleen voor hen).
 text_home_3: Bovendien geven we je onderstaande checklist mee, zodat je kan nagaan of je helemaal klaar bent om van de voorstelling te genieten. Vink de vakjes aan die voor jou van toepassing zijn; als je op de tekening vijf groene cirkels ziet, dan zou het in orde moeten zijn, maar uiteindelijk zie je zelf wel.
-bon_sang_de_bois : Oh jee! De webbrowser die je gebruikt is niet compatibel met onze audiostream. Maar er is een oplossing : als je
+bon_sang_de_bois : ❌ Oh jee! De webbrowser die je gebruikt is niet compatibel met onze audiostream. Maar er is een oplossing : als je
+ou : of 
 revenez : installeert moet alles goed werken.
 checklist1 : ✅ Beschik je over een werkende internetverbinding?
 checklist2 : ✅ Ben je alleen thuis?
@@ -23,11 +24,20 @@ text_home_6 : We spreken op dat tijdstip af, hier op deze zelfde plek
 text_home_7 : Goed om te weten : heb je ineens andere plannen en wil je op een ander moment deelnemen, klik dan gerust een andere datum aan. 
 
 
-InfoAccueil : wordt ook simultaan op de radio uitgezonden. De komenda data :
+InfoAccueil1a : wordt ook simultaan op de radio uitgezonden : Op de avond van de opvoering ben je thuis, en hoor je wat zich op het toneel afspeelt.
+InfoAccueil1b : De komenda data :
 InfoAccueil2 : Op de avond van de opvoering ben je thuis, en hoor je wat zich op het toneel afspeelt. Bovendien geven we je onderstaande checklist mee, zodat je kan nagaan of je helemaal klaar bent om van de voorstelling te genieten.
 
 moreInfo : ↓ Meer informatie ↓
 lessInfo : ↑ Toon kalender ↑
 
 cliquezIci : Click this text to join us. Click this text to join us. Click this text to join us.
-showStatus : It is currently 19:32. At the Halle au Grains, Blois, the show will start shortly. It is currently 19:32. At the Halle au Grains, Blois, the show will start shortly. It is currently 19:32. At the Halle au Grains, Blois, the show will start shortly. 
+
+itsTime : It's currently 
+venueOnTime : At the Charles Dullin theatre, Chambéry (France), the show is going to start shortly.
+venueUrLate : At the Charles Dullin theatre, Chambéry (France), we've been on stage for 
+
+joinAnimationTime : 5s
+joinAnimationVal : -360;-760
+statusAnimationTime : 14s
+statusAnimationVal : -600;-1540

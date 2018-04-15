@@ -1,10 +1,19 @@
 Session.setDefault('moreInfoClicked', false)
 Session.setDefault('pastilleClicked', false)
+  var DetectRTC = require('detectrtc');
+
 
 Template.registerHelper('formatDateLeFrenchStyle', function(date) {
-  console.log("formatDateLeFrenchStyle?", date, date.getDate());
+
+  if (TAPi18n.getLanguage()=="fr") {
+  // console.log("formatDateLeFrenchStyle?", date, date.getDate());
   // if(date.getDate() == "1")
-  return moment(date).format('dddd Do MMM YYYY à HH[h]mm');
+  moment.locale("fr")
+  return moment(date).format('dddd Do MMM YYYY [à] HH[h]mm');
+}else{
+  moment.locale("en")
+  return moment(date).format('dddd Do MMM YYYY [at] HH[:]mm');
+}
 });
 
 Template.waiting.onCreated(function() {
@@ -13,6 +22,33 @@ Template.waiting.onCreated(function() {
   this.autorun(() => {
     this.subscribe('allRepresentations');
     this.subscribe('allSuperGlobals')
+
+    // console.log("how many secs remaining ", 60 - new Date().getSeconds())
+    var firstInterval = 60 - new Date().getSeconds()
+
+    Meteor.setTimeout(function() {
+  // first interval
+      Session.set("time", new Date());
+      // console.log("first interval change time")
+
+      Meteor.setInterval(function(){
+        // all the next intervals yo
+        Session.set("time", new Date())
+        // console.log("all subsequent interval change time")
+      }, 60000)
+      // et voilà comme ça y'a pas besoin d'updater la date toutes les secondes! mais tu est un génie samuel
+    }, firstInterval*1000);
+    });
+
+  DetectRTC.load(function() {
+      // console.log("is web rtc supported? ", DetectRTC.isWebRTCSupported);
+      // console.log(DetectRTC)
+
+      if(DetectRTC.isWebRTCSupported==false){
+        Meteor.setTimeout(function(){
+          $('#stream-error').append(TAPi18n.__('bon_sang_de_bois'), "<a href='https://www.mozilla.org/en-US/firefox/new/'> FIREFOX </a>", TAPi18n.__('ou'), "<a href='https://www.google.com/chrome'> CHROME </a>", TAPi18n.__('revenez'))
+        },1000)    
+      }
   });
 })
 
@@ -22,11 +58,6 @@ Template.waiting.onRendered(function () {
   document.getElementById("infotainment").style.opacity="1"
   document.getElementById("flag").style.opacity="1"
   },1000)
-
-  //   em.addListener('salmrefreshpage', function() {
-  //     // bon c'est pas beau mais au moins ça marche fuck
-  //   console.log('salm refresh page! but who cares im bob');
-  // }); 
 
 
   currentLang = cookies.get("user_lan")
@@ -59,7 +90,7 @@ Template.waiting.onRendered(function () {
       // console.log("OK, thank you API, looking for the index now")
       // console.log("look for the lan index with lan ", currentLang)
       if(Object.keys(allLang)[i]==currentLang){
-        console.log("found the lan index! ", i)
+        // console.log("found the lan index! ", i)
         currentLangIndex = i
       }
     }
@@ -79,14 +110,6 @@ Template.waiting.onRendered(function () {
 
 Template.waiting.events({
 
-  'mouseenter #flyingText' : function(){
-    console.log("SUCE MON FLYING TEXT")
-  },
-
-  'click #flyingText' : function(){
-    console.log("SUCE MON FLYING TEXT")
-  },
-
   'click #moreInfo' : function(){
     var isClicked = Session.get("moreInfoClicked")
     isClicked = !isClicked
@@ -101,51 +124,111 @@ Template.waiting.events({
       currentLangIndex=0
       TAPi18n.setLanguage(Object.keys(allLang)[currentLangIndex])
     }
-
-    console.log('I LAUNCH ONCE')
     cookies.set("user_lan", Object.keys(allLang)[currentLangIndex])
 
   },
 
   'click #pastille': function(e){
-    $("#success").show()
-    $("#success").css("opacity", ".97")
 
-    var checkCookie = cookies.get("get_me_in");
+    if(getSuperGlobal("modeSpectacle")){
 
-    if(null == checkCookie || undefined == checkCookie){
-    now = new Date();
-    // console.log("now ", now)
-    nowHours = now.getHours()
-    // console.log("nowHours ", nowHours)
-    now.setHours(nowHours+3, 59, 59)
-    // console.log("later ", now)
-    // hum a voir si on va pas se faire bite in the ass par les fuseaux horaires
-    // bon c'est mignon mais j'arrive pas à le récupérer le petit batard
+      var checkCookie = cookies.get("get_me_in");
+
+      if(null == checkCookie || undefined == checkCookie){
+        now = new Date();
+        // console.log("now ", now)
+        nowHours = now.getHours()
+        // console.log("nowHours ", nowHours)
+        now.setHours(nowHours+5, 59, 59)
+        // console.log("later ", now)
+        // hum a voir si on va pas se faire bite in the ass par les fuseaux horaires
+        // bon c'est mignon mais j'arrive pas à le récupérer le petit batard
 
 
-    // document.cookie='get_me_in=true;expires='+now.toGMTString()+';path=/';
+        // document.cookie='get_me_in=true;expires='+now.toGMTString()+';path=/';
 
-    cookies.set("get_me_in", true)
+        cookies.set("get_me_in", true, {
+        expires: now})
 
-    Session.set('pastilleClicked', true)
+        Session.set('pastilleClicked', true)
 
-    console.log("new cookie");
+        // console.log("new cookie");
+      }else{
+        // console.log("cookie already exists")
+        return
+      }
+
+      // et là t'incrémentes le compteur de pélos qui on rejoint le spectac
+      em.emit('incJoinedPool');
+
+
+
     }else{
-    console.log("cookie already exists")
-    return
+      // console.log("no mode spectacle you're actualy not supposed to click thank you")
+      return
     }
   }
+
 });
 
 
 Template.waiting.helpers({
 
+  // la faut un helper pour la zone de texte 1 qui combine plusieurs trucs
+
+  topFlyingText : function(){
+
+    if (Session.get("time")){
+      var reactiveTime = Session.get("time")
+    }else{
+      reactiveTime = new Date()
+    }
+    var reactiveHours = reactiveTime.getHours()
+    var reactiveMinutes = reactiveTime.getMinutes()
+
+    var now = new Date();
+    var todayStart = new Date(now.setHours(0,0,0,0));
+
+    var caca = representations.find({ 
+        date_start: { 
+          $gte: todayStart
+        },
+      "status": /(pending|running)/
+    }, {sort: {date_start: 1}}).fetch()
+
+    // console.log("the next show should start at ", caca[0].date_start.getHours()+":"+caca[0].date_start.getMinutes()+ " for salms at least")
+    // console.log("the next show should start at ", caca[0].date_start.getHours()+":"+(caca[0].date_start.getMinutes()+17)+ " for people")
+
+    if (reactiveMinutes<10) {
+      reactiveMinutes = "0" + reactiveMinutes
+    }
+    var firstBit = TAPi18n.__('itsTime');
+
+    if(reactiveHours <= caca[0].date_start.getHours() && reactiveMinutes <= caca[0].date_start.getMinutes()+17) {
+      var secondBit = TAPi18n.__('venueOnTime');
+      // console.log("you're on time bravo")
+    }else{
+      // la faut calculer la différence entre deux dates en minutes
+      var diff = Math.abs(reactiveTime - caca[0].date_start);
+      var minutes = Math.floor((diff/1000)/60);
+
+      // console.log(" reactive time ", reactiveTime, " date start ", caca[0].date_start, " diff ", diff, " fancy math ", minutes)
+
+      var secondBit = TAPi18n.__('venueUrLate') + " " + minutes + " minutes."
+      // console.log("you're late batard!")
+
+    }
+
+    // console.log(firstBit + reactiveHours + ":" + reactiveMinutes +"." + secondBit)
+
+    return firstBit+" "+reactiveHours+":"+reactiveMinutes+". " +secondBit+" "+firstBit+" "+reactiveHours+":"+reactiveMinutes+". " +secondBit+" "+firstBit+" "+reactiveHours+":"+reactiveMinutes+". " +secondBit
+  },
+
   listRepresentations:function(){
     var now = new Date();
     var todayStart = new Date(now.setHours(0,0,0,0));
     var todayEnd = new Date(now.setHours(24,0,0,0));
-    console.log("listRepresentations??", representations.find().fetch());
+    // console.log("listRepresentations??", representations.find().fetch());
     return representations.find({ 
         date_start: { 
           $gte: todayStart
@@ -263,10 +346,10 @@ Template.waiting.helpers({
 
   clientHasClickedOnButton: function(){
     if(Session.get('moreInfoClicked')==true){
-      console.log("clientHasClickedOnButton true")
+      // console.log("clientHasClickedOnButton true")
       return true
     }else{
-      console.log("clientHasClickedOnButton false")
+      // console.log("clientHasClickedOnButton false")
       return false
     }
   },
@@ -281,41 +364,56 @@ Template.waiting.helpers({
 
   isModeSpectacle: function(){
       modeSpectacle = superGlobals.findOne({ modeSpectacle: { $exists: true}}).modeSpectacle;
-      console.log("waiting - modeSpectacle??", modeSpectacle);
+      // console.log("waiting - modeSpectacle??", modeSpectacle);
       // if(modeSpectacle) this.render('jacky');
       return modeSpectacle;
   },
 
   showTrigger: function(){
     if(getSuperGlobal("modeSpectacle")){
-      return "visibleO";
+      return "1"
     }else{
-      return "invisibleO";
+      return "0"
+    }
+  },
+
+  showTriggerBackground: function(){
+    if(getSuperGlobal("modeSpectacle")){
+      return "#221F2D";
+    }else{
+      return "white";
     }
   },
   
   isStealth: function(name){
-    console.log("NAME DE ISSTEALTH ", name)
+    // console.log("NAME DE ISSTEALTH ", name)
     if(name == "STEALTH") return true;
     else return false;
   }
 });
 
-  $(document.body).on('keyup', function(e) {
+  // $(document.body).on('keyup', function(e) {
 
-    e = e || window.event
+  //   e = e || window.event
+  // // simulateur de nuit / jour
 
 
-    // KEYCODE 32 IS SPACEBAR
-    // KEYCIODE 78 IS "n"
-    if(e.keyCode == '78'){
-      setTimeout(function(){
-      document.getElementById("LUMIERE").style.opacity="1"
-      },4000)
-      document.body.style.backgroundColor="#221F2D"
-    };    if(e.keyCode == '74'){
-      document.getElementById("LUMIERE").style.opacity="0"
-      document.body.style.backgroundColor="white"
-    };
-  });
+  //   // KEYCODE 32 IS SPACEBAR
+  //   // KEYCIODE 78 IS "n"
+  //   if(e.keyCode == '78'){
+  //     setTimeout(function(){
+  //     document.getElementById("LUMIERE").style.opacity="1"
+  //     },4000)
+  //     document.body.style.backgroundColor="#221F2D"
+  //   };    if(e.keyCode == '74'){
+  //     document.getElementById("LUMIERE").style.opacity="0"
+  //     document.body.style.backgroundColor="white"
+  //   };
+  //   if(e.keyCode == '32'){
+
+  //     em.emit('incJoinedPool');
+  //   }
+
+
+  // });
 

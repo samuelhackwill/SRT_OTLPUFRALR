@@ -52,7 +52,9 @@ if (Meteor.isServer) {
   });
 
 
-  UserStatus.events.on("connectionLogin", function(fields) { console.log("connectionLogin", fields); });
+  UserStatus.events.on("connectionLogin", function(fields) { 
+    // console.log("connectionLogin", fields); 
+  });
 
 
   em.addListener('bugClick', function(/* client */) {
@@ -72,6 +74,14 @@ if (Meteor.isServer) {
   });
 
   // ICI TOUS LES EVENEMENTS DE DDP
+
+  em.addListener('incJoinedPool', function(){
+    // console.log("i'm going to tell dat server to inc it's fucking counter")
+      Meteor.call('setSuperGlobal', {name: 'countJoined'});
+  });
+
+
+
   em.addListener('salmclick', function(/* client */) {
     console.log('HELLO', _.toArray(arguments), arguments[0].reponse, moment().format('YYYYMMDD-HH:mm:ss.SSS'));
     // em.setClient({ reponse: arguments[0].reponse });
@@ -85,7 +95,7 @@ if (Meteor.isServer) {
   });
 
   em.addListener('adminback', function(/* client */) {
-    console.log('ADMIN BACK', _.toArray(arguments), arguments[0]);
+    // console.log('ADMIN BACK', _.toArray(arguments), arguments[0]);
     // em.setClient({ reponse: arguments[0].reponse });
     var args = arguments[0];
     if(args) {
@@ -99,18 +109,18 @@ if (Meteor.isServer) {
   });
 
   em.addListener('displayBlackAdmin', function(){
-    console.log('diplay black admin')
+    // console.log('diplay black admin')
     em.emit('displayBlackSalm')
   });
 
   em.addListener('displayBlackPupitre', function(){
-    console.log('diplay black pupitre')
+    // console.log('diplay black pupitre')
     em.emit('displayBlackSat')
   });
 
 
   em.addListener('adminnext', function(/* client */) {
-    console.log('ADMIN NEXT', _.toArray(arguments), arguments[0]);
+    // console.log('ADMIN NEXT', _.toArray(arguments), arguments[0]);
     // em.setClient({ reponse: arguments[0].reponse });
     var args = arguments[0];
     if(args) {
@@ -119,7 +129,7 @@ if (Meteor.isServer) {
   });
 
   em.addListener('pupitreAdminBack', function(/* client */) {
-    console.log('PUPITRE ADMIN BACK', _.toArray(arguments), arguments[0]);
+    // console.log('PUPITRE ADMIN BACK', _.toArray(arguments), arguments[0]);
     // em.setClient({ reponse: arguments[0].reponse });
     var args = arguments[0];
     if(args) {
@@ -129,7 +139,7 @@ if (Meteor.isServer) {
 
 
   em.addListener('pupitreAdminNext', function(/* client */) {
-    console.log('PUPITRE ADMIN NEXT', _.toArray(arguments), arguments[0]);
+    // console.log('PUPITRE ADMIN NEXT', _.toArray(arguments), arguments[0]);
     // em.setClient({ reponse: arguments[0].reponse });
     var args = arguments[0];
     if(args) {
@@ -138,7 +148,7 @@ if (Meteor.isServer) {
   });
 
   em.addListener('adminUnStop', function(/* client */) {
-    console.log('ADMIN UNSTOP', _.toArray(arguments), arguments[0]);
+    // console.log('ADMIN UNSTOP', _.toArray(arguments), arguments[0]);
     // em.setClient({ reponse: arguments[0].reponse });
     var args = arguments[0];
     if(args) {
@@ -212,30 +222,32 @@ if (Meteor.isServer) {
     // }
   });
 
-  em.addListener('adminshowtheone-single-training', function(/* client */) {
-    console.log('ADMIN SHOW THE ONE', _.toArray(arguments), arguments[0]);
-    // em.setClient({ reponse: arguments[0].reponse });
-    // var args = arguments[0];
-    // if(args) {
-      em.emit('salmtheoneshow-single-training');
-    // }
-  });
-  em.addListener('adminshowtheone-multi-training', function(/* client */) {
-    console.log('ADMIN SHOW THE ONE', _.toArray(arguments), arguments[0]);
-    // em.setClient({ reponse: arguments[0].reponse });
-    // var args = arguments[0];
-    // if(args) {
-      em.emit('salmtheoneshow-multi-training');
-    // }
-  });
-  em.addListener('adminhidetheone-training', function(/* client */) {
-    console.log('ADMIN HIDE THE ONE', _.toArray(arguments), arguments[0]);
-    // em.setClient({ reponse: arguments[0].reponse });
-    // var args = arguments[0];
-    // if(args) {
-      em.emit('salmtheonehide-training');
-    // }
-  });
+  // DEPRECATED
+
+  // em.addListener('adminshowtheone-single-training', function(/* client */) {
+  //   console.log('ADMIN SHOW THE ONE', _.toArray(arguments), arguments[0]);
+  //   // em.setClient({ reponse: arguments[0].reponse });
+  //   // var args = arguments[0];
+  //   // if(args) {
+  //     em.emit('salmtheoneshow-single-training');
+  //   // }
+  // });
+  // em.addListener('adminshowtheone-multi-training', function(/* client */) {
+  //   console.log('ADMIN SHOW THE ONE', _.toArray(arguments), arguments[0]);
+  //   // em.setClient({ reponse: arguments[0].reponse });
+  //   // var args = arguments[0];
+  //   // if(args) {
+  //     em.emit('salmtheoneshow-multi-training');
+  //   // }
+  // });
+  // em.addListener('adminhidetheone-training', function(/* client */) {
+  //   console.log('ADMIN HIDE THE ONE', _.toArray(arguments), arguments[0]);
+  //   // em.setClient({ reponse: arguments[0].reponse });
+  //   // var args = arguments[0];
+  //   // if(args) {
+  //     em.emit('salmtheonehide-training');
+  //   // }
+  // });
 
 
   em.addListener('adminswitchthepower', function(what) {
@@ -671,18 +683,48 @@ Meteor.methods({
             superGlobals.insert({whichAmbiance: obj.value}, { filter: false });
           }
 
+          break
+
+        case 'countJoined':
+        console.log(" EHHEHEHE OHOHOHU HUOEDOUEUODEOUNENOU")
+          var theCountJoined = superGlobals.findOne({ countJoined: { $exists: true}});
+          if(theCountJoined){
+            if(theCountJoined.countJoined || theCountJoined.countJoined < 1) {
+              console.log('un autre pélo a rejoint le spectacle');
+              console.log(theCountJoined)
+              //mise à jour
+              superGlobals.update(theCountJoined._id, { $inc: { "countJoined": 1 } }, { filter: false });
+            }
+          } else {
+            console.log('le premier pélo a rejoint le spectacle');
+            //création
+            superGlobals.insert({countJoined: 1}, { filter: false });
+          }
+
+        break
+
+        case 'countJoinedReset':
+        console.log(" EHHEHEHE OHOHOHU HUOEDOUEUODEOUNENOU")
+          var theCountJoined = superGlobals.findOne({ countJoined: { $exists: true}});
+          if(theCountJoined){
+              //mise à jour
+              superGlobals.update(theCountJoined._id, { $set: { "countJoined": 0 } }, { filter: false });
+            }
+
+        break
+
         case 'compteurAdmin':
-          console.log('compteurAdmin', obj.value);
+          // console.log('compteurAdmin', obj.value);
           if(typeof(obj.value) === "number") { //check si c'est un number
           // if( Object.prototype.toString.call( obj.value ) === '[object Array]' ) { 
-            console.log('compteurAdmin2', obj.value, superGlobals.findOne({ compteurAdmin: { $exists: true}}));
+            // console.log('compteurAdmin2', obj.value, superGlobals.findOne({ compteurAdmin: { $exists: true}}));
             var compteurAdmin = superGlobals.findOne({ compteurAdmin: { $exists: true}});
             if(compteurAdmin) {
-              console.log('compteurAdmin3 mise a jour');
+              // console.log('compteurAdmin3 mise a jour');
               //mise à jour
               superGlobals.update(compteurAdmin._id, { $set: {compteurAdmin: obj.value} }, { filter: false });
             } else {
-              console.log('compteurAdmin3 insert!');
+              // console.log('compteurAdmin3 insert!');
               //création
               superGlobals.insert({compteurAdmin: obj.value}, { filter: false });
 
@@ -692,17 +734,17 @@ Meteor.methods({
           break;
 
         case 'compteurPupitreAdmin':
-          console.log('compteurPupitreAdmin', obj.value);
+          // console.log('compteurPupitreAdmin', obj.value);
           if(typeof(obj.value) === "number") { //check si c'est un number
           // if( Object.prototype.toString.call( obj.value ) === '[object Array]' ) { 
-            console.log('compteurPupitreAdmin2', obj.value, superGlobals.findOne({ compteurPupitreAdmin: { $exists: true}}));
+            // console.log('compteurPupitreAdmin2', obj.value, superGlobals.findOne({ compteurPupitreAdmin: { $exists: true}}));
             var compteurPupitreAdmin = superGlobals.findOne({ compteurPupitreAdmin: { $exists: true}});
             if(compteurPupitreAdmin) {
-              console.log('compteurPupitreAdmin3 mise a jour');
+              // console.log('compteurPupitreAdmin3 mise a jour');
               //mise à jour
               superGlobals.update(compteurPupitreAdmin._id, { $set: {compteurPupitreAdmin: obj.value} }, { filter: false });
             } else {
-              console.log('compteurPupitreAdmin3 insert!');
+              // console.log('compteurPupitreAdmin3 insert!');
               //création
               superGlobals.insert({compteurPupitreAdmin: obj.value}, { filter: false });
 
@@ -729,7 +771,7 @@ Meteor.methods({
     if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
       throw new Meteor.Error(403, "Access denied")
     }
-    console.log("newRepresentation", obj);
+    // console.log("newRepresentation", obj);
     representations.insert(obj, { filter: false });
   },
   editRepresentation: function (args) {
@@ -738,7 +780,7 @@ Meteor.methods({
     if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
       throw new Meteor.Error(403, "Access denied")
     }
-    console.log("editRepresentation", args);
+    // console.log("editRepresentation", args);
     representations.update(args._id, 
       { $set: args.obj },
       { filter: false }
@@ -795,7 +837,7 @@ Meteor.methods({
     if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
       throw new Meteor.Error(403, "Access denied")
     }
-    console.log("newAmbiance", obj);
+    // console.log("newAmbiance", obj);
     ambiances.insert(obj, { filter: false });
   },
   editAmbiance: function (args) {
@@ -804,7 +846,7 @@ Meteor.methods({
     if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
       throw new Meteor.Error(403, "Access denied")
     }
-    console.log("editAmbiance", args);
+    // console.log("editAmbiance", args);
     ambiances.update(args._id, 
       { $set: args.obj },
       { filter: false }

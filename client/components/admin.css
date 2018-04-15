@@ -17,3 +17,13 @@ ul.admin_menu li:last-child:after {
 #warning{
 	background-color:red;
 }
+
+#countJoined{
+	background-color:yellow;
+	position:fixed;
+	top : 15px;
+	left: 15px;
+	height: 50px;
+width: 50px;
+z-index: 1000;
+}
