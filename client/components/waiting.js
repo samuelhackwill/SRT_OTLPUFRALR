@@ -1,6 +1,6 @@
 Session.setDefault('moreInfoClicked', false)
 Session.setDefault('pastilleClicked', false)
-  var DetectRTC = require('detectrtc');
+var DetectRTC = require('detectrtc');
 
 
 Template.registerHelper('formatDateLeFrenchStyle', function(date) {
@@ -128,7 +128,7 @@ Template.waiting.events({
 
   },
 
-  'click #pastille': function(e){
+  'click, touchstart #pastille': function(e){
 
     if(getSuperGlobal("modeSpectacle")){
 
