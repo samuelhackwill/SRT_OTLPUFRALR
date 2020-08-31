@@ -1,0 +1,1082 @@
+FR_INTR Voilà.
+FR_INTR Comme ça.
+FR_INTR Parfait.
+FR_INTR C’est Samuel qui vous parle.
+FR_INTR Je travaille avec l’équipe du projet
+FR_INTR Je me suis notamment occupé de la partie web
+FR_INTR avec Etienne et Guillaume.
+FR_INTR Bref.
+FR_INTR Là je suis dans la salle du spectacle,
+FR_INTR en régie,
+FR_INTR on est en train de préparer l’arrivée des spectateurs·trices
+FR_INTR et moi, je m’occupe de votre arrivée : celle des auditeurs·trices.
+FR_INTR Bienvenue.
+FR_INTR Je vais essayer de faire passer votre affichage en plein écran, parce que c’est mieux
+FR_INTR Hop.
+FR_INTR Ça a marché ?
+FR_INTR Au pire vous pouvez essayer de le faire vous même.
+FR_INTR Ça devrait pas être trop compliqué ...
+FR_INTR Alors maintenant on va mettre du son
+FR_INTR Hop
+FR_INTR Vous devriez entendre quelque chose maintenant
+FR_INTR Si ça marche pas là par contre c’est embêtant.
+FR_INTR Attendez un petit peu,
+FR_INTR Et puis le cas échéant, essayez éventuellement sur un autre navigateur.
+FR_INTR j'en profite aussi pour vous signaler que vous aurez une meilleure expérience sonore
+FR_INTR en utilisant Firefox. Sur les autres navigateurs on sait pas pourquoi mais le son sort en mono.
+FR_INTR Autre chose, il est possible que parfois,
+FR_INTR ça coupe,
+FR_INTR que ce soit un peu haché,
+FR_INTR ce genre de truc.
+FR_INTR Pas d’inquiétude,
+FR_INTR ça peut arriver.
+FR_INTR Cependant,
+FR_INTR si jamais le son s’arrête totalement, il suffit juste de ré-actualiser la page web.
+fresh the webpage.
+FR_INTR Bon, en tout cas, avant que le spectacle ne commence,
+FR_INTR on va préparer deux-trois petites choses,
+FR_INTR et on va attendre que tous les auditeurs·trices soient là.
+FR_INTR Donc voilà, vous pouvez aller faire la vaisselle
+FR_INTR ou lire une bd,
+FR_INTR ou ranger le linge,
+FR_INTR comme vous voulez.
+FR_INTR Essayez de rester à portée de voix
+FR_INTR pour qu’on puisse vous appeler.
+FR_INTR N’hésitez pas à pousser le son pour continuer à écouter votre ordinateur de là où vous êtes.
+free to turn the sound up to keep listening from your computer from wherever you are.
+FR_INTR On se retrouve vers 20H57.
+FR_SALM Bonsoir à vous, chers auditeurs, chères auditrices,
+FR_SALM bienvenue pour cette représentation de ”On traversera le pont une fois rendus à la rivière”.
+FR_SALM Je me trouve actuellement à Lyon dans la salle du theatre des Subsistances, qui est encore vide.
+FR_SALM Les portes ne vont pas tarder à s’ouvrir.
+FR_SALM Oui alors, merci à vous d’avoir bien voulu participer à cette expérience,
+FR_SALM je vais vous parler dans quelques instants des conditions optimales pour que votre soirée se passe au mieux,
+FR_SALM mais avant ça je me rapproche de la régie pour savoir si tout va bien,
+FR_SALM Oui c’est ok
+FR_SALM je reçois des signes positifs, tout semble prêt,
+FR_SALM donc je vais me diriger vers la cabine insonorisée qui se trouve sur scène, pour continuer ces explications....
+FR_SALM Et voilà, c’est pratique, à présent plus personne ne m’entend dans le théâtre.
+FR_SALM Voilà les premiers spectateurs vont entrer dans la salle d’un moment à lautre
+FR_SALM et vous allez les entendre puisqu’il y a des micros installés de part et d’autre des gradins.
+FR_SALM Voilà, nous sommes très contents bien sûr de vous savoir parmi nous,
+freuen uns natürlich sehr, dass Sie mit dabei sind.
+fre cependant
+FR_SALM on sait que vous êtes ... auditeurs-auditrices pour le moment.
+FR_SALM Vous m’entendez ce soir par l’intermédiaire d’un flux audio, qui fonctionne aujourd'hui
+FR_SALM avec une latence quasi-inexistante, de l'ordre du 20e de seconde dans le meilleur des cas
+FR_SALM mais qui reste tributaire de la qualité de notre connexion internet
+FR_SALM S’il y a un décrochage ce soir, ne vous inquiétez pas, généralement ça revient tout de suite après.
+FR_SALM Vous n’avez rien de spécial à faire ca peut arriver, c’est arrivé en tout cas par le passé,
+FR_SALM qu’il y ait des petits décrochages d’une seconde, deux secondes, pas de panique le son va revenir juste après.
+FR_SALM Si vraiment la coupure se prolonge, vous pouvez tout simplement rafraîchir la page.
+fresh the page.
+FR_SALM si les décrochages sont trop fréquents ou trop longs, c'est que :
+FR_SALM soit la connexion est mauvaise de notre côté,
+FR_SALM dans ce cas-là il n'y a rien à faire hélas,
+FR_SALM soit la connexion est mauvaise de votre côté, 
+FR_SALM et dans ce cas là je vous conseille de vous brancher en filaire
+FR_SALM ou de vous rapprocher de votre box si vous êtes en wifi.
+FR_SALM En tout cas, j’espère que pour l’instant vous m’entendez bien et en principe c’est le cas.
+FR_SALM Alors, premier conseil: nous sommes ensemble pendant un moment,
+FR_SALM donc n’hésitez pas à vous installer confortablement ,sur votre canapé, sur votre chaise,sur votre lit...
+free to settle in comfortably, on your couch, on your chair, on your bed...
+FR_SALM moi je ne sais pas où vous vous trouvez...
+FR_SALM Ici les sièges du théâtre sont assez confortables, mais vous, vous ce soir, contrairement aux spectateurs du théâtre,
+FR_SALM vous avez la chance de pouvoir vous créer votre parfait espace de réception, alors profitez-en.
+FR_SALM Choisissez bien vos coussins par exemple, trouvez une position confortable.
+FR_SALM Vous pouvez garder l’ordinateur près de vous pour le regarder, mais vous pouvez aussi vous en servir comme ambiance lumineuse.
+FR_SALM Ce soir, vous n’aurez aucune image de la représentation, c’est un principe, notre connexion est essentiellement basée sur des éléments sonores.
+FR_SALM Vous aurez également des éléments textuels,
+FR_SALM mais surtout, comme je vous le disais, vous aurez de la lumière sur votre écran,
+FR_SALM qui correspond peu ou prou à la lumière qu’on trouve ici sur scène.
+FR_SALM D’ailleurs, on s’est déjà amusé à renverser l’ordinateur en mettant l’écran à l’horizontal et le clavier à la verticale, vous voyez?
+FR_SALM le clavier devient les gradins, et l’écran devient un peu la scène,
+FR_SALM et donc les dégradés lumineux correspondent assez fidèlement à l’ambiance lumineuse qu’il y a sur scène;
+FR_SALM ça peut vous donner des informations de couleurs, de tonalités...
+FR_SALM Je vous conseille aussi de faire cette expérience seul.
+FR_SALM Alors c’est un conseil hein, c’est à dire que évidemment si vous êtes en famille, si vous êtes avec des amis,
+friends,
+Freunden zusammensitzen,
+FR_SALM vous pouvez également suivre le spectacle y a pas de souci,
+FR_SALM mais si vous êtes seul vous aurez certainement une expérience un petit peu plus riche,
+FR_SALM vous pourrez vous plonger plus facilement dans la représentation.
+FR_SALM C’est un peu tard pour vous dire ça, mais l’idéal ce serait d’être chez vous,
+FR_SALM nous allons évoquer l’habitat ce soir, l’habitat de chacun chacune d’entre nous
+FR_SALM et si vous êtes chez vous, les mots, l’histoire dont on va vous parler raisonneront certainement d’autant plus.
+FR_SALM Je vais donc vous parler maintenant de quelques conditions techniques qui pourront vous aider ce soir.
+FR_SALM Je vais commencer par les conditions sonores:
+FR_SALM là actuellement je parle avec un niveau tout à fait convenable, dans un micro, dans une cabine.
+FR_SALM Si vous m’entendez bien là maintenant, au moment où je prononce ces mots
+FR_SALM c’est que sans doute vous allez pouvoir suivre aisément tout le spectacle,
+FR_SALM ne vous inquiétez pas il n’y aura pas de pics sonores donc n’hésitez pas à bien ajuster votre volume.
+FR_SALM Evidemment je ne peux que vous inviter, si vous êtes à la maison et que vous avez le dispositif adéquat,
+FR_SALM à vous brancher sur une paire d’enceintes, ou à porter votre casque audio favori,
+FR_SALM ce qui vous permettra d’avoir un son plus riche et de vous plonger dans l’ambiance.
+FR_SALM Voilà, ensuite je vais vous donner quelques petits éléments que vous pouvez préparer à la maison.
+FR_SALM Le premier qui est assez important, c’est une plante verte,
+FR_SALM je ne sais pas ou vous vous trouvez, si vous êtes dans le salon, dans la cuisine, la chambre, la salle de bain qu’importe,
+FR_SALM en tout cas, ce serait bien que vous ayez à portée de main une plante verte,
+FR_SALM alors ça peut être n’importe quelle plante, verte ou pas d’ailleurs, votre plante préférée comme celle que vous n’arrosez jamais,
+FR_SALM en tout cas, ce serait bien de la ramener proche de vous, elle vous servira tout à l’heure..
+FR_SALM Autre élément, c’est le téléphone, voilà si vous pouvez le garder à côté de vous.
+FR_SALM Vérifiez que vous avez assez de batterie, pour qu’il puisse tenir pendant l’heure ou l’heure et quart qui va suivre...
+FR_SALM Autre indication, un petit plus amusante, je vais vous proposer de partir en collecte dans la maison.
+FR_SALM Voilà, je vous explique: tout à l’heure nous allons vous proposer de mettre en place une construction.
+FR_SALM Assez élémentaire ne vous inquiétez pas, qu’on pourrait appeler cabane..
+FR_SALM Le petit jeu que je vous propose maintenant, dans les quelques minutes qui suivent,
+FR_SALM c’est d’aller collecter, d’aller chercher les différents éléments qui pourraient vous servir à la construire.
+FR_SALM Alors il y a tout un tas de type de cabanes différentes evidemment, si je vous donne des exemples classiques,
+FR_SALM on va trouver des draps par exemple, des chaises, ça peut être tout type de structure, si vous avez un étendoir à linge,
+FR_SALM un dessous de table, un dessous de bureau, un manche à balai, que sais-je n’importe quoi.
+FR_SALM Voilà, je vous laisse quelques instants pour récupérer tout ça.
+FR_SALM Donc je précise qu’il ne s’agit pas de construire la cabane maintenant,
+FR_SALM l’idée c’est simplement de réunir les matériaux pour pouvoir la construire tout à l’heure.
+FR_SALM Vous pouvez aussi trouver l’endroit où vous voulez l’installer par exemple...
+FR_SALM Voilà, pendant ce temps là, je vais vous expliquer un circuit, un système qu’on va installer dans la deuxième partie du spectacle,
+FR_SALM je me permets de vous l’expliquer à l’avance car les choses vont se passer un petit peu vite finalement
+FR_SALM donc c’est pas inintéressant pour vous, à votre position à la maison, que vous ayez déjà un point de vue technique sur c’qui va se passer :
+FR_SALM Il s’agit d’un système d’allumage de bûches.
+FR_SALM Heu, quand je dis bûches, je pense à des buches electriques hein,
+FR_SALM vous savez que les théâtres répondent à des conditions de sécurité extrêmement strictes.
+FR_SALM A la maison, vous allez déclencher un signal qui va être envoyé dans un serveur,
+FR_SALM retransmis au client admin, à l’ordinateur ici qui va gérer un peu toutes les infos et le transformer en un message midi,
+FR_SALM qui va être transmis à la console lumière, qui elle va le renvoyer en dmx aux gradateurs,
+FR_SALM qui eux vont le renvoyer en 220 v aux bûches électriques, et déclencher ainsi l’allumage.
+FR_SALM Voilà, informations très techniques, mais tout à l’heure quand vous aurez le bouton de déclenchement,
+FR_SALM le détonateur en quelque sorte, vous aurez comme ça déjà en tête toute l’onde de choc qui va suivre le petit clic que vous ferez sur votre souris.
+FR_SALM Voilà et puis, tout comme je vous expliquais tout à l’heure que vous nous n’allez pas nous voir,
+FR_SALM nous nous n’allons pas vous voir non plus,
+FR_SALM il n’y a pas de système de caméra avec tel ou tel auditeur ou quoi, vous êtes d’ailleurs tous sur le même plan,
+FR_SALM Sébastien Ah voilà, je vois mes deux collègues, Arnaud et Mathilde, arriver sur le plateau.
+FR_SALM Ils sont munis de pancartes, pour donner quelques informations aux spectateurs du théâtre.
+FR_SALM Donc, ils vont essentiellement leur expliquer que vous êtes là ce soir,
+FR_SALM que vous nous entendez, mais que vous ne nous voyez pas...
+FR_SALM voilà, c’est important que tout le monde soit à peu près au même niveau d’informations..
+FR_SALM Et donc là ils arrivent à leurs dernières pancartes, avec lesquelles ils expliquent certainement
+FR_SALM que je suis en train de vous expliquer qu’ils sont en train de montrer des pancartes. <div id='warning'> - STOOOP ! - </div>
+FR ...ils viennent de terminer, ils ramassent leur petit matériel, 
+FR et ressortent par la porte par laquelle ils sont entrés
+FR ...Ah voilà ça y est j’entends ma voix,
+FR donc les spectateurs au théâtre m’entendent à leur tour.  
+FR Et on se rapproche là du début de la représentation
+FR puisque je vois les gradins qui sont progressivement plongés dans le noir,
+FR tandis que la scène, elle, n’est pas encore éclairée.
+FR On est vraiment à ce moment bien particulier où on est prêt à basculer dans la représentation. <div id='warning'> - PAUSE - </div>
+FR D’ailleurs ce qui est amusant, 
+FR c’est que ce moment d’obscurité totale est simultanément vécu par plein d’autres spectateurs,...
+FR Je veux dire, il y a toujours d’autres spectacles 
+FR qui commencent au même moment dans d’autres endroit du monde,...
+FR Par exemple, ce soir commence _XXX_, un spectacle de _XXX_..
+FR à _XXX_, au théâtre _XXX_,
+FR C’était annoncé à _XXX_
+FR Bon, là il est _XXX_
+FR Ca a probablement commencé un peu en retard comme c’est l’usage,  
+FR et bien il est tout à fait possible que maintenant,
+FR mais exactement maintenant,
+FR au moment où je prononce ces mots,
+FR les spectateurs du _XXX_ (nom du théâtre) soient plongés dans la même obscurité,
+FR qu’ils soient eux aussi prêts à basculer dans la représentation.
+FR Imaginez, vous êtes _XXX_,
+FR il y a eu le fondu au noir dans la salle,  
+FR vous vous calez dans votre siège, vous vous retranchez progressivement...
+FR Y’a probablement quelqu’un qui tousse,
+FR et donc y’a quelqu’un d’autre qui en profite pour tousser aussi
+FR parce qu’il se dit “ah oui je vais tousser moi aussi au cas où”
+FR et comme souvent ça fait plein de gens qui toussent en même temps...
+FR Donc voilà, ça commence.
+FR Que va-t’il se passer?
+FR Tout est possible.
+FR Par où vont arriver les comédiens, que vont-ils faire ?
+from and what will they do?
+FR Et parmi des milliards de possibilités,
+FR ça paraît incroyable mais après tout pourquoi pas,
+FR il se pourrait bien qu’ils commencent par un petit exercice de projection mentale,
+FR par vous inviter à imaginer ce que sont en train de vivre d’autres spectateurs dans d’autres salles au même moment,
+FR Ils auraient fait une recherche sur internet,
+FR ils seraient peut-être tombés sur le notre ici, qui commence ici,
+FR et vous seriez en train de nous imaginer ici,
+FR de vous représenter que la lumière s’allume tout doucement
+FR sur une scène, presque vide,
+FR Sébastien —  et que ça commencerait, tout simplement, par quelqu’un qui marche sur le plateau. <div id='warning'> - ATTENDS ! -</div>
+FR Sébastien — En l’occurrence c’est Mathilde.
+FR Elle arpente le plateau de long en large...
+FR Mathilde — Alors, à noter qu’Arnaud et Sébastien s’y trouvent également, sur scène.
+FR Arnaud — Oui mais nous on est légèrement en retrait...
+FR On commente.
+FR Arnaud — D’ailleurs on remarque qu’on entend assez distinctement le bruit de tes pas.
+FR Mathilde — Oui, c'est vrai... Mais alors il faut certainement préciser
+FR que ce n’est pas le vrai bruit de mes pas.
+FR Sébastien — Ah bon ?
+FR Mathilde — Bah non. En fait on voulait vraiment vous faire écouter le vrai bruit de mes pas,
+FR mais c’était trop compliqué avec la moquette,
+FR il fallait monter le niveau des micros, ça partait tout de suite en larsen...
+FR Sébastien — Ah ok.
+FR Ben tu fais bien de préciser parce que....
+FR c’est peut-être pas le vrai bruit, par contre ce sont de vrais pas.
+FR Je veux dire, tu marches vraiment,
+FR l’illusion est assez convaincante.
+FR ... Enfin, t’es sûre que c’est pas le vrai bruit ?
+FR Mathilde — Bah oui, je suis sûre. Regarde.
+FR Donc là Mathilde vient de s’arrêter de marcher et pourtant les bruits de pas continuent.
+FR Là ce sont donc des faux bruits et des faux pas.
+FR Sébastien — Et la voilà repartie, 
+FR donc on est revenu à la même configuration que tout à l’heure
+FR avec des vrais pas mais des faux bruits.
+FR Mathilde (s’arrête de nouveau) — Voilà, après je peux aussi vous montrer ce que ça aurait donné si on n’avait pas mis de moquette.
+FR Arnaud — Ah ouais attendez mais ça, ça veut dire qu'on peut faire un peu ce qu’on veut quoi
+from there, we can kind of do what we like.
+FR Mathilde — Bah ouais, à partir de là, on peut explorer le registre du bruitage...
+FR Par exemple, à partir de maintenant, je marche sur du gravier
+from now on, I’m walking on gravel
+FR Ou sur du bitume.
+FR Voilà, là je marche sur du bitume.
+FR Arnaud — Hé imagine... Là en fait t’es en train de marcher sur une route...
+FR Mathilde — Une route ?
+FR Ah ouais.... je marche sur le bord de l’autoroute.
+FR Sur la bande d’arrêt d’urgence.
+FR Sébastien — Oui t’es sur l’autoroute... Et il fait nuit.
+FR Mathilde — Ah, il fait nuit ?
+FR Sébastien — Ouais, la nuit est tombée,
+FR mais c’est une nuit d’été tu vois donc il fait doux quand même
+FR Mathilde — D’accord, nuit d’été, d’accord.
+FR Et donc je marche sur le bord de l’autoroute parce que...je viens de tomber en panne, à l’instant.
+FR J’ai essayé de redémarrer plusieurs fois mais y a plus rien qui fonctionne.
+FR Et là mon téléphone se mettrait à sonner.
+FR Allo ?
+FR Ah tu tombes super bien parce que figure toi que là je viens de tomber en p..
+FR Allo ?
+FR Ah ouais, super...
+FR Okay... Donc plus de téléphone... En panne..
+FR Bon. Bon mais ça va aller, je vais pas paniquer, je vais marcher,
+FR je vais bien tomber sur quelqu’un, ou sur une station service...
+FR Arnaud — Ah non en fait attends...
+FR Mettons que t’es pas sur une autoroute, t’es sur une départementale déserte.
+FR Ça fait déjà bien 20 minutes que tu marches et ya pas une bagnole qui est passée.
+FR Math — Ha ouais je suis en pleine cambrousse quoi.
+FR En plus je sais pas vraiment où je suis parce que tout à l’heure je suivais le GPS, j’ai pas fait gaffe...
+FR Séb — Mettons que tu sois quelque part en Auvergne par exemple....
+FR Math — En Auvergne ? T’es sûr ?
+FR Séb — Ouais.
+FR Ok... Je pense avoir passé Montluçon y’a pas très longtemps....
+FR Pour le reste... 
+FR Ah si, je sais, je pense bien être dans ce qu’on appelle le massif des Combrailles.
+FR Arnaud — Ah oui c’est pas mal les Combrailles...
+FR Hé... attends, imagine, là maintenant en plus il fait nuit noire...
+FR Mathilde —  Nuit noire ? 
+FR Mathilde —  Heu... Attends mais ça commence à devenir compliqué, je vois pas du tout où je mets les pieds.
+FR Arnaud — En plus il commence à faire un peu frais
+FR Mathilde — ....Ah oui, et puis moi tout à l’heure j’ai laissé mon pull dans la voiture
+FR parce que j’étais un petit peu échauffée avec l’histoire de la panne donc je suis sortie comme ça,  
+FR je me suis dit, voilà tout, c’est déjà ça, 
+FR au moins c’est l’été, il va faire bon dehors...
+FR Mais là bon, on voit rien du tout, ya pas un chat, 
+FR je sais pas où je suis, j’ai plus de téléphone....
+FR Ça devient légèrement flippant cette histoire...
+FR Arnaud — Bon, allez, on va dire qu’il y a quand même la lune 
+FR qui éclaire faiblement la campagne alentour.
+FR Mathilde — Ah quand même
+FR Arnaud — Et sur les côtés de la route, tu distingues des champs et des pâtures à perte de vue,
+FR délimités par ce qui semble être des haies et des bosquets.
+FR Mathilde — T’es sûr que c’est pas des bêtes sauvages genre sangliers ce genre de trucs ?
+FR Arnaud — Mais non mathilde, c’est des bosquets. <div id='warning'> - PAUUUSE - </div>
+FR Math — Ah attends
+FR Arnaud — Quoi ?
+FR Math — J’aperçois une lumière là-bas,
+FR ça a l’air de venir d’une pâture un peu plus loin.
+from a field a bit further off.
+FR Bon bah je vais aller voir...  
+FR Y aura peut-être quelqu’un là-bas pour m’aider à régler mon problème de durite.
+FR Brigade — Donc voilà j’y vais, je passe une clôture, 
+FR voilà, je marche dans l’herbe,
+FR ça monte un peu, 
+FR et au fond de la pâture je distingue une sorte de petit bois...
+FR et à la lisière du bois... ya un tracteur...
+FR Ouais, c’est ça, enfin une sorte de petit engin agricole.
+FR Ça doit être un agriculteur qui travaille tout seul, aux champs, la nuit,
+FR comme on en voit parfois quand on passe sur l’autoroute...
+FR Bon, je continue, j’avance encore...
+FR Et j’entends de la musique....
+FR Ouais, c’est ça, il y a de la musique qui sort du tracteur.
+from the tractor.
+FR Donc là je m’avance un peu plus.... Voilà... Je suis plus très loin...
+FR Ah... Y’a un type tout seul dans le tracteur et...
+FR on dirait qu’il parle tout seul...
+FR Ouais c’est ça il parle tout seul, on l’entend assez fort en fait,
+FR mais qu’est-ce qu’il fait, il parle dans un micro ?
+FR Jacques — Another time, another place, 
+FR des paroles de Dire Straits qu’on croirait écrites sur mesure pour notre émission.
+FR Brigade — Une émission...  ?
+FR Jacques — Vous écoutez le bruit des combrailles, 
+FR c’est Jacques au micro et je suis très heureux de vous retrouver .
+freue mich, dass Sie wieder dabei sind.
+FR Brigade — Mais quoi ? Il fait une émission de radio ? Dans son tracteur ?
+From his tractor?
+FR Jacques — Another time, aujourd’hui le _XXX_
+FR Brigade — Bon je fais quoi,  j’y vais ?
+FR Jacques — Et another place, et bien devant moi une vallée qui dévale, 
+front of me, a sloping valley, 
+FR derrière moi un bois qui déboise,
+FR nous sommes en direct perdus au beau milieu du massif des combrailles
+FR Brigade (en marchant) — Bon allez tant pis j’y vais.
+FR Jacques — Et j’en profite pour remercier chaleureusement Monsieur Claude Lengrand qui nous a permis de...
+freundlicherweise ...
+FR Brigade — Excusez moi ! Je suis désolée, je ne voulais vraiment pas vous faire peur, je viens de tomber en panne et...
+FR Jacques — Alors attendez figurez-vous que je viens de voir surgir de l’obscurité
+from the darkness?
+FR ce qui semble être l’invitée surprise de la semaine,
+FR “surprise” c’est le cas de le dire, comme vous avez pu l’entendre à l'instant.
+FR Venez, entrez, entrez, asseyez-vous, n’ayez-pas peur, asseyez-vous.
+FR J’imagine, que comme moi vous vous demandez ce qui nous vaut l’honneur de cette visite,
+fragen sich sicher auch: Was verschafft uns die Ehre dieses Besuchs?
+FR et bien commençons peut-être par faire un peu connaissance.
+FR Vous vous appelez comment?
+FR Jacques — Par contre il faut parler dans le micro.
+FR Brigade — Brigade
+FR Jacques —  Bienvenue Brégade ! Moi c’est Jacques.
+FR Et alors, qu’est ce qui nous vaut cette visite à cette heure tardive au beau milieu de la pâture de monsieur Lengrand ?
+FR Brigade — Bah en fait je viens de tomber en panne sur la nationale en contrebas. Donc je cherchais de l’aide...
+FR Et je suis tombée sur vous, tout simplement.
+FR Jacques — Ah il semblerait que Brégade soit tombée en panne sur la départementale 86.
+FR Quel est le problème exactement avec la voiture ?
+FR Brigade — Bah je sais pas bien mais je soupçonne que ce soit un problème de durite,
+FR parce que j’ai déjà eu le même souci l’année passée, 
+FR mais il me manque juste une pince collier de serrage pour faire un petit manchon, vous voyez ?
+FR j’en avais une dans mon coffre mais il se trouve que je l’ai prêtée à une amie
+friend,
+FR c’est vraiment pas de chance...
+FR Jacques — Effectivement c’est vraiment pas de chance, le problème de durite, toujours délicat.
+FR Bah écoutez malheureusement je n’ai pas de pince collier de serrage...  
+FR Mais j’ai presque envie de remercier cette durite
+FR parce c’est grâce à elle que j’ai la chance d’avoir un peu de compagnie ce soir dans cette émission.
+FR Chers auditeurs, accordez moi deux minutes,
+FR le temps qu’il me faut pour accueillir comme il se doit notre invitée de ce soir.
+FR Jacques —  Fermez la porte s’il vous plaît
+FR Jacques — Et bien, quelle histoire !
+FR Brigade — mais quoi... vous faites une émission de radio là dans votre tracteur ?
+FR Jacques — Ouais ! Oui c’est ça, c’est une webradio quoi. 
+FR Nous on a une liaison satellite là, voilà,
+FR comme ça on peut s’installer où on veut dans la région.
+FR Brigade - Mais là on est en direct là ?
+FR Jacques - Absolument ! Enfin là on est hors-antenne hein.
+FR Mais l’émission, elle, est en direct.
+FR Brigade — Et quoi vous faites ça régulièrement, à droite à gauche, dans des endroits différents ?
+FR Jacques — Ah bah l’idée c’est vraiment d’essayer de trouver les coins les plus paumés.
+FR C’est quand même marrant de se dire qu’au milieu de nulle part on fait une émission de radio non ?
+FR Brigade — Ah ouais c’est dingue. Mais d’ailleurs on est où exactement,
+FR parce que moi je suis pas du tout du coin, on est dans le massif des Combrailles c’est ça  ?
+from around here at all. We’re in the Combrailles Ranges, right?
+FR Jacques — Ah c’est marrant ça ! 
+FR Vous connaissez pas le nom de l’émission ?
+FR Ah bah alors attendez ça tombe à pic, regardez ...
+FR Jacques — Reprenons l’antenne pour la séquence qui donne son nom à l’émission,
+FR mesdames et messieurs, je vous propose d’écouter un instant le bruit des combrailles,
+FR et qui sait, peut-être allez-vous réussir à deviner là où nous nous sommes cachés ce soir
+FR Ce que vous percevez dans le lointain, ce sont les vrombissements d’un trafic autoroutier peu dense, <div id='warning'> - ATTENDRE 1 C’EST... - </div>
+FR c’est c’est c’est,
+FR et oui c’est bien elle c’est notre chère A71
+FR car nous émettons ce soir, attention allumez vos google earth,
+FR nous émettons depuis la parcelle cultivable 388 de Lonzais,
+from the agricultural plot 388 in Lonzais, 
+FR entre Bizeneuille et Givarlais, pour les connaisseurs !
+FR Et s’il prend à l’un ou l’une d’entre vous l’envie de nous rejoindre,
+FR peut-être pour apporter à Brégade cette fameuse clef collier de serrage
+FR dont elle aurait bien besoin pour reprendre la route,
+FR et bien c’est très facile, de Bizeneuille c’est direction Givarlais,
+from Bizeneuille you head for Givarlais,
+FR et passé Lonzais il faudra prendre le petit chemin en terre qui descend à travers champs,
+FR mais alors attention il a plu c’est boueux,
+FR il faudra peut-être finir à pied.
+FR Brigade — et quoi, vous faites cette émission depuis longtemps ?
+FR Jacques — Ça fait un peu plus de trois ans maintenant.
+FR Bon là maintenant je suis en retraite mais à l’époque j’étais en activité.
+FR Donc bon, déjà, c’était un vieux rêve,
+FR et puis avec Samuel, mon neveu, qui est quand même un habile technicien,
+FR on a commencé à installer tout le système, 
+FR et puis c’était parti, j’ai commencé à faire des petites émissions
+FR dans mon tracteur tout en travaillant quoi.
+from my tractor while I was working.
+FR Brigade — Ah d’accord. Mais y’a des gens qui vous écoutent ?
+FR Enfin, je veux dire, qui sont les gens qui vous écoutent ?
+FR Jacques — Au début, c’était surtout des amis, des collègues paysans,
+friends and farmer colleagues,
+Freunde, andere Landwirte ...
+FR après, voilà, c’est sur internet, donc moi je sais pas...
+FR Bien sûr, il y a beaucoup de gens de Villefranche d’Allier,
+franche d’Allier,
+from Villefranche d’Allier.
+franche d’Allier.
+FR la semaine dernière j’ai reçu un très beau courrier d’une personne de Montmarault.
+from someone in Montmarault.
+FR Mais moi je sais pas, c’est internet, les gens sont partout...
+from all over...
+FR si ça se trouve il y a des gens qui nous écoutent de Montluçon en ce moment ! C’est dingue !
+from Montluçon at the moment! It’s amazing!
+FR Brigade — Ah ouais c’est dingue
+FR Jacques — Bon, par contre on va passer à la rubrique suivante
+FR Mais attendez j’ai une idée là...
+FR Brégade, vous allez présenter la prochaine rubrique !
+FR Brigade — Ah non mais moi j’ai jamais fait de radio
+FR Jacques — Mais profitez-en, c’est l’occasion
+FR Regardez, c’est une chronique sur les enjeux d’internet, il suffit de le lire
+FR Jacques — Faut juste préciser que c’est un partenariat avec ces gens là
+FR Jacques — et que c’est un truc qu’on fait toutes les semaines...
+FR Allez, c’est à vous... Trois, deux, un...
+FR Brigade — Et c’est donc l’heure de notre prochaine rubrique en partenariat avec le site Internet Actu,
+FR ce soir : “Pourquoi voulons-nous des objets intelligents?”
+FR Soudainement tout est devenu ordinateur.
+FR Des téléphones aux télévisions en passant par les serrures aux grilles-pain, 
+From telephones to TVs, keylocks and toasters
+FR l'informatisation du quotidien a gagné.
+FR personne n'a pourtant besoin d'un cadenas connecté, mais visiblement les gens en veulent.
+FR On pourrait croire que c'est lié au fait que les consommateurs achètent ce qu'on leur offre,
+FR mais pour le concepteur de jeu et essayiste Ian Bogost ce ne peut être une explication suffisante.
+FR Rendre les objets ordinaires informatisés est devenu un but en soi ... <div id='warning'> ATTENDRE YETI </div>
+FR Brigade — AH C’EST QUOI C’EST QUOI C’EST QUOI
+FR Jacques — Tout va bien, calmez-vous! C’est mon neveu Samuel ! Il est gentil !
+FR Brigade — Mais pourquoi il est déguisé ?
+FR Jacques — Mais il est pas déguisé! C’est mon neveu.
+FR Bon mais on est en direct, sortez s’il vous plait Brégade <div id='warning'> - attendre Seb -</div>
+FR Samuel — Bonsoir, excusez moi, je suis Samuel, je suis le neveu de Jacques...
+FR Brigade — Ohlala mais vous m’avez fait super peur... j’ai cru que c’était un sanglier un truc comme ça
+fright... I thought you were a boar or something.
+FR Samuel — Non non c’est pas un sanglier.
+FR Et en fait j’écoutais l’émission, et c’est incroyable cette histoire, bah bienvenue à vous ! 
+FR j’ai cherché dans les outils, je crois que j’ai trouvé la pince collier de serrage
+FR Brigade — ah oui merci ah non mais ça c’est une pince circlips, c’est trop petit ça n’ira pas.
+FR Mais pourquoi vous êtes déguisé ?
+FR Samuel — bah je suis pas déguisé (Brigade : Baaah)
+FR Oh ça c’est mon costume folklorique, c’est pour fêter les connex...
+FR Jacques — Samuel ! Va préparer la projection mentale !
+FR Samuel — Ah ouais ok.
+FR Bah venez Brigade vous allez pouvoir m’aider on va installer le circuit
+FR Brigade — Le circuit ?
+FR Samuel — Ah bah c’est un petit bricolage que j’ai fait pour la suite,
+FR holala c’est pas incroyable c’est un petit truc sur le site internet de l’émission...
+FR Jacques — Une émission décidément bien riche en émotions,
+FR alors peut-être pour essayer de retrouver un peu de calme et de sérénité
+FR je vous propose de passer à une toute nouvelle rubrique,
+FR un dispositif imaginé par Samuel,
+FR une expérience de projection mentale dans un espace domestique.
+FR Et donc voilà, chers auditeurs, chères auditrices,
+FR vous nous écoutez depuis tout à l’heure,  
+FR vous vous projetez ici par les oreilles,
+FR vous tentez peut-être de vous représenter l’espace <div id='warning'> - FADE OUT JACQUES -</div>
+FR_DECR ...d’imaginer notre répartition, les positions dans lesquelles on se trouve,
+FR_DECR vous tâtez l’ambiance.
+FR_DECR D’ailleurs il faut que je vous précise que je vous parle maintenant uniquement à vous,
+FR_DECR les spectateurs au théâtre ne m’entendent plus.
+FR_DECR Donc depuis tout à l'heure vous vous projetez,
+FR_DECR Mais donc pour l’instant tout ça ne va que dans un sens,
+FR_DECR et j’ai bien envie de vous proposer d’essayer d’inverser la projection,
+FR_DECR et que maintenant nous essayions nous ici de vous imaginer, vous là bas,
+FR_DECR qu’on remonte le flux, un peu comme des saumons qui remontent une rivière.
+FR_DECR Comment allons-nous procéder.
+FR_DECR Hé bien on va d’abord vous proposer de vous inscrire à l’expérience,
+FR_DECR et nous allons sélectionner au hasard l’un ou l’une d’entre vous parmi les volontaires
+Freiwillige, einen Freiwilligen aus,
+FR_DECR et l’un ou l’une d’entre vous va pouvoir répondre à des questions toutes simples que je vais poser
+Fragen antworten kann.
+FR_DECR juste en cliquant sur des boutons qui vont s’afficher sur votre écran.
+FR_DECR Donc voilà une personne choisie au hasard dans un premier temps
+FR_DECR et très vite vous verrez tout le monde pourra participer.
+FR_DECR Voilà on se retrouve dans un instant.
+FR Brigade — C’est quoi ce principe de projection mentale ?
+FR Samuel — Ah ça c’est la fixation de Jacques depuis un moment
+FR Samuel — il voudrait absolument essayer d’inverser les flux... <div id='warning'> - FADE OUT SEB -</div>
+FR B (voix off, pour elle même) — D’accord... 
+FR D’accord, donc là ils sont partis là.
+FR Ils sont complètement transportés tous les deux,
+FR enfin en fait ils sont en train d’expliquer la même chose,
+FR ils parlent d’inversion des flux, 
+FR comme quoi y’a un flux de projection mentale,
+FR que depuis tout à l’heure c’est seulement les auditeurs 
+FR qui se représentent notre réalité,
+FR qui se projettent ici,
+FR et que maintenant ils voudraient inverser la direction de la projection
+FR ils voudraient remonter le flux de projection 
+FR comme un saumon remonte une rivière
+FR dans un souci de rééquilibrer la connexion...
+FR Et donc là ce qu’on va faire c’est qu’on va aller se projeter
+FR chez un auditeur qui a été sélectionné au hasard,
+FR qui va être directement connecté à l’ordinateur de Samuel....
+FR Et alors comment ça marche techniquement ? Et bien samuel est en train de m’expliquer...
+FR qu’est-ce qu’il dit ?
+FR Samuel —....et c’est renvoyé sur l’interface admin.
+FR Et donc voilà, Brigade, vous voyez, les gens cliquent,
+FR et moi j’entends les réponses
+FR et juste, je les répète.
+FR après on a mis un petit effet sur ma voix, mais c’est pour aller avec le costume..
+FR Jacques — C’est bon samuel c’est prêt ?
+FR Brigade — Euh, Jacques, je vais peut-être y aller moi...
+FR Jacques — Non, non Brégade, restez avec nous:
+FR Jacques - vous allez voir, c’est la meilleure séquence de l’émission.
+FR Jacques - Alors voilà, nous sommes en ce moment connectés à un auditeur ou une auditrice
+FR que nous ne connaissons pas, qui a été sélectionné au hasard
+FR On va commencer par faire un petit test pour s'assurer que tout fonctionne
+FR Est-ce que vous m'entendez en ce moment, est-ce que ça fonctionne ? <div id='warning'> (FIN DE SURTITRAGE JUSQUA LA QUESTION DE BRIGAD) </div>
+FR Là c'est un de vos auditeurs qui vous parle à travers Samuel
+FR Pas tout à fait Brégade,  
+FR La personne chez elle répond à mes questions
+FR à l'aide de boutons affichés sur leur écran
+FR Samuel reçoit les réponses et les retranscrit dans la salle
+FR bon la voix trafiquée c'est son truc à lui
+FR c'est pour aller avrec le costume
+FR là on a entendu la personne a cliqué sur ui
+FR elle peut évidemment répondre non
+FR mais vous avez aussi un troisième choix plus curieux
+FR peut-être vous pouvez cliquer dessus pour mieux comprendre
+FR vous nous écoutez depuis tout à l'heure, donc vous le savez
+FR nous sommes ici dans une pâture au milieu des combrailles
+FR mais tout ceci en réalité prend place sur la scène d'un théâtre :
+FR aux Subsistances à Lyon
+FR est ce que vous diriez que vous êtes également à Lyon?
+FR la scène suivante est improvisée : Jacques essaye de deviner où se trouve l'auditeur.
+FR Brigade — Et est-ce que ça vous est déjà arrivé :
+FR vous êtes devant de votre ordinateur,
+front of your computer,
+FR vous ouvrez un moteur de recherche, Google, DuckDuckGo, Qwant ou autre,
+FR et là vous êtes prêt à entrer un mot dans l’espace dédié,
+FR vous avez les doigts en suspens au dessus du clavier,
+FR il y a le curseur de saisie qui clignote,
+FR et là vous vous dites que peut-être la requête que vous allez entrer
+FR va changer le cours de votre vie ?
+FR Ça vous est déjà arrivé ?
+FR vous avez une autre question brégade? non?
+FR merci pour cette très belle question.
+FR changer le cours de notre vie, 
+FR s'interroger sur les petites choses imperceptibles du quotidien,
+FR c'est ce que nous allons continuer à faire 
+FR par l'intermédiaire de quoi,
+FR d'un téléphone.
+FR Je vous propose de jouer au jeu de la liaison téléphonique silencieuse.
+FR comment cela va-t-il se passer hé bien,
+FR Nous aussi on a un téléphone ici, c’est celui de Samuel.
+FR On va afficher le numéro de téléphone chez vous.
+FR Vous allez nous appeler, on va prendre le premier appel,
+FR et lorsqu’on va décrocher, qu'allons nous nous dire? des choses extraordinaires?
+FR non ; nous ne nous dirons rien du tout.
+FR nous allons faire le silence total
+FR afin de goûter à l’essence même de la connexion.
+FR On va établir une connexion d’une pureté absolue.
+FR Samuel tu affiches le numéro chez les gens ?
+FR Samuel — C’est fait.
+FR Jacques — Ça y est, le numéro s’est affiché, vous pouvez nous appeler, 
+FR je rappel la règle : on ne se dit rien du tout,
+FR même pas allo, rien.
+FR Allez-y.
+FR_CYCLO Et donc voilà,
+FR_CYCLO Nous pouvons tous lire ce texte
+FR_CYCLO Nous, ici, dans la salle,
+FR_CYCLO vous, chez vous.
+FR_CYCLO il n’y a plus rien d’autre que la connexion <br/> qui nous relie.
+FR_CYCLO Cette connexion est invisible,
+FR_CYCLO imperceptible,
+FR_CYCLO intangible.
+FR_CYCLO Et pourtant,
+FR_CYCLO elle est matériellement réalisée.
+FR_CYCLO Elle s’effectue par l’intermédiaire <br/> de cet appareil téléphonique,
+FR_CYCLO de câbles électriques, d’antennes relais, <br/>d’ondes électro-magnétiques.
+FR_CYCLO Si on pouvait suivre son chemin,
+FR_CYCLO on sortirait par les trous de l’écouteur du téléphone de cette personne.
+FR_CYCLO Elle doit être en train <br/>de tendre l’oreille
+FR_CYCLO pour vérifier si elle n’entend pas
+from the audience,
+FR_CYCLO les quelques bruits qui émaneraient du public,
+FR_CYCLO les toussotements,
+FR_CYCLO le grincement des sièges.
+FR_CYCLO Et nous tendons l’oreille
+FR_CYCLO pour essayer de l’entendre tendre l’oreille.
+FR Jacques —  Merci. vous pouvez raccrocher.
+FR Jacques —   Ça vous a plu Brégade ?
+FR Brigade — Oui, c’était magique, Jacques.
+FR Jacques - Hé bien après cette expérience troublante et magique, nous allons marquer une petite pause.
+FR Une petite pause pour préparer la prochaine séquence.
+FR Et oui chers auditeurs ça y est c'est le moment, chez vous à la maison
+FR de commencer la fabrication de votre cabane
+FR samuel vous avait demandé tout à l'heure de réunir de réunir des matériaux
+FR et donc ça y est, vous pouvez vous lancer, hop hop hop go, go, go... on y va
+FR et ici pendant ce temps là, nous allons préparer notre traditionnel feu de camp
+FR et on se retrouvera dans quelques instants réunis tous ensemble autour du feu.
+FR Brigade — (aux SALM) vous m'entendez?
+FR vous êtes encore là? 
+FR ah ben tenez, le texte qui s'affiche sur l'écran ici, il s'affiche aussi chez vous, sur votre ordinateur?
+FR_CYCLO Oui oui
+FR Brigade - Et ce texte, vous pourriez le lire à voix haute pour voir?
+FR_CYCLO oui oui
+FR Brigade - en parlant un peu plus fort maintenant?
+FR_CYCLO VOILÀÀÀÀ JE PARLE PLUS FORT
+FR Brigade - allez-y continuez ...
+FR Jacques —  Attendez, mais vous faites quoi là Brégade?
+FR Brigade —ah euh pardon, je m’amusais à jouer au jeu du théâtre là, avec vos auditeurs
+FR Brigade —j’espère que ça ne vient pas embrouiller le cours de votre émission ? 
+FR Jacques —  Attendez...  le jeu du théâtre ? C’est à dire ? 
+FR Brigade — bah en fait je propose tout simplement aux auditeurs chez eux, de lire les répliques qui s’affichent sur leur écran.
+FR Brigade —Chez eux, ils peuvent lire les répliques qui s’affichent à voix haute.
+FR Brigade —Comme ça, ils entrent en interaction avec nous plus intensément, vous voyez ce que je veux dire ? 
+FR Jacques —   Comment ça ? 
+FR Brigade — Bah, le texte qui s’affiche là, derrière nous,  il s’affiche en même temps chez les auditeurs, sur leurs écrans, c’est bien ça ?
+FR Samuel —  Ouais... et ?
+FR Brigade — Bah ce que je fais c’est que je leur demande de lire le texte qui s’affiche comme tout à l’heure
+FR Brigade — sauf qu’au lieu de le lire dans leur tête ils peuvent le lire à voix haute. 
+FR Brigade —Comme si c’était des répliques, comme au théâtre quoi. 
+FR_CYCLO Donc voilà Jacques... tu vois, là je suis en train de lire tout haut ce texte qui s’affiche sur mon écran...
+FR_CYCLO JE LIS LE TEXTE ! JE LIS LE TEXTE ! <br/> YOUHOU JE LIS LE TEXTE ! 
+FR Samuel — ah oui d’accord, c’est pratique  
+FR Brigade — Voilà, et puis ils peuvent prendre l’intonation qu’ils veulent, c’est de l'interprétation libre quoi, c’est improvisé.
+Frei interpretieren, improvisieren.
+FR_CYCLO Oui, mais, euh, attendez, en fait... Il y a des gens qui m'entendent là ?
+FR Brigade — Ah non non, vous vous entendez tout seul, mais nous ici on vous entend pas. 
+FR Brigade —Personne ne vous entend, ni nous ni personne dans les gradins. 
+FR Brigade — Enfin, disons, on vous imagine, derrière votre ordinateur en train de lire ce texte qu’on vous propose, en train de le dire d’une certaine manière
+FR Brigade — enfin voilà  c’est comme si on vous entendait, mais dans notre tête... Vous voyez ce que je veux dire ? 
+FR_CYCLO Heuuu... oui.
+FR Brigade — Tiens. Je me demande. Est-ce que vous aussi, ça vous donne vraiment l’impression de participer au dialogue ? 
+frage: Haben Sie dabei auch das Gefühl, ein Gespräch zu führen?
+FR Brigade —Comme si on parlait ensemble, qu’on était ici, ensemble, au même endroit ? 
+FR_CYCLO Oui, ça marche très bien
+FR Brigade — bon bah super
+FR_CYCLO Enfin là je peux pas vraiment donner mon avis puisque je dois lire le texte qui s'affiche.
+FR Brigade — Ah bah oui c’est vrai.... 
+FR Samuel —Bah vous savez nous aussi on dit un texte préparé.
+FR Jacques —   Quoi... quoi quoi... Préparé ...? 
+FR Samuel —Bah c’est déjà écrit, tout ce qu’on dit c’est écrit, tu le sais bien
+FR Jacques —   heu ... ? 
+FR Brigade —Jacques ? 
+FR Samuel — Allez...  tu fais semblant là, de pas comprendre ? 
+FR Jacques —  Je fais semblant ? je fais semblant ? 
+FR Jacques —   Ah mais oui,  je fais semblant, bien sûr qu’on fait semblant. 
+FR Jacques — Mais cela dit, on pourrait quand même laisser la possibilité aux gens de répondre librement à certaines questions ?
+freely?
+Fragen ganz frei antworten lassen?
+FR_CYCLO Ah tiens pourquoi pas
+FR Brigade — bah donc voilà alors voilà vous pouvez nous expliquer, avec vos mots à vous,
+FR Brigade —Allez-y, on vous écoute. 
+FR_CYCLO (vous pouvez maintenant vous exprimer librement) 
+freely) 
+frei ausdrücken)
+FR_CYCLO [...] 
+FR_CYCLO ...et donc c’est amusant parce que c’est effectivement l’inverse de tout à l’heure.
+FR Jacques —   heuuu, c’est... c’est... c’est à dire ?
+FR_CYCLO Hé beh tout à l’heure, au téléphone, on s’entendait mais on se parlait pas, 
+FR_CYCLO et là on se parle mais on s’entend pas.
+FR Jacques - Ah ben vous savez quoi : ça rejoint exactement ce qui va se passer ici
+FR tout à l'heure on était rassemblés mais pas au même endroit
+FR et maintenant, on va se rassembler tout en étant à des endroits différents
+FR Samuel - c'est le petit jamboree
+FR Jacques - Voilà, c'est le moment où nous allons faire converger les flux autour d'un point précis,
+FR le feu de camp : c'est la partie chaleur de l'émission.
+FR Samuel - Tout le monde a reçu un schéma
+FR tenez Brégade, regardez, tout est expliqué,
+FR là chez eux les auditeurs sont sans doute en train de se construire un petit abri, une petite cahute.
+FR bon c’est rudimentaire, ils font avec ce qu’ils ont chez eux,
+FR Bridgade - Ah ouais une cabane?!
+FR Jacques - la classique étant celle avec un drap tendu entre deux chaises,
+FR ils peuvent rajouter un manche à balai au milieu pour avoir un petit peu plus d’espace,
+FR Samuel - Sinon y'a le dessous de table, ou l'étendoir à linge, enfin c'est eux qui décident
+FR tenez, venez, pendant qu'ils finissent leur installation, nous on va s'asseoir autour du feu
+FR Jacques — le feu qui est encore éteint.
+FR Brigade — Il est éteint.
+FR Et les bûches, c’est des fausses bûches, c’est des bûches électriques.
+FR J’imagine que la question, c’est : qui va les allumer ?
+Frage: Wer wird sie „anzünden“?
+FR Samuel —  Et la réponse c’est : les auditeurs.
+FR Et ils vont pouvoir le faire une fois qu’ils auront terminé de préparer le dernier élément qui leur manque...
+FR Jacques — La boisson chaude.
+FR Voyez Brégade, pour parfaire la représentation mentale qu’on va avoir des gens dans leur cabane,
+FR ce qu’il nous faut, c’est une boisson chaude.
+FR Voyez un peu la scène ?
+FR Jacques - Les gens, ils ont terminé leurs cabanes
+FR ils sont dans leur cocon, dans leur tanière,
+FR avec en plus une tasse de thé fumante
+FR Samuel — Donc, là, chez vous, ça y est, le compte à rebours a commencé
+FR à la maison vous terminez votre cabane le plus vite possible,
+FR et dès que c'est fait, vous allez pouvoir vous lever
+FR partir en cuisine, faire bouillir l’eau,
+FR ici nous on vous attend,
+FR et quand vous avez votre tasse à la main 
+FR vous revenez vous installer confortablement dans votre cabane,
+FR et c’est là que vous cliquez sur le bouton
+FR “c’est bon j’ai fini de préparer ma boisson chaude”.
+FR Vous cliquez, et c’est ça qui va déclencher les bûches.
+FR Et voilà, y a plus qu’à attendre...
+FR Brigade — C’est excitant...
+FR Samuel — Oh, faut pas s’attendre forcément à un truc incroyable.
+FR Jacques — Samuel, t’es trop modeste.
+FR Samuel — enfin je veux dire c’est juste une bûche électrique qui s’allume...
+FR mais bon on dit ça quand on sait pas ce que ça représente...
+FR Beh c’est pas juste une bûche...
+FR Au bout du circuit y a des gens... (ATTENTE BÛCHE)
+FR Samuel  — Brigade ! Vous avez vu ?
+FR Brigade — Heu oui, oui Samuel
+FR Samuel  — Non mais là, ça, vous voyez?
+FR Brigade — Heu oui je le vois...
+FR Ça c’est quelqu’un, y a quelqu’un !
+FR Ah voilà, ben bonjour j’ai envie de dire,
+FR bienvenue dans votre cabane,
+FR installez-vous confortablement...
+FR Ben, la dernière chose qui vous manque là, c’est la musique,
+FR c’est la dernière couche que nous allons générer nous
+FR pour vous accompagner dans votre cabane,
+FR Jacques, vas-y, tu veux bien faire la guitare,
+FR Jacques  — Bien sur Samuel, (début guitare) chers auditeurs, chères auditrices, vous n’avez plus qu’à vous détendre,....
+FR Brigade vous pouvez m’accompagner.
+FR Brigade  — Heu oui d’accord pourquoi pas, 
+FR Samuel — Je regarde une bûche, c’est vraiment comme si je vous voyais.
+FR C’est vraiment pas que des branchements là,
+FR Vous êtes là, en fait.
+FR ok je pars de la bûche, 
+FR j’arrive à son câble d’alimentation, 
+FR puis au gradateur,
+FR qui est relié à la console lumière,
+FR qui elle, est reliée à l’ordinateur,
+FR qui lui, est relié au serveur,
+FR qui permet de nous connecter au site web de l’émission,
+FR et derrière ce site y a une main,
+FR qui est reliée à une personne,
+FR qui est dans une toute autre réalité,
+FR et qui observe le contraste.
+FR Parce que là c’est sacrément contrasté quand même entre notre réalité,
+FR nous ici sur scène, avec les spectateurs assis là dans les gradins,
+FR et de l’autre côté, y a quelqu’un, tout seul,
+FR tranquillement installé dans sa cabane avec son petit bol d’eau chaude,
+FR ça se frotte, ce sont deux réalités qui se frottent en fait,
+friction, these two realities are actually rubbing up against each other
+FR et qu’est-ce qui fait se frotter ces deux réalités?
+FR Ben c’est une bûche...
+FR Ben c’est juste une bûche électrique...
+FR Brigade — Mmh.. par contre ça reste des fausses bûches et il commence à faire un peu frais...
+FR Vous n’auriez pas une couverture dans votre truck ?
+FR Samuel — Ah si attendez je vais la chercher
+FR Jacques — Bon alors Brégade, vous allez où en voiture comme ça ?
+FR Brigade — Dans le sud. En camargue.
+FR Jacques — Ah c’est joli la Camargue.
+FR Brigade — Par contre Jacques, il faut que je vous dise,
+FR c’est pas Brégade, c’est Brigade, avec un “i”.
+FR Jacques — AAaaaah c’est Briiiiigade,
+FR ah je suis confus, j’avais mal compris!
+FR T’avais compris toi Samuel ?
+FR Samuel — euh oui
+FR Jacques — Ah d’accord mais alors c’est... c’est ton nom de famille ?
+FR Brigade — Nan, nan, c’est mon prénom
+FR Jacques — C’est un peu dur à porter non?
+FR Brigade —  Oui, mais y’a un truc qui fonctionne très bien,
+FR c’est que si tu le répètes plein de fois, au bout d’un moment,
+FR ça se transforme, ça devient joli.
+FR Vas-y essaye, tu vas voir. <div id='warning'> (Brigade pas surtitré) </div>
+FR Brigade — Vazy vazy, encore, encore.
+FR Brigade — allez-y Samuel, faites le aussi.
+FR Brigade — Bon ok, ok c’est bon là stop, vous pouvez arrêter !
+FR Samuel  — Ah c’est vrai, c’est joli....
+FR Jacques — Ah oui moi j’étais parti.
+FR Samuel — Et heu... Tu vas faire quoi en Camargue, Brigade ?
+FR Brigade — Oh, je vais faire un stage.
+FR Jacques — Ah bon... Et un stage de quoi ?
+FR Brigade — Un stage de poney aquatique
+FR Jacques et Samuel — pardon ???
+FR Brigade — Mais non, c’est pas vrai !
+FR Brigade — Alors mon stage, bah c’est un mélange de plusieurs trucs,
+FR je connais bien la formatrice, elle est super.
+FR D’ailleurs, ça me fait vraiment penser à des choses que vous faites dans votre émission...
+FR En fait nous aussi on travaille principalement à la dissociation.
+FR Samuel —  Ah non, nous on fait pas ça, la dissociation.
+FR Brigade —  Quoi ? Mais c’est exactement ce que vous faites hein.
+FR Vous savez pas ce que c’est ?
+FR B- C’est vraiment tout simple, 
+FR c’est quand on essaye de maintenir son attention 
+FR sur deux choses différentes en même temps.
+FR Brigade — Regardez, par exemple, on peut fermer les yeux,
+FR et concentrez vous sur une des bûches, là, une bûche qui rougeoie.
+FR Concentrez-vous sur elle.
+FR voilà et maintenant, on se concentre sur...la tasse de thé.
+FR Une tasse de thé fumante chez quelqu’un.  
+FR et maintenant essayez de vraiment de vous concentrer sur les deux en même temps.
+FR Samuel — je l’ai
+FR Brigade — Tu l’as ? ça marche ?
+FR Samuel — Ouais je l’ai
+FR Brigade — voilà bah t’es dissocié.
+FR Jacques ?
+FR Jacques — Ah ouais ça marche.
+FR Brigade — voilà bah tu t’es dissocié. C’est agréable ?
+FR Jacques — Très.
+FR Brigade — Moi j’adore, je pourrais faire ça pendant des heures
+FR Jacques — oui alors oui... peut-être pas maintenant...
+FR regardez, le vent se lève...
+FR il va y avoir un gros orage,
+FR Samuel, faudra qu’on range le matos là...
+FR Samuel — Ah oui ça va pas tarder à tomber,
+FR Jacques, tu t’occupes des instruments? Tu rajoutes la guitare?
+FR Brigade — Faut débrancher les bûches ?
+FR Samuel — C’est bon, je m’en occupe.
+FR Brigade, y’a des bâches au fond là bas, à droite, tu peux aller les chercher ?
+FR Jacques — Ton costume samuel !
+FR Samuel — On va le mettre sur la brouette !
+FR Brigade — Je bâche les bûches ?
+FR Samuel — oui !
+FR Jacques — Alors, les auditeurs là, 
+FR ce qui serait bien, c’est que vous fassiez le noir complet chez vous.
+FR Donc allez-y sortez de votre cabane, éteignez les lumières,
+FR tirez les rideaux, baissez le volets
+FR et retournez dans votre cabane
+FR avec juste l’écran de votre ordinateur comme source lumineuse.
+FR Brigade — Ton ordinateur Samuel !
+FR Samuel — Ok c’est bon je m’en occupe !
+FR Brigade — Samuel, venez vous abriter, vite !
+FR Samuel — J’arrive !
+FR Jacques — Alors pour tout vous expliquer,
+FR ici, on s’est abrités sous une bâche géante qu’on a tendu au dessus du tracteur;
+FR on a ouvert la portière, pour agrandir un peu l’espace...
+FR un peu comme une tonnelle, un auvent, enfin vous voyez quoi
+FR Samuel — Ouais enfin pas tout à fait Jacques, c’est plus qu’un auvent, la bâche nous recouvre complètement.
+FR On est cachés quoi, on ne voit plus du tout les spectateurs.  
+FR Brigade — Si je m’amuse à faire un petit exercice de projection mentale :
+FR de l’extérieur ça doit plutôt ressembler à une sorte de rocher géant.
+from the outside this must look like a kind of giant rock.
+FR C’est comme si on était dans une grotte en quelque sorte.
+FR Jacques — Ah ! Ah ! Une grotte !
+FR Mais quelle soirée mes amis ! Quelle émission !
+friends! What a show!
+Freunde! Was für eine Sendung!
+FR Voilà Brégade qui nous fait de la projection mentale !
+FR Et qu’elle nous projette dans une grotte
+FR Vous savez ce qui se passe là ? Hein ?
+FR Et bien on se retrouve dans la même situation que vous à la maison.
+FR_CYCLO Oui, et on est bien installés mine de rien. <br/> Chacun dans sa cabane.
+FR En tout cas, ce qui est apaisant là, c’est le bruit de la pluie,
+FR le bruit de la pluie qui frappe contre la toile.
+FR_CYCLO Hé...
+FR_CYCLO Imaginez qu’on continue la discussion comme ça, avec le bruit de la pluie...
+FR_CYCLO et qu’au bout d’un moment on s’endorme
+FR Samuel — voix un peu ensommeillée) Ah oui j’imagine bien oui <div id='warning'> - GROS BREAK NUIT - </div>
+FR_CYCLO les spectateurs au théâtre s’endorment
+FR_CYCLO les uns sur les autres.
+FR_CYCLO Et vous aussi, vous vous endormez, <br/> au gré de la conversation
+FR_CYCLO Et puis ici à la maison je finis par m’endormir aussi,
+FR_CYCLO et la nuit passe comme ça.
+FR_CYCLO Miraculeusement, tout le monde dort.
+FR_CYCLO Et puis au bout d’un moment
+FR_CYCLO La pluie s’arrête
+FR_CYCLO On sent poindre les premières lueurs de l’aube
+FR_CYCLO Ça commence un peu à s’agiter,
+FR_CYCLO quelqu’un bouge, quelqu’un tousse.
+FR_CYCLO Et puis finalement
+FR_CYCLO Quelqu’un pointe le nez dehors
+FR Brigade — Bonjour
+FR_CYCLO Bonjour
+FR Brigade — Bien dormi ?
+FR_CYCLO Mouiii, étonnamment bien.
+FR Brigade — Oui moi aussi, enfin Jacques a ronflé un peu.
+FR Samuel — Ah bonjour Brigade,
+FR Brigade — Salut Samuel
+FR Ah je vais faire un petit café tiens
+FR ouskisont passés
+FR Jacques — Et mais, ça émet encore... 
+FR C’est pas vrai...
+FR Jacques — Samuel !
+FR Jacques — On émet encore là !
+FR Jacques — On émet encore !
+FR Samuel — Bah ouais je sais...
+FR Jacques — On est en direct, là, il faut qu’on lance un truc...
+FR Samuel — Euh, ouais bah je sais pas...
+FR Brigade — Bah, si vous voulez, je peux vous montrer, 
+FR au stage on fait une sorte d’exercice tous les matins.
+FR C’est un petit rituel qui consiste à choisir un truc de chez soi et à aller lui dire bonjour.
+from your house and going to say hello to it.
+FR Jacques — C’est parfait, ça.
+FR Brigade — Voilà donc on va choisir un truc de chez soi.
+FR Par exemple, sa plante verte.
+FR Voilà, si vous voulez, chez vous, vous pouvez vous lever,
+FR vous rapprocher d’une de vos plantes vertes, 
+FR et nous ici, on va imaginer.
+FR Voilà, vous y êtes ?
+FR Bonjour
+FR Bon, c’est une plante,
+FR c’est votre plante.
+FR Elle a sa taille, son volume, ses feuilles,
+FR sa couleur, son pot, sa couleur de pot....
+FR On peut dire que vous la connaissez.  
+FR Et en fait elle vous connaît aussi.
+FR Vous vous connaissez.
+FR Et là, ce matin, vous prenez un petit moment tous les deux, vous vous regardez.
+FR C’est Plante.
+FR Tenez ce qu’on va faire; c’est qu’on va l’appeler comme ça, on va l’appeler Plante.
+FR Et cette plante, Plante, 
+FR on pourrait se dire que c’est votre petit morceau de nature à domicile.
+FR C’est un petit émissaire sauvage d’intérieur, 
+from the wild to the inside, 
+FR un petit Talisman Photosynthétique.
+FR C’est comme si Nature vous avait envoyé Plante 
+FR pour veiller sur votre territoire, sur vous.
+FR Et ce bout de plante en pot là, qui trône sans rien dire dans votre salon ou votre cuisine,
+FR qui vous attend tous les soirs et qui est là tous les matins,
+FR c’est un veilleur de la tribu Organismes-Autotrophes de la dynastie des Eucaryotes,
+from the tribe of Autotrophic Organisms from the Eukaryote dynasty,
+FR c’est une espèce parmi 400 000 autres, dont 369 000 espèces à fleurs.
+FR Ici c’est chez vous, c’est votre intérieur, 
+FR c’est votre territoire, sur lequel règnent des règles.
+FR Ce sont les vôtres, celles que vous avez décidé d’instaurer 
+FR ou peut-être pas vraiment décidé, on ne sait plus très bien, mais voilà :
+FR Frigo est là, Bouilloire s’est installée ici,
+Fridge is there, and Kettle is over here,
+FR Bibliothèque contient des trucs qui ne sont pas censée la concerner ? Coupe-ongles, Tire-bouchon.
+FR Buffet se tient bien droit.
+FR Quelqu’un s’est assis sur Chaise, ici,
+FR quelqu’un d’autre là, dans Fauteuil.
+FR Vous avez discuté.
+FR Et Plante était là.
+FR Et depuis tout ce temps qu’elle est là,
+FR elle participe à tout un tas d’événements de votre vie quotidienne,
+FR elle était à vos côtés,
+FR alors qu’il se tramait ici tout un tas de scénarios, de réalisations, 
+FR de cadrages plus ou moins resserrés et de surprises plus ou moins géantes.
+FR Par exemple :
+FR Vous êtes tout seul ou toute seule chez vous.
+FR Vous mangez une tartine.
+FR Vous éternuez.
+FR Et Plante est là.  
+FR C’est l’hiver, vous appelez votre père pour lui demander sa recette de pâte à pizza.
+FR Vous patinez machinalement, artistiquement, dans votre salon pendant que vous téléphonez à votre père.
+FR Vous vous cognez dans un meuble et vous poussez un cri de mouette un peu ridicule.
+FR Vous ouvrez Frigo, et vous tombez nez à nez avec...4 yaourts périmés depuis 4 jours
+Fridge, and you end up face to face with... 4 yoghurts that have been expired for 4 days,
+FR que vous vous résignez à jeter à la poubelle
+FR en vous disant “quel gâchis, si ça se trouve c’est encore bon”
+FR ou alors vous décidez de les manger quand même
+FR en vous disant “ce serait du gâchis, si ça se trouve c’est encore bon”.
+FR Et Plante est là.
+FR Vous dansez tout seul dans votre salon.
+FR Vous avez une mélodie qui vous revient cycliquement en tête au réveil
+FR et vous avez la certitude étrange que ça coïncide avec la pleine Lune.
+FR Vous faites des grands projets, vous prenez des décisions, 
+FR vous regrettez quelque chose, vous passez le balai.
+FR Et Plante est là.
+FR Vous avez voulu être autre chose. Vous avez voulu être votre ordinateur.
+FR Et Plante est là.
+FR Plante est le témoin silencieux de tout cet océan d’affects, d’états et rouli-roula d’émotions
+FR auxquelles vous avez été sujet les derniers jours, les dernières semaines, les dernières années.
+FR Comme des noms de chefs indiens, qui vous traversent tour à tour.
+FR Certains jours - les chefs indiens Petite-Colère, 
+FR Surexcitation inexpliquée,
+FR Sommeil-Perdu, 
+FR Joie-timide,
+Freude,
+FR Grand-calme.
+FR D’autres jours - les chefs indiens Grande-Colère, 
+FR Branle-Bas-de-Combat-intérieur,
+FR Sommeil-Retrouvé, 
+FR Joie-palpable, 
+Freude,
+FR Soulagement-Inespéré, 
+FR Euphorie-Fugace.
+FR Et Plante est là.
+FR Plante a chaud parce qu’il fait chaud, comme vous peut-être,
+FR Plante a froid parce qu’il fait froid, comme vous peut-être
+FR Plante a soif, Plante se repose. Comme vous peut-être.
+FR Il a plu, il a neigé, il a grêlé.
+FR Vous avez eu des problèmes avec des appareils électroménagers.
+FR Et Plante est là.
+FR Elle, elle le sait qu’elle est là.
+FR Et vous le savez.
+FR Et nous le savons aussi.
+FR Voilà...
+FR Vous bougez un pied.
+FR Vous pouvez bouger un pied, l’autre pied.
+FR Vous vous dirigez vers la fenêtre, 
+FR vous ouvrez le rideau, 
+FR vous regardez au dehors.
+FR Vous respirez un grand coup.
+FR Vous vous sentez observé.
+FR Ça vient de l’intérieur...
+from inside...
+FR vous vous retournez...
+FR C’est Plante.
+FR Ah le café est prêt
+FR Donc voilà, ce serait la fin de la chanson, on prendrait un petit café
+froutch
+FR On déplierait la bâche sur l'herbe au soleil pour la faire sêcher et on s'installerait,
+FR tous les trois, en silence... 
+FR En échangeant de petits hochement de têtes complices..
+FR Jacques - Mais dites Bridage, il serait pas  temps de reprendre la route là ?
+FR Vous allez être en retard à votre stage...
+FR Brigade - Ah oui voilà Jacques demandrait ça à Brigade
+FR Alors je descendrais la pâture
+FR Jacques — Bah nous on t’accompagnerait quand même jusqu’à la bagnole
+FR Brigade — Là on reviendrait sur la route nationale,
+FR Jacques —  la départementale
+FR Brigade — ah oui oui, la départementale 86
+FR Brigade — on arriverait à la voiture de Brigade
+FR Samuel — Toi tu ferais ta réparation. Tu ferais ton manchon
+FR Brigade — oui je ferais mon manchon.
+FR Finalement on s’en sortirait très bien avec la pince circlips.
+FR La voiture serait réparée.
+FR Jacques — Bon voilà, ce serait le moment des grands adieux
+FR Brigade — Salut les gars
+FR Samuel — Salut !
+FR Jacques — Salut Brigade
+FR Samuel — Bon bah ce serait un peu émouvant.
+FR Jacques — Bah attends nan mais tu partirais pas comme ça,
+FR On s’échangerait nos emails pour garder contact
+FR Brigade — t’as un email toi Jacques ?
+FR Jacques — oui, oui, lebruitdescombrailles@gmail.com
+FR Brigade — et puis on discuterait encore quelques minutes, la vitre baissée, et hop  
+FR je klaxonnerais un coup joyeux et pis hop me voilà c'est le départ.
+fröhlich hupen — und losfahren.
+FR Jacques — Et nous, on resterait là sur le bord de la route.
+FR Et puis là Jacques il regarderait Samuel
+FR Jacques — Pis là il lui dirait,
+FR tu vois, Samuel, avant l'émission de radio,
+FR quand je bossais tout seul dans mon tracteur au milieu de la nuit,
+FR et que je voyais au loin toutes ces voitures sur l'autoroute,
+FR je me demandais bien, qui étaient ces voitures et ces gens dedans, tous ces gens
+FR où est-ce qu'ils allaient, ce qu'ils faisaient, combien ils étaient...
+FR leur vie quoi.
+FR Et un jour je me suis dit peut-être qu'on pourrait se parler
+FR peut-être qu'il y aurait moyen que je leur parle, moi qui suis tout seul dans mon tracteur à bosser là
+FR hé...
+FR Jacques - tu sais ce qu'il dirait Jacques là? Il dirait : "on y va?"
+FR Samuel — Donc là Samuel il dirait “bah où?”
+FR Jacques — À son stage... En camargue ?
+FR Samuel — Hein ? Mais comment ?
+FR Jacques — Beh on prend le tracteur
+FR Samuel — Mais oui ! 
+FR ah ouais tu dirais : "Merci chers auditeurs, cheres auditrices, les combrailles on en a fait le tour, j'ai envie de voir du pays,
+FR l’émission, ça serait plus le bruit des combrailles mais le bruit de la camargue.
+FR Jacques — Voilà et ça se finirait comme ça.
+FR Samuel - Et bien voilà, écoutez, je pense qu’on y est,
+FR on est à ce moment particulier de bascule
+FR où on s’apprête à s’extraire de la représentation pour revenir dans le réel
+from the performance and come back to reality
+FR Et d’ailleurs, à _XXX_, on pourrait tout à fait imaginer que les spectateurs
+FR sont eux aussi arrivés à ce moment bien particulier de la fin de leur représentation.
+FR Ici, Mathilde revient sur le plateau avec des pancartes à destination des spectateurs
+FR parce que justement, la fin, comme le début, c’est un moment qui suit en général un protocole, assez précis.
+FR Là ce qu’on vous propose <div id='warning'> - PANCARTES ! - </div>
+FR_DECR c’est de rallumer les lumières chez vous,
+FR_DECR au même moment où nous, ici,
+FR_DECR nous allons faire le noir dans la salle
+FR_DECR alors allez y, rendez-vous près d’un interrupteur,
+FR_DECR on se synchronise,
+FR_DECR attention :
+FR_DECR 3
+FR_DECR 2
+FR_DECR 1
+FR_DECR top
+FR c’est qu’on fasse
+FR le noir final
+FR au moment où les auditeurs
+FR rallument la lumière chez eux
+FR attention
+FR * noir *
+FR   
+FR_INTR C’EST FINIIIII
+FR_INTR Si vous êtes encore là, c’est que vous êtes resté·e·s jusqu’à la fin
+FR_INTR Merci, bravo.
+FR_INTR Mathilde, Arnaud et Sébastien sont en train de saluer les spectateurs.
+FR_INTR Moi ici, depuis la régie, je vous salue aussi.
+FR_INTR Bravo pour votre cabane,
+FR_INTR elle est magnifique.
+FR_INTR Merci d’être venu·e.
+FR_INTR Enfin plutôt d’être resté·e chez vous.
+FR_INTR Enfin d’être là quoi.
+FR_INTR Si vous avez des remarques, des avis, des suggestions,
+FR_INTR ou pour nous envoyer la photo de votre cabane (on les collectionne)
+FR_INTR n’hésitez pas à nous envoyer un petit e-mail à <br/>ontraverseralepont@amicaledeproduction.com

@@ -18,6 +18,22 @@ Template.registerHelper('formatDateLeFrenchStyle', function(date) {
 
 Template.waiting.onCreated(function() {
 
+  console.log("SALUT C'EST DIEGO")
+  console.log("SALUT C'EST DIEGO")
+  console.log("SALUT C'EST DIEGO")
+  console.log("SALUT C'EST DIEGO")
+  console.log("SALUT C'EST DIEGO")
+  console.log("SALUT C'EST DIEGO")
+  console.log("SALUT C'EST DIEGO")
+  console.log("SALUT C'EST DIEGO")
+  console.log("SALUT C'EST DIEGO")
+  console.log("SALUT C'EST DIEGO")
+  console.log("SALUT C'EST DIEGO")
+  console.log("SALUT C'EST DIEGO")
+  console.log("SALUT C'EST DIEGO")
+  console.log("SALUT C'EST DIEGO")
+  console.log("SALUT C'EST DIEGO")
+
   //subscribe à la collection representations
   this.autorun(() => {
     this.subscribe('allRepresentations');
@@ -392,28 +408,28 @@ Template.waiting.helpers({
   }
 });
 
-  // $(document.body).on('keyup', function(e) {
+  $(document.body).on('keyup', function(e) {
 
-  //   e = e || window.event
-  // // simulateur de nuit / jour
-
-
-  //   // KEYCODE 32 IS SPACEBAR
-  //   // KEYCIODE 78 IS "n"
-  //   if(e.keyCode == '78'){
-  //     setTimeout(function(){
-  //     document.getElementById("LUMIERE").style.opacity="1"
-  //     },4000)
-  //     document.body.style.backgroundColor="#221F2D"
-  //   };    if(e.keyCode == '74'){
-  //     document.getElementById("LUMIERE").style.opacity="0"
-  //     document.body.style.backgroundColor="white"
-  //   };
-  //   if(e.keyCode == '32'){
-
-  //     em.emit('incJoinedPool');
-  //   }
+    e = e || window.event
+  // simulateur de nuit / jour
 
 
-  // });
+    // KEYCODE 32 IS SPACEBAR
+    // KEYCIODE 78 IS "n"
+    if(e.keyCode == '78'){
+      setTimeout(function(){
+      document.getElementById("LUMIERE").style.opacity="1"
+      },4000)
+      document.getElementsByTagName("body")[1].style.backgroundColor="#221F2D"
+    };    if(e.keyCode == '74'){
+      document.getElementById("LUMIERE").style.opacity="0"
+      document.getElementsByTagName("body")[1].style.backgroundColor="white"
+    };
+    if(e.keyCode == '32'){
+
+      em.emit('incJoinedPool');
+    }
+
+
+  });
 

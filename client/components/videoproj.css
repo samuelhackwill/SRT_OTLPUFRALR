@@ -15,6 +15,13 @@ ul.admin_menu li:last-child:after {
 }
 
 /* videoproj */
+
+body.videoproj {
+  border-style:solid;
+  border-color:black;
+  border-width:10px;
+}
+
 body.videoproj .shutter {
   display:none !important;
   background-color:purple;
@@ -29,9 +36,15 @@ body.videoproj #nlsrt{
 }
 
 body.videoproj #srt{
-  font-size: 3.1vw;
+/*  font-size: 3.1vw;
   top:-100px;
   width:75% !important;
+*/
+  font-size:1.4vw;
+  top:-100px;
+/*  transform:rotate(-0.53deg) translateX(-50%);
+*/  max-width:60%;
+
 }
 
 body.videoproj .posmid{

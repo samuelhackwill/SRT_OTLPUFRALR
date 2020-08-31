@@ -548,6 +548,10 @@ transition: opacity .3s ease-in-out
     font-size: 1.8vw;
   }
 
+  #buttonChiant{
+    margin-top:180px!important;
+  }
+
   .button{
     box-shadow: 0px -5px 0px 0px #999999;
     border: solid 2px white;
@@ -763,7 +767,7 @@ transition: opacity .3s ease-in-out
     transition: all .3s ease-in-out;
     position: absolute;
     left: 50%;
-    transform: translate(-50%,-150px);
+    transform: translate(-50%,-50px);
 
     opacity: 0;
   }

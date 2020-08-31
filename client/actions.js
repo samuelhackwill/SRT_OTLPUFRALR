@@ -227,6 +227,13 @@ action = function(type, params){
 }
 
 sound = function(params){
+    // version nicecast global fuckup de l'enfer clermont 10/18
+
+    audio = document.getElementById('player')
+    audio.play()
+
+
+
   if(params=="start"){
     // em.emit('adminstartstream');
     console.log("jacky startTheStream??", streaming);
@@ -543,7 +550,7 @@ finishCuppa = function(e){
 
   }
     $("#srt").css("top", "-50%")
-    $("#sacbouttons").css("margin-top","50px")
+    $("#sacbouttons").css("margin-top","180px")
 
     console.log("finishCuppa interieur boucle");
 
