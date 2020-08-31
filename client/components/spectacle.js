@@ -421,10 +421,12 @@ function showMeTheButtons(){
 
     // $(this).attr('disabled', true).unbind('click');
     // Make sure the browser supports WebRTC
+
     if(!Janus.isWebrtcSupported()) {
       console.log("No WebRTC support... ");
       return;
     }
+    
     console.log('WebRTC is supported.');
     console.log('Creating Janus Session...');
     // Create session
