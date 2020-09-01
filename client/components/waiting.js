@@ -19,20 +19,6 @@ Template.registerHelper('formatDateLeFrenchStyle', function(date) {
 Template.waiting.onCreated(function() {
 
   console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
 
   //subscribe à la collection representations
   this.autorun(() => {
@@ -144,7 +130,7 @@ Template.waiting.events({
 
   },
 
-  'click, touchstart #pastille': function(e){
+  'click #pastille, touchstart #waiting': function(e){
 
     if(getSuperGlobal("modeSpectacle")){
 
@@ -420,10 +406,12 @@ Template.waiting.helpers({
       setTimeout(function(){
       document.getElementById("LUMIERE").style.opacity="1"
       },4000)
-      document.getElementsByTagName("body")[1].style.backgroundColor="#221F2D"
+      // document.getElementsByTagName("body")[1].style.backgroundColor="#221F2D"
+      document.getElementById("waiting").style.backgroundColor="#221F2D"
     };    if(e.keyCode == '74'){
       document.getElementById("LUMIERE").style.opacity="0"
-      document.getElementsByTagName("body")[1].style.backgroundColor="white"
+      // document.getElementsByTagName("body")[1].style.backgroundColor="white"
+      document.getElementById("waiting").style.backgroundColor="white"
     };
     if(e.keyCode == '32'){
 
