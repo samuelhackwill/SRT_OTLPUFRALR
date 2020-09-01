@@ -638,8 +638,8 @@ function showMeTheButtons(){
   function startTheStream(what) {
     // version nicecast global fuckup de l'enfer clermont 10/18
 
-    audio = document.getElementById('player')
-    audio.play()
+    // audio = document.getElementById('player')
+    // audio.play()
 
 
     console.log('salm startstream!', what, streaming);
