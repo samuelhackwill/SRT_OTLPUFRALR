@@ -114,19 +114,19 @@ Template.spectacle.onRendered(function () {
       console.log("DEPRECATED ASKIP?")
       switch(TAPi18n.getLanguage()){
         case "fr":
-          $("<div>"+"Appelez ce numéro : <br /> + 33 (0)7 81 89 76 86 <br />(Et coupez le son de votre ordinateur! <br/>Sinon ça va faire des sons bizarres)."+"<br/</div>").appendTo("#phoneNumberSrt")
+          $("<div>"+"Appelez ce numéro : <br /> + 33 (0)7 49 02 92 24 <br />(Et coupez le son de votre ordinateur! <br/>Sinon ça va faire des sons bizarres)."+"<br/</div>").appendTo("#phoneNumberSrt")
           break
 
         case "nl":
-          $("<div>"+"Bel dit nummer : <br /> +33 7 81 89 76 86 <br/> (En schakel het geluid van jullie computer uit! Anders horen we allerlei rare geluiden)."+"<br/</div>").appendTo("#phoneNumberSrt")
+          $("<div>"+"Bel dit nummer : <br /> +33 7 49 02 92 24 <br/> (En schakel het geluid van jullie computer uit! Anders horen we allerlei rare geluiden)."+"<br/</div>").appendTo("#phoneNumberSrt")
           break
 
         case "de":
-          $("<div>"+"Rufen Sie unter dieser Nummer an : <br /> +33 7 81 89 76 86 <br/> (Und schalten Sie Ihren Computer stumm! Sonst gibt es komische Geräusche.)"+"<br/</div>").appendTo("#phoneNumberSrt")
+          $("<div>"+"Rufen Sie unter dieser Nummer an : <br /> +33 7 49 02 92 24 <br/> (Und schalten Sie Ihren Computer stumm! Sonst gibt es komische Geräusche.)"+"<br/</div>").appendTo("#phoneNumberSrt")
           break
 
         case "en":
-          $("<div>"+"Call this number : <br /> +33 7 81 89 76 86 <br/> (And cut the sound on your computer\! Otherwise it\’ll make weird noises)"+"<br/</div>").appendTo("#phoneNumberSrt")
+          $("<div>"+"Call this number : <br /> +33 7 49 02 92 24 <br/> (And cut the sound on your computer\! Otherwise it\’ll make weird noises)"+"<br/</div>").appendTo("#phoneNumberSrt")
           break
       }
 });
@@ -525,7 +525,7 @@ function showMeTheButtons(){
             setTimeout(function(){
 
               if(streamPlaying == false && $('#stream-video').get(0).paused) { // la video (le stream) n'a pas démarré, pb autorisation autoplay?
-                $('#stream-error').append("Il semble que le stream audio n'a pas démarré. Veuillez cliquer ici <a href=\"javascript:void(0);\" class=\"reload\" title=\"Lancer le stream audio\" onclick=\"$('#stream-video').get(0).play();$('#stream-error').empty();\">Démarrer le stream</a>");
+                $('#stream-error').append("Hmm on dirait que votre navigateur a besoin de votre autorisation pour lancer le flux audio. Pour lui dire que c'est ok, Veuillez cliquer ici <a href=\"javascript:void(0);\" class=\"reload\" title=\"Lancer le stream audio\" onclick=\"$('#stream-video').get(0).play();$('#stream-error').empty();\">Démarrer le stream</a>");
                 streamPlaying = true;
               }
           
