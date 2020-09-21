@@ -18,11 +18,6 @@ Template.registerHelper('formatDateLeFrenchStyle', function(date) {
 
 Template.waiting.onCreated(function() {
 
-<<<<<<< HEAD
-=======
-  console.log("SALUT C'EST DIEGO")
-
->>>>>>> 0ced27cdfda280630b67f8176a540038f5fc009c
   //subscribe à la collection representations
   this.autorun(() => {
     this.subscribe('allRepresentations');
