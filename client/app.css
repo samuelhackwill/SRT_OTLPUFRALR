@@ -54,7 +54,11 @@ la couleur du fond night #221F2D
     transform: translateY(-4px);
     font-size: 27px;
    }
-
+   #waiting {
+    height: 100%;
+    position: relative;
+    z-index: 0;
+  }
      #LUMIERE{
     -webkit-transition: opacity 1s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;
