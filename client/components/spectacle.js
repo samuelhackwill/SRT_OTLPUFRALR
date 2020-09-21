@@ -2,6 +2,7 @@ var streamCheckInterval;
 var caughtUp = false;
 var intervalReload;
 headerOpen = false;
+var streamPlaying = false;
 
 
 Template.spectacle.onCreated(function() {
@@ -519,6 +520,16 @@ function showMeTheButtons(){
             // Janus.attachMediaStream($('#remotevideo').get(0), stream);
             console.log($('#stream-video'), $('#stream-video').get(0));
             Janus.attachMediaStream($('#stream-video').get(0), stream);
+            //todo is video paused ?
+
+            setTimeout(function(){
+
+              if(streamPlaying == false && $('#stream-video').get(0).paused) { // la video (le stream) n'a pas démarré, pb autorisation autoplay?
+                $('#stream-error').append("Il semble que le stream audio n'a pas démarré. Veuillez cliquer ici <a href=\"javascript:void(0);\" class=\"reload\" title=\"Lancer le stream audio\" onclick=\"$('#stream-video').get(0).play();$('#stream-error').empty();\">Démarrer le stream</a>");
+                streamPlaying = true;
+              }
+          
+            }, 10000);
           },
           oncleanup: function() {
             Janus.log(" ::: Got a cleanup notification :::");
