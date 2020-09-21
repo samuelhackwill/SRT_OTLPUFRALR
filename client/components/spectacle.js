@@ -393,7 +393,7 @@ function showMeTheButtons(){
 
   // var host = window.location.hostname == "localhost" ? "www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com" : window.location.hostname;
   // var host = window.location.hostname == "localhost" ? "www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com" : window.location.hostname;
-  var host = "ontraverseralepont.com";
+  var host = "213.32.88.9";
   var server = null;
   if(window.location.protocol === 'http:')
       server = "http://" + host + ":8088/janus";

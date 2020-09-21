@@ -18,22 +18,6 @@ Template.registerHelper('formatDateLeFrenchStyle', function(date) {
 
 Template.waiting.onCreated(function() {
 
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-  console.log("SALUT C'EST DIEGO")
-
   //subscribe à la collection representations
   this.autorun(() => {
     this.subscribe('allRepresentations');
@@ -114,8 +98,8 @@ Template.waiting.onRendered(function () {
   }
 
   if(currentLangIndex==null){
-    // console.log("fuck this shit, couldn't find your country so i'm switching to english")
-    currentLang = 'en'
+    // DEFAULT LANG IS FRENCH
+    currentLang = 'fr'
     cookies.set("user_lan", currentLang)
     TAPi18n.setLanguage(currentLang)
     currentLangIndex = 0
