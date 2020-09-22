@@ -14,11 +14,15 @@ ul.admin_menu li:last-child:after {
   content: "";
 }
 
+body.admin{
+  background-color:lightgrey;
+}
+
 #warning{
 	background-color:red;
 }
 
-#countJoined{
+#countJoinedDiv{
 	background-color:yellow;
 	position:fixed;
 	top : 15px;

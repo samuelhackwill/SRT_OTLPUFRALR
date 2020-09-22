@@ -5,6 +5,7 @@ Template.registerHelper('equals', function (a, b) {
 var refreshedUp = false;
 
 Template.admin.onCreated(function() {
+
   console.log('Template admin created.');
   //subscribe à la collection contenus écran
   this.autorun(() => {
@@ -69,6 +70,7 @@ Template.admin.onRendered(function () {
     var iteratorOutputs = outputs.values() // returns an iterator that loops over all outputs
     output = iteratorOutputs.next().value; // grab first output device
 
+    console.log("output", output)
     
   }
 

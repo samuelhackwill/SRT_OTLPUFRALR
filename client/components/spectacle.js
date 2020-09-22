@@ -12,6 +12,7 @@ Template.spectacle.onCreated(function() {
     this.subscribe('allRepresentations');
     this.subscribe('allContenusEcran');
     this.subscribe('allLoteries');
+    TAPi18n.setLanguage("fr");
   });
 
 });
@@ -28,6 +29,7 @@ Template.spectacle.onRendered(function () {
       currentLangIndex = i
     }
   }
+
 
 
   this.autorun(() => {
@@ -386,7 +388,6 @@ function showMeTheButtons(){
     // ));
 
   //streaming janus
-  var server = null;
   // if(window.location.protocol === 'http:')
   //     server = "http://" + window.location.hostname + ":8088/janus";
   // else
@@ -394,12 +395,17 @@ function showMeTheButtons(){
 
   // var host = window.location.hostname == "localhost" ? "www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com" : window.location.hostname;
   // var host = window.location.hostname == "localhost" ? "www.on-appuiera-sur-espace-une-fois-rendu-a-la-page-d-accueil.com" : window.location.hostname;
-  var host = "213.32.88.9";
+  // var host = "213.32.88.9";
   var server = null;
-  if(window.location.protocol === 'http:')
-      server = "http://" + host + ":8088/janus";
-  else
-      server = "https://" + host + ":8089/janus";
+  // if(window.location.protocol === 'http:')
+      // server = "http://" + host + ":8088/janus";
+  // else
+  //     server = "https://" + host + ":8089/janus";
+
+      server = "https://ontraverseralepont.com/janus"
+      // option on le floute avec un proxy (HTTPS)
+
+
 
   var janus = null;
   // var streaming = null;
@@ -529,7 +535,7 @@ function showMeTheButtons(){
                 streamPlaying = true;
               }
           
-            }, 10000);
+            }, 5000);
           },
           oncleanup: function() {
             Janus.log(" ::: Got a cleanup notification :::");
