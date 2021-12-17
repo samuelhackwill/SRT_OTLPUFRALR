@@ -337,11 +337,12 @@ Meteor.methods({
   * @param {String} data Données du contenu écran
   */
   newContenuEcran: function (obj) {
-    var loggedInUser = Meteor.user()
+    // var loggedInUser = Meteor.user()
 
-    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
-      throw new Meteor.Error(403, "Access denied")
-    }
+    // if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+    //   throw new Meteor.Error(403, "Access denied")
+    // }
+   
     var data = obj.data;
     var dataPupitre = obj.dataPupitre;
     if(data && dataPupitre) {
@@ -766,20 +767,20 @@ Meteor.methods({
   * @param {Object} name, location, date_start, date_end, status
   */
   newRepresentation: function (obj) {
-    var loggedInUser = Meteor.user()
+    // var loggedInUser = Meteor.user()
 
-    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
-      throw new Meteor.Error(403, "Access denied")
-    }
+    // if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+    //   throw new Meteor.Error(403, "Access denied")
+    // }
     // console.log("newRepresentation", obj);
     representations.insert(obj, { filter: false });
   },
   editRepresentation: function (args) {
-    var loggedInUser = Meteor.user()
+    // var loggedInUser = Meteor.user()
 
-    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
-      throw new Meteor.Error(403, "Access denied")
-    }
+    // if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+    //   throw new Meteor.Error(403, "Access denied")
+    // }
     // console.log("editRepresentation", args);
     representations.update(args._id, 
       { $set: args.obj },
@@ -832,20 +833,20 @@ Meteor.methods({
   // },
 
   newAmbiance: function (obj) {
-    var loggedInUser = Meteor.user()
+    // var loggedInUser = Meteor.user()
 
-    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
-      throw new Meteor.Error(403, "Access denied")
-    }
+    // if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+    //   throw new Meteor.Error(403, "Access denied")
+    // }
     // console.log("newAmbiance", obj);
     ambiances.insert(obj, { filter: false });
   },
   editAmbiance: function (args) {
-    var loggedInUser = Meteor.user()
+    // var loggedInUser = Meteor.user()
 
-    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
-      throw new Meteor.Error(403, "Access denied")
-    }
+    // if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+    //   throw new Meteor.Error(403, "Access denied")
+    // }
     // console.log("editAmbiance", args);
     ambiances.update(args._id, 
       { $set: args.obj },
@@ -1111,3 +1112,23 @@ Meteor.methods({
   }
 
 });
+
+Meteor.startup(() => {
+  // insert vital stuff in the dbs at startup
+  // if the dbs are empty.
+
+
+console.log("hello")
+console.log(ContenusEcran.find().fetch())
+if (ContenusEcran.find().fetch().length == 0) {
+  // there is no data yet! let's insert fixtures
+  // var contenuNom = $('#json-name').val().trim();
+  // var contenuText = $('#text-raw').val().trim();
+  // var contenuData = allData.data;
+  // var contenuDataPupitre = allData.dataPupitre;
+  // console.log('nom', contenuNom, typeof contenuNom, 'data result', contenuData, typeof contenuData, contenuDataPupitre, typeof contenuDataPupitre, contenuText, typeof contenuText);
+  // Meteor.call('newContenuEcran', {name: contenuNom, data: contenuData, dataPupitre: contenuDataPupitre, text: contenuText});
+  console.log("data is empty, you'd better fix that quick")
+
+}
+})

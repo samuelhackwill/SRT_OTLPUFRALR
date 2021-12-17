@@ -20,7 +20,7 @@ Template.spectacle.onCreated(function() {
 
 Template.spectacle.onRendered(function () {
 
-  allLang = TAPi18n.getLanguages()
+  allLang = {fr:{en: "French (France)", name: "Français"}, en:{en: "English", name: "Deutsch"}, nl:{en:"Dutch", name:"Nederlands"}}
   currentLang = TAPi18n.getLanguage()
 
 

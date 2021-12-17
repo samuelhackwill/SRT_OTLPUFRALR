@@ -1,7 +1,7 @@
 nextIsBlackPupitre = false
 nextIsBlackAdmin = false
 
-compteur = -1
+compteur = 0
 compteurPupitre = -1
 
 interrupt = false
