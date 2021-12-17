@@ -12,7 +12,7 @@ Template.spectacle.onCreated(function() {
     this.subscribe('allRepresentations');
     this.subscribe('allContenusEcran');
     this.subscribe('allLoteries');
-    TAPi18n.setLanguage("fr");
+    // TAPi18n.setLanguage("fr");
   });
 
 });
@@ -730,9 +730,9 @@ Template.spectacle.events({
     }
     cookies.set("user_lan", Object.keys(allLang)[currentLangIndex])
 
-    if(getSuperGlobal("powerToThePeople")==true){
+    // if(getSuperGlobal("powerToThePeople")==true){
       next()
-    }
+    // }
   },
 
   'click #cuppasInc': function(){
