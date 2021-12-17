@@ -416,190 +416,190 @@ function showMeTheButtons(){
   var selectedStream = null;
 
   // Initialize the library (all console debuggers enabled)
-  Janus.init({debug: "all", callback: function() {
+  // Janus.init({debug: "all", callback: function() {
     
-    console.log('Janus initiated.');
+  //   console.log('Janus initiated.');
 
-    // Use a button to start the demo
-    // $('#start').click(function() {
-    if(started)
-      return;
-    started = true;
+  //   // Use a button to start the demo
+  //   // $('#start').click(function() {
+  //   if(started)
+  //     return;
+  //   started = true;
 
-    // $(this).attr('disabled', true).unbind('click');
-    // Make sure the browser supports WebRTC
+  //   // $(this).attr('disabled', true).unbind('click');
+  //   // Make sure the browser supports WebRTC
 
-    if(!Janus.isWebrtcSupported()) {
-      console.log("No WebRTC support... ");
-      return;
-    }
+  //   if(!Janus.isWebrtcSupported()) {
+  //     console.log("No WebRTC support... ");
+  //     return;
+  //   }
     
-    console.log('WebRTC is supported.');
-    console.log('Creating Janus Session...');
-    // Create session
-    janus = new Janus({
-      server: server,
-      success: function() {
-        // Attach to streaming plugin
-        janus.attach({
-          plugin: "janus.plugin.streaming",
-          success: function(pluginHandle) {
-            // $('#details').remove();
-            streaming = pluginHandle;
-            Janus.log("Plugin attached! (" + streaming.getPlugin() + ", id=" + streaming.getId() + ")");
-            console.log("Plugin attached! (" + streaming.getPlugin() + ", id=" + streaming.getId() + ")");
-            // Setup streaming session
-            // $('#update-streams').click(updateStreamsList);
-            // updateStreamsList();
-            //janus.destroy();
-              //si le pouvoir est déjà aux mains de l'admin lancons le stream au chargement de la page
-              // var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
-              // var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
-              var isPowerToThePeople = getSuperGlobal("powerToThePeople", false); // par défaut false, admin a le pouvoir -> donc lancer le stream (?)
-              if(!isPowerToThePeople) {
-                console.log("le pouvoir est déjà aux mains de l'admin lancons le stream au chargement de la page");
-                startTheStream();
-              }
+  //   console.log('WebRTC is supported.');
+  //   console.log('Creating Janus Session...');
+  //   // Create session
+  //   janus = new Janus({
+  //     server: server,
+  //     success: function() {
+  //       // Attach to streaming plugin
+  //       janus.attach({
+  //         plugin: "janus.plugin.streaming",
+  //         success: function(pluginHandle) {
+  //           // $('#details').remove();
+  //           streaming = pluginHandle;
+  //           Janus.log("Plugin attached! (" + streaming.getPlugin() + ", id=" + streaming.getId() + ")");
+  //           console.log("Plugin attached! (" + streaming.getPlugin() + ", id=" + streaming.getId() + ")");
+  //           // Setup streaming session
+  //           // $('#update-streams').click(updateStreamsList);
+  //           // updateStreamsList();
+  //           //janus.destroy();
+  //             //si le pouvoir est déjà aux mains de l'admin lancons le stream au chargement de la page
+  //             // var powerToThePeople = superGlobals.findOne({ powerToThePeople: { $exists: true}});
+  //             // var isPowerToThePeople = (powerToThePeople) ? powerToThePeople.powerToThePeople : true;
+  //             var isPowerToThePeople = getSuperGlobal("powerToThePeople", false); // par défaut false, admin a le pouvoir -> donc lancer le stream (?)
+  //             if(!isPowerToThePeople) {
+  //               console.log("le pouvoir est déjà aux mains de l'admin lancons le stream au chargement de la page");
+  //               startTheStream();
+  //             }
 
-          },
-          error: function(error) {
-            Janus.error("  -- Error attaching plugin... ", error);
-            console.log("Error attaching plugin... " + error);
-          },
-          onmessage: function(msg, jsep) {
-            Janus.debug(" ::: Got a message :::");
-            Janus.debug(JSON.stringify(msg));
-            var result = msg["result"];
-            if(result !== null && result !== undefined) {
-              if(result["status"] !== undefined && result["status"] !== null) {
-                var status = result["status"];
-                if(status === 'starting')
-                  console.log("Message : Starting, please wait...");
-                  // $('#status').removeClass('hide').text("Starting, please wait...").show();
-                else if(status === 'started')
-                  console.log("Message : Started");
-                  // $('#status').removeClass('hide').text("Started").show();
-                else if(status === 'stopped')
-                  stopStream();
-              }
-            } else if(msg["error"] !== undefined && msg["error"] !== null) {
-              console.log("Message : "+msg["error"]);
-              stopStream();
-              return;
-            }
-            if(jsep !== undefined && jsep !== null) {
-              Janus.debug("Handling SDP as well...");
-              Janus.debug(jsep);
-              // Answer
-              streaming.createAnswer({
-                jsep: jsep,
-                media: { audioSend: false, videoSend: false },  // We want recvonly audio/video
-                success: function(jsep) {
-                  Janus.debug("Got SDP!");
-                  Janus.debug(jsep);
-                  var body = { "request": "start" };
-                  streaming.send({"message": body, "jsep": jsep});
-                  // $('#watch').html("Stop").removeAttr('disabled').click(stopStream);
-                },
-                error: function(error) {
-                  Janus.error("WebRTC error:", error);
-                  console.log("WebRTC error... " + JSON.stringify(error));
-                }
-              });
-            }
-          },
-          onremotestream: function(stream) {
-            Janus.debug(" ::: Got a remote stream :::");
-            console.log(" ::: Got a remote stream :::");
-            console.log(JSON.stringify(stream));
-            Janus.debug(JSON.stringify(stream));
-            // if($('#remotevideo').length === 0)
-            //   $('#stream').append('<video class="rounded centered hide" id="remotevideo" width=320 height=240 autoplay/>');
-            // Show the stream and hide the spinner when we get a playing event
-            // $("#remotevideo").bind("playing", function () {
-            //   $('#waitingvideo').remove();
-            //   $('#remotevideo').removeClass('hide');
-            //   if(spinner !== null && spinner !== undefined)
-            //     spinner.stop();
-            //   spinner = null;
-            // });
-            // Janus.attachMediaStream($('#remotevideo').get(0), stream);
-            console.log($('#stream-video'), $('#stream-video').get(0));
-            Janus.attachMediaStream($('#stream-video').get(0), stream);
-            //todo is video paused ?
+  //         },
+  //         error: function(error) {
+  //           Janus.error("  -- Error attaching plugin... ", error);
+  //           console.log("Error attaching plugin... " + error);
+  //         },
+  //         onmessage: function(msg, jsep) {
+  //           Janus.debug(" ::: Got a message :::");
+  //           Janus.debug(JSON.stringify(msg));
+  //           var result = msg["result"];
+  //           if(result !== null && result !== undefined) {
+  //             if(result["status"] !== undefined && result["status"] !== null) {
+  //               var status = result["status"];
+  //               if(status === 'starting')
+  //                 console.log("Message : Starting, please wait...");
+  //                 // $('#status').removeClass('hide').text("Starting, please wait...").show();
+  //               else if(status === 'started')
+  //                 console.log("Message : Started");
+  //                 // $('#status').removeClass('hide').text("Started").show();
+  //               else if(status === 'stopped')
+  //                 stopStream();
+  //             }
+  //           } else if(msg["error"] !== undefined && msg["error"] !== null) {
+  //             console.log("Message : "+msg["error"]);
+  //             stopStream();
+  //             return;
+  //           }
+  //           if(jsep !== undefined && jsep !== null) {
+  //             Janus.debug("Handling SDP as well...");
+  //             Janus.debug(jsep);
+  //             // Answer
+  //             streaming.createAnswer({
+  //               jsep: jsep,
+  //               media: { audioSend: false, videoSend: false },  // We want recvonly audio/video
+  //               success: function(jsep) {
+  //                 Janus.debug("Got SDP!");
+  //                 Janus.debug(jsep);
+  //                 var body = { "request": "start" };
+  //                 streaming.send({"message": body, "jsep": jsep});
+  //                 // $('#watch').html("Stop").removeAttr('disabled').click(stopStream);
+  //               },
+  //               error: function(error) {
+  //                 Janus.error("WebRTC error:", error);
+  //                 console.log("WebRTC error... " + JSON.stringify(error));
+  //               }
+  //             });
+  //           }
+  //         },
+  //         onremotestream: function(stream) {
+  //           Janus.debug(" ::: Got a remote stream :::");
+  //           console.log(" ::: Got a remote stream :::");
+  //           console.log(JSON.stringify(stream));
+  //           Janus.debug(JSON.stringify(stream));
+  //           // if($('#remotevideo').length === 0)
+  //           //   $('#stream').append('<video class="rounded centered hide" id="remotevideo" width=320 height=240 autoplay/>');
+  //           // Show the stream and hide the spinner when we get a playing event
+  //           // $("#remotevideo").bind("playing", function () {
+  //           //   $('#waitingvideo').remove();
+  //           //   $('#remotevideo').removeClass('hide');
+  //           //   if(spinner !== null && spinner !== undefined)
+  //           //     spinner.stop();
+  //           //   spinner = null;
+  //           // });
+  //           // Janus.attachMediaStream($('#remotevideo').get(0), stream);
+  //           console.log($('#stream-video'), $('#stream-video').get(0));
+  //           Janus.attachMediaStream($('#stream-video').get(0), stream);
+  //           //todo is video paused ?
 
-            setTimeout(function(){
+  //           setTimeout(function(){
 
-              if(streamPlaying == false && $('#stream-video').get(0).paused) { // la video (le stream) n'a pas démarré, pb autorisation autoplay?
-                $('#stream-error').append("Hmm on dirait que votre navigateur a besoin de votre autorisation pour lancer le flux audio. Pour lui dire que c'est ok, Veuillez cliquer ici <a href=\"javascript:void(0);\" class=\"reload\" title=\"Lancer le stream audio\" onclick=\"$('#stream-video').get(0).play();$('#stream-error').empty();\">Démarrer le stream</a>");
-                streamPlaying = true;
-              }
+  //             if(streamPlaying == false && $('#stream-video').get(0).paused) { // la video (le stream) n'a pas démarré, pb autorisation autoplay?
+  //               $('#stream-error').append("Hmm on dirait que votre navigateur a besoin de votre autorisation pour lancer le flux audio. Pour lui dire que c'est ok, Veuillez cliquer ici <a href=\"javascript:void(0);\" class=\"reload\" title=\"Lancer le stream audio\" onclick=\"$('#stream-video').get(0).play();$('#stream-error').empty();\">Démarrer le stream</a>");
+  //               streamPlaying = true;
+  //             }
           
-            }, 5000);
-          },
-          oncleanup: function() {
-            Janus.log(" ::: Got a cleanup notification :::");
-            // $('#waitingvideo').remove();
-            // $('#remotevideo').remove();
-          }
-        });
-      },
-      error: function(error) {
-        Janus.error(error);
-        console.log("ERROR !!! :"+error);
-        // var body = { "request": "stop" };
-        // streaming.send({"message": body});
-        // streaming.hangup();
-        //TODO setTimeout hangup + setTimeout request watch à nouveau? à tester en régie avec lieven
-        // bootbox.alert(error, function() {
-        //   window.location.reload();
-        // });
-        var waitBeforeReload = 10 //secondes;
-        switch(currentLang){
-          case "fr":
-          $('#stream-error').append("Il semble que la connection avec le serveur a été perdue. La page va se recharger dans <span>"+waitBeforeReload+" seconde(s)</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
-          break;
+  //           }, 5000);
+  //         },
+  //         oncleanup: function() {
+  //           Janus.log(" ::: Got a cleanup notification :::");
+  //           // $('#waitingvideo').remove();
+  //           // $('#remotevideo').remove();
+  //         }
+  //       });
+  //     },
+  //     error: function(error) {
+  //       Janus.error(error);
+  //       console.log("ERROR !!! :"+error);
+  //       // var body = { "request": "stop" };
+  //       // streaming.send({"message": body});
+  //       // streaming.hangup();
+  //       //TODO setTimeout hangup + setTimeout request watch à nouveau? à tester en régie avec lieven
+  //       // bootbox.alert(error, function() {
+  //       //   window.location.reload();
+  //       // });
+  //       var waitBeforeReload = 10 //secondes;
+  //       switch(currentLang){
+  //         case "fr":
+  //         $('#stream-error').append("Il semble que la connection avec le serveur a été perdue. La page va se recharger dans <span>"+waitBeforeReload+" seconde(s)</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
+  //         break;
 
-          case "en":
-          $('#stream-error').append("It looks like we've lost connection with the server. Page reloading in <span>"+waitBeforeReload+" second(s)</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
-          break;
+  //         case "en":
+  //         $('#stream-error').append("It looks like we've lost connection with the server. Page reloading in <span>"+waitBeforeReload+" second(s)</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
+  //         break;
 
-          case "de":
-          $('#stream-error').append("It looks like we've lost connection with the server. Page reloading in <span>"+waitBeforeReload+" second(s)</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
-          break;
+  //         case "de":
+  //         $('#stream-error').append("It looks like we've lost connection with the server. Page reloading in <span>"+waitBeforeReload+" second(s)</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
+  //         break;
 
-          case "nl":
-          $('#stream-error').append("It looks like we've lost connection with the server. Page reloading in <span>"+waitBeforeReload+" second(s)</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
-          break;
-        }
+  //         case "nl":
+  //         $('#stream-error').append("It looks like we've lost connection with the server. Page reloading in <span>"+waitBeforeReload+" second(s)</span>. (<a href=\"javascript:void(0);\" class=\"reload\" title=\"Annuler le rechargement\">Recharger maintenant</a> ou <a href=\"javascript:void(0);\" class=\"cancel\" title=\"Annuler le rechargement\">Annuler</a>)");
+  //         break;
+  //       }
 
-        $('#stream-error a.reload').click(function(){
-          console.log("Manual page reload.");
-          window.location.reload();
-        });
-        $('#stream-error a.cancel').click(function(){
-          console.log("cancelling auto page reload.");
-          clearInterval(intervalReload);
-          $('#stream-error').empty(); //vider l'élément d'erreur
-        });
-        var count = waitBeforeReload;
-        intervalReload = setInterval(function(){
-          $('#stream-error').find('span').text(count == 1 ? count+" seconde" : count+" secondes");
-          count -= 1;
-          if (count === 0){
-            clearInterval(intervalReload); // Stopping the counter when reaching 0.
-            console.log("Stream error reloading");
-            window.location.reload();
-          }
-        }, 1000);
+  //       $('#stream-error a.reload').click(function(){
+  //         console.log("Manual page reload.");
+  //         window.location.reload();
+  //       });
+  //       $('#stream-error a.cancel').click(function(){
+  //         console.log("cancelling auto page reload.");
+  //         clearInterval(intervalReload);
+  //         $('#stream-error').empty(); //vider l'élément d'erreur
+  //       });
+  //       var count = waitBeforeReload;
+  //       intervalReload = setInterval(function(){
+  //         $('#stream-error').find('span').text(count == 1 ? count+" seconde" : count+" secondes");
+  //         count -= 1;
+  //         if (count === 0){
+  //           clearInterval(intervalReload); // Stopping the counter when reaching 0.
+  //           console.log("Stream error reloading");
+  //           window.location.reload();
+  //         }
+  //       }, 1000);
 
-      },
-      destroyed: function() {
-        console.log("destroyed");
-        window.location.reload();
-      }
-    });
-  }});
+  //     },
+  //     destroyed: function() {
+  //       console.log("destroyed");
+  //       window.location.reload();
+  //     }
+  //   });
+  // }});
 
   
   $(document.body).on('keyup', function(e) {
