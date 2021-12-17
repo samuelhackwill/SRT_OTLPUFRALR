@@ -123,15 +123,15 @@ next = function(){
     }
 
     if((type=="text")&&($.isArray(params))){
-      // console.log("params ", params)
+      console.log("params ", params)
       $("#srt").html("")
 
 
 // VERSION BILINGUE
       for (var i = 0; i < params.length; i++) {
         for(k=balisesVue.length-1; k>=0 ; k--){
-          // console.log("balisesVue[k]", balisesVue[k])
-          // console.log("data[compteur].text", params)
+          console.log("balisesVue[k]", balisesVue[k])
+          console.log("data[compteur].text", params)
           if(params[i].hasOwnProperty(balisesVue[k])) {
             
 
