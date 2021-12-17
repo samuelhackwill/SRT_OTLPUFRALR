@@ -56,4 +56,30 @@ if there's a lot of text, it can take some time (a few seconds). If everything w
 open an admin view by navigating to localhost:3000/admin
 open a subtitling view by navigating to localhost:3000
 
-chose your language in the subtitling view 
+chose your language in the subtitling view.
+
+the admin can move in the text by pressing "n" (next) "b" (back), or by entering the index of a specific line (in compteur <x> change)
+
+## CONFIGURATION
+
+# languages
+you can change the number of available languages in spectacle.js (/client/components/spectacle.js) line 23
+
+default is
+```
+allLang = TAPi18n.getLanguages()
+```
+for french, english, german, dutch.
+
+if you want to remove one or several langages, replace that line by :
+
+```
+allLang = {fr:{en: "French (France)", name: "Français"}, en:{en: "English", name: "English"}, nl:{en:"Dutch", name:"Nederlands"}, de:{en:"German", name:"Deutsch"}}
+```
+and remove the relevant objec. for instance, in order to remove german, you would replace the line by :
+```
+allLang = {fr:{en: "French (France)", name: "Français"}, en:{en: "English", name: "English"}, nl:{en:"Dutch", name:"Nederlands"}}
+```
+
+# css
+if you want to display the text lower, higher, bigger, etc, you should modify the class "srt" in app.css (/client/app.css), line 868.
