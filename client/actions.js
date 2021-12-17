@@ -170,12 +170,12 @@ back = function(){
   }
 
   if((type=="text")&&(params!="")){
-    document.getElementById("srt").innerHTML = params
+    // document.getElementById("srt").innerHTML = params
     // pis si la balise c'est pas une action et pas une balise de texte vide, met a jour le texte
     // bon ben c'est ici qu'il faudrait faire un truc
     if(params=="***"){
       // ça c'est pour caler des blancs
-      document.getElementById("srt").innerHTML = ""
+      // document.getElementById("srt").innerHTML = ""
     }
   }
 }
