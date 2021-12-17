@@ -24,6 +24,9 @@ then paste your text, or the initialization text, in the window.
 ***
 %%% THIS IS A COMMENT
 %%% BEWARE : ABSOLUTELY RESPECT THIS STYLE OR EVERYTHING WILL BREAK
+%%% un bloc de texte doit commencer avec trois astérisques et se terminer avec trois astérisques.
+%%% les commentaires se font au début d'un bloc de texte et nul part ailleurs.
+%%% une ligne en français commence avec "FR_SALM", en anglais "EN_SALM", en allemand "DE_SALM", en hollandais "NL_SALM".
 #FR_SALM TEST OK (will not be displayed)
 #NL_SALM TEST OK (will not be displayed)
 #EN_SALM TEST OK (will not be displayed)
