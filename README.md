@@ -6,7 +6,7 @@ clone this repo locally
 
 `git clone -b surtitrage https://github.com/samuelhackwill/SRT_OTLPUFRALR/`
 
-to launch the app, navigate to folder
+then navigate to folder
 
 `cd SRT_OTLPUFRALR`
 
@@ -18,7 +18,7 @@ and launch meteor locally
 
 open a data view by navigating to [localhost:3000/data](localhost:3000/data)
 
-then paste your text, or the initialization text, in the window.
+then paste your text, or the initialization text bellow, in the empty textarea.
 
 ```
 ***
@@ -50,9 +50,9 @@ then paste your text, or the initialization text, in the window.
 ```
 
 then press "Mouline !"
-and "Enregistre ça".
+and "Enregistre ça". (don't try deleting the old collection first, it's not required ; also it's broken)
 
-if there's a lot of text, it can take some time (a few seconds). If everything went fine, you should see data appearing in the lower part of the page (scroll if necessary).
+if there's a lot of text, it can take some time to load (a few seconds). If everything went fine, you should see data appearing in the lower part of the page (scroll if necessary).
 
 ## USAGE
 
