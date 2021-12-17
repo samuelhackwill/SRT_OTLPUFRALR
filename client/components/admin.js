@@ -497,8 +497,8 @@ Template.admin.onRendered(function () {
 
     e = e || window.event
     // KEYCIODE 78 IS "n"
-    var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
-    if(!isItPowerToThePeople) {
+    //var isItPowerToThePeople = getSuperGlobal("powerToThePeople");
+    //if(!isItPowerToThePeople) {
       if(e.keyCode =='78' && compteur < data.length-1){
         // window.clearTimeout(autonextcontainer)
         // compteur +=1
@@ -529,7 +529,7 @@ Template.admin.onRendered(function () {
       document.getElementById("pagu").style.cursor = "pointer"
     }
     */
-  }
+  //}
 }
 
 });
