@@ -4,19 +4,25 @@
 
 clone this repo locally
 
-`git clone -b surtitrage https://github.com/samuelhackwill/SRT_OTLPUFRALR/`
+``` bash
+git clone -b surtitrage https://github.com/samuelhackwill/SRT_OTLPUFRALR/
+```
 
 to launch the app, navigate to folder
 
-`cd SRT_OTLPUFRALR`
+``` bash
+cd SRT_OTLPUFRALR
+```
 
 and launch meteor locally
 
-`NODE_TLS_REJECT_UNAUTHORIZED=0 meteor`
+``` bash
+NODE_TLS_REJECT_UNAUTHORIZED=0 meteor
+```
 
 ## INITIALIZATION
 
-open a data view by navigating to localhost:3000/data
+open a data view by navigating to (localhost:3000/data)[localhost:3000/data]
 
 then paste your text, or the initialization text, in the window.
 
@@ -66,18 +72,18 @@ the admin can move in the text by pressing "n" (next) "b" (back), or by entering
 you can change the number of available languages in spectacle.js (/client/components/spectacle.js) line 23
 
 default is
-```
+``` javascript
 allLang = TAPi18n.getLanguages()
 ```
 for french, english, german, dutch.
 
 if you want to remove one or several langages, replace that line by :
 
-```
+``` javascript
 allLang = {fr:{en: "French (France)", name: "Français"}, en:{en: "English", name: "English"}, nl:{en:"Dutch", name:"Nederlands"}, de:{en:"German", name:"Deutsch"}}
 ```
 and remove the relevant objec. for instance, in order to remove german, you would replace the line by :
-```
+``` javascript
 allLang = {fr:{en: "French (France)", name: "Français"}, en:{en: "English", name: "English"}, nl:{en:"Dutch", name:"Nederlands"}}
 ```
 
