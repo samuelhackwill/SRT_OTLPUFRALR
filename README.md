@@ -4,25 +4,19 @@
 
 clone this repo locally
 
-``` bash
-git clone -b surtitrage https://github.com/samuelhackwill/SRT_OTLPUFRALR/
-```
+`git clone -b surtitrage https://github.com/samuelhackwill/SRT_OTLPUFRALR/`
 
 to launch the app, navigate to folder
 
-``` bash
-cd SRT_OTLPUFRALR
-```
+`cd SRT_OTLPUFRALR`
 
 and launch meteor locally
 
-``` bash
-NODE_TLS_REJECT_UNAUTHORIZED=0 meteor
-```
+`NODE_TLS_REJECT_UNAUTHORIZED=0 meteor`
 
 ## INITIALIZATION
 
-open a data view by navigating to (localhost:3000/data)[localhost:3000/data]
+open a data view by navigating to [localhost:3000/data](localhost:3000/data)
 
 then paste your text, or the initialization text, in the window.
 
@@ -59,8 +53,8 @@ if there's a lot of text, it can take some time (a few seconds). If everything w
 
 ## USAGE
 
-open an admin view by navigating to localhost:3000/admin
-open a subtitling view by navigating to localhost:3000
+open an admin view by navigating to [localhost:3000/admin](localhost:3000/admin)
+open a subtitling view by navigating to [localhost:3000](localhost:3000)
 
 chose your language in the subtitling view.
 
