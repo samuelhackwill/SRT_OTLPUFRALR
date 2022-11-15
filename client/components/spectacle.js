@@ -94,19 +94,19 @@ Template.spectacle.onRendered(function () {
     console.log("show bord plateau client!")
       switch(TAPi18n.getLanguage()){
         case "fr":
-          $("<div>"+"Si vous voulez rester avec nous, ce soir il y a un bord plateau : Vous pouvez envoyer des questions / remarques au numéro de Jacques <br/> +33 7 81 89 76 86"+"/</div>").appendTo("#phoneNumberSrt")
+          $("<div>"+"Si vous voulez rester avec nous, ce soir il y a un bord plateau : Vous pouvez envoyer des questions / remarques au numéro de Jacques <br/> +33 (0)7 49 36 55 77"+"/</div>").appendTo("#phoneNumberSrt")
           break
 
         case "nl":
-          $("<div>"+"Si vous voulez rester avec nous, ce soir il y a un bord plateau : Vous pouvez envoyer des questions / remarques au numéro de Jacques <br/> +33 7 81 89 76 86"+"</div>").appendTo("#phoneNumberSrt")
+          $("<div>"+"Si vous voulez rester avec nous, ce soir il y a un bord plateau : Vous pouvez envoyer des questions / remarques au numéro de Jacques <br/> +33 (0)7 49 36 55 77"+"</div>").appendTo("#phoneNumberSrt")
           break
 
         case "de":
-          $("<div>"+"Si vous voulez rester avec nous, ce soir il y a un bord plateau : Vous pouvez envoyer des questions / remarques au numéro de Jacques <br/> +33 7 81 89 76 86"+"</div>").appendTo("#phoneNumberSrt")
+          $("<div>"+"Si vous voulez rester avec nous, ce soir il y a un bord plateau : Vous pouvez envoyer des questions / remarques au numéro de Jacques <br/> +33 (0)7 49 36 55 77"+"</div>").appendTo("#phoneNumberSrt")
           break
 
         case "en":
-          $("<div>"+"Si vous voulez rester avec nous, ce soir il y a un bord plateau : Vous pouvez envoyer des questions / remarques au numéro de Jacques <br/> +33 7 81 89 76 86"+"</div>").appendTo("#phoneNumberSrt")
+          $("<div>"+"Si vous voulez rester avec nous, ce soir il y a un bord plateau : Vous pouvez envoyer des questions / remarques au numéro de Jacques <br/> +33 (0)7 49 36 55 77"+"</div>").appendTo("#phoneNumberSrt")
           break
       }
   });
@@ -116,19 +116,19 @@ Template.spectacle.onRendered(function () {
       console.log("DEPRECATED ASKIP?")
       switch(TAPi18n.getLanguage()){
         case "fr":
-          $("<div>"+"Appelez ce numéro : <br /> + 33 (0)7 49 02 92 24 <br />(Et coupez le son de votre ordinateur! <br/>Sinon ça va faire des sons bizarres)."+"<br/</div>").appendTo("#phoneNumberSrt")
+          $("<div>"+"Appelez ce numéro : <br /> + 33 (0)7 49 36 55 77 <br />(Et coupez le son de votre ordinateur! <br/>Sinon ça va faire des sons bizarres)."+"<br/</div>").appendTo("#phoneNumberSrt")
           break
 
         case "nl":
-          $("<div>"+"Bel dit nummer : <br /> +33 7 49 02 92 24 <br/> (En schakel het geluid van jullie computer uit! Anders horen we allerlei rare geluiden)."+"<br/</div>").appendTo("#phoneNumberSrt")
+          $("<div>"+"Bel dit nummer : <br /> +33 7 49 36 55 77 <br/> (En schakel het geluid van jullie computer uit! Anders horen we allerlei rare geluiden)."+"<br/</div>").appendTo("#phoneNumberSrt")
           break
 
         case "de":
-          $("<div>"+"Rufen Sie unter dieser Nummer an : <br /> +33 7 49 02 92 24 <br/> (Und schalten Sie Ihren Computer stumm! Sonst gibt es komische Geräusche.)"+"<br/</div>").appendTo("#phoneNumberSrt")
+          $("<div>"+"Rufen Sie unter dieser Nummer an : <br /> +33 7 49 36 55 77 <br/> (Und schalten Sie Ihren Computer stumm! Sonst gibt es komische Geräusche.)"+"<br/</div>").appendTo("#phoneNumberSrt")
           break
 
         case "en":
-          $("<div>"+"Call this number : <br /> +33 7 49 02 92 24 <br/> (And cut the sound on your computer\! Otherwise it\’ll make weird noises)"+"<br/</div>").appendTo("#phoneNumberSrt")
+          $("<div>"+"Call this number : <br /> +33 7 49 36 55 77 <br/> (And cut the sound on your computer\! Otherwise it\’ll make weird noises)"+"<br/</div>").appendTo("#phoneNumberSrt")
           break
       }
 });

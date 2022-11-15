@@ -114,10 +114,6 @@ Template.plateau.onRendered(function () {
 Template.plateau.events({
 
   'click #Seb' : function(){
-    if(loteries.findOne()){
-      $('#Seb').val(loteries.findOne().ids.length + " SALMs")
-  }else{
-    $('#Seb').val("euh ben y'a personne pour le moment")
-  }
+      $('#Seb').val(getSuperGlobal("countJoined") + " SALMs")
   }
 })
