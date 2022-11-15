@@ -27,7 +27,7 @@ module.exports = {
     env: {
       PORT: 3003,
       ROOT_URL: 'http://ontraverseralepont.com',
-      MONGO_URL: 'mongodb://localhost:27017/lepontprod'
+      MONGO_URL: 'mongodb://localhost:27017/lepontprod',
     },
 
     //dockerImage: 'kadirahq/meteord'
@@ -41,3 +41,12 @@ module.exports = {
     },
   },
 };
+
+// note à moi même :
+// si on peine à deploy cette saleté, 
+// lancer le deploy comme ça :
+
+//       "NODE_TLS_REJECT_UNAUTHORIZED": "0" mup deploy
+// en utilisant le mac mini de samuel.
+
+// mais aussi un jour il faudra mettre à jour meteor peut être.
