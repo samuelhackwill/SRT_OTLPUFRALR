@@ -568,6 +568,11 @@ finishCuppa = function(e){
   console.log("finishCuppa?",buchesAllumees);
   if(buchesAllumees < 6){
    em.emit('salmFinishCuppa');
+
+// auto change ambiance   
+    em.setClient({ newAmbiance : "b"+buchesAllumees, newTransition : 1});
+    em.emit("new_ambiance")
+
   }
  }
 }
