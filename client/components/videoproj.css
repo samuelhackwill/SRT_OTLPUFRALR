@@ -16,7 +16,7 @@ ul.admin_menu li:last-child:after {
 
 /* videoproj */
 
-body.videoproj {
+body.videoproj{
   border-style:solid;
   border-color:black;
   border-width:10px;
@@ -49,5 +49,5 @@ body.videoproj #srt{
 }
 
 body.videoproj .posmid{
-  top:55% !important;
+  top:45% !important;
 }
