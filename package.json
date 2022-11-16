@@ -18,7 +18,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "meteor": "NODE_TLS_REJECT_UNAUTHORIZED=0 meteor",
-    "deploy": "meteor setup && NODE_TLS_REJECT_UNAUTHORIZED=0 meteor deploy"
+    "deploy": "cd ./.deploy_prod && mup setup && NODE_TLS_REJECT_UNAUTHORIZED=0 mup deploy"
   },
   "repository": {
     "type": "git",
