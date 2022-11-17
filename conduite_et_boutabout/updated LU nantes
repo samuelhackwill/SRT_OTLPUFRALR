@@ -3800,6 +3800,7 @@ Geste dynamique de Jacques qui lance le jingle
 #EN the sound of the rain falling on the canvas.
 #DE Wie der Regen auf die Plane prasselt.
 ***
+#bookmark DODO
 #FR_CYCLO Brigade, Samuel et Jacques s'endorment, bercés par le rythme des gouttes
 ***
 #FR_CYCLO les spectateurs et spectatrices au théâtre s'endorment aussi  
@@ -4816,11 +4817,7 @@ Geste dynamique de Jacques qui lance le jingle
 #DE_SAT   
 #EN_SAT    
 ***
-// Sous titres uniquement pour les auditeurs — (ECRIT)
-
-// euh attends hé ho c'est NL_INTR ou NL_SALM la balise là? voir en intro
-// parce que y'a eu un mec pour qui les subtitles étaient qu'en anglais mvoyez
-
+#bookmark TxtFin
 #FR_INTR C’EST FINIIIII
 #NL_SALM HET IS AFGELOPEN!!!
 #EN_SALM IT’S OVERRR
