@@ -573,7 +573,6 @@ finishCuppa = function(e){
     // em.setClient({ newAmbiance : "b"+buchesAllumees, newTransition : 1});
     // em.emit("new_ambiance")
 
->>>>>>> strasbourg
   }
  }
 }
