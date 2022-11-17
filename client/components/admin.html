@@ -34,7 +34,7 @@
     </div>
 
 
-    <div class="row">
+    <!--<div class="row">
         <h2>Téléphones <button data-toggle="collapse" data-target="#phones">▾</button></h2>
 
         <div id="phones" class="collapse">
@@ -43,7 +43,7 @@
                 {{> phonesList}}
           </div>
         </div>
-    </div>
+    </div>-->
 
 
     <div class="row">
@@ -307,7 +307,7 @@
     </div>
 
 
-    <div class="col-lg-4 col-md-6 col-xs-12 text-left">
+    <div class="col-lg-4 col-md-6 col-xs-12 text-left" id="showtime-right">
 
     <input type="button" class="actions" id="startONHLottery" value="startONHLottery">
 <!--     <input type="button" class="actions" id="hideButtons" value="Hide Buttons">
@@ -369,7 +369,7 @@
       <input type="button" id="fakeCuppasInc" value="inc cuppas">
       <input type="button" id="fakeCuppasFinished" value="finish a cup"><br />
       {{#each dataArray buchesArray}}
-        <img id="buche-{{@index}}" src="wooden-log{{#if equals this.value true}}-burning{{/if}}.svg" width="32" />
+        <img id="buche-{{@index}}" src="/wooden-log{{#if equals this.value true}}-burning{{/if}}.svg" width="32" />
       {{/each}}
     </div>
 

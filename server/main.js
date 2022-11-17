@@ -531,33 +531,33 @@ Meteor.methods({
           var nbBuches = 6;
           var buches = superGlobals.findOne({ buchesCount: { $exists: true}});
           if(buches){
-            console.log('il y a des buches', buches);
+            // console.log('il y a des buches', buches);
             var buchesArray = buches.buchesCount; 
-            console.log('le tableau de buches', buchesArray);
+            // console.log('le tableau de buches', buchesArray);
             if(buchesArray && buchesArray.length > 0 && buchesArray.length <= nbBuches) {
               var buchesAllumees = buchesArray.filter(function(buche){ return buche; }).length;
-              console.log("buches déjà allumées", buchesAllumees);
+              // console.log("buches déjà allumées", buchesAllumees);
 
               //get cuppasCount - volontaires en cours
               var cuppasCount = superGlobals.findOne({ cuppasCount: { $exists: true}});
               var theCuppasCount = (cuppasCount) ? cuppasCount.cuppasCount : 0;
               var nextBuche = superGlobals.findOne({ nextBucheAllumage: { $exists: true}});
               var nextBucheAllumage = (nextBuche) ? nextBuche.nextBucheAllumage : 0;
-              console.log("theCuppasCount", theCuppasCount);
-              console.log("nextBucheAllumage", nextBucheAllumage);
+              // console.log("theCuppasCount", theCuppasCount);
+              // console.log("nextBucheAllumage", nextBucheAllumage);
               if(null != nextBucheAllumage && nextBucheAllumage == 0) { //on a atteint le nombre voulu pour le prochain allumage
                 console.log("on a atteint le nombre voulu pour le prochain allumage");
                 //calculons le prochain pas / décompte à atteindre pour allumer une bûche
                 // var coeffRandom = getRandomArbitrary(0.2,1.8);
                 var coeffRandom = getRandomArbitrary(0.3,3);
-                console.log("coeffRandom", coeffRandom);
+                // console.log("coeffRandom", coeffRandom);
                 var nbBuchRestantes = nbBuches - buchesAllumees;
                 var valPasSuivant = (nbBuchRestantes==0) ? 0 : (theCuppasCount - nbBuchRestantes) / nbBuchRestantes * coeffRandom;
-                console.log("valPasSuivant", "(theCuppasCount"+theCuppasCount+" - nbBuchRestantes"+nbBuchRestantes+") / nbBuchRestantes"+nbBuchRestantes+" * coeffRandom"+coeffRandom+" = "+valPasSuivant);
-                console.log("valPasSuivant rounded", Math.round(valPasSuivant));
+                // console.log("valPasSuivant", "(theCuppasCount"+theCuppasCount+" - nbBuchRestantes"+nbBuchRestantes+") / nbBuchRestantes"+nbBuchRestantes+" * coeffRandom"+coeffRandom+" = "+valPasSuivant);
+                // console.log("valPasSuivant rounded", Math.round(valPasSuivant));
                 //enregistrons le nouveau prochain allumage (selon le pas qui vient d'être calculé)
                 var newNextBucheAllumage = (valPasSuivant<0) ? 0 : Math.round(valPasSuivant);
-                console.log("prochain allumage", "nextBucheAllumage"+nextBucheAllumage+"-Math.round(valPasSuivant)"+Math.round(valPasSuivant)+"="+newNextBucheAllumage);
+                // console.log("prochain allumage", "nextBucheAllumage"+nextBucheAllumage+"-Math.round(valPasSuivant)"+Math.round(valPasSuivant)+"="+newNextBucheAllumage);
                 superGlobals.update(nextBuche._id, { $set: { "nextBucheAllumage": newNextBucheAllumage } }, { filter: false });
                 //allumons une bûche en plus
                 var buchesCountDefault = [];
@@ -568,13 +568,16 @@ Meteor.methods({
                 //   if(i<nbBuches) buchesCountDefault[i] = true;
                 // }
                 buchesArray = buchesCountDefault;
-                console.log("buchesArray", buchesArray);
+                // console.log("buchesArray", buchesArray);
                 //mise à jour
                 superGlobals.update(buches._id, { $set: { "buchesCount": buchesArray } }, { filter: false });
                 var args = {buches: buchesAllumees+1}
+
+                console.log("il reste combien de buches à allumer? ", nbBuchRestantes)
+
                 em.emit('adminFireBuche', args);
               } else {
-                console.log("on a pas encore atteint le prochain allumage");
+                // console.log("on a pas encore atteint le prochain allumage");
               }
               //dans tous les cas, quelqu'un a fini de préparer un thé, décrémentons le nombre de tasses
               Meteor.call('setSuperGlobal', {name: 'cuppasDec'});

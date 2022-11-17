@@ -28,6 +28,27 @@ body.admin{
 	top : 15px;
 	left: 15px;
 	height: 50px;
-width: 50px;
-z-index: 1000;
+  width: 50px;
+  z-index: 1000;
+}
+
+#showtime-right {
+  max-height: 80vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body.admin #login-buttons {
+  position: absolute;
+  right: 0;
+  padding: 2px 4px;
+}
+
+.autofill_bookmark span {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.autofill_bookmark span:hover {
+  color: blue;
 }

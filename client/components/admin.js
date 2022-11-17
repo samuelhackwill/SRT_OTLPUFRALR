@@ -66,7 +66,8 @@ Template.admin.onRendered(function () {
 
 
     var outputs = m.outputs; // outputs = MIDIOutputMaps, you can retrieve the outputs with iterators
-    input.onmidimessage = myMIDIMessagehandler; // onmidimessage( event ), event.data & event.receivedTime are populated
+    if(typeof input != 'undefined' && input.hasOwnProperty("onmidimessage")) input.onmidimessage = myMIDIMessagehandler; // onmidimessage( event ), event.data & event.receivedTime are populated
+    else console.error('input undefined and no iteratorInputs values apparently. Have you got your MIDI device plugged in ? Have you tried plugging it off and on again ? Currently input is :', input);
     var iteratorOutputs = outputs.values() // returns an iterator that loops over all outputs
     output = iteratorOutputs.next().value; // grab first output device
 
@@ -248,7 +249,11 @@ Template.admin.onRendered(function () {
         midi6: [144, 89, 127]
       }
       // output.send(buchesToMidi['midi'+buchesAllumees]);
-      output.send(buchesToMidi['midi'+what.buches]);
+      try {
+        output.send(buchesToMidi['midi'+what.buches]);
+      } catch(error) {
+        console.error('buchesToMidi midi output didn\'t work for some reason. Error :', error);
+      }
     // } else if(buchesAllumees == 0) {
     } else if(what.buches == 0) {
       console.log("buchesAllumees == 0", buchesAllumees);
