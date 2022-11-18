@@ -230,10 +230,10 @@
 #DE_INTR Drehen Sie den Ton ruhig lauter, falls Sie weiter weg sind, damit Sie Ihren Computer auch da hören.
 ***
 // l’heure _XXX_
-#FR_INTR On se retrouve vers 20H10.
-#NL_INTR We spreken opnieuw af rond 20u10.
-#EN_INTR We’ll meet back here around 2:10 pm.
-#DE_INTR Wir sprechen uns gegen 20:10 wieder.
+#FR_INTR Le spectacle au théâtre va commencer à 20H30.
+#NL_INTR We spreken opnieuw af rond 20u30.
+#EN_INTR We’ll meet back here around 2:30 pm.
+#DE_INTR Wir sprechen uns gegen 20:30 wieder.
 ***
 %%%             
 %%% INTRO SEB   
