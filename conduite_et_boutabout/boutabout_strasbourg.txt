@@ -4878,8 +4878,8 @@ Geste dynamique de Jacques qui lance le jingle
 #EN_SALM or to send us a photo of your hut (we collect them)
 #DE_SALM oder ein Foto von Ihrer Hütte (die sammeln wir nämlich),
 ***
-#FR_INTR n’hésitez pas à nous envoyer un petit e-mail à <br/>ontraverseralepont@yahoo.com
-#NL_SALM stuur ons dan zeker een e-mailberichtje naar <br/>ontraverseralepont@yahoo.com
-#EN_SALM please send us a quick email at <br/>ontraverseralepont@yahoo.com  
-#DE_SALM schicken Sie uns gern eine E-Mail an <br/>ontraverseralepont@yahoo.com
+#FR_INTR n’hésitez pas à nous envoyer un petit e-mail à <br/>lebruitdescombrailles@protonmail.com
+#NL_SALM stuur ons dan zeker een e-mailberichtje naar <br/>lebruitdescombrailles@protonmail.com
+#EN_SALM please send us a quick email at <br/>lebruitdescombrailles@protonmail.com
+#DE_SALM schicken Sie uns gern eine E-Mail an <br/>lebruitdescombrailles@protonmail.com
 ***
