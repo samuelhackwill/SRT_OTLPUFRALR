@@ -521,11 +521,24 @@ transition: opacity .3s ease-in-out
   display:none;
 }
 
+#contact{
+position: fixed;
+bottom: 10px;
+background-color: #d9edf7;
+
+font-size: 2vh;
+width: 100%;
+text-align: center;
+padding: 10px;
+
+margin: 0px;
+}
+
 
 #infoContainer{
 /*  height:50vh;
 */  
-
+  overflow-y: scroll;
   max-height:45vh;
   color: black;
   font-size: 2vh;
