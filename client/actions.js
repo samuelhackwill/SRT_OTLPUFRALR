@@ -528,7 +528,7 @@ finishCuppa = function(e){
     areYouSureYouAreComfy=true
     switch(TAPi18n.getLanguage()){
       case "fr":
-        $("#srt").html("Attendez, vous êtes bien installé·e, bien bien confortablement ? <br/> Quand vous cliquerez sur le bouton il ne se passera rien à l'écran, mais sachez que vous allumez une bûche électrique sur scène!")
+        $("#srt").html("Attendez, vous êtes bien installé·e, bien bien confortablement ? <br/> Quand vous cliquerez sur le bouton il ne se passera rien à l'écran mais sachez que vous allumez une bûche électrique sur scène!")
         $("#finishCuppa").attr('value', 'C\’EST BON CETTE FOIS JE ME SUIS VRAIMENT BIEN INSTALLÉ·E ET J\’AI MA BOISSON CHAUDE');
       break
 
